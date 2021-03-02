@@ -9,4 +9,4 @@ Este es un resumen que hice sobre el lenguaje de programación Python versión 3
 - *[W3Schools](https://www.w3schools.com)* me sirvió para tener ideas sobre ejemplos.
 - *[FreeCodeCamp](https://www.freecodecamp.org/news/tag/python/)* también tiene artículos con ejemplos que me fueron útiles.
 - *[RealPython](https://realpython.com)*
-- *[Carbon](carbon.now.sh/)* fue usado para hacer las imágenes con el código. La configuración usada puede encontrarse en config.
+- *[Carbon](https://carbon.now.sh)* fue usado para hacer las imágenes con el código. La configuración usada puede encontrarse en [config](config).
