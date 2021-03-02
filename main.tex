@@ -1,7 +1,7 @@
 \documentclass{article}
 
 % para usar codificación utf8
-\usepackage[utf8]{inputenc}
+% \usepackage[utf8]{inputenc}
 % define los márgenes del documento
 \usepackage{geometry}
   \geometry{
@@ -45,8 +45,8 @@
   \let\snewpage \newpage
   \let\newpage \relax
   % se centra el logo svg exportado con Inkscape
-  \centering\def\svgwidth{\columnwidth}
-  \input{logo python\\python-logo-inkscape.pdf_tex}
+  {\centering\def\svgwidth{\columnwidth}
+  \input{logo python\\python-logo-inkscape.pdf_tex}}
   \maketitle
   \let \newpage \snewpage
   \vfill 
