@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.1)  2 MAR 2021 08:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.1)  2 MAR 2021 09:25
 entering extended mode
 **"c:/Users/vnico/Desktop/Resumen Python 3/main.tex"
 (c:/Users/vnico/Desktop/Resumen Python 3/main.tex
@@ -19,11 +19,15 @@ File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
+) (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2020/08/01 v1.3d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
 ) (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks15
+\KV@toks@=\toks17
 ) (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
@@ -40,7 +44,7 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layoutheight=\dimen144
 \Gm@layouthoffset=\dimen145
 \Gm@layoutvoffset=\dimen146
-\Gm@dimlist=\toks16
+\Gm@dimlist=\toks18
  (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box47
@@ -48,7 +52,7 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \aftertitleunit=\skip50
 \ttl@plus=\dimen147
 \ttl@minus=\dimen148
-\ttl@toksa=\toks17
+\ttl@toksa=\toks19
 \titlewidth=\dimen149
 \titlewidthlast=\dimen150
 \titlewidthfirst=\dimen151
@@ -82,7 +86,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2000/06/29 v2.01 AMS text
  (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks18
+\@emptytoks=\toks20
 \ex@=\dimen154
 )) (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -110,21 +114,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \dotsspace@=\muskip16
 \c@parentequation=\count197
 \dspbrk@lvl=\count198
-\tag@help=\toks19
+\tag@help=\toks21
 \row@=\count199
 \column@=\count266
 \maxfields@=\count267
-\andhelp@=\toks20
+\andhelp@=\toks22
 \eqnshift@=\dimen157
 \alignsep@=\dimen158
 \tagshift@=\dimen159
 \tagwidth@=\dimen160
 \totwidth@=\dimen161
 \lineht@=\dimen162
-\@envbody=\toks21
+\@envbody=\toks23
 \multlinegap=\skip52
 \multlinetaggap=\skip53
-\mathdisplay@stack=\toks22
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 ) (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
@@ -146,7 +150,7 @@ File: babel.def 2021/01/26 3.53 Babel common definitions
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
 ) (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ldf
 Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
-\es@quottoks=\toks23
+\es@quottoks=\toks25
 \es@quotdepth=\count270
 Package babel Info: Making " an active character on input line 561.
 Package babel Info: Making . an active character on input line 662.
@@ -218,12 +222,12 @@ LaTeX Font Info:    ... okay on input line 38.
 \scratchbox=\box51
 \nofMPsegments=\count273
 \nofMParguments=\count274
-\everyMPshowfont=\toks24
+\everyMPshowfont=\toks26
 \MPscratchCnt=\count275
 \MPscratchDim=\dimen165
 \MPnumerator=\count276
 \makeMPintoPDFobject=\count277
-\everyMPtoPDFconversion=\toks25
+\everyMPtoPDFconversion=\toks27
 ) (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
  (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
@@ -333,22 +337,22 @@ File: imagenes\cap2\uso del resto.png Graphic file (type png)
 <use imagenes\cap2\uso del resto.png>
 Package pdftex.def Info: imagenes\cap2\uso del resto.png  used on input line 205.
 (pdftex.def)             Requested size: 426.79135pt x 65.26906pt.
- [4 <c:/Users/vnico/Desktop/Resumen Python 3/imagenes/cap2/cociente.png> <c:/Users/vnico/Desktop/Resumen Python 3/imagenes/cap2/resto.png> <c:/Users/vnico/Desktop/Resumen Python 3/imagenes/cap2/uso del resto.png>] (c:/Users\vnico\Desktop\Resumen Python 3\main.aux
+ [4 <c:/Users/vnico/Desktop/Resumen Python 3/imagenes/cap2/cociente.png> <c:/Users/vnico/Desktop/Resumen Python 3/imagenes/cap2/resto.png> <c:/Users/vnico/Desktop/Resumen Python 3/imagenes/cap2/uso del resto.png>] [5] [6] [7] (c:/Users\vnico\Desktop\Resumen Python 3\main.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
- 4372 strings out of 479334
- 65206 string characters out of 2857085
- 384601 words of memory out of 3000000
- 21759 multiletter control sequences out of 15000+200000
+ 4394 strings out of 479334
+ 65660 string characters out of 2857085
+ 387130 words of memory out of 3000000
+ 21778 multiletter control sequences out of 15000+200000
  408505 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,7n,78p,308b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-Output written on "c:/Users\vnico\Desktop\Resumen Python 3\main.pdf" (5 pages, 509057 bytes).
+Output written on "c:/Users\vnico\Desktop\Resumen Python 3\main.pdf" (8 pages, 516067 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
