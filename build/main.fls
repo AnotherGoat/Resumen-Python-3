@@ -1,7 +1,7 @@
 PWD c:\Users\vnico\Desktop\Resumen Python 3
 INPUT C:\Users\vnico\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
 INPUT c:\Users\vnico\Desktop\Resumen Python 3\main.tex
-OUTPUT c:\Users\vnico\Desktop\Resumen Python 3\main.log
+OUTPUT c:\Users\vnico\Desktop\Resumen Python 3\build\main.log
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -235,10 +235,10 @@ INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\main.aux
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\main.aux
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\main.aux
-OUTPUT c:\Users\vnico\Desktop\Resumen Python 3\main.aux
+INPUT c:\Users\vnico\Desktop\Resumen Python 3\build\main.aux
+INPUT c:\Users\vnico\Desktop\Resumen Python 3\build\main.aux
+INPUT c:\Users\vnico\Desktop\Resumen Python 3\build\main.aux
+OUTPUT c:\Users\vnico\Desktop\Resumen Python 3\build\main.aux
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -335,17 +335,17 @@ INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftex
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\generic\infwarerr\infwarerr.sty
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\generic\iftex\iftex.sty
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\logo python\python-logo-inkscape.pdf_tex
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\logo python\python-logo-inkscape.pdf_tex
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\logo python\python-logo-inkscape.pdf_tex
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\logo python\python-logo-inkscape.pdf_tex
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\logo python\python-logo-inkscape.pdf
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\logo python\python-logo-inkscape.pdf
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\logo python\python-logo-inkscape.pdf
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\logo python\python-logo-inkscape.pdf
-OUTPUT c:\Users\vnico\Desktop\Resumen Python 3\main.pdf
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\logo python\python-logo-inkscape.pdf
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\logo python\python-logo-inkscape.pdf
+INPUT .\logo python\python-logo-inkscape.pdf_tex
+INPUT logo python\python-logo-inkscape.pdf_tex
+INPUT .\logo python\python-logo-inkscape.pdf_tex
+INPUT logo python\python-logo-inkscape.pdf_tex
+INPUT .\logo python\python-logo-inkscape.pdf
+INPUT .\logo python\python-logo-inkscape.pdf
+INPUT logo python\python-logo-inkscape.pdf
+INPUT .\logo python\python-logo-inkscape.pdf
+OUTPUT c:\Users\vnico\Desktop\Resumen Python 3\build\main.pdf
+INPUT .\logo python\python-logo-inkscape.pdf
+INPUT .\logo python\python-logo-inkscape.pdf
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
@@ -363,107 +363,107 @@ INPUT C:\Users\vnico\AppData\Local\MiKTeX\pdftex\config\pdftex.map
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\import this.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\import this.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\import this.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\import this.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\import this.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\import this.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\import this.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\zen.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\zen.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\zen.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\zen.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\zen.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\zen.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\zen.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap1\hola mundo 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\comentario.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\comentario.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\comentario.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\comentario.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\comentario.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\comentario.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\comentario.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 3.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 3.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 3.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 3.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 3.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 3.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\aritmetica 3.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 1.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\error float.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\error float.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\error float.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\error float.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\error float.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\error float.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\error float.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\float 2.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\potencia.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\potencia.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\potencia.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\potencia.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\potencia.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\potencia.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\potencia.png
+INPUT .\imagenes\cap1\import this.png
+INPUT .\imagenes\cap1\import this.png
+INPUT imagenes\cap1\import this.png
+INPUT .\imagenes\cap1\import this.png
+INPUT .\imagenes\cap1\import this.png
+INPUT .\imagenes\cap1\import this.png
+INPUT .\imagenes\cap1\import this.png
+INPUT .\imagenes\cap1\zen.png
+INPUT .\imagenes\cap1\zen.png
+INPUT imagenes\cap1\zen.png
+INPUT .\imagenes\cap1\zen.png
+INPUT .\imagenes\cap1\zen.png
+INPUT .\imagenes\cap1\zen.png
+INPUT .\imagenes\cap1\zen.png
+INPUT .\imagenes\cap1\hola mundo 1.png
+INPUT .\imagenes\cap1\hola mundo 1.png
+INPUT imagenes\cap1\hola mundo 1.png
+INPUT .\imagenes\cap1\hola mundo 1.png
+INPUT .\imagenes\cap1\hola mundo 1.png
+INPUT .\imagenes\cap1\hola mundo 1.png
+INPUT .\imagenes\cap1\hola mundo 1.png
+INPUT .\imagenes\cap1\hola mundo 2.png
+INPUT .\imagenes\cap1\hola mundo 2.png
+INPUT imagenes\cap1\hola mundo 2.png
+INPUT .\imagenes\cap1\hola mundo 2.png
+INPUT .\imagenes\cap1\hola mundo 2.png
+INPUT .\imagenes\cap1\hola mundo 2.png
+INPUT .\imagenes\cap1\hola mundo 2.png
+INPUT .\imagenes\cap2\comentario.png
+INPUT .\imagenes\cap2\comentario.png
+INPUT imagenes\cap2\comentario.png
+INPUT .\imagenes\cap2\comentario.png
+INPUT .\imagenes\cap2\comentario.png
+INPUT .\imagenes\cap2\comentario.png
+INPUT .\imagenes\cap2\comentario.png
+INPUT .\imagenes\cap2\aritmetica 1.png
+INPUT .\imagenes\cap2\aritmetica 1.png
+INPUT imagenes\cap2\aritmetica 1.png
+INPUT .\imagenes\cap2\aritmetica 1.png
+INPUT .\imagenes\cap2\aritmetica 1.png
+INPUT .\imagenes\cap2\aritmetica 1.png
+INPUT .\imagenes\cap2\aritmetica 1.png
+INPUT .\imagenes\cap2\aritmetica 3.png
+INPUT .\imagenes\cap2\aritmetica 3.png
+INPUT imagenes\cap2\aritmetica 3.png
+INPUT .\imagenes\cap2\aritmetica 3.png
+INPUT .\imagenes\cap2\aritmetica 3.png
+INPUT .\imagenes\cap2\aritmetica 3.png
+INPUT .\imagenes\cap2\aritmetica 3.png
+INPUT .\imagenes\cap2\float 1.png
+INPUT .\imagenes\cap2\float 1.png
+INPUT imagenes\cap2\float 1.png
+INPUT .\imagenes\cap2\float 1.png
+INPUT .\imagenes\cap2\float 1.png
+INPUT .\imagenes\cap2\float 1.png
+INPUT .\imagenes\cap2\float 1.png
+INPUT .\imagenes\cap2\error float.png
+INPUT .\imagenes\cap2\error float.png
+INPUT imagenes\cap2\error float.png
+INPUT .\imagenes\cap2\error float.png
+INPUT .\imagenes\cap2\error float.png
+INPUT .\imagenes\cap2\error float.png
+INPUT .\imagenes\cap2\error float.png
+INPUT .\imagenes\cap2\float 2.png
+INPUT .\imagenes\cap2\float 2.png
+INPUT imagenes\cap2\float 2.png
+INPUT .\imagenes\cap2\float 2.png
+INPUT .\imagenes\cap2\float 2.png
+INPUT .\imagenes\cap2\float 2.png
+INPUT .\imagenes\cap2\float 2.png
+INPUT .\imagenes\cap2\potencia.png
+INPUT .\imagenes\cap2\potencia.png
+INPUT imagenes\cap2\potencia.png
+INPUT .\imagenes\cap2\potencia.png
+INPUT .\imagenes\cap2\potencia.png
+INPUT .\imagenes\cap2\potencia.png
+INPUT .\imagenes\cap2\potencia.png
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\cociente.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\cociente.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\cociente.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\cociente.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\cociente.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\cociente.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\cociente.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\uso del resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\uso del resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\uso del resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\uso del resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\uso del resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\uso del resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\imagenes\cap2\uso del resto.png
-INPUT c:\Users\vnico\Desktop\Resumen Python 3\main.aux
+INPUT .\imagenes\cap2\cociente.png
+INPUT .\imagenes\cap2\cociente.png
+INPUT imagenes\cap2\cociente.png
+INPUT .\imagenes\cap2\cociente.png
+INPUT .\imagenes\cap2\cociente.png
+INPUT .\imagenes\cap2\cociente.png
+INPUT .\imagenes\cap2\cociente.png
+INPUT .\imagenes\cap2\resto.png
+INPUT .\imagenes\cap2\resto.png
+INPUT imagenes\cap2\resto.png
+INPUT .\imagenes\cap2\resto.png
+INPUT .\imagenes\cap2\resto.png
+INPUT .\imagenes\cap2\resto.png
+INPUT .\imagenes\cap2\resto.png
+INPUT .\imagenes\cap2\uso del resto.png
+INPUT .\imagenes\cap2\uso del resto.png
+INPUT imagenes\cap2\uso del resto.png
+INPUT .\imagenes\cap2\uso del resto.png
+INPUT .\imagenes\cap2\uso del resto.png
+INPUT .\imagenes\cap2\uso del resto.png
+INPUT .\imagenes\cap2\uso del resto.png
+INPUT c:\Users\vnico\Desktop\Resumen Python 3\build\main.aux
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb

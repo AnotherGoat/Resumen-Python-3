@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1614687901 "c:/Users/vnico/Desktop/Resumen Python 3/main.tex" "c:/Users/vnico/Desktop/Resumen Python 3/main.pdf" "main" 1614687914
+["pdflatex"] 1614688303 "c:/Users/vnico/Desktop/Resumen Python 3/main.tex" "c:/Users/vnico/Desktop/Resumen Python 3/build/main.pdf" "main" 1614688318
   "C:/Users/vnico/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1614603125 9407462 0088938786e3cb221450ef0359d0529d ""
   "C:/Users/vnico/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1614684125 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -57,8 +57,9 @@
   "C:/Users/vnico/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty" 1602228096 22521 d2fceb764a442a2001d257ef11db7618 ""
   "C:/Users/vnico/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1613658612 27164 09c696e2ed5c5986662c62a27622e9cd ""
   "C:/Users/vnico/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty" 1571243658 48596 2b6a95da931c07a430b1a61904aaa42d ""
-  "c:/Users/vnico/Desktop/Resumen Python 3/main.aux" 1614687913 13227 950bd43771be4b5a29d1f309ea262716 "pdflatex"
-  "c:/Users/vnico/Desktop/Resumen Python 3/main.tex" 1614687867 11806 ce906d1113dc147fe6961b8a3bf91fe2 ""
+  "build/main.aux" 1614688317 13227 950bd43771be4b5a29d1f309ea262716 "pdflatex"
+  "c:/Users/vnico/Desktop/Resumen Python 3/build/main.aux" 1614688317 13227 950bd43771be4b5a29d1f309ea262716 "pdflatex"
+  "c:/Users/vnico/Desktop/Resumen Python 3/main.tex" 1614688282 11806 ce906d1113dc147fe6961b8a3bf91fe2 ""
   "imagenes/cap1/hola mundo 1.png" 1613595108 24914 788adce0bf9046a6605c770c0f4a7345 ""
   "imagenes/cap1/hola mundo 2.png" 1614555418 35292 7d9d7b4562e329018381b883fb833633 ""
   "imagenes/cap1/import this.png" 1614384818 20475 1186aeae439189f3dd4e96f28265adb7 ""
@@ -75,12 +76,11 @@
   "imagenes/cap2/uso del resto.png" 1614561077 86009 8a4d9d034a216b3ad33efb1e46187e4b ""
   "logo python/python-logo-inkscape.pdf" 1614614085 6289 64c70eb1ef6fbc8744b2bc9c110a5da3 ""
   "logo python/python-logo-inkscape.pdf_tex" 1614614512 2096 e06915bbbd10d8145312c132c9f29d66 ""
-  "main.aux" 1614687913 13227 950bd43771be4b5a29d1f309ea262716 "pdflatex"
-  "main.tex" 1614687867 11806 ce906d1113dc147fe6961b8a3bf91fe2 ""
+  "main.tex" 1614688282 11806 ce906d1113dc147fe6961b8a3bf91fe2 ""
   (generated)
-  "c:/Users/vnico/Desktop/Resumen Python 3/main.pdf"
-  "c:/Users/vnico/Desktop/Resumen Python 3/main.log"
-  "main.aux"
-  "main.log"
-  "c:/Users/vnico/Desktop/Resumen Python 3/main.aux"
-  "main.pdf"
+  "c:/Users/vnico/Desktop/Resumen Python 3/build/main.log"
+  "build/main.pdf"
+  "c:/Users/vnico/Desktop/Resumen Python 3/build/main.pdf"
+  "build/main.aux"
+  "build/main.log"
+  "c:/Users/vnico/Desktop/Resumen Python 3/build/main.aux"
