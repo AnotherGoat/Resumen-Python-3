@@ -1,7 +1,7 @@
 \documentclass{article}
 
 % para usar codificación utf8
-% \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 % define los márgenes del documento
 \usepackage{geometry}
   \geometry{
@@ -16,6 +16,8 @@
 \usepackage{color}
 % permite añadir imágenes al documento
 \usepackage{graphicx}
+% usado para operaciones matemáticas
+\usepackage{amsmath}
 % traduce textos como "figure" al español
 \usepackage[spanish]{babel}
 
@@ -113,5 +115,97 @@
       \end{figure}
 
       Python no soporta comentarios multilínea, al contrario de otros lenguajes de programación.
+
+      A lo largo de este resumen, se usarán comentarios para mostrar la salida de algunas funciones, cuando sea posible.
+
+    \subsection{Operaciones aritméticas}
+      Python tiene la capacidad de realizar cálculos. Los operadores +, -, * y / representan suma, resta, multiplicación y división, respectivamente.
+
+      \begin{figure}[ht!]
+        \includegraphics[width=\linewidth]{imagenes\\cap2\\aritmetica 1.png}
+        \caption{Adición, sustracción, multiplicación y división en Python.}
+      \end{figure}
+
+      Los espacios entre los signos y los números son opcionales, pero hacen que el código sea más fácil de leer.
+
+    \subsection{La regla PEMDAS}
+      Las operaciones en Python siguen el orden dado por la regla PEMDAS:
+
+      \begin{enumerate}
+        \item Paréntesis
+        \item Exponentes
+        \item Multiplicación y división
+        \item Adición y Sustracción
+      \end{enumerate}
+
+      % TODO: aritmetica 2 con ejemplos de operaciones combinadas
+
+    \subsection{Paréntesis}
+      Se pueden usar paréntesis () para agrupar operaciones y hacer que estas se realicen primero, siguiendo la regla PEMDAS.
+
+      \begin{figure}[ht!]
+        \includegraphics[width=\linewidth]{imagenes\\cap2\\aritmetica 3.png}
+        \caption{Uso de paréntesis para cambiar el orden de las operaciones.}
+      \end{figure}
+
+    \subsection{Floats}
+      Para representar números que no son enteros, se usa el tipo de dato float o punto flotante. Se pueden crear directamente ingresando un número con un punto decimal, o como resultado de una división.
+
+      \begin{figure}[ht!]
+        \includegraphics[width=\linewidth]{imagenes\\cap2\\float 1.png}
+        \caption{Los floats representan números racionales.}
+      \end{figure}
+
+      Se debe tener en cuenta que los computadores no pueden almacenar perfectamente el valor de los floats, lo cual a menudo conduce a errores.
+
+      \begin{figure}[ht!]
+        \includegraphics[width=\linewidth]{imagenes\\cap2\\error float.png}
+        \caption{Un error clásico de la aritmética de punto flotante.}
+      \end{figure}
+
+      Al trabajar con floats, no es necesario escribir un 0 a la izquierda del punto decimal.
+
+      \begin{figure}[ht!]
+        \includegraphics[width=\linewidth]{imagenes\\cap2\\float 2.png}
+        \caption{Esta notación se asemeja a decir \doble{punto cinco} en vez de \doble{cero punto cinco}.}
+      \end{figure}
+
+      El resultado de cualquier operación entre floats o entre un float y un entero siempre dará como resultado un float. La división entre enteros también da como resultado un float.
+
+      %TODO: float 3 mostrando resultados de operaciones entro floats y enteros
+
+      \subsection{Exponenciación}
+
+      Otra operación soportada es la exponenciación, que es la elevación de un número a la potencia de otro. Esto se realiza usando el operador **.
+
+      \begin{figure}[ht!]
+        \includegraphics[width=\linewidth]{imagenes\\cap2\\potencia.png}
+        \caption{Ejemplo equivalente a $2 ^ 5 = 32$.}
+      \end{figure}
+
+      \subsection{Cociente y resto}
+
+      La división entera se realiza usando el operador //, donde el resultado es la parte entera que queda al realizar la división, también conocida como cociente.
+      
+      \begin{figure}[ht!]
+        \includegraphics[width=\linewidth]{imagenes\\cap2\\cociente.png}
+        \caption{La división entera retorna un entero en vez de un float.}
+      \end{figure}
+
+      Para obtener el resto al realizar una división entera, se debe usar el operador módulo \%.
+
+      \begin{figure}[ht!]
+        \includegraphics[width=\linewidth]{imagenes\\cap2\\resto.png}
+        \caption{Esta operación es equivalente a $7 \mod{2}$ en aritmética modular.}
+      \end{figure}
+
+      Este operador viene de la aritmética modular, y uno de sus usos más comunes es para saber si un número es múltiplo de otro. Esto se hace revisando si el módulo al dividirlo por ese otro número es 0.
+
+      \begin{figure}[ht!]
+        \includegraphics[width=\linewidth]{imagenes\\cap2\\uso del resto.png}
+        \caption{El caso particular módulo 2 también puede usarse para saber si un número es par o no.}
+      \end{figure}
+
+    \section{Cadenas de texto}
 
 \end{document}
