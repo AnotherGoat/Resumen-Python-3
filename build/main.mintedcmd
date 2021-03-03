@@ -1,1 +1,0 @@
-pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o build/main.out.pyg codigo/cap1/\unhbox \voidb@x \bgroup \accent 127\OT1\i \protect \penalty \@M \hskip \z@skip \egroup mport this.py"@\endcsname 
