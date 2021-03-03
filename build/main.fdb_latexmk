@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1614736286 "c:/Users/vnico/Desktop/Resumen Python 3/main.tex" "c:/Users/vnico/Desktop/Resumen Python 3/build/main.pdf" "main" 1614736304
+["pdflatex"] 1614737434 "c:/Users/vnico/Desktop/Resumen Python 3/main.tex" "c:/Users/vnico/Desktop/Resumen Python 3/build/main.pdf" "main" 1614737449
   "C:/Users/vnico/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1614603125 9407462 0088938786e3cb221450ef0359d0529d ""
   "C:/Users/vnico/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1614684125 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -57,9 +57,9 @@
   "C:/Users/vnico/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty" 1602228096 22521 d2fceb764a442a2001d257ef11db7618 ""
   "C:/Users/vnico/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1613658612 27164 09c696e2ed5c5986662c62a27622e9cd ""
   "C:/Users/vnico/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty" 1571243658 48596 2b6a95da931c07a430b1a61904aaa42d ""
-  "build/main.aux" 1614736299 14725 0de8d2a676a74487bbf2f6ac1855ff2f "pdflatex"
-  "c:/Users/vnico/Desktop/Resumen Python 3/build/main.aux" 1614736299 14725 0de8d2a676a74487bbf2f6ac1855ff2f "pdflatex"
-  "c:/Users/vnico/Desktop/Resumen Python 3/main.tex" 1614736268 13770 7fc8d83600f81b84b84c1fcba5c21ca7 ""
+  "build/main.aux" 1614737445 14725 0de8d2a676a74487bbf2f6ac1855ff2f "pdflatex"
+  "c:/Users/vnico/Desktop/Resumen Python 3/build/main.aux" 1614737445 14725 0de8d2a676a74487bbf2f6ac1855ff2f "pdflatex"
+  "c:/Users/vnico/Desktop/Resumen Python 3/main.tex" 1614737419 12730 6533af2ff477c0f2bdeaf88571d39ca8 ""
   "imagenes/cap1/hola mundo 1.png" 1613595108 24914 788adce0bf9046a6605c770c0f4a7345 ""
   "imagenes/cap1/hola mundo 2.png" 1614555418 35292 7d9d7b4562e329018381b883fb833633 ""
   "imagenes/cap1/import this.png" 1614384818 20475 1186aeae439189f3dd4e96f28265adb7 ""
@@ -81,11 +81,11 @@
   "imagenes/cap3/strings no validos.png" 1614270073 51833 afee358e4215db436c1c5886d534907f ""
   "logo/python-logo-inkscape.pdf" 1614614085 6289 64c70eb1ef6fbc8744b2bc9c110a5da3 ""
   "logo/python-logo-inkscape.pdf_tex" 1614734068 2089 6270b0e7911dc7fb6592b80051cedf65 ""
-  "main.tex" 1614736268 13770 7fc8d83600f81b84b84c1fcba5c21ca7 ""
+  "main.tex" 1614737419 12730 6533af2ff477c0f2bdeaf88571d39ca8 ""
   (generated)
   "c:/Users/vnico/Desktop/Resumen Python 3/build/main.log"
-  "c:/Users/vnico/Desktop/Resumen Python 3/build/main.pdf"
   "build/main.aux"
-  "c:/Users/vnico/Desktop/Resumen Python 3/build/main.aux"
-  "build/main.log"
   "build/main.pdf"
+  "build/main.log"
+  "c:/Users/vnico/Desktop/Resumen Python 3/build/main.pdf"
+  "c:/Users/vnico/Desktop/Resumen Python 3/build/main.aux"
