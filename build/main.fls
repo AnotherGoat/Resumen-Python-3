@@ -335,17 +335,17 @@ INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftex
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\generic\infwarerr\infwarerr.sty
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\generic\iftex\iftex.sty
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
-INPUT .\logo python\python-logo-inkscape.pdf_tex
-INPUT logo python\python-logo-inkscape.pdf_tex
-INPUT .\logo python\python-logo-inkscape.pdf_tex
-INPUT logo python\python-logo-inkscape.pdf_tex
-INPUT .\logo python\python-logo-inkscape.pdf
-INPUT .\logo python\python-logo-inkscape.pdf
-INPUT logo python\python-logo-inkscape.pdf
-INPUT .\logo python\python-logo-inkscape.pdf
+INPUT .\logo\python-logo-inkscape.pdf_tex
+INPUT logo\python-logo-inkscape.pdf_tex
+INPUT .\logo\python-logo-inkscape.pdf_tex
+INPUT logo\python-logo-inkscape.pdf_tex
+INPUT .\logo\python-logo-inkscape.pdf
+INPUT .\logo\python-logo-inkscape.pdf
+INPUT logo\python-logo-inkscape.pdf
+INPUT .\logo\python-logo-inkscape.pdf
 OUTPUT c:\Users\vnico\Desktop\Resumen Python 3\build\main.pdf
-INPUT .\logo python\python-logo-inkscape.pdf
-INPUT .\logo python\python-logo-inkscape.pdf
+INPUT .\logo\python-logo-inkscape.pdf
+INPUT .\logo\python-logo-inkscape.pdf
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
@@ -463,6 +463,41 @@ INPUT .\imagenes\cap2\uso del resto.png
 INPUT .\imagenes\cap2\uso del resto.png
 INPUT .\imagenes\cap2\uso del resto.png
 INPUT .\imagenes\cap2\uso del resto.png
+INPUT .\imagenes\cap3\string.png
+INPUT .\imagenes\cap3\string.png
+INPUT imagenes\cap3\string.png
+INPUT .\imagenes\cap3\string.png
+INPUT .\imagenes\cap3\string.png
+INPUT .\imagenes\cap3\string.png
+INPUT .\imagenes\cap3\string.png
+INPUT .\imagenes\cap3\strings no validos.png
+INPUT .\imagenes\cap3\strings no validos.png
+INPUT imagenes\cap3\strings no validos.png
+INPUT .\imagenes\cap3\strings no validos.png
+INPUT .\imagenes\cap3\strings no validos.png
+INPUT .\imagenes\cap3\strings no validos.png
+INPUT .\imagenes\cap3\strings no validos.png
+INPUT .\imagenes\cap3\cadena vacia.png
+INPUT .\imagenes\cap3\cadena vacia.png
+INPUT imagenes\cap3\cadena vacia.png
+INPUT .\imagenes\cap3\cadena vacia.png
+INPUT .\imagenes\cap3\cadena vacia.png
+INPUT .\imagenes\cap3\cadena vacia.png
+INPUT .\imagenes\cap3\cadena vacia.png
+INPUT .\imagenes\cap3\caracteres especiales.png
+INPUT .\imagenes\cap3\caracteres especiales.png
+INPUT imagenes\cap3\caracteres especiales.png
+INPUT .\imagenes\cap3\caracteres especiales.png
+INPUT .\imagenes\cap3\caracteres especiales.png
+INPUT .\imagenes\cap3\caracteres especiales.png
+INPUT .\imagenes\cap3\caracteres especiales.png
+INPUT .\imagenes\cap3\comillas.png
+INPUT .\imagenes\cap3\comillas.png
+INPUT imagenes\cap3\comillas.png
+INPUT .\imagenes\cap3\comillas.png
+INPUT .\imagenes\cap3\comillas.png
+INPUT .\imagenes\cap3\comillas.png
+INPUT .\imagenes\cap3\comillas.png
 INPUT c:\Users\vnico\Desktop\Resumen Python 3\build\main.aux
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\vnico\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb

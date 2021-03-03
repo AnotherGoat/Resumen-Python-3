@@ -48,7 +48,7 @@
   \let\newpage \relax
   % se centra el logo svg exportado con Inkscape
   {\centering\def\svgwidth{\columnwidth}
-  \input{logo python\\python-logo-inkscape.pdf_tex}}
+  \input{logo\\python-logo-inkscape.pdf_tex}}
   \maketitle
   \let \newpage \snewpage
   \vfill 
@@ -209,7 +209,44 @@
     \section{Cadenas de texto}
 
       \subsection{Strings o cadenas de caracteres}
+
+        Las cadenas de caracteres se crean introduciendo el texto entre comillas simples \simple{} o dobles \doble{}.
+
+        \begin{figure}[ht!]
+          \includegraphics[width=\linewidth]{imagenes\\cap3\\string.png}
+          \caption{Una cadena de caracteres válida.}
+        \end{figure}
+
+        \begin{figure}[ht!]
+          \includegraphics[width=\linewidth]{imagenes\\cap3\\strings no validos.png}
+          \caption{Un string debe empezar y terminar con comillas del mismo tipo, no se permiten comillas mixtas.}
+        \end{figure}
+
+      \subsection{Cadena vacía}
+
+        A veces es necesario inicializa un string, pero sin agregarle información. Una cadena vacía es definida como \simple{} o \doble{}.
+
+        \begin{figure}[ht!]
+          \includegraphics[width=\linewidth]{imagenes\\cap3\\cadena vacia.png}
+          \caption{Estos strings vacíos se inicializan en variables, lo cual se verá en el capítulo siguiente.}
+        \end{figure}
+
       \subsection{Caracteres especiales}
+
+        Algunos caracteres no se pueden incluir directamente en una cadena. Para esos casos, se debe incluir la barra diagonal inversa \\ antes de ellos.
+
+        \begin{figure}[ht!]
+          \includegraphics[width=\linewidth]{imagenes\\cap3\\caracteres especiales.png}
+          \caption{Los caracteres ', " y \\ son especiales, porque normalmente cumplen funciones especiales dentro de strings.}
+        \end{figure}
+
+        Si el string se define entre comillas dobles, no es necesario poner \\' para ingresar comillas simples dentro de él, y viceversa.
+
+        \begin{figure}[ht!]
+          \includegraphics[width=\linewidth]{imagenes\\cap3\\comillas.png}
+          \caption{Los caracteres ', " y \\ son especiales, porque normalmente cumplen funciones especiales dentro de strings.}
+        \end{figure}
+
       \subsection{Secuencias de escape}
       \subsection{Caracteres Unicode}
       \subsection{Strings multilínea}
@@ -302,6 +339,8 @@
       \subsection{Declaración with}
 
     \section{Módulos time y datetime}
+
+    \section{Iterables}
 
     \section{Programación funcional}
 
