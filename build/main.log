@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.1)  3 MAR 2021 10:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.1)  3 MAR 2021 10:37
 entering extended mode
 **"c:/Users/vnico/Desktop/Resumen Python 3/main.tex"
 (c:/Users/vnico/Desktop/Resumen Python 3/main.tex
@@ -391,4 +391,56 @@ LaTeX Font Info:    ... okay on input line 55.
 \MPnumerator=\count309
 \makeMPintoPDFobject=\count310
 \everyMPtoPDFconversion=\toks31
-) (C:\U
+) (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+ (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+ (logo\python-logo-inkscape.pdf_tex
+<logo\python-logo-inkscape.pdf, id=1, page=1, 357.4358pt x 103.7402pt>
+File: logo\python-logo-inkscape.pdf Graphic file (type pdf)
+<use logo\python-logo-inkscape.pdf, page 1>
+Package pdftex.def Info: logo\python-logo-inkscape.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 426.79135pt x 123.87816pt.
+) [1
+
+{C:/Users/vnico/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./logo/python-logo-inkscape.pdf>] (build/_minted-main/default-pyg-prefix.pygstyle) (build/_minted-main/perldoc.pygstyle) (build/_minted-main/6820402744D1AA25E4BDBF6745A66EA66E1A0DE823C000C45395A6D613C6A90F.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+) (build/_minted-main/68F1242ADFE4F4CB0E2AAC264BA572D7BB68BE39CA24E1EDBE317594D51D7D07.pygtex) (build/_minted-main/1282281C7760805545E42F07060691F52C7B1BD0DE8A06C2A10D37931D014E4D.pygtex) [1] (build/_minted-main/B9820BD3A8D202CB5890E8C544852A695507168C98B1CCAD6A80FC4F1B8F04B6.pygtex) [2] (build/_minted-main/8665FCA51C7EDF270A3D881B60E49A34F2D9DAB080BDAD1E32947A5BB496D7A4.pygtex) (build/_minted-main/46A06EAB6802A6D7B1F7C9540110F6CA9C48288F72151FD445AD36D0A45C7CCF.pygtex) (build/_minted-main/3D58109FEAA8D22BE63E08AB413995402D68ABFE5A33D3336B261F37C24B3346.pygtex) [3] (build/_minted-main/05E9C5382952D90F8B44139B76E797ECF19593EC211D8AE68B4BA30BC8261F0D.pygtex) (build/_minted-main/62CC155C94CB4DB7A8718C6D29B727E70AA89AD5B7C569C458647A963477FB47.pygtex) (build/_minted-main/99F8852FA3F32002175A6C3452D80D78C94C476C7DE8626C198C14E588E427B1.pygtex) (build/_minted-main/A6C26B75BD9969A8B6C21F41E0268F919817B1D9A8472B7D16D2A0B1BD1CF607.pygtex) (build/_minted-main/94447EF0A032115FB32AC897E3BF5FF7FC1838A86771975B10914E631220D071.pygtex) [4] (build/_minted-main/BFD7AEEDC2279AFA4C094ED879ED3DA9E56CF97381EDE4A1FB5DA69186E49F16.pygtex) (build/_minted-main/73CA5BF7215CFD7033729C770145F077307FDEF110A4C9ED58B9870C81A67E86.pygtex) [5] (build/_minted-main/DFD4D429A52D94A2ED39C5D5ABE370EF54646FD8446E48F7A2CE8B6B15571F75.pygtex) (build/_minted-main/6107145FB7ED957386D72B045114B606B1F883248509E040AC73F97ABC50FDF8.pygtex) (build/_minted-main/BE2DECC47D5A2EF9ECBEF9A81C4B20B323A664AB38F7651A9B7E2E7CF17F7475.pygtex)
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 255.
+ (C:\Users\vnico\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 255.
+ (build/_minted-main/D532774F344465C7C192A980827EDE96CF25E9BC43248C42E66FDCBD3128F2F2.pygtex) (build/_minted-main/68F45FF5FCCF8CB1B894FDC0120146BACF7129975AA7DED7BA6FC0374F623F50.pygtex) [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] (c:/Users\vnico\Desktop\Resumen Python 3\build\main.aux
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+) ) 
+Here is how much of TeX's memory you used:
+ 9402 strings out of 479334
+ 169573 string characters out of 2857085
+ 536328 words of memory out of 3000000
+ 26649 multiletter control sequences out of 15000+200000
+ 408673 words of font info for 46 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 85i,8n,88p,317b,601s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/vnico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on "c:/Users\vnico\Desktop\Resumen Python 3\build\main.pdf" (33 pages, 150543 bytes).
+PDF statistics:
+ 162 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+
