@@ -35,17 +35,22 @@
 % separación entre párrafos
 \setlength{\parskip}{1em}
 
-% las figuras no muestran el texto "figure" ni el número
-\captionsetup[figure]{labelformat=empty}
+% reduce el espacio que rodea los subtítulos
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
 
-\definecolor{grisclaro}{RGB}{230, 230, 230}
+% las figuras no muestran el texto "figure" ni el número
+\captionsetup[listing]{labelformat=empty}
 
 % comandos nuevos para comillas simples y dobles
 \newcommand{\simple}[1]{`#1'}
 \newcommand{\doble}[1]{``#1''}
 
+% color nuevo para los bloques de código
+\definecolor{grisclaro}{RGB}{240, 240, 240}
+
 % macros nuevas para minted
-\newmintedfile{python}{frame=single, bgcolor=grisclaro, linenos}
+\newmintedfile{python}{bgcolor=grisclaro, frame=single, linenos, numbersep=6pt}
 \newmintedfile{text}{frame=single}
 
 \title{Resumen Python 3}
@@ -92,29 +97,29 @@ Dato curioso: Según el creador Guido van Rossum, el nombre de Python viene de l
 
 El Zen de Python es una colección de 19 \doble{principios} para escribir programas de computadores que influenciaron el diseño y representan la filosofía de este lenguaje de programación.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/1-intro/import_this.py}
   \caption{El Zen de Python se muestra en pantalla la primera vez que se ejecute esta línea.}
-\end{figure*}
+\end{listing*}
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \textfile{codigo/1-intro/zen.txt}
   \caption{El Zen de Python, escrito por Tim Peters.}
-\end{figure*}
+\end{listing*}
 
 \subsection{Hola mundo}
 
 Para mostrar el texto \doble{Hola mundo} en pantalla se puede usar la función print().
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/1-intro/hola_mundo_1.py}
   \caption{Hola mundo, el clásico primer programa en cualquier lenguaje de programación.}
-\end{figure*}
+\end{listing*}
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/1-intro/hola_mundo_2.py}
   \caption{Cada declaración de impresión print() genera texto en una nueva línea.}
-\end{figure*}
+\end{listing*}
 
 \newpage\section{Conceptos básicos}
 
@@ -124,10 +129,10 @@ Los comentarios son anotaciones en el código utilizadas para hacerlo más fáci
 
 En Python, los comentarios comienzan con el símbolo \#. Todo el texto luego de este \# (dentro de la misma línea) es ignorado.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/2-basico/comentario.py}
   \caption{Ejemplo de un comentario en Python.}
-\end{figure*}
+\end{listing*}
 
 Python no soporta comentarios multilínea, al contrario de otros lenguajes de programación.
 
@@ -137,10 +142,10 @@ A lo largo de este resumen, se usarán comentarios para mostrar la salida de alg
 
 Python tiene la capacidad de realizar cálculos. Los operadores +, -, * y / representan suma, resta, multiplicación y división, respectivamente.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/2-basico/aritmetica_1.py}
   \caption{Adición, sustracción, multiplicación y división en Python.}
-\end{figure*}
+\end{listing*}
 
 Los espacios entre los signos y los números son opcionales, pero hacen que el código sea más fácil de leer.
 
@@ -161,33 +166,33 @@ Las operaciones en Python siguen el orden dado por la regla PEMDAS:
 
 Se pueden usar paréntesis () para agrupar operaciones y hacer que estas se realicen primero, siguiendo la regla PEMDAS.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/2-basico/aritmetica_3.py}
   \caption{Uso de paréntesis para cambiar el orden de las operaciones.}
-\end{figure*}
+\end{listing*}
 
 \subsection{Floats}
     
 Para representar números que no son enteros, se usa el tipo de dato float o punto flotante. Se pueden crear directamente ingresando un número con un punto decimal, o como resultado de una división.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/2-basico/float_1.py}
   \caption{Los floats representan números racionales.}
-\end{figure*}
+\end{listing*}
 
 Se debe tener en cuenta que los computadores no pueden almacenar perfectamente el valor de los floats, lo cual a menudo conduce a errores.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/2-basico/error_float.py}
   \caption{Un error clásico de la aritmética de punto flotante.}
-\end{figure*}
+\end{listing*}
 
 Al trabajar con floats, no es necesario escribir un 0 a la izquierda del punto decimal.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/2-basico/float_2.py}
   \caption{Esta notación se asemeja a decir \doble{punto cinco} en vez de \doble{cero punto cinco}.}
-\end{figure*}
+\end{listing*}
 
 El resultado de cualquier operación entre floats o entre un float y un entero siempre dará como resultado un float. La división entre enteros también da como resultado un float.
 
@@ -197,33 +202,33 @@ El resultado de cualquier operación entre floats o entre un float y un entero s
 
 Otra operación soportada es la exponenciación, que es la elevación de un número a la potencia de otro. Esto se realiza usando el operador **.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/2-basico/potencia.py}
   \caption{Ejemplo equivalente a $2 ^ 5 = 32$.}
-\end{figure*}
+\end{listing*}
 
 \subsection{Cociente y resto}
 
 La división entera se realiza usando el operador //, donde el resultado es la parte entera que queda al realizar la división, también conocida como cociente.
   
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/2-basico/cociente.py}
   \caption{La división entera retorna un entero en vez de un float.}
-\end{figure*}
+\end{listing*}
 
 Para obtener el resto al realizar una división entera, se debe usar el operador módulo \%.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/2-basico/resto.py}
   \caption{Esta operación es equivalente a $7 \mod{2}$ en aritmética modular.}
-\end{figure*}
+\end{listing*}
 
 Este operador viene de la aritmética modular, y uno de sus usos más comunes es para saber si un número es múltiplo de otro. Esto se hace revisando si el módulo al dividirlo por ese otro número es 0.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/2-basico/uso_del_resto.py}
   \caption{El caso particular módulo 2 también puede usarse para saber si un número es par o no.}
-\end{figure*}
+\end{listing*}
 
 \newpage\section{Cadenas de texto}
 
@@ -231,40 +236,40 @@ Este operador viene de la aritmética modular, y uno de sus usos más comunes es
 
 Las cadenas de caracteres se crean introduciendo el texto entre comillas simples \simple{} o dobles \doble{}.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/3-strings/string.py}
   \caption{Una cadena de caracteres válida.}
-\end{figure*}
+\end{listing*}
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/3-strings/strings_no_validos.py}
   \caption{Un string debe empezar y terminar con comillas del mismo tipo, no se permiten comillas mixtas.}
-\end{figure*}
+\end{listing*}
 
 \subsection{Cadena vacía}
 
 A veces es necesario inicializa un string, pero sin agregarle información. Una cadena vacía es definida como \simple{} o \doble{}.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/3-strings/cadena_vacia.py}
   \caption{Estos strings vacíos se inicializan en variables, lo cual se verá en el capítulo siguiente.}
-\end{figure*}
+\end{listing*}
 
 \subsection{Caracteres especiales}
 
 Algunos caracteres no se pueden incluir directamente en una cadena. Para esos casos, se debe incluir la barra diagonal inversa \textbackslash antes de ellos.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/3-strings/caracteres_especiales.py}
   \caption{Los caracteres $'$, $''$ y \textbackslash son especiales, porque normalmente cumplen funciones especiales dentro de strings.}
-\end{figure*}
+\end{listing*}
 
 Si el string se define entre comillas dobles, no es necesario poner $'$ para ingresar comillas simples dentro de él, y viceversa.
 
-\begin{figure*}[ht!]
+\begin{listing*}[ht!]
   \pythonfile{codigo/3-strings/comillas.py}
   \caption{Esto puede ser más cómodo de escribir si se aprovecha.}
-\end{figure*}
+\end{listing*}
 
 \subsection{Secuencias de escape}
 
