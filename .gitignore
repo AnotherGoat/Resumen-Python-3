@@ -1,1 +1,5 @@
-build/cache
+build/_minted-main
+
+build/main.mintedcmd
+
+build/main.synctex.gz
