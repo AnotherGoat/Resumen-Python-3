@@ -1,0 +1,6 @@
+print("Hola mundo")
+x = input()
+y = int("7")
+z = float(3)
+texto = str(False)
+rango = range(100, 0, -1)

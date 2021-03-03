@@ -1,0 +1,1 @@
+print(("j" + "a") * 4)  # jajajaja
