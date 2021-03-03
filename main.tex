@@ -18,6 +18,10 @@
 \usepackage{graphicx}
 % usado para operaciones matemáticas
 \usepackage{amsmath}
+% usado para mostrar mejor los bloques de código
+\usepackage[cachedir=cache, outputdir=build]{minted}
+\usemintedstyle{perldoc}
+\usepackage{xcolor}
 % traduce textos como "figure" al español
 \usepackage[spanish]{babel}
 
@@ -76,12 +80,12 @@ Dato curioso: Según el creador Guido van Rossum, el nombre de Python viene de l
 El Zen de Python es una colección de 19 \doble{principios} para escribir programas de computadores que influenciaron el diseño y representan la filosofía de este lenguaje de programación.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap1\\import this.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap1/import_this.py}
   \caption{El Zen de Python se muestra en pantalla la primera vez que se ejecute esta línea.}
 \end{figure}
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap1\\zen.png}
+  \inputminted[frame=single, linenos]{text}{codigo/cap1/zen.txt}
   \caption{El Zen de Python, escrito por Tim Peters.}
 \end{figure}
 
@@ -90,12 +94,12 @@ El Zen de Python es una colección de 19 \doble{principios} para escribir progra
 Para mostrar el texto \doble{Hola mundo} en pantalla se puede usar la función print().
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap1\\hola mundo 1.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap1/hola_mundo_1.py}
   \caption{Hola mundo, el clásico primer programa en cualquier lenguaje de programación.}
 \end{figure}
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap1\\hola mundo 2.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap1/hola_mundo_2.py}
   \caption{Cada declaración de impresión print() genera texto en una nueva línea.}
 \end{figure}
 
@@ -109,7 +113,7 @@ Los comentarios son anotaciones en el código utilizadas para hacerlo más fáci
 En Python, los comentarios comienzan con el símbolo \#. Todo el texto luego de este \# (dentro de la misma línea) es ignorado.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap2\\comentario.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap2/comentario.py}
   \caption{Ejemplo de un comentario en Python.}
 \end{figure}
 
@@ -122,7 +126,7 @@ A lo largo de este resumen, se usarán comentarios para mostrar la salida de alg
 Python tiene la capacidad de realizar cálculos. Los operadores +, -, * y / representan suma, resta, multiplicación y división, respectivamente.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap2\\aritmetica 1.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap2/aritmetica_1.py}
   \caption{Adición, sustracción, multiplicación y división en Python.}
 \end{figure}
 
@@ -146,7 +150,7 @@ Las operaciones en Python siguen el orden dado por la regla PEMDAS:
 Se pueden usar paréntesis () para agrupar operaciones y hacer que estas se realicen primero, siguiendo la regla PEMDAS.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap2\\aritmetica 3.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap2/aritmetica_3.py}
   \caption{Uso de paréntesis para cambiar el orden de las operaciones.}
 \end{figure}
 
@@ -155,21 +159,21 @@ Se pueden usar paréntesis () para agrupar operaciones y hacer que estas se real
 Para representar números que no son enteros, se usa el tipo de dato float o punto flotante. Se pueden crear directamente ingresando un número con un punto decimal, o como resultado de una división.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap2\\float 1.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap2/float_1.py}
   \caption{Los floats representan números racionales.}
 \end{figure}
 
 Se debe tener en cuenta que los computadores no pueden almacenar perfectamente el valor de los floats, lo cual a menudo conduce a errores.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap2\\error float.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap2/error_float.py}
   \caption{Un error clásico de la aritmética de punto flotante.}
 \end{figure}
 
 Al trabajar con floats, no es necesario escribir un 0 a la izquierda del punto decimal.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap2\\float 2.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap2/float_2.py}
   \caption{Esta notación se asemeja a decir \doble{punto cinco} en vez de \doble{cero punto cinco}.}
 \end{figure}
 
@@ -182,7 +186,7 @@ El resultado de cualquier operación entre floats o entre un float y un entero s
 Otra operación soportada es la exponenciación, que es la elevación de un número a la potencia de otro. Esto se realiza usando el operador **.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap2\\potencia.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap2/potencia.py}
   \caption{Ejemplo equivalente a $2 ^ 5 = 32$.}
 \end{figure}
 
@@ -191,21 +195,21 @@ Otra operación soportada es la exponenciación, que es la elevación de un núm
 La división entera se realiza usando el operador //, donde el resultado es la parte entera que queda al realizar la división, también conocida como cociente.
   
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap2\\cociente.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap2/cociente.py}
   \caption{La división entera retorna un entero en vez de un float.}
 \end{figure}
 
 Para obtener el resto al realizar una división entera, se debe usar el operador módulo \%.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap2\\resto.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap2/resto.py}
   \caption{Esta operación es equivalente a $7 \mod{2}$ en aritmética modular.}
 \end{figure}
 
 Este operador viene de la aritmética modular, y uno de sus usos más comunes es para saber si un número es múltiplo de otro. Esto se hace revisando si el módulo al dividirlo por ese otro número es 0.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap2\\uso del resto.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap2/uso_del_resto.py}
   \caption{El caso particular módulo 2 también puede usarse para saber si un número es par o no.}
 \end{figure}
 
@@ -216,12 +220,12 @@ Este operador viene de la aritmética modular, y uno de sus usos más comunes es
 Las cadenas de caracteres se crean introduciendo el texto entre comillas simples \simple{} o dobles \doble{}.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap3\\string.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap3/string.py}
   \caption{Una cadena de caracteres válida.}
 \end{figure}
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap3\\strings no validos.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap3/strings_no_validos.py}
   \caption{Un string debe empezar y terminar con comillas del mismo tipo, no se permiten comillas mixtas.}
 \end{figure}
 
@@ -230,7 +234,7 @@ Las cadenas de caracteres se crean introduciendo el texto entre comillas simples
 A veces es necesario inicializa un string, pero sin agregarle información. Una cadena vacía es definida como \simple{} o \doble{}.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap3\\cadena vacia.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap3/cadena_vacia.py}
   \caption{Estos strings vacíos se inicializan en variables, lo cual se verá en el capítulo siguiente.}
 \end{figure}
 
@@ -239,14 +243,14 @@ A veces es necesario inicializa un string, pero sin agregarle información. Una 
 Algunos caracteres no se pueden incluir directamente en una cadena. Para esos casos, se debe incluir la barra diagonal inversa \\ antes de ellos.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap3\\caracteres especiales.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap3/caracteres_especiales.py}
   \caption{Los caracteres ', " y \\ son especiales, porque normalmente cumplen funciones especiales dentro de strings.}
 \end{figure}
 
 Si el string se define entre comillas dobles, no es necesario poner \\' para ingresar comillas simples dentro de él, y viceversa.
 
 \begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{imagenes\\cap3\\comillas.png}
+  \inputminted[frame=single, linenos]{python}{codigo/cap3/comillas.py}
   \caption{Los caracteres ', " y \\ son especiales, porque normalmente cumplen funciones especiales dentro de strings.}
 \end{figure}
 
@@ -466,7 +470,7 @@ Si el string se define entre comillas dobles, no es necesario poner \\' para ing
 
 \subsection{Clases}
 
-\subsection{Método __init__}
+\subsection{Método init}
 
 \subsection{Atributos}
 
