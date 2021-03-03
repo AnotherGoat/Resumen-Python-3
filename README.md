@@ -7,9 +7,7 @@ Este es un resumen que hice sobre el lenguaje de programación Python versión 3
 ## Carpetas
 
 - [build](build) contiene los archivos resultantes al compilar el LaTeX.
-- [codigo](codigo) contiene el código en formato .py, separado por capítulos. El código no está hecho para ejecutarlo todo de una vez, lo ideal es ir ejecutando cada sección, separada por comentarios.
-- [imagenes](imagenes) contiene imágenes del código, generadas usando [Carbon](https://carbon.now.sh).
-- [config](config) contiene la configuración usada en [Carbon](https://carbon.now.sh).
+- [codigo](codigo) contiene el código en formato .py, separado por capítulos. La mayoría del código puede ejecutarse por si solo pero algunos dependen de otros códigos de la misma carpeta, mientras que otros lanzan excepciones a propósito (con fines educativos).
 - [logo](logo) contiene el [SVG oficial](https://www.python.org/community/logos/) del logo de python.
 
 ## Fuentes de información
@@ -19,4 +17,3 @@ Este es un resumen que hice sobre el lenguaje de programación Python versión 3
 - *[W3Schools](https://www.w3schools.com)* me sirvió para tener ideas sobre ejemplos.
 - *[FreeCodeCamp](https://www.freecodecamp.org/news/tag/python/)* también tiene artículos con ejemplos que me fueron útiles.
 - *[RealPython](https://realpython.com)*
-- *[Carbon](https://carbon.now.sh)* fue usado para hacer las imágenes con el código. La configuración usada puede encontrarse en [config](config).
