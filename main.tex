@@ -6,7 +6,7 @@
 \usepackage{sectsty}
 \usepackage{tocloft}
 \usepackage{graphicx}
-\usepackage[dvipsnames]{xcolor}
+\usepackage[svgnames]{xcolor}
 \usepackage{amsmath}
 \usepackage[spanish]{babel}
 \usepackage[colorlinks=true, linkcolor=., urlcolor=NavyBlue]{hyperref}
@@ -15,11 +15,11 @@
 \usemintedstyle{perldoc}
 
 % capítulos de color azul y secciones de color rojo
-\chapterfont{\color{OliveGreen}}
+\chapterfont{\color{DarkOliveGreen}}
 \sectionfont{\color{RoyalBlue}}
 
 % también en la tabla de contenidos
-\renewcommand{\cftchapfont}{\bfseries\color{OliveGreen}}
+\renewcommand{\cftchapfont}{\bfseries\color{DarkOliveGreen}}
 \renewcommand{\cftsecfont}{\color{RoyalBlue}}
 
 % párrafos sin sangría
@@ -305,25 +305,25 @@ Los comentarios multilínea no existen formalmente en Python, pero se puede hace
 
 Dos o más cadenas se pueden unir una después de la otra, usando un proceso llamado concatenación. Se usa el operador +.
 
-%TODO
+\pythonfile{codigo/3-strings/concatenacion.py}
 
 La concatenación sólo se puede realizar entre strings, no entre cadenas y números.
 
-%TODO
+\pythonfile{codigo/3-strings/error_concatenacion.py}
 
 \section{Multiplicación de strings}
 
 Las cadenas también pueden ser multiplicadas por números enteros. Esto produce una versión repetida de la cadena original. El orden de la cadena y el número no importa, pero la cadena suele ir primero.
 
-%TODO
+\pythonfile{codigo/3-strings/multiplicar_cadenas_1.py}
 
 También se pueden combinar operaciones de multiplicación y concatenación.
 
-%TODO
+\pythonfile{codigo/3-strings/concatenacion_y_multiplicacion.py}
 
 Multiplicar por 0 genera un string vacío.
 
-%TODO
+\pythonfile{codigo/3-strings/multiplicar_cadenas_2.py}
 
 \section{Opciones del método print()}
 
@@ -352,15 +352,17 @@ Ambos argumentos se pueden combinar.
 
 Una variable permite almacenar un valor asignándole un nombre, el cual puede ser usado para referirse al valor más adelante en el programa. Para asignar una variable, se usa el signo igual =.
 
-%TODO
+\pythonfile{codigo/4-variables/variable_1.py}
 
 \section{Nombre de variables válidos}
 
 Se aplican ciertas restricciones con respecto a los caracteres que se pueden usar en los nombres de variables. Los únicos caracteres permitidos son letras, números y guiones bajos. Además, no se puede comenzar con números o incluir espacios.
 
-%TODO
+\pythonfile{codigo/4-variables/errores_de_variables.py}
 
 Python es sensible a mayúsculas y minúsculas, lo que significa que las variables \doble{num}, \doble{Num}, \doble{NUM}, etc. son distintas.
+
+%TODO: ejemplo
 
 \section{Palabras clave}
 
@@ -368,7 +370,7 @@ Existen palabras específicas que tampoco se pueden usar como nombres de variabl
 
 A continuación, se muestra una lista de todas las palabras clave en Python.
 
-%TODO
+\textfile{codigo/4-variables/palabras_clave.txt}
 
 Nótese el uso de mayúsculas al principio de False, None y True.
 
@@ -376,36 +378,53 @@ Nótese el uso de mayúsculas al principio de False, None y True.
 
 Se pueden usar variables dentro de operaciones. Lo único que se debe recordar es que deben declararse antes.
 
-%TODO
+\pythonfile{codigo/4-variables/variable_2.py}
 
 Una variable también puede cambiar de valor a lo largo de la ejecución de un programa.
 
-%TODO
+\pythonfile{codigo/4-variables/variable_3.py}
 
 \section{Entrada}
 
 Para obtener información del usuario, se puede usar la función input(). La información obtenida puede ser almacenada como una variable.
 
-%TODO
+\pythonfile{codigo/4-variables/input_1.py}
 
 Toda la información recibida por el método input() es retornada como un string.
 También se puede entregar un string como parámetro al método input(), lo cual mostrará texto antes de pedir la entrada. Esto sirve para aclarar qué entrada está solicitando el programa.
 
-%TODO
+\pythonfile{codigo/4-variables/input_2.py}
 
 Al usar la función input(), el flujo del programa se detiene hasta que el usuario ingrese algún valor.
 
 \section{Conversión de tipos de datos}
 
+Existen funciones para convertir datos de un tipo a otro. Entre dichas funciones se encuentran:
+
+\begin{itemize}
+  \item int(): Convierte a un número entero.
+  
+  \pythonfile{codigo/4-variables/convertir_a_int.py}
+
+  \item float(): Convierte a un float.
+  
+  \pythonfile{codigo/4-variables/convertir_a_float.py}
+
+  \item str(): Convierte a un string o cadena de caracteres. Uno de sus usos principales es para concatenar distintos tipos de datos.
+
+  \pythonfile{codigo/4-variables/convertir_a_string.py}
+
+\end{itemize}
+
 \section{Operadores de asignación}
 
 Los operadores de asignación permiten escribir código como \simple{x = x + 1} de manera más concisa, como \simple{x += 1}. Lo mismo es posible con otros operadores como -, *, /, //, \% y **.
 
-%TODO
+\pythonfile{codigo/4-variables/asignacion_1.py}
 
 También se pueden usar con los operadores de concatenación y multiplicación de strings.
 
-%TODO
+\pythonfile{codigo/4-variables/asignacion_2.py}
 
 \clearpage\chapter{Declaraciones if}
 
@@ -415,43 +434,266 @@ También se pueden usar con los operadores de concatenación y multiplicación d
 
 \section{Declaración if}
 
+Las declaraciones if sirven para ejecutar código si ser cumple una determinada condición. Si la expresión se evalúa como True, se lleva a cabo el bloque de código que le sigue. En caso contrario, no ocurre nada.
+
+\pythonfile{codigo/5-if/if_1.py}
+
+Python usa indentación (espacio en blanco al comienzo de una línea) para delimitar bloques de código. En otros lenguajes, esta operación se realiza delimitando cada bloque de código por llaves {}.
+
 \section{Declaración if-else}
 
+Las declaraciones if-else son muy similares a las declaraciones if, pero esta vez sí ocurre algo cuando no se cumple la expresión a evaluar.
+
+\pythonfile{codigo/5-if/if_2.py}
+
+\pythonfile{codigo/5-if/if_3.py}
+
 \section{Declaración elif}
+
+El término elif se usa cuando se encadenan múltiples declaraciones if-else. Hace que el código sea más corto.
+
+\pythonfile{codigo/5-if/if_4.py}
+
+El programa irá evaluando cada expresión una por una hasta que alguna se cumpla. Cuando esto ocurra, ejecutará las instrucciones en su bloque de código y continuará con las expresiones después del bloque de código else.
 
 \section{Operadores lógicos}
 
 \section{Precedencia de operadores lógicos}
 
+Los operadores lógicos siguen un orden similar a PEMDAS, el cual es el siguiente:
+
+\begin{enumerate}
+  \item Paréntesis
+  \item Operador not
+  \item Operador and
+  \item Operador or
+\end{enumerate}
+
+Sin embargo, este orden es confuso, por lo que se recomienda usar paréntesis para hacerlo más obvio.
+
+\pythonfile{codigo/5-if/logica.py}
+
 \clearpage\chapter{Listas}
 
 \section{Creación de listas}
 
+Las listas se utilizan para almacenar varios elementos. Se crean utilizando corchetes y separando los elementos por comas.
+
+\pythonfile{codigo/6-listas/lista_1.py}
+
+En Python, las listas pueden tener elementos de más de un tipo.
+
+\pythonfile{codigo/6-listas/lista_2.py}
+
 \section{Indexación de listas}
+
+Se puede acceder a un determinado elemento de la lista utilizando su índice entre corchetes. El índice del primer elemento es 0, en lugar de 1, como podría esperarse.
+
+\pythonfile{codigo/6-listas/indexar_listas_1.py}
+
+Alternativamente, se pueden usar índices negativos. El último elemento de una lista tiene índice -1, y va disminuyendo hasta llegar al primero.
+
+\pythonfile{codigo/6-listas/indexar_listas_2.py}
+
+\section{IndexError en listas}
+
+Intentar acceder a un índice no existente producirá un error.
+
+\pythonfile{codigo/6-listas/error_indice.py}
 
 \section{Lista vacía}
 
+A veces es necesario crear una lista vacía y completarla más tarde durante la ejecución del programa. Las listas vacías se crean con un par de corchetes vacíos.
+
+\pythonfile{codigo/6-listas/lista_vacia.py}
+
 \section{Anidación de listas}
+
+Las listas se pueden anidar dentro de otras listas, y para acceder a algún elemento se debe usar una cantidad mayor de corchetes, donde los índices indican el elemento desde afuera hacia adentro.
+
+\pythonfile{codigo/6-listas/anidacion.py}
+
+En el ejemplo de arriba se muestra como acceder a todos los elementos de la lista creada.
+
+Las listas anidadas se pueden utilizar para representar cuadrículas 2D, como por ejemplo matrices.
+
+\pythonfile{codigo/6-listas/identidad.py}
+
+\section{Comas sobrantes}
+
+Se puede dejar a lo más una coma sobrante dentro de los corchetes de una lista. Este último elemento no será añadido a la lista.
+
+\pythonfile{codigo/6-listas/comas.py}
 
 \section{Operaciones con listas}
 
+El elemento en un índice determinado de una lista se puede reasignar.
+
+\pythonfile{codigo/6-listas/operaciones_listas_1.py}
+
+Las listas se pueden agregar y multiplicar de la misma manera que las cadenas.
+
+\pythonfile{codigo/6-listas/operaciones_listas_2.py}
+
+\section{Operadores in y not in}
+
+Se puede verificar si un elemento pertenece a una lista usando el operador in. Este devuelve True si dicho elemento aparece una o más veces en la lista y False si no es así.
+
+\pythonfile{codigo/6-listas/in.py}
+
+Para comprobar si un elemento no pertenece a una lista, se pueden combinar los operadores in y not. Ambas formas de hacerlo son válidas.
+
+\pythonfile{codigo/6-listas/not_in.py}
+
 \section{Funciones de listas}
+
+Existen métodos que sirven para trabajar con listas.
+
+\begin{itemize}
+  \item El método append() se usa para añadir un elemento al final de una lista.
+  
+  \pythonfile{codigo/6-listas/append.py}
+
+  \item El método pop() elimina el último elemento de una lista.
+  
+  \pythonfile{codigo/6-listas/pop_1.py}
+  %TODO: Investigar más usos de pop() y otros métodos
+
+  \item El método len() retorna el tamaño (número de elementos) de una lista.
+  
+  \pythonfile{codigo/6-listas/len.py}
+
+  \item El método insert() se usa para insertar un elemento en un índice específico de una lista. Los elementos que están después del elemento insertado se desplazan a la derecha.
+
+  \pythonfile{codigo/6-listas/insert.py}
+
+  \item El método extend() se usa para añadir todos los elementos de una lista al final de otra lista.
+  
+  \pythonfile{codigo/6-listas/extend.py}
+
+  \item El método index() encuentra la primera aparición de un elemento en una lista y devuelve su índice. Si el elemento no está en la lista, muestra un ValueError.
+  
+  \pythonfile{codigo/6-listas/extend.py}
+
+  \item El método count() cuenta la cantidad de ocurrencias de un elemento en una lista.
+  
+  \pythonfile{codigo/6-listas/count.py}
+
+  \item El método remove() elimina la primera ocurrencia de un elemento en una lista.
+  
+  \pythonfile{codigo/6-listas/remove_1.py}
+
+  Una forma más segura de usar remove() es la siguiente:
+
+  \pythonfile{codigo/6-listas/remove_2.py}
+
+  \item Los métodos max() y min() devuelven el elemento de una lista con valor máximo o mínimo, respectivamente.
+
+  \pythonfile{codigo/6-listas/max_y_min_1.py}
+
+  Si son strings, los compara por orden alfabético. Se considera como “mayor” a las palabras que se encuentran al final después de ordenarlas alfabéticamente.
+
+  \pythonfile{codigo/6-listas/max_y_min_2.py}
+
+  \item El método sum() calcula la suma de los elementos de una lista.
+  
+  \pythonfile{codigo/6-listas/sum.py}
+
+  \item El método reverse() invierte los elementos de una lista.
+  
+  \pythonfile{codigo/6-listas/reverse.py}
+
+  \item El método sort() ordena alfabéticamente una lista de strings, por defecto se realiza ascendentemente. Para realizar el orden descendentemente, se debe entregar el parámetro reverse=True.
+  
+  \pythonfile{codigo/6-listas/sort_letras.py}
+  
+  También funciona con listas compuestas de números.
+
+  \pythonfile{codigo/6-listas/sort_numeros.py}
+
+  \item El método clear() quita todos los elementos de una lista.
+
+  \pythonfile{codigo/6-listas/clear.py}
+
+\end{itemize}
 
 \section{Copiar listas}
 
+Al intentar copiar listas sólo usando su nombre, en realidad se está haciendo una lista que hace referencia a la lista copiada. Esto significa que los cambios que reciba una lista también los recibirá la otra.
+
+\pythonfile{codigo/6-listas/copy_1.py}
+
+Para evitar esto, se puede usar el método copy() para hacer una copia de una lista en una nueva instancia.
+
+\pythonfile{codigo/6-listas/copy_2.py}
+
 \section{Strings como listas}
+
+%TODO: explicar que los strings son en realidad listas de caracteres
 
 \section{Indexación de strings}
 
+Algunos tipos de variables, como las cadenas, se pueden indexar como listas. La indexación de cadenas se comporta como si estuviera indexando una lista que contiene cada carácter de la cadena.
+
+\pythonfile{codigo/6-listas/strings_como_listas.py}
+
+Se debe recordar que el espacio $''$ $''$ también es considerado como símbolo y tiene su índice dentro de la cadena.
+
 \section{Conversión de strings a listas}
+
+El método list() convierte una cadena de caracteres en una lista de caracteres.
+
+\pythonfile{codigo/6-listas/list.py}
+
+El método split() convierte una cadena de caracteres en una lista de palabras, separadas por espacios “ “.
+
+\pythonfile{codigo/6-listas/split.py}
+
+%TODO: mover el split avanzado a otro capítulo
+
+Al método split() también se le puede entregar un string separador. La lista será formada con los elementos entre cada aparición de ese string.
+
+\pythonfile{codigo/6-listas/split_avanzado.py}
 
 \clearpage\chapter{Bucles}
 
 \section{Bucles while}
 
+Un bucle while se usa para repetir un bloque de código varias veces, siempre que se cumpla cierta condición. Generalmente se usan con una variable como contador.
+
+\pythonfile{codigo/7-bucles/while_1.py}
+
+El código en el cuerpo de un bucle while se ejecuta repetidamente. Esto se llama iteración.
+
+%TODO: while puede hacer otros cambios a las variables
+
+\section{Bucles infinitos}
+
+Si la condición a evaluar es siempre verdadera, el bucle se ejecutará indefinidamente. Esto se llama bucle infinito.
+
+\pythonfile{codigo/7-bucles/while_infinito.py}
+
+No se recomienda ejecutar este código. Si por algún motivo se ejecuta, se puede interrumpir su ejecución enviando un KeyboardInterrupt al usar la combinación de teclas Ctrl+C.
+
 \section{Declaración break}
 
+Para finalizar un bucle while prematuramente, se puede usar la declaración break.
+
+\pythonfile{codigo/7-bucles/break.py}
+
+El uso de la declaración break fuera de un bucle provoca un error.
+
+\pythonfile{codigo/7-bucles/error_break.py}
+
 \section{Declaración continue}
+
+Otra declaración que se puede utilizar dentro de los bucles es continue. A diferencia de break, continue salta de nuevo a la parte superior del bucle, en lugar de detenerlo. Básicamente, la declaración continue detiene la iteración actual y continúa con la siguiente.
+
+\pythonfile{codigo/7-bucles/continue.py}
+
+Al igual que la declaración break, usar continue fuera de un bucle provoca un error.
+
+\pythonfile{codigo/7-bucles/error_continue.py}
 
 \section{Bucle for con listas}
 
