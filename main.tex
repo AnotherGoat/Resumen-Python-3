@@ -303,25 +303,109 @@ Los comentarios multilínea no existen formalmente en Python, pero se puede hace
 
 \section{Concatenación de strings}
 
+Dos o más cadenas se pueden unir una después de la otra, usando un proceso llamado concatenación. Se usa el operador +.
+
+%TODO
+
+La concatenación sólo se puede realizar entre strings, no entre cadenas y números.
+
+%TODO
+
 \section{Multiplicación de strings}
 
+Las cadenas también pueden ser multiplicadas por números enteros. Esto produce una versión repetida de la cadena original. El orden de la cadena y el número no importa, pero la cadena suele ir primero.
+
+%TODO
+
+También se pueden combinar operaciones de multiplicación y concatenación.
+
+%TODO
+
+Multiplicar por 0 genera un string vacío.
+
+%TODO
+
 \section{Opciones del método print()}
+
+El método print() puede aceptar más de un string como argumento, lo cual hace que se muestren en una misma línea separados por espacios.
+
+%TODO
+
+El método print() tiene 2 argumentos que pueden definirse para dar más control sobre lo que se imprime en la pantalla.
+
+El argumento sep define el string separador entre cada string \doble{normal} que se le entregue al método print(), excepto después del último. Estos separadores pueden incluir secuencias de escape.
+
+%TODO
+
+El argumento end define el string que irá después del último string \doble{normal}. Se puede usar para seguir escribiendo en la misma línea, si no se incluye la secuencia de escape \textbackslash n.
+
+%TODO
+%TODO
+
+Ambos argumentos se pueden combinar.
+
+%TODO
 
 \clearpage\chapter{Variables}
 
 \section{Asignación de variables}
 
+Una variable permite almacenar un valor asignándole un nombre, el cual puede ser usado para referirse al valor más adelante en el programa. Para asignar una variable, se usa el signo igual =.
+
+%TODO
+
 \section{Nombre de variables válidos}
+
+Se aplican ciertas restricciones con respecto a los caracteres que se pueden usar en los nombres de variables. Los únicos caracteres permitidos son letras, números y guiones bajos. Además, no se puede comenzar con números o incluir espacios.
+
+%TODO
+
+Python es sensible a mayúsculas y minúsculas, lo que significa que las variables \doble{num}, \doble{Num}, \doble{NUM}, etc. son distintas.
 
 \section{Palabras clave}
 
+Existen palabras específicas que tampoco se pueden usar como nombres de variables. El intérprete de Python reconoce estas palabras como palabras clave o keywords, y tienen usos reservados.
+
+A continuación, se muestra una lista de todas las palabras clave en Python.
+
+%TODO
+
+Nótese el uso de mayúsculas al principio de False, None y True.
+
 \section{Operaciones con variables}
 
+Se pueden usar variables dentro de operaciones. Lo único que se debe recordar es que deben declararse antes.
+
+%TODO
+
+Una variable también puede cambiar de valor a lo largo de la ejecución de un programa.
+
+%TODO
+
 \section{Entrada}
+
+Para obtener información del usuario, se puede usar la función input(). La información obtenida puede ser almacenada como una variable.
+
+%TODO
+
+Toda la información recibida por el método input() es retornada como un string.
+También se puede entregar un string como parámetro al método input(), lo cual mostrará texto antes de pedir la entrada. Esto sirve para aclarar qué entrada está solicitando el programa.
+
+%TODO
+
+Al usar la función input(), el flujo del programa se detiene hasta que el usuario ingrese algún valor.
 
 \section{Conversión de tipos de datos}
 
 \section{Operadores de asignación}
+
+Los operadores de asignación permiten escribir código como \simple{x = x + 1} de manera más concisa, como \simple{x += 1}. Lo mismo es posible con otros operadores como -, *, /, //, \% y **.
+
+%TODO
+
+También se pueden usar con los operadores de concatenación y multiplicación de strings.
+
+%TODO
 
 \clearpage\chapter{Declaraciones if}
 
@@ -379,6 +463,12 @@ Los comentarios multilínea no existen formalmente en Python, pero se puede hace
 
 \section{¿Qué es una función?}
 
+Cualquier sentencia que consista de una palabra seguida de información entre paréntesis es llamada una función.
+
+Ejemplos de funciones que se han visto anteriormente.
+
+%TODO
+
 \section{Definición de funciones}
 
 \section{Llamado de funciones}
@@ -401,7 +491,31 @@ Los comentarios multilínea no existen formalmente en Python, pero se puede hace
 
 \section{La biblioteca estándar}
 
+Hay 3 tipos principales de módulos en Python: aquellos que escribes tú mismo, aquellos que se instalan de fuentes externas y aquellos que vienen preinstalados con Python.
+
+El último tipo se denomina la biblioteca estándar, y contiene muchos módulos útiles. Algunos de estos módulos son:
+
+%TODO
+
+La extensa biblioteca estándar de Python es una de sus principales fortalezas como lenguaje. Se puede encontrar más información sobre los módulos de la biblioteca estándar en \href{https://docs.python.org/3/library/index.html}{\underline{la documentación}}.
+
+Algunos de los módulos en la biblioteca estándar están escritos en Python y otros en C. La mayoría están disponibles en todas las plataformas, pero algunos son específicos de Windows o Unix.
+
 \section{Módulos externos y pip}
+
+Muchos módulos de Python creados por terceros son almacenados en el índice de paquetes Python (Python Package Index, PyPI). Se puede ver el repositorio en su \href{https://pypi.org}{\underline{sitio web oficial.}}
+
+La mejor manera de instalar estos es utilizando un programa llamado pip. Este viene instalado por defecto con las distribuciones modernas de Python.
+
+Para instalar una biblioteca, se debe buscar su nombre, ir a la línea de comandos y escribir pip install nombre.
+
+%TODO
+
+Es importante recordar que los comandos de pip se deben introducir en la línea de comandos, no en el interpretador de Python.
+
+Se puede ingresar el comando pip help para ver información sobre otros comandos que se pueden usar con este gestor de paquetes.
+
+Utilizar pip es la forma estándar de instalar bibliotecas en la mayoría de sistemas operativos, pero algunas bibliotecas tienen binarios predefinidos para Windows. Estos son archivos ejecutables regulares que permiten instalar bibliotecas con una interfaz gráfica de la misma manera que se instalan otros programas.
 
 \clearpage\chapter{El módulo math}
 
@@ -441,7 +555,11 @@ Los comentarios multilínea no existen formalmente en Python, pero se puede hace
 
 \section{Objeto None}
 
+%TODO: Mover a un capítulo más apropiado
+
 \section{Diccionarios}
+
+%TODO: Método keys()
 
 \section{Indexación de diccionarios}
 
@@ -505,35 +623,172 @@ Los comentarios multilínea no existen formalmente en Python, pero se puede hace
 
 \clearpage\chapter{Programación orientada a objetos}
 
+%TODO: mejorar la redacción en todo el capítulo
+
 \section{Programación orientada a objetos}
+
+Anteriormente se vieron 2 paradigmas de programación: imperativa (utilizando declaraciones, bucles y funciones como subrutinas) y funcional (utilizando funciones puras, funciones de orden superior y recursión).
+
+Otro paradigma muy popular es la programación orientada a objetos (POO). Los objetos son creados utilizando clases, las cuales son en realidad el eje central de la POO.
 
 \section{Clases}
 
-\section{Método init}
+La clase describe lo que el objeto será, pero es independiente del objeto mismo. En otras palabras, una clase puede ser descrita como los planos, la descripción o definición de un objeto. Una misma clase puede ser utilizada como plano para crear varios objetos diferentes.
+
+Las clases son creadas utilizando la palabra clave class y un bloque indentado que contiene los métodos de una clase (los cuales son funciones).
+
+%TODO
+
+El código define una clase llamada Gato, la cual tiene el atributo color. Luego, la clase es utilizada para crear 2 objetos independientes de esa clase.
+
+\section{Método \_\_init\_\_}
+
+El método \_\_init\_\_ es el más importante de una clase. Es llamada cuando una instancia (objeto) de una clase es creada, utilizando el nombre de la clase como función.
+
+Todos los métodos deben tener self como su primer parámetro. Aunque no sea pasado explícitamente, Python agrega el argumento self automáticamente. No se necesita entregar cuando se llaman los métodos.
+
+Dentro de la definición de un método, self se refiere a la instancia que está llamando al método.
+
+Las instancias de una clase tienen atributos, los cuales son datos asociados a ellas. En este ejemplo, las instancias de Gato tienen los atributos color y edad. Los atributos pueden ser accedidos al poner un punto seguido del nombre del atributo luego del nombre de una instancia.
+
+%TODO
+
+En un método \_\_init\_\_, self.atributo puede ser usado para fijar un valor inicial a los atributos de una instancia.
+
+En el método mostrado anteriormente, el método \_\_init\_\_ recibe 2 argumentos y los asigna a los atributos del objeto. El método \_\_init\_\_ es llamado el constructor de la clase.
+
+Si una clase no tiene atributos que se quieran inicializar con cada instancia, se puede omitir el método \_\_init\_\_.
+
+%TODO
+
+%TODO Separar esta sección
 
 \section{Atributos}
 
 \section{Métodos}
 
+Las clases pueden tener otros métodos definidos para agregarles funcionalidad. Todos los métodos deben tener self como su primer parámetro.
+Estos métodos son accedidos utilizando la misma sintaxis de punto que los atributos.
+
+%TODO
+
 \section{Atributos de clase}
+
+Las clases pueden tener atributos de clase también, creados al asignar variables dentro del cuerpo de una clase. Estos pueden ser accedidos desde instancias de una clase o desde la clase misma.
+
+%TODO
+
+Los atributos de clase son compartidos por todas las instancias de una clase. Realizar algún cambio a un atributo de la clase también hará ese cambio en las instancias de esa clase.
+
+%TODO
 
 \section{Excepciones de clases}
 
+Tratar de acceder a un atributo de una instancia que no está definida generará un AttributeError. Esto también aplica cuando se llama un método no definido.
+
+%TODO
+
 \section{Herencia}
+
+La herencia brinda una manera de compartir funcionalidades entre clases.
+
+Por ejemplo, las clases Perro, Gato, Conejo, etc. tienen algo en común. Aunque presenten algunas diferencias, también tienen muchas características en común. Este parecido puede ser expresado haciendo que todos hereden de una superclase Animal, que contiene las funcionalidades compartidas.
+
+Para heredar de una clase desde otra, se coloca el nombre de la superclase entre paréntesis luego del nombre de la clase.
+
+%TODO
+
+Una clase que hereda de otra clase se llama subclase. Una clase de la cual se hereda se llama superclase.
+
+Si una clase hereda de otra con los mismos atributos o métodos, los sobreescribe.
+
+%TODO
+
+La herencia también puede ser indirecta. Una clase hereda de otra, y esa clase puede a su vez heredar de una tercera clase.
+
+%TODO
+
+Sin embargo, no es posible la herencia circular.
 
 \section{Función super()}
 
+La función super() es una útil función relacionada con la herencia que hace referencia a la clase padre. Puede ser utilizada para encontrar un método con un determinado nombre en la superclase del objeto.
+
+%TODO
+
+También se puede usar para llamar al constructor de la superclase.
+
+%TODO
+
 \section{Métodos mágicos}
+
+Los métodos mágicos son métodos especiales que tienen doble guión bajo al principio y al final de sus nombres. Son también conocidos en inglés como dunders (de double underscores).
+
+El constructor \_\_init\_\_ es un método mágico, pero existen muchos más. Son utilizados para crear funcionalidades que no pueden ser representadas en un método regular.
 
 \section{Sobrecarga de operadores aritméticos}
 
 \section{Sobrecarga de operadores de comparación}
 
+Python también ofrece métodos mágicos para comparaciones.
+
+%TODO
+
+Si \_\_ne\_\_ no está implementado, devuelve el opuesto de \_\_eq\_\_. No hay ninguna otra relación entre los otros operadores.
+
+%TODO
+
 \section{Métodos mágicos de contenedores}
+
+Hay varios métodos mágicos para hacer que las clases actúen como contenedores.
+
+%TODO
+
+A continuación, se muestra un ejemplo rebuscado pero creativo, el cual consiste en crear una clase de lista poco confiable o imprecisa.
+
+%TODO
+
+%TODO: Investigar más métodos mágicos
 
 \section{Ciclo de vida de un objeto}
 
+El ciclo de vida de un objeto está conformado por su creación, manipulación y destrucción.
+
+La primera etapa del ciclo de vida de un objeto es la definición de la clase a la cual pertenece.
+
+La siguiente etapa es la instanciación de un objeto, cuando el método \_\_init\_\_ es llamado. La memoria es asignada para almacenar la instancia. Justo antes de que esto ocurra, el método \_\_new\_\_ de la clase es llamado, para asignar la memoria necesaria. Este es normalmente redefinido sólo en casos especiales.
+
+Luego de que ocurra lo anterior el objeto estará listo para ser utilizado.
+
+Otro código puede interactuar con el objeto, llamando sus métodos o accediendo a sus atributos. Eventualmente, terminará de ser utilizado y podrá ser destruido.
+
+Cuando un objeto es destruido, la memoria asignada se libera y puede ser utilizada para otros propósitos.
+
+La destrucción de un objeto ocurre cuando su contador de referencias llega a cero. La cuenta de referencias es el número de variables y otros elementos que se refieren al objeto.
+
+Si nada se está refiriendo al objeto (tiene una cuenta de referencias de 0) nada puede interactuar con este, así que puede ser eliminado con seguridad.
+En algunas situaciones, dos (o más) objetos pueden solo referirse entre ellos, y por lo tanto pueden ser eliminados también.
+
+La sentencia del reduce la cuenta de referencias de un objeto por 1, y a menudo conlleva a su eliminación. El método mágico de la sentencia del es \_\_del\_\_.
+
+El proceso de eliminación de objetos cuando ya no son necesarios se denomina recolección de basura (garbage collection).
+
+En resumen, el contador de referencias de un objeto se incrementa cuando se le es asignado un nuevo nombre o es colocado en un contenedor (una lista, tupla o diccionario). La cuenta de referencias de un objeto se disminuye cuando es eliminado con del, su referencia es reasignada, o su referencia sale fuera del alcance. Cuando la cuenta de referencias de un objeto llega a 0, Python lo elimina automáticamente.
+
+%TODO
+
+Lenguajes de bajo nivel como C no tienen esta clase de manejo de memoria automático.
+
 \section{Encapsulamiento}
+
+Un componente clave de la programación orientada a objetos es el encapsulamiento, que involucra empaquetar las variables y funciones relacionadas en un único objeto fácil de usar, una instancia de una clase.
+
+Un concepto asociado es el de ocultamiento de información, el cual dicta que los detalles de implementación de una clase deben estar ocultos y que sean presentados a aquellos que quieran utilizar la clase en una interfaz estándar limpia. En otros lenguajes de programación, esto se logra normalmente utilizando métodos y atributos privados, los cuales bloquean el acceso externo a ciertos métodos y atributos en una clase.
+
+La filosofía de Python es ligeramente diferente. A menudo se dice “todos somos adultos consistentes aquí”, que significa que no deberías poner restricciones arbitrarias al acceso de las partes de una clase. Por ende, no hay formas de imponer que un método o atributo sea estrictamente privado.
+
+Sin embargo, hay maneras de desalentar a la gente de acceder a las partes de una clase, tales como denotar que es un detalle de implementación y debe ser utilizado a su cuenta y riesgo.
+
 
 \clearpage\chapter{Expresiones regulares}
 
