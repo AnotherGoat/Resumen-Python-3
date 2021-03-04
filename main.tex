@@ -1,46 +1,35 @@
-\documentclass{article}
+\documentclass{report}
 
-% para usar codificación utf8
 \usepackage[utf8]{inputenc}
-% define los márgenes del documento
-\usepackage{geometry}
-\geometry{
-  a4paper,
-  left = 3cm,
-  right = 3cm,
-  top = 2.5cm,
-  bottom = 2.5cm
-}
-% se usan para darle color los títulos y subtítulos
-\usepackage{titlesec}
-\usepackage{color}
-% permite añadir imágenes al documento
-\usepackage{graphicx}
-% usado para operaciones matemáticas
-\usepackage{amsmath}
-% usado para mostrar mejor los bloques de código
+\usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
 \usepackage[outputdir=build]{minted}
-\usemintedstyle{perldoc}
-\usepackage{xcolor}
-\usepackage{caption}
-% traduce textos como "figure" al español
+\usepackage{sectsty}
+\usepackage{tocloft}
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
 \usepackage[spanish]{babel}
+\usepackage[colorlinks=true, linkcolor=., urlcolor=NavyBlue]{hyperref}
 
-% títulos de color azul y subtítulos de color rojo
-\titleformat*{\section}{\normalfont\Large\bfseries\color{blue}}
-\titleformat*{\subsection}{\normalfont\large\bfseries\color{red}}
+% estilo de los segmentos de código
+\usemintedstyle{perldoc}
+
+% capítulos de color azul y secciones de color rojo
+\chapterfont{\color{OliveGreen}}
+\sectionfont{\color{RoyalBlue}}
+
+% también en la tabla de contenidos
+\renewcommand{\cftchapfont}{\bfseries\color{OliveGreen}}
+\renewcommand{\cftsecfont}{\color{RoyalBlue}}
 
 % párrafos sin sangría
 \setlength\parindent{0pt}
 % separación entre párrafos
-\setlength{\parskip}{1.5ex}
+\setlength\parskip{1.5ex}
 
-% reduce el espacio que rodea los subtítulos
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
-
-% las figuras no muestran el texto "figure" ni el número
-\captionsetup[listing]{labelformat=empty}
+% cambiar espacio entre números y texto en la tabla de contenidos
+%\setlength\cftchapternumwidth{4em}
+%\setlength\cftsectionnumwidth{4em}
 
 % comandos nuevos para comillas simples y dobles
 \newcommand{\simple}[1]{`#1'}
@@ -76,80 +65,73 @@
 \vfill 
 \break
 
-\newpage
+\clearpage
+
+% tabla de contenido
+\tableofcontents
+
+\clearpage
 
 % el resto del documento tiene números de página
 \pagenumbering{arabic}
 
-\section{Introducción a Python}
+\chapter{Introducción a Python}
 
-\subsection{¿Qué es Python?}
+\section{¿Qué es Python?}
 
-Python es un lenguaje de programación de alto nivel, con aplicaciones en numerosas áreas, incluyendo programación web, scripting, computación científica e inteligencia artificial.
+\href{https://www.python.org}{\underline{Python}} es un lenguaje de programación de alto nivel, con aplicaciones en numerosas áreas, incluyendo programación web, scripting, computación científica e inteligencia artificial.
 
-Es muy popular y usado por organizaciones como Google, la NASA, la CIA y Disney.
+Es muy popular y usado por organizaciones como \href{https://www.google.com}{\underline{Google}}, \href{https://www.nasa.gov}{\underline{la NASA}}, \href{https://www.cia.gov}{\underline{la CIA}} y \href{https://www.disney.com}{\underline{Disney}}.
 
 No hay limitaciones en lo que se puede construir usando Python. Esto incluye aplicaciones autónomas, aplicaciones web, juegos, ciencia de datos, modelos de machine learning y mucho más.
 
 Dato curioso: Según el creador Guido van Rossum, el nombre de Python viene de la serie de comedia británica \doble{El Circo Volador de Monty Python}.
 
-\subsection{El Zen de Python}
+\section{El Zen de Python}
 
 El Zen de Python es una colección de 19 \doble{principios} para escribir programas de computadores que influenciaron el diseño y representan la filosofía de este lenguaje de programación.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/1-intro/import_this.py}
-  \caption{El Zen de Python se muestra en pantalla la primera vez que se ejecute esta línea.}
-\end{listing*}
+El Zen de Python se muestra en pantalla la primera vez que se ejecute la siguiente linea.
 
-\begin{listing*}[ht!]
-  \textfile{codigo/1-intro/zen.txt}
-  \caption{El Zen de Python, escrito por Tim Peters.}
-\end{listing*}
+\pythonfile{codigo/1-intro/import_this.py}
 
-\subsection{Hola mundo}
+Después se mostrará el siguiente texto.
+
+\textfile{codigo/1-intro/zen.txt}
+
+\section{Hola mundo}
 
 Para mostrar el texto \doble{Hola mundo} en pantalla se puede usar la función print().
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/1-intro/hola_mundo_1.py}
-  \caption{Hola mundo, el clásico primer programa en cualquier lenguaje de programación.}
-\end{listing*}
+\pythonfile{codigo/1-intro/hola_mundo_1.py}
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/1-intro/hola_mundo_2.py}
-  \caption{Cada declaración de impresión print() genera texto en una nueva línea.}
-\end{listing*}
+Cada declaración de impresión print() genera texto en una nueva línea.
 
-\newpage\section{Conceptos básicos}
+\pythonfile{codigo/1-intro/hola_mundo_2.py}
 
-\subsection{Comentarios}
+\clearpage\chapter{Conceptos básicos}
+
+\section{Comentarios}
 
 Los comentarios son anotaciones en el código utilizadas para hacerlo más fácil de entender. No afectan la ejecución del código.
 
 En Python, los comentarios comienzan con el símbolo \#. Todo el texto luego de este \# (dentro de la misma línea) es ignorado.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/2-basico/comentario.py}
-  \caption{Ejemplo de un comentario en Python.}
-\end{listing*}
+\pythonfile{codigo/2-basico/comentario.py}
 
 Python no soporta comentarios multilínea, al contrario de otros lenguajes de programación.
 
 A lo largo de este resumen, se usarán comentarios para mostrar la salida de algunas funciones, cuando sea posible.
 
-\subsection{Operaciones aritméticas}
+\section{Operaciones aritméticas}
 
 Python tiene la capacidad de realizar cálculos. Los operadores +, -, * y / representan suma, resta, multiplicación y división, respectivamente.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/2-basico/aritmetica_1.py}
-  \caption{Adición, sustracción, multiplicación y división en Python.}
-\end{listing*}
+\pythonfile{codigo/2-basico/aritmetica_1.py}
 
 Los espacios entre los signos y los números son opcionales, pero hacen que el código sea más fácil de leer.
 
-\subsection{La regla PEMDAS}
+\section{La regla PEMDAS}
 
 Las operaciones en Python siguen el orden dado por la regla PEMDAS:
 
@@ -162,371 +144,411 @@ Las operaciones en Python siguen el orden dado por la regla PEMDAS:
 
 % TODO: aritmetica 2 con ejemplos de operaciones combinadas
 
-\subsection{Paréntesis}
+\section{Paréntesis}
 
 Se pueden usar paréntesis () para agrupar operaciones y hacer que estas se realicen primero, siguiendo la regla PEMDAS.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/2-basico/aritmetica_3.py}
-  \caption{Uso de paréntesis para cambiar el orden de las operaciones.}
-\end{listing*}
+\pythonfile{codigo/2-basico/aritmetica_3.py}
 
-\subsection{Floats}
+\section{Floats}
     
-Para representar números que no son enteros, se usa el tipo de dato float o punto flotante. Se pueden crear directamente ingresando un número con un punto decimal, o como resultado de una división.
+Para representar números racionales o que no son enteros, se usa el tipo de dato float o punto flotante. Se pueden crear directamente ingresando un número con un punto decimal, o como resultado de una división.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/2-basico/float_1.py}
-  \caption{Los floats representan números racionales.}
-\end{listing*}
+\pythonfile{codigo/2-basico/float_1.py}
 
 Se debe tener en cuenta que los computadores no pueden almacenar perfectamente el valor de los floats, lo cual a menudo conduce a errores.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/2-basico/error_float.py}
-  \caption{Un error clásico de la aritmética de punto flotante.}
-\end{listing*}
+\pythonfile{codigo/2-basico/error_float.py}
+
+El error mostrado arriba es un error clásico de la aritmética de punto flotante. Incluso tiene su propio \href{\underline{https://0.30000000000000004.com}}{sitio web}.
 
 Al trabajar con floats, no es necesario escribir un 0 a la izquierda del punto decimal.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/2-basico/float_2.py}
-  \caption{Esta notación se asemeja a decir \doble{punto cinco} en vez de \doble{cero punto cinco}.}
-\end{listing*}
+\pythonfile{codigo/2-basico/float_2.py}
+
+Esta notación se asemeja a decir \doble{punto cinco} en vez de \doble{cero punto cinco}.
 
 El resultado de cualquier operación entre floats o entre un float y un entero siempre dará como resultado un float. La división entre enteros también da como resultado un float.
 
 %TODO: float 3 mostrando resultados de operaciones entro floats y enteros
 
-\subsection{Exponenciación}
+\section{Exponenciación}
 
 Otra operación soportada es la exponenciación, que es la elevación de un número a la potencia de otro. Esto se realiza usando el operador **.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/2-basico/potencia.py}
-  \caption{Ejemplo equivalente a $2 ^ 5 = 32$.}
-\end{listing*}
+Ejemplo equivalente a $2 ^ 5 = 32$.
 
-\subsection{Cociente y resto}
+\pythonfile{codigo/2-basico/potencia.py}
+
+\section{Cociente y resto}
 
 La división entera se realiza usando el operador //, donde el resultado es la parte entera que queda al realizar la división, también conocida como cociente.
-  
-\begin{listing*}[ht!]
-  \pythonfile{codigo/2-basico/cociente.py}
-  \caption{La división entera retorna un entero en vez de un float.}
-\end{listing*}
+
+La división entera retorna un entero en vez de un float.
+
+\pythonfile{codigo/2-basico/cociente.py}
 
 Para obtener el resto al realizar una división entera, se debe usar el operador módulo \%.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/2-basico/resto.py}
-  \caption{Esta operación es equivalente a $7 \mod{2}$ en aritmética modular.}
-\end{listing*}
+\pythonfile{codigo/2-basico/resto.py}
+
+Esta operación es equivalente a $7 \mod{2}$ en aritmética modular.
 
 Este operador viene de la aritmética modular, y uno de sus usos más comunes es para saber si un número es múltiplo de otro. Esto se hace revisando si el módulo al dividirlo por ese otro número es 0.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/2-basico/uso_del_resto.py}
-  \caption{El caso particular módulo 2 también puede usarse para saber si un número es par o no.}
-\end{listing*}
+\pythonfile{codigo/2-basico/uso_del_resto.py}
 
-\newpage\section{Cadenas de texto}
+El caso particular módulo 2 también puede usarse para saber si un número es par o no.
 
-\subsection{Strings o cadenas de caracteres}
+\clearpage\chapter{Cadenas de texto}
 
-Las cadenas de caracteres se crean introduciendo el texto entre comillas simples \simple{} o dobles \doble{}.
+\section{Strings o cadenas de caracteres}
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/3-strings/string.py}
-  \caption{Una cadena de caracteres válida.}
-\end{listing*}
+Las cadenas de caracteres se crean introduciendo el texto entre comillas simples $'$$'$ o dobles $''$$''$.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/3-strings/strings_no_validos.py}
-  \caption{Un string debe empezar y terminar con comillas del mismo tipo, no se permiten comillas mixtas.}
-\end{listing*}
+\pythonfile{codigo/3-strings/string.py}
 
-\subsection{Cadena vacía}
+Un string debe empezar y terminar con comillas del mismo tipo, no se permiten comillas mixtas.
 
-A veces es necesario inicializa un string, pero sin agregarle información. Una cadena vacía es definida como \simple{} o \doble{}.
+\pythonfile{codigo/3-strings/strings_no_validos.py}
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/3-strings/cadena_vacia.py}
-  \caption{Estos strings vacíos se inicializan en variables, lo cual se verá en el capítulo siguiente.}
-\end{listing*}
+\section{Cadena vacía}
 
-\subsection{Caracteres especiales}
+A veces es necesario inicializa un string, pero sin agregarle información. Una cadena vacía es definida como $'$$'$ o $''$$''$.
+
+\pythonfile{codigo/3-strings/cadena_vacia.py}
+
+Estos strings vacíos se inicializan en variables, lo cual se verá en el capítulo siguiente.
+
+\section{Caracteres especiales}
 
 Algunos caracteres no se pueden incluir directamente en una cadena. Para esos casos, se debe incluir la barra diagonal inversa \textbackslash antes de ellos.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/3-strings/caracteres_especiales.py}
-  \caption{Los caracteres $'$, $''$ y \textbackslash son especiales, porque normalmente cumplen funciones especiales dentro de strings.}
-\end{listing*}
+\pythonfile{codigo/3-strings/caracteres_especiales.py}
+
+Los caracteres $'$, $''$ y \textbackslash son especiales, porque normalmente cumplen funciones especiales dentro de strings.
 
 Si el string se define entre comillas dobles, no es necesario poner $'$ para ingresar comillas simples dentro de él, y viceversa.
 
-\begin{listing*}[ht!]
-  \pythonfile{codigo/3-strings/comillas.py}
-  \caption{Esto puede ser más cómodo de escribir si se aprovecha.}
-\end{listing*}
+\pythonfile{codigo/3-strings/comillas.py}
 
-\subsection{Secuencias de escape}
+\section{Secuencias de escape}
 
-\subsection{Caracteres Unicode}
+Las secuencias de escape también se pueden incluir usando el símbolo \textbackslash dentro de cadenas de texto. Su origen viene de las secuencias de escape usadas en las máquinas de escribir.
 
-\subsection{Strings multilínea}
+Algunas de las secuencias de escape más usadas son:
+% TODO: mejorar estos ejemplos
 
-\subsection{Comentarios multilínea}
+\begin{itemize}
+  \item Nueva línea (new line): Avanza una línea hacia adelante (salto de línea) y deja el cursor al principio de esta línea (retorno de carro). Representado por \textbackslash n.
+  
+  \pythonfile{codigo/3-strings/newline.py}
+  
+  Cualquier caracter después de \textbackslash n queda en la línea siguiente.
 
-\subsection{Concatenación de strings}
+  \item Tabulador horizontal (horizontal tab): Añade un salto de tabulador horizontal. Representado por \textbackslash t.
+  
+  \pythonfile{codigo/3-strings/tab.py}
+  
+  El salto de tabulador avanza hasta el siguiente \doble{tab stop} de la misma línea.
 
-\subsection{Multiplicación de strings}
+  \item Retorno de carro (carriage return): Mueve el \doble{carro} (cursor) al principio de la línea actual, eliminando todos los caracteres de esa línea. Representado por \textbackslash r.
+  
+  \pythonfile{codigo/3-strings/carriage_return.py}
 
-\subsection{Opciones del método print()}
+  \item Retroceso (backspace): Borra el último carácter y mueve el cursor al carácter anterior. Representado por \textbackslash b.
+  
+  \pythonfile{codigo/3-strings/backspace.py}
 
-\newpage\section{Variables}
+\end{itemize}
 
-\subsection{Asignación de variables}
+Otras secuencias de escape que cada vez se usan menos son:
 
-\subsection{Nombre de variables válidos}
+\begin{itemize}
+  \item Tabulador vertical (vertical tab): Añade un salto de tabulador vertical. Representado por \textbackslash v.
+  
+  \pythonfile{codigo/3-strings/vtab.py}
 
-\subsection{Palabras clave}
+  La tabulación vertical avanza hasta la siguiente línea que sea una \doble{tab stop}.
 
-\subsection{Operaciones con variables}
+  \item Salto de página (form feed): Baja a la próxima \doble{página}. Representado por \textbackslash f.
+  
+  \pythonfile{codigo/3-strings/form_feed.py}
+  
+  Algunos programadores los usaban para separar distintas secciones de código en \doble{páginas}.
 
-\subsection{Entrada}
+\end{itemize}
 
-\subsection{Conversión de tipos de datos}
+\section{Caracteres Unicode}
 
-\subsection{Operadores de asignación}
+Las barras diagonales inversas también se pueden usar para escribir caracteres Unicode arbitrarios. Se escriben como \textbackslash u seguido del código del carácter Unicode (en hexadecimal).
 
-\newpage\section{Declaraciones if}
+Los códigos Unicode se aceptan sin importar que tengan mayúsculas o minúsculas.
 
-\subsection{Booleanos}
+\pythonfile{codigo/3-strings/unicode.py}
 
-\subsection{Operadores de comparación}
+El \href{https://unicode.org/}{\underline{sitio web de Unicode}} contiene más información sobre estos caracteres y sobre este estándar. \href{https://unicode-table.com/en/}{\underline{Este sitio web}} tiene una tabla con los códigos.
 
-\subsection{Declaración if}
+\section{Strings multilínea}
 
-\subsection{Declaración if-else}
+Este es un tipo especial de string, que se escribe entre comillas triples $'$$'$$'$ o $''$$''$$''$, y que reconoce los saltos de línea sin necesidad de usar la secuencia \textbackslash n.
 
-\subsection{Declaración elif}
+\pythonfile{codigo/3-strings/string_multilinea.py}
 
-\subsection{Operadores lógicos}
+\section{Comentarios multilínea}
 
-\subsection{Precedencia de operadores lógicos}
+Los comentarios multilínea no existen formalmente en Python, pero se puede hacer algo parecido usando
 
-\newpage\section{Listas}
+% TODO: Esta sección
 
-\subsection{Creación de listas}
+\section{Concatenación de strings}
 
-\subsection{Indexación de listas}
+\section{Multiplicación de strings}
 
-\subsection{Lista vacía}
+\section{Opciones del método print()}
 
-\subsection{Anidación de listas}
+\clearpage\chapter{Variables}
 
-\subsection{Operaciones con listas}
+\section{Asignación de variables}
 
-\subsection{Funciones de listas}
+\section{Nombre de variables válidos}
 
-\subsection{Copiar listas}
+\section{Palabras clave}
 
-\subsection{Strings como listas}
+\section{Operaciones con variables}
 
-\subsection{Indexación de strings}
+\section{Entrada}
 
-\subsection{Conversión de strings a listas}
+\section{Conversión de tipos de datos}
 
-\newpage\section{Bucles}
+\section{Operadores de asignación}
 
-\subsection{Bucles while}
+\clearpage\chapter{Declaraciones if}
 
-\subsection{Declaración break}
+\section{Booleanos}
 
-\subsection{Declaración continue}
+\section{Operadores de comparación}
 
-\subsection{Bucle for con listas}
+\section{Declaración if}
 
-\subsection{Rangos}
+\section{Declaración if-else}
 
-\subsection{Bucle for en rangos}
+\section{Declaración elif}
 
-\newpage\section{Funciones}
+\section{Operadores lógicos}
 
-\subsection{¿Qué es una función?}
+\section{Precedencia de operadores lógicos}
 
-\subsection{Definición de funciones}
+\clearpage\chapter{Listas}
 
-\subsection{Llamado de funciones}
+\section{Creación de listas}
 
-\subsection{Devolución de valores en una función}
+\section{Indexación de listas}
 
-\subsection{Docstring}
+\section{Lista vacía}
 
-\subsection{Funciones como objetos}
+\section{Anidación de listas}
 
-\subsection{Sobrecarga de funciones}
+\section{Operaciones con listas}
 
-\subsection{Anotaciones de tipos}
+\section{Funciones de listas}
 
-\newpage\section{Módulos y la biblioteca estándar}
+\section{Copiar listas}
 
-\subsection{Módulos}
+\section{Strings como listas}
 
-\subsection{Alias}
+\section{Indexación de strings}
 
-\subsection{La biblioteca estándar}
+\section{Conversión de strings a listas}
 
-\subsection{Módulos externos y pip}
+\clearpage\chapter{Bucles}
 
-\newpage\section{El módulo math}
+\section{Bucles while}
 
-\newpage\section{El módulo random}
+\section{Declaración break}
 
-\newpage\section{Manejo de excepciones}
+\section{Declaración continue}
 
-\subsection{Excepciones}
+\section{Bucle for con listas}
 
-\subsection{Declaración try-except}
+\section{Rangos}
 
-\subsection{Declaración finally}
+\section{Bucle for en rangos}
 
-\subsection{Levatar excepciones}
+\clearpage\chapter{Funciones}
 
-\subsection{Aserciones}
+\section{¿Qué es una función?}
 
-\newpage\section{Pruebas unitarias}
+\section{Definición de funciones}
 
-\newpage\section{Manejo de archivos}
+\section{Llamado de funciones}
 
-\subsection{Abrir archivos}
+\section{Devolución de valores en una función}
 
-\subsection{Modos de apertura}
+\section{Docstring}
 
-\subsection{Cierre de archivos}
+\section{Funciones como objetos}
 
-\subsection{Lectura de archivos}
+\section{Sobrecarga de funciones}
 
-\subsection{Escritura de archivos}
+\section{Anotaciones de tipos}
 
-\subsection{Declaración with}
+\clearpage\chapter{Módulos y la biblioteca estándar}
 
-\newpage\section{Módulos time y datetime}
+\section{Módulos}
 
-\newpage\section{Iterables}
+\section{Alias}
 
-\subsection{Objeto None}
+\section{La biblioteca estándar}
 
-\subsection{Diccionarios}
+\section{Módulos externos y pip}
 
-\subsection{Indexación de diccionarios}
+\clearpage\chapter{El módulo math}
 
-\subsection{Uso de in y not en diccionarios}
+\clearpage\chapter{El módulo random}
 
-\subsection{Función get()}
+\clearpage\chapter{Manejo de excepciones}
 
-\subsection{Función keys()}
+\section{Excepciones}
 
-\subsection{Tuplas}
+\section{Declaración try-except}
 
-\subsection{Cortes de lista}
+\section{Declaración finally}
 
-\subsection{Cortes de tuplas}
+\section{Levatar excepciones}
 
-\subsection{Subcadenas}
+\section{Aserciones}
 
-\subsection{Listas por compresión}
+\clearpage\chapter{Pruebas unitarias}
 
-\subsection{Formateo de cadenas}
+\clearpage\chapter{Manejo de archivos}
 
-\subsection{Funciones de cadenas}
+\section{Abrir archivos}
 
-\subsection{Funciones all() y any()}
+\section{Modos de apertura}
 
-\subsection{Función enumerate()}
+\section{Cierre de archivos}
 
-\newpage\section{Programación funcional}
+\section{Lectura de archivos}
 
-\subsection{Funciones puras}
+\section{Escritura de archivos}
 
-\subsection{Lambdas}
+\section{Declaración with}
 
-\subsection{Función map()}
+\clearpage\chapter{Módulos time y datetime}
 
-\subsection{Función filter()}
+\clearpage\chapter{Iterables}
 
-\subsection{Generadores}
+\section{Objeto None}
 
-\subsection{Decoradores}
+\section{Diccionarios}
 
-\subsection{Iteración}
+\section{Indexación de diccionarios}
 
-\subsection{Recursión}
+\section{Uso de in y not en diccionarios}
 
-\newpage\section{Conjuntos y estructuras de datos}
+\section{Función get()}
 
-\subsection{Conjuntos}
+\section{Función keys()}
 
-\subsection{Operaciones con conjuntos}
+\section{Tuplas}
 
-\subsection{Estructuras de datos}
+\section{Cortes de lista}
 
-\newpage\section{El módulo itertools}
+\section{Cortes de tuplas}
 
-\subsection{Iteradores infinitos}
+\section{Subcadenas}
 
-\subsection{Operaciones sobre iterables}
+\section{Listas por compresión}
 
-\subsection{Funciones de combinatoria}
+\section{Formateo de cadenas}
 
-\newpage\section{Programación orientada a objetos}
+\section{Funciones de cadenas}
 
-\subsection{Programación orientada a objetos}
+\section{Funciones all() y any()}
 
-\subsection{Clases}
+\section{Función enumerate()}
 
-\subsection{Método init}
+\clearpage\chapter{Programación funcional}
 
-\subsection{Atributos}
+\section{Funciones puras}
 
-\subsection{Métodos}
+\section{Lambdas}
 
-\subsection{Atributos de clase}
+\section{Función map()}
 
-\subsection{Excepciones de clases}
+\section{Función filter()}
 
-\subsection{Herencia}
+\section{Generadores}
 
-\subsection{Función super()}
+\section{Decoradores}
 
-\subsection{Métodos mágicos}
+\section{Iteración}
 
-\subsection{Sobrecarga de operadores aritméticos}
+\section{Recursión}
 
-\subsection{Sobrecarga de operadores de comparación}
+\clearpage\chapter{Conjuntos y estructuras de datos}
 
-\subsection{Métodos mágicos de contenedores}
+\section{Conjuntos}
 
-\subsection{Ciclo de vida de un objeto}
+\section{Operaciones con conjuntos}
 
-\subsection{Encapsulamiento}
+\section{Estructuras de datos}
 
-\newpage\section{Expresiones regulares}
+\clearpage\chapter{El módulo itertools}
 
-\newpage\section{Empaquetamiento}
+\section{Iteradores infinitos}
 
-\newpage\section{Interfaz gráfica}
+\section{Operaciones sobre iterables}
 
-\newpage\section{Algoritmos de ordenamiento}
+\section{Funciones de combinatoria}
 
-\newpage\section{Algoritmos de búsqueda}
+\clearpage\chapter{Programación orientada a objetos}
 
-\newpage\section{Algoritmos de matrices}
+\section{Programación orientada a objetos}
 
-\newpage\section{Implementación de estructuras de datos}
+\section{Clases}
 
-\newpage\section{La librería NumPy}
+\section{Método init}
+
+\section{Atributos}
+
+\section{Métodos}
+
+\section{Atributos de clase}
+
+\section{Excepciones de clases}
+
+\section{Herencia}
+
+\section{Función super()}
+
+\section{Métodos mágicos}
+
+\section{Sobrecarga de operadores aritméticos}
+
+\section{Sobrecarga de operadores de comparación}
+
+\section{Métodos mágicos de contenedores}
+
+\section{Ciclo de vida de un objeto}
+
+\section{Encapsulamiento}
+
+\clearpage\chapter{Expresiones regulares}
+
+\clearpage\chapter{Empaquetamiento}
+
+\clearpage\chapter{Interfaz gráfica}
+
+\clearpage\chapter{Algoritmos de ordenamiento}
+
+\clearpage\chapter{Algoritmos de búsqueda}
+
+\clearpage\chapter{Algoritmos de matrices}
+
+\clearpage\chapter{Implementación de estructuras de datos}
+
+\clearpage\chapter{La librería NumPy}
 
 \end{document}
