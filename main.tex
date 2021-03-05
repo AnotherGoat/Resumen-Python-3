@@ -9,17 +9,17 @@
 \usepackage[svgnames]{xcolor}
 \usepackage{amsmath}
 \usepackage[spanish]{babel}
-\usepackage[colorlinks=true, linkcolor=., urlcolor=NavyBlue]{hyperref}
+\usepackage[colorlinks=true, linkcolor=., urlcolor=ForestGreen]{hyperref}
 
 % estilo de los segmentos de código
 \usemintedstyle{perldoc}
 
-% capítulos de color azul y secciones de color rojo
-\chapterfont{\color{DarkOliveGreen}}
+% colores de capítulos y secciones
+\chapterfont{\color{black}}
 \sectionfont{\color{RoyalBlue}}
 
 % también en la tabla de contenidos
-\renewcommand{\cftchapfont}{\bfseries\color{DarkOliveGreen}}
+\renewcommand{\cftchapfont}{\bfseries\color{black}}
 \renewcommand{\cftsecfont}{\color{RoyalBlue}}
 
 % párrafos sin sangría
@@ -28,8 +28,8 @@
 \setlength\parskip{1.5ex}
 
 % cambiar espacio entre números y texto en la tabla de contenidos
-\setlength\cftchapnumwidth{4em}
-\setlength\cftsecnumwidth{4em}
+\setlength\cftchapnumwidth{2.5em}
+\setlength\cftsecnumwidth{2.5em}
 
 % comandos nuevos para comillas simples y dobles
 \newcommand{\simple}[1]{`#1'}
@@ -329,22 +329,23 @@ Multiplicar por 0 genera un string vacío.
 
 El método print() puede aceptar más de un string como argumento, lo cual hace que se muestren en una misma línea separados por espacios.
 
-%TODO
+\pythonfile{codigo/3-strings/print_avanzado_1.py}
 
 El método print() tiene 2 argumentos que pueden definirse para dar más control sobre lo que se imprime en la pantalla.
 
 El argumento sep define el string separador entre cada string \doble{normal} que se le entregue al método print(), excepto después del último. Estos separadores pueden incluir secuencias de escape.
 
-%TODO
+\pythonfile{codigo/3-strings/print_avanzado_2.py}
 
 El argumento end define el string que irá después del último string \doble{normal}. Se puede usar para seguir escribiendo en la misma línea, si no se incluye la secuencia de escape \textbackslash n.
 
-%TODO
-%TODO
+\pythonfile{codigo/3-strings/print_avanzado_3.py}
+
+\pythonfile{codigo/3-strings/print_avanzado_4.py}
 
 Ambos argumentos se pueden combinar.
 
-%TODO
+\pythonfile{codigo/3-strings/print_avanzado_5.py}
 
 \clearpage\chapter{Variables}
 
@@ -864,11 +865,11 @@ Normalmente se usan docstrings para explicar los parámetros y lo que retorna un
 
 Aunque sean creadas de manera diferente que las variables regulares, las funciones son como cualquier otra clase de valor. Pueden ser asignadas y reasignadas a variables, y luego ser referenciadas por esos nombres.
 
-\pythonfile{codigo/8-funciones/funciones_como_objeto_1.py}
+\pythonfile{codigo/8-funciones/funcion_como_objeto_1.py}
 
 Las funciones también pueden ser usadas como argumentos de otras funciones.
 
-\pythonfile{codigo/8-funciones/funciones_como_objeto_2.py}
+\pythonfile{codigo/8-funciones/funcion_como_objeto_2.py}
 
 \section{Sobrecarga de funciones}
 
@@ -876,15 +877,15 @@ En Python, la sobrecarga de funciones se define como la habilidad de que una fun
 
 Para sobrecargar una función, se deben definir los parámetros que sean opcionales con un valor por defecto None. Después, se usan declaraciones if-elif-else para revisar todos los casos posibles.
 
-%TODO
+\pythonfile{codigo/8-funciones/sobrecarga_1.py}
 
-%TODO
+\pythonfile{codigo/8-funciones/sobrecarga_2.py}
 
 \section{Anotaciones de tipos}
 
 Una anotación de tipos es, como su nombre lo dice, una notación opcional que especifica el tipo de los parámetros de una función y su tipo de retorno.
 
-%TODO
+\pythonfile{codigo/8-funciones/anotaciones_1.py}
 
 En el ejemplo de arriba, se muestra que mensaje es un parámetro de tipo string y que la función duplicar() retorna un string.
 
@@ -892,7 +893,7 @@ Esto le permite al programador saber qué tipos de datos se le deben entregar un
 
 Las anotaciones de tipos son ignoradas completamente por el intérprete de Python. No restringen el tipo de los parámetros o del retorno de una función, pero son muy útiles al momento de documentar.
 
-%TODO
+\pythonfile{codigo/8-funciones/anotaciones_2.py}
 
 Aunque el intérprete de Python los ignore, existen algunos IDEs y programas que pueden analizar código que contiene anotaciones de tipos y alertar sobre problemas potenciales.
 
@@ -1295,11 +1296,11 @@ Las tuplas pueden \doble{empaquetarse} o \doble{desempaquetarse}, lo que puede s
 
 Las tuplas pueden ser creadas sin paréntesis, simplemente separando los valores por comas.
 
-\pythonfile{codigo/16-iterables/tupla_vacia.py}
+\pythonfile{codigo/16-iterables/tupla_6.py}
 
 Una tupla vacía se crea utilizando un par de paréntesis vacíos.
 
-\pythonfile{codigo/16-iterables/tupla_6.py}
+\pythonfile{codigo/16-iterables/tupla_vacia.py}
 
 Las tuplas son más rápidas que las listas, pero no pueden ser modificadas.
 
@@ -1469,13 +1470,13 @@ La programación funcional es un estilo de programación que, como dice su nombr
 
 Una parte clave de la programación funcional son las funciones de orden superior. Similar al uso de funciones como objetos, las funciones de orden superior reciben otras funciones como argumentos, o las devuelven como resultado.
 
-%TODO
+\pythonfile{codigo/17-funcional/ejemplo_funcional.py}
 
 La función repetir2veces() recibe otra función como su argumento y llama 2 veces dentro de su cuerpo.
 
 Entender los conceptos de programación funcional requiere un conocimiento básico del concepto algebraico llamado \doble{composición de funciones}.
 
-%TODO
+%TODO: enlace a composición de funciones
 
 \section{Funciones puras}
 
@@ -1529,17 +1530,18 @@ Este enfoque es más comúnmente utilizado cuando se pasa una función sencilla 
 
 La sintaxis que se muestra a continuación consiste de la palabra reservada lambda seguida de una lista de argumentos, dos puntos, y una expresión a evaluar y devolver.
 
-%TODO
+\pythonfile{codigo/17-funcional/lambda_1.py}
+
 Las funciones lambda reciben su nombre del cálculo lambda, el cual es un modelo computacional inventado por Alonzo Church.
 Las funciones lambda no son tan potentes como las funciones con nombre. Sólo pueden hacer cosas que requieren de una sola expresión, normalmente equivalente a una sola línea de código.
 
 %TODO: enlace a cálculo lambda
 
-%TODO
+\pythonfile{codigo/17-funcional/lambda_2.py}
 
 Las funciones lambda pueden ser asignadas a variables y ser utilizadas como funciones regulares.
 
-%TODO
+\pythonfile{codigo/17-funcional/lambda_3.py}
 
 Sin embargo, rara vez existe una buena razón para hacer esto. Normalmente es mejor definir una función con def.
 
@@ -1549,11 +1551,11 @@ La función map() es una función de orden superior muy útil que opera sobre li
 
 Esta función recibe una función y un iterable como argumentos y devuelve un nuevo iterable con la función aplicada a cada argumento.
 
-%TODO
+\pythonfile{codigo/17-funcional/map_1.py}
 
 El mismo resultado se puede obtener con mayor facilidad utilizando la sintaxis lambda.
 
-%TODO
+\pythonfile{codigo/17-funcional/map_2.py}
 
 Los objetos del tipo mapa son iterables, por lo que se debe usar list() para convertir el resultado en una lista y poder verlo.
 
@@ -1563,7 +1565,7 @@ La función filter() es otra función de orden supero que se puede usar sobre it
 
 Esta función filtra un iterable eliminando elementos que no coincidan con el predicado (una función que devuelve un booleano).
 
-%TODO
+\pythonfile{codigo/17-funcional/filter.py}
 
 Al igual que map(), el resultado tiene que ser convertido explícitamente a una lista si se quiere imprimir.
 
@@ -1575,24 +1577,25 @@ A diferencia de las listas, no permiten indexar con índices arbitrarios, pero p
 
 Pueden ser creados utilizando funciones y la sentencia yield.
 
-%TODO
+\pythonfile{codigo/17-funcional/generador_1.py}
+
 %TODO: más ejemplos
 
 La sentencia yield es utilizada para definir un generador, reemplazando el retorno de una función para proveer un resultado a su llamador sin destruir las variables locales.
 
 Debido al hecho que yield produce un elemento a la vez, los generadores no tienen las restricciones de memoria de las listas. De hecho, ¡pueden ser infinitos!
 
-%TODO
+\pythonfile{codigo/17-funcional/generador_2.py}
 
 En resumen, los generadores permiten declarar una función que se comporta como un iterador. En otras palabras, que puede utilizarse en un bucle for.
 
 Un ejemplo de uso de generadores es para generar números primos.
 
-%TODO
+\pythonfile{codigo/17-funcional/generador_de_primos.py}
 
 Los generadores finitos pueden ser convertidos en listas al pasarlos como argumentos de la función list().
 
-%TODO
+\pythonfile{codigo/17-funcional/generador_a_lista.py}
 
 Utilizar generadores resulta en un mejor rendimiento, el cual es el resultado de una generación ociosa de valores (a medida que se vayan necesitando), lo cual se traduce en un uso reducido de memoria. Es más, no necesitamos esperar hasta que todos los elementos sean generados antes de empezar a utilizarlos.
 
@@ -1600,32 +1603,33 @@ Utilizar generadores resulta en un mejor rendimiento, el cual es el resultado de
 
 Los decoradores ofrecen una forma de modificar funciones utilizando otras funciones. Esto es ideal cuando se necesita extender la funcionalidad de funciones que no se quieren modificar.
 
-%TODO
+\pythonfile{codigo/17-funcional/decorador_1.py}
 
 En este caso, el uso la función envolver() se define dentro de decor() para permitir que decor() retorne una función, que es el objetivo principal de un decorador. La función texto\_decorado() es una versión decorada de la función imprimir\_texto().
 
 De hecho, si se escribiera un decorador útil, podría reemplazarse imprimir\_texto() por su versión decorada.
 
-%TODO
+\pythonfile{codigo/17-funcional/decorador_2.py}
 
 En el ejemplo anterior, se decora la función print\_text() reemplazando la variable que contiene la función por una versión envuelta.
 
-%TODO
+\pythonfile{codigo/17-funcional/decorador_3.py}
 
 Este patrón puede utilizarse en cualquier momento, para envolver cualquier función.
 
 Python ofrece apoyo para envolver una función en un decorador anteponiendo la definición de la función con el nombre de un decorador y el símbolo \@, lo cual tendrá el mismo resultado que el código de arriba.
 
-%TODO
+\pythonfile{codigo/17-funcional/decorador_4.py}
 
 Una sola función puede tener varios decoradores y cada decorador puede repetirse más de una vez.
 
-%TODO
+\pythonfile{codigo/17-funcional/decorador_5.py}
 
 Los decoradores pueden ser usados para muchos otros propósitos además de \doble{decorar}.
 
-%TODO
-%TODO
+\pythonfile{codigo/17-funcional/decorador_entrada.py}
+
+\pythonfile{codigo/17-funcional/decorador_tiempo.py}
 
 \section{Recursión}
 
@@ -1635,7 +1639,7 @@ Lo fundamental de la recursión es la autorreferencia, funciones que se llaman a
 
 Un ejemplo clásico de una función que es implementada recursiva es la función factorial.
 
-%TODO
+\pythonfile{codigo/17-funcional/factorial.py}
 
 El caso base n == 0 actúa como condición de salida de la recursión, porque no involucra más llamadas a la función.
 
@@ -1643,15 +1647,15 @@ Las funciones recursivas pueden ser infinitas, al igual que los bucles while. Es
 
 Abajo se muestra una versión incorrecta de la función factorial. No tiene caso base, así que se ejecuta hasta que al interpretador se le acabe la memoria o se cuelgue.
 
-%TODO
+\pythonfile{codigo/17-funcional/factorial_malo.py}
 
 La recursión también puede ser indirecta. Una función puede llamar a una segunda, que a su vez llama a la primera, que llama a la segunda, y así sucesivamente. Esto puede ocurrir con cualquier cantidad de funciones.
 
-%TODO
+\pythonfile{codigo/17-funcional/par_o_impar.py}
 
 Otro ejemplo clásico es la serie de Fibonacci.
 
-%TODO
+\pythonfile{codigo/17-funcional/fibonacci.py}
 
 \section{Iteración vs. Recursión}
 
@@ -1758,33 +1762,33 @@ Uno de los tipos de función que produce son iteradores infinitos.
 
 La función count() cuenta infinitamente a partir de un valor.
 
-%TODO
+\pythonfile{codigo/19-itertools/count_1.py}
 
 Se le puede entregar un segundo parámetro a count(), el cual representa el tamaño de paso. Si no se le entrega el segundo parámetro, el tamaño de paso por defecto es 1.
 
-%TODO
+\pythonfile{codigo/19-itertools/count_2.py}
 
 Si el segundo parámetro es negativo, cuenta hacia atrás.
 
-%TODO
+\pythonfile{codigo/19-itertools/count_3.py}
 
 La función cycle() itera infinitamente a través de un iterable (como una lista o cadena).
 
 \pythonfile{codigo/19-itertools/cycle_1.py}
 
-%TODO
+\pythonfile{codigo/19-itertools/cycle_2.py}
 
 La función repeat() repite un objeto, ya sea infinitamente o un número específico de veces.
 
-%TODO
+\pythonfile{codigo/19-itertools/repeat_1.py}
 
 Puede usarse para crear listas que tengan un objeto repetido.
 
-%TODO
+\pythonfile{codigo/19-itertools/repeat_2.py}
 
 Para repetir infinitamente, se le debe entregar sólo el objeto como parámetro.
 
-%TODO
+\pythonfile{codigo/19-itertools/repeat_3.py}
 
 \section{Operaciones sobre iterables}
 
@@ -1796,11 +1800,11 @@ La función accumulate() devuelve un total actualizado de los valores dentro de 
 
 La función takewhile() toma elementos de un iterable mientras una función predicado permanece verdadera.
 
-%TODO
+\pythonfile{codigo/19-itertools/takewhile_1.py}
 
 La diferencia entre takewhile() y filter() es que takewhile() deja de tomar elementos cuando llega al primer elemento que no cumple la condición de la función.
 
-%TODO
+\pythonfile{codigo/19-itertools/takewhile_2.py}
 
 La función chain() combina varios iterables en uno solo más largo.
 
@@ -1816,13 +1820,13 @@ La función product() retorna el producto entre 2 iterables.
 
 La función permutations() retorna las todas permutaciones posibles entre los elementos de un iterable.
 
-%TODO
+\pythonfile{codigo/19-itertools/permutations_1.py}
 
-%TODO
+\pythonfile{codigo/19-itertools/permutations_2.py}
 
 Se le puede entregar un segundo argumento, el cual representa el número de elementos que cada permutación debe tener.
 
-%TODO
+\pythonfile{codigo/19-itertools/permutations_3.py}
 
 El método combinations() funciona de forma similar a permutations(), pero muestra las combinaciones en vez de permutaciones.
 

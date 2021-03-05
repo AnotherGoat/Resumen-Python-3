@@ -1,6 +1,5 @@
-archivo = open("archivo.txt", "w")
+archivo = open("archivo.txt", "a")
 
-bytes_escritos = archivo.write("¡Hola mundo!")
-print(bytes_escritos)
+archivo.write("¡Hola mundo!")
 
 archivo.close()
