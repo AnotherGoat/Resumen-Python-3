@@ -28,8 +28,8 @@
 \setlength\parskip{1.5ex}
 
 % cambiar espacio entre números y texto en la tabla de contenidos
-%\setlength\cftchapternumwidth{4em}
-%\setlength\cftsectionnumwidth{4em}
+\setlength\cftchapnumwidth{4em}
+\setlength\cftsecnumwidth{4em}
 
 % comandos nuevos para comillas simples y dobles
 \newcommand{\simple}[1]{`#1'}
@@ -499,15 +499,15 @@ Los operadores lógicos se utilizan para crear condiciones complejas agrupando c
 
 El operador and se evalúa como True si ambas condiciones se cumplen.
 
-%TODO
+\pythonfile{codigo/5-if/and.py}
 
 El operador or se evalúa como True si al menos una de las condiciones se cumple.
 
-%TODO
+\pythonfile{codigo/5-if/or.py}
 
 El operador not sólo toma una condición y la invierte.
 
-%TODO
+\pythonfile{codigo/5-if/not.py}
 
 \section{Precedencia de operadores lógicos}
 
@@ -624,7 +624,7 @@ Existen métodos que sirven para trabajar con listas.
 
   \item El método index() encuentra la primera aparición de un elemento en una lista y devuelve su índice. Si el elemento no está en la lista, muestra un ValueError.
   
-  \pythonfile{codigo/6-listas/extend.py}
+  \pythonfile{codigo/6-listas/index.py}
 
   \item El método count() cuenta la cantidad de ocurrencias de un elemento en una lista.
   
@@ -1067,6 +1067,41 @@ Se puede especificar el modo utilizado para abrir un archivo al pasar un segundo
 
 Los modos de apertura son:
 
+\begin{itemize}
+  \item \doble{r}: Significa modo de lectura, el cual es el modo predeterminado.
+  
+%TODO
+
+  \item \doble{w}: Significa modo de escritura, el cual sirve para reescribir los contenidos de un archivo. Abrir un archivo en este modo inmediatamente borra todos sus contenidos.
+  
+%TODO
+
+  \item \doble{x}: Significa modo de creación, se usa para crear un fichero y escribir sobre él. Entrega un error FileExistsError si el archivo ya existe o no está vacío.
+  
+  %TODO
+
+  \item \doble{a}: significa modo de anexo, para agregar nuevo contenido al final de un archivo.
+
+%TODO
+
+\end{itemize}
+
+Además de los modos de apertura, también existen los modos en los que se muestra la información:
+
+\begin{itemize}
+  \item \doble{t}: significa abrir el archivo en modo texto (predeterminado). No es necesario escribirlo.
+  \item \doble{b}: significa abrir el archivo en modo binario, que es utilizado para archivos que no son de texto (tales como archivos de imágenes o sonido). Se debe combinar con alguno de los modos anteriores.
+
+  %TODO
+\end{itemize}
+
+\section{Extensión de modos de apertura}
+
+Se puede añadir el signo \doble{+} a cualquiera de los modos de arriba para darles acceso adicional a archivos.
+
+La siguiente tabla muestra el funcionamiento de cada modo:
+%TODO: tabla
+
 \section{Cierre de archivos}
 
 Una vez que un archivo haya sido abierto y utilizado, es un buen hábito cerrarlo. Esto se logra con el método close() de un objeto archivo.
@@ -1356,11 +1391,66 @@ El formateo de cadenas también puede hacerse con argumentos con nombre.
 
 Python contiene muchas funciones integradas y métodos útiles que sirven para cumplir tareas comunes. Algunos métodos que se pueden usar con strings son:
 
+\begin{itemize}
+  \item join(): Combina una lista de cadenas con otra cadena como separador.
+  %TODO
+
+  \item replace(): Reemplaza una subcadena de una cadena por otra cadena.
+
+  %TODO
+
+  \item startswith(): Determina si hay una subcadena al principio de una cadena.
+
+%TODO
+
+  \item endswith(): Determina si hay una subcadena al final de una cadena.
+  
+%TODO
+
+  \item upper(): Cambia una cadena a mayúsculas.
+  
+  %TODO
+
+  \item lower(): Cambia una cadena a minúsculas.
+  
+  %TODO
+
+  \item capitalize(): Cambia una cadena para que la primera letra sea mayúscula y el resto minúsculas.
+
+  %TODO
+  
+  title(): Cambia una cadena para que todas las palabras empiecen con mayúscula.
+  \item 
+  %TODO
+\end{itemize}
+
 \section{Funciones numéricas}
+
+Para obtener la distancia entre un número y el 0 (su valor absulto), puede usarse la función abs().
+
+%TODO
+
+Para redondear un número a un determinado número de decimales, puede usarse la función round().
+
+%TODO
 
 \section{Funciones all() y any()}
 
+All y any son utilizados con frecuencia como sentencias condicionales. Estos toman una lista como un argumento y devuelven True si todos o algunos (respectivamente) de sus argumentos son evaluados como True (o, de lo contrario, False).
+
+%TODO
+
+%TODO: separar ejemplos
+
 \section{Función enumerate()}
+
+La función enumerate() se usa para iterar a través de los valores e índices de una lista, simultáneamente.
+
+%TODO
+
+También se puede especificar el índice desde el que comienza.
+
+%TODO
 
 \clearpage\chapter{Programación funcional}
 
@@ -1391,6 +1481,33 @@ Ejemplo de función pura:
 Ejemplo de función impura:
 
 %TODO
+
+Dicho de otra forma, una función pura cumple lo siguiente:
+
+\begin{itemize}
+  \item Depende sólo de sus argumentos y de variables locales creadas dentro de ella.
+  \item Siempre retorna el mismo resultado para los mismos argumentos.
+  \item Se puede ejecutar en cualquier parte del programa sin causar efectos secundarios de ningún tipo.
+  \item No altera ningún elemento fuera de ella.
+  \item Puede usarse en otros programas y entrega los mismos resultados.
+\end{itemize}
+
+Utilizar funciones puras tiene sus ventajas y desventajas.
+
+Las funciones puras son:
+
+\begin{itemize}
+  \item Más fáciles de analizar y probar.
+  \item Más eficientes. Una vez que la función haya sido evaluada para una entrada, el resultado puede ser almacenado y referenciado para la próxima vez que la función con esa entrada sea necesaria, reduciendo el número de veces que la función es llamada. Esto se denomina memorización.
+  \item Más fáciles de ejecutar en paralelo.
+\end{itemize}
+
+Desventajas principales:
+
+\begin{itemize}
+  \item Complican en su mayor parte la normalmente sencilla tarea de Entrada/Salida, ya que requiere de efectos secundarios inherentemente.
+  \item En algunas situaciones, pueden ser más difíciles de escribir.
+\end{itemize}
 
 \section{Lambdas}
 
@@ -1561,7 +1678,62 @@ Usos básicos de conjuntos incluyen pruebas de membresía y la eliminación de e
 
 \section{Operaciones con conjuntos}
 
+Los conjuntos pueden ser combinados utilizando operaciones matemáticas.
+
+El operador de unión | combina dos conjuntos para formar uno nuevo que contiene los elementos de cualquiera de los dos.
+
+%TODO
+
+El operador de intersección \& obtiene sólo los elementos que están en ambos.
+
+%TODO
+
+El operador de diferencia - obtiene los elementos que están en el primer conjunto, pero no en el segundo.
+
+%TODO
+
+El operador de diferencia simétrica \^ obtiene los elementos que están en cualquiera de los conjuntos, pero no en ambos.
+
+%TODO
+
 \section{Estructuras de datos}
+
+%TODO: encontrar qué hacer con esta sección
+
+Como se ha visto en capítulos anteriores, Python tiene soporte de las siguientes estructuras de datos: listas, diccionarios, tuplas y conjuntos.
+
+¿Cúando utilizar diccionarios?
+
+\begin{itemize}
+  \item Cuando se necesita utilizar asociaciones lógicas entre pares clave:valor.
+  \item Cuando se necesita buscar datos rápidamente, en base a claves personalizadas.
+  \item Cuando los datos son constantemente modificados.
+\end{itemize}
+
+¿Cúando utilizar listas?
+
+\begin{itemize}
+  \item Cuando se tiene un grupo de datos que no necesita acceso aleatorio (deben estar ordenados).
+  \item Cuando se necesita una recolección simple e iterable que es modificada frecuentemente.
+\end{itemize}
+
+¿Cúando utilizar conjuntos?
+
+\begin{itemize}
+  \item Cuando se necesita que los elementos sean únicos.
+\end{itemize}
+
+¿Cúando utilizar tuplas?
+
+\begin{itemize}
+  \item Cuando se necesita almacenar datos que no pueden ser cambiados.
+\end{itemize}
+
+En muchas ocasiones, una tupla es utilizada junto con un diccionario. Por ejemplo, una tupla puede representar una clave, porque es inmutable.
+
+La siguiente tabla muestra las propiedades de cada estructura de datos.
+
+%TODO: la tabla
 
 \clearpage\chapter{El módulo itertools}
 
@@ -1571,9 +1743,81 @@ El módulo itertools es una biblioteca estándar que contiene varias funciones q
 
 \section{Iteradores infinitos}
 
+Uno de los tipos de función que produce son iteradores infinitos.
+
+La función count() cuenta infinitamente a partir de un valor.
+
+%TODO
+
+Se le puede entregar un segundo parámetro a count(), el cual representa el tamaño de paso. Si no se le entrega el segundo parámetro, el tamaño de paso por defecto es 1.
+
+%TODO
+
+Si el segundo parámetro es negativo, cuenta hacia atrás.
+
+%TODO
+
+La función cycle() itera infinitamente a través de un iterable (como una lista o cadena).
+
+%TODO
+
+%TODO
+
+La función repeat() repite un objeto, ya sea infinitamente o un número específico de veces.
+
+%TODO
+
+Puede usarse para crear listas que tengan un objeto repetido.
+
+%TODO
+
+Para repetir infinitamente, se le debe entregar sólo el objeto como parámetro.
+
+%TODO
+
 \section{Operaciones sobre iterables}
 
+Hay muchas funciones en itertools que operan sobre iterables, de una forma similar a map() o filter().
+
+La función accumulate() devuelve un total actualizado de los valores dentro de un iterable.
+
+%TODO
+
+La función takewhile() toma elementos de un iterable mientras una función predicado permanece verdadera.
+
+%TODO
+
+La diferencia entre takewhile() y filter() es que takewhile() deja de tomar elementos cuando llega al primer elemento que no cumple la condición de la función.
+
+%TODO
+
+La función chain() combina varios iterables en uno solo más largo.
+
+%TODO
+
 \section{Funciones de combinatoria}
+
+También hay numerosas funciones combinatorias en itertools, tales como product() y permutations(). Estas son usadas cuando se quiere cumplir tareas con todas las combinaciones posibles de algunos elementos.
+
+La función product() retorna el producto entre 2 iterables.
+
+%TODO
+
+La función permutations() retorna las todas permutaciones posibles entre los elementos de un iterable.
+
+%TODO
+
+%TODO
+
+Se le puede entregar un segundo argumento, el cual representa el número de elementos que cada permutación debe tener.
+
+%TODO
+
+El método combinations() funciona de forma similar a permutations(), pero muestra las combinaciones en vez de permutaciones.
+
+%TODO
+
+La diferencia es que en las combinaciones no importa el orden y se unen todos los resultados que tienen los mismos elementos pero en orden distinto.
 
 \clearpage\chapter{Programación orientada a objetos}
 
@@ -1681,6 +1925,38 @@ Los métodos mágicos son métodos especiales que tienen doble guión bajo al pr
 El constructor \_\_init\_\_ es un método mágico, pero existen muchos más. Son utilizados para crear funcionalidades que no pueden ser representadas en un método regular.
 
 \section{Sobrecarga de operadores aritméticos}
+
+Un uso común de métodos mágicos es la sobrecarga de operadores. Esto significa definir operadores para clases personalizadas que permiten que operadores tales como + y * sean utilizados en ellas.
+
+El método mágico \_\_add\_\_ permite sobrecargar el operador +, lo cual permite darle un comportamiento personalizado.
+
+%TODO
+
+El método \_\_add\_\_ suma los atributos correspondientes de los objetos y devuelve un nuevo objeto que contiene el resultado. Una vez definido, se pueden sumar dos objetos de una clase entre sí.
+
+Otra forma de verlo es que el intérprete de Python siempre interpretará el operador + como el método \_\_add\_\_ de su clase.
+
+Los métodos mágicos para operadores comunes son:
+
+%TODO
+
+Y después el intérprete de Python interpreta los operadores así:
+
+%TODO
+
+A continuación, se muestra un ejemplo de implementación del método \_\_truediv\_\_.
+
+%TODO
+
+La sobrecarga de operadores no necesita que los métodos mágicos nuevos cumplan su misma función original.
+Un caso particular ocurre cuando \doble{x} e \doble{y} son de tipos distintos y \doble{x} no tiene definido un método mágico, por ejemplo \_\_add\_\_. En este caso, Python intentará calcular la operación al revés, la cual en este caso será y + x. Para realizar esta operación llamará al método reverso \_\_radd\_\_ de “y”.
+Hay métodos r equivalentes para todos los operadores mencionados anteriormente.
+
+%TODO
+
+Y un ejemplo de implementación de métodos reversos:
+
+%TODO
 
 \section{Sobrecarga de operadores de comparación}
 
