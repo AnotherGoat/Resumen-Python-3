@@ -1,8 +1,10 @@
 *
 
 !.vscode
+!build/main.pdf
 !codigo
 !logo
+
+!.gitignore
 !main.text
 !README.md
-!build/main.pdf
