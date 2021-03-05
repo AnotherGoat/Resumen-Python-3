@@ -1,0 +1,1 @@
+elementos = ["Hola", 2, "mundo", 3.0, True]

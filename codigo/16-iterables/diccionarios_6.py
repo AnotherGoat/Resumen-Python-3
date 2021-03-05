@@ -1,0 +1,1 @@
+print(pares)  # {1: False, 'naranja': [2, 3, 4], None: 'True'}

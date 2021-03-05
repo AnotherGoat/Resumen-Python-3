@@ -1,0 +1,11 @@
+and         False       nonlocal
+as          finally     not
+assert      for         or
+break       from        pass
+class       global      raise
+continue    if          return
+def         import      True
+del         in          try
+elif        is          while
+else        lambda      with
+except      None        yield
