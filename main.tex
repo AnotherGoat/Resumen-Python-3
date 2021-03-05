@@ -433,11 +433,12 @@ También se pueden usar con los operadores de concatenación y multiplicación d
 Otro tipo de dato en Python es el tipo booleano, el cual sólo puede tener 2 valores: True y False. Se pueden crear comparando valores, por ejemplo, usando el operador de igualdad ==.
 
 %TODO:explicar True y False por si solos
-%TODO
+
+\pythonfile{codigo/5-if/booleano_2.py}
 
 En Python, 1 y True significan lo mismo. Lo mismo ocurre con 0 y False.
 
-%TODO
+\pythonfile{codigo/5-if/booleano_3.py}
 
 \section{Operadores de comparación}
 
@@ -457,17 +458,17 @@ En los casos contrarios, los operadores retornan False.
 
 Ejemplos de uso de operadores de comparación:
 
-%TODO
+\pythonfile{codigo/5-if/comparacion_1.py}
 
 También se conocen como operadores relacionales.
 
 Las comparaciones entre datos de tipo entero y float también son válidas.
 
-%TODO
+\pythonfile{codigo/5-if/comparacion_2.py}
 
 Las comparaciones entre números y strings son válidas, pero siempre se evalúan como False.
 
-%TODO
+\pythonfile{codigo/5-if/comparacion_3.py}
 
 \section{Declaración if}
 
@@ -750,15 +751,15 @@ Al igual que la declaración break, usar continue fuera de un bucle provoca un e
 
 Los bucles for se pueden usar para iterar sobre una lista. Las instrucciones dentro de su bloque de código se ejecutarán para cada elemento de la lista.
 
-%TODO
+\pythonfile{codigo/7-bucles/for_1.py}
 
 También se puede usar para iterar sobre cadenas.
 
-%TODO
+\pythonfile{codigo/7-bucles/for_2.py}
 
 De manera similar a los bucles while, las declaraciones break y continue se pueden utilizar en los bucles for para detener el bucle o saltar a la siguiente iteración.
 
-%TODO
+\pythonfile{codigo/7-bucles/for_3.py}
 
 \section{Rangos}
 
@@ -766,24 +767,26 @@ La función range() devuelve una secuencia de números. De forma predeterminada,
 
 Si se llama a range() con un argumento, produce un objeto con valores desde 0 a el número antes de ese argumento.
 
-%TODO
+%TODO: separar
+\pythonfile{codigo/7-bucles/range_1.py}
 
 Para mostrar los números dentro de un objeto range, debe convertirse a una lista.
 
 Si se llama con 2 argumentos, produce valores desde el primero hasta antes del segundo.
 
-%TODO
-%TODO
+\pythonfile{codigo/7-bucles/range_2.py}
+
+\pythonfile{codigo/7-bucles/range_3.py}
 
 El rango puede tener un tercer argumento, que determina el intervalo de la secuencia producida, también llamado como paso. Este número puede ser positivo (incremento) o negativo (decremento).
 
-%TODO
+\pythonfile{codigo/7-bucles/range_4.py}
 
 \section{Bucle for en rangos}
 
 Una forma común de usar los bucles for es iterando sobre rangos. Esto permite hacer bucles de muchas formas.
 
-%TODO
+\pythonfile{codigo/7-bucles/for_rango.py}
 
 No es necesario llamar list() en el objeto de rango cuando se usa en un bucle for, porque no se está indexando, por lo que no requiere una lista.
 
@@ -797,7 +800,7 @@ Cualquier sentencia que consista de una palabra seguida de información entre pa
 
 Ejemplos de funciones que se han visto anteriormente.
 
-%TODO
+\pythonfile{codigo/8-funciones/funciones.py}
 
 \section{Definición de funciones}
 
@@ -805,15 +808,15 @@ Para definir una función, se debe usar la palabra clave def, seguida del nombre
 
 Algunos ejemplos de funciones:
 
-%TODO
+\pythonfile{codigo/8-funciones/saludar.py}
 
-%TODO
+\pythonfile{codigo/8-funciones/exclamar.py}
 
 Una función puede pedir más de un argumento, los cuales deben separarse por comas.
 
-%TODO
+\pythonfile{codigo/8-funciones/sumar.py}
 
-%TODO
+\pythonfile{codigo/8-funciones/mayor.py}
 
 Los argumentos de funciones pueden ser utilizados como variables dentro de la definición de la función. Sin embargo, no pueden ser referenciados fuera de la definición de la función. Esto también se aplica a las demás variables creadas dentro de una función.
 
@@ -823,19 +826,17 @@ Para llamar una función, debe escribirse su nombre, seguido de un paréntesis q
 
 Ejemplos de uso de las funciones definidas anteriormente:
 
-%TODO
+\pythonfile{codigo/8-funciones/llamar_funciones.py}
 
 \section{Devolución de valores en una función}
 
 Ciertas funciones devuelven un valor para ser utilizado más adelante. Para hacer esto en la definición de funciones nuevas, se debe usar la palabra clave return.
 
-%TODO
+\pythonfile{codigo/8-funciones/return_1.py}
 
 Cualquier código luego de la sentencia return nunca ocurrirá.
 
-%TODO
-
-
+\pythonfile{codigo/8-funciones/return_2.py}
 
 \section{Docstring}
 
@@ -843,31 +844,31 @@ Las docstring (cadenas de documentación) cumplen un propósito similar al de lo
 
 Son creados colocando una cadena multilínea que contenga una explicación de la función por debajo de la primera línea de la función.
 
-%TODO
+\pythonfile{codigo/8-funciones/docstring_1.py}
 
 A diferencia de los comentarios convencionales, los docstring se conservan a lo largo del tiempo de ejecución del programa. Esto le permite al programado examinar estos comentarios en el tiempo de ejecución.
 
 Una forma de accederlo es usando la variable \_\_doc\_\_.
 
-%TODO
+\pythonfile{codigo/8-funciones/print_doc.py}
 
 Otra forma es usando la función help(). Esto entrega un poco más de información.
 
-%TODO
+\pythonfile{codigo/8-funciones/help.py}
 
 Normalmente se usan docstrings para explicar los parámetros y lo que retorna una función.
 
-%TODO
+\pythonfile{codigo/8-funciones/docstring_2.py}
 
 \section{Funciones como objetos}
 
 Aunque sean creadas de manera diferente que las variables regulares, las funciones son como cualquier otra clase de valor. Pueden ser asignadas y reasignadas a variables, y luego ser referenciadas por esos nombres.
 
-%TODO
+\pythonfile{codigo/8-funciones/funciones_como_objeto_1.py}
 
 Las funciones también pueden ser usadas como argumentos de otras funciones.
 
-%TODO
+\pythonfile{codigo/8-funciones/funciones_como_objeto_2.py}
 
 \section{Sobrecarga de funciones}
 
@@ -903,33 +904,33 @@ Los módulos son pedazos de código que otras personas han escrito para cumplir 
 
 La manera básica de utilizar un módulo es agregar una declaración import en la parte superior del código, y luego usar su nombre para acceder a las funciones y variables dentro del módulo.
 
-%TODO
+\pythonfile{codigo/9-modulos/ejemplo_modulos.py}
 
 Este ejemplo importa el módulo random y usa su función randint() para generar 5 números aleatorios en el rango del 1 al 6.
 
 Hay otra clase de import que puede ser utilizada si sólo necesitas ciertas funciones de un módulo.
 
-%TODO
+\pythonfile{codigo/9-modulos/import_1.py}
 
 Para importar más de un elemento, se debe hacer una lista separada por comas.
 
-%TODO
+\pythonfile{codigo/9-modulos/import_2.py}
 
 \section{Error de importación}
 
 Importar un módulo que no está disponible dará un ImportError.
 
-%TODO
+\pythonfile{codigo/9-modulos/error_import.py}
 
 \section{Alias}
 
 Se puede importar un módulo u objeto bajo un nombre distinto utilizando la palabra clave as y entregándole un alias. Esto se usa principalmente cuando un módulo u objeto tiene un nombre largo o confuso.
 
-%TODO
+\pythonfile{codigo/9-modulos/alias_1.py}
 
 También se puede usar un alias con más de un objeto.
 
-%TODO
+\pythonfile{codigo/9-modulos/alias_2.py}
 
 \section{La biblioteca estándar}
 
@@ -937,7 +938,7 @@ Hay 3 tipos principales de módulos en Python: aquellos que escribes tú mismo, 
 
 El último tipo se denomina la biblioteca estándar, y contiene muchos módulos útiles. Algunos de estos módulos son:
 
-%TODO
+\textfile{codigo/9-modulos/biblioteca_estandar.txt}
 
 La extensa biblioteca estándar de Python es una de sus principales fortalezas como lenguaje. Se puede encontrar más información sobre los módulos de la biblioteca estándar en \href{https://docs.python.org/3/library/index.html}{\underline{la documentación}}.
 
@@ -951,11 +952,13 @@ La mejor manera de instalar estos es utilizando un programa llamado pip. Este vi
 
 Para instalar una biblioteca, se debe buscar su nombre, ir a la línea de comandos y escribir pip install nombre.
 
-%TODO
+\textfile{codigo/9-modulos/pip_1.txt}
 
 Es importante recordar que los comandos de pip se deben introducir en la línea de comandos, no en el interpretador de Python.
 
 Se puede ingresar el comando pip help para ver información sobre otros comandos que se pueden usar con este gestor de paquetes.
+
+\textfile{codigo/9-modulos/pip_2.txt}
 
 Utilizar pip es la forma estándar de instalar bibliotecas en la mayoría de sistemas operativos, pero algunas bibliotecas tienen binarios predefinidos para Windows. Estos son archivos ejecutables regulares que permiten instalar bibliotecas con una interfaz gráfica de la misma manera que se instalan otros programas.
 
@@ -971,7 +974,7 @@ Se han mencionado excepciones en las secciones anteriores. Ocurren cuando algo s
 
 Al intentar dividir por 0, se produce un ZeroDivisionError.
 
-%TODO
+\pythonfile{codigo/11-excepciones/excepcion_1.py}
 
 Otras excepciones comunes son:
 
@@ -1034,7 +1037,7 @@ Una aserción es una comprobación de validez, la cual prueba una expresión. La
 
 Las aserciones son llevadas a cabo a través de la declaración assert.
 
-%TODO
+\pythonfile{codigo/11-excepciones/assert_1.py}
 
 Los programadores a menudo colocan aserciones al principio de una función para asegurarse de que la entrada sea válida, y luego de llamar una función para revisar la validez de la salida.
 
@@ -1057,7 +1060,7 @@ En general, se recomienda usar aserciones para atrapar tus propios errores y exc
 Python se puede usar para leer y escribir los contenidos de archivos. Los archivos de texto son los más fáciles de manipular.
 Antes de que un archivo pueda ser editado, debe ser abierto con la función open().
 
-%TODO
+\pythonfile{codigo/14-archivos/open.py}
 
 El argumento de la función open es la ruta del archivo. Si el archivo se encuentra en el directorio hábil actual del programa, se puede especificar sólo su nombre (ruta relativa).
 
@@ -1070,19 +1073,19 @@ Los modos de apertura son:
 \begin{itemize}
   \item \doble{r}: Significa modo de lectura, el cual es el modo predeterminado.
   
-%TODO
+  \pythonfile{codigo/14-archivos/modo_r.py}
 
   \item \doble{w}: Significa modo de escritura, el cual sirve para reescribir los contenidos de un archivo. Abrir un archivo en este modo inmediatamente borra todos sus contenidos.
   
-%TODO
+  \pythonfile{codigo/14-archivos/modo_w.py}
 
   \item \doble{x}: Significa modo de creación, se usa para crear un fichero y escribir sobre él. Entrega un error FileExistsError si el archivo ya existe o no está vacío.
   
-  %TODO
+  \pythonfile{codigo/14-archivos/modo_x.py}
 
   \item \doble{a}: significa modo de anexo, para agregar nuevo contenido al final de un archivo.
 
-%TODO
+  \pythonfile{codigo/14-archivos/modo_a.py}
 
 \end{itemize}
 
@@ -1092,7 +1095,8 @@ Además de los modos de apertura, también existen los modos en los que se muest
   \item \doble{t}: significa abrir el archivo en modo texto (predeterminado). No es necesario escribirlo.
   \item \doble{b}: significa abrir el archivo en modo binario, que es utilizado para archivos que no son de texto (tales como archivos de imágenes o sonido). Se debe combinar con alguno de los modos anteriores.
 
-  %TODO
+  \pythonfile{codigo/14-archivos/modo_b.py}
+
 \end{itemize}
 
 \section{Extensión de modos de apertura}
@@ -1106,7 +1110,7 @@ La siguiente tabla muestra el funcionamiento de cada modo:
 
 Una vez que un archivo haya sido abierto y utilizado, es un buen hábito cerrarlo. Esto se logra con el método close() de un objeto archivo.
 
-%TODO
+\pythonfile{codigo/14-archivos/close.py}
 
 A nivel de sistemas operativos, cada proceso tiene un límite en la cantidad de archivos que puede abrir simultáneamente. Si un programa se ejecuta por mucho tiempo y podría abrir muchos archivos, se debe tener cuidado.
 
@@ -1114,70 +1118,70 @@ A nivel de sistemas operativos, cada proceso tiene un límite en la cantidad de 
 
 Los contenidos de un archivo que ha sido abierto en modo texto pueden ser leídos utilizando el método read().
 
-%TODO
+\pythonfile{codigo/14-archivos/read_1.py}
 
 Para leer sólo una determinada parte de un archivo, se puede proveer un número como argumento a la función read(). Esto determina el número de bytes que deberían ser leídos.
 
 Se pueden hacer más llamadas a read() en el mismo objeto archivo para leer más de él byte por byte. Si no se le pasan argumentos, o si el argumento es negativo, read() devuelve el resto del archivo.
 
-%TODO
+\pythonfile{codigo/14-archivos/read_2.py}
 
 El ejemplo de arriba primero mostrará los bytes del 1 al 16, después del 17 al 24, del 25 al 28, y del 29 al último byte.
 
 Luego de que todos los contenidos de un archivo hayan sido leídos, cualquier intento de leer más de ese archivo devolverá una cadena vacía $''$$''$ porque se está intentando leer desde el final del archivo.
 
-%TODO
+\pythonfile{codigo/14-archivos/read_3.py}
 
 Usando el método seek(), se puede mover el \doble{cursor} (puntero) al principio del archivo.
 
-%TODO
+\pythonfile{codigo/14-archivos/seek.py}
 
 El método tell() entrega la posición actual del puntero.
 
-%TODO
+\pythonfile{codigo/14-archivos/tell.py}
 
 Para obtener cada línea de un archivo, se puede usar la función readlines() para devolver una lista donde cada elemento es una línea del archivo.
 
-%TODO
+\pythonfile{codigo/14-archivos/readlines.py}
 
 Esto también se puede hacer usando un bucle for.
 
-%TODO
+\pythonfile{codigo/14-archivos/for_readlines.py}
 
 \section{Escritura de archivos}
 
 Para escribir sobre archivos se utiliza el método write(), el cual escribe una cadena en un archivo.
 
-%TODO
+\pythonfile{codigo/14-archivos/write_1.py}
 
 Cuando un archivo es abierto en modo de escritura, el contenido existente del archivo es borrado.
 
-%TODO
+\pythonfile{codigo/14-archivos/write_2.py}
 
 Para evitar que esto ocurra, se puede usar el modo anexo \doble{a}.
 
-%TODO
+\pythonfile{codigo/14-archivos/write_3.py}
 
 El método write() devuelve el número de bytes escritos en un archivo, si su llamada es exitosa.
 
-%TODO
+\pythonfile{codigo/14-archivos/write_4.py}
 
 Para escribir algo que no sea un string, necesita ser convertido primero a un string.
 
-%TODO
+\pythonfile{codigo/14-archivos/write_5.py}
 
 \section{Declaración with}
 
 Es buena práctica evitar gastar recursos asegurándose de que los archivos sean siempre cerrados después de utilizarlos. Una forma de hacer esto es utilizando try-finally.
 
-%TODO
+\pythonfile{codigo/14-archivos/close_seguro.py}
 
 Esto asegura que el archivo sea siempre cerrado incluso si ocurre un error.
 Sin embargo, existe una forma más cómoda de hacer esto usando declaraciones with.
 
 Una forma alternativa de trabajar con archivos es utilizando declaraciones with. Esto crea una variable temporal (a menudo llamada f), la cual solo es accesible en el bloque indentado de la declaración with.
 
-%TODO
+\pythonfile{codigo/14-archivos/with_1.py}
 
 El archivo se cierra automáticamente al final de la declaración with, incluso si ocurren excepciones dentro de ella.
 
@@ -1185,10 +1189,11 @@ Comparado con la forma tradicional de trabajar con archivos (open-close), usar w
 
 Así, una forma más segura de trabajar con archivos puede tener la siguiente estructura:
 
-%TODO
+\pythonfile{codigo/14-archivos/with_2.py}
 
 \clearpage\chapter{Módulos time y datetime}
 
+%TODO: ordenar este capitulo de una vez
 \clearpage\chapter{Iterables}
 
 \section{Objeto None}
@@ -1201,11 +1206,11 @@ Al igual que otros valores \doble{vacíos}, tales como (), [] y la cadena vacía
 
 Cuando es ingresado a la consola de Python, se visualiza como una cadena vacía.
 
-%TODO
+\pythonfile{codigo/16-iterables/None_1.py}
 
 El objeto None es devuelto por cualquier función que no devuelve explícitamente algo más.
 
-%TODO
+\pythonfile{codigo/16-iterables/None_2.py}
 
 \clearpage\chapter{Diccionarios y tuplas}
 
@@ -1267,34 +1272,34 @@ En este caso es importante recordar que 1 y True son la misma clave. Entonces, e
 
 Las tuplas son estructuras de datos muy parecidas a las listas, excepto que son inmutables (no pueden ser cambiadas). También se crean utilizando paréntesis en vez de corchetes.
 
-%TODO
+\pythonfile{codigo/16-iterables/tupla_1.py}
 
 %TODO: mencionar truco de igualdad
 
 Se puede acceder a los valores de una tupla utilizando su índice. Funciona de la misma forma que con listas.
 
-%TODO
+\pythonfile{codigo/16-iterables/tupla_2.py}
 
 Tratar de reasignar un valor a una tupla ocasiona un TypeError.
 
-%TODO
+\pythonfile{codigo/16-iterables/tupla_3.py}
 
 Al igual que las listas y diccionarios, las tuplas pueden ser anidadas entre sí.
 Las tuplas son inmutables, pero el contenido de elementos mutables dentro de ellas puede ser cambiado.
 
-%TODO
+\pythonfile{codigo/16-iterables/tupla_4.py}
 
 Las tuplas pueden \doble{empaquetarse} o \doble{desempaquetarse}, lo que puede ser útil al momento de crear variables.
 
-%TODO
+\pythonfile{codigo/16-iterables/tupla_5.py}
 
 Las tuplas pueden ser creadas sin paréntesis, simplemente separando los valores por comas.
 
-%TODO
+\pythonfile{codigo/16-iterables/tupla_vacia.py}
 
 Una tupla vacía se crea utilizando un par de paréntesis vacíos.
 
-%TODO
+\pythonfile{codigo/16-iterables/tupla_6.py}
 
 Las tuplas son más rápidas que las listas, pero no pueden ser modificadas.
 
@@ -1306,25 +1311,25 @@ Las tuplas son más rápidas que las listas, pero no pueden ser modificadas.
 
 Los cortes de lista ofrecen una manera más avanzada de obtener valores de una lista. Los cortes de lista básicos involucran indexar una lista con dos enteros separados por dos puntos. Esto devuelve una lista nueva que contiene todos los valores de la lista vieja entre los índices.
 
-%TODO
+\pythonfile{codigo/16-iterables/cortes_1.py}
 
 Como los argumentos de range, el primer índice provisto en un corte es incluido en el resultado, pero el segundo no.
 
 Si el primer número en un corte es omitido, se toma el principio de la lista. Si el segundo número es omitido, se toma el final de la lista.
 
-%TODO
+\pythonfile{codigo/16-iterables/cortes_2.py}
 
 Los cortes de lista también pueden tener un tercer número, representando el incremento, para incluir valores alternativos en el corte.
 
-%TODO
+\pythonfile{codigo/16-iterables/cortes_3.py}
 
 Los valores negativos pueden ser utilizados en un corte de lista. Cuando los valores negativos son utilizados para el primer y el segundo valor del corte, estos cuentan desde el final de la lista.
 
-%TODO
+\pythonfile{codigo/16-iterables/cortes_4.py}
 
 El tamaño de paso también puede ser negativo, lo que permite usarlos para invertir listas sin usar el método reverse().
 
-%TODO
+\pythonfile{codigo/16-iterables/cortes_reverse.py}
 
 Es importante recordar que si el tamaño de paso es negativo, el primer número debe indicar un índice mayor que el segundo.
 
@@ -1332,7 +1337,7 @@ Es importante recordar que si el tamaño de paso es negativo, el primer número 
 
 Los cortes también pueden ser realizados en tuplas. Su funcionamiento es el mismo que con listas.
 
-%TODO
+\pythonfile{codigo/16-iterables/cortes_en_tuplas.py}
 
 Esto es válido porque si bien las tuplas son inmutables, los cortes no realizan ningún cambio sobre los objetos con los que trabajan. Sólo consultan información de cierta manera.
 
@@ -1340,23 +1345,24 @@ Esto es válido porque si bien las tuplas son inmutables, los cortes no realizan
 
 En Python pueden usarse cortes para obtener trozos de una cadena. Esto es lo que otros lenguajes de programación realizan usando el método substring(). Funciona de la misma forma que con listas y tuplas.
 
-%TODO
+\pythonfile{codigo/16-iterables/substring_1.py}
+%TODO: más
 
 \section{Listas por compresión}
 
 Las listas por compresión son una forma útil de crear rápidamente listas cuyo contenido obedece una regla sencilla.
 
-%TODO
+\pythonfile{codigo/16-iterables/compresion_1.py}
 
 Las listas por compresión son inspiradas por la notación de constructores de conjuntos en las matemáticas.
 
 Una lista por compresión también puede contener una sentencia if para aplicar una condición en los valores de la lista.
 
-%TODO
+\pythonfile{codigo/16-iterables/compresion_2.py}
 
 Intentar crear una lista de rango demasiado extenso resultará en un MemoryError. Es posible que la operación tarde unos minutos en llegar a esta excepción.
 
-%TODO
+\pythonfile{codigo/16-iterables/compresion_3.py}
 
 Este problema es resuelto con generadores, los cuales se verán más tarde.
 
@@ -1368,24 +1374,25 @@ El formateo de cadenas ofrece una manera más potente de incorporar objetos que 
 
 Una forma de hacerlo es usando índices.
 
-%TODO
+\pythonfile{codigo/16-iterables/formateo_1.py}
 
 Cada argumento de la función de formateo es colocada en la cadena de la posición correspondiente, que es determinada usando llaves {}.
 
 Los índices entre llaves {} pueden repetirse cuantas veces se quiera.
-%TODO
+
+\pythonfile{codigo/16-iterables/formateo_2.py}
 
 Si se omite un índice, habrá algún argumento de format() que no se usará.
 
-%TODO
+\pythonfile{codigo/16-iterables/formateo_3.py}
 
 No es necesario escribir los índices dentro de las llaves {}, pero esto no permite que se repitan o que se entreguen como argumentos en otro orden.
 
-%TODO
+\pythonfile{codigo/16-iterables/formateo_4.py}
 
 El formateo de cadenas también puede hacerse con argumentos con nombre.
 
-%TODO
+\pythonfile{codigo/16-iterables/formateo_5.py}
 
 \section{Funciones de cadenas}
 
@@ -1393,52 +1400,54 @@ Python contiene muchas funciones integradas y métodos útiles que sirven para c
 
 \begin{itemize}
   \item join(): Combina una lista de cadenas con otra cadena como separador.
-  %TODO
+  
+  \pythonfile{codigo/16-iterables/join.py}
 
   \item replace(): Reemplaza una subcadena de una cadena por otra cadena.
 
-  %TODO
+  \pythonfile{codigo/16-iterables/replace.py}
 
   \item startswith(): Determina si hay una subcadena al principio de una cadena.
 
-%TODO
+  \pythonfile{codigo/16-iterables/startswith.py}
 
   \item endswith(): Determina si hay una subcadena al final de una cadena.
   
-%TODO
+  \pythonfile{codigo/16-iterables/endswith.py}
 
   \item upper(): Cambia una cadena a mayúsculas.
   
-  %TODO
+  \pythonfile{codigo/16-iterables/upper.py}
 
   \item lower(): Cambia una cadena a minúsculas.
   
-  %TODO
+  \pythonfile{codigo/16-iterables/lower.py}
 
   \item capitalize(): Cambia una cadena para que la primera letra sea mayúscula y el resto minúsculas.
 
-  %TODO
+  \pythonfile{codigo/16-iterables/capitalize.py}
   
-  title(): Cambia una cadena para que todas las palabras empiecen con mayúscula.
-  \item 
-  %TODO
+  \item title(): Cambia una cadena para que todas las palabras empiecen con mayúscula.
+  
+  \pythonfile{codigo/16-iterables/title.py}
+
 \end{itemize}
 
 \section{Funciones numéricas}
 
 Para obtener la distancia entre un número y el 0 (su valor absulto), puede usarse la función abs().
 
-%TODO
+\pythonfile{codigo/16-iterables/abs.py}
 
 Para redondear un número a un determinado número de decimales, puede usarse la función round().
 
-%TODO
+\pythonfile{codigo/16-iterables/round.py}
 
 \section{Funciones all() y any()}
 
 All y any son utilizados con frecuencia como sentencias condicionales. Estos toman una lista como un argumento y devuelven True si todos o algunos (respectivamente) de sus argumentos son evaluados como True (o, de lo contrario, False).
 
-%TODO
+\pythonfile{codigo/16-iterables/all_y_any.py}
 
 %TODO: separar ejemplos
 
@@ -1446,11 +1455,11 @@ All y any son utilizados con frecuencia como sentencias condicionales. Estos tom
 
 La función enumerate() se usa para iterar a través de los valores e índices de una lista, simultáneamente.
 
-%TODO
+\pythonfile{codigo/16-iterables/enumerate_1.py}
 
 También se puede especificar el índice desde el que comienza.
 
-%TODO
+\pythonfile{codigo/16-iterables/enumerate_2.py}
 
 \clearpage\chapter{Programación funcional}
 
@@ -1476,11 +1485,11 @@ Así son las funciones en las matemáticas. Por ejemplo, la función cos(x) siem
 
 Ejemplo de función pura:
 
-%TODO
+\pythonfile{codigo/17-funcional/pura.py}
 
 Ejemplo de función impura:
 
-%TODO
+\pythonfile{codigo/17-funcional/impura.py}
 
 Dicho de otra forma, una función pura cumple lo siguiente:
 
@@ -1652,11 +1661,11 @@ Otro ejemplo clásico es la serie de Fibonacci.
 
 Los conjuntos son estructuras de datos parecidas a las listas o a los diccionarios. Son creandos utilizando llaves o la función set(). Comparten algunas de las funcionalidades de las listas, como el uso de in para revisar si contienen o no un elemento en particular.
 
-%TODO
+\pythonfile{codigo/18-conjuntos/conjuntos.py}
 
 Para crear un conjunto vacío, se debe utilizar set(), ya que {} crea un diccionario vacío.
 
-%TODO
+\pythonfile{codigo/18-conjuntos/conjunto_vacio.py}
 
 Los conjuntos difieren de las listas de varias formas, pero comparten varias operaciones de listas como len().
 
@@ -1666,13 +1675,13 @@ Debido a la forma en que son almacenados, es más rápido revisar si un elemento
 
 En lugar de utilizar append() para agregarle algo al conjunto, se utiliza add(). El método remove() elimina un elemento específico de un conjunto.
 
-%TODO
+\pythonfile{codigo/18-conjuntos/add_y_remove.py}
 
 El método pop() elimina un elemento arbitrario. Esto significa que debido a la forma en la Python implementa conjuntos, no hay garantía de que los elementos se retornarán en el mismo orden que en el que se añadieron.
 
 Generalmente, elimina el primer elemento, pero esto no se puede garantizar.
 
-%TODO
+\pythonfile{codigo/18-conjuntos/pop_conjuntos.py}
 
 Usos básicos de conjuntos incluyen pruebas de membresía y la eliminación de entradas duplicadas.
 
@@ -1682,19 +1691,19 @@ Los conjuntos pueden ser combinados utilizando operaciones matemáticas.
 
 El operador de unión | combina dos conjuntos para formar uno nuevo que contiene los elementos de cualquiera de los dos.
 
-%TODO
+\pythonfile{codigo/18-conjuntos/union.py}
 
 El operador de intersección \& obtiene sólo los elementos que están en ambos.
 
-%TODO
+\pythonfile{codigo/18-conjuntos/interseccion.py}
 
 El operador de diferencia - obtiene los elementos que están en el primer conjunto, pero no en el segundo.
 
-%TODO
+\pythonfile{codigo/18-conjuntos/diferencia.py}
 
 El operador de diferencia simétrica \^ obtiene los elementos que están en cualquiera de los conjuntos, pero no en ambos.
 
-%TODO
+\pythonfile{codigo/18-conjuntos/diferencia_simetrica.py}
 
 \section{Estructuras de datos}
 
@@ -1741,6 +1750,8 @@ La siguiente tabla muestra las propiedades de cada estructura de datos.
 
 El módulo itertools es una biblioteca estándar que contiene varias funciones que son útiles en la programación funcional.
 
+\pythonfile{codigo/19-itertools/itertools.py}
+
 \section{Iteradores infinitos}
 
 Uno de los tipos de función que produce son iteradores infinitos.
@@ -1759,7 +1770,7 @@ Si el segundo parámetro es negativo, cuenta hacia atrás.
 
 La función cycle() itera infinitamente a través de un iterable (como una lista o cadena).
 
-%TODO
+\pythonfile{codigo/19-itertools/cycle_1.py}
 
 %TODO
 
@@ -1781,7 +1792,7 @@ Hay muchas funciones en itertools que operan sobre iterables, de una forma simil
 
 La función accumulate() devuelve un total actualizado de los valores dentro de un iterable.
 
-%TODO
+\pythonfile{codigo/19-itertools/accumulate.py}
 
 La función takewhile() toma elementos de un iterable mientras una función predicado permanece verdadera.
 
@@ -1793,7 +1804,7 @@ La diferencia entre takewhile() y filter() es que takewhile() deja de tomar elem
 
 La función chain() combina varios iterables en uno solo más largo.
 
-%TODO
+\pythonfile{codigo/19-itertools/chain.py}
 
 \section{Funciones de combinatoria}
 
@@ -1801,7 +1812,7 @@ También hay numerosas funciones combinatorias en itertools, tales como product(
 
 La función product() retorna el producto entre 2 iterables.
 
-%TODO
+\pythonfile{codigo/19-itertools/product.py}
 
 La función permutations() retorna las todas permutaciones posibles entre los elementos de un iterable.
 
@@ -1815,7 +1826,7 @@ Se le puede entregar un segundo argumento, el cual representa el número de elem
 
 El método combinations() funciona de forma similar a permutations(), pero muestra las combinaciones en vez de permutaciones.
 
-%TODO
+\pythonfile{codigo/19-itertools/combinations.py}
 
 La diferencia es que en las combinaciones no importa el orden y se unen todos los resultados que tienen los mismos elementos pero en orden distinto.
 
