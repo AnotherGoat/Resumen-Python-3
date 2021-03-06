@@ -1,2 +1,4 @@
 num = 42
-print(float(num))  # 42.0
+
+print(num)
+print(float(num))

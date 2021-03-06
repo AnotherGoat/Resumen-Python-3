@@ -1,2 +1,4 @@
 x = '7'
-print(int(x))  # 7
+
+print(x)
+print(int(x))

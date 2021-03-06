@@ -179,7 +179,7 @@ Para representar números racionales o que no son enteros, se usa el tipo de dat
 \pythonfile{codigo/2-basico/float_1.py}
 \out{codigo/2-basico/float_1.out}
 
-Se debe tener en cuenta que los computadores no pueden almacenar perfectamente el valor de los floats, lo cual a menudo conduce a errores.
+Se debe tener en cuenta que los computadores \href{http://puntoflotante.org/formats/fp/}{no pueden almacenar perfectamente} el valor de los floats, lo cual a menudo conduce a errores.
 
 \pythonfile{codigo/2-basico/error_float.py}
 \out{codigo/2-basico/error_float.py}
@@ -195,7 +195,8 @@ Esta notación se asemeja a decir \doble{punto cinco} en vez de \doble{cero punt
 
 El resultado de cualquier operación entre floats o entre un float y un entero siempre dará como resultado un float. La división entre enteros también da como resultado un float.
 
-%TODO: float 3 mostrando resultados de operaciones entre floats y enteros
+\pythonfile{codigo/2-basico/float_3.py}
+\out{codigo/2-basico/float_3.out}
 
 \section{Exponenciación}
 
@@ -218,14 +219,16 @@ La división entera retorna un entero en vez de un float.
 Para obtener el resto al realizar una división entera, se debe usar el operador módulo \%.
 
 \pythonfile{codigo/2-basico/resto.py}
+\out{codigo/2-basico/resto.out}
 
 Esta operación es equivalente a $7 \mod{2}$ en aritmética modular.
 
-Este operador viene de la aritmética modular, y uno de sus usos más comunes es para saber si un número es múltiplo de otro. Esto se hace revisando si el módulo al dividirlo por ese otro número es 0.
+Este operador viene de la \href{https://es.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic}{aritmética modular}, y uno de sus usos más comunes es para saber si un número es múltiplo de otro. Esto se hace revisando si el módulo al dividirlo por ese otro número es 0.
 
 \pythonfile{codigo/2-basico/uso_del_resto.py}
+\out{codigo/2-basico/uso_del_resto.out}
 
-El caso particular módulo 2 también puede usarse para saber si un número es par o no.
+En el caso mostrado anteriormente, se infiere que 10 es múltiplo de 2, que 15 es múltiplo de 3 y que 16 no es múltiplo de 7. El caso particular módulo 2 también puede usarse para saber si un número es par o no.
 
 \clearpage\chapter{Cadenas de texto}
 
@@ -234,10 +237,12 @@ El caso particular módulo 2 también puede usarse para saber si un número es p
 Las cadenas de caracteres se crean introduciendo el texto entre comillas simples $'$$'$ o dobles $''$$''$.
 
 \pythonfile{codigo/3-strings/string.py}
+\out{codigo/3-strings/string.out}
 
 Un string debe empezar y terminar con comillas del mismo tipo, no se permiten comillas mixtas.
 
 \pythonfile{codigo/3-strings/strings_no_validos.py}
+\out{codigo/3-strings/strings_no_validos.out}
 
 \section{Cadena vacía}
 
@@ -252,12 +257,14 @@ Estos strings vacíos se inicializan en variables, lo cual se verá en el capít
 Algunos caracteres no se pueden incluir directamente en una cadena. Para esos casos, se debe incluir la barra diagonal inversa \textbackslash antes de ellos.
 
 \pythonfile{codigo/3-strings/caracteres_especiales.py}
+\out{codigo/3-strings/caracters_especiales.out}
 
 Los caracteres $'$, $''$ y \textbackslash son especiales, porque normalmente cumplen funciones especiales dentro de strings.
 
 Si el string se define entre comillas dobles, no es necesario poner $'$ para ingresar comillas simples dentro de él, y viceversa.
 
 \pythonfile{codigo/3-strings/comillas.py}
+\out{codigo/3-strings/comillas.out}
 
 \section{Secuencias de escape}
 
@@ -270,22 +277,28 @@ Algunas de las secuencias de escape más usadas son:
   \item Nueva línea (new line): Avanza una línea hacia adelante (salto de línea) y deja el cursor al principio de esta línea (retorno de carro). Representado por \textbackslash n.
   
   \pythonfile{codigo/3-strings/newline.py}
+  \out{codigo/3-strings/newline.out}
   
   Cualquier caracter después de \textbackslash n queda en la línea siguiente.
 
   \item Tabulador horizontal (horizontal tab): Añade un salto de tabulador horizontal. Representado por \textbackslash t.
   
   \pythonfile{codigo/3-strings/tab.py}
+  \out{codigo/3-strings/tab.out}
   
   El salto de tabulador avanza hasta el siguiente \doble{tab stop} de la misma línea.
 
-  \item Retorno de carro (carriage return): Mueve el \doble{carro} (cursor) al principio de la línea actual, eliminando todos los caracteres de esa línea. Representado por \textbackslash r.
+  \item Retorno de carro (carriage return): Mueve el \doble{carro} (cursor) al principio de la línea actual. Esto permite sobreescribir los caracteres escritos anteriormente. Representado por \textbackslash r.
   
   \pythonfile{codigo/3-strings/carriage_return.py}
+  \out{codigo/3-strings/carriage_return.out}
+
+  En algunos intérpretes, borra la línea además de volver al inicio.
 
   \item Retroceso (backspace): Borra el último carácter y mueve el cursor al carácter anterior. Representado por \textbackslash b.
   
   \pythonfile{codigo/3-strings/backspace.py}
+  \out{codigo/3-strings/backspace.out}
 
 \end{itemize}
 
@@ -313,6 +326,7 @@ Las barras diagonales inversas también se pueden usar para escribir caracteres 
 Los códigos Unicode se aceptan sin importar que tengan mayúsculas o minúsculas.
 
 \pythonfile{codigo/3-strings/unicode.py}
+\out{codigo/3-strings/unicode.out}
 
 El \href{https://unicode.org/}{\underline{sitio web de Unicode}} contiene más información sobre estos caracteres y sobre este estándar. \href{https://unicode-table.com/en/}{\underline{Este sitio web}} tiene una tabla con los códigos.
 
@@ -321,28 +335,36 @@ El \href{https://unicode.org/}{\underline{sitio web de Unicode}} contiene más i
 Este es un tipo especial de string, que se escribe entre comillas triples $'$$'$$'$ o $''$$''$$''$, y que reconoce los saltos de línea sin necesidad de usar la secuencia \textbackslash n.
 
 \pythonfile{codigo/3-strings/string_multilinea.py}
+\out{codigo/3-strings/string_multilinea.out}
 
 \section{Comentarios multilínea}
 
-Los comentarios multilínea no existen formalmente en Python, pero se puede hacer algo parecido usando
+Los comentarios multilínea no existen formalmente en Python, pero se puede hacer algo parecido usando strings multilínea fuera de lugares donde normalmente se usarían strings.
 
-% TODO: Esta sección
+\pythonfile{codigo/3-strings/comentario_multilinea.py}
+
+La razón por la que esto ocurre es porque estos \doble{comentarios} se usan para producir documentación del código (docstring). Si se ingresan en secciones particulares del código cumplirán su función de documentar, pero el intérprete no impide que se usen fuera de dichas secciones.
+
+Se detallará mejor este uso en el capítulo de funciones.
 
 \section{Concatenación de strings}
 
 Dos o más cadenas se pueden unir una después de la otra, usando un proceso llamado concatenación. Se usa el operador +.
 
 \pythonfile{codigo/3-strings/concatenacion.py}
+\out{codigo/3-strings/concatenacion.out}
 
 La concatenación sólo se puede realizar entre strings, no entre cadenas y números.
 
 \pythonfile{codigo/3-strings/error_concatenacion.py}
+\out{codigo/3-strings/error_concatenacion.out}
 
 \section{Multiplicación de strings}
 
 Las cadenas también pueden ser multiplicadas por números enteros. Esto produce una versión repetida de la cadena original. El orden de la cadena y el número no importa, pero la cadena suele ir primero.
 
 \pythonfile{codigo/3-strings/multiplicar_cadenas_1.py}
+\out{codigo/3-strings/multiplicar_cadenas_1.out}
 
 También se pueden combinar operaciones de multiplicación y concatenación.
 
@@ -351,28 +373,34 @@ También se pueden combinar operaciones de multiplicación y concatenación.
 Multiplicar por 0 genera un string vacío.
 
 \pythonfile{codigo/3-strings/multiplicar_cadenas_2.py}
+\out{codigo/3-strings/multiplicar_cadenas_2.out}
 
 \section{Opciones del método print()}
 
 El método print() puede aceptar más de un string como argumento, lo cual hace que se muestren en una misma línea separados por espacios.
 
 \pythonfile{codigo/3-strings/print_avanzado_1.py}
+\out{codigo/3-strings/print_avanzado_1.out}
 
 El método print() tiene 2 argumentos que pueden definirse para dar más control sobre lo que se imprime en la pantalla.
 
 El argumento sep define el string separador entre cada string \doble{normal} que se le entregue al método print(), excepto después del último. Estos separadores pueden incluir secuencias de escape.
 
 \pythonfile{codigo/3-strings/print_avanzado_2.py}
+\out{codigo/3-strings/print_avanzado_2.out}
 
 El argumento end define el string que irá después del último string \doble{normal}. Se puede usar para seguir escribiendo en la misma línea, si no se incluye la secuencia de escape \textbackslash n.
 
 \pythonfile{codigo/3-strings/print_avanzado_3.py}
+\out{codigo/3-strings/print_avanzado_3.out}
 
 \pythonfile{codigo/3-strings/print_avanzado_4.py}
+\out{codigo/3-strings/print_avanzado_4.out}
 
 Ambos argumentos se pueden combinar.
 
 \pythonfile{codigo/3-strings/print_avanzado_5.py}
+\out{codigo/3-strings/print_avanzado_5.out}
 
 \clearpage\chapter{Variables}
 
@@ -386,11 +414,19 @@ Una variable permite almacenar un valor asignándole un nombre, el cual puede se
 
 Se aplican ciertas restricciones con respecto a los caracteres que se pueden usar en los nombres de variables. Los únicos caracteres permitidos son letras, números y guiones bajos. Además, no se puede comenzar con números o incluir espacios.
 
-\pythonfile{codigo/4-variables/errores_de_variables.py}
+\pythonfile{codigo/4-variables/error_variable_1.py}
+\out{codigo/4-variables/error_variable_1.out}
+
+\pythonfile{codigo/4-variables/error_variable_2.py}
+\out{codigo/4-variables/error_variable_2.out}
+
+\pythonfile{codigo/4-variables/error_variable_3.py}
+\out{codigo/4-variables/error_variable_3.out}
 
 Python es sensible a mayúsculas y minúsculas, lo que significa que las variables \doble{num}, \doble{Num}, \doble{NUM}, etc. son distintas.
 
-%TODO: ejemplo
+\pythonfile{codigo/4-variables/mayusculas_y_minusculas.py}
+\out{codigo/4-variables/mayusculas_y_minusculas.out}
 
 \section{Palabras clave}
 
@@ -407,6 +443,7 @@ Nótese el uso de mayúsculas al principio de False, None y True.
 Se pueden usar variables dentro de operaciones. Lo único que se debe recordar es que deben declararse antes.
 
 \pythonfile{codigo/4-variables/variable_2.py}
+\out{codigo/4-variables/variable_2.out}
 
 Una variable también puede cambiar de valor a lo largo de la ejecución de un programa.
 
@@ -417,6 +454,8 @@ Una variable también puede cambiar de valor a lo largo de la ejecución de un p
 Para obtener información del usuario, se puede usar la función input(). La información obtenida puede ser almacenada como una variable.
 
 \pythonfile{codigo/4-variables/input_1.py}
+\inp{codigo/4-variables/input_1.inp}
+\out{codigo/4-variables/input_1.out}
 
 Toda la información recibida por el método input() es retornada como un string.
 También se puede entregar un string como parámetro al método input(), lo cual mostrará texto antes de pedir la entrada. Esto sirve para aclarar qué entrada está solicitando el programa.
@@ -433,14 +472,19 @@ Existen funciones para convertir datos de un tipo a otro. Entre dichas funciones
   \item int(): Convierte a un número entero.
   
   \pythonfile{codigo/4-variables/convertir_a_int.py}
+  \out{codigo/4-variables/convertir_a_int.out}
+
+  Aunque ambos se impriman igual, el primero es un string y el segundo un entero (int).
 
   \item float(): Convierte a un float.
   
   \pythonfile{codigo/4-variables/convertir_a_float.py}
+  \out{codigo/4-variables/convertir_a_float.out}
 
   \item str(): Convierte a un string o cadena de caracteres. Uno de sus usos principales es para concatenar distintos tipos de datos.
 
   \pythonfile{codigo/4-variables/convertir_a_string.py}
+  \out{codigo/4-variables/convertir_a_string.out}
 
 \end{itemize}
 
@@ -458,15 +502,24 @@ También se pueden usar con los operadores de concatenación y multiplicación d
 
 \section{Booleanos}
 
-Otro tipo de dato en Python es el tipo booleano, el cual sólo puede tener 2 valores: True y False. Se pueden crear comparando valores, por ejemplo, usando el operador de igualdad ==.
+Otro tipo de dato en Python es el tipo booleano, el cual sólo puede tener 2 valores: True y False. Estos se escriben empezando con mayúscula, al contrario de otros lenguajes de programación.
 
-%TODO:explicar True y False por si solos
+Se pueden crear directamente, aunque esto no tiene mucha utilidad en la mayoría de casos.
+
+\pythonfile{codigo/5-if/booleano_1.py}
+\out{codigo/5-if/booleano_1.out}
+
+Su uso más común es como el resultado obtenido al comparar valores, por ejemplo, usando el operador de igualdad ==.
 
 \pythonfile{codigo/5-if/booleano_2.py}
+\out{codigo/5-if/booleano_2.out}
 
 En Python, 1 y True significan lo mismo. Lo mismo ocurre con 0 y False.
 
 \pythonfile{codigo/5-if/booleano_3.py}
+\out{codigo/5-if/booleano_3.out}
+
+Usando otros términos, podría decirse que 1 es \href{https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false}{\doble{truthy}} y que 0 es \href{https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false}{\doble{falsy}}.
 
 \section{Operadores de comparación}
 
@@ -474,12 +527,12 @@ Los operadores de comparación usados en Python son los siguientes:
 
 %TODO: nombres
 \begin{itemize}
-  \item ==: Se evalúa como True si ambos elementos son iguales.
-  \item !=: Se evalúa como True si ambos elementos son distintos.
-  \item >: Se evalúa como True si el primer elemento es mayor.
-  \item <: Se evalúa como True si el primer elemento es menor.
-  \item >=: Se evalúa como True si el primer elemento es mayor o igual al segundo.
-  \item <=: Se evalúa como True si el primer elemento es menor o igual al segundo.
+  \item Igual $=$ (escrito como ==): Se evalúa como True si ambos elementos son iguales.
+  \item Distinto $\neq$ (escrito como !=): Se evalúa como True si ambos elementos son distintos.
+  \item Mayor que $>$: Se evalúa como True si el primer elemento es mayor.
+  \item Menor que $<$: Se evalúa como True si el primer elemento es menor.
+  \item Mayor o igual que $\geq$ (escrito como >=): Se evalúa como True si el primer elemento es mayor o igual al segundo.
+  \item Menor o igual que $\leq$ (escrito como <=): Se evalúa como True si el primer elemento es menor o igual al segundo.
 \end{itemize}
 
 En los casos contrarios, los operadores retornan False.
@@ -487,6 +540,8 @@ En los casos contrarios, los operadores retornan False.
 Ejemplos de uso de operadores de comparación:
 
 \pythonfile{codigo/5-if/comparacion_1.py}
+\out{codigo/5-if/comparacion_1.out}
+%TODO: todos los "out" listos hasta aquí
 
 También se conocen como operadores relacionales.
 
@@ -929,6 +984,8 @@ Aunque el intérprete de Python los ignore, existen algunos IDEs y programas que
 El objeto None es utilizado para representar la ausencia de un valor. Es similar a null en otros lenguajes de programación.
 
 Al igual que otros valores \doble{vacíos}, tales como (), [], \{\} y la cadena vacía $''$$''$, es False cuando es convertido a una variable booleana.
+
+
 
 %TODO: ejemplo y mencionar estructuras de datos
 
@@ -1563,6 +1620,12 @@ Python contiene muchas funciones integradas y métodos útiles que sirven para c
   
   \pythonfile{codigo/16-iterables/endswith.py}
 
+  \item A diferencia de otros lenguajes de programación, Python no tiene el método contains(), para ver si una subcadena pertenece a un string.
+  
+  Usar el operador in tiene el mismo efecto que tendría dicha función.
+
+  %TODO: contains (if x in string)
+
   \item upper(): Cambia una cadena a mayúsculas.
   
   \pythonfile{codigo/16-iterables/upper.py}
@@ -1621,9 +1684,7 @@ Una parte clave de la programación funcional son las funciones de orden superio
 
 La función repetir2veces() recibe otra función como su argumento y llama 2 veces dentro de su cuerpo.
 
-Entender los conceptos de programación funcional requiere un conocimiento básico del concepto algebraico llamado \doble{composición de funciones}.
-
-%TODO: enlace a composición de funciones
+Entender los conceptos de programación funcional requiere un conocimiento básico del concepto algebraico llamado \href{https://www.mathsisfun.com/sets/functions-composition.html}{\doble{composición de funciones}}.
 
 \section{Funciones puras}
 
@@ -1643,9 +1704,13 @@ Dicho de otra forma, una función pura cumple lo siguiente:
 
 \begin{itemize}
   \item Depende sólo de sus argumentos y de variables locales creadas dentro de ella.
+  
   \item Siempre retorna el mismo resultado para los mismos argumentos.
+
   \item Se puede ejecutar en cualquier parte del programa sin causar efectos secundarios de ningún tipo.
+  
   \item No altera ningún elemento fuera de ella.
+  
   \item Puede usarse en otros programas y entrega los mismos resultados.
 \end{itemize}
 
@@ -1655,7 +1720,9 @@ Las funciones puras son:
 
 \begin{itemize}
   \item Más fáciles de analizar y probar.
+  
   \item Más eficientes. Una vez que la función haya sido evaluada para una entrada, el resultado puede ser almacenado y referenciado para la próxima vez que la función con esa entrada sea necesaria, reduciendo el número de veces que la función es llamada. Esto se denomina memorización.
+  
   \item Más fáciles de ejecutar en paralelo.
 \end{itemize}
 
@@ -1663,6 +1730,7 @@ Desventajas principales:
 
 \begin{itemize}
   \item Complican en su mayor parte la normalmente sencilla tarea de Entrada/Salida, ya que requiere de efectos secundarios inherentemente.
+  
   \item En algunas situaciones, pueden ser más difíciles de escribir.
 \end{itemize}
 
@@ -1679,10 +1747,8 @@ La sintaxis que se muestra a continuación consiste de la palabra reservada lamb
 
 \pythonfile{codigo/17-funcional/lambda_1.py}
 
-Las funciones lambda reciben su nombre del cálculo lambda, el cual es un modelo computacional inventado por Alonzo Church.
+Las funciones lambda reciben su nombre del \href{https://es.wikipedia.org/wiki/C%C3%A1lculo_lambda}{cálculo lambda}, el cual es un modelo computacional inventado por Alonzo Church.
 Las funciones lambda no son tan potentes como las funciones con nombre. Sólo pueden hacer cosas que requieren de una sola expresión, normalmente equivalente a una sola línea de código.
-
-%TODO: enlace a cálculo lambda
 
 \pythonfile{codigo/17-funcional/lambda_2.py}
 

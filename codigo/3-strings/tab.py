@@ -1,2 +1,1 @@
-print('Hola\tmundo')
-# Hola    mundo
+print('1\t2\t3\t4')

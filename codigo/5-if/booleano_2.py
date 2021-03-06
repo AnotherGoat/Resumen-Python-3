@@ -1,3 +1,3 @@
-print(0 == 0)  # True
-print(1 == 2)  # False
-print("hola" == 'hola')  # True
+print(0 == 0)
+print(1 == 2)
+print("hola" == 'hola')

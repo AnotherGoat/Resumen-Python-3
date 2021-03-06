@@ -1,1 +1,1 @@
-# print(1 + "1")  # TypeError
+print(1 + "1")

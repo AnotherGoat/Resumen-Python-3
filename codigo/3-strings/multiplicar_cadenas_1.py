@@ -1,2 +1,2 @@
-print("ja" * 4)  # jajajaja
-print(4 * "ja")  # jajajaja
+print("ja" * 4)
+print(4 * "ja")

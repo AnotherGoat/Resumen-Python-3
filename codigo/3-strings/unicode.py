@@ -1,2 +1,2 @@
-print('\u00f1')  # ñ
-print('\u00F1')  # ñ
+print('\u00f1')
+print('\u00F1')

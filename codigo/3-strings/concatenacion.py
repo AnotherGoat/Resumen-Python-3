@@ -1,2 +1,2 @@
-print("Hola" + " " + "mundo")  # Hola mundo
-print("1" + "1")  # 11
+print("Hola" + " " + "mundo")
+print("1" + "1")
