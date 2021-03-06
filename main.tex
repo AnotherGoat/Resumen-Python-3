@@ -9,7 +9,7 @@
 \usepackage[svgnames]{xcolor}
 \usepackage{amsmath}
 \usepackage[spanish]{babel}
-\usepackage[colorlinks=true, linkcolor=., urlcolor=DarkGreen]{hyperref}
+\usepackage[colorlinks=true, linkcolor=., urlcolor=ForestGreen]{hyperref}
 
 % estilo de los segmentos de código
 \usemintedstyle{perldoc}
@@ -36,12 +36,17 @@
 \newcommand{\doble}[1]{``#1''}
 
 % color nuevo para los bloques de código
-%\definecolor{grisclaro}{RGB}{240, 240, 240}
+\definecolor{grisclaro}{RGB}{240, 240, 240}
 
 % macros nuevas para minted
-\newmintedfile{python}{bgcolor=LightGray, frame=single, linenos, numbersep=6pt, breaklines}
+\newmintedfile{python}{bgcolor=grisclaro, frame=single, linenos, numbersep=6pt, breaklines}
 \newmintedfile[outfile]{text}{frame=single, linenos, numbersep=6pt, breaklines}
 \newmintedfile{text}{frame=single, breaklines}
+
+% para escribir "Salida:" siempre que se muestre el output
+\newcommand{\out}[1]{Salida:\outfile{#1}}
+% lo mismo pero para entrada
+\newcommand{\inp}[1]{Entrada:\outfile{#1}}
 
 % se usan en tablas
 \newcommand{\si}{\textcolor{ForestGreen}{Sí}}
@@ -102,23 +107,26 @@ Dato curioso: Según el creador Guido van Rossum, el nombre de Python viene de l
 Para mostrar el texto \doble{Hola mundo} en pantalla se puede usar la función print().
 
 \pythonfile{codigo/1-intro/hola_mundo_1.py}
-\outfile{codigo/1-intro/hola_mundo_1.out}
+\out{codigo/1-intro/hola_mundo_1.out}
 
 Cada declaración de impresión print() genera texto en una nueva línea.
 
-\pythonfile{codigo/1-intro/hola_mundo_2.py}
+\pythonfile{codigo/1-intro/hola_mundo_2.py
+\out{codigo/1-intro/hola_mundo_2.out}
 
 \section{El Zen de Python}
 
 El Zen de Python es una colección de 19 \doble{principios} para escribir programas de computadores que influenciaron el diseño y representan la filosofía de este lenguaje de programación.
 
-El Zen de Python se muestra en pantalla la primera vez que se ejecute la siguiente linea.
+Se mostrará en pantalla la primera vez que se ejecute la siguiente linea, para importar la librería \doble{this}.
 
 \pythonfile{codigo/1-intro/import_this.py}
 
 Después se mostrará el siguiente texto.
 
 \textfile{codigo/1-intro/zen.txt}
+
+%TODO: traducción y mas info
 
 \clearpage\chapter{Conceptos básicos}
 
@@ -139,6 +147,7 @@ A lo largo de este resumen, se usarán comentarios para mostrar la salida de alg
 Python tiene la capacidad de realizar cálculos. Los operadores +, -, * y / representan suma, resta, multiplicación y división, respectivamente.
 
 \pythonfile{codigo/2-basico/aritmetica_1.py}
+\out{codigo/2-basico/aritmetica_1.out}
 
 Los espacios entre los signos y los números son opcionales, pero hacen que el código sea más fácil de leer.
 
@@ -149,39 +158,44 @@ Las operaciones en Python siguen el orden dado por la regla PEMDAS:
 \begin{enumerate}
   \item Paréntesis
   \item Exponentes
-  \item Multiplicación y división
-  \item Adición y Sustracción
+  \item Multiplicación y división (de izquierda a derecha)
+  \item Adición y Sustracción (de izquierda a derecha)
 \end{enumerate}
 
-% TODO: aritmetica 2 con ejemplos de operaciones combinadas
+\pythonfile{codigo/2-basico/aritmetica_2.py}
+\out{codigo/2-basico/aritmetica_2.out}
 
 \section{Paréntesis}
 
 Se pueden usar paréntesis () para agrupar operaciones y hacer que estas se realicen primero, siguiendo la regla PEMDAS.
 
 \pythonfile{codigo/2-basico/aritmetica_3.py}
+\out{codigo/2-basico/aritmetica_3.out}
 
 \section{Floats}
     
 Para representar números racionales o que no son enteros, se usa el tipo de dato float o punto flotante. Se pueden crear directamente ingresando un número con un punto decimal, o como resultado de una división.
 
 \pythonfile{codigo/2-basico/float_1.py}
+\out{codigo/2-basico/float_1.out}
 
 Se debe tener en cuenta que los computadores no pueden almacenar perfectamente el valor de los floats, lo cual a menudo conduce a errores.
 
 \pythonfile{codigo/2-basico/error_float.py}
+\out{codigo/2-basico/error_float.py}
 
 El error mostrado arriba es un error clásico de la aritmética de punto flotante. Incluso tiene su propio \href{https://0.30000000000000004.com}{\underline{sitio web}}.
 
 Al trabajar con floats, no es necesario escribir un 0 a la izquierda del punto decimal.
 
 \pythonfile{codigo/2-basico/float_2.py}
+\out{codigo/2-basico/float_2.out}
 
 Esta notación se asemeja a decir \doble{punto cinco} en vez de \doble{cero punto cinco}.
 
 El resultado de cualquier operación entre floats o entre un float y un entero siempre dará como resultado un float. La división entre enteros también da como resultado un float.
 
-%TODO: float 3 mostrando resultados de operaciones entro floats y enteros
+%TODO: float 3 mostrando resultados de operaciones entre floats y enteros
 
 \section{Exponenciación}
 
@@ -190,6 +204,7 @@ Otra operación soportada es la exponenciación, que es la elevación de un núm
 Ejemplo equivalente a $2 ^ 5 = 32$.
 
 \pythonfile{codigo/2-basico/potencia.py}
+\out{codigo/2-basico/potencia.out}
 
 \section{Cociente y resto}
 
@@ -198,6 +213,7 @@ La división entera se realiza usando el operador //, donde el resultado es la p
 La división entera retorna un entero en vez de un float.
 
 \pythonfile{codigo/2-basico/cociente.py}
+\out{codigo/2-basico/cociente.out}
 
 Para obtener el resto al realizar una división entera, se debe usar el operador módulo \%.
 
@@ -908,6 +924,22 @@ Las anotaciones de tipos son ignoradas completamente por el intérprete de Pytho
 
 Aunque el intérprete de Python los ignore, existen algunos IDEs y programas que pueden analizar código que contiene anotaciones de tipos y alertar sobre problemas potenciales.
 
+\section{El objeto None}
+
+El objeto None es utilizado para representar la ausencia de un valor. Es similar a null en otros lenguajes de programación.
+
+Al igual que otros valores \doble{vacíos}, tales como (), [], \{\} y la cadena vacía $''$$''$, es False cuando es convertido a una variable booleana.
+
+%TODO: ejemplo y mencionar estructuras de datos
+
+Cuando es ingresado a la consola de Python, se visualiza como una cadena vacía.
+
+\pythonfile{codigo/16-iterables/None_1.py}
+
+El objeto None es devuelto por cualquier función que no devuelve explícitamente algo más.
+
+\pythonfile{codigo/16-iterables/None_2.py}
+
 \clearpage\chapter{Módulos y la biblioteca estándar}
 
 \section{Módulos}
@@ -1226,26 +1258,7 @@ Así, una forma más segura de trabajar con archivos puede tener la siguiente es
 
 \clearpage\chapter{Módulos time y datetime}
 
-%TODO: ordenar este capitulo de una vez
-\clearpage\chapter{Iterables}
-
-\section{Objeto None}
-
-%TODO: Mover a un capítulo más apropiado
-
-El objeto None es utilizado para representar la ausencia de un valor. Es similar a null en otros lenguajes de programación.
-
-Al igual que otros valores \doble{vacíos}, tales como (), [] y la cadena vacía $''$$''$, es False cuando es convertido a una variable booleana.
-
-Cuando es ingresado a la consola de Python, se visualiza como una cadena vacía.
-
-\pythonfile{codigo/16-iterables/None_1.py}
-
-El objeto None es devuelto por cualquier función que no devuelve explícitamente algo más.
-
-\pythonfile{codigo/16-iterables/None_2.py}
-
-\clearpage\chapter{Diccionarios y tuplas}
+\clearpage\chapter{Estructuras de datos}
 
 \section{Diccionarios}
 
@@ -1334,6 +1347,111 @@ Una tupla vacía se crea utilizando un par de paréntesis vacíos.
 Las tuplas son más rápidas que las listas, pero no pueden ser modificadas.
 
 %TODO: mover el último mensaje más arriba y separar esta sección
+
+\section{Conjuntos}
+
+Los conjuntos son estructuras de datos parecidas a las listas o a los diccionarios. Son creandos utilizando llaves o la función set(). Comparten algunas de las funcionalidades de las listas, como el uso de in para revisar si contienen o no un elemento en particular.
+
+\pythonfile{codigo/18-conjuntos/conjuntos.py}
+
+Para crear un conjunto vacío, se debe utilizar set(), ya que {} crea un diccionario vacío.
+
+\pythonfile{codigo/18-conjuntos/conjunto_vacio.py}
+
+Los conjuntos difieren de las listas de varias formas, pero comparten varias operaciones de listas como len().
+
+No están ordenados, lo cual significa que no pueden ser indexados. No pueden tener elementos duplicados.
+
+Debido a la forma en que son almacenados, es más rápido revisar si un elemento es parte de un conjunto que si es parte de una lista.
+
+En lugar de utilizar append() para agregarle algo al conjunto, se utiliza add(). El método remove() elimina un elemento específico de un conjunto.
+
+\pythonfile{codigo/18-conjuntos/add_y_remove.py}
+
+El método pop() elimina un elemento arbitrario. Esto significa que debido a la forma en la Python implementa conjuntos, no hay garantía de que los elementos se retornarán en el mismo orden que en el que se añadieron.
+
+Generalmente, elimina el primer elemento, pero esto no se puede garantizar.
+
+\pythonfile{codigo/18-conjuntos/pop_conjuntos.py}
+
+Usos básicos de conjuntos incluyen pruebas de membresía y la eliminación de entradas duplicadas.
+
+\section{Operaciones con conjuntos}
+
+Los conjuntos pueden ser combinados utilizando operaciones matemáticas.
+
+El operador de unión | combina dos conjuntos para formar uno nuevo que contiene los elementos de cualquiera de los dos.
+
+\pythonfile{codigo/18-conjuntos/union.py}
+
+El operador de intersección \& obtiene sólo los elementos que están en ambos.
+
+\pythonfile{codigo/18-conjuntos/interseccion.py}
+
+El operador de diferencia - obtiene los elementos que están en el primer conjunto, pero no en el segundo.
+
+\pythonfile{codigo/18-conjuntos/diferencia.py}
+
+El operador de diferencia simétrica \^ obtiene los elementos que están en cualquiera de los conjuntos, pero no en ambos.
+
+\pythonfile{codigo/18-conjuntos/diferencia_simetrica.py}
+
+\section{Estructuras de datos}
+
+%TODO: encontrar qué hacer con esta sección
+
+Como se ha visto en capítulos anteriores, Python tiene soporte de las siguientes estructuras de datos: listas, diccionarios, tuplas y conjuntos.
+
+¿Cúando utilizar diccionarios?
+
+\begin{itemize}
+  \item Cuando se necesita utilizar asociaciones lógicas entre pares clave:valor.
+  \item Cuando se necesita buscar datos rápidamente, en base a claves personalizadas.
+  \item Cuando los datos son constantemente modificados.
+\end{itemize}
+
+¿Cúando utilizar listas?
+
+\begin{itemize}
+  \item Cuando se tiene un grupo de datos que no necesita acceso aleatorio (deben estar ordenados).
+  \item Cuando se necesita una recolección simple e iterable que es modificada frecuentemente.
+\end{itemize}
+
+¿Cúando utilizar conjuntos?
+
+\begin{itemize}
+  \item Cuando se necesita que los elementos sean únicos.
+\end{itemize}
+
+¿Cúando utilizar tuplas?
+
+\begin{itemize}
+  \item Cuando se necesita almacenar datos que no pueden ser cambiados.
+\end{itemize}
+
+En muchas ocasiones, una tupla es utilizada junto con un diccionario. Por ejemplo, una tupla puede representar una clave, porque es inmutable.
+
+La siguiente tabla muestra las propiedades de cada estructura de datos.
+
+% tabla 2
+
+\begin{center}
+  \begin{tabular}{ |c|c|c|c|c| }
+    \hline
+    & Lista & Diccionario & Tupla & Conjunto \\
+    \hline
+    Mutable & \si & \si & \no & \si \\
+    \hline
+    Indexado & \indices & \claves & \indices & \no \\
+    \hline
+    Secuencial & \si & \no & \si & \no \\
+    \hline
+    Elementos únicos & \no & \no & \no & \si \\
+    \hline
+    Notación & [ ] & \{ \} & ( ) & \{ \} \\
+    \hline
+  \end{tabular}
+\end{center}
 
 \clearpage\chapter{Manejo de iterables}
 
@@ -1688,113 +1806,6 @@ Otro ejemplo clásico es la serie de Fibonacci.
 
 \section{Iteración vs. Recursión}
 
-\clearpage\chapter{Conjuntos y estructuras de datos}
-
-\section{Conjuntos}
-
-Los conjuntos son estructuras de datos parecidas a las listas o a los diccionarios. Son creandos utilizando llaves o la función set(). Comparten algunas de las funcionalidades de las listas, como el uso de in para revisar si contienen o no un elemento en particular.
-
-\pythonfile{codigo/18-conjuntos/conjuntos.py}
-
-Para crear un conjunto vacío, se debe utilizar set(), ya que {} crea un diccionario vacío.
-
-\pythonfile{codigo/18-conjuntos/conjunto_vacio.py}
-
-Los conjuntos difieren de las listas de varias formas, pero comparten varias operaciones de listas como len().
-
-No están ordenados, lo cual significa que no pueden ser indexados. No pueden tener elementos duplicados.
-
-Debido a la forma en que son almacenados, es más rápido revisar si un elemento es parte de un conjunto que si es parte de una lista.
-
-En lugar de utilizar append() para agregarle algo al conjunto, se utiliza add(). El método remove() elimina un elemento específico de un conjunto.
-
-\pythonfile{codigo/18-conjuntos/add_y_remove.py}
-
-El método pop() elimina un elemento arbitrario. Esto significa que debido a la forma en la Python implementa conjuntos, no hay garantía de que los elementos se retornarán en el mismo orden que en el que se añadieron.
-
-Generalmente, elimina el primer elemento, pero esto no se puede garantizar.
-
-\pythonfile{codigo/18-conjuntos/pop_conjuntos.py}
-
-Usos básicos de conjuntos incluyen pruebas de membresía y la eliminación de entradas duplicadas.
-
-\section{Operaciones con conjuntos}
-
-Los conjuntos pueden ser combinados utilizando operaciones matemáticas.
-
-El operador de unión | combina dos conjuntos para formar uno nuevo que contiene los elementos de cualquiera de los dos.
-
-\pythonfile{codigo/18-conjuntos/union.py}
-
-El operador de intersección \& obtiene sólo los elementos que están en ambos.
-
-\pythonfile{codigo/18-conjuntos/interseccion.py}
-
-El operador de diferencia - obtiene los elementos que están en el primer conjunto, pero no en el segundo.
-
-\pythonfile{codigo/18-conjuntos/diferencia.py}
-
-El operador de diferencia simétrica \^ obtiene los elementos que están en cualquiera de los conjuntos, pero no en ambos.
-
-\pythonfile{codigo/18-conjuntos/diferencia_simetrica.py}
-
-\section{Estructuras de datos}
-
-%TODO: encontrar qué hacer con esta sección
-
-Como se ha visto en capítulos anteriores, Python tiene soporte de las siguientes estructuras de datos: listas, diccionarios, tuplas y conjuntos.
-
-¿Cúando utilizar diccionarios?
-
-\begin{itemize}
-  \item Cuando se necesita utilizar asociaciones lógicas entre pares clave:valor.
-  \item Cuando se necesita buscar datos rápidamente, en base a claves personalizadas.
-  \item Cuando los datos son constantemente modificados.
-\end{itemize}
-
-¿Cúando utilizar listas?
-
-\begin{itemize}
-  \item Cuando se tiene un grupo de datos que no necesita acceso aleatorio (deben estar ordenados).
-  \item Cuando se necesita una recolección simple e iterable que es modificada frecuentemente.
-\end{itemize}
-
-¿Cúando utilizar conjuntos?
-
-\begin{itemize}
-  \item Cuando se necesita que los elementos sean únicos.
-\end{itemize}
-
-¿Cúando utilizar tuplas?
-
-\begin{itemize}
-  \item Cuando se necesita almacenar datos que no pueden ser cambiados.
-\end{itemize}
-
-En muchas ocasiones, una tupla es utilizada junto con un diccionario. Por ejemplo, una tupla puede representar una clave, porque es inmutable.
-
-La siguiente tabla muestra las propiedades de cada estructura de datos.
-
-% tabla 2
-
-\begin{center}
-  \begin{tabular}{ |c|c|c|c|c| }
-    \hline
-    & Lista & Diccionario & Tupla & Conjunto \\
-    \hline
-    Mutable & \si & \si & \no & \si \\
-    \hline
-    Indexado & \indices & \claves & \indices & \no \\
-    \hline
-    Secuencial & \si & \no & \si & \no \\
-    \hline
-    Elementos únicos & \no & \no & \no & \si \\
-    \hline
-    Notación & [ ] & \{ \} & ( ) & \{ \} \\
-    \hline
-  \end{tabular}
-\end{center}
-
 \clearpage\chapter{El módulo itertools}
 
 \section{El módulo itertools}
@@ -2071,7 +2082,7 @@ En resumen, el contador de referencias de un objeto se incrementa cuando se le e
 
 Lenguajes de bajo nivel como C no tienen esta clase de manejo de memoria automático.
 
-\section{Encapsulamiento}
+\section{Ocultamiento de información}
 
 Un componente clave de la programación orientada a objetos es el encapsulamiento, que involucra empaquetar las variables y funciones relacionadas en un único objeto fácil de usar, una instancia de una clase.
 
@@ -2081,8 +2092,19 @@ La filosofía de Python es ligeramente diferente. A menudo se dice \doble{todos 
 
 Sin embargo, hay maneras de desalentar a la gente de acceder a las partes de una clase, tales como denotar que es un detalle de implementación y debe ser utilizado a su cuenta y riesgo.
 
+Los métodos y atributos débilmente privados tienen un único guión bajo al principio. Esto señala que son privados, y no deberían ser utilizados por código externo.
+
+Sin embargo, es en su mayor parte sólo una convención, y no impide que el código externo los acceda. Su único efecto verdadero es que from nombre_de_modulo import * no importará a las variables que empiecen por un único guión bajo.
+
+\section{Métodos de clase}
+
+\section{Métodos estáticos}
+
+\section{Propiedades}
 
 \clearpage\chapter{Expresiones regulares}
+
+\section{Expresiones regulares}
 
 \clearpage\chapter{Empaquetamiento}
 
