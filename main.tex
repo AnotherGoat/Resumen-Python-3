@@ -241,8 +241,11 @@ Las cadenas de caracteres se crean introduciendo el texto entre comillas simples
 
 Un string debe empezar y terminar con comillas del mismo tipo, no se permiten comillas mixtas.
 
-\pythonfile{codigo/3-strings/strings_no_validos.py}
-\out{codigo/3-strings/strings_no_validos.out}
+\pythonfile{codigo/3-strings/string_no_valido_1.py}
+\out{codigo/3-strings/string_no_valido_1.out}
+
+\pythonfile{codigo/3-strings/string_no_valido_2.py}
+\out{codigo/3-strings/string_no_valido_2.out}
 
 \section{Cadena vacía}
 
@@ -1208,7 +1211,7 @@ La siguiente tabla muestra el funcionamiento de cada modo:
 
 % tabla 1
 
-\begin{center}
+\makebox[\textwidth][c]{
   \begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
     \hline
     & r & r+ & w & w+ & x & x+ & a & a+ \\
@@ -1224,7 +1227,7 @@ La siguiente tabla muestra el funcionamiento de cada modo:
     Posición del cursor & \inicio & \inicio & \inicio & \inicio & \inicio & \inicio & \final & \final \\
     \hline
   \end{tabular}
-\end{center}
+}
 
 *: Levanta una excepción FileExistsError.
 
@@ -1492,7 +1495,7 @@ La siguiente tabla muestra las propiedades de cada estructura de datos.
 
 % tabla 2
 
-\begin{center}
+\makebox[\textwidth][c]{
   \begin{tabular}{ |c|c|c|c|c| }
     \hline
     & Lista & Diccionario & Tupla & Conjunto \\
@@ -1508,7 +1511,7 @@ La siguiente tabla muestra las propiedades de cada estructura de datos.
     Notación & [ ] & \{ \} & ( ) & \{ \} \\
     \hline
   \end{tabular}
-\end{center}
+}
 
 \clearpage\chapter{Manejo de iterables}
 

@@ -1,4 +1,6 @@
 main.synctex(busy)
+__latexindent_temp.tex
+
 build/*
 
 !build/main.pdf
