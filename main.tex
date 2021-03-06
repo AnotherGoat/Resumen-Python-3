@@ -111,7 +111,7 @@ Para mostrar el texto \doble{Hola mundo} en pantalla se puede usar la función p
 
 Cada declaración de impresión print() genera texto en una nueva línea.
 
-\pythonfile{codigo/1-intro/hola_mundo_2.py
+\pythonfile{codigo/1-intro/hola_mundo_2.py}
 \out{codigo/1-intro/hola_mundo_2.out}
 
 \section{El Zen de Python}
@@ -234,7 +234,7 @@ En el caso mostrado anteriormente, se infiere que 10 es múltiplo de 2, que 15 e
 
 \section{Strings o cadenas de caracteres}
 
-Las cadenas de caracteres se crean introduciendo el texto entre comillas simples $'$$'$ o dobles $''$$''$.
+Las cadenas de caracteres se crean introduciendo el texto entre comillas simples \mintinline{python}{' '} o dobles \mintinline{python}{" "}.
 
 \pythonfile{codigo/3-strings/string.py}
 \out{codigo/3-strings/string.out}
@@ -246,7 +246,7 @@ Un string debe empezar y terminar con comillas del mismo tipo, no se permiten co
 
 \section{Cadena vacía}
 
-A veces es necesario inicializa un string, pero sin agregarle información. Una cadena vacía es definida como $'$$'$ o $''$$''$.
+A veces es necesario inicializa un string, pero sin agregarle información. Una cadena vacía es definida como \mintinline{python}{''} o \mintinline{python}{""}.
 
 \pythonfile{codigo/3-strings/cadena_vacia.py}
 
@@ -257,11 +257,11 @@ Estos strings vacíos se inicializan en variables, lo cual se verá en el capít
 Algunos caracteres no se pueden incluir directamente en una cadena. Para esos casos, se debe incluir la barra diagonal inversa \textbackslash antes de ellos.
 
 \pythonfile{codigo/3-strings/caracteres_especiales.py}
-\out{codigo/3-strings/caracters_especiales.out}
+\out{codigo/3-strings/caracteres_especiales.out}
 
 Los caracteres $'$, $''$ y \textbackslash son especiales, porque normalmente cumplen funciones especiales dentro de strings.
 
-Si el string se define entre comillas dobles, no es necesario poner $'$ para ingresar comillas simples dentro de él, y viceversa.
+Si el string se define entre comillas dobles, no es necesario poner \mintinline{python}{'} para ingresar comillas simples dentro de él, y viceversa.
 
 \pythonfile{codigo/3-strings/comillas.py}
 \out{codigo/3-strings/comillas.out}
@@ -332,7 +332,7 @@ El \href{https://unicode.org/}{\underline{sitio web de Unicode}} contiene más i
 
 \section{Strings multilínea}
 
-Este es un tipo especial de string, que se escribe entre comillas triples $'$$'$$'$ o $''$$''$$''$, y que reconoce los saltos de línea sin necesidad de usar la secuencia \textbackslash n.
+Este es un tipo especial de string, que se escribe entre comillas triples \mintinline{python}{''' '''} o \mintinline{python}{""" """}, y que reconoce los saltos de línea sin necesidad de usar la secuencia \textbackslash n.
 
 \pythonfile{codigo/3-strings/string_multilinea.py}
 \out{codigo/3-strings/string_multilinea.out}
@@ -2160,7 +2160,7 @@ Sin embargo, hay maneras de desalentar a la gente de acceder a las partes de una
 
 Los métodos y atributos débilmente privados tienen un único guión bajo al principio. Esto señala que son privados, y no deberían ser utilizados por código externo.
 
-Sin embargo, es en su mayor parte sólo una convención, y no impide que el código externo los acceda. Su único efecto verdadero es que from nombre_de_modulo import * no importará a las variables que empiecen por un único guión bajo.
+Sin embargo, es en su mayor parte sólo una convención, y no impide que el código externo los acceda. Su único efecto verdadero es que \mintinline{python}{from nombre_de_modulo import *} no importará a las variables que empiecen por un único guión bajo.
 
 \section{Métodos de clase}
 
