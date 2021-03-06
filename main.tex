@@ -1254,8 +1254,6 @@ Para determinar si una clave está en un diccionario, se puede usar los operador
 
 Nótese que retorna False al buscar \doble{tres}. Esto ocurre porque \doble{tres} es un valor, no una clave.
 
-\pythonfile{codigo/16-iterables/diccionarios_6.py}
-
 \section{Función get()}
 
 Un método útil de diccionarios es get(). Hace lo mismo que indexar, pero si una clave no es encontrada en el diccionario entonces devuelve otro valor especificado (\simple{None} por defecto).
@@ -1264,7 +1262,7 @@ Un método útil de diccionarios es get(). Hace lo mismo que indexar, pero si un
 
 En este caso es importante recordar que 1 y True son la misma clave. Entonces, el diccionario \doble{pares} sólo tiene 3 elementos (la clave True tendrá como valor False, su último valor).
 
-%TODO: iba una imagen aquí?
+\pythonfile{codigo/16-iterables/diccionarios_6.py}
 
 \section{Función keys()}
 
@@ -1960,37 +1958,37 @@ Y después el intérprete de Python interpreta los operadores así:
 
 A continuación, se muestra un ejemplo de implementación del método \_\_truediv\_\_.
 
-\pythonfile{codigo/20-objetos/sobrecarga_operadores_4.py}
+\pythonfile{codigo/20-objetos/truediv.py}
 
 La sobrecarga de operadores no necesita que los métodos mágicos nuevos cumplan su misma función original.
 Un caso particular ocurre cuando \doble{x} e \doble{y} son de tipos distintos y \doble{x} no tiene definido un método mágico, por ejemplo \_\_add\_\_. En este caso, Python intentará calcular la operación al revés, la cual en este caso será y + x. Para realizar esta operación llamará al método reverso \_\_radd\_\_ de “y”.
 Hay métodos r equivalentes para todos los operadores mencionados anteriormente.
 
-\pythonfile{codigo/20-objetos/sobrecarga_operadores_5.py}
+\pythonfile{codigo/20-objetos/r_magicos.py}
 
 Y un ejemplo de implementación de métodos reversos:
 
-\pythonfile{codigo/20-objetos/sobrecarga_operadores_6.py}
+\pythonfile{codigo/20-objetos/radd.py}
 
 \section{Sobrecarga de operadores de comparación}
 
 Python también ofrece métodos mágicos para comparaciones.
 
-\pythonfile{codigo/20-objetos/sobrecarga_comparadores_1.py}
+\pythonfile{codigo/20-objetos/magicos_comparadores.py}
 
 Si \_\_ne\_\_ no está implementado, devuelve el opuesto de \_\_eq\_\_. No hay ninguna otra relación entre los otros operadores.
 
-\pythonfile{codigo/20-objetos/sobrecarga_comparadores_2.py}
+\pythonfile{codigo/20-objetos/gt.py}
 
 \section{Métodos mágicos de contenedores}
 
 Hay varios métodos mágicos para hacer que las clases actúen como contenedores.
 
-\pythonfile{codigo/20-objetos/contenedores_1.py}
+\pythonfile{codigo/20-objetos/magicos_contenedores.py}
 
 A continuación, se muestra un ejemplo rebuscado pero creativo, el cual consiste en crear una clase de lista poco confiable o imprecisa.
 
-\pythonfile{codigo/20-objetos/contenedores_2.py}
+\pythonfile{codigo/20-objetos/lista_imprecisa.py}
 
 %TODO: Investigar más métodos mágicos
 
