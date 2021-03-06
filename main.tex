@@ -9,7 +9,7 @@
 \usepackage[svgnames]{xcolor}
 \usepackage{amsmath}
 \usepackage[spanish]{babel}
-\usepackage[colorlinks=true, linkcolor=., urlcolor=ForestGreen]{hyperref}
+\usepackage[colorlinks=true, linkcolor=., urlcolor=DarkGreen]{hyperref}
 
 % estilo de los segmentos de código
 \usemintedstyle{perldoc}
@@ -36,11 +36,21 @@
 \newcommand{\doble}[1]{``#1''}
 
 % color nuevo para los bloques de código
-\definecolor{grisclaro}{RGB}{240, 240, 240}
+%\definecolor{grisclaro}{RGB}{240, 240, 240}
 
 % macros nuevas para minted
-\newmintedfile{python}{bgcolor=grisclaro, frame=single, linenos, numbersep=6pt}
-\newmintedfile{text}{frame=single}
+\newmintedfile{python}{bgcolor=LightGray, frame=single, linenos, numbersep=6pt, breaklines}
+\newmintedfile[outfile]{text}{frame=single, linenos, numbersep=6pt, breaklines}
+\newmintedfile{text}{frame=single, breaklines}
+
+% se usan en tablas
+\newcommand{\si}{\textcolor{ForestGreen}{Sí}}
+\newcommand{\no}{\textcolor{Crimson}{No}}
+\newcommand{\noo}{\textcolor{Crimson}{No*}}
+\newcommand{\inicio}{\textcolor{DodgerBlue}{Inicio}}
+\newcommand{\final}{\textcolor{RoyalBlue}{Final}}
+\newcommand{\indices}{\textcolor{ForestGreen}{Índices}}
+\newcommand{\claves}{\textcolor{ForestGreen}{Claves}}
 
 \title{Resumen Python 3}
 \author{Víctor Mardones Bravo}
@@ -92,6 +102,7 @@ Dato curioso: Según el creador Guido van Rossum, el nombre de Python viene de l
 Para mostrar el texto \doble{Hola mundo} en pantalla se puede usar la función print().
 
 \pythonfile{codigo/1-intro/hola_mundo_1.py}
+\outfile{codigo/1-intro/hola_mundo_1.out}
 
 Cada declaración de impresión print() genera texto en una nueva línea.
 
@@ -1105,7 +1116,28 @@ Además de los modos de apertura, también existen los modos en los que se muest
 Se puede añadir el signo \doble{+} a cualquiera de los modos de arriba para darles acceso adicional a archivos.
 
 La siguiente tabla muestra el funcionamiento de cada modo:
-%TODO: tabla
+
+% tabla 1
+
+\begin{center}
+  \begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+    \hline
+    & r & r+ & w & w+ & x & x+ & a & a+ \\
+    \hline
+    Lee el archivo & \si & \si & \no & \si & \no & \si & \no & \si \\
+    \hline
+    Escribe en el archivo & \no & \si & \si & \si & \si & \si & \si & \si \\
+    \hline
+    Crea el archivo si no existe & \no & \no & \si & \si & \si & \si & \si & \si \\
+    \hline
+    Borra todos los contenidos del archivo & \no & \no & \si & \si & \noo & \noo & \no & \no \\
+    \hline
+    Posición del cursor & \inicio & \inicio & \inicio & \inicio & \inicio & \inicio & \final & \final \\
+    \hline
+  \end{tabular}
+\end{center}
+
+*: Levanta una excepción FileExistsError.
 
 \section{Cierre de archivos}
 
@@ -1743,7 +1775,25 @@ En muchas ocasiones, una tupla es utilizada junto con un diccionario. Por ejempl
 
 La siguiente tabla muestra las propiedades de cada estructura de datos.
 
-%TODO: la tabla
+% tabla 2
+
+\begin{center}
+  \begin{tabular}{ |c|c|c|c|c| }
+    \hline
+    & Lista & Diccionario & Tupla & Conjunto \\
+    \hline
+    Mutable & \si & \si & \no & \si \\
+    \hline
+    Indexado & \indices & \claves & \indices & \no \\
+    \hline
+    Secuencial & \si & \no & \si & \no \\
+    \hline
+    Elementos únicos & \no & \no & \no & \si \\
+    \hline
+    Notación & [ ] & \{ \} & ( ) & \{ \} \\
+    \hline
+  \end{tabular}
+\end{center}
 
 \clearpage\chapter{El módulo itertools}
 
