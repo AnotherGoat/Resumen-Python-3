@@ -33,5 +33,6 @@
                 "%DOCFILE%"
             ]
         }
-    ]
+    ],
+    "python.pythonPath": "C:\\Users\\vnico\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe"
 }

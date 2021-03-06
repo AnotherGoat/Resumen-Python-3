@@ -994,15 +994,15 @@ Las bibliotecas creadas por terceros a menudo definen sus propias excepciones.
 
 Para manejar excepciones y ejecutar código cuando ocurre una excepción, se puede usar una sentencia try-except. El bloque try contiene código que puede lanzar una excepción. Si ocurre una excepción, el código en el bloque try deja de ser ejecutado y el código en el bloque except se ejecuta. Si no ocurre ningún error, el código en el bloque except no se ejecuta.
 
-%TODO
+\pythonfile{codigo/11-excepciones/excepcion_2.py}
 
 Una sentencia try puede tener varios bloques except para manejar diferentes excepciones. Varias excepciones pueden ser colocadas dentro de un mismo bloque except utilizando paréntesis.
 
-%TODO
+\pythonfile{codigo/11-excepciones/excepcion_3.py}
 
 Una sentencia except sin ninguna excepción especificada atrapa todos los errores. Estos deben usarse con moderación ya que pueden atrapar errores inesperados y esconder errores de programación.
 
-%TODO
+\pythonfile{codigo/11-excepciones/excepcion_4.py}
 
 Si una sentencia except vacía viene acompañada de otros except, esta debe ir al final, para evitar atrapar errores esperados.
 
@@ -1010,27 +1010,27 @@ Si una sentencia except vacía viene acompañada de otros except, esta debe ir a
 
 Para asegurar que algún código se ejecute sin importar cuál error ocurra, se puede usar la palabra clave finally. La sentencia finally se coloca en el fondo de una sentencia try-except. El código dentro de la sentencia finally siempre se ejecuta después del código del bloque try y de cualquier bloque except que se ejecute.
 
-%TODO
+\pythonfile{codigo/11-excepciones/finally_1.py}
 
 El código dentro del bloque finally se ejecutará incluso si una excepción sin atrapar ocurre en alguno de los bloques que lo preceden.
 
-%TODO
+\pythonfile{codigo/11-excepciones/finally_2.py}
 
 \section{Levantar excepciones}
 
 Se puede usar la sentencia raise para levantar excepciones. Se necesita especificar el tipo de la excepción levantada.
 
-%TODO
+\pythonfile{codigo/11-excepciones/raise_1.py}
 
 Las excepciones pueden ser levantadas con argumentos que den detalles sobre ellas.
 
-%TODO
+\pythonfile{codigo/11-excepciones/raise_2.py}
 
-%TODO
+\pythonfile{codigo/11-excepciones/raise_3.py}
 
 En los bloques except, la sentencia raise puede ser utilizada sin argumentos para volver a levantar cualquier excepción que haya ocurrido.
 
-%TODO
+\pythonfile{codigo/11-excepciones/raise_4.py}
 
 \section{Aserciones}
 
@@ -1044,13 +1044,13 @@ Los programadores a menudo colocan aserciones al principio de una función para 
 
 La declaración assert puede recibir un segundo argumento el cual es pasado a la excepción AssertionError levantada si la aserción falla.
 
-%TODO
+\pythonfile{codigo/11-excepciones/assert_1.py}
 
 Las excepciones AssertionError pueden ser atrapadas y manejadas como cualquier otra excepción utilizando la sentencia try-except, pero si no son manejadas, este tipo de excepción terminará el programa.
 
 En general, se recomienda usar aserciones para atrapar tus propios errores y excepciones para atrapar los errores que los usuarios u otras personas podrían cometer.
 
-%TODO
+\pythonfile{codigo/11-excepciones/assert_2.py}
 
 \clearpage\chapter{Pruebas unitarias}
 
@@ -1221,23 +1221,22 @@ El objeto None es devuelto por cualquier función que no devuelve explícitament
 
 Los diccionarios son estructuras de datos utilizadas para mapear claves arbitrarias a valores. Pueden ser indexados de la misma manera que las listas, utilizando corchetes que contengan claves.
 
-%TODO
+\pythonfile{codigo/16-iterables/diccionarios_1.py}
 
 Cada elemento de un diccionario es representado por un par clave:valor (key:value). Estos elementos no se almacenan con algún orden en específico. Los diccionarios no están ordenados, lo que significa que no pueden ser indexados por índices, sólo por claves.
 
 Las listas pueden ser consideradas como diccionarios con claves de números enteros dentro de un cierto rango.
 
-%TODO
+\pythonfile{codigo/16-iterables/diccionarios_2.py}
 
 Un diccionario puede almacenar como valor cualquier tipo de datos.
 
-%TODO
+\pythonfile{codigo/16-iterables/diccionarios_3.py}
 
 Tratar de indexar una clave que no es parte de un diccionario retorna un KeyError.
 Un diccionario vacío es definido como {}.
 
-
-%TODO
+\pythonfile{codigo/16-iterables/diccionario_vacio.py}
 
 Sólo objetos inmutables pueden ser utilizados como claves de diccionario. Los objetos inmutables son aquellos que no pueden ser cambiados. Algunos objetos mutables son listas, conjuntos y diccionarios. Tratar de utilizar un objeto mutable como clave de diccionario ocasiona un TypeError.
 
@@ -1245,27 +1244,27 @@ Sólo objetos inmutables pueden ser utilizados como claves de diccionario. Los o
 
 Al igual que las listas, las claves de un diccionario pueden ser asignadas a distintos valores. Sin embargo, a diferencia de las listas, se le puede asignar un valor a nuevas claves, no sólo a las que ya existen.
 
-%TODO
+\pythonfile{codigo/16-iterables/diccionarios_4.py}
 
 \section{Uso de in y not en diccionarios}
 
 Para determinar si una clave está en un diccionario, se puede usar los operadores in y not in, al igual que en listas.
 
-%TODO
+\pythonfile{codigo/16-iterables/diccionarios_5.py}
 
 Nótese que retorna False al buscar \doble{tres}. Esto ocurre porque \doble{tres} es un valor, no una clave.
 
-%TODO
+\pythonfile{codigo/16-iterables/diccionarios_6.py}
 
 \section{Función get()}
 
 Un método útil de diccionarios es get(). Hace lo mismo que indexar, pero si una clave no es encontrada en el diccionario entonces devuelve otro valor especificado (\simple{None} por defecto).
 
-%TODO
+\pythonfile{codigo/16-iterables/get.py}
 
 En este caso es importante recordar que 1 y True son la misma clave. Entonces, el diccionario \doble{pares} sólo tiene 3 elementos (la clave True tendrá como valor False, su último valor).
 
-%TODO
+%TODO: iba una imagen aquí?
 
 \section{Función keys()}
 
@@ -1850,7 +1849,7 @@ La clase describe lo que el objeto será, pero es independiente del objeto mismo
 
 Las clases son creadas utilizando la palabra clave class y un bloque indentado que contiene los métodos de una clase (los cuales son funciones).
 
-%TODO
+\pythonfile{codigo/20-objetos/clases_1.py}
 
 El código define una clase llamada Gato, la cual tiene el atributo color. Luego, la clase es utilizada para crear 2 objetos independientes de esa clase.
 
@@ -1864,7 +1863,7 @@ Dentro de la definición de un método, self se refiere a la instancia que está
 
 Las instancias de una clase tienen atributos, los cuales son datos asociados a ellas. En este ejemplo, las instancias de Gato tienen los atributos color y edad. Los atributos pueden ser accedidos al poner un punto seguido del nombre del atributo luego del nombre de una instancia.
 
-%TODO
+\pythonfile{codigo/20-objetos/clases_2.py}
 
 En un método \_\_init\_\_, self.atributo puede ser usado para fijar un valor inicial a los atributos de una instancia.
 
@@ -1872,7 +1871,7 @@ En el método mostrado anteriormente, el método \_\_init\_\_ recibe 2 argumento
 
 Si una clase no tiene atributos que se quieran inicializar con cada instancia, se puede omitir el método \_\_init\_\_.
 
-%TODO
+\pythonfile{codigo/20-objetos/sin_constructor.py}
 
 %TODO Separar esta sección
 
@@ -1883,23 +1882,23 @@ Si una clase no tiene atributos que se quieran inicializar con cada instancia, s
 Las clases pueden tener otros métodos definidos para agregarles funcionalidad. Todos los métodos deben tener self como su primer parámetro.
 Estos métodos son accedidos utilizando la misma sintaxis de punto que los atributos.
 
-%TODO
+\pythonfile{codigo/20-objetos/clases_3.py}
 
 \section{Atributos de clase}
 
 Las clases pueden tener atributos de clase también, creados al asignar variables dentro del cuerpo de una clase. Estos pueden ser accedidos desde instancias de una clase o desde la clase misma.
 
-%TODO
+\pythonfile{codigo/20-objetos/clases_4.py}
 
 Los atributos de clase son compartidos por todas las instancias de una clase. Realizar algún cambio a un atributo de la clase también hará ese cambio en las instancias de esa clase.
 
-%TODO
+\pythonfile{codigo/20-objetos/clases_5.py}
 
 \section{Excepciones de clases}
 
 Tratar de acceder a un atributo de una instancia que no está definida generará un AttributeError. Esto también aplica cuando se llama un método no definido.
 
-%TODO
+\pythonfile{codigo/20-objetos/clases_6.py}
 
 \section{Herencia}
 
@@ -1909,17 +1908,17 @@ Por ejemplo, las clases Perro, Gato, Conejo, etc. tienen algo en común. Aunque 
 
 Para heredar de una clase desde otra, se coloca el nombre de la superclase entre paréntesis luego del nombre de la clase.
 
-%TODO
+\pythonfile{codigo/20-objetos/herencia_1.py}
 
 Una clase que hereda de otra clase se llama subclase. Una clase de la cual se hereda se llama superclase.
 
 Si una clase hereda de otra con los mismos atributos o métodos, los sobreescribe.
 
-%TODO
+\pythonfile{codigo/20-objetos/herencia_2.py}
 
 La herencia también puede ser indirecta. Una clase hereda de otra, y esa clase puede a su vez heredar de una tercera clase.
 
-%TODO
+\pythonfile{codigo/20-objetos/herencia_3.py}
 
 Sin embargo, no es posible la herencia circular.
 
@@ -1927,11 +1926,11 @@ Sin embargo, no es posible la herencia circular.
 
 La función super() es una útil función relacionada con la herencia que hace referencia a la clase padre. Puede ser utilizada para encontrar un método con un determinado nombre en la superclase del objeto.
 
-%TODO
+\pythonfile{codigo/20-objetos/herencia_4.py}
 
 También se puede usar para llamar al constructor de la superclase.
 
-%TODO
+\pythonfile{codigo/20-objetos/herencia_5.py}
 
 \section{Métodos mágicos}
 
@@ -1945,7 +1944,7 @@ Un uso común de métodos mágicos es la sobrecarga de operadores. Esto signific
 
 El método mágico \_\_add\_\_ permite sobrecargar el operador +, lo cual permite darle un comportamiento personalizado.
 
-%TODO
+\pythonfile{codigo/20-objetos/sobrecarga_operadores_1.py}
 
 El método \_\_add\_\_ suma los atributos correspondientes de los objetos y devuelve un nuevo objeto que contiene el resultado. Una vez definido, se pueden sumar dos objetos de una clase entre sí.
 
@@ -1953,45 +1952,45 @@ Otra forma de verlo es que el intérprete de Python siempre interpretará el ope
 
 Los métodos mágicos para operadores comunes son:
 
-%TODO
+\pythonfile{codigo/20-objetos/sobrecarga_operadores_2.py}
 
 Y después el intérprete de Python interpreta los operadores así:
 
-%TODO
+\pythonfile{codigo/20-objetos/sobrecarga_operadores_3.py}
 
 A continuación, se muestra un ejemplo de implementación del método \_\_truediv\_\_.
 
-%TODO
+\pythonfile{codigo/20-objetos/sobrecarga_operadores_4.py}
 
 La sobrecarga de operadores no necesita que los métodos mágicos nuevos cumplan su misma función original.
 Un caso particular ocurre cuando \doble{x} e \doble{y} son de tipos distintos y \doble{x} no tiene definido un método mágico, por ejemplo \_\_add\_\_. En este caso, Python intentará calcular la operación al revés, la cual en este caso será y + x. Para realizar esta operación llamará al método reverso \_\_radd\_\_ de “y”.
 Hay métodos r equivalentes para todos los operadores mencionados anteriormente.
 
-%TODO
+\pythonfile{codigo/20-objetos/sobrecarga_operadores_5.py}
 
 Y un ejemplo de implementación de métodos reversos:
 
-%TODO
+\pythonfile{codigo/20-objetos/sobrecarga_operadores_6.py}
 
 \section{Sobrecarga de operadores de comparación}
 
 Python también ofrece métodos mágicos para comparaciones.
 
-%TODO
+\pythonfile{codigo/20-objetos/sobrecarga_comparadores_1.py}
 
 Si \_\_ne\_\_ no está implementado, devuelve el opuesto de \_\_eq\_\_. No hay ninguna otra relación entre los otros operadores.
 
-%TODO
+\pythonfile{codigo/20-objetos/sobrecarga_comparadores_2.py}
 
 \section{Métodos mágicos de contenedores}
 
 Hay varios métodos mágicos para hacer que las clases actúen como contenedores.
 
-%TODO
+\pythonfile{codigo/20-objetos/contenedores_1.py}
 
 A continuación, se muestra un ejemplo rebuscado pero creativo, el cual consiste en crear una clase de lista poco confiable o imprecisa.
 
-%TODO
+\pythonfile{codigo/20-objetos/contenedores_2.py}
 
 %TODO: Investigar más métodos mágicos
 
@@ -2020,7 +2019,7 @@ El proceso de eliminación de objetos cuando ya no son necesarios se denomina re
 
 En resumen, el contador de referencias de un objeto se incrementa cuando se le es asignado un nuevo nombre o es colocado en un contenedor (una lista, tupla o diccionario). La cuenta de referencias de un objeto se disminuye cuando es eliminado con del, su referencia es reasignada, o su referencia sale fuera del alcance. Cuando la cuenta de referencias de un objeto llega a 0, Python lo elimina automáticamente.
 
-%TODO
+\pythonfile{codigo/20-objetos/contador_referencias.py}
 
 Lenguajes de bajo nivel como C no tienen esta clase de manejo de memoria automático.
 
