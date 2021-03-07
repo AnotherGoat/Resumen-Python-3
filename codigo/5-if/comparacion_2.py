@@ -1,1 +1,1 @@
-print(1 == 1.0)  # True
+print(1 == 1.0)

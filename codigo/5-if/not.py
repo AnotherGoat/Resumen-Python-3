@@ -1,1 +1,1 @@
-print(not 1 > 100)  # True
+print(not 1 > 100)

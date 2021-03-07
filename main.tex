@@ -98,7 +98,7 @@
 
 Fue diseñado por Gudo van Rossum. Fue lanzado en el año 1991. Se lanzaron diferentes versiones, entre ellas Python 1, Python 2 y la versión actual, Python 3.
 
-\section{Componentes principales de Python}
+\section{Componentes principales}
 
 \begin{itemize}
   \item Funciones: Python tiene funciones predefinidas que son de gran utilidad, por ejemplo las funciones matemáticas. Las funciones son grupos de bloques de código que pueden ejecutarse en cualquier sección del código, según el programador lo necesite.
@@ -140,7 +140,7 @@ Si estos conceptos no se entienden todavía, no hay problema, pues se verán má
   
 \end{itemize}
 
-\section{Organizaciones que usan Python}
+\section{Organizaciones que lo usan}
 
 Python es muy popular y es usado por organizaciones y aplicaciones como:
 
@@ -584,8 +584,6 @@ Una variable también puede cambiar de valor a lo largo de la ejecución de un p
 
 Para obtener información del usuario, se puede usar la función input(). La información obtenida puede ser almacenada como una variable.
 
-%TODO: explicar la conversión necesaria
-
 \pythonfile{codigo/4-variables/input_1.py}
 \inp{codigo/4-variables/input_1.inp}
 \out{codigo/4-variables/input_1.out}
@@ -620,6 +618,12 @@ Existen funciones para convertir datos de un tipo a otro. Entre dichas funciones
   \out{codigo/4-variables/convertir_a_string.out}
 
 \end{itemize}
+
+Como el resultado de la función input() es un string, es normal convertir el resultado de este método para usarlo en operaciones matemáticas.
+
+\pythonfile{codigo/4-variables/input_3.py}
+\inp{codigo/4-variables/input_3.inp}
+\out{codigo/4-variables/input_3.out}
 
 \section{Operadores de asignación}
 
@@ -686,16 +690,19 @@ También se conocen como operadores relacionales.
 Las comparaciones entre datos de tipo entero y float también son válidas.
 
 \pythonfile{codigo/5-if/comparacion_2.py}
+\out{codigo/5-if/comparacion_2.out}
 
 Las comparaciones entre números y strings son válidas, pero siempre se evalúan como False.
 
 \pythonfile{codigo/5-if/comparacion_3.py}
+\out{codigo/5-if/comparacion_3.out}
 
 \section{Declaración if}
 
 Las declaraciones if sirven para ejecutar código si ser cumple una determinada condición. Si la expresión se evalúa como True, se lleva a cabo el bloque de código que le sigue. En caso contrario, no ocurre nada.
 
-\pythonfile{codigo/5-if/if_1.py}
+\pythonfile{codigo/5-if/if.py}
+\out{codigo/5-if/if.out}
 
 Python usa indentación (espacio en blanco al comienzo de una línea) para delimitar bloques de código. En otros lenguajes, esta operación se realiza delimitando cada bloque de código por llaves {}.
 
@@ -703,15 +710,24 @@ Python usa indentación (espacio en blanco al comienzo de una línea) para delim
 
 Las declaraciones if-else son muy similares a las declaraciones if, pero esta vez sí ocurre algo cuando no se cumple la expresión a evaluar.
 
-\pythonfile{codigo/5-if/if_2.py}
+\pythonfile{codigo/5-if/if_else_1.py}
+\out{codigo/5-if/if_else_1.out}
 
-\pythonfile{codigo/5-if/if_3.py}
+\pythonfile{codigo/5-if/if_else_2.py}
+\inp{codigo/5-if/if_else_2.inp_1}
+\out{codigo/5-if/if_else_2.out_1}
+\inp{codigo/5-if/if_else_2.inp_1}
+\out{codigo/5-if/if_else_2.out_1}
 
 \section{Declaración elif}
 
 El término elif se usa cuando se encadenan múltiples declaraciones if-else. Hace que el código sea más corto.
 
 \pythonfile{codigo/5-if/if_4.py}
+\inp{codigo/5-if/elif.inp_1}
+\out{codigo/5-if/elif.out_1}
+\inp{codigo/5-if/elif.inp_2}
+\out{codigo/5-if/elif.out_2}
 
 El programa irá evaluando cada expresión una por una hasta que alguna se cumpla. Cuando esto ocurra, ejecutará las instrucciones en su bloque de código y continuará con las expresiones después del bloque de código else.
 
@@ -722,14 +738,17 @@ Los operadores lógicos se utilizan para crear condiciones complejas agrupando c
 El operador and se evalúa como True si ambas condiciones se cumplen.
 
 \pythonfile{codigo/5-if/and.py}
+\out{codigo/5-if/and.out}
 
 El operador or se evalúa como True si al menos una de las condiciones se cumple.
 
 \pythonfile{codigo/5-if/or.py}
+\out{codigo/5-if/or.out}
 
 El operador not sólo toma una condición y la invierte.
 
 \pythonfile{codigo/5-if/not.py}
+\out{codigo/5-if/not.out}
 
 \section{Precedencia de operadores lógicos}
 
@@ -749,6 +768,7 @@ Los operadores lógicos siguen un orden similar a PEMDAS, el cual es el siguient
 Sin embargo, este orden es confuso, por lo que se recomienda usar paréntesis para hacerlo más obvio.
 
 \pythonfile{codigo/5-if/logica.py}
+\out{codigo/5-if/logica.out}
 
 \clearpage\chapter{Listas}
 

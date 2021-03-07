@@ -1,4 +1,5 @@
-x = input("Ingrese un número: ")
+x = int(input("Ingrese un número: "))
+
 if x == 1:
     print("Uno")
 elif x == 2:
