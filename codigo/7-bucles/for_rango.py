@@ -1,3 +1,2 @@
-for i in range(10):
+for i in range(6):
     print(i)
-# muestra los números del 0 al 9

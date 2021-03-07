@@ -1,1 +1,1 @@
-print(range(10) == range(0, 10))  # True
+print(range(10) == range(0, 10))

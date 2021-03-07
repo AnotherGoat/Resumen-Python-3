@@ -1,1 +1,1 @@
-continue  # SyntaxError
+continue

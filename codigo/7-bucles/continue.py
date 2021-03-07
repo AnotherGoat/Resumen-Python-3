@@ -1,7 +1,7 @@
-print("Números del 1 al 10, exceptuando el 5:")
 i = 0
-while i < 10:
+while i < 7:
     i = i + 1
-    if i == 5:
+    
+    if i == 4:
         continue
     print(i)

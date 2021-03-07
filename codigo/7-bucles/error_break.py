@@ -1,1 +1,1 @@
-break  # SyntaxError
+break
