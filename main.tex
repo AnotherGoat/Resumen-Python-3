@@ -8,6 +8,8 @@
 \usepackage{sectsty}
 \usepackage{tocloft}
 
+\usepackage{enumitem}
+
 \usepackage{graphicx}
 \usepackage[svgnames]{xcolor}
 
@@ -36,6 +38,10 @@
 % cambiar espacio entre números y texto en la tabla de contenidos
 \setlength\cftchapnumwidth{2em}
 \setlength\cftsecnumwidth{3em}
+
+% quitar sangría de itemize y enumerate
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
 
 % comandos nuevos para comillas simples y dobles
 \newcommand{\simple}[1]{`#1'}
@@ -2438,9 +2444,9 @@ Un concepto asociado es el de ocultamiento de información, el cual dicta que lo
 
 La filosofía de Python es ligeramente diferente. A menudo se dice \doble{todos somos adultos consistentes aquí}, que significa que no deberías poner restricciones arbitrarias al acceso de las partes de una clase. Por ende, no hay formas de imponer que un método o atributo sea estrictamente privado.\smallskip
 
-Sin embargo, hay maneras de desalentar a la gente de acceder a las partes de una clase, tales como denotar que es un detalle de implementación y debe ser utilizado a su cuenta y riesgo.
+Sin embargo, hay maneras de desalentar a la gente de acceder a las partes de una clase, tales como denotar que es un detalle de implementación y debe ser utilizado a su cuenta y riesgo.\smallskip
 
-Los métodos y atributos débilmente privados tienen un único guión bajo al principio. Esto señala que son privados, y no deberían ser utilizados por código externo.
+Los métodos y atributos débilmente privados tienen un único guión bajo al principio. Esto señala que son privados, y no deberían ser utilizados por código externo.\smallskip
 
 Sin embargo, es en su mayor parte sólo una convención, y no impide que el código externo los acceda. Su único efecto verdadero es que \texttt{from nombre\_de\_modulo import *} no importará a las variables que empiecen por un único guión bajo.
 
