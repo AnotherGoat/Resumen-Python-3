@@ -105,11 +105,13 @@ Fue diseñado por Gudo van Rossum. Fue lanzado en el año 1991. Se lanzaron dife
   
   \item Clases: Son los planos para construir objetos, los cuales incluyen todas sus características y comportamientos. En Python, prácticamente todo es un objeto, aunque en muchos casos no parezca obvio.
   
-  \item Módulos: Agrupan funciones y clases que sirven para objetivos similares. La biblioteca estándar de Python es muy grande comparada con las de otros lenguajes.
+  \item Módulos: Agrupan funciones y clases que sirven para objetivos similares. La biblioteca estándar de Python es muy grande comparada con las de otros lenguajes de programación.
   
   \item Paquetes: Agrupan módulos usados en aplicaciones grandes, permitiendo su distribución a terceros.
 
 \end{itemize}
+
+Si estos conceptos no se entienden todavía, no hay problema, pues se verán más a fondo en sus respectivos capítulos.
 
 \section{Características de Python}
 
@@ -235,17 +237,21 @@ Cada declaración de impresión print() genera texto en una nueva línea.
 
 \section{El Zen de Python}
 
-El Zen de Python es una colección de 19 \doble{principios} para escribir programas de computadores que influenciaron el diseño y representan la filosofía de este lenguaje de programación.
+El \href{https://www.python.org/dev/peps/pep-0020/}{Zen de Python} es una colección de 20 \doble{principios}, 19 de ellos escritos por Tim Peters. Estos principios han servido como inspiración para muchos programadores de todo el mundo a la hora de crear software.
 
-Se mostrará en pantalla la primera vez que se ejecute la siguiente linea, para importar la librería \doble{this}.
+Se mostrará en pantalla como un \doble{huevo de pascua} la primera vez que se ejecute la siguiente linea, para importar el módulo \mintinline{python}{this}.
 
 \pythonfile{codigo/1-intro/import_this.py}
 
-Después se mostrará el siguiente texto.
+Después se mostrará el siguiente texto, en inglés.
 
 \textfile{codigo/1-intro/zen.txt}
 
-%TODO: traducción y mas info
+Una traducción posible sería la siguiente:
+
+\textfile{codigo/1-intro/zen_spanish.txt}
+
+Nota: Si se observa con claridad, se puede ver que el principio 20 \doble{no existe}. 
 
 \clearpage\chapter{Conceptos básicos}
 
@@ -276,9 +282,13 @@ Las operaciones en Python siguen el orden dado por la regla PEMDAS:
 
 \begin{enumerate}
   \item Paréntesis
+  
   \item Exponentes
+  
   \item Multiplicación y división (de izquierda a derecha)
+  
   \item Adición y Sustracción (de izquierda a derecha)
+  
 \end{enumerate}
 
 \pythonfile{codigo/2-basico/aritmetica_2.py}
@@ -650,11 +660,17 @@ Los operadores de comparación usados en Python son los siguientes:
 
 \begin{itemize}
   \item Igual $=$, escrito como \mintinline{python}{==}: Se evalúa como True si ambos elementos son iguales.
+  
   \item Distinto $\neq$, escrito como \mintinline{python}{!=}: Se evalúa como True si ambos elementos son distintos.
+  
   \item Mayor que $>$, escrito como \mintinline{python}{>}: Se evalúa como True si el primer elemento es mayor.
+  
   \item Menor que $<$, escrito como \mintinline{python}{<}: Se evalúa como True si el primer elemento es menor.
+  
   \item Mayor o igual que $\geq$, escrito como \mintinline{python}{>=}: Se evalúa como True si el primer elemento es mayor o igual al segundo.
+  
   \item Menor o igual que $\leq$, escrito como \mintinline{python}{<=}: Se evalúa como True si el primer elemento es menor o igual al segundo.
+  
 \end{itemize}
 
 En los casos contrarios, los operadores retornan False.
@@ -721,9 +737,13 @@ Los operadores lógicos siguen un orden similar a PEMDAS, el cual es el siguient
 
 \begin{enumerate}
   \item Paréntesis
+  
   \item Operador not
+  
   \item Operador and
+  
   \item Operador or
+  
 \end{enumerate}
 
 Sin embargo, este orden es confuso, por lo que se recomienda usar paréntesis para hacerlo más obvio.
@@ -1203,11 +1223,17 @@ Otras excepciones comunes son:
 
 \begin{itemize}
   \item ImportError: Cuando falla una importación.
+  
   \item IndexError: Cuando se intenta indexar una lista con un número fuera de rango.
+  
   \item NameError: Cuando una variable desconocida es utilizada.
+  
   \item SyntaxError: Cuando el código no puede ser analizado correctamente.
-  \item TypeError: Cuando una función es llamada con un valor de tipo inapropiado
+  
+  \item TypeError: Cuando una función es llamada con un valor de tipo inapropiado.
+  
   \item ValueError: Cuando una función es llamada con un valor del tipo correcto, pero con un valor incorrecto.
+  
 \end{itemize}
 
 Las bibliotecas creadas por terceros a menudo definen sus propias excepciones.
@@ -1316,6 +1342,7 @@ Además de los modos de apertura, también existen los modos en los que se muest
 
 \begin{itemize}
   \item \doble{t}: significa abrir el archivo en modo texto (predeterminado). No es necesario escribirlo.
+  
   \item \doble{b}: significa abrir el archivo en modo binario, que es utilizado para archivos que no son de texto (tales como archivos de imágenes o sonido). Se debe combinar con alguno de los modos anteriores.
 
   \pythonfile{codigo/14-archivos/modo_b.py}
@@ -1589,15 +1616,20 @@ Como se ha visto en capítulos anteriores, Python tiene soporte de las siguiente
 
 \begin{itemize}
   \item Cuando se necesita utilizar asociaciones lógicas entre pares clave:valor.
+  
   \item Cuando se necesita buscar datos rápidamente, en base a claves personalizadas.
+  
   \item Cuando los datos son constantemente modificados.
+  
 \end{itemize}
 
 ¿Cúando utilizar listas?
 
 \begin{itemize}
   \item Cuando se tiene un grupo de datos que no necesita acceso aleatorio (deben estar ordenados).
+  
   \item Cuando se necesita una recolección simple e iterable que es modificada frecuentemente.
+  
 \end{itemize}
 
 ¿Cúando utilizar conjuntos?
@@ -1842,6 +1874,7 @@ Dicho de otra forma, una función pura cumple lo siguiente:
   \item No altera ningún elemento fuera de ella.
   
   \item Puede usarse en otros programas y entrega los mismos resultados.
+  
 \end{itemize}
 
 Utilizar funciones puras tiene sus ventajas y desventajas.
@@ -1854,6 +1887,7 @@ Las funciones puras son:
   \item Más eficientes. Una vez que la función haya sido evaluada para una entrada, el resultado puede ser almacenado y referenciado para la próxima vez que la función con esa entrada sea necesaria, reduciendo el número de veces que la función es llamada. Esto se denomina memorización.
   
   \item Más fáciles de ejecutar en paralelo.
+  
 \end{itemize}
 
 Desventajas principales:
@@ -1862,6 +1896,7 @@ Desventajas principales:
   \item Complican en su mayor parte la normalmente sencilla tarea de Entrada/Salida, ya que requiere de efectos secundarios inherentemente.
   
   \item En algunas situaciones, pueden ser más difíciles de escribir.
+  
 \end{itemize}
 
 \section{Lambdas}
