@@ -1,3 +1,4 @@
 lista = [1, 2, 3, 4, 5]
 lista.pop()
-print(lista)  # [1, 2, 3, 4]
+
+print(lista)

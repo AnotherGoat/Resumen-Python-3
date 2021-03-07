@@ -1,2 +1,5 @@
 letras = ['a', 'b', 'c', 'd', 'e', 'f']
-print(len(letras))  # 6
+print(len(letras))
+
+numeros = [10, 11, 12]
+print(len(numeros))

@@ -723,7 +723,7 @@ Las declaraciones if-else son muy similares a las declaraciones if, pero esta ve
 
 El término elif se usa cuando se encadenan múltiples declaraciones if-else. Hace que el código sea más corto.
 
-\pythonfile{codigo/5-if/if_4.py}
+\pythonfile{codigo/5-if/elif.py}
 \inp{codigo/5-if/elif.inp_1}
 \out{codigo/5-if/elif.out_1}
 \inp{codigo/5-if/elif.inp_2}
@@ -787,16 +787,19 @@ En Python, las listas pueden tener elementos de más de un tipo.
 Se puede acceder a un determinado elemento de la lista utilizando su índice entre corchetes. El índice del primer elemento es 0, en lugar de 1, como podría esperarse.
 
 \pythonfile{codigo/6-listas/indexar_listas_1.py}
+\out{codigo/6-listas/indexar_listas_1.out}
 
 Alternativamente, se pueden usar índices negativos. El último elemento de una lista tiene índice -1, y va disminuyendo hasta llegar al primero.
 
 \pythonfile{codigo/6-listas/indexar_listas_2.py}
+\out{codigo/6-listas/indexar_listas_2.out}
 
 \section{IndexError en listas}
 
 Intentar acceder a un índice no existente producirá un error.
 
 \pythonfile{codigo/6-listas/error_indice.py}
+\out{codigo/6-listas/error_indice.out}
 
 \section{Lista vacía}
 
@@ -809,10 +812,11 @@ A veces es necesario crear una lista vacía y completarla más tarde durante la 
 Las listas se pueden anidar dentro de otras listas, y para acceder a algún elemento se debe usar una cantidad mayor de corchetes, donde los índices indican el elemento desde afuera hacia adentro.
 
 \pythonfile{codigo/6-listas/anidacion.py}
+\out{codigo/6-listas/anidacion.out}
 
 En el ejemplo de arriba se muestra como acceder a todos los elementos de la lista creada.
 
-Las listas anidadas se pueden utilizar para representar cuadrículas 2D, como por ejemplo matrices.
+Las listas anidadas se pueden utilizar para representar cuadrículas 2D, como por ejemplo \href{https://es.khanacademy.org/math/algebra-home/alg-matrices}{matrices}.
 
 \pythonfile{codigo/6-listas/identidad.py}
 
@@ -821,26 +825,36 @@ Las listas anidadas se pueden utilizar para representar cuadrículas 2D, como po
 Se puede dejar a lo más una coma sobrante dentro de los corchetes de una lista. Este último elemento no será añadido a la lista.
 
 \pythonfile{codigo/6-listas/comas.py}
+\out{codigo/6-listas/comas.out}
+
+Si se deja más de una coma, se mostrará un SyntaxError.
+
+\pythonfile{codigo/6-listas/error_comas.py}
+\out{codigo/6-listas/error_comas.out}
 
 \section{Operaciones con listas}
 
 El elemento en un índice determinado de una lista se puede reasignar.
 
 \pythonfile{codigo/6-listas/operaciones_listas_1.py}
+\out{codigo/6-listas/operaciones_listas_1.out}
 
 Las listas se pueden agregar y multiplicar de la misma manera que las cadenas.
 
 \pythonfile{codigo/6-listas/operaciones_listas_2.py}
+\out{codigo/6-listas/operaciones_listas_2.out}
 
 \section{Operadores in y not in}
 
 Se puede verificar si un elemento pertenece a una lista usando el operador in. Este devuelve True si dicho elemento aparece una o más veces en la lista y False si no es así.
 
 \pythonfile{codigo/6-listas/in.py}
+\out{codigo/6-listas/in.out}
 
 Para comprobar si un elemento no pertenece a una lista, se pueden combinar los operadores in y not. Ambas formas de hacerlo son válidas.
 
 \pythonfile{codigo/6-listas/not_in.py}
+\out{codigo/6-listas/not_in.out}
 
 \section{Funciones de listas}
 
@@ -850,67 +864,102 @@ Existen métodos que sirven para trabajar con listas.
   \item El método append() se usa para añadir un elemento al final de una lista.
   
   \pythonfile{codigo/6-listas/append.py}
+  \out{codigo/6-listas/append.out}
 
   \item El método pop() elimina el último elemento de una lista.
   
   \pythonfile{codigo/6-listas/pop_1.py}
-  %TODO: Investigar más usos de pop() y otros métodos
+  \out{codigo/6-listas/pop_1.out}
+
+  Se le puede entregar un argumento numérico para quitar elementos de una lista según su índice. Este número puede ser negativo.
+
+  \pythonfile{codigo/6-listas/pop_2.py}
+  \out{codigo/6-listas/pop_2.out}
 
   \item El método len() retorna el tamaño (número de elementos) de una lista.
   
   \pythonfile{codigo/6-listas/len.py}
+  \out{codigo/6-listas/len.out}
 
   \item El método insert() se usa para insertar un elemento en un índice específico de una lista. Los elementos que están después del elemento insertado se desplazan a la derecha.
 
   \pythonfile{codigo/6-listas/insert.py}
+  \out{codigo/6-listas/insert.out}
 
   \item El método extend() se usa para añadir todos los elementos de una lista al final de otra lista.
   
   \pythonfile{codigo/6-listas/extend.py}
+  \out{codigo/6-listas/extend.out}
 
   \item El método index() encuentra la primera aparición de un elemento en una lista y devuelve su índice. Si el elemento no está en la lista, muestra un ValueError.
   
   \pythonfile{codigo/6-listas/index.py}
+  \out{codigo/6-listas/index.out}
+
+  Si el índice no existe, levanta un ValueError.
+
+  \pythonfile{codigo/6-listas/error_index.py}
+  \out{codigo/6-listas/error_index.out}
 
   \item El método count() cuenta la cantidad de ocurrencias de un elemento en una lista.
   
   \pythonfile{codigo/6-listas/count.py}
+  \out{codigo/6-listas/count.out}
 
   \item El método remove() elimina la primera ocurrencia de un elemento en una lista.
   
   \pythonfile{codigo/6-listas/remove_1.py}
+  \out{codigo/6-listas/remove_1.out}
+
+  Si el elemento no existe en la lista, levanta un ValueError.
+
+  \pythonfile{codigo/6-listas/error_remove.py}
+  \out{codigo/6-listas/error_remove.out}
 
   Una forma más segura de usar remove() es la siguiente:
 
   \pythonfile{codigo/6-listas/remove_2.py}
+  \out{codigo/6-listas/remove_2.out}
 
   \item Los métodos max() y min() devuelven el elemento de una lista con valor máximo o mínimo, respectivamente.
 
   \pythonfile{codigo/6-listas/max_y_min_1.py}
+  \out{codigo/6-listas/max_y_min_1.out}
 
   Si son strings, los compara por orden alfabético. Se considera como \doble{mayor} a las palabras que se encuentran al final después de ordenarlas alfabéticamente.
 
   \pythonfile{codigo/6-listas/max_y_min_2.py}
+  \out{codigo/6-listas/max_y_min_2.out}
 
   \item El método sum() calcula la suma de los elementos de una lista.
   
   \pythonfile{codigo/6-listas/sum.py}
+  \out{codigo/6-listas/sum.out}
 
   \item El método reverse() invierte los elementos de una lista.
   
   \pythonfile{codigo/6-listas/reverse.py}
+  \out{codigo/6-listas/reverse.out}
 
   \item El método sort() ordena alfabéticamente una lista de strings, por defecto se realiza ascendentemente. Para realizar el orden descendentemente, se debe entregar el parámetro reverse=True.
   
   \pythonfile{codigo/6-listas/sort_letras.py}
+  \out{codigo/6-listas/sort_letras.out}
   
   También funciona con listas compuestas de números.
 
   \pythonfile{codigo/6-listas/sort_numeros.py}
+  \out{codigo/6-listas/sort_numeros.out}
+
+  Si se usa en listas mixtas, mostrará un TypeError.
+
+  \pythonfile{codigo/6-listas/sort_mixto.py}
+  \out{codigo/6-listas/sort_mixto.out}
 
   \item El método clear() quita todos los elementos de una lista.
 
   \pythonfile{codigo/6-listas/clear.py}
+  \out{codigo/6-listas/clear.out}
 
 \end{itemize}
 
@@ -919,10 +968,13 @@ Existen métodos que sirven para trabajar con listas.
 Al intentar copiar listas sólo usando su nombre, en realidad se está haciendo una lista que hace referencia a la lista copiada. Esto significa que los cambios que reciba una lista también los recibirá la otra.
 
 \pythonfile{codigo/6-listas/copy_1.py}
+\out{codigo/6-listas/copy_1.out}
 
 Para evitar esto, se puede usar el método copy() para hacer una copia de una lista en una nueva instancia.
 
 \pythonfile{codigo/6-listas/copy_2.py}
+\out{codigo/6-listas/copy_2.out}
+%TODO: todos los "out" listos hasta aquí
 
 \section{Strings como listas}
 
