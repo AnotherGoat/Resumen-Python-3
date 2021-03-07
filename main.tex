@@ -1019,7 +1019,6 @@ Para evitar esto, se puede usar el método copy() para hacer una copia de una li
 
 \pythonfile{codigo/6-listas/copy_2.py}
 \out{codigo/6-listas/copy_2.out}
-%TODO: todos los "out" listos hasta aquí
 
 \section{Strings como listas}
 
@@ -1171,7 +1170,7 @@ En general, un bucle for puede recorrer cualquier iterable. Estos se verán más
 
 \section{¿Qué es una función?}
 
-Cualquier sentencia que consista de una palabra seguida de información entre paréntesis es llamada una función.
+Cualquier sentencia que consista de una palabra seguida de información entre paréntesis es llamada una función.\smallskip
 
 Ejemplos de funciones que se han visto anteriormente.
 
@@ -1180,6 +1179,8 @@ Ejemplos de funciones que se han visto anteriormente.
 \section{Definición de funciones}
 
 Para definir una función, se debe usar la palabra clave def, seguida del nombre de la función y de un paréntesis que puede o no incluir parámetros. El cuerpo de la función incluye el código y debe tener un grado de indentación mayor que el de la definición.\smallskip
+
+Generalmente, se recomienda que el nombre de una función sea un verbo, pero no es obligatorio.\smallskip
 
 Algunos ejemplos de funciones:
 
@@ -1201,13 +1202,25 @@ Para llamar una función, debe escribirse su nombre, seguido de un paréntesis q
 
 Ejemplos de uso de las funciones definidas anteriormente:
 
-\pythonfile{codigo/8-funciones/llamar_funciones.py}
+\pythonfile{codigo/8-funciones/llamar_saludar.py}
+\out{codigo/8-funciones/llamar_saludar.out}
+
+\pythonfile{codigo/8-funciones/llamar_exclamar.py}
+\out{codigo/8-funciones/llamar_exclamar.out}
+
+\pythonfile{codigo/8-funciones/llamar_sumar.py}
+\out{codigo/8-funciones/llamar_sumar.out}
+
+\pythonfile{codigo/8-funciones/llamar_mayor.py}
+\out{codigo/8-funciones/llamar_mayor.out}
 
 \section{Devolución de valores en una función}
 
 Ciertas funciones devuelven un valor para ser utilizado más adelante. Para hacer esto en la definición de funciones nuevas, se debe usar la palabra clave return.
 
 \pythonfile{codigo/8-funciones/return_1.py}
+\out{codigo/8-funciones/return_1.out}
+%TODO: todos los "out" listos hasta aquí
 
 Cualquier código luego de la sentencia return nunca ocurrirá.
 
