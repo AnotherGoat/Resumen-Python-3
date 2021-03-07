@@ -1,18 +1,26 @@
 \documentclass{report}
 
 \usepackage[utf8]{inputenc}
+
 \usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+
 \usepackage[outputdir=build]{minted}
 \usepackage{sectsty}
 \usepackage{tocloft}
+
 \usepackage{graphicx}
 \usepackage[svgnames]{xcolor}
+
 \usepackage{amsmath}
+
+\usepackage{inconsolata}
+\usepackage[T1]{fontenc}
+
 \usepackage[spanish]{babel}
 \usepackage[colorlinks=true, linkcolor=., urlcolor=ForestGreen]{hyperref}
 
 % estilo de los segmentos de código
-\usemintedstyle{perldoc}
+\usemintedstyle[python]{native}
 
 % colores de capítulos y secciones
 \chapterfont{\color{black}}
@@ -24,8 +32,6 @@
 
 % párrafos sin sangría
 \setlength\parindent{0pt}
-% separación entre párrafos
-\setlength\parskip{1.5ex}
 
 % cambiar espacio entre números y texto en la tabla de contenidos
 \setlength\cftchapnumwidth{2em}
@@ -35,27 +41,60 @@
 \newcommand{\simple}[1]{`#1'}
 \newcommand{\doble}[1]{``#1''}
 
-% color nuevo para los bloques de código
-\definecolor{grisclaro}{RGB}{240, 240, 240}
+\newcommand{\link}[2]{\href{#1}{\underline{#2}}}
+
+\definecolor{grisoscuro}{RGB}{32, 32, 32}
+\definecolor{grisclaro}{RGB}{223, 223, 223}
 
 % macros nuevas para minted
-\newmintedfile{python}{bgcolor=grisclaro, frame=single, linenos, numbersep=6pt, breaklines}
-\newmintedfile[outfile]{text}{frame=single, linenos, numbersep=6pt, breaklines}
-\newmintedfile{text}{frame=single, breaklines}
+\newmintedfile[pythonfile]{python}{
+  bgcolor=grisoscuro,
+  breaklines
+}
+\newmintedfile[outfile]{text}{
+  bgcolor=grisclaro,
+  frame=single,
+  breaklines
+}
+\newmintedfile[textfile]{text}{
+  bgcolor=white,
+  frame=single,
+  breaklines
+}
 
 % para escribir "Salida:" siempre que se muestre el output
-\newcommand{\out}[1]{Salida:\outfile{#1}}
+\newcommand{\out}[1]{
+  Salida:
+  \outfile{#1}
+}
 % lo mismo pero para entrada
-\newcommand{\inp}[1]{Entrada:\outfile{#1}}
+\newcommand{\inp}[1]{
+  Entrada:
+  \outfile{#1}
+}
 
 % se usan en tablas
-\newcommand{\si}{\textcolor{ForestGreen}{Sí}}
-\newcommand{\no}{\textcolor{Crimson}{No}}
-\newcommand{\noo}{\textcolor{Crimson}{No*}}
-\newcommand{\inicio}{\textcolor{DodgerBlue}{Inicio}}
-\newcommand{\final}{\textcolor{RoyalBlue}{Final}}
-\newcommand{\indices}{\textcolor{ForestGreen}{Índices}}
-\newcommand{\claves}{\textcolor{ForestGreen}{Claves}}
+\newcommand{\si}{
+  \textcolor{ForestGreen}{Sí}
+}
+\newcommand{\no}{
+  \textcolor{Crimson}{No}
+}
+\newcommand{\noo}{
+  \textcolor{Crimson}{No*}
+}
+\newcommand{\inicio}{
+  \textcolor{DodgerBlue}{Inicio}
+}
+\newcommand{\final}{
+  \textcolor{RoyalBlue}{Final}
+}
+\newcommand{\indices}{
+  \textcolor{ForestGreen}{Índices}
+}
+\newcommand{\claves}{
+  \textcolor{ForestGreen}{Claves}
+}
 
 \title{Resumen Python 3}
 \author{Víctor Mardones Bravo}
@@ -94,7 +133,7 @@
 
 \section{¿Qué es Python?}
 
-\href{https://www.python.org}{\underline{Python}} es un lenguaje de programación de alto nivel, con aplicaciones en numerosas áreas, incluyendo automatización de tareas, programación web, scripting, manejo de grandes cantidades de datos, computación científica, cálculos complejos e inteligencia artificial.
+\link{https://www.python.org}{Python} es un lenguaje de programación de alto nivel, con aplicaciones en numerosas áreas, incluyendo automatización de tareas, programación web, scripting, manejo de grandes cantidades de datos, computación científica, cálculos complejos e inteligencia artificial.\smallskip
 
 Fue diseñado por Gudo van Rossum. Fue lanzado en el año 1991. Se lanzaron diferentes versiones, entre ellas Python 1, Python 2 y la versión actual, Python 3.
 
@@ -130,7 +169,7 @@ Si estos conceptos no se entienden todavía, no hay problema, pues se verán má
   
   \item Integrable: El código fuente escrito en Python puede usarse dentro de otros lenguajes de programación, lo cual permite expandir las funcionalidades de sus programas con las de programas escritos en otros lenguajes.
   
-  \item De código abierto: Python es de \href{https://opensource.org/about}{código abierto}. Se puede usar sin necesidad de tomar su licencias y se puede descargar fácilmente.
+  \item De código abierto: Python es de \link{https://opensource.org/about}{código abierto}. Se puede usar sin necesidad de tomar su licencias y se puede descargar fácilmente.
   
   \item Gratuito: Ninguna persona u organización necesita pagar para usarlo en sus proyectos.
   
@@ -145,27 +184,27 @@ Si estos conceptos no se entienden todavía, no hay problema, pues se verán má
 Python es muy popular y es usado por organizaciones y aplicaciones como:
 
 \begin{itemize}
-  \item \href{https://www.microsoft.com/en-us/}{\underline{Microsoft}}
+  \item \link{https://www.microsoft.com/en-us/}{Microsoft}
 
-  \item \href{https://www.google.com}{\underline{Google}}
+  \item \link{https://www.google.com}{Google}
   
-  \item \href{https://www.yahoo.com}{Yahoo}
+  \item \link{https://www.yahoo.com}{Yahoo}
   
-  \item \href{https://www.mozilla.org/en-US/}{Mozilla}
+  \item \link{https://www.mozilla.org/en-US/}{Mozilla}
   
-  \item \href{https://www.cisco.com}{Cisco}
+  \item \link{https://www.cisco.com}{Cisco}
   
-  \item \href{https://www.facebook.com}{Facebook}
+  \item \link{https://www.facebook.com}{Facebook}
   
-  \item \href{https://www.spotify.com}{Spotify}
+  \item \link{https://www.spotify.com}{Spotify}
   
-  \item \href{https://www.openstack.org}{OpenStack}
+  \item \link{https://www.openstack.org}{OpenStack}
 
-  \item \href{https://www.nasa.gov}{\underline{NASA}}
+  \item \link{https://www.nasa.gov}{NASA}
   
-  \item \href{https://www.cia.gov}{\underline{la CIA}}
+  \item \link{https://www.cia.gov}{CIA}
   
-  \item \href{https://www.disney.com}{\underline{Disney}}
+  \item \link{https://www.disney.com}{Disney}
   
 \end{itemize}
 
@@ -219,7 +258,7 @@ Desventajas:
 
 \end{itemize}
 
-No hay limitaciones en lo que se puede construir usando Python. Esto incluye aplicaciones autónomas, aplicaciones web, juegos, ciencia de datos, modelos de machine learning y mucho más.
+No hay limitaciones en lo que se puede construir usando Python. Esto incluye aplicaciones autónomas, aplicaciones web, juegos, ciencia de datos, modelos de machine learning y mucho más.\smallskip
 
 Dato curioso: Según el creador Guido van Rossum, el nombre de Python viene de la serie de comedia británica \doble{El Circo Volador de Monty Python}.
 
@@ -237,9 +276,9 @@ Cada declaración de impresión print() genera texto en una nueva línea.
 
 \section{El Zen de Python}
 
-El \href{https://www.python.org/dev/peps/pep-0020/}{Zen de Python} es una colección de 20 \doble{principios}, 19 de ellos escritos por Tim Peters. Estos principios han servido como inspiración para muchos programadores de todo el mundo a la hora de crear software.
+El \link{https://www.python.org/dev/peps/pep-0020/}{Zen de Python} es una colección de 20 \doble{principios}, 19 de ellos escritos por Tim Peters. Estos principios han servido como inspiración para muchos programadores de todo el mundo a la hora de crear software.\smallskip
 
-Se mostrará en pantalla como un \doble{huevo de pascua} la primera vez que se ejecute la siguiente linea, para importar el módulo \mintinline{python}{this}.
+Se mostrará en pantalla como un \doble{huevo de pascua} la primera vez que se ejecute la siguiente linea, para importar el módulo \texttt{this}.
 
 \pythonfile{codigo/1-intro/import_this.py}
 
@@ -251,19 +290,20 @@ Una traducción posible sería la siguiente:
 
 \textfile{codigo/1-intro/zen_spanish.txt}
 
-Nota: Si se observa con claridad, se puede ver que el principio 20 \doble{no existe}. 
+Nota: Si se observa con claridad, se puede ver que el principio 20 \doble{no existe}.
+%TODO: explicar qué ocurrió
 
 \clearpage\chapter{Conceptos básicos}
 
 \section{Comentarios}
 
-Los comentarios son anotaciones en el código utilizadas para hacerlo más fácil de entender. No afectan la ejecución del código.
+Los comentarios son anotaciones en el código utilizadas para hacerlo más fácil de entender. No afectan la ejecución del código.\smallskip
 
 En Python, los comentarios comienzan con el símbolo \#. Todo el texto luego de este \# (dentro de la misma línea) es ignorado.
 
 \pythonfile{codigo/2-basico/comentario.py}
 
-Python no soporta comentarios multilínea, al contrario de otros lenguajes de programación.
+Python no soporta comentarios multilínea, al contrario de otros lenguajes de programación.\smallskip
 
 A lo largo de este resumen, se usarán comentarios para mostrar la salida de algunas funciones, cuando sea posible.
 
@@ -308,19 +348,19 @@ Para representar números racionales o que no son enteros, se usa el tipo de dat
 \pythonfile{codigo/2-basico/float_1.py}
 \out{codigo/2-basico/float_1.out}
 
-Se debe tener en cuenta que los computadores \href{http://puntoflotante.org/formats/fp/}{no pueden almacenar perfectamente} el valor de los floats, lo cual a menudo conduce a errores.
+Se debe tener en cuenta que los computadores \link{http://puntoflotante.org/formats/fp/}{no pueden almacenar perfectamente} el valor de los floats, lo cual a menudo conduce a errores.
 
 \pythonfile{codigo/2-basico/error_float.py}
-\out{codigo/2-basico/error_float.py}
+\out{codigo/2-basico/error_float.out}
 
-El error mostrado arriba es un error clásico de la aritmética de punto flotante. Incluso tiene su propio \href{https://0.30000000000000004.com}{\underline{sitio web}}.
+El error mostrado arriba es un error clásico de la aritmética de punto flotante. Incluso tiene su propio \link{https://0.30000000000000004.com}{sitio web}.\smallskip
 
 Al trabajar con floats, no es necesario escribir un 0 a la izquierda del punto decimal.
 
 \pythonfile{codigo/2-basico/float_2.py}
 \out{codigo/2-basico/float_2.out}
 
-Esta notación se asemeja a decir \doble{punto cinco} en vez de \doble{cero punto cinco}.
+Esta notación se asemeja a decir \doble{punto cinco} en vez de \doble{cero punto cinco}.\smallskip
 
 El resultado de cualquier operación entre floats o entre un float y un entero siempre dará como resultado un float. La división entre enteros también da como resultado un float.
 
@@ -329,7 +369,7 @@ El resultado de cualquier operación entre floats o entre un float y un entero s
 
 \section{Exponenciación}
 
-Otra operación soportada es la exponenciación, que es la elevación de un número a la potencia de otro. Esto se realiza usando el operador **.
+Otra operación soportada es la exponenciación, que es la elevación de un número a la potencia de otro. Esto se realiza usando el operador **.\smallskip
 
 Ejemplo equivalente a $2 ^ 5 = 32$.
 
@@ -338,7 +378,7 @@ Ejemplo equivalente a $2 ^ 5 = 32$.
 
 \section{Cociente y resto}
 
-La división entera se realiza usando el operador //, donde el resultado es la parte entera que queda al realizar la división, también conocida como cociente.
+La división entera se realiza usando el operador //, donde el resultado es la parte entera que queda al realizar la división, también conocida como cociente.\smallskip
 
 La división entera retorna un entero en vez de un float.
 
@@ -350,9 +390,9 @@ Para obtener el resto al realizar una división entera, se debe usar el operador
 \pythonfile{codigo/2-basico/resto.py}
 \out{codigo/2-basico/resto.out}
 
-Esta operación es equivalente a $7 \mod{2}$ en aritmética modular.
+Esta operación es equivalente a $7 \mod{2}$ en aritmética modular.\smallskip
 
-Este operador viene de la \href{https://es.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic}{aritmética modular}, y uno de sus usos más comunes es para saber si un número es múltiplo de otro. Esto se hace revisando si el módulo al dividirlo por ese otro número es 0.
+Este operador viene de la \link{https://es.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic}{aritmética modular}, y uno de sus usos más comunes es para saber si un número es múltiplo de otro. Esto se hace revisando si el módulo al dividirlo por ese otro número es 0.
 
 \pythonfile{codigo/2-basico/uso_del_resto.py}
 \out{codigo/2-basico/uso_del_resto.out}
@@ -363,7 +403,7 @@ En el caso mostrado anteriormente, se infiere que 10 es múltiplo de 2, que 15 e
 
 \section{Strings o cadenas de caracteres}
 
-Las cadenas de caracteres se crean introduciendo el texto entre comillas simples \mintinline{python}{' '} o dobles \mintinline{python}{" "}.
+Las cadenas de caracteres se crean introduciendo el texto entre comillas simples \texttt{' '} o dobles \texttt{" "}.
 
 \pythonfile{codigo/3-strings/string.py}
 \out{codigo/3-strings/string.out}
@@ -378,7 +418,7 @@ Un string debe empezar y terminar con comillas del mismo tipo, no se permiten co
 
 \section{Cadena vacía}
 
-A veces es necesario inicializa un string, pero sin agregarle información. Una cadena vacía es definida como \mintinline{python}{''} o \mintinline{python}{""}.
+A veces es necesario inicializa un string, pero sin agregarle información. Una cadena vacía es definida como \texttt{''} o \texttt{""}.
 
 \pythonfile{codigo/3-strings/cadena_vacia.py}
 
@@ -391,16 +431,16 @@ Algunos caracteres no se pueden incluir directamente en una cadena. Para esos ca
 \pythonfile{codigo/3-strings/caracteres_especiales.py}
 \out{codigo/3-strings/caracteres_especiales.out}
 
-Los caracteres $'$, $''$ y \textbackslash son especiales, porque normalmente cumplen funciones especiales dentro de strings.
+Los caracteres $'$, $''$ y \textbackslash son especiales, porque normalmente cumplen funciones especiales dentro de strings.\smallskip
 
-Si el string se define entre comillas dobles, no es necesario poner \mintinline{python}{'} para ingresar comillas simples dentro de él, y viceversa.
+Si el string se define entre comillas dobles, no es necesario poner \texttt{'} para ingresar comillas simples dentro de él, y viceversa.
 
 \pythonfile{codigo/3-strings/comillas.py}
 \out{codigo/3-strings/comillas.out}
 
 \section{Secuencias de escape}
 
-Las secuencias de escape también se pueden incluir usando el símbolo \textbackslash dentro de cadenas de texto. Su origen viene de las secuencias de escape usadas en las máquinas de escribir.
+Las secuencias de escape también se pueden incluir usando el símbolo \textbackslash dentro de cadenas de texto. Su origen viene de las secuencias de escape usadas en las máquinas de escribir.\smallskip
 
 Algunas de las secuencias de escape más usadas son:
 
@@ -452,18 +492,18 @@ Otras secuencias de escape que cada vez se usan menos son:
 
 \section{Caracteres Unicode}
 
-Las barras diagonales inversas también se pueden usar para escribir caracteres Unicode arbitrarios. Se escriben como \textbackslash u seguido del código del carácter Unicode (en hexadecimal).
+Las barras diagonales inversas también se pueden usar para escribir caracteres Unicode arbitrarios. Se escriben como \texttt{\textbackslash u} seguido del código del carácter Unicode (en hexadecimal).\smallskip
 
 Los códigos Unicode se aceptan sin importar que tengan mayúsculas o minúsculas.
 
 \pythonfile{codigo/3-strings/unicode.py}
 \out{codigo/3-strings/unicode.out}
 
-El \href{https://unicode.org/}{\underline{sitio web de Unicode}} contiene más información sobre estos caracteres y sobre este estándar. \href{https://unicode-table.com/en/}{\underline{Este sitio web}} tiene una tabla con los códigos.
+El \link{https://unicode.org/}{sitio web de Unicode} contiene más información sobre estos caracteres y sobre este estándar. \link{https://unicode-table.com/en/}{Este sitio web} tiene una tabla con los códigos.
 
 \section{Strings multilínea}
 
-Este es un tipo especial de string, que se escribe entre comillas triples \mintinline{python}{''' '''} o \mintinline{python}{""" """}, y que reconoce los saltos de línea sin necesidad de usar la secuencia \textbackslash n.
+Este es un tipo especial de string, que se escribe entre comillas triples \texttt{''' '''} o \texttt{""" """}, y que reconoce los saltos de línea sin necesidad de usar la secuencia \textbackslash n.
 
 \pythonfile{codigo/3-strings/string_multilinea.py}
 \out{codigo/3-strings/string_multilinea.out}
@@ -474,7 +514,7 @@ Los comentarios multilínea no existen formalmente en Python, pero se puede hace
 
 \pythonfile{codigo/3-strings/comentario_multilinea.py}
 
-La razón por la que esto ocurre es porque estos \doble{comentarios} se usan para producir documentación del código (docstring). Si se ingresan en secciones particulares del código cumplirán su función de documentar, pero el intérprete no impide que se usen fuera de dichas secciones.
+La razón por la que esto ocurre es porque estos \doble{comentarios} se usan para producir documentación del código (docstring). Si se ingresan en secciones particulares del código cumplirán su función de documentar, pero el intérprete no impide que se usen fuera de dichas secciones.\smallskip
 
 Se detallará mejor este uso en el capítulo de funciones.
 
@@ -513,7 +553,7 @@ El método print() puede aceptar más de un string como argumento, lo cual hace 
 \pythonfile{codigo/3-strings/print_avanzado_1.py}
 \out{codigo/3-strings/print_avanzado_1.out}
 
-El método print() tiene 2 argumentos que pueden definirse para dar más control sobre lo que se imprime en la pantalla.
+El método print() tiene 2 argumentos que pueden definirse para dar más control sobre lo que se imprime en la pantalla.\smallskip
 
 El argumento sep define el string separador entre cada string \doble{normal} que se le entregue al método print(), excepto después del último. Estos separadores pueden incluir secuencias de escape.
 
@@ -561,7 +601,7 @@ Python es sensible a mayúsculas y minúsculas, lo que significa que las variabl
 
 \section{Palabras clave}
 
-Existen palabras específicas que tampoco se pueden usar como nombres de variables. El intérprete de Python reconoce estas palabras como palabras clave o keywords, y tienen usos reservados.
+Existen palabras específicas que tampoco se pueden usar como nombres de variables. El intérprete de Python reconoce estas palabras como palabras clave o keywords, y tienen usos reservados.\smallskip
 
 A continuación, se muestra una lista de todas las palabras clave en Python.
 
@@ -639,7 +679,7 @@ También se pueden usar con los operadores de concatenación y multiplicación d
 
 \section{Booleanos}
 
-Otro tipo de dato en Python es el tipo booleano, el cual sólo puede tener 2 valores: True y False. Estos se escriben empezando con mayúscula, al contrario de otros lenguajes de programación.
+Otro tipo de dato en Python es el tipo booleano, el cual sólo puede tener 2 valores: True y False. Estos se escriben empezando con mayúscula, al contrario de otros lenguajes de programación.\smallskip
 
 Se pueden crear directamente, aunque esto no tiene mucha utilidad en la mayoría de casos.
 
@@ -656,28 +696,28 @@ En Python, 1 y True significan lo mismo. Lo mismo ocurre con 0 y False.
 \pythonfile{codigo/5-if/booleano_3.py}
 \out{codigo/5-if/booleano_3.out}
 
-Usando otros términos, podría decirse que 1 es \href{https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false}{\doble{truthy}} y que 0 es \href{https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false}{\doble{falsy}}.
+Usando otros términos, podría decirse que 1 es \link{https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false}{\doble{truthy}} y que 0 es \link{https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false}{\doble{falsy}}.
 
 \section{Operadores de comparación}
 
 Los operadores de comparación usados en Python son los siguientes:
 
 \begin{itemize}
-  \item Igual $=$, escrito como \mintinline{python}{==}: Se evalúa como True si ambos elementos son iguales.
+  \item Igual $=$, escrito como \texttt{==}: Se evalúa como True si ambos elementos son iguales.
   
-  \item Distinto $\neq$, escrito como \mintinline{python}{!=}: Se evalúa como True si ambos elementos son distintos.
+  \item Distinto $\neq$, escrito como \texttt{!=}: Se evalúa como True si ambos elementos son distintos.
   
-  \item Mayor que $>$, escrito como \mintinline{python}{>}: Se evalúa como True si el primer elemento es mayor.
+  \item Mayor que $>$, escrito como \texttt{>}: Se evalúa como True si el primer elemento es mayor.
   
-  \item Menor que $<$, escrito como \mintinline{python}{<}: Se evalúa como True si el primer elemento es menor.
+  \item Menor que $<$, escrito como \texttt{<}: Se evalúa como True si el primer elemento es menor.
   
-  \item Mayor o igual que $\geq$, escrito como \mintinline{python}{>=}: Se evalúa como True si el primer elemento es mayor o igual al segundo.
+  \item Mayor o igual que $\geq$, escrito como \texttt{>=}: Se evalúa como True si el primer elemento es mayor o igual al segundo.
   
-  \item Menor o igual que $\leq$, escrito como \mintinline{python}{<=}: Se evalúa como True si el primer elemento es menor o igual al segundo.
+  \item Menor o igual que $\leq$, escrito como \texttt{<=}: Se evalúa como True si el primer elemento es menor o igual al segundo.
   
 \end{itemize}
 
-En los casos contrarios, los operadores retornan False.
+En los casos contrarios, los operadores retornan False.\smallskip
 
 Ejemplos de uso de operadores de comparación:
 
@@ -685,7 +725,7 @@ Ejemplos de uso de operadores de comparación:
 \out{codigo/5-if/comparacion_1.out}
 %TODO: todos los "out" listos hasta aquí
 
-También se conocen como operadores relacionales.
+También se conocen como operadores relacionales.\smallskip
 
 Las comparaciones entre datos de tipo entero y float también son válidas.
 
@@ -733,7 +773,7 @@ El programa irá evaluando cada expresión una por una hasta que alguna se cumpl
 
 \section{Operadores lógicos}
 
-Los operadores lógicos se utilizan para crear condiciones complejas agrupando condiciones más simples. Los operadores lógicos que se usan en Python son and, or y not.
+Los operadores lógicos se utilizan para crear condiciones complejas agrupando condiciones más simples. Los operadores lógicos que se usan en Python son and, or y not.\smallskip
 
 El operador and se evalúa como True si ambas condiciones se cumplen.
 
@@ -814,9 +854,9 @@ Las listas se pueden anidar dentro de otras listas, y para acceder a algún elem
 \pythonfile{codigo/6-listas/anidacion.py}
 \out{codigo/6-listas/anidacion.out}
 
-En el ejemplo de arriba se muestra como acceder a todos los elementos de la lista creada.
+En el ejemplo de arriba se muestra como acceder a todos los elementos de la lista creada.\smallskip
 
-Las listas anidadas se pueden utilizar para representar cuadrículas 2D, como por ejemplo \href{https://es.khanacademy.org/math/algebra-home/alg-matrices}{matrices}.
+Las listas anidadas se pueden utilizar para representar cuadrículas 2D, como por ejemplo \link{https://es.khanacademy.org/math/algebra-home/alg-matrices}{matrices}.
 
 \pythonfile{codigo/6-listas/identidad.py}
 
@@ -1060,14 +1100,14 @@ De manera similar a los bucles while, las declaraciones break y continue se pued
 
 \section{Rangos}
 
-La función range() devuelve una secuencia de números. De forma predeterminada, comienza desde 0, se incrementa en 1 y se detiene antes del número especificado.
+La función range() devuelve una secuencia de números. De forma predeterminada, comienza desde 0, se incrementa en 1 y se detiene antes del número especificado.\smallskip
 
 Si se llama a range() con un argumento, produce un objeto con valores desde 0 a el número antes de ese argumento.
 
 %TODO: separar
 \pythonfile{codigo/7-bucles/range_1.py}
 
-Para mostrar los números dentro de un objeto range, debe convertirse a una lista.
+Para mostrar los números dentro de un objeto range, debe convertirse a una lista.\smallskip
 
 Si se llama con 2 argumentos, produce valores desde el primero hasta antes del segundo.
 
@@ -1101,7 +1141,7 @@ Ejemplos de funciones que se han visto anteriormente.
 
 \section{Definición de funciones}
 
-Para definir una función, se debe usar la palabra clave def, seguida del nombre de la función y de un paréntesis que puede o no incluir parámetros. El cuerpo de la función incluye el código y debe tener un grado de indentación mayor que el de la definición.
+Para definir una función, se debe usar la palabra clave def, seguida del nombre de la función y de un paréntesis que puede o no incluir parámetros. El cuerpo de la función incluye el código y debe tener un grado de indentación mayor que el de la definición.\smallskip
 
 Algunos ejemplos de funciones:
 
@@ -1119,7 +1159,7 @@ Los argumentos de funciones pueden ser utilizados como variables dentro de la de
 
 \section{Llamado de funciones}
 
-Para llamar una función, debe escribirse su nombre, seguido de un paréntesis que contiene los argumentos (información) que se le quieren entregar.
+Para llamar una función, debe escribirse su nombre, seguido de un paréntesis que contiene los argumentos (información) que se le quieren entregar.\smallskip
 
 Ejemplos de uso de las funciones definidas anteriormente:
 
@@ -1137,13 +1177,13 @@ Cualquier código luego de la sentencia return nunca ocurrirá.
 
 \section{Docstring}
 
-Las docstring (cadenas de documentación) cumplen un propósito similar al de los comentarios, pero son más específicos y tienen una sintaxis distinta.
+Las docstring (cadenas de documentación) cumplen un propósito similar al de los comentarios, pero son más específicos y tienen una sintaxis distinta.\smallskip
 
 Son creados colocando una cadena multilínea que contenga una explicación de la función por debajo de la primera línea de la función.
 
 \pythonfile{codigo/8-funciones/docstring_1.py}
 
-A diferencia de los comentarios convencionales, los docstring se conservan a lo largo del tiempo de ejecución del programa. Esto le permite al programado examinar estos comentarios en el tiempo de ejecución.
+A diferencia de los comentarios convencionales, los docstring se conservan a lo largo del tiempo de ejecución del programa. Esto le permite al programado examinar estos comentarios en el tiempo de ejecución.\smallskip
 
 Una forma de accederlo es usando la variable \_\_doc\_\_.
 
@@ -1169,7 +1209,7 @@ Las funciones también pueden ser usadas como argumentos de otras funciones.
 
 \section{Sobrecarga de funciones}
 
-En Python, la sobrecarga de funciones se define como la habilidad de que una función se comporte de distinta manera dependiendo del número de argumentos que reciba. Esto permite reutilizar el mismo código, reducir su complejidad y hacer que sea más fácil de leer.
+En Python, la sobrecarga de funciones se define como la habilidad de que una función se comporte de distinta manera dependiendo del número de argumentos que reciba. Esto permite reutilizar el mismo código, reducir su complejidad y hacer que sea más fácil de leer.\smallskip
 
 Para sobrecargar una función, se deben definir los parámetros que sean opcionales con un valor por defecto None. Después, se usan declaraciones if-elif-else para revisar todos los casos posibles.
 
@@ -1183,9 +1223,9 @@ Una anotación de tipos es, como su nombre lo dice, una notación opcional que e
 
 \pythonfile{codigo/8-funciones/anotaciones_1.py}
 
-En el ejemplo de arriba, se muestra que mensaje es un parámetro de tipo string y que la función duplicar() retorna un string.
+En el ejemplo de arriba, se muestra que mensaje es un parámetro de tipo string y que la función duplicar() retorna un string.\smallskip
 
-Esto le permite al programador saber qué tipos de datos se le deben entregar una función y que tipos de datos esperar cuando esta función retorne.
+Esto le permite al programador saber qué tipos de datos se le deben entregar una función y que tipos de datos esperar cuando esta función retorne.\smallskip
 
 Las anotaciones de tipos son ignoradas completamente por el intérprete de Python. No restringen el tipo de los parámetros o del retorno de una función, pero son muy útiles al momento de documentar.
 
@@ -1195,7 +1235,7 @@ Aunque el intérprete de Python los ignore, existen algunos IDEs y programas que
 
 \section{El objeto None}
 
-El objeto None es utilizado para representar la ausencia de un valor. Es similar a null en otros lenguajes de programación.
+El objeto None es utilizado para representar la ausencia de un valor. Es similar a null en otros lenguajes de programación.\smallskip
 
 Al igual que otros valores \doble{vacíos}, tales como (), [], \{\} y la cadena vacía $''$$''$, es False cuando es convertido a una variable booleana.
 
@@ -1215,13 +1255,13 @@ El objeto None es devuelto por cualquier función que no devuelve explícitament
 
 \section{Módulos}
 
-Los módulos son pedazos de código que otras personas han escrito para cumplir tareas comunes tales como generar números aleatorios, realizar operaciones matemáticas, etc.
+Los módulos son pedazos de código que otras personas han escrito para cumplir tareas comunes tales como generar números aleatorios, realizar operaciones matemáticas, etc.\smallskip
 
 La manera básica de utilizar un módulo es agregar una declaración import en la parte superior del código, y luego usar su nombre para acceder a las funciones y variables dentro del módulo.
 
 \pythonfile{codigo/9-modulos/ejemplo_modulos.py}
 
-Este ejemplo importa el módulo random y usa su función randint() para generar 5 números aleatorios en el rango del 1 al 6.
+Este ejemplo importa el módulo random y usa su función randint() para generar 5 números aleatorios en el rango del 1 al 6.\smallskip
 
 Hay otra clase de import que puede ser utilizada si sólo necesitas ciertas funciones de un módulo.
 
@@ -1249,27 +1289,27 @@ También se puede usar un alias con más de un objeto.
 
 \section{La biblioteca estándar}
 
-Hay 3 tipos principales de módulos en Python: aquellos que escribes tú mismo, aquellos que se instalan de fuentes externas y aquellos que vienen preinstalados con Python.
+Hay 3 tipos principales de módulos en Python: aquellos que escribes tú mismo, aquellos que se instalan de fuentes externas y aquellos que vienen preinstalados con Python.\smallskip
 
 El último tipo se denomina la biblioteca estándar, y contiene muchos módulos útiles. Algunos de estos módulos son:
 
 \textfile{codigo/9-modulos/biblioteca_estandar.txt}
 
-La extensa biblioteca estándar de Python es una de sus principales fortalezas como lenguaje. Se puede encontrar más información sobre los módulos de la biblioteca estándar en \href{https://docs.python.org/3/library/index.html}{\underline{la documentación}}.
+La extensa biblioteca estándar de Python es una de sus principales fortalezas como lenguaje. Se puede encontrar más información sobre los módulos de la biblioteca estándar en \link{https://docs.python.org/3/library/index.html}{la documentación}.\smallskip
 
 Algunos de los módulos en la biblioteca estándar están escritos en Python y otros en C. La mayoría están disponibles en todas las plataformas, pero algunos son específicos de Windows o Unix.
 
 \section{Módulos externos y pip}
 
-Muchos módulos de Python creados por terceros son almacenados en el índice de paquetes Python (Python Package Index, PyPI). Se puede ver el repositorio en su \href{https://pypi.org}{\underline{sitio web oficial.}}
+Muchos módulos de Python creados por terceros son almacenados en el índice de paquetes Python (Python Package Index, PyPI). Se puede ver el repositorio en su \link{https://pypi.org}{sitio web oficial}.\smallskip
 
-La mejor manera de instalar estos es utilizando un programa llamado pip. Este viene instalado por defecto con las distribuciones modernas de Python.
+La mejor manera de instalar estos es utilizando un programa llamado pip. Este viene instalado por defecto con las distribuciones modernas de Python.\smallskip
 
 Para instalar una biblioteca, se debe buscar su nombre, ir a la línea de comandos y escribir pip install nombre.
 
 \textfile{codigo/9-modulos/pip_1.txt}
 
-Es importante recordar que los comandos de pip se deben introducir en la línea de comandos, no en el interpretador de Python.
+Es importante recordar que los comandos de pip se deben introducir en la línea de comandos, no en el interpretador de Python.\smallskip
 
 Se puede ingresar el comando pip help para ver información sobre otros comandos que se pueden usar con este gestor de paquetes.
 
@@ -1285,7 +1325,7 @@ Utilizar pip es la forma estándar de instalar bibliotecas en la mayoría de sis
 
 \section{Excepciones}
 
-Se han mencionado excepciones en las secciones anteriores. Ocurren cuando algo sale, mal, debido a código incorrecto o entradas incorrectas. Cuando ocurre una excepción, el programa se detiene inmediatamente.
+Se han mencionado excepciones en las secciones anteriores. Ocurren cuando algo sale, mal, debido a código incorrecto o entradas incorrectas. Cuando ocurre una excepción, el programa se detiene inmediatamente.\smallskip
 
 Al intentar dividir por 0, se produce un ZeroDivisionError.
 
@@ -1354,19 +1394,19 @@ En los bloques except, la sentencia raise puede ser utilizada sin argumentos par
 
 \section{Aserciones}
 
-Una aserción es una comprobación de validez, la cual prueba una expresión. La expresión es probada, y si el resultado es falso, usa excepción AssertionError es levantada.
+Una aserción es una comprobación de validez, la cual prueba una expresión. La expresión es probada, y si el resultado es falso, usa excepción AssertionError es levantada.\smallskip
 
 Las aserciones son llevadas a cabo a través de la declaración assert.
 
 \pythonfile{codigo/12-excepciones/assert_1.py}
 
-Los programadores a menudo colocan aserciones al principio de una función para asegurarse de que la entrada sea válida, y luego de llamar una función para revisar la validez de la salida.
+Los programadores a menudo colocan aserciones al principio de una función para asegurarse de que la entrada sea válida, y luego de llamar una función para revisar la validez de la salida.\smallskip
 
 La declaración assert puede recibir un segundo argumento el cual es pasado a la excepción AssertionError levantada si la aserción falla.
 
 \pythonfile{codigo/12-excepciones/assert_1.py}
 
-Las excepciones AssertionError pueden ser atrapadas y manejadas como cualquier otra excepción utilizando la sentencia try-except, pero si no son manejadas, este tipo de excepción terminará el programa.
+Las excepciones AssertionError pueden ser atrapadas y manejadas como cualquier otra excepción utilizando la sentencia try-except, pero si no son manejadas, este tipo de excepción terminará el programa.\smallskip
 
 En general, se recomienda usar aserciones para atrapar tus propios errores y excepciones para atrapar los errores que los usuarios u otras personas podrían cometer.
 
@@ -1378,7 +1418,8 @@ En general, se recomienda usar aserciones para atrapar tus propios errores y exc
 
 \section{Abrir archivos}
 
-Python se puede usar para leer y escribir los contenidos de archivos. Los archivos de texto son los más fáciles de manipular.
+Python se puede usar para leer y escribir los contenidos de archivos. Los archivos de texto son los más fáciles de manipular.\smallskip
+
 Antes de que un archivo pueda ser editado, debe ser abierto con la función open().
 
 \pythonfile{codigo/14-archivos/open.py}
@@ -1423,7 +1464,7 @@ Además de los modos de apertura, también existen los modos en los que se muest
 
 \section{Extensión de modos de apertura}
 
-Se puede añadir el signo \doble{+} a cualquiera de los modos de arriba para darles acceso adicional a archivos.
+Se puede añadir el signo \doble{+} a cualquiera de los modos de arriba para darles acceso adicional a archivos.\smallskip
 
 La siguiente tabla muestra el funcionamiento de cada modo:
 
@@ -1463,13 +1504,13 @@ Los contenidos de un archivo que ha sido abierto en modo texto pueden ser leído
 
 \pythonfile{codigo/14-archivos/read_1.py}
 
-Para leer sólo una determinada parte de un archivo, se puede proveer un número como argumento a la función read(). Esto determina el número de bytes que deberían ser leídos.
+Para leer sólo una determinada parte de un archivo, se puede proveer un número como argumento a la función read(). Esto determina el número de bytes que deberían ser leídos.\smallskip
 
 Se pueden hacer más llamadas a read() en el mismo objeto archivo para leer más de él byte por byte. Si no se le pasan argumentos, o si el argumento es negativo, read() devuelve el resto del archivo.
 
 \pythonfile{codigo/14-archivos/read_2.py}
 
-El ejemplo de arriba primero mostrará los bytes del 1 al 16, después del 17 al 24, del 25 al 28, y del 29 al último byte.
+El ejemplo de arriba primero mostrará los bytes del 1 al 16, después del 17 al 24, del 25 al 28, y del 29 al último byte.\smallskip
 
 Luego de que todos los contenidos de un archivo hayan sido leídos, cualquier intento de leer más de ese archivo devolverá una cadena vacía $''$$''$ porque se está intentando leer desde el final del archivo.
 
@@ -1520,15 +1561,15 @@ Es buena práctica evitar gastar recursos asegurándose de que los archivos sean
 \pythonfile{codigo/14-archivos/close_seguro.py}
 
 Esto asegura que el archivo sea siempre cerrado incluso si ocurre un error.
-Sin embargo, existe una forma más cómoda de hacer esto usando declaraciones with.
+Sin embargo, existe una forma más cómoda de hacer esto usando declaraciones with.\smallskip
 
 Una forma alternativa de trabajar con archivos es utilizando declaraciones with. Esto crea una variable temporal (a menudo llamada f), la cual solo es accesible en el bloque indentado de la declaración with.
 
 \pythonfile{codigo/14-archivos/with_1.py}
 
-El archivo se cierra automáticamente al final de la declaración with, incluso si ocurren excepciones dentro de ella.
+El archivo se cierra automáticamente al final de la declaración with, incluso si ocurren excepciones dentro de ella.\smallskip
 
-Comparado con la forma tradicional de trabajar con archivos (open-close), usar with tiene el inconveniente de que los archivos tienen que volverse a abrir cada vez que se quiera trabajar con ellos.
+Comparado con la forma tradicional de trabajar con archivos (open-close), usar with tiene el inconveniente de que los archivos tienen que volverse a abrir cada vez que se quiera trabajar con ellos.\smallskip
 
 Así, una forma más segura de trabajar con archivos puede tener la siguiente estructura:
 
@@ -1550,7 +1591,7 @@ Los diccionarios son estructuras de datos utilizadas para mapear claves arbitrar
 
 \pythonfile{codigo/16-estructuras/diccionarios_1.py}
 
-Cada elemento de un diccionario es representado por un par clave:valor (key:value). Estos elementos no se almacenan con algún orden en específico. Los diccionarios no están ordenados, lo que significa que no pueden ser indexados por índices, sólo por claves.
+Cada elemento de un diccionario es representado por un par clave:valor (key:value). Estos elementos no se almacenan con algún orden en específico. Los diccionarios no están ordenados, lo que significa que no pueden ser indexados por índices, sólo por claves.\smallskip
 
 Las listas pueden ser consideradas como diccionarios con claves de números enteros dentro de un cierto rango.
 
@@ -1640,17 +1681,17 @@ Para crear un conjunto vacío, se debe utilizar set(), ya que {} crea un diccion
 
 \pythonfile{codigo/16-estructuras/conjunto_vacio.py}
 
-Los conjuntos difieren de las listas de varias formas, pero comparten varias operaciones de listas como len().
+Los conjuntos difieren de las listas de varias formas, pero comparten varias operaciones de listas como len().\smallskip
 
-No están ordenados, lo cual significa que no pueden ser indexados. No pueden tener elementos duplicados.
+No están ordenados, lo cual significa que no pueden ser indexados. No pueden tener elementos duplicados.\smallskip
 
-Debido a la forma en que son almacenados, es más rápido revisar si un elemento es parte de un conjunto que si es parte de una lista.
+Debido a la forma en que son almacenados, es más rápido revisar si un elemento es parte de un conjunto que si es parte de una lista.\smallskip
 
 En lugar de utilizar append() para agregarle algo al conjunto, se utiliza add(). El método remove() elimina un elemento específico de un conjunto.
 
 \pythonfile{codigo/16-estructuras/add_y_remove.py}
 
-El método pop() elimina un elemento arbitrario. Esto significa que debido a la forma en la Python implementa conjuntos, no hay garantía de que los elementos se retornarán en el mismo orden que en el que se añadieron.
+El método pop() elimina un elemento arbitrario. Esto significa que debido a la forma en la Python implementa conjuntos, no hay garantía de que los elementos se retornarán en el mismo orden que en el que se añadieron.\smallskip
 
 Generalmente, elimina el primer elemento, pero esto no se puede garantizar.
 
@@ -1660,7 +1701,7 @@ Usos básicos de conjuntos incluyen pruebas de membresía y la eliminación de e
 
 \section{Operaciones con conjuntos}
 
-Los conjuntos pueden ser combinados utilizando operaciones matemáticas.
+Los conjuntos pueden ser combinados utilizando operaciones matemáticas.\smallskip
 
 El operador de unión | combina dos conjuntos para formar uno nuevo que contiene los elementos de cualquiera de los dos.
 
@@ -1682,7 +1723,7 @@ El operador de diferencia simétrica \^ obtiene los elementos que están en cual
 
 %TODO: encontrar qué hacer con esta sección
 
-Como se ha visto en capítulos anteriores, Python tiene soporte de las siguientes estructuras de datos: listas, diccionarios, tuplas y conjuntos.
+Como se ha visto en capítulos anteriores, Python tiene soporte de las siguientes estructuras de datos: listas, diccionarios, tuplas y conjuntos.\smallskip
 
 ¿Cúando utilizar diccionarios?
 
@@ -1716,7 +1757,7 @@ Como se ha visto en capítulos anteriores, Python tiene soporte de las siguiente
   \item Cuando se necesita almacenar datos que no pueden ser cambiados.
 \end{itemize}
 
-En muchas ocasiones, una tupla es utilizada junto con un diccionario. Por ejemplo, una tupla puede representar una clave, porque es inmutable.
+En muchas ocasiones, una tupla es utilizada junto con un diccionario. Por ejemplo, una tupla puede representar una clave, porque es inmutable.\smallskip
 
 La siguiente tabla muestra las propiedades de cada estructura de datos.
 
@@ -1750,7 +1791,7 @@ Los cortes de lista ofrecen una manera más avanzada de obtener valores de una l
 
 \pythonfile{codigo/17-iterables/cortes_1.py}
 
-Como los argumentos de range, el primer índice provisto en un corte es incluido en el resultado, pero el segundo no.
+Como los argumentos de range, el primer índice provisto en un corte es incluido en el resultado, pero el segundo no.\smallskip
 
 Si el primer número en un corte es omitido, se toma el principio de la lista. Si el segundo número es omitido, se toma el final de la lista.
 
@@ -1791,7 +1832,7 @@ Las listas por compresión son una forma útil de crear rápidamente listas cuyo
 
 \pythonfile{codigo/17-iterables/compresion_1.py}
 
-Las listas por compresión son inspiradas por la notación de constructores de conjuntos en las matemáticas.
+Las listas por compresión son inspiradas por la notación de constructores de conjuntos en las matemáticas.\smallskip
 
 Una lista por compresión también puede contener una sentencia if para aplicar una condición en los valores de la lista.
 
@@ -1805,15 +1846,15 @@ Este problema es resuelto con generadores, los cuales se verán más tarde.
 
 \section{Formateo de cadenas}
 
-La forma más básica de combinar cadenas y objetos que no son cadenas es convirtiendo dichos objetos a cadenas y concatenando las cadenas.
+La forma más básica de combinar cadenas y objetos que no son cadenas es convirtiendo dichos objetos a cadenas y concatenando las cadenas.\smallskip
 
-El formateo de cadenas ofrece una manera más potente de incorporar objetos que no son cadenas a las cadenas. El formateo de cadenas utiliza el método format de una cadena para sustituir los argumentos de esta.
+El formateo de cadenas ofrece una manera más potente de incorporar objetos que no son cadenas a las cadenas. El formateo de cadenas utiliza el método format de una cadena para sustituir los argumentos de esta.\smallskip
 
 Una forma de hacerlo es usando índices.
 
 \pythonfile{codigo/17-iterables/formateo_1.py}
 
-Cada argumento de la función de formateo es colocada en la cadena de la posición correspondiente, que es determinada usando llaves {}.
+Cada argumento de la función de formateo es colocada en la cadena de la posición correspondiente, que es determinada usando llaves {}.\smallskip
 
 Los índices entre llaves {} pueden repetirse cuantas veces se quiera.
 
@@ -1852,7 +1893,7 @@ Python contiene muchas funciones integradas y métodos útiles que sirven para c
   
   \pythonfile{codigo/17-iterables/endswith.py}
 
-  \item A diferencia de otros lenguajes de programación, Python no tiene el método contains(), para ver si una subcadena pertenece a un string.
+  \item A diferencia de otros lenguajes de programación, Python no tiene el método contains(), para ver si una subcadena pertenece a un string.\smallskip
   
   Usar el operador in tiene el mismo efecto que tendría dicha función.
 
@@ -1910,19 +1951,19 @@ También se puede especificar el índice desde el que comienza.
 
 \section{Paradigma de programación funcional}
 
-La programación funcional es un estilo de programación que, como dice su nombre, gira en torno a funciones.
+La programación funcional es un estilo de programación que, como dice su nombre, gira en torno a funciones.\smallskip
 
 Una parte clave de la programación funcional son las funciones de orden superior. Similar al uso de funciones como objetos, las funciones de orden superior reciben otras funciones como argumentos, o las devuelven como resultado.
 
 \pythonfile{codigo/18-funcional/ejemplo_funcional.py}
 
-La función repetir2veces() recibe otra función como su argumento y llama 2 veces dentro de su cuerpo.
+La función repetir2veces() recibe otra función como su argumento y llama 2 veces dentro de su cuerpo.\smallskip
 
-Entender los conceptos de programación funcional requiere un conocimiento básico del concepto algebraico llamado \href{https://www.mathsisfun.com/sets/functions-composition.html}{\doble{composición de funciones}}.
+Entender los conceptos de programación funcional requiere un conocimiento básico del concepto algebraico llamado \link{https://www.mathsisfun.com/sets/functions-composition.html}{\doble{composición de funciones}}.
 
 \section{Funciones puras}
 
-La programación funcional busca utilizar funciones puras. Las funciones puras no tienen efectos secundarios y devuelven un valor que depende únicamente de sus argumentos.
+La programación funcional busca utilizar funciones puras. Las funciones puras no tienen efectos secundarios y devuelven un valor que depende únicamente de sus argumentos.\smallskip
 
 Así son las funciones en las matemáticas. Por ejemplo, la función cos(x) siempre devolverá un mismo resultado para el mismo valor de x.
 
@@ -1973,18 +2014,19 @@ Desventajas principales:
 
 \section{Lambdas}
 
-Crear una función normalmente (utilizando def) le asigna una variable automáticamente.
+Crear una función normalmente (utilizando def) le asigna una variable automáticamente.\smallskip
 
-Esto es distinto a la creación de otros objetos, tales como cadenas y enteros, que pueden ser creados en el camino, sin la necesidad de asignarles una variable.
+Esto es distinto a la creación de otros objetos, tales como cadenas y enteros, que pueden ser creados en el camino, sin la necesidad de asignarles una variable.\smallskip
 
 Lo mismo es posible con las funciones, dado que sean creadas utilizando la sintaxis lambda. Funciones creadas de esta forma son conocidas como anónimas.
-Este enfoque es más comúnmente utilizado cuando se pasa una función sencilla como argumento de otra función.
+Este enfoque es más comúnmente utilizado cuando se pasa una función sencilla como argumento de otra función.\smallskip
 
 La sintaxis que se muestra a continuación consiste de la palabra reservada lambda seguida de una lista de argumentos, dos puntos, y una expresión a evaluar y devolver.
 
 \pythonfile{codigo/18-funcional/lambda_1.py}
 
-Las funciones lambda reciben su nombre del \href{https://es.wikipedia.org/wiki/C%C3%A1lculo_lambda}{cálculo lambda}, el cual es un modelo computacional inventado por Alonzo Church.
+Las funciones lambda reciben su nombre del \link{https://es.wikipedia.org/wiki/C\%C3\%A1lculo_lambda}{cálculo lambda}, el cual es un modelo computacional inventado por Alonzo Church.\smallskip
+
 Las funciones lambda no son tan potentes como las funciones con nombre. Sólo pueden hacer cosas que requieren de una sola expresión, normalmente equivalente a una sola línea de código.
 
 \pythonfile{codigo/18-funcional/lambda_2.py}
@@ -1997,7 +2039,7 @@ Sin embargo, rara vez existe una buena razón para hacer esto. Normalmente es me
 
 \section{Función map()}
 
-La función map() es una función de orden superior muy útil que opera sobre listas (u objetos similares llamados iterables).
+La función map() es una función de orden superior muy útil que opera sobre listas (u objetos similares llamados iterables).\smallskip
 
 Esta función recibe una función y un iterable como argumentos y devuelve un nuevo iterable con la función aplicada a cada argumento.
 
@@ -2011,7 +2053,7 @@ Los objetos del tipo mapa son iterables, por lo que se debe usar list() para con
 
 \section{Función filter()}
 
-La función filter() es otra función de orden supero que se puede usar sobre iterables.
+La función filter() es otra función de orden supero que se puede usar sobre iterables.\smallskip
 
 Esta función filtra un iterable eliminando elementos que no coincidan con el predicado (una función que devuelve un booleano).
 
@@ -2021,9 +2063,9 @@ Al igual que map(), el resultado tiene que ser convertido explícitamente a una 
 
 \section{Generadores}
 
-Los generadores son un tipo de iterable, como las listas o las tuplas.
+Los generadores son un tipo de iterable, como las listas o las tuplas.\smallskip
 
-A diferencia de las listas, no permiten indexar con índices arbitrarios, pero pueden aún ser iterados con bucles for.
+A diferencia de las listas, no permiten indexar con índices arbitrarios, pero pueden aún ser iterados con bucles for.\smallskip
 
 Pueden ser creados utilizando funciones y la sentencia yield.
 
@@ -2031,13 +2073,13 @@ Pueden ser creados utilizando funciones y la sentencia yield.
 
 %TODO: más ejemplos
 
-La sentencia yield es utilizada para definir un generador, reemplazando el retorno de una función para proveer un resultado a su llamador sin destruir las variables locales.
+La sentencia yield es utilizada para definir un generador, reemplazando el retorno de una función para proveer un resultado a su llamador sin destruir las variables locales.\smallskip
 
 Debido al hecho que yield produce un elemento a la vez, los generadores no tienen las restricciones de memoria de las listas. De hecho, ¡pueden ser infinitos!
 
 \pythonfile{codigo/18-funcional/generador_2.py}
 
-En resumen, los generadores permiten declarar una función que se comporta como un iterador. En otras palabras, que puede utilizarse en un bucle for.
+En resumen, los generadores permiten declarar una función que se comporta como un iterador. En otras palabras, que puede utilizarse en un bucle for.\smallskip
 
 Un ejemplo de uso de generadores es para generar números primos.
 
@@ -2055,7 +2097,7 @@ Los decoradores ofrecen una forma de modificar funciones utilizando otras funcio
 
 \pythonfile{codigo/18-funcional/decorador_1.py}
 
-En este caso, el uso la función envolver() se define dentro de decor() para permitir que decor() retorne una función, que es el objetivo principal de un decorador. La función texto\_decorado() es una versión decorada de la función imprimir\_texto().
+En este caso, el uso la función envolver() se define dentro de decor() para permitir que decor() retorne una función, que es el objetivo principal de un decorador. La función texto\_decorado() es una versión decorada de la función imprimir\_texto().\smallskip
 
 De hecho, si se escribiera un decorador útil, podría reemplazarse imprimir\_texto() por su versión decorada.
 
@@ -2065,7 +2107,7 @@ En el ejemplo anterior, se decora la función print\_text() reemplazando la vari
 
 \pythonfile{codigo/18-funcional/decorador_3.py}
 
-Este patrón puede utilizarse en cualquier momento, para envolver cualquier función.
+Este patrón puede utilizarse en cualquier momento, para envolver cualquier función.\smallskip
 
 Python ofrece apoyo para envolver una función en un decorador anteponiendo la definición de la función con el nombre de un decorador y el símbolo \@, lo cual tendrá el mismo resultado que el código de arriba.
 
@@ -2083,17 +2125,17 @@ Los decoradores pueden ser usados para muchos otros propósitos además de \dobl
 
 \section{Recursión}
 
-La recursión es un concepto muy importante en la programación funcional.
+La recursión es un concepto muy importante en la programación funcional.\smallskip
 
-Lo fundamental de la recursión es la autorreferencia, funciones que se llaman a sí mismas. Se utiliza para resolver problemas que pueden ser divididos en subproblemas más sencillos del mismo tipo.
+Lo fundamental de la recursión es la autorreferencia, funciones que se llaman a sí mismas. Se utiliza para resolver problemas que pueden ser divididos en subproblemas más sencillos del mismo tipo.\smallskip
 
 Un ejemplo clásico de una función que es implementada recursiva es la función factorial.
 
 \pythonfile{codigo/18-funcional/factorial.py}
 
-El caso base n == 0 actúa como condición de salida de la recursión, porque no involucra más llamadas a la función.
+El caso base n == 0 actúa como condición de salida de la recursión, porque no involucra más llamadas a la función.\smallskip
 
-Las funciones recursivas pueden ser infinitas, al igual que los bucles while. Estas ocurren cuando se olvida implementar algún caso base.
+Las funciones recursivas pueden ser infinitas, al igual que los bucles while. Estas ocurren cuando se olvida implementar algún caso base.\smallskip
 
 Abajo se muestra una versión incorrecta de la función factorial. No tiene caso base, así que se ejecuta hasta que al interpretador se le acabe la memoria o se cuelgue.
 
@@ -2119,7 +2161,7 @@ El módulo itertools es una biblioteca estándar que contiene varias funciones q
 
 \section{Iteradores infinitos}
 
-Uno de los tipos de función que produce son iteradores infinitos.
+Uno de los tipos de función que produce son iteradores infinitos.\smallskip
 
 La función count() cuenta infinitamente a partir de un valor.
 
@@ -2153,7 +2195,7 @@ Para repetir infinitamente, se le debe entregar sólo el objeto como parámetro.
 
 \section{Operaciones sobre iterables}
 
-Hay muchas funciones en itertools que operan sobre iterables, de una forma similar a map() o filter().
+Hay muchas funciones en itertools que operan sobre iterables, de una forma similar a map() o filter().\smallskip
 
 La función accumulate() devuelve un total actualizado de los valores dentro de un iterable.
 
@@ -2173,7 +2215,7 @@ La función chain() combina varios iterables en uno solo más largo.
 
 \section{Funciones de combinatoria}
 
-También hay numerosas funciones combinatorias en itertools, tales como product() y permutations(). Estas son usadas cuando se quiere cumplir tareas con todas las combinaciones posibles de algunos elementos.
+También hay numerosas funciones combinatorias en itertools, tales como product() y permutations(). Estas son usadas cuando se quiere cumplir tareas con todas las combinaciones posibles de algunos elementos.\smallskip
 
 La función product() retorna el producto entre 2 iterables.
 
@@ -2201,13 +2243,13 @@ La diferencia es que en las combinaciones no importa el orden y se unen todos lo
 
 \section{Programación orientada a objetos}
 
-Anteriormente se vieron 2 paradigmas de programación: imperativa (utilizando declaraciones, bucles y funciones como subrutinas) y funcional (utilizando funciones puras, funciones de orden superior y recursión).
+Anteriormente se vieron 2 paradigmas de programación: imperativa (utilizando declaraciones, bucles y funciones como subrutinas) y funcional (utilizando funciones puras, funciones de orden superior y recursión).\smallskip
 
 Otro paradigma muy popular es la programación orientada a objetos (POO). Los objetos son creados utilizando clases, las cuales son en realidad el eje central de la POO.
 
 \section{Clases}
 
-La clase describe lo que el objeto será, pero es independiente del objeto mismo. En otras palabras, una clase puede ser descrita como los planos, la descripción o definición de un objeto. Una misma clase puede ser utilizada como plano para crear varios objetos diferentes.
+La clase describe lo que el objeto será, pero es independiente del objeto mismo. En otras palabras, una clase puede ser descrita como los planos, la descripción o definición de un objeto. Una misma clase puede ser utilizada como plano para crear varios objetos diferentes.\smallskip
 
 Las clases son creadas utilizando la palabra clave class y un bloque indentado que contiene los métodos de una clase (los cuales son funciones).
 
@@ -2217,19 +2259,19 @@ El código define una clase llamada Gato, la cual tiene el atributo color. Luego
 
 \section{Método \_\_init\_\_}
 
-El método \_\_init\_\_ es el más importante de una clase. Es llamada cuando una instancia (objeto) de una clase es creada, utilizando el nombre de la clase como función.
+El método \_\_init\_\_ es el más importante de una clase. Es llamada cuando una instancia (objeto) de una clase es creada, utilizando el nombre de la clase como función.\smallskip
 
-Todos los métodos deben tener self como su primer parámetro. Aunque no sea pasado explícitamente, Python agrega el argumento self automáticamente. No se necesita entregar cuando se llaman los métodos.
+Todos los métodos deben tener self como su primer parámetro. Aunque no sea pasado explícitamente, Python agrega el argumento self automáticamente. No se necesita entregar cuando se llaman los métodos.\smallskip
 
-Dentro de la definición de un método, self se refiere a la instancia que está llamando al método.
+Dentro de la definición de un método, self se refiere a la instancia que está llamando al método.\smallskip
 
 Las instancias de una clase tienen atributos, los cuales son datos asociados a ellas. En este ejemplo, las instancias de Gato tienen los atributos color y edad. Los atributos pueden ser accedidos al poner un punto seguido del nombre del atributo luego del nombre de una instancia.
 
 \pythonfile{codigo/20-objetos/clases_2.py}
 
-En un método \_\_init\_\_, self.atributo puede ser usado para fijar un valor inicial a los atributos de una instancia.
+En un método \_\_init\_\_, self.atributo puede ser usado para fijar un valor inicial a los atributos de una instancia.\smallskip
 
-En el método mostrado anteriormente, el método \_\_init\_\_ recibe 2 argumentos y los asigna a los atributos del objeto. El método \_\_init\_\_ es llamado el constructor de la clase.
+En el método mostrado anteriormente, el método \_\_init\_\_ recibe 2 argumentos y los asigna a los atributos del objeto. El método \_\_init\_\_ es llamado el constructor de la clase.\smallskip
 
 Si una clase no tiene atributos que se quieran inicializar con cada instancia, se puede omitir el método \_\_init\_\_.
 
@@ -2241,7 +2283,8 @@ Si una clase no tiene atributos que se quieran inicializar con cada instancia, s
 
 \section{Métodos}
 
-Las clases pueden tener otros métodos definidos para agregarles funcionalidad. Todos los métodos deben tener self como su primer parámetro.
+Las clases pueden tener otros métodos definidos para agregarles funcionalidad. Todos los métodos deben tener self como su primer parámetro.\smallskip
+
 Estos métodos son accedidos utilizando la misma sintaxis de punto que los atributos.
 
 \pythonfile{codigo/20-objetos/clases_3.py}
@@ -2264,15 +2307,15 @@ Tratar de acceder a un atributo de una instancia que no está definida generará
 
 \section{Herencia}
 
-La herencia brinda una manera de compartir funcionalidades entre clases.
+La herencia brinda una manera de compartir funcionalidades entre clases.\smallskip
 
-Por ejemplo, las clases Perro, Gato, Conejo, etc. tienen algo en común. Aunque presenten algunas diferencias, también tienen muchas características en común. Este parecido puede ser expresado haciendo que todos hereden de una superclase Animal, que contiene las funcionalidades compartidas.
+Por ejemplo, las clases Perro, Gato, Conejo, etc. tienen algo en común. Aunque presenten algunas diferencias, también tienen muchas características en común. Este parecido puede ser expresado haciendo que todos hereden de una superclase Animal, que contiene las funcionalidades compartidas.\smallskip
 
 Para heredar de una clase desde otra, se coloca el nombre de la superclase entre paréntesis luego del nombre de la clase.
 
 \pythonfile{codigo/20-objetos/herencia_1.py}
 
-Una clase que hereda de otra clase se llama subclase. Una clase de la cual se hereda se llama superclase.
+Una clase que hereda de otra clase se llama subclase. Una clase de la cual se hereda se llama superclase.\smallskip
 
 Si una clase hereda de otra con los mismos atributos o métodos, los sobreescribe.
 
@@ -2296,21 +2339,21 @@ También se puede usar para llamar al constructor de la superclase.
 
 \section{Métodos mágicos}
 
-Los métodos mágicos son métodos especiales que tienen doble guión bajo al principio y al final de sus nombres. Son también conocidos en inglés como dunders (de double underscores).
+Los métodos mágicos son métodos especiales que tienen doble guión bajo al principio y al final de sus nombres. Son también conocidos en inglés como dunders (de double underscores).\smallskip
 
 El constructor \_\_init\_\_ es un método mágico, pero existen muchos más. Son utilizados para crear funcionalidades que no pueden ser representadas en un método regular.
 
 \section{Sobrecarga de operadores aritméticos}
 
-Un uso común de métodos mágicos es la sobrecarga de operadores. Esto significa definir operadores para clases personalizadas que permiten que operadores tales como + y * sean utilizados en ellas.
+Un uso común de métodos mágicos es la sobrecarga de operadores. Esto significa definir operadores para clases personalizadas que permiten que operadores tales como + y * sean utilizados en ellas.\smallskip
 
 El método mágico \_\_add\_\_ permite sobrecargar el operador +, lo cual permite darle un comportamiento personalizado.
 
 \pythonfile{codigo/20-objetos/sobrecarga_operadores_1.py}
 
-El método \_\_add\_\_ suma los atributos correspondientes de los objetos y devuelve un nuevo objeto que contiene el resultado. Una vez definido, se pueden sumar dos objetos de una clase entre sí.
+El método \_\_add\_\_ suma los atributos correspondientes de los objetos y devuelve un nuevo objeto que contiene el resultado. Una vez definido, se pueden sumar dos objetos de una clase entre sí.\smallskip
 
-Otra forma de verlo es que el intérprete de Python siempre interpretará el operador + como el método \_\_add\_\_ de su clase.
+Otra forma de verlo es que el intérprete de Python siempre interpretará el operador + como el método \_\_add\_\_ de su clase.\smallskip
 
 Los métodos mágicos para operadores comunes son:
 
@@ -2324,8 +2367,10 @@ A continuación, se muestra un ejemplo de implementación del método \_\_truedi
 
 \pythonfile{codigo/20-objetos/truediv.py}
 
-La sobrecarga de operadores no necesita que los métodos mágicos nuevos cumplan su misma función original.
-Un caso particular ocurre cuando \doble{x} e \doble{y} son de tipos distintos y \doble{x} no tiene definido un método mágico, por ejemplo \_\_add\_\_. En este caso, Python intentará calcular la operación al revés, la cual en este caso será y + x. Para realizar esta operación llamará al método reverso \_\_radd\_\_ de “y”.
+La sobrecarga de operadores no necesita que los métodos mágicos nuevos cumplan su misma función original.\smallskip
+
+Un caso particular ocurre cuando \doble{x} e \doble{y} son de tipos distintos y \doble{x} no tiene definido un método mágico, por ejemplo \_\_add\_\_. En este caso, Python intentará calcular la operación al revés, la cual en este caso será y + x. Para realizar esta operación llamará al método reverso \_\_radd\_\_ de “y”.\smallskip
+
 Hay métodos r equivalentes para todos los operadores mencionados anteriormente.
 
 \pythonfile{codigo/20-objetos/r_magicos.py}
@@ -2358,26 +2403,26 @@ A continuación, se muestra un ejemplo rebuscado pero creativo, el cual consiste
 
 \section{Ciclo de vida de un objeto}
 
-El ciclo de vida de un objeto está conformado por su creación, manipulación y destrucción.
+El ciclo de vida de un objeto está conformado por su creación, manipulación y destrucción.\smallskip
 
-La primera etapa del ciclo de vida de un objeto es la definición de la clase a la cual pertenece.
+La primera etapa del ciclo de vida de un objeto es la definición de la clase a la cual pertenece.\smallskip
 
-La siguiente etapa es la instanciación de un objeto, cuando el método \_\_init\_\_ es llamado. La memoria es asignada para almacenar la instancia. Justo antes de que esto ocurra, el método \_\_new\_\_ de la clase es llamado, para asignar la memoria necesaria. Este es normalmente redefinido sólo en casos especiales.
+La siguiente etapa es la instanciación de un objeto, cuando el método \_\_init\_\_ es llamado. La memoria es asignada para almacenar la instancia. Justo antes de que esto ocurra, el método \_\_new\_\_ de la clase es llamado, para asignar la memoria necesaria. Este es normalmente redefinido sólo en casos especiales.\smallskip
 
-Luego de que ocurra lo anterior el objeto estará listo para ser utilizado.
+Luego de que ocurra lo anterior el objeto estará listo para ser utilizado.\smallskip
 
-Otro código puede interactuar con el objeto, llamando sus métodos o accediendo a sus atributos. Eventualmente, terminará de ser utilizado y podrá ser destruido.
+Otro código puede interactuar con el objeto, llamando sus métodos o accediendo a sus atributos. Eventualmente, terminará de ser utilizado y podrá ser destruido.\smallskip
 
-Cuando un objeto es destruido, la memoria asignada se libera y puede ser utilizada para otros propósitos.
+Cuando un objeto es destruido, la memoria asignada se libera y puede ser utilizada para otros propósitos.\smallskip
 
-La destrucción de un objeto ocurre cuando su contador de referencias llega a cero. La cuenta de referencias es el número de variables y otros elementos que se refieren al objeto.
+La destrucción de un objeto ocurre cuando su contador de referencias llega a cero. La cuenta de referencias es el número de variables y otros elementos que se refieren al objeto.\smallskip
 
 Si nada se está refiriendo al objeto (tiene una cuenta de referencias de 0) nada puede interactuar con este, así que puede ser eliminado con seguridad.
-En algunas situaciones, dos (o más) objetos pueden solo referirse entre ellos, y por lo tanto pueden ser eliminados también.
+En algunas situaciones, dos (o más) objetos pueden solo referirse entre ellos, y por lo tanto pueden ser eliminados también.\smallskip
 
-La sentencia del reduce la cuenta de referencias de un objeto por 1, y a menudo conlleva a su eliminación. El método mágico de la sentencia del es \_\_del\_\_.
+La sentencia del reduce la cuenta de referencias de un objeto por 1, y a menudo conlleva a su eliminación. El método mágico de la sentencia del es \_\_del\_\_.\smallskip
 
-El proceso de eliminación de objetos cuando ya no son necesarios se denomina recolección de basura (garbage collection).
+El proceso de eliminación de objetos cuando ya no son necesarios se denomina recolección de basura (garbage collection).\smallskip
 
 En resumen, el contador de referencias de un objeto se incrementa cuando se le es asignado un nuevo nombre o es colocado en un contenedor (una lista, tupla o diccionario). La cuenta de referencias de un objeto se disminuye cuando es eliminado con del, su referencia es reasignada, o su referencia sale fuera del alcance. Cuando la cuenta de referencias de un objeto llega a 0, Python lo elimina automáticamente.
 
@@ -2387,17 +2432,17 @@ Lenguajes de bajo nivel como C no tienen esta clase de manejo de memoria automá
 
 \section{Ocultamiento de información}
 
-Un componente clave de la programación orientada a objetos es el encapsulamiento, que involucra empaquetar las variables y funciones relacionadas en un único objeto fácil de usar, una instancia de una clase.
+Un componente clave de la programación orientada a objetos es el encapsulamiento, que involucra empaquetar las variables y funciones relacionadas en un único objeto fácil de usar, una instancia de una clase.\smallskip
 
-Un concepto asociado es el de ocultamiento de información, el cual dicta que los detalles de implementación de una clase deben estar ocultos y que sean presentados a aquellos que quieran utilizar la clase en una interfaz estándar limpia. En otros lenguajes de programación, esto se logra normalmente utilizando métodos y atributos privados, los cuales bloquean el acceso externo a ciertos métodos y atributos en una clase.
+Un concepto asociado es el de ocultamiento de información, el cual dicta que los detalles de implementación de una clase deben estar ocultos y que sean presentados a aquellos que quieran utilizar la clase en una interfaz estándar limpia. En otros lenguajes de programación, esto se logra normalmente utilizando métodos y atributos privados, los cuales bloquean el acceso externo a ciertos métodos y atributos en una clase.\smallskip
 
-La filosofía de Python es ligeramente diferente. A menudo se dice \doble{todos somos adultos consistentes aquí}, que significa que no deberías poner restricciones arbitrarias al acceso de las partes de una clase. Por ende, no hay formas de imponer que un método o atributo sea estrictamente privado.
+La filosofía de Python es ligeramente diferente. A menudo se dice \doble{todos somos adultos consistentes aquí}, que significa que no deberías poner restricciones arbitrarias al acceso de las partes de una clase. Por ende, no hay formas de imponer que un método o atributo sea estrictamente privado.\smallskip
 
 Sin embargo, hay maneras de desalentar a la gente de acceder a las partes de una clase, tales como denotar que es un detalle de implementación y debe ser utilizado a su cuenta y riesgo.
 
 Los métodos y atributos débilmente privados tienen un único guión bajo al principio. Esto señala que son privados, y no deberían ser utilizados por código externo.
 
-Sin embargo, es en su mayor parte sólo una convención, y no impide que el código externo los acceda. Su único efecto verdadero es que \mintinline{python}{from nombre_de_modulo import *} no importará a las variables que empiecen por un único guión bajo.
+Sin embargo, es en su mayor parte sólo una convención, y no impide que el código externo los acceda. Su único efecto verdadero es que \texttt{from nombre\_de\_modulo import *} no importará a las variables que empiecen por un único guión bajo.
 
 \section{Métodos de clase}
 
