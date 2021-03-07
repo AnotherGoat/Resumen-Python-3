@@ -274,7 +274,6 @@ Si el string se define entre comillas dobles, no es necesario poner \mintinline{
 Las secuencias de escape también se pueden incluir usando el símbolo \textbackslash dentro de cadenas de texto. Su origen viene de las secuencias de escape usadas en las máquinas de escribir.
 
 Algunas de las secuencias de escape más usadas son:
-% TODO: mejorar estos ejemplos
 
 \begin{itemize}
   \item Nueva línea (new line): Avanza una línea hacia adelante (salto de línea) y deja el cursor al principio de esta línea (retorno de carro). Representado por \textbackslash n.
@@ -456,6 +455,8 @@ Una variable también puede cambiar de valor a lo largo de la ejecución de un p
 
 Para obtener información del usuario, se puede usar la función input(). La información obtenida puede ser almacenada como una variable.
 
+%TODO: explicar la conversión necesaria
+
 \pythonfile{codigo/4-variables/input_1.py}
 \inp{codigo/4-variables/input_1.inp}
 \out{codigo/4-variables/input_1.out}
@@ -501,7 +502,7 @@ También se pueden usar con los operadores de concatenación y multiplicación d
 
 \pythonfile{codigo/4-variables/asignacion_2.py}
 
-\clearpage\chapter{Declaraciones if}
+\clearpage\chapter{Declaraciones if y lógica}
 
 \section{Booleanos}
 
@@ -528,14 +529,13 @@ Usando otros términos, podría decirse que 1 es \href{https://stackoverflow.com
 
 Los operadores de comparación usados en Python son los siguientes:
 
-%TODO: nombres
 \begin{itemize}
-  \item Igual $=$ (escrito como ==): Se evalúa como True si ambos elementos son iguales.
-  \item Distinto $\neq$ (escrito como !=): Se evalúa como True si ambos elementos son distintos.
-  \item Mayor que $>$: Se evalúa como True si el primer elemento es mayor.
-  \item Menor que $<$: Se evalúa como True si el primer elemento es menor.
-  \item Mayor o igual que $\geq$ (escrito como >=): Se evalúa como True si el primer elemento es mayor o igual al segundo.
-  \item Menor o igual que $\leq$ (escrito como <=): Se evalúa como True si el primer elemento es menor o igual al segundo.
+  \item Igual $=$, escrito como \mintinline{python}{==}: Se evalúa como True si ambos elementos son iguales.
+  \item Distinto $\neq$, escrito como \mintinline{python}{!=}: Se evalúa como True si ambos elementos son distintos.
+  \item Mayor que $>$, escrito como \mintinline{python}{>}: Se evalúa como True si el primer elemento es mayor.
+  \item Menor que $<$, escrito como \mintinline{python}{<}: Se evalúa como True si el primer elemento es menor.
+  \item Mayor o igual que $\geq$, escrito como \mintinline{python}{>=}: Se evalúa como True si el primer elemento es mayor o igual al segundo.
+  \item Menor o igual que $\leq$, escrito como \mintinline{python}{<=}: Se evalúa como True si el primer elemento es menor o igual al segundo.
 \end{itemize}
 
 En los casos contrarios, los operadores retornan False.
@@ -994,11 +994,11 @@ Al igual que otros valores \doble{vacíos}, tales como (), [], \{\} y la cadena 
 
 Cuando es ingresado a la consola de Python, se visualiza como una cadena vacía.
 
-\pythonfile{codigo/16-iterables/None_1.py}
+\pythonfile{codigo/8-funciones/None_1.py}
 
 El objeto None es devuelto por cualquier función que no devuelve explícitamente algo más.
 
-\pythonfile{codigo/16-iterables/None_2.py}
+\pythonfile{codigo/8-funciones/None_2.py}
 
 \clearpage\chapter{Módulos y la biblioteca estándar}
 
@@ -1070,7 +1070,7 @@ Utilizar pip es la forma estándar de instalar bibliotecas en la mayoría de sis
 
 \clearpage\chapter{El módulo random}
 
-\clearpage\chapter{Manejo de excepciones}
+\clearpage\chapter{Excepciones}
 
 \section{Excepciones}
 
@@ -1078,7 +1078,7 @@ Se han mencionado excepciones en las secciones anteriores. Ocurren cuando algo s
 
 Al intentar dividir por 0, se produce un ZeroDivisionError.
 
-\pythonfile{codigo/11-excepciones/excepcion_1.py}
+\pythonfile{codigo/12-excepciones/excepcion_1.py}
 
 Otras excepciones comunes son:
 
@@ -1097,15 +1097,15 @@ Las bibliotecas creadas por terceros a menudo definen sus propias excepciones.
 
 Para manejar excepciones y ejecutar código cuando ocurre una excepción, se puede usar una sentencia try-except. El bloque try contiene código que puede lanzar una excepción. Si ocurre una excepción, el código en el bloque try deja de ser ejecutado y el código en el bloque except se ejecuta. Si no ocurre ningún error, el código en el bloque except no se ejecuta.
 
-\pythonfile{codigo/11-excepciones/excepcion_2.py}
+\pythonfile{codigo/12-excepciones/excepcion_2.py}
 
 Una sentencia try puede tener varios bloques except para manejar diferentes excepciones. Varias excepciones pueden ser colocadas dentro de un mismo bloque except utilizando paréntesis.
 
-\pythonfile{codigo/11-excepciones/excepcion_3.py}
+\pythonfile{codigo/12-excepciones/excepcion_3.py}
 
 Una sentencia except sin ninguna excepción especificada atrapa todos los errores. Estos deben usarse con moderación ya que pueden atrapar errores inesperados y esconder errores de programación.
 
-\pythonfile{codigo/11-excepciones/excepcion_4.py}
+\pythonfile{codigo/12-excepciones/excepcion_4.py}
 
 Si una sentencia except vacía viene acompañada de otros except, esta debe ir al final, para evitar atrapar errores esperados.
 
@@ -1113,27 +1113,27 @@ Si una sentencia except vacía viene acompañada de otros except, esta debe ir a
 
 Para asegurar que algún código se ejecute sin importar cuál error ocurra, se puede usar la palabra clave finally. La sentencia finally se coloca en el fondo de una sentencia try-except. El código dentro de la sentencia finally siempre se ejecuta después del código del bloque try y de cualquier bloque except que se ejecute.
 
-\pythonfile{codigo/11-excepciones/finally_1.py}
+\pythonfile{codigo/12-excepciones/finally_1.py}
 
 El código dentro del bloque finally se ejecutará incluso si una excepción sin atrapar ocurre en alguno de los bloques que lo preceden.
 
-\pythonfile{codigo/11-excepciones/finally_2.py}
+\pythonfile{codigo/12-excepciones/finally_2.py}
 
 \section{Levantar excepciones}
 
 Se puede usar la sentencia raise para levantar excepciones. Se necesita especificar el tipo de la excepción levantada.
 
-\pythonfile{codigo/11-excepciones/raise_1.py}
+\pythonfile{codigo/12-excepciones/raise_1.py}
 
 Las excepciones pueden ser levantadas con argumentos que den detalles sobre ellas.
 
-\pythonfile{codigo/11-excepciones/raise_2.py}
+\pythonfile{codigo/12-excepciones/raise_2.py}
 
-\pythonfile{codigo/11-excepciones/raise_3.py}
+\pythonfile{codigo/12-excepciones/raise_3.py}
 
 En los bloques except, la sentencia raise puede ser utilizada sin argumentos para volver a levantar cualquier excepción que haya ocurrido.
 
-\pythonfile{codigo/11-excepciones/raise_4.py}
+\pythonfile{codigo/12-excepciones/raise_4.py}
 
 \section{Aserciones}
 
@@ -1141,23 +1141,23 @@ Una aserción es una comprobación de validez, la cual prueba una expresión. La
 
 Las aserciones son llevadas a cabo a través de la declaración assert.
 
-\pythonfile{codigo/11-excepciones/assert_1.py}
+\pythonfile{codigo/12-excepciones/assert_1.py}
 
 Los programadores a menudo colocan aserciones al principio de una función para asegurarse de que la entrada sea válida, y luego de llamar una función para revisar la validez de la salida.
 
 La declaración assert puede recibir un segundo argumento el cual es pasado a la excepción AssertionError levantada si la aserción falla.
 
-\pythonfile{codigo/11-excepciones/assert_1.py}
+\pythonfile{codigo/12-excepciones/assert_1.py}
 
 Las excepciones AssertionError pueden ser atrapadas y manejadas como cualquier otra excepción utilizando la sentencia try-except, pero si no son manejadas, este tipo de excepción terminará el programa.
 
 En general, se recomienda usar aserciones para atrapar tus propios errores y excepciones para atrapar los errores que los usuarios u otras personas podrían cometer.
 
-\pythonfile{codigo/11-excepciones/assert_2.py}
+\pythonfile{codigo/12-excepciones/assert_2.py}
 
 \clearpage\chapter{Pruebas unitarias}
 
-\clearpage\chapter{Manejo de archivos}
+\clearpage\chapter{Archivos}
 
 \section{Abrir archivos}
 
@@ -1229,7 +1229,7 @@ La siguiente tabla muestra el funcionamiento de cada modo:
   \end{tabular}
 }
 
-*: Levanta una excepción FileExistsError.
+\textcolor{Crimson}{*}: Levanta una excepción FileExistsError.
 
 \section{Cierre de archivos}
 
@@ -1320,28 +1320,32 @@ Así, una forma más segura de trabajar con archivos puede tener la siguiente es
 
 \clearpage\chapter{Estructuras de datos}
 
+\section{Estructuras de datos}
+
+%TODO: esta sección
+
 \section{Diccionarios}
 
 %TODO: Método keys()
 
 Los diccionarios son estructuras de datos utilizadas para mapear claves arbitrarias a valores. Pueden ser indexados de la misma manera que las listas, utilizando corchetes que contengan claves.
 
-\pythonfile{codigo/16-iterables/diccionarios_1.py}
+\pythonfile{codigo/16-estructuras/diccionarios_1.py}
 
 Cada elemento de un diccionario es representado por un par clave:valor (key:value). Estos elementos no se almacenan con algún orden en específico. Los diccionarios no están ordenados, lo que significa que no pueden ser indexados por índices, sólo por claves.
 
 Las listas pueden ser consideradas como diccionarios con claves de números enteros dentro de un cierto rango.
 
-\pythonfile{codigo/16-iterables/diccionarios_2.py}
+\pythonfile{codigo/16-estructuras/diccionarios_2.py}
 
 Un diccionario puede almacenar como valor cualquier tipo de datos.
 
-\pythonfile{codigo/16-iterables/diccionarios_3.py}
+\pythonfile{codigo/16-estructuras/diccionarios_3.py}
 
 Tratar de indexar una clave que no es parte de un diccionario retorna un KeyError.
 Un diccionario vacío es definido como {}.
 
-\pythonfile{codigo/16-iterables/diccionario_vacio.py}
+\pythonfile{codigo/16-estructuras/diccionario_vacio.py}
 
 Sólo objetos inmutables pueden ser utilizados como claves de diccionario. Los objetos inmutables son aquellos que no pueden ser cambiados. Algunos objetos mutables son listas, conjuntos y diccionarios. Tratar de utilizar un objeto mutable como clave de diccionario ocasiona un TypeError.
 
@@ -1349,13 +1353,13 @@ Sólo objetos inmutables pueden ser utilizados como claves de diccionario. Los o
 
 Al igual que las listas, las claves de un diccionario pueden ser asignadas a distintos valores. Sin embargo, a diferencia de las listas, se le puede asignar un valor a nuevas claves, no sólo a las que ya existen.
 
-\pythonfile{codigo/16-iterables/diccionarios_4.py}
+\pythonfile{codigo/16-estructuras/diccionarios_4.py}
 
 \section{Uso de in y not en diccionarios}
 
 Para determinar si una clave está en un diccionario, se puede usar los operadores in y not in, al igual que en listas.
 
-\pythonfile{codigo/16-iterables/diccionarios_5.py}
+\pythonfile{codigo/16-estructuras/diccionarios_5.py}
 
 Nótese que retorna False al buscar \doble{tres}. Esto ocurre porque \doble{tres} es un valor, no una clave.
 
@@ -1363,11 +1367,11 @@ Nótese que retorna False al buscar \doble{tres}. Esto ocurre porque \doble{tres
 
 Un método útil de diccionarios es get(). Hace lo mismo que indexar, pero si una clave no es encontrada en el diccionario entonces devuelve otro valor especificado (\simple{None} por defecto).
 
-\pythonfile{codigo/16-iterables/get.py}
+\pythonfile{codigo/16-estructuras/get.py}
 
 En este caso es importante recordar que 1 y True son la misma clave. Entonces, el diccionario \doble{pares} sólo tiene 3 elementos (la clave True tendrá como valor False, su último valor).
 
-\pythonfile{codigo/16-iterables/diccionarios_6.py}
+\pythonfile{codigo/16-estructuras/diccionarios_6.py}
 
 \section{Función keys()}
 
@@ -1375,34 +1379,34 @@ En este caso es importante recordar que 1 y True son la misma clave. Entonces, e
 
 Las tuplas son estructuras de datos muy parecidas a las listas, excepto que son inmutables (no pueden ser cambiadas). También se crean utilizando paréntesis en vez de corchetes.
 
-\pythonfile{codigo/16-iterables/tupla_1.py}
+\pythonfile{codigo/16-estructuras/tupla_1.py}
 
 %TODO: mencionar truco de igualdad
 
 Se puede acceder a los valores de una tupla utilizando su índice. Funciona de la misma forma que con listas.
 
-\pythonfile{codigo/16-iterables/tupla_2.py}
+\pythonfile{codigo/16-estructuras/tupla_2.py}
 
 Tratar de reasignar un valor a una tupla ocasiona un TypeError.
 
-\pythonfile{codigo/16-iterables/tupla_3.py}
+\pythonfile{codigo/16-estructuras/tupla_3.py}
 
 Al igual que las listas y diccionarios, las tuplas pueden ser anidadas entre sí.
 Las tuplas son inmutables, pero el contenido de elementos mutables dentro de ellas puede ser cambiado.
 
-\pythonfile{codigo/16-iterables/tupla_4.py}
+\pythonfile{codigo/16-estructuras/tupla_4.py}
 
 Las tuplas pueden \doble{empaquetarse} o \doble{desempaquetarse}, lo que puede ser útil al momento de crear variables.
 
-\pythonfile{codigo/16-iterables/tupla_5.py}
+\pythonfile{codigo/16-estructuras/tupla_5.py}
 
 Las tuplas pueden ser creadas sin paréntesis, simplemente separando los valores por comas.
 
-\pythonfile{codigo/16-iterables/tupla_6.py}
+\pythonfile{codigo/16-estructuras/tupla_6.py}
 
 Una tupla vacía se crea utilizando un par de paréntesis vacíos.
 
-\pythonfile{codigo/16-iterables/tupla_vacia.py}
+\pythonfile{codigo/16-estructuras/tupla_vacia.py}
 
 Las tuplas son más rápidas que las listas, pero no pueden ser modificadas.
 
@@ -1412,11 +1416,11 @@ Las tuplas son más rápidas que las listas, pero no pueden ser modificadas.
 
 Los conjuntos son estructuras de datos parecidas a las listas o a los diccionarios. Son creandos utilizando llaves o la función set(). Comparten algunas de las funcionalidades de las listas, como el uso de in para revisar si contienen o no un elemento en particular.
 
-\pythonfile{codigo/18-conjuntos/conjuntos.py}
+\pythonfile{codigo/16-estructuras/conjuntos.py}
 
 Para crear un conjunto vacío, se debe utilizar set(), ya que {} crea un diccionario vacío.
 
-\pythonfile{codigo/18-conjuntos/conjunto_vacio.py}
+\pythonfile{codigo/16-estructuras/conjunto_vacio.py}
 
 Los conjuntos difieren de las listas de varias formas, pero comparten varias operaciones de listas como len().
 
@@ -1426,13 +1430,13 @@ Debido a la forma en que son almacenados, es más rápido revisar si un elemento
 
 En lugar de utilizar append() para agregarle algo al conjunto, se utiliza add(). El método remove() elimina un elemento específico de un conjunto.
 
-\pythonfile{codigo/18-conjuntos/add_y_remove.py}
+\pythonfile{codigo/16-estructuras/add_y_remove.py}
 
 El método pop() elimina un elemento arbitrario. Esto significa que debido a la forma en la Python implementa conjuntos, no hay garantía de que los elementos se retornarán en el mismo orden que en el que se añadieron.
 
 Generalmente, elimina el primer elemento, pero esto no se puede garantizar.
 
-\pythonfile{codigo/18-conjuntos/pop_conjuntos.py}
+\pythonfile{codigo/16-estructuras/pop_conjuntos.py}
 
 Usos básicos de conjuntos incluyen pruebas de membresía y la eliminación de entradas duplicadas.
 
@@ -1442,19 +1446,19 @@ Los conjuntos pueden ser combinados utilizando operaciones matemáticas.
 
 El operador de unión | combina dos conjuntos para formar uno nuevo que contiene los elementos de cualquiera de los dos.
 
-\pythonfile{codigo/18-conjuntos/union.py}
+\pythonfile{codigo/16-estructuras/union.py}
 
 El operador de intersección \& obtiene sólo los elementos que están en ambos.
 
-\pythonfile{codigo/18-conjuntos/interseccion.py}
+\pythonfile{codigo/16-estructuras/interseccion.py}
 
 El operador de diferencia - obtiene los elementos que están en el primer conjunto, pero no en el segundo.
 
-\pythonfile{codigo/18-conjuntos/diferencia.py}
+\pythonfile{codigo/16-estructuras/diferencia.py}
 
 El operador de diferencia simétrica \^ obtiene los elementos que están en cualquiera de los conjuntos, pero no en ambos.
 
-\pythonfile{codigo/18-conjuntos/diferencia_simetrica.py}
+\pythonfile{codigo/16-estructuras/diferencia_simetrica.py}
 
 \section{Estructuras de datos}
 
@@ -1513,31 +1517,33 @@ La siguiente tabla muestra las propiedades de cada estructura de datos.
   \end{tabular}
 }
 
-\clearpage\chapter{Manejo de iterables}
+\clearpage\chapter{Iterables}
+
+%TODO: iterables https://pythonbasics.org/iterable/
 
 \section{Cortes de lista}
 
 Los cortes de lista ofrecen una manera más avanzada de obtener valores de una lista. Los cortes de lista básicos involucran indexar una lista con dos enteros separados por dos puntos. Esto devuelve una lista nueva que contiene todos los valores de la lista vieja entre los índices.
 
-\pythonfile{codigo/16-iterables/cortes_1.py}
+\pythonfile{codigo/17-iterables/cortes_1.py}
 
 Como los argumentos de range, el primer índice provisto en un corte es incluido en el resultado, pero el segundo no.
 
 Si el primer número en un corte es omitido, se toma el principio de la lista. Si el segundo número es omitido, se toma el final de la lista.
 
-\pythonfile{codigo/16-iterables/cortes_2.py}
+\pythonfile{codigo/17-iterables/cortes_2.py}
 
 Los cortes de lista también pueden tener un tercer número, representando el incremento, para incluir valores alternativos en el corte.
 
-\pythonfile{codigo/16-iterables/cortes_3.py}
+\pythonfile{codigo/17-iterables/cortes_3.py}
 
 Los valores negativos pueden ser utilizados en un corte de lista. Cuando los valores negativos son utilizados para el primer y el segundo valor del corte, estos cuentan desde el final de la lista.
 
-\pythonfile{codigo/16-iterables/cortes_4.py}
+\pythonfile{codigo/17-iterables/cortes_4.py}
 
 El tamaño de paso también puede ser negativo, lo que permite usarlos para invertir listas sin usar el método reverse().
 
-\pythonfile{codigo/16-iterables/cortes_reverse.py}
+\pythonfile{codigo/17-iterables/cortes_reverse.py}
 
 Es importante recordar que si el tamaño de paso es negativo, el primer número debe indicar un índice mayor que el segundo.
 
@@ -1545,7 +1551,7 @@ Es importante recordar que si el tamaño de paso es negativo, el primer número 
 
 Los cortes también pueden ser realizados en tuplas. Su funcionamiento es el mismo que con listas.
 
-\pythonfile{codigo/16-iterables/cortes_en_tuplas.py}
+\pythonfile{codigo/17-iterables/cortes_en_tuplas.py}
 
 Esto es válido porque si bien las tuplas son inmutables, los cortes no realizan ningún cambio sobre los objetos con los que trabajan. Sólo consultan información de cierta manera.
 
@@ -1553,24 +1559,24 @@ Esto es válido porque si bien las tuplas son inmutables, los cortes no realizan
 
 En Python pueden usarse cortes para obtener trozos de una cadena. Esto es lo que otros lenguajes de programación realizan usando el método substring(). Funciona de la misma forma que con listas y tuplas.
 
-\pythonfile{codigo/16-iterables/substring_1.py}
+\pythonfile{codigo/17-iterables/substring_1.py}
 %TODO: más
 
 \section{Listas por compresión}
 
 Las listas por compresión son una forma útil de crear rápidamente listas cuyo contenido obedece una regla sencilla.
 
-\pythonfile{codigo/16-iterables/compresion_1.py}
+\pythonfile{codigo/17-iterables/compresion_1.py}
 
 Las listas por compresión son inspiradas por la notación de constructores de conjuntos en las matemáticas.
 
 Una lista por compresión también puede contener una sentencia if para aplicar una condición en los valores de la lista.
 
-\pythonfile{codigo/16-iterables/compresion_2.py}
+\pythonfile{codigo/17-iterables/compresion_2.py}
 
 Intentar crear una lista de rango demasiado extenso resultará en un MemoryError. Es posible que la operación tarde unos minutos en llegar a esta excepción.
 
-\pythonfile{codigo/16-iterables/compresion_3.py}
+\pythonfile{codigo/17-iterables/compresion_3.py}
 
 Este problema es resuelto con generadores, los cuales se verán más tarde.
 
@@ -1582,25 +1588,25 @@ El formateo de cadenas ofrece una manera más potente de incorporar objetos que 
 
 Una forma de hacerlo es usando índices.
 
-\pythonfile{codigo/16-iterables/formateo_1.py}
+\pythonfile{codigo/17-iterables/formateo_1.py}
 
 Cada argumento de la función de formateo es colocada en la cadena de la posición correspondiente, que es determinada usando llaves {}.
 
 Los índices entre llaves {} pueden repetirse cuantas veces se quiera.
 
-\pythonfile{codigo/16-iterables/formateo_2.py}
+\pythonfile{codigo/17-iterables/formateo_2.py}
 
 Si se omite un índice, habrá algún argumento de format() que no se usará.
 
-\pythonfile{codigo/16-iterables/formateo_3.py}
+\pythonfile{codigo/17-iterables/formateo_3.py}
 
 No es necesario escribir los índices dentro de las llaves {}, pero esto no permite que se repitan o que se entreguen como argumentos en otro orden.
 
-\pythonfile{codigo/16-iterables/formateo_4.py}
+\pythonfile{codigo/17-iterables/formateo_4.py}
 
 El formateo de cadenas también puede hacerse con argumentos con nombre.
 
-\pythonfile{codigo/16-iterables/formateo_5.py}
+\pythonfile{codigo/17-iterables/formateo_5.py}
 
 \section{Funciones de cadenas}
 
@@ -1609,19 +1615,19 @@ Python contiene muchas funciones integradas y métodos útiles que sirven para c
 \begin{itemize}
   \item join(): Combina una lista de cadenas con otra cadena como separador.
   
-  \pythonfile{codigo/16-iterables/join.py}
+  \pythonfile{codigo/17-iterables/join.py}
 
   \item replace(): Reemplaza una subcadena de una cadena por otra cadena.
 
-  \pythonfile{codigo/16-iterables/replace.py}
+  \pythonfile{codigo/17-iterables/replace.py}
 
   \item startswith(): Determina si hay una subcadena al principio de una cadena.
 
-  \pythonfile{codigo/16-iterables/startswith.py}
+  \pythonfile{codigo/17-iterables/startswith.py}
 
   \item endswith(): Determina si hay una subcadena al final de una cadena.
   
-  \pythonfile{codigo/16-iterables/endswith.py}
+  \pythonfile{codigo/17-iterables/endswith.py}
 
   \item A diferencia de otros lenguajes de programación, Python no tiene el método contains(), para ver si una subcadena pertenece a un string.
   
@@ -1631,37 +1637,39 @@ Python contiene muchas funciones integradas y métodos útiles que sirven para c
 
   \item upper(): Cambia una cadena a mayúsculas.
   
-  \pythonfile{codigo/16-iterables/upper.py}
+  \pythonfile{codigo/17-iterables/upper.py}
 
   \item lower(): Cambia una cadena a minúsculas.
   
-  \pythonfile{codigo/16-iterables/lower.py}
+  \pythonfile{codigo/17-iterables/lower.py}
 
   \item capitalize(): Cambia una cadena para que la primera letra sea mayúscula y el resto minúsculas.
 
-  \pythonfile{codigo/16-iterables/capitalize.py}
+  \pythonfile{codigo/17-iterables/capitalize.py}
   
   \item title(): Cambia una cadena para que todas las palabras empiecen con mayúscula.
   
-  \pythonfile{codigo/16-iterables/title.py}
+  \pythonfile{codigo/17-iterables/title.py}
 
 \end{itemize}
 
 \section{Funciones numéricas}
 
+%TODO: mover tal vez
+
 Para obtener la distancia entre un número y el 0 (su valor absulto), puede usarse la función abs().
 
-\pythonfile{codigo/16-iterables/abs.py}
+\pythonfile{codigo/17-iterables/abs.py}
 
 Para redondear un número a un determinado número de decimales, puede usarse la función round().
 
-\pythonfile{codigo/16-iterables/round.py}
+\pythonfile{codigo/17-iterables/round.py}
 
 \section{Funciones all() y any()}
 
 All y any son utilizados con frecuencia como sentencias condicionales. Estos toman una lista como un argumento y devuelven True si todos o algunos (respectivamente) de sus argumentos son evaluados como True (o, de lo contrario, False).
 
-\pythonfile{codigo/16-iterables/all_y_any.py}
+\pythonfile{codigo/17-iterables/all_y_any.py}
 
 %TODO: separar ejemplos
 
@@ -1669,11 +1677,11 @@ All y any son utilizados con frecuencia como sentencias condicionales. Estos tom
 
 La función enumerate() se usa para iterar a través de los valores e índices de una lista, simultáneamente.
 
-\pythonfile{codigo/16-iterables/enumerate_1.py}
+\pythonfile{codigo/17-iterables/enumerate_1.py}
 
 También se puede especificar el índice desde el que comienza.
 
-\pythonfile{codigo/16-iterables/enumerate_2.py}
+\pythonfile{codigo/17-iterables/enumerate_2.py}
 
 \clearpage\chapter{Programación funcional}
 
@@ -1683,7 +1691,7 @@ La programación funcional es un estilo de programación que, como dice su nombr
 
 Una parte clave de la programación funcional son las funciones de orden superior. Similar al uso de funciones como objetos, las funciones de orden superior reciben otras funciones como argumentos, o las devuelven como resultado.
 
-\pythonfile{codigo/17-funcional/ejemplo_funcional.py}
+\pythonfile{codigo/18-funcional/ejemplo_funcional.py}
 
 La función repetir2veces() recibe otra función como su argumento y llama 2 veces dentro de su cuerpo.
 
@@ -1697,11 +1705,11 @@ Así son las funciones en las matemáticas. Por ejemplo, la función cos(x) siem
 
 Ejemplo de función pura:
 
-\pythonfile{codigo/17-funcional/pura.py}
+\pythonfile{codigo/18-funcional/pura.py}
 
 Ejemplo de función impura:
 
-\pythonfile{codigo/17-funcional/impura.py}
+\pythonfile{codigo/18-funcional/impura.py}
 
 Dicho de otra forma, una función pura cumple lo siguiente:
 
@@ -1748,16 +1756,16 @@ Este enfoque es más comúnmente utilizado cuando se pasa una función sencilla 
 
 La sintaxis que se muestra a continuación consiste de la palabra reservada lambda seguida de una lista de argumentos, dos puntos, y una expresión a evaluar y devolver.
 
-\pythonfile{codigo/17-funcional/lambda_1.py}
+\pythonfile{codigo/18-funcional/lambda_1.py}
 
 Las funciones lambda reciben su nombre del \href{https://es.wikipedia.org/wiki/C%C3%A1lculo_lambda}{cálculo lambda}, el cual es un modelo computacional inventado por Alonzo Church.
 Las funciones lambda no son tan potentes como las funciones con nombre. Sólo pueden hacer cosas que requieren de una sola expresión, normalmente equivalente a una sola línea de código.
 
-\pythonfile{codigo/17-funcional/lambda_2.py}
+\pythonfile{codigo/18-funcional/lambda_2.py}
 
 Las funciones lambda pueden ser asignadas a variables y ser utilizadas como funciones regulares.
 
-\pythonfile{codigo/17-funcional/lambda_3.py}
+\pythonfile{codigo/18-funcional/lambda_3.py}
 
 Sin embargo, rara vez existe una buena razón para hacer esto. Normalmente es mejor definir una función con def.
 
@@ -1767,11 +1775,11 @@ La función map() es una función de orden superior muy útil que opera sobre li
 
 Esta función recibe una función y un iterable como argumentos y devuelve un nuevo iterable con la función aplicada a cada argumento.
 
-\pythonfile{codigo/17-funcional/map_1.py}
+\pythonfile{codigo/18-funcional/map_1.py}
 
 El mismo resultado se puede obtener con mayor facilidad utilizando la sintaxis lambda.
 
-\pythonfile{codigo/17-funcional/map_2.py}
+\pythonfile{codigo/18-funcional/map_2.py}
 
 Los objetos del tipo mapa son iterables, por lo que se debe usar list() para convertir el resultado en una lista y poder verlo.
 
@@ -1781,7 +1789,7 @@ La función filter() es otra función de orden supero que se puede usar sobre it
 
 Esta función filtra un iterable eliminando elementos que no coincidan con el predicado (una función que devuelve un booleano).
 
-\pythonfile{codigo/17-funcional/filter.py}
+\pythonfile{codigo/18-funcional/filter.py}
 
 Al igual que map(), el resultado tiene que ser convertido explícitamente a una lista si se quiere imprimir.
 
@@ -1793,7 +1801,7 @@ A diferencia de las listas, no permiten indexar con índices arbitrarios, pero p
 
 Pueden ser creados utilizando funciones y la sentencia yield.
 
-\pythonfile{codigo/17-funcional/generador_1.py}
+\pythonfile{codigo/18-funcional/generador_1.py}
 
 %TODO: más ejemplos
 
@@ -1801,17 +1809,17 @@ La sentencia yield es utilizada para definir un generador, reemplazando el retor
 
 Debido al hecho que yield produce un elemento a la vez, los generadores no tienen las restricciones de memoria de las listas. De hecho, ¡pueden ser infinitos!
 
-\pythonfile{codigo/17-funcional/generador_2.py}
+\pythonfile{codigo/18-funcional/generador_2.py}
 
 En resumen, los generadores permiten declarar una función que se comporta como un iterador. En otras palabras, que puede utilizarse en un bucle for.
 
 Un ejemplo de uso de generadores es para generar números primos.
 
-\pythonfile{codigo/17-funcional/generador_de_primos.py}
+\pythonfile{codigo/18-funcional/generador_de_primos.py}
 
 Los generadores finitos pueden ser convertidos en listas al pasarlos como argumentos de la función list().
 
-\pythonfile{codigo/17-funcional/generador_a_lista.py}
+\pythonfile{codigo/18-funcional/generador_a_lista.py}
 
 Utilizar generadores resulta en un mejor rendimiento, el cual es el resultado de una generación ociosa de valores (a medida que se vayan necesitando), lo cual se traduce en un uso reducido de memoria. Es más, no necesitamos esperar hasta que todos los elementos sean generados antes de empezar a utilizarlos.
 
@@ -1819,33 +1827,33 @@ Utilizar generadores resulta en un mejor rendimiento, el cual es el resultado de
 
 Los decoradores ofrecen una forma de modificar funciones utilizando otras funciones. Esto es ideal cuando se necesita extender la funcionalidad de funciones que no se quieren modificar.
 
-\pythonfile{codigo/17-funcional/decorador_1.py}
+\pythonfile{codigo/18-funcional/decorador_1.py}
 
 En este caso, el uso la función envolver() se define dentro de decor() para permitir que decor() retorne una función, que es el objetivo principal de un decorador. La función texto\_decorado() es una versión decorada de la función imprimir\_texto().
 
 De hecho, si se escribiera un decorador útil, podría reemplazarse imprimir\_texto() por su versión decorada.
 
-\pythonfile{codigo/17-funcional/decorador_2.py}
+\pythonfile{codigo/18-funcional/decorador_2.py}
 
 En el ejemplo anterior, se decora la función print\_text() reemplazando la variable que contiene la función por una versión envuelta.
 
-\pythonfile{codigo/17-funcional/decorador_3.py}
+\pythonfile{codigo/18-funcional/decorador_3.py}
 
 Este patrón puede utilizarse en cualquier momento, para envolver cualquier función.
 
 Python ofrece apoyo para envolver una función en un decorador anteponiendo la definición de la función con el nombre de un decorador y el símbolo \@, lo cual tendrá el mismo resultado que el código de arriba.
 
-\pythonfile{codigo/17-funcional/decorador_4.py}
+\pythonfile{codigo/18-funcional/decorador_4.py}
 
 Una sola función puede tener varios decoradores y cada decorador puede repetirse más de una vez.
 
-\pythonfile{codigo/17-funcional/decorador_5.py}
+\pythonfile{codigo/18-funcional/decorador_5.py}
 
 Los decoradores pueden ser usados para muchos otros propósitos además de \doble{decorar}.
 
-\pythonfile{codigo/17-funcional/decorador_entrada.py}
+\pythonfile{codigo/18-funcional/decorador_entrada.py}
 
-\pythonfile{codigo/17-funcional/decorador_tiempo.py}
+\pythonfile{codigo/18-funcional/decorador_tiempo.py}
 
 \section{Recursión}
 
@@ -1855,7 +1863,7 @@ Lo fundamental de la recursión es la autorreferencia, funciones que se llaman a
 
 Un ejemplo clásico de una función que es implementada recursiva es la función factorial.
 
-\pythonfile{codigo/17-funcional/factorial.py}
+\pythonfile{codigo/18-funcional/factorial.py}
 
 El caso base n == 0 actúa como condición de salida de la recursión, porque no involucra más llamadas a la función.
 
@@ -1863,15 +1871,15 @@ Las funciones recursivas pueden ser infinitas, al igual que los bucles while. Es
 
 Abajo se muestra una versión incorrecta de la función factorial. No tiene caso base, así que se ejecuta hasta que al interpretador se le acabe la memoria o se cuelgue.
 
-\pythonfile{codigo/17-funcional/factorial_malo.py}
+\pythonfile{codigo/18-funcional/factorial_malo.py}
 
 La recursión también puede ser indirecta. Una función puede llamar a una segunda, que a su vez llama a la primera, que llama a la segunda, y así sucesivamente. Esto puede ocurrir con cualquier cantidad de funciones.
 
-\pythonfile{codigo/17-funcional/par_o_impar.py}
+\pythonfile{codigo/18-funcional/par_o_impar.py}
 
 Otro ejemplo clásico es la serie de Fibonacci.
 
-\pythonfile{codigo/17-funcional/fibonacci.py}
+\pythonfile{codigo/18-funcional/fibonacci.py}
 
 \section{Iteración vs. Recursión}
 
@@ -2180,6 +2188,10 @@ Sin embargo, es en su mayor parte sólo una convención, y no impide que el cód
 \clearpage\chapter{Interfaz gráfica}
 
 \clearpage\chapter{Algoritmos de ordenamiento}
+
+\section{Bubble sort}
+
+
 
 \clearpage\chapter{Algoritmos de búsqueda}
 

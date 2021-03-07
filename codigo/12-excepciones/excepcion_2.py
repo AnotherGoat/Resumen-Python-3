@@ -1,5 +1,5 @@
-x = input()
-y = input()
+x = int(input())
+y = int(input())
 
 try:
     print("Resultado de la división: " + str(x / y))
