@@ -102,6 +102,11 @@
   \textcolor{ForestGreen}{Claves}
 }
 
+% atajo para usar \texttt{} más rápido, ya que se usará muy seguido
+\newcommand{\ttt}[1]{
+  \texttt{1}
+}
+
 \title{Resumen Python 3}
 \author{Víctor Mardones Bravo}
 \date{Febrero de 2021}
@@ -268,6 +273,8 @@ No hay limitaciones en lo que se puede construir usando Python. Esto incluye apl
 
 Dato curioso: Según el creador Guido van Rossum, el nombre de Python viene de la serie de comedia británica \doble{El Circo Volador de Monty Python}.
 
+%TODO: instalación
+
 \section{Hola mundo}
 
 Para mostrar el texto \doble{Hola mundo} en pantalla se puede usar la función print().
@@ -284,7 +291,7 @@ Cada declaración de impresión print() genera texto en una nueva línea.
 
 El \link{https://www.python.org/dev/peps/pep-0020/}{Zen de Python} es una colección de 20 \doble{principios}, 19 de ellos escritos por Tim Peters. Estos principios han servido como inspiración para muchos programadores de todo el mundo a la hora de crear software.\smallskip
 
-Se mostrará en pantalla como un \doble{huevo de pascua} la primera vez que se ejecute la siguiente linea, para importar el módulo \texttt{this}.
+Se mostrará en pantalla como un \doble{huevo de pascua} la primera vez que se ejecute la siguiente linea, para importar el módulo \ttt{this}.
 
 \pythonfile{codigo/1-intro/import_this.py}
 
@@ -305,13 +312,36 @@ Nota: Si se observa con claridad, se puede ver que el principio 20 \doble{no exi
 
 Los comentarios son anotaciones en el código utilizadas para hacerlo más fácil de entender. No afectan la ejecución del código.\smallskip
 
-En Python, los comentarios comienzan con el símbolo \#. Todo el texto luego de este \# (dentro de la misma línea) es ignorado.
+En Python, los comentarios comienzan con el símbolo \ttt{#}. Todo el texto luego de este \ttt{#} (dentro de la misma línea) es ignorado.
 
-\pythonfile{codigo/2-basico/comentario.py}
+\pythonfile{codigo/2-basico/comentario_1.py}
 
-Python no soporta comentarios multilínea, al contrario de otros lenguajes de programación.\smallskip
+La mayoría de editores de código marcan los comentarios con su propio color, distinto al del resto de código.
 
-A lo largo de este resumen, se usarán comentarios para mostrar la salida de algunas funciones, cuando sea posible.
+\pythonfile{codigo/2-basico/comentario_2.py}
+\out{codigo/2-basico/comentario_2.out}
+
+Python no soporta comentarios multilínea, al contrario de otros lenguajes de programación. Para comentar varias líneas de código se debe antener un comentario a cada línea.
+
+\pythonfile{codigo/2-basico/comentario_multilinea.py}
+
+Por último, se debe recordar no abusar del uso de comentarios. No es conveniente llenar el código de comentarios o comentar cosas que son demasiado obvias.
+
+\pythonfile{codigo/2-basico/comentario_innecesario.py}
+
+\section{Números enteros}
+
+Los números enteros (integer) son el tipo de dato más básico en muchos lenguajes de programación, y Python no es la excepción.\smallskip
+
+Para mostrar un número en pantalla, sólo basta con usar la función print() y entregarle el número. El número debe escribirse sin usar comillas y Python inferirá su tipo automáticamente.
+
+\pythonfile{codigo/2-basico/numero_1.py}
+\out{codigo/2-basico/numero_1.out}
+
+A diferencia de otros lenguajes de programación, los números en Python 3 soportan \link{https://stackoverflow.com/questions/13795758/what-is-sys-maxint-in-python-3}{cualquier cantidad de dígitos}, o sea, son de largo arbitrario. Esto hace que los cálculos con números grandes sean mucho más convenientes, pero reduce el rendimiento.
+
+\pythonfile{codigo/2-basico/numero_2.py}
+\out{codigo/2-basico/numero_2.out}
 
 \section{Operaciones aritméticas}
 
@@ -373,6 +403,11 @@ El resultado de cualquier operación entre floats o entre un float y un entero s
 \pythonfile{codigo/2-basico/float_3.py}
 \out{codigo/2-basico/float_3.out}
 
+Para representar un número infinitamente pequeño o grande, se puede usar el método \ttt{float()}.
+
+\pythonfile{codigo/2-basico/infinito.py}
+\out{codigo/2-basico/infinito.out}
+
 \section{Exponenciación}
 
 Otra operación soportada es la exponenciación, que es la elevación de un número a la potencia de otro. Esto se realiza usando el operador **.\smallskip
@@ -409,7 +444,7 @@ En el caso mostrado anteriormente, se infiere que 10 es múltiplo de 2, que 15 e
 
 \section{Strings o cadenas de caracteres}
 
-Las cadenas de caracteres se crean introduciendo el texto entre comillas simples \texttt{' '} o dobles \texttt{" "}.
+Las cadenas de caracteres se crean introduciendo el texto entre comillas simples \ttt{' '} o dobles \ttt{" "}.
 
 \pythonfile{codigo/3-strings/string.py}
 \out{codigo/3-strings/string.out}
@@ -424,7 +459,7 @@ Un string debe empezar y terminar con comillas del mismo tipo, no se permiten co
 
 \section{Cadena vacía}
 
-A veces es necesario inicializa un string, pero sin agregarle información. Una cadena vacía es definida como \texttt{''} o \texttt{""}.
+A veces es necesario inicializa un string, pero sin agregarle información. Una cadena vacía es definida como \ttt{''} o \ttt{""}.
 
 \pythonfile{codigo/3-strings/cadena_vacia.py}
 
@@ -439,7 +474,7 @@ Algunos caracteres no se pueden incluir directamente en una cadena. Para esos ca
 
 Los caracteres $'$, $''$ y \textbackslash son especiales, porque normalmente cumplen funciones especiales dentro de strings.\smallskip
 
-Si el string se define entre comillas dobles, no es necesario poner \texttt{'} para ingresar comillas simples dentro de él, y viceversa.
+Si el string se define entre comillas dobles, no es necesario poner \ttt{'} para ingresar comillas simples dentro de él, y viceversa.
 
 \pythonfile{codigo/3-strings/comillas.py}
 \out{codigo/3-strings/comillas.out}
@@ -498,7 +533,7 @@ Otras secuencias de escape que cada vez se usan menos son:
 
 \section{Caracteres Unicode}
 
-Las barras diagonales inversas también se pueden usar para escribir caracteres Unicode arbitrarios. Se escriben como \texttt{\textbackslash u} seguido del código del carácter Unicode (en hexadecimal).\smallskip
+Las barras diagonales inversas también se pueden usar para escribir caracteres Unicode arbitrarios. Se escriben como \ttt{\textbackslash u} seguido del código del carácter Unicode (en hexadecimal).\smallskip
 
 Los códigos Unicode se aceptan sin importar que tengan mayúsculas o minúsculas.
 
@@ -509,20 +544,10 @@ El \link{https://unicode.org/}{sitio web de Unicode} contiene más información 
 
 \section{Strings multilínea}
 
-Este es un tipo especial de string, que se escribe entre comillas triples \texttt{''' '''} o \texttt{""" """}, y que reconoce los saltos de línea sin necesidad de usar la secuencia \textbackslash n.
+Este es un tipo especial de string, que se escribe entre comillas triples \ttt{''' '''} o \ttt{""" """}, y que reconoce los saltos de línea sin necesidad de usar la secuencia \textbackslash n.
 
 \pythonfile{codigo/3-strings/string_multilinea.py}
 \out{codigo/3-strings/string_multilinea.out}
-
-\section{Comentarios multilínea}
-
-Los comentarios multilínea no existen formalmente en Python, pero se puede hacer algo parecido usando strings multilínea fuera de lugares donde normalmente se usarían strings.
-
-\pythonfile{codigo/3-strings/comentario_multilinea.py}
-
-La razón por la que esto ocurre es porque estos \doble{comentarios} se usan para producir documentación del código (docstring). Si se ingresan en secciones particulares del código cumplirán su función de documentar, pero el intérprete no impide que se usen fuera de dichas secciones.\smallskip
-
-Se detallará mejor este uso en el capítulo de funciones.
 
 \section{Concatenación de strings}
 
@@ -709,17 +734,17 @@ Usando otros términos, podría decirse que 1 es \link{https://stackoverflow.com
 Los operadores de comparación usados en Python son los siguientes:
 
 \begin{itemize}
-  \item Igual $=$, escrito como \texttt{==}: Se evalúa como True si ambos elementos son iguales.
+  \item Igual $=$, escrito como \ttt{==}: Se evalúa como True si ambos elementos son iguales.
   
-  \item Distinto $\neq$, escrito como \texttt{!=}: Se evalúa como True si ambos elementos son distintos.
+  \item Distinto $\neq$, escrito como \ttt{!=}: Se evalúa como True si ambos elementos son distintos.
   
-  \item Mayor que $>$, escrito como \texttt{>}: Se evalúa como True si el primer elemento es mayor.
+  \item Mayor que $>$, escrito como \ttt{>}: Se evalúa como True si el primer elemento es mayor.
   
-  \item Menor que $<$, escrito como \texttt{<}: Se evalúa como True si el primer elemento es menor.
+  \item Menor que $<$, escrito como \ttt{<}: Se evalúa como True si el primer elemento es menor.
   
-  \item Mayor o igual que $\geq$, escrito como \texttt{>=}: Se evalúa como True si el primer elemento es mayor o igual al segundo.
+  \item Mayor o igual que $\geq$, escrito como \ttt{>=}: Se evalúa como True si el primer elemento es mayor o igual al segundo.
   
-  \item Menor o igual que $\leq$, escrito como \texttt{<=}: Se evalúa como True si el primer elemento es menor o igual al segundo.
+  \item Menor o igual que $\leq$, escrito como \ttt{<=}: Se evalúa como True si el primer elemento es menor o igual al segundo.
   
 \end{itemize}
 
@@ -1239,9 +1264,15 @@ Normalmente se usan docstrings para explicar los parámetros y lo que retorna un
 %TODO: buscar formato aceptado
 \pythonfile{codigo/8-funciones/docstring_2.py}
 
+El intérprete de Python ignora los docstring que se usen en otros lugares. Esto ha hecho que algunas personas los usen como \doble{comentarios multilínea}, pero en la práctica no se recomienda hacer esto porque puede generar confusión.
+
+\pythonfile{codigo/8-funciones/comentario_malo.py}
+
+También podría generar problemas de indentación en algunos casos.
+
 \section{Revisar documentación} %TODO: revisar más info aquí
 
-A diferencia de los comentarios convencionales, los docstring se conservan a lo largo del tiempo de ejecución del programa. Esto le permite al programado examinar estos comentarios en el tiempo de ejecución.\smallskip
+A diferencia de los comentarios convencionales, los docstring se conservan a lo largo del tiempo de ejecución del programa. Esto le permite al programador examinar estos comentarios durante el tiempo de ejecución.\smallskip
 
 Una forma de accederlo es usando la variable \_\_doc\_\_.
 
@@ -1299,7 +1330,7 @@ Aunque el intérprete de Python los ignore, existen algunos IDEs y programas que
 
 El objeto None es utilizado para representar la ausencia de un valor. Es similar a null en otros lenguajes de programación.\smallskip
 
-Al igual que otros valores \doble{vacíos}, tales como \texttt{()}, \texttt{[]}, \texttt{\{\}} y la cadena vacía \texttt{""} o \texttt{''}, es False cuando es convertido a una variable booleana.
+Al igual que otros valores \doble{vacíos}, tales como \ttt{()}, \ttt{[]}, \ttt{\{\}} y la cadena vacía \ttt{""} o \ttt{''}, es False cuando es convertido a una variable booleana.
 
 %TODO: ejemplo y mencionar estructuras de datos
 
@@ -1376,10 +1407,8 @@ La extensa biblioteca estándar de Python es una de sus principales fortalezas c
 
 Algunos de los módulos en la biblioteca estándar están escritos en Python y otros en C. La mayoría están disponibles en todas las plataformas, pero algunos son específicos de Windows o Unix.\smallskip
 
-La razón por la que algunos módulos fueron escritos en C fue porque necesitaban realizar acciones de más bajo nivel que lo posible usando únicamente Python.
-
-\section{Obtener ayuda} %TODO: esta sección
-
+La razón por la que algunos módulos fueron escritos en \link{https://es.wikipedia.org/wiki/C_(lenguaje_de_programaci\%C3\%B3n)}{C} fue porque necesitaban realizar acciones de más bajo nivel que lo posible usando únicamente Python.
++
 \section{Módulos externos y pip}
 
 Muchos módulos de Python creados por terceros son almacenados en el índice de paquetes Python (Python Package Index, PyPI). Se puede ver el repositorio en su \link{https://pypi.org}{sitio web oficial}.\smallskip
@@ -1397,6 +1426,39 @@ Se puede ingresar el comando pip help para ver información sobre otros comandos
 \textfile{codigo/9-modulos/pip_2.txt}
 
 Utilizar pip es la forma estándar de instalar bibliotecas en la mayoría de sistemas operativos, pero algunas bibliotecas tienen binarios predefinidos para Windows. Estos son archivos ejecutables regulares que permiten instalar bibliotecas con una interfaz gráfica de la misma manera que se instalan otros programas.
+
+\section{Obtener ayuda}
+
+Cuando se trabaja con Python, como cualquier otro lenguaje, es muy común olvidar los métodos que se pueden usar con determinados tipos de datos.\smallskip
+
+La función \ttt{dir()} es una función integrada en Python que permite ver los métodos que puede usar un determinado objeto.
+
+\pythonfile{codigo/9-modulos/ayuda_1.py}
+\out{codigo/9-modulos/ayuda_1.out}
+
+Esto permite saber con facilidad qué métodos se pueden usar con la varible que se está usando.
+
+\pythonfile{codigo/9-modulos/ayuda_2.py}
+\out{codigo/9-modulos/ayuda_2.out}
+
+Los métodos rodeados por \ttt{\_\_} son métodos mágicos, se verán en el capítulo de programación orientada a objetos.\smallskip
+
+El resultado obtenido al usar \ttt{dir()} se puede combinar con el método \ttt{help()} para obtener más detalles sobre un método en específico.
+
+\pythonfile{codigo/9-modulos/ayuda_3.py}
+\out{codigo/9-modulos/ayuda_3.out}
+
+El método \ttt{help()} también se puede usar para obtener ayuda detallada sobre módulos importados.
+
+\pythonfile{codigo/9-modulos/ayuda_4.py}
+\out{codigo/9-modulos/ayuda_4.out}
+
+Por defecto, el método \ttt{help()} sólo mostrará el texto que alcance en el alto de la ventana del terminal. Al pulsar la tecla \doble{Intro}, se mostrará la línea que viene después de \ttt{-- Más  --}. Como siempre, se puede pulsar Ctrl+C para salir.\smallskip
+
+También se puede usar el método \ttt{dir()} en módulos, para ver los métodos dentro de ellos.
+
+\pythonfile{codigo/9-modulos/ayuda_5.py}
+\out{codigo/9-modulos/ayuda_5.out}
 
 \clearpage\chapter{El módulo math}
 
@@ -2523,7 +2585,7 @@ Sin embargo, hay maneras de desalentar a la gente de acceder a las partes de una
 
 Los métodos y atributos débilmente privados tienen un único guión bajo al principio. Esto señala que son privados, y no deberían ser utilizados por código externo.\smallskip
 
-Sin embargo, es en su mayor parte sólo una convención, y no impide que el código externo los acceda. Su único efecto verdadero es que \texttt{from nombre\_de\_modulo import *} no importará a las variables que empiecen por un único guión bajo.
+Sin embargo, es en su mayor parte sólo una convención, y no impide que el código externo los acceda. Su único efecto verdadero es que \ttt{from nombre\_de\_modulo import *} no importará a las variables que empiecen por un único guión bajo.
 
 \section{Métodos de clase}
 

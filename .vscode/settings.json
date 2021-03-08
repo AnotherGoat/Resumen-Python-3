@@ -1,6 +1,5 @@
 {
     "files.autoSave": "afterDelay",
-
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
