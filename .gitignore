@@ -1,6 +1,9 @@
-main.synctex(busy)
-__latexindent_temp.tex
+*
 
-build/*
-
+!.vscode/*
 !build/main.pdf
+!codigo/*
+!logo/*
+!.gitignore
+!main.tex
+!README.md
