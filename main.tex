@@ -1328,6 +1328,7 @@ Este ejemplo importa el módulo random y usa su función randint() para generar 
 Hay otra clase de import que puede ser utilizada si sólo necesitas ciertas funciones de un módulo.
 
 \pythonfile{codigo/9-modulos/import_1.py}
+\out{codigo/9-modulos/import_1.out}
 
 Para importar más de un elemento, se debe hacer una lista separada por comas.
 
@@ -1335,19 +1336,33 @@ Para importar más de un elemento, se debe hacer una lista separada por comas.
 
 \section{Error de importación}
 
-Importar un módulo que no está disponible dará un ImportError.
+%TODO: revisar si existen más
+Importar un módulo que no existe dará un ModuleNotFoundError, o uno que no está disponible dará un ImportError.
 
 \pythonfile{codigo/9-modulos/error_import.py}
+\out{codigo/9-modulos/error_import.out}
 
 \section{Alias}
 
 Se puede importar un módulo u objeto bajo un nombre distinto utilizando la palabra clave as y entregándole un alias. Esto se usa principalmente cuando un módulo u objeto tiene un nombre largo o confuso.
 
 \pythonfile{codigo/9-modulos/alias_1.py}
+\out{codigo/9-modulos/alias_1.out}
 
 También se puede usar un alias con más de un objeto.
 
 \pythonfile{codigo/9-modulos/alias_2.py}
+\out{codigo/9-modulos/alias_2.out}
+
+Después de darle un alias a un objeto, su nombre original no funcionará.
+
+\pythonfile{codigo/9-modulos/error_alias.py}
+\out{codigo/9-modulos/error_alias.out}
+
+La notación mixta, importando algunos objetos con alias y otros sin alias, está permitida.
+
+\pythonfile{codigo/9-modulos/alias_3.py}
+\out{codigo/9-modulos/alias_3.out}
 
 \section{La biblioteca estándar}
 
@@ -1359,7 +1374,11 @@ El último tipo se denomina la biblioteca estándar, y contiene muchos módulos 
 
 La extensa biblioteca estándar de Python es una de sus principales fortalezas como lenguaje. Se puede encontrar más información sobre los módulos de la biblioteca estándar en \link{https://docs.python.org/3/library/index.html}{la documentación}.\smallskip
 
-Algunos de los módulos en la biblioteca estándar están escritos en Python y otros en C. La mayoría están disponibles en todas las plataformas, pero algunos son específicos de Windows o Unix.
+Algunos de los módulos en la biblioteca estándar están escritos en Python y otros en C. La mayoría están disponibles en todas las plataformas, pero algunos son específicos de Windows o Unix.\smallskip
+
+La razón por la que algunos módulos fueron escritos en C fue porque necesitaban realizar acciones de más bajo nivel que lo posible usando únicamente Python.
+
+\section{Obtener ayuda} %TODO: esta sección
 
 \section{Módulos externos y pip}
 

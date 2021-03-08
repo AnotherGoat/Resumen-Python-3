@@ -1,3 +1,3 @@
 from math import sqrt as raiz_cuadrada, pi as numero
 
-print(raiz_cuadrada(numero))
+print(sqrt(numero))  # no existe sqrt
