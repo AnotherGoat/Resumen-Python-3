@@ -1,9 +1,2 @@
-*
-
-!.vscode/*
+build/*
 !build/main.pdf
-!codigo/*
-!logo/*
-!.gitignore
-!main.tex
-!README.md

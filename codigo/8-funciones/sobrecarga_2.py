@@ -4,5 +4,5 @@ def area(x, y=None):
     else:  # Rectángulo
         return x * y
 
-area(4)  # 16, cuadrado
-area(5, 6)  # 30, rectángulo
+print(area(4))  # Cuadrado
+print(area(5, 6))  # Rectángulo

@@ -1,3 +1,3 @@
-None  #
-print(None)  # None
-None == None  # True
+None  # cadena vacía
+print(None)
+print(None == None)

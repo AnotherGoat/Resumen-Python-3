@@ -896,7 +896,7 @@ Se puede verificar si un elemento pertenece a una lista usando el operador in. E
 \pythonfile{codigo/6-listas/in.py}
 \out{codigo/6-listas/in.out}
 
-Para comprobar si un elemento no pertenece a una lista, se pueden combinar los operadores in y not. Ambas formas de hacerlo son válidas.
+Para comprobar si un elemento no pertenece a una lista, se pueden combinar los operadores in y not. Ambas formas mostradas a continuación son válidas.
 
 \pythonfile{codigo/6-listas/not_in.py}
 \out{codigo/6-listas/not_in.out}
@@ -1220,11 +1220,11 @@ Ciertas funciones devuelven un valor para ser utilizado más adelante. Para hace
 
 \pythonfile{codigo/8-funciones/return_1.py}
 \out{codigo/8-funciones/return_1.out}
-%TODO: todos los "out" listos hasta aquí
 
 Cualquier código luego de la sentencia return nunca ocurrirá.
 
 \pythonfile{codigo/8-funciones/return_2.py}
+\out{codigo/8-funciones/return_2.out}
 
 \section{Docstring}
 
@@ -1234,29 +1234,36 @@ Son creados colocando una cadena multilínea que contenga una explicación de la
 
 \pythonfile{codigo/8-funciones/docstring_1.py}
 
+Normalmente se usan docstrings para explicar los parámetros y lo que retorna una función.
+
+%TODO: buscar formato aceptado
+\pythonfile{codigo/8-funciones/docstring_2.py}
+
+\section{Revisar documentación} %TODO: revisar más info aquí
+
 A diferencia de los comentarios convencionales, los docstring se conservan a lo largo del tiempo de ejecución del programa. Esto le permite al programado examinar estos comentarios en el tiempo de ejecución.\smallskip
 
 Una forma de accederlo es usando la variable \_\_doc\_\_.
 
 \pythonfile{codigo/8-funciones/print_doc.py}
+\out{codigo/8-funciones/print_doc.out}
 
 Otra forma es usando la función help(). Esto entrega un poco más de información.
 
 \pythonfile{codigo/8-funciones/help.py}
-
-Normalmente se usan docstrings para explicar los parámetros y lo que retorna una función.
-
-\pythonfile{codigo/8-funciones/docstring_2.py}
+\out{codigo/8-funciones/help.out}
 
 \section{Funciones como objetos}
 
 Aunque sean creadas de manera diferente que las variables regulares, las funciones son como cualquier otra clase de valor. Pueden ser asignadas y reasignadas a variables, y luego ser referenciadas por esos nombres.
 
 \pythonfile{codigo/8-funciones/funcion_como_objeto_1.py}
+\out{codigo/8-funciones/funcion_como_objeto_1.out}
 
 Las funciones también pueden ser usadas como argumentos de otras funciones.
 
 \pythonfile{codigo/8-funciones/funcion_como_objeto_2.py}
+\out{codigo/8-funciones/funcion_como_objeto_2.out}
 
 \section{Sobrecarga de funciones}
 
@@ -1265,14 +1272,17 @@ En Python, la sobrecarga de funciones se define como la habilidad de que una fun
 Para sobrecargar una función, se deben definir los parámetros que sean opcionales con un valor por defecto None. Después, se usan declaraciones if-elif-else para revisar todos los casos posibles.
 
 \pythonfile{codigo/8-funciones/sobrecarga_1.py}
+\out{codigo/8-funciones/sobrecarga_1.out}
 
 \pythonfile{codigo/8-funciones/sobrecarga_2.py}
+\out{codigo/8-funciones/sobrecarga_2.out}
 
 \section{Anotaciones de tipos}
 
 Una anotación de tipos es, como su nombre lo dice, una notación opcional que especifica el tipo de los parámetros de una función y su tipo de retorno.
 
 \pythonfile{codigo/8-funciones/anotaciones_1.py}
+\out{codigo/8-funciones/anotaciones_1.out}
 
 En el ejemplo de arriba, se muestra que mensaje es un parámetro de tipo string y que la función duplicar() retorna un string.\smallskip
 
@@ -1281,6 +1291,7 @@ Esto le permite al programador saber qué tipos de datos se le deben entregar un
 Las anotaciones de tipos son ignoradas completamente por el intérprete de Python. No restringen el tipo de los parámetros o del retorno de una función, pero son muy útiles al momento de documentar.
 
 \pythonfile{codigo/8-funciones/anotaciones_2.py}
+\out{codigo/8-funciones/anotaciones_2.out}
 
 Aunque el intérprete de Python los ignore, existen algunos IDEs y programas que pueden analizar código que contiene anotaciones de tipos y alertar sobre problemas potenciales.
 
@@ -1288,17 +1299,19 @@ Aunque el intérprete de Python los ignore, existen algunos IDEs y programas que
 
 El objeto None es utilizado para representar la ausencia de un valor. Es similar a null en otros lenguajes de programación.\smallskip
 
-Al igual que otros valores \doble{vacíos}, tales como (), [], \{\} y la cadena vacía $''$$''$, es False cuando es convertido a una variable booleana.
+Al igual que otros valores \doble{vacíos}, tales como \texttt{()}, \texttt{[]}, \texttt{\{\}} y la cadena vacía \texttt{""} o \texttt{''}, es False cuando es convertido a una variable booleana.
 
 %TODO: ejemplo y mencionar estructuras de datos
 
-Cuando es ingresado a la consola de Python, se visualiza como una cadena vacía.
+Cuando es ingresado a la consola de Python, se visualiza como una cadena vacía. Usando print() se mostrará su verdadero valor.
 
 \pythonfile{codigo/8-funciones/None_1.py}
+\out{codigo/8-funciones/None_1.out}
 
 El objeto None es devuelto por cualquier función que no devuelve explícitamente algo más.
 
 \pythonfile{codigo/8-funciones/None_2.py}
+\out{codigo/8-funciones/None_2.out}
 
 \clearpage\chapter{Módulos y la biblioteca estándar}
 
@@ -2510,8 +2523,6 @@ Sin embargo, es en su mayor parte sólo una convención, y no impide que el cód
 \clearpage\chapter{Algoritmos de ordenamiento}
 
 \section{Bubble sort}
-
-
 
 \clearpage\chapter{Algoritmos de búsqueda}
 
