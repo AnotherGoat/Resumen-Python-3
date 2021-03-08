@@ -1,0 +1,5 @@
+1
+Este mensaje siempre se mostrará
+ZeroDivisionError: division by zero
+During handling of the above exception, another exception occurred:
+NameError: name 'variable_desconocida' is not defined

@@ -1,2 +1,5 @@
+archivo.txt
+main.synctex(busy)
 build/*
+
 !build/main.pdf

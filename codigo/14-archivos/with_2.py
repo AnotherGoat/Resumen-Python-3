@@ -1,5 +1,5 @@
 try:
     with open("archivo.txt") as f:
-        print(f.read())
+        # Trabajar con el archivo...
 except:
     print("Error")

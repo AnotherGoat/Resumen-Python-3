@@ -1,5 +1,5 @@
 archivo = open("archivo.txt", "a")
 
-archivo.write("¡Hola mundo!")
+archivo.write("hola")
 
 archivo.close()

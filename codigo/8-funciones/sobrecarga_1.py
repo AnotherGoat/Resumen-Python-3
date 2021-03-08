@@ -4,5 +4,5 @@ def saludar(nombre=None):
     else:
         print("Hola")
 
-saludar()  # Hola
-saludar("Juan")  # Hola, Juan
+saludar()
+saludar("Juan")

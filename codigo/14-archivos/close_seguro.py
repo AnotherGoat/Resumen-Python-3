@@ -1,6 +1,6 @@
 try:
     archivo = open("archivo.txt")
-    print(archivo.read())
+    # Trabajar con el archivo...
 except FileNotFoundError:
     print("Archivo no encontrado")
 finally:
