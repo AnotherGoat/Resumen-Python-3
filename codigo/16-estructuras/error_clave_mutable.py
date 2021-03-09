@@ -1,0 +1,1 @@
+dic = {[1, 2, 3]: "uno, dos, tres"}

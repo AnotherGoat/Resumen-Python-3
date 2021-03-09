@@ -1,3 +1,6 @@
-animales = ("mono", "elefante")
+frutas = ('manzana', 'naranja', 'frutilla')
+f1, f2, f3 = frutas
 
-animales[1] = "gato"  # TypeError
+print(f1)
+print(f2)
+print(f3)

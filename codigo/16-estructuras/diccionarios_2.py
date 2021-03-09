@@ -1,4 +1,7 @@
-instrumentos = {0: "Violín", 1: "Piano", 2: "Guitarra", 3: "Batería"}
+primarios = {
+    "rojo": [255, 0, 0],
+    "verde": [0, 255, 0],
+    "azul": [0, 0, 255]
+}
 
-for i in range(0, 4):
-    print(instrumentos[i])
+print(primarios["verde"])
