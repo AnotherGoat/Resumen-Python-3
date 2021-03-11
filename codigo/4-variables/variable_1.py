@@ -1,1 +1,1 @@
-nombre = "Juan"
+usuario = "Juan"

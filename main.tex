@@ -306,6 +306,11 @@ Cada declaración de impresión \ttt{print()} genera texto en una nueva línea.
 \pythonfile{codigo/1-intro/hola_mundo_2.py}
 \out{codigo/1-intro/hola_mundo_2.out}
 
+Si no se le entrega ningún texto a \ttt{print()}, se imprimirá una línea vacía. El texto puede escribirse entre comillas simples o dobles.
+
+\pythonfile{codigo/1-intro/hola_mundo_3.py}
+\out{codigo/1-intro/hola_mundo_3.out}
+
 \section{El Zen de Python}
 
 El \link{https://www.python.org/dev/peps/pep-0020/}{Zen de Python} es una colección de 20 \doble{principios}, 19 de ellos escritos por Tim Peters. Estos principios han servido como inspiración para muchos programadores de todo el mundo a la hora de crear software.\smallskip
@@ -340,7 +345,7 @@ La mayoría de editores de código marcan los comentarios con su propio color, d
 \pythonfile{codigo/2-basico/comentario_2.py}
 \out{codigo/2-basico/comentario_2.out}
 
-Python no soporta comentarios multilínea, al contrario de otros lenguajes de programación. Para comentar varias líneas de código se debe antener un comentario a cada línea.
+Python no tiene comentarios multilínea para fines generales como lo tienen otros lenguajes de programación tales como C. Para comentar varias líneas de código se debe antener un comentario a cada línea.
 
 \pythonfile{codigo/2-basico/comentario_multilinea.py}
 
@@ -422,12 +427,7 @@ El resultado de cualquier operación entre floats o entre un float y un entero s
 \pythonfile{codigo/2-basico/float_3.py}
 \out{codigo/2-basico/float_3.out}
 
-\section{Infinito}
-
-Para representar un número infinitamente pequeño o grande, se puede usar el método \ttt{float()}.
-
-\pythonfile{codigo/2-basico/infinito.py}
-\out{codigo/2-basico/infinito.out}
+Las operaciones entre floats y enteros son posibles porque Python convierte los enteros en floats silenciosamente al momento de realizarlas.
 
 \section{Exponenciación}
 
@@ -438,6 +438,15 @@ Ejemplo equivalente a $2 ^ 5 = 32$.
 \pythonfile{codigo/2-basico/potencia.py}
 \out{codigo/2-basico/potencia.out}
 
+La exponenciación también se puede hacer con floats, donde se puede usar para obtener raíces. El resultado será un float.\smallskip
+
+Ejemplos equivalentes a $\sqrt{9} = 3$ y $\sqrt[3]{8} = 2$.
+
+\pythonfile{codigo/2-basico/raiz.py}
+\out{codigo/2-basico/raiz.out}
+
+Se debe tener en cuenta que el resultado será un float.
+
 \section{Cociente y resto}
 
 La división entera se realiza usando el operador \ttt{//}, donde el resultado es la parte entera que queda al realizar la división, también conocida como cociente.\smallskip
@@ -446,6 +455,11 @@ La división entera retorna un entero en vez de un float.
 
 \pythonfile{codigo/2-basico/cociente.py}
 \out{codigo/2-basico/cociente.out}
+
+También se puede usar la división entera con floats, lo cual dará como resultado otro float.
+
+\pythonfile{codigo/2-basico/cociente_floats.py}
+\out{codigo/2-basico/cociente_floats.out}
 
 Para obtener el resto al realizar una división entera, se debe usar el operador módulo \ttt{\%}.
 
@@ -459,7 +473,12 @@ Este operador viene de la \link{https://es.khanacademy.org/computing/computer-sc
 \pythonfile{codigo/2-basico/uso_del_resto.py}
 \out{codigo/2-basico/uso_del_resto.out}
 
-En el caso mostrado anteriormente, se infiere que 10 es múltiplo de 2, que 15 es múltiplo de 3 y que 16 no es múltiplo de 7. El caso particular módulo 2 también puede usarse para saber si un número es par o no.
+En el caso mostrado anteriormente, se infiere que 10 es múltiplo de 2, que 15 es múltiplo de 3 y que 16 no es múltiplo de 7. El caso particular módulo 2 también puede usarse para saber si un número es par o no.\smallskip
+
+El operador módulo \ttt{\%} también puede usarse con floats.
+
+\pythonfile{codigo/2-basico/resto_floats.py}
+\out{codigo/2-basico/resto_floats.out}
 
 \clearpage\chapter{Cadenas de texto}
 
@@ -598,6 +617,8 @@ Multiplicar por \ttt{0} genera un string vacío.
 \pythonfile{codigo/3-strings/multiplicar_cadenas_2.py}
 \out{codigo/3-strings/multiplicar_cadenas_2.out}
 
+Las cadenas no pueden ser multiplicadas entre sí, tampoco pueden ser multiplicadas por floats, incluso si los floats son números enteros.
+
 \section{Opciones del método print()}
 
 El método \ttt{print()} puede aceptar más de un string como argumento, lo cual hace que se muestren en una misma línea separados por espacios.
@@ -635,7 +656,9 @@ Una variable permite almacenar un valor asignándole un nombre, el cual puede se
 
 \section{Nombre de variables válidos}
 
-Se aplican ciertas restricciones con respecto a los caracteres que se pueden usar en los nombres de variables. Los únicos caracteres permitidos son letras, números y guiones bajos. Además, no se puede comenzar con números o incluir espacios.
+Se aplican ciertas restricciones con respecto a los caracteres que se pueden usar en los nombres de variables. Los únicos caracteres permitidos son letras, números y guiones bajos. Además, no se puede comenzar con números o incluir espacios.\smallskip
+
+No seguir estas reglas hará que ocurran errores que impiden la ejecución del programa.
 
 \pythonfile{codigo/4-variables/error_variable_1.py}
 \out{codigo/4-variables/error_variable_1.out}
@@ -668,25 +691,47 @@ Se pueden usar variables dentro de operaciones. Lo único que se debe recordar e
 \pythonfile{codigo/4-variables/variable_2.py}
 \out{codigo/4-variables/variable_2.out}
 
-Una variable también puede cambiar de valor a lo largo de la ejecución de un programa.
+Una variable también puede cambiar de valor a lo largo de la ejecución de un programa, y ser el resultado de operaciones con otras variables.
 
 \pythonfile{codigo/4-variables/variable_3.py}
 
+Las variables se pueden reasignar tantas veces como se desee, para cambiar su valor. En Python, las variables no tienen tipos específicos, por lo que se puede asignar una cadena a una variable y luego asignar un número entero a la misma variable.
+
+\pythonfile{codigo/4-variables/variable_4.py}
+\out{codigo/4-variables/variable_4.out}
+
+Sin embargo, no es una buena práctica. Para evitar errores, se debería evitar sobreescribir una variable con distintos tipos de datos.\smallskip
+
+Si se asigna el valor numérico o alfanumérico (cadena de texto) de una variable a otra, los cambios hechos a ambas variables son independientes.
+
+\pythonfile{codigo/4-variables/variable_5.py}
+\out{codigo/4-variables/variable_5.out}
+
+Esto no ocurre para tipos de datos más complejos, como listas.
+
 \section{Entrada}
 
-Para obtener información del usuario, se puede usar la función \ttt{input()}. La información obtenida puede ser almacenada como una variable.
+Para obtener información del usuario, se puede usar la función \ttt{input()}, la cual solicita al usuario que la entrada. La información obtenida puede ser almacenada como una variable.
 
 \pythonfile{codigo/4-variables/input_1.py}
 \inp{codigo/4-variables/input_1.inp}
 \out{codigo/4-variables/input_1.out}
 
-Toda la información recibida por el método \ttt{input()} es retornada como un string.\smallskip
+Toda la información recibida por el método \ttt{input()} se procesa como un string.\smallskip
 
 También se puede entregar un string como parámetro al método \ttt{input()}, lo cual mostrará texto antes de pedir la entrada. Esto sirve para aclarar qué entrada está solicitando el programa.
 
 \pythonfile{codigo/4-variables/input_2.py}
 
-Al usar la función \ttt{input()}, el flujo del programa se detiene hasta que el usuario ingrese algún valor.
+Al usar la función \ttt{input()}, el flujo del programa se detiene hasta que el usuario ingrese algún valor.\smallskip
+
+Se puede usar \ttt{input()} varias veces para tomar múltiples entradas del usuario.
+
+\pythonfile{codigo/4-variables/input_multiple.py}
+\inp{codigo/4-variables/input_multiple.inp}
+\out{codigo/4-variables/input_multiple.out}
+
+Normalmente, se debe añadir un espacio para concatenar variables, para evitar que las variables aparezcan juntas en la salida.
 
 \section{Conversión de tipos de datos}
 
@@ -695,13 +740,13 @@ Existen funciones para convertir datos de un tipo a otro. Entre dichas funciones
 \begin{itemize}
   \item \ttt{int()}: Convierte a un número entero.
   
-  \pythonfile{codigo/4-variables/convertir_a_int.py}
-  \out{codigo/4-variables/convertir_a_int.out}
+  \pythonfile{codigo/4-variables/convertir_a_int_1.py}
+  \out{codigo/4-variables/convertir_a_int_1.out}
 
   Aunque ambos se impriman igual, el primero es un string y el segundo un entero (int).
 
-  %TODO: ejemplo aclarando esto
-
+  \pythonfile{codigo/4-variables/convertir_a_int_2.py}
+  \out{codigo/4-variables/convertir_a_int_2.out}
   \item \ttt{float()}: Convierte a un float.
   
   \pythonfile{codigo/4-variables/convertir_a_float.py}
@@ -791,6 +836,25 @@ Las comparaciones entre números y strings son válidas, pero siempre se evalúa
 \pythonfile{codigo/5-if/comparacion_3.py}
 \out{codigo/5-if/comparacion_3.out}
 
+\section{Comparación entre strings}
+
+Los operadores \ttt{==} y \ttt{!=} funcionan entre strings como se esperaría.
+
+\pythonfile{codigo/5-if/comparacion_string_1.py}
+\out{codigo/5-if/comparacion_string_1.out}
+
+Los operadores \ttt{>}, \ttt{<}, \ttt{>=} y \ttt{<=} también se pueden usar para comparar cadenas lexicográficamente (por orden alfabético), donde las palabras que están después se consideran \doble{mayores}.
+
+\pythonfile{codigo/5-if/comparacion_string_2.py}
+\out{codigo/5-if/comparacion_string_2.out}
+
+Las letras mayúsculas siempre irán antes (son \doble{menores}) que las minúsculas al ordenarlas alfabéticamente.
+
+\pythonfile{codigo/5-if/comparacion_string_3.py}
+\out{codigo/5-if/comparacion_string_3.out}
+
+Específicamente, Python compara los códigos \link{https://www.ascii-code.com}{ASCII} para ordenar las cadenas de textos.
+
 \section{Declaración if}
 
 Las declaraciones \ttt{if} sirven para ejecutar código si ser cumple una determinada condición. Si la expresión se evalúa como \ttt{True}, se lleva a cabo el bloque de código que le sigue. En caso contrario, no ocurre nada.
@@ -798,7 +862,16 @@ Las declaraciones \ttt{if} sirven para ejecutar código si ser cumple una determ
 \pythonfile{codigo/5-if/if.py}
 \out{codigo/5-if/if.out}
 
-Python usa indentación (espacio en blanco al comienzo de una línea) para delimitar bloques de código. En otros lenguajes, esta operación se realiza delimitando cada bloque de código por llaves \ttt{\{\}}.
+Python usa indentación (espacio en blanco al comienzo de una línea) para delimitar bloques de código. En otros lenguajes, esta operación se realiza delimitando cada bloque de código por llaves \ttt{\{\}}.\smallskip
+
+\section{Anidación de declaraciones if}
+
+Para realizar comprobaciones más complejas, las declaraciones \ttt{if} se pueden anidar, una dentro de la otra.\smallskip
+
+Esto significa que la declaración if interna sólo se evalúa si la declaración if externa es válida.
+
+\pythonfile{codigo/5-if/if_anidado.py}
+\out{codigo/5-if/if_anidado.out}
 
 \section{Declaración if-else}
 
@@ -815,7 +888,12 @@ Las declaraciones \ttt{if-else} son muy similares a las declaraciones \ttt{if}, 
 
 \section{Declaración elif}
 
-El término \ttt{elif} se usa cuando se encadenan múltiples declaraciones \ttt{if-else}. Hace que el código sea más corto.
+Cada declaración \ttt{if} sólo puede tener una declaración \ttt{else} que la acompañe, lo cual puede resultar muy incómodo.
+
+\pythonfile{codigo/5-if/if_else_anidado.py}
+\out{codigo/5-if/if_else_anidado.out}
+
+El término \ttt{elif} se usa para evitar tener que anidar múltiples declaraciones \ttt{if-else}. Hace que el código sea más corto.
 
 \pythonfile{codigo/5-if/elif.py}
 \inp{codigo/5-if/elif.inp_1}
@@ -914,7 +992,9 @@ Las listas anidadas se pueden utilizar para representar cuadrículas 2D, como po
 
 \pythonfile{codigo/6-listas/identidad.py}
 
-El intérprete ignora los saltos de línea y la indentación dentro de los corchetes \ttt{[]}.
+El intérprete ignora los saltos de línea y la indentación dentro de los corchetes \ttt{[]}.\smallskip
+
+Esta estructura tipo matriz es muy conveniente en los casos en los que se necesite almacenar datos en formato tabla (fila-columna).
 
 \section{Comas sobrantes}
 
@@ -957,7 +1037,7 @@ Para comprobar si un elemento no pertenece a una lista, se pueden combinar los o
 Existen métodos que sirven para trabajar con listas.
 
 \begin{itemize}
-  \item El método tt{\tappend()} se usa para añadir un elemento al final de una lista.
+  \item El método \ttt{append()} se usa para añadir un elemento al final de una lista.
   
   \pythonfile{codigo/6-listas/append.py}
   \out{codigo/6-listas/append.out}
@@ -1073,7 +1153,11 @@ Para evitar esto, se puede usar el método \ttt{copy()} para hacer una copia de 
 
 \section{Strings como listas}
 
-%TODO: explicar que los strings son en realidad listas de caracteres
+Las cadenas pueden verse como listas de caracteres que no se pueden cambiar (inmutables).
+
+\pythonfile{codigo/6-listas/strings_vs_listas.py}
+
+De hecho, tienen muchas similitudes, de las cuales se verán algunas a continuación.
 
 \section{Indexación de strings}
 
@@ -1082,7 +1166,19 @@ Algunos tipos de variables, como las cadenas, se pueden indexar como listas. La 
 \pythonfile{codigo/6-listas/strings_como_listas.py}
 \out{codigo/6-listas/strings_como_listas.out}
 
-Se debe recordar que el espacio \ttt{\qq  \qq} también es considerado como símbolo y tiene su índice dentro de la cadena.
+Se debe recordar que el espacio \ttt{\qq  \qq} también es considerado como símbolo y tiene su índice dentro de la cadena.\smallskip
+
+\section{Reasignación de strings}
+
+Las cadenas son inmutables, lo que significa que no se pueden reasignar sus caracteres.
+
+\pythonfile{codigo/6-listas/error_cadenas.py}
+\out{codigo/6-listas/error_cadenas.out}
+
+La única forma de solucionar este problema es creando una nueva cadena con el cambio que se quería.
+
+\pythonfile{codigo/6-listas/solucion_cadenas.py}
+\out{codigo/6-listas/solucion_cadenas.out}
 
 \section{Conversión de strings a listas}
 
@@ -1095,13 +1191,6 @@ El método \ttt{split()} convierte una cadena de caracteres en una lista de pala
 
 \pythonfile{codigo/6-listas/split.py}
 \out{codigo/6-listas/split.out}
-
-%TODO: mover el split avanzado a otro capítulo
-
-Al método \ttt{split()} también se le puede entregar un string separador. La lista será formada con los elementos entre cada aparición de ese string.
-
-\pythonfile{codigo/6-listas/split_avanzado.py}
-%TODO: out y rehacer el ejemplo
 
 \clearpage\chapter{Bucles}
 
@@ -1145,7 +1234,7 @@ El uso de la declaración \ttt{break} fuera de un bucle provoca un error.
 
 \section{Declaración continue}
 
-Otra declaración que se puede utilizar dentro de los bucles es \ttt{continue}. A diferencia de \ttt{break}, \tt{continue} salta de nuevo a la parte superior del bucle, en lugar de detenerlo. Básicamente, la declaración \ttt{continue} detiene la iteración actual y continúa con la siguiente.
+Otra declaración que se puede utilizar dentro de los bucles es \ttt{continue}. A diferencia de \ttt{break}, \ttt{continue} salta de nuevo a la parte superior del bucle, en lugar de detenerlo. Básicamente, la declaración \ttt{continue} detiene la iteración actual y continúa con la siguiente.
 
 \pythonfile{codigo/7-bucles/continue.py}
 \out{codigo/7-bucles/continue.out}
@@ -1221,7 +1310,17 @@ En general, un bucle \ttt{for} puede recorrer cualquier iterable. Estos se verá
 
 \clearpage\chapter{Funciones}
 
-\section{¿Qué es una función?}
+\section{Reutilización de código}
+
+La reutilización de código es una parte muy importante de la programación en cualquier lenguaje. Incrementar el tamaño del código lo hace más difícil de mantener.\smallskip
+
+Para que un proyecto grande de programación sea exitoso, es esencial que se atenga al principio DRY, del inglés Don't Repeat Yourself (no te repitas).\smallskip
+
+Del código malo y repetitivo, se dice que se atiene al principio WET, del inglés Write Everything Twice (escribe todo dos veces) o We Enjoy Typing (disfrutamos escribir).\smallskip
+
+Los bucles vistos en el capítulo anterior son una forma de reutilizar código. Este capítulo trata sobre funciones, que son otra forma de hacer esta práctica.
+
+\section{Funciones}
 
 Cualquier sentencia que consista de una palabra seguida de información entre paréntesis es llamada una función.\smallskip
 
@@ -1229,15 +1328,21 @@ Ejemplos de funciones que se han visto anteriormente:
 
 \pythonfile{codigo/8-funciones/funciones.py}
 
+Palabras antes del paréntesis son nombres de funciones y los valores separados por comas dentro de los paréntesis son argumentos o parámetros de funciones.
+
 \section{Definición de funciones}
 
 Para definir una función, se debe usar la palabra clave \ttt{def}, seguida del nombre de la función y de un paréntesis que puede o no incluir parámetros. El cuerpo de la función incluye el código y debe tener un grado de indentación mayor que el de la definición.\smallskip
 
 Generalmente, se recomienda que el nombre de una función sea un verbo, pero no es obligatorio.\smallskip
 
-Algunos ejemplos de funciones:
+Ejemplo de definición de función:
 
 \pythonfile{codigo/8-funciones/saludar.py}
+
+\section{Argumentos}
+
+Las funciones más básicas son las que no reciben argumentos, pero esto limita su utilidad en gran cantidad. Para hacerlas más útiles, se les puede entregar argumentos, lo que aumenta su funcionalidad.
 
 \pythonfile{codigo/8-funciones/exclamar.py}
 
@@ -1248,6 +1353,9 @@ Una función puede pedir más de un argumento, los cuales deben separarse por co
 \pythonfile{codigo/8-funciones/mayor.py}
 
 Los argumentos de funciones pueden ser utilizados como variables dentro de la definición de la función. Sin embargo, no pueden ser referenciados fuera de la definición de la función. Esto también se aplica a las demás variables creadas dentro de una función.
+
+\pythonfile{codigo/8-funciones/argumentos.py}
+\out{codigo/8-funciones/argumentos.out}
 
 \section{Llamado de funciones}
 
@@ -1266,6 +1374,8 @@ Ejemplos de uso de las funciones definidas anteriormente:
 
 \pythonfile{codigo/8-funciones/llamar_mayor.py}
 \out{codigo/8-funciones/llamar_mayor.out}
+
+Técnicamente, los parámetros son las variables en una definición de función y los argumentos son los valores que se le dan a las variables al momento de llamar funciones.
 
 \section{Devolución de valores en una función}
 
@@ -1397,9 +1507,22 @@ Para importar más de un elemento, se debe hacer una lista separada por comas.
 
 \pythonfile{codigo/9-modulos/import_2.py}
 
+También se pueden importar todos los objetos de un módulo usando un *. Esto generalmente no se recomienda, ya que confunde las variables del código original con las del módulo externo.
+
+\pythonfile{codigo/9-modulos/import_todo.py}
+\out{codigo/9-modulos/import_todo.out}
+
+Las variables que provienen de módulos también se pueden reasignar, aunque en la mayoría de casos no hay razón para hacerlo.
+
+\pythonfile{codigo/9-modulos/import_3.py}
+\out{codigo/9-modulos/import_3.out}
+
+Para ver una lista de módulos disponibles, se puede usar la función \ttt{help()} de la siguiente forma:
+
+\pythonfile{codigo/9-modulos/lista_modulos.py}
+
 \section{Error de importación}
 
-%TODO: revisar si existen más
 Importar un módulo que no existe dará un \ttt{ModuleNotFoundError}, o uno que no está disponible dará un \ttt{ImportError}.
 
 \pythonfile{codigo/9-modulos/error_import.py}
@@ -1426,6 +1549,11 @@ La notación mixta, importando algunos objetos con alias y otros sin alias, est�
 
 \pythonfile{codigo/9-modulos/alias_3.py}
 \out{codigo/9-modulos/alias_3.out}
+
+Otra opción posible es importar un módulo con un nombre distinto.
+
+\pythonfile{codigo/9-modulos/alias_4.py}
+\out{codigo/9-modulos/alias_4.out}
 
 \section{La biblioteca estándar}
 
@@ -1498,6 +1626,13 @@ También se puede usar el método \ttt{dir()} en módulos, para ver los métodos
 
 \section{Constantes matemáticas}
 
+\section{Infinito}
+
+Para representar un número infinitamente pequeño o grande, se puede usar el método \ttt{float()} y entregarle el string \ttt{\qq inf \qq} como argumento.
+
+\pythonfile{codigo/10-math/infinito.py}
+\out{codigo/10-math/infinito.out}
+
 \section{Funciones matemáticas predefinidas}
 
 %TODO: mover sum(), investigar si existe avg() y parecidos
@@ -1547,6 +1682,8 @@ Otras excepciones comunes son:
   \item \ttt{ValueError}: Cuando una función es llamada con un valor del tipo correcto, pero con un valor incorrecto.
   
 \end{itemize}
+
+Una lista más detallada de excepciones se puede encontrar en la \href{https://docs.python.org/3/library/exceptions.html}{documentación oficial}.
 
 Las bibliotecas creadas por terceros a menudo definen sus propias excepciones.
 
@@ -1645,6 +1782,59 @@ Las declaraciones \ttt{assert} no pueden ir sin un predicado.
 %TODO: excepciones personalizadas y validación de entrada
 
 \clearpage\chapter{Pruebas unitarias}
+
+\section{Pruebas unitarias}
+
+\section{Precedencia de operadores completa}
+
+En los capítulos anteriores, se mostró parte de la precedencia de operadores (por ejemplo, PEMDAS). En Python, todos los operadores tienen un orden específico en el que funcionan, incluyendo a muchos que no se han visto todavía.\smallskip
+
+El orden definitivo es el siguiente:
+
+\begin{enumerate}
+  \item \ttt{()}: paréntesis para agrupar operaciones
+  
+  \item \ttt{f(argumentos)}: llamadas a funciones
+  
+  \item \ttt{x[indice:indice]}: cortes (slicing)
+  
+  \item \ttt{x[indice]}: subscripción
+  
+  \item \ttt{x.atributo}: referencias a atributos
+  
+  \item \ttt{**}: exponenciación
+  
+  \item \ttt{~x}: NOT en bitwise
+  
+  \item \ttt{+x}, \ttt{-x}: signo positivo y negativo
+  
+  \item \ttt{*}, \ttt{/}, \ttt{//}, \ttt{\%}: multiplicación, división, cociente y resto
+  
+  \item \ttt{+, -}: adición y substracción (diferencia)
+  
+  \item \ttt{<<, >>}: cambios en bitwise
+  
+  \item \ttt{\&}: AND en bitwise (unión)
+  
+  \item \ttt{\^}: XOR en bitwise (diferencia simétrica)
+  
+  \item \ttt{|}: OR en bitwise (intersección)
+  
+  \item \ttt{in}, \ttt{not in}, \ttt{is}, \ttt{is not} , \ttt{<}, \ttt{<=}, \ttt{>}, \ttt{>=}, \ttt{<>}, \ttt{!=}, \ttt{==}: comparaciones, membresía e identidad
+  
+  \item \ttt{not x}: NOT booleano
+  
+  \item \ttt{and}: AND booleano
+  
+  \item \ttt{or}: OR booleano
+  
+  \item \ttt{lambda}: expresiones lambda
+
+\end{enumerate}
+
+Todas las operaciones que estén en un mismo nivel se realizarán de izquierda a derecha.\smallskip
+
+Lo ideal sería utilizar paréntesis para evitar cualquier confusión que pueda causar el uso de muchos operadores, pero también es importante conocer este orden para los casos en los que no se utilizaron.
 
 \clearpage\chapter{Archivos}
 
@@ -2274,6 +2464,11 @@ Python contiene muchas funciones integradas y métodos útiles que sirven para c
 
 \end{itemize}
 
+Al método \ttt{split()} te visto anteriormentambién se le puede entregar un string separador. La lista será formada con los elementos entre cada aparición de ese string.
+
+\pythonfile{codigo/6-listas/split_avanzado.py}
+%TODO: out y rehacer el ejemplo
+
 \section{Funciones all() y any()}
 
 Las funciones \ttt{all()} y \ttt{any()} son utilizados con frecuencia como sentencias condicionales. Estos toman una lista como un argumento y devuelven True si todos o algunos (respectivamente) de sus argumentos son evaluados como True (o, de lo contrario, False).
@@ -2628,6 +2823,8 @@ La diferencia es que en las combinaciones no importa el orden y se unen todos lo
 \clearpage\chapter{Programación orientada a objetos}
 
 %TODO: mejorar la redacción en todo el capítulo
+
+%TODO: todo "out" listo hasta aquí
 
 \section{Programación orientada a objetos}
 
