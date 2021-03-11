@@ -1,3 +1,4 @@
 frase = "Esta es una frase."
-print(frase.startswith("Esta"))  # True
-print(frase.startswith("Esta es"))  # True
+
+print(frase.startswith("Esta"))
+print(frase.startswith("Esta es"))

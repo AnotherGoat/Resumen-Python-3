@@ -19,10 +19,3 @@ def imprimir_texto():
     print("¡Hola mundo!")
 
 imprimir_texto()
-# ************
-# ============
-# ************
-# ¡Hola mundo!
-# ************
-# ============
-# ************

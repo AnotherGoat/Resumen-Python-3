@@ -1,3 +1,4 @@
 frase = "Esta es una frase."
-print(frase.endswith("una frase."))  # True
-print(frase.endswith("."))  # True
+
+print(frase.endswith("una frase."))
+print(frase.endswith("."))

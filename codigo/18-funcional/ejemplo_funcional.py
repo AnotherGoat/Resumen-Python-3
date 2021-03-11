@@ -4,4 +4,4 @@ def repetir2veces(funcion, arg):
 def sumar5(x):
     return x + 5
 
-print(repetir2veces(sumar5, 10))  # 20
+print(repetir2veces(sumar5, 10))

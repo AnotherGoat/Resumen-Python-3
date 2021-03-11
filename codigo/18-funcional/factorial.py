@@ -6,6 +6,6 @@ def factorial(n):
     else:
         return n * factorial(n-1)
 
-print(factorial(5))  # 120
+print(factorial(5))  # 5 * 4 * 3 * 2 * 1
 print(factorial(0))  # 1
-print(factorial(-10))  # ValueError
+print(factorial(-10))

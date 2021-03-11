@@ -7,5 +7,5 @@ def es_par(n):
 def es_impar(n):
     return not es_par(n)
 
-print(es_impar(17))  # True
-print(es_par(23))  # False
+print(es_impar(17))
+print(es_par(23))

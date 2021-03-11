@@ -10,6 +10,3 @@ def imprimir_texto():
 
 texto_decorado = decor(imprimir_texto)
 texto_decorado()
-# ============
-# ¡Hola mundo!
-# ============
