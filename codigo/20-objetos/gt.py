@@ -12,9 +12,3 @@ palabra1 = CadenaEspecial("hola")
 palabra2 = CadenaEspecial("mundo")
 
 palabra1 > palabra2
-# >hola>mundo
-# m>hola>undo
-# mu>hola>ndo
-# mun>hola>do
-# mund>hola>o
-# mundo>hola>

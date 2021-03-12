@@ -1,0 +1,6 @@
+Método len(): __len__()
+Indexación: __getitem__()
+Asignar valores indexados: __setitem__()
+Borrar valores indexados: __delitem__()
+Iteración sobre objetos (por ejemplo en bucles for): __iter__()
+Operador in: __contains__()

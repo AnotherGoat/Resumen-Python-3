@@ -10,5 +10,5 @@ v1 = Vector2D(5, 7)
 v2 = Vector2D(3, 9)
 resultado = v1 + v2
 
-print(resultado.x)  # 8
-print(resultado.y)  # 16
+print(resultado.x)
+print(resultado.y)

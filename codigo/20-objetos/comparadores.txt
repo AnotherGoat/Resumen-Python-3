@@ -1,0 +1,6 @@
+Operador < (less than): __lt__()
+Operador <= (less or equal): __le__()
+Operador == (equal): __eq__()
+Operador != (not equal): __ne__()
+Operador > (greater than): __gt__()
+Operador >= (greater or equal): __ge__()

@@ -6,8 +6,11 @@ class Perro:
     def ladrar(self):
         print("¡Guau!")
 
+# instanciando la clase
 fido = Perro("Fido", "blanco")
 
-print(fido.nombre)  # Fido
-print(fido.color)  # blanco
-fido.ladrar()  # ¡Guau!
+# mostrando atributos
+print(fido.nombre)
+print(fido.color)
+# llamando métodos
+fido.ladrar()

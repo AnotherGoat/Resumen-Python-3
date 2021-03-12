@@ -1,4 +1,4 @@
-class A:
+class A(C):
     def metodo1(self):
         print("Método de A")
 
@@ -9,9 +9,3 @@ class B(A):
 class C(B):
     def metodo3(self):
         print("Método de C")
-
-c = C()
-
-c.metodo1()  # A
-c.metodo2()  # B
-c.metodo3()  # C

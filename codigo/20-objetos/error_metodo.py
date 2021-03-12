@@ -4,5 +4,4 @@ class Rectangulo:
         self.altura = altura
 
 rect = Rectangulo(5, 6)
-print(Rectangulo.color)  # AttributeError
-Rectangulo.pintar("azul")  # AttributeError
+Rectangulo.pintar("azul")

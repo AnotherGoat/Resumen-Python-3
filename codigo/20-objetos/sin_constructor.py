@@ -1,5 +1,4 @@
 class A:
-    valor = 1
+    print("clase vacía")
 
 a = A()
-print(a.valor)  # 1

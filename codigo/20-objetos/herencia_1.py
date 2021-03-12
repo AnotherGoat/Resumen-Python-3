@@ -13,12 +13,14 @@ class Perro(Animal):
 
 firulais = Perro("Firulais", "café")
 
-print(firulais.nombre)  # Firulais
-print(firulais.color)  # café
-firulais.ladrar()  # ¡Guau!
+print(firulais.nombre)
+print(firulais.color)
+firulais.ladrar()
+
+print()  # salto de línea, para separar
 
 misifu = Gato("Misifu", "blanco")
 
-print(misifu.nombre)  # Misifu
-print(misifu.color)  # Blanco
-misifu.maullar()  # ¡Miau!
+print(misifu.nombre)
+print(misifu.color)
+misifu.maullar()

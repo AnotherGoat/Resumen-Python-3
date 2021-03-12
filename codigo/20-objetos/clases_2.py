@@ -5,6 +5,3 @@ class Gato:
         self.edad = edad
 
 felix = Gato("café", 7)  # Instancia (objeto) de la clase Gato
-
-print(felix.color)  # café
-print(felix.edad)  # 7

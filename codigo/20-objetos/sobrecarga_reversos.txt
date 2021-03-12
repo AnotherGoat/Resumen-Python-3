@@ -1,0 +1,12 @@
+Si x e y son de tipo distinto y x no ha implementado los métodos mágicos:
+
+x + y -> y + x -> y.__radd__(x)
+x - y -> y - x -> y.__rsub__(x)
+x * y -> y * x -> y.__rmul__(x)
+x / y -> y / x -> y.__rtruediv__(x)
+x // y -> y // x -> y.__rfloordiv__(x)
+x % y -> y % x -> y.__rmod__(x)
+x ** y -> y ** x -> y.__rpow__(x)
+x & y -> y & x -> y.__rand__(x)
+x ^ y -> y ^ x -> y.__rxor__(x)
+x | y -> y | x -> y.__ror__(x)

@@ -7,8 +7,11 @@ class Lobo:
         print("Grrr...")
 
 class Perro(Lobo):
+    # hereda el constructor de lobo
+
+    # sobreescribe el método ladrar() de Lobo
     def ladrar(self):
         print("Guau")
 
 husky = Perro("Max", "gris")
-husky.bark()  # Guau
+husky.ladrar()

@@ -14,4 +14,3 @@ perro = Perro("Joe")
 gato = Gato("Ollie")
 
 print(perro + gato)
-# Ollie	  Joe
