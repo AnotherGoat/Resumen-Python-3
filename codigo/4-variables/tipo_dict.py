@@ -1,0 +1,2 @@
+vocales = {'A': 'a', 'E': 'e', 'I': 'i', 'O': 'o', 'U': 'u'}
+print(type(vocales))

@@ -775,6 +775,77 @@ También se pueden usar con los operadores de concatenación y multiplicación d
 
 \pythonfile{codigo/4-variables/asignacion_2.py}
 
+\section{Tipos de datos}
+
+En Python existen muchos tipos de datos que pueden ser usados y almacenados como variables. La función \ttt{type()} retorna el tipo de dato del objeto que se le entrega como argumento.\smallskip
+
+A continuación se mostrarán los tipos de datos más comunes.
+
+\begin{itemize}
+  \item Número entero \ttt{int}
+  
+  \pythonfile{codigo/4-variables/tipo_int.py}
+  \out{codigo/4-variables/tipo_int.out}
+
+  \item Número racional \ttt{float}
+  
+  \pythonfile{codigo/4-variables/tipo_float.py}
+  \out{codigo/4-variables/tipo_float.out}
+
+  \item Cadena de caracteres \ttt{str}
+  
+  \pythonfile{codigo/4-variables/tipo_str.py}
+  \out{codigo/4-variables/tipo_str.out}
+
+  \item Booleano \ttt{bool}
+  
+  \pythonfile{codigo/4-variables/tipo_bool.py}
+  \out{codigo/4-variables/tipo_bool.out}
+
+  \item Lista \ttt{list}
+  
+  \pythonfile{codigo/4-variables/tipo_list.py}
+  \out{codigo/4-variables/tipo_list.out}
+
+  \item Rango \ttt{range}
+  
+  \pythonfile{codigo/4-variables/tipo_range.py}
+  \out{codigo/4-variables/tipo_range.out}
+
+  \item Función \ttt{function}
+  
+  \pythonfile{codigo/4-variables/tipo_function.py}
+  \out{codigo/4-variables/tipo_function.out}
+
+  \item Número complejo \ttt{complex}
+  
+  \pythonfile{codigo/4-variables/tipo_complex.py}
+  \out{codigo/4-variables/tipo_complex.out}
+
+  \item Diccionario \ttt{dict}
+  
+  \pythonfile{codigo/4-variables/tipo_dict.py}
+  \out{codigo/4-variables/tipo_dict.out}
+
+  \item Tupla \ttt{tuple}
+  
+  \pythonfile{codigo/4-variables/tipo_tuple.py}
+  \out{codigo/4-variables/tipo_tuple.out}
+
+  \item Conjunto \ttt{set}
+  
+  \pythonfile{codigo/4-variables/tipo_set.py}
+  \out{codigo/4-variables/tipo_set.out}
+
+  \item Frozenset \ttt{frozenset}
+  
+  \pythonfile{codigo/4-variables/tipo_frozenset.py}
+  \out{codigo/4-variables/tipo_frozenset.out}
+
+\end{itemize}
+
+Estos tipos y muchos más se verán en detalle en los próximos capítulos.
+
 \clearpage\chapter{Declaraciones if y lógica}
 
 \section{Booleanos}
@@ -2891,7 +2962,7 @@ Veamos un ejemplo más complejo.
 
 \pythonfile{codigo/20-objetos/clases_2.py}
 
-Todos los constructores de una clase deben tener \ttt{self} como su primer parámetro. No se necesita entregar al momento de instanciar.\smallskip
+Todos los constructores de una clase deben tener \ttt{self} como su primer parámetro. No se necesita entregar \ttt{self} al momento de instanciar.\smallskip
 
 Dentro de la definición de un método, self se refiere a la misma instancia que está llamando al método.
 
