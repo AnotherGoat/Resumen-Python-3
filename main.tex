@@ -72,53 +72,25 @@
 }
 
 % para escribir "Salida:" siempre que se muestre el output
-\newcommand{\out}[1]{
-  Salida:
-  \outfile{#1}
-}
+\newcommand{\out}[1]{Salida:\outfile{#1}}
 % lo mismo pero para entrada
-\newcommand{\inp}[1]{
-  Entrada:
-  \outfile{#1}
-}
+\newcommand{\inp}[1]{Entrada:\outfile{#1}}
 % para archivo original
-\newcommand{\Ainicial}[1]{
-  Archivo inicial
-  \textfile{#1}
-}
+\newcommand{\Ainicial}[1]{Archivo inicial:\textfile{#1}}
 % para archivo resultante
-\newcommand{\Afinal}[1]{
-  Archivo final
-  \textfile{#1}
-}
+\newcommand{\Afinal}[1]{Archivo final:\textfile{#1}}
 
 % se usan en tablas
-\newcommand{\si}{
-  \textcolor{ForestGreen}{Sí}
-}
-\newcommand{\no}{
-  \textcolor{Crimson}{No}
-}
-\newcommand{\noo}{
-  \textcolor{Crimson}{No*}
-}
-\newcommand{\inicio}{
-  \textcolor{DodgerBlue}{Inicio}
-}
-\newcommand{\final}{
-  \textcolor{RoyalBlue}{Final}
-}
-\newcommand{\indices}{
-  \textcolor{ForestGreen}{Índices}
-}
-\newcommand{\claves}{
-  \textcolor{ForestGreen}{Claves}
-}
+\newcommand{\si}{\textcolor{ForestGreen}{Sí}}
+\newcommand{\no}{\textcolor{Crimson}{No}}
+\newcommand{\noo}{\textcolor{Crimson}{No*}}
+\newcommand{\inicio}{\textcolor{DodgerBlue}{Inicio}}
+\newcommand{\final}{\textcolor{RoyalBlue}{Final}}
+\newcommand{\indices}{\textcolor{ForestGreen}{Índices}}
+\newcommand{\claves}{\textcolor{ForestGreen}{Claves}}
 
 % atajo para usar \texttt{} más rápido, ya que se usará muy seguido
-\newcommand{\ttt}[1]{
-  \textcolor{Crimson}{\texttt{#1}}
-}
+\newcommand{\ttt}[1]{\textcolor{Crimson}{\texttt{#1}}}
 
 % para usar comillas de tipo "programación"
 \newcommand{\q}{\textquotesingle}
@@ -374,7 +346,17 @@ Python tiene la capacidad de realizar cálculos. Los operadores \ttt{+}, \ttt{-}
 \pythonfile{codigo/2-basico/aritmetica_1.py}
 \out{codigo/2-basico/aritmetica_1.out}
 
-Los espacios entre los signos y los números son opcionales, pero hacen que el código sea más fácil de leer.
+Los espacios entre los signos y los números son opcionales, pero hacen que el código sea más fácil de leer.\smallskip
+
+El resultado de una división es un número decimal. Esto lo convierte al tipo de dato float, el cual se verá más tarde en este capítulo.
+
+\pythonfile{codigo/2-basico/division.py}
+\out{codigo/2-basico/division.out}
+
+Todas las operaciones se pueden combinar entre sí como si el intérprete de Python fuera una calculadora.
+
+\pythonfile{codigo/2-basico/calculadora.py}
+\out{codigo/2-basico/calculadora.out}
 
 \section{La regla PEMDAS}
 
@@ -393,6 +375,8 @@ Las operaciones en Python siguen el orden dado por la regla PEMDAS:
 
 \pythonfile{codigo/2-basico/aritmetica_2.py}
 \out{codigo/2-basico/aritmetica_2.out}
+
+En realidad, la regla PEMDAS es parte de una jerarquía de operadores mucho más grande, que incluye todos los operadores que se pueden usar en Pyhon. Esta jerarquía se verá más tarde.
 
 \section{Paréntesis}
 
@@ -413,7 +397,7 @@ Se debe tener en cuenta que los computadores \link{http://puntoflotante.org/form
 \pythonfile{codigo/2-basico/error_float.py}
 \out{codigo/2-basico/error_float.out}
 
-El error mostrado arriba es un error clásico de la aritmética de punto flotante. Incluso tiene su propio \link{https://0.30000000000000004.com}{sitio web}.\smallskip
+El error mostrado arriba es un error clásico de la aritmética de punto flotante. Es un error tan conocido que incluso tiene su propio \link{https://0.30000000000000004.com}{sitio web}.\smallskip
 
 Al trabajar con floats, no es necesario escribir un 0 a la izquierda del punto decimal.
 
@@ -433,10 +417,25 @@ Las operaciones entre floats y enteros son posibles porque Python convierte los 
 
 Otra operación soportada es la exponenciación, que es la elevación de un número a la potencia de otro. Esto se realiza usando el operador \ttt{**}.\smallskip
 
-Ejemplo equivalente a $2 ^ 5 = 32$.
+Ejemplo equivalente a $2 ^ 5 = 2\cdot 2\cdot 2\cdot 2\cdot 2 = 32$.
 
 \pythonfile{codigo/2-basico/potencia.py}
 \out{codigo/2-basico/potencia.out}
+
+Las exponenciaciones se pueden encadenar cuantas veces se desee.\smallskip
+
+%TODO: enlace a googol
+Ejemplos equivalentes a ${2 ^ 3} ^ 2 = 512$ y $10 ^ 100$ (un googol).
+
+\pythonfile{codigo/2-basico/potencia_multiple.py}
+\out{codigo/2-basico/potencia_multiple.out}
+
+Se debe tener cuidado con los paréntesis al encadenar potencias.\smallskip
+
+Ejemplos equivalentes a ${2 ^ 3} ^ 2 = 512$ y $(2 ^ 3) ^ 2 = 64$.
+
+\pythonfile{codigo/2-basico/potencia_cuidado.py}
+\out{codigo/2-basico/potencia_cuidado.out}
 
 La exponenciación también se puede hacer con floats, donde se puede usar para obtener raíces. El resultado será un float.\smallskip
 
@@ -448,6 +447,8 @@ Ejemplos equivalentes a $\sqrt{9} = 3$ y $\sqrt[3]{8} = 2$.
 Se debe tener en cuenta que el resultado será un float.
 
 \section{Cociente y resto}
+
+%TODO: investigar que sucede con números negativos
 
 La división entera se realiza usando el operador \ttt{//}, donde el resultado es la parte entera que queda al realizar la división, también conocida como cociente.\smallskip
 
@@ -489,6 +490,8 @@ Las cadenas de caracteres se crean introduciendo el texto entre comillas simples
 \pythonfile{codigo/3-strings/string.py}
 \out{codigo/3-strings/string.out}
 
+El uso de comillas simples o dobles no afecta en ninguna forma el comportamiento del string, es decir, ambos producen el mismo resultado.\smallskip
+
 Un string debe empezar y terminar con comillas del mismo tipo, no se permiten comillas mixtas.
 
 \pythonfile{codigo/3-strings/string_no_valido_1.py}
@@ -523,7 +526,7 @@ Si el string se define entre comillas dobles, no es necesario poner \ttt{\q} par
 
 Las secuencias de escape también se pueden incluir usando el símbolo \ttt{\textbackslash} dentro de cadenas de texto. Su origen viene de las secuencias de escape usadas en las máquinas de escribir.\smallskip
 
-Algunas de las secuencias de escape más usadas son:
+Las secuencias de escape más usadas son:
 
 \begin{itemize}
   \item Nueva línea (new line): Avanza una línea hacia adelante (salto de línea) y deja el cursor al principio de esta línea (retorno de carro). Representado por \ttt{\textbackslash n}.
@@ -540,6 +543,11 @@ Algunas de las secuencias de escape más usadas son:
   
   El salto de tabulador avanza hasta el siguiente \doble{tab stop} de la misma línea.
 
+\end{itemize}
+
+Otras secuencias de escape que no son tan usadas son:
+
+\begin{itemize}
   \item Retorno de carro (carriage return): Mueve el \doble{carro} (cursor) al principio de la línea actual. Esto permite sobreescribir los caracteres escritos anteriormente. Representado por \ttt{\textbackslash r}.
   
   \pythonfile{codigo/3-strings/carriage_return.py}
@@ -552,11 +560,6 @@ Algunas de las secuencias de escape más usadas son:
   \pythonfile{codigo/3-strings/backspace.py}
   \out{codigo/3-strings/backspace.out}
 
-\end{itemize}
-
-Otras secuencias de escape que cada vez se usan menos son:
-
-\begin{itemize}
   \item Tabulador vertical (vertical tab): Añade un salto de tabulador vertical. Representado por \ttt{\textbackslash v}.
   
   \pythonfile{codigo/3-strings/vtab.py}
@@ -570,6 +573,8 @@ Otras secuencias de escape que cada vez se usan menos son:
   Algunos programadores los usaban para separar distintas secciones de código en \doble{páginas}.
 
 \end{itemize}
+
+El resultado obtenido de estas últimas puede variar dependiendo del IDE que se utilice.
 
 \section{Caracteres Unicode}
 
@@ -645,6 +650,17 @@ Ambos argumentos se pueden combinar.
 
 \pythonfile{codigo/3-strings/print_avanzado_5.py}
 \out{codigo/3-strings/print_avanzado_5.out}
+
+\section{Párrafos}
+
+Una secuencia de escape útil para escribir párrafos o cualquier texto largo en general, que no tenga saltos de línea en su interior, es usando la sucuencia de escape \ttt{\textbackslash} seguida de un salto de línea (en el código).\smallskip
+
+Esto permite escribir strings largos que no pueden verse completamente en pantalla sin tener que moverse hacia la derecha. El uso de esta secuencia de escape no altera el resultado.
+
+\pythonfile{codigo/3-strings/lorem_ipsum.py}
+\out{codigo/3-strings/lorem_ipsum.out}
+
+%TODO: referencia y enlace a lorem ipsum
 
 \clearpage\chapter{Variables}
 
@@ -1685,6 +1701,7 @@ El método \ttt{help()} también se puede usar para obtener ayuda detallada sobr
 \out{codigo/9-modulos/ayuda_4.out}
 
 Por defecto, el método \ttt{help()} sólo mostrará el texto que alcance en el alto de la ventana del terminal. Al pulsar la tecla \ttt{Intro}, se mostrará la línea que viene después de \ttt{-- Más  --}. Como siempre, se puede pulsar \ttt{Ctrl+C} para salir.\smallskip
+%TODO: arreglar -- Más --
 
 También se puede usar el método \ttt{dir()} en módulos, para ver los métodos dentro de ellos.
 
