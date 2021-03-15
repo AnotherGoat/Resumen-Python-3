@@ -1,1 +1,3 @@
 usuario = "Juan"
+
+print(usuario)

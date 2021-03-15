@@ -70,6 +70,16 @@
   frame=single,
   breaklines
 }
+\newmintedfile[pythonspaces]{python}{
+  bgcolor=grisoscuro,
+  breaklines,
+  showspaces,
+  spacecolor=white,
+  tabsize=4,
+  obeytabs,
+  showtabs,
+  tabcolor=white
+}
 
 % para escribir "Salida:" siempre que se muestre el output
 \newcommand{\out}[1]{Salida:\outfile{#1}}
@@ -596,6 +606,8 @@ Este es un tipo especial de string, que se escribe entre comillas triples \ttt{\
 
 \section{Concatenación de strings}
 
+Se pueden realizar operaciones matemáticas no solo con números, sino también con cadenas.\smallskip
+
 Dos o más cadenas se pueden unir una después de la otra, usando un proceso llamado concatenación. Se usa el operador \ttt{+}.
 
 \pythonfile{codigo/3-strings/concatenacion.py}
@@ -623,6 +635,12 @@ Multiplicar por \ttt{0} genera un string vacío.
 \out{codigo/3-strings/multiplicar_cadenas_2.out}
 
 Las cadenas no pueden ser multiplicadas entre sí, tampoco pueden ser multiplicadas por floats, incluso si los floats son números enteros.
+
+\pythonfile{codigo/3-strings/cadena_x_cadena.py}
+\out{codigo/3-strings/cadena_x_cadena.out}
+
+\pythonfile{codigo/3-strings/cadena_x_float.py}
+\out{codigo/3-strings/cadena_x_float.out}
 
 \section{Opciones del método print()}
 
@@ -666,13 +684,16 @@ Esto permite escribir strings largos que no pueden verse completamente en pantal
 
 \section{Asignación de variables}
 
-Una variable permite almacenar un valor asignándole un nombre, el cual puede ser usado para referirse al valor más adelante en el programa. Para asignar una variable, se usa el signo igual \ttt{=}.
+Una variable permite almacenar un valor asignándole un nombre, el cual puede ser usado para referirse al valor más adelante en el programa. Para asignar una variable, se usa el signo de igualdad \ttt{=}.
 
 \pythonfile{codigo/4-variables/variable_1.py}
+\out{codigo/4-variables/variable_1.py}
+
+En Python, no existe la declaración de variables. Toda variable que se cree debe tener un valor inicial asignado. Se permite que este valor pueda ser \doble{vacío}, como por ejemplo el string vacío \ttt{\qq \qq}.
 
 \section{Nombre de variables válidos}
 
-Se aplican ciertas restricciones con respecto a los caracteres que se pueden usar en los nombres de variables. Los únicos caracteres permitidos son letras, números y guiones bajos. Además, no se puede comenzar con números o incluir espacios.\smallskip
+Se aplican ciertas restricciones con respecto a los caracteres que se pueden usar en los nombres de variables. Los únicos caracteres permitidos son letras, números y guiones bajos \ttt{\_}. Además, no se puede comenzar con números o incluir espacios.\smallskip
 
 No seguir estas reglas hará que ocurran errores que impiden la ejecución del programa.
 
@@ -702,14 +723,24 @@ Nótese el uso de mayúsculas al principio de \ttt{False}, \ttt{None} y \ttt{Tru
 
 \section{Operaciones con variables}
 
-Se pueden usar variables dentro de operaciones. Lo único que se debe recordar es que deben declararse antes.
+Se pueden usar variables dentro de operaciones.
 
 \pythonfile{codigo/4-variables/variable_2.py}
 \out{codigo/4-variables/variable_2.out}
 
+Pero se debe recordar que deben ser asignadas antes de poder usarlas.
+
+\pythonfile{codigo/4-variables/error_operacion.py}
+\out{codigo/4-variables/error_operacion.out}
+
 Una variable también puede cambiar de valor a lo largo de la ejecución de un programa, y ser el resultado de operaciones con otras variables.
 
 \pythonfile{codigo/4-variables/variable_3.py}
+
+Durante el tiempo de ejecución, siempre mantendrá el último valor que se le asignó.
+
+\pythonfile{codigo/4-variables/conservacion.py}
+\out{codigo/4-variables/conservacion.out}
 
 Las variables se pueden reasignar tantas veces como se desee, para cambiar su valor. En Python, las variables no tienen tipos específicos, por lo que se puede asignar una cadena a una variable y luego asignar un número entero a la misma variable.
 
@@ -718,7 +749,8 @@ Las variables se pueden reasignar tantas veces como se desee, para cambiar su va
 
 Sin embargo, no es una buena práctica. Para evitar errores, se debería evitar sobreescribir una variable con distintos tipos de datos.\smallskip
 
-Si se asigna el valor numérico o alfanumérico (cadena de texto) de una variable a otra, los cambios hechos a ambas variables son independientes.
+%TODO: enlaces a numérico y alfanumérico
+Si se asigna el valor numérico (enteros y decimales) o alfanumérico (cadena de texto) de una variable a otra, los cambios hechos a ambas variables son independientes.
 
 \pythonfile{codigo/4-variables/variable_5.py}
 \out{codigo/4-variables/variable_5.out}
@@ -763,6 +795,12 @@ Existen funciones para convertir datos de un tipo a otro. Entre dichas funciones
 
   \pythonfile{codigo/4-variables/convertir_a_int_2.py}
   \out{codigo/4-variables/convertir_a_int_2.out}
+
+  Al convertir de \ttt{float} a \ttt{int}, sólo se conservará la parte entera del número. No ocurrirá ningún tipo de redondeo.
+
+  \pythonfile{codigo/4-variables/float_a_int.py}
+  \out{codigo/4-variables/float_a_int.out}
+
   \item \ttt{float()}: Convierte a un float.
   
   \pythonfile{codigo/4-variables/convertir_a_float.py}
@@ -878,6 +916,8 @@ Su uso más común es como el resultado obtenido al comparar valores, por ejempl
 \pythonfile{codigo/5-if/booleano_2.py}
 \out{codigo/5-if/booleano_2.out}
 
+Se debe tener cuidado de no confundir el operador de asignación \ttt{=} con el operador de comparación de igualdad \ttt{==}.\smallskip
+
 En Python, \ttt{1} y \ttt{True} significan lo mismo. Lo mismo ocurre con \ttt{0} y \ttt{False}.
 
 \pythonfile{codigo/5-if/booleano_3.py}
@@ -949,13 +989,42 @@ Las declaraciones \ttt{if} sirven para ejecutar código si ser cumple una determ
 \pythonfile{codigo/5-if/if.py}
 \out{codigo/5-if/if.out}
 
+\section{Indentación}
+
 Python usa indentación (espacio en blanco al comienzo de una línea) para delimitar bloques de código. En otros lenguajes, esta operación se realiza delimitando cada bloque de código por llaves \ttt{\{\}}.\smallskip
+
+Para que el intérprete reconozca los bloques de código correctamente, cada instrucción dentro de un mismo bloque de código debe escribirse a un mismo nivel de indentación.\smallskip
+
+A continuación se muestra un ejemplo que no cumple con eso. Para que se entienda el concepto mejor, en cada segmento de código en esta sección se mostrarán los espacios en blanco.
+
+\pythonspaces{codigo/5-if/error_indentacion_1.py}
+\out{codigo/5-if/error_indentacion_1.out}
+
+No se permite mezclar espacios con saltos de tabulador (los que aparecen al pulsar la tecla \ttt{Tab}). Aunque se vean igual, dependiendo de las configuraciones, un salto de tabulador puede cambiar de medida. La medida de un espacio es siempre la misma, así que se recomienda usarlos en vez del tabulador.\smallskip
+
+A continuación se muestra un ejemplo que parece ser válido a simple vista, pero no lo es ya que tiene un salto de tabulador en la linea \ttt{print("mundo")} y 4 espacios en las otras líneas.
+
+\pythonspaces{codigo/5-if/error_indentacion_2.py}
+\out{codigo/5-if/error_indentacion_2.out}
+
+Pára evitar que esto ocurra, muchos IDEs tienen la opción \doble{insertar espacios al presionar la tecla \ttt{Tab}}, para insertar 4 espacios (o la cantidad que se desee) al pulsar dicha tecla.\smallskip
+
+Por último, aunque esto no es un error de por sí (no se lanza ninguna excepción), se recomienda mantener la cantidad de espacios usados para cada indentación consistente, es decir, que no varíe su cantidad.\smallskip
+
+El siguiente ejemplo muestra una práctica que se debe evitar.
+
+\pythonspaces{codigo/5-if/error_indentacion_3.py}
+\out{codigo/5-if/error_indentacion_3.out}
+
+No existe una cantidad \doble{correcta} de espacios para indentar, aunque la mayoría de programadores prefiere que sean 2, 3 o 4 (en Python). Lo más importante es que se escoja una cantidad y se mantenga igual dentro de un mismo proyecto.\smallskip
+
+Los errores de indentación son más fáciles de evitar que de encontrar, así que como dice el dicho, \doble{mejor prevenir que lamentar}.
 
 \section{Anidación de declaraciones if}
 
 Para realizar comprobaciones más complejas, las declaraciones \ttt{if} se pueden anidar, una dentro de la otra.\smallskip
 
-Esto significa que la declaración if interna sólo se evalúa si la declaración if externa es válida.
+Esto significa que la declaración \ttt{if} interna sólo se evalúa si la declaración \ttt{if} externa es válida.
 
 \pythonfile{codigo/5-if/if_anidado.py}
 \out{codigo/5-if/if_anidado.out}
@@ -1700,8 +1769,7 @@ El método \ttt{help()} también se puede usar para obtener ayuda detallada sobr
 \pythonfile{codigo/9-modulos/ayuda_4.py}
 \out{codigo/9-modulos/ayuda_4.out}
 
-Por defecto, el método \ttt{help()} sólo mostrará el texto que alcance en el alto de la ventana del terminal. Al pulsar la tecla \ttt{Intro}, se mostrará la línea que viene después de \ttt{-- Más  --}. Como siempre, se puede pulsar \ttt{Ctrl+C} para salir.\smallskip
-%TODO: arreglar -- Más --
+Por defecto, el método \ttt{help()} sólo mostrará el texto que alcance en el alto de la ventana del terminal. Al pulsar la tecla \ttt{Intro}, se mostrará la línea que viene después de \ttt{-{}- Más  -{}-}. Como siempre, se puede pulsar \ttt{Ctrl+C} para salir.\smallskip
 
 También se puede usar el método \ttt{dir()} en módulos, para ver los métodos dentro de ellos.
 
@@ -2060,13 +2128,13 @@ Alternativamente, se le puede decir a \ttt{seek()} que se mueva a otra posición
 \Ainicial{codigo/14-archivos/seek_2.txt_i}
 \out{codigo/14-archivos/seek_2.out}
 
-El método tell() entrega la posición actual del puntero.
+El método \ttt{tell()} entrega la posición actual del puntero.
 
 \pythonfile{codigo/14-archivos/tell.py}
 \Ainicial{codigo/14-archivos/tell.txt_i}
 \out{codigo/14-archivos/tell.out}
 
-Para obtener cada línea de un archivo, se puede usar la función readlines() para devolver una lista donde cada elemento es una línea del archivo.
+Para obtener cada línea de un archivo, se puede usar la función \ttt{readlines()} para devolver una lista donde cada elemento es una línea del archivo.
 
 \pythonfile{codigo/14-archivos/readlines.py}
 \Ainicial{codigo/14-archivos/readlines.txt_i}
@@ -2486,7 +2554,7 @@ Los índices entre llaves \ttt{\{\}} pueden repetirse cuantas veces se quiera.
 \pythonfile{codigo/17-iterables/formateo_2.py}
 \out{codigo/17-iterables/formateo_2.out}
 
-Si se omite un índice, habrá algún argumento de format() que no se usará.
+Si se omite un índice, habrá algún argumento de \ttt{format()} que no se usará.
 
 \pythonfile{codigo/17-iterables/formateo_3.py}
 \out{codigo/17-iterables/formateo_3.out}
@@ -2689,11 +2757,11 @@ El mismo resultado se puede obtener con mayor facilidad utilizando la sintaxis l
 \pythonfile{codigo/18-funcional/map_2.py}
 \out{codigo/18-funcional/map_2.out}
 
-Los objetos del tipo mapa son iterables, por lo que se debe usar list() para convertir el resultado en una lista y poder verlo.
+Los objetos del tipo mapa son iterables, por lo que se debe usar \ttt{list()} para convertir el resultado en una lista y poder verlo.
 
 \section{Función filter()}
 
-La función filter() es otra función de orden supero que se puede usar sobre iterables.\smallskip
+La función \ttt{filter()} es otra función de orden supero que se puede usar sobre iterables.\smallskip
 
 Esta función filtra un iterable eliminando elementos que no coincidan con el predicado (una función que devuelve un booleano).
 
@@ -2746,7 +2814,7 @@ Los decoradores ofrecen una forma de modificar funciones utilizando otras funcio
 
 En este caso, el uso la función \ttt{envolver()} se define dentro de \ttt{decor()} para permitir que \ttt{decor()} retorne una función, que es el objetivo principal de un decorador. La función \ttt{texto\_decorado()} es una versión decorada de la función \ttt{imprimir\_texto()}.\smallskip
 
-De hecho, si se escribiera un decorador útil, podría reemplazarse imprimir\_texto() por su versión decorada.
+De hecho, si se escribiera un decorador útil, podría reemplazarse \ttt{imprimir\_texto()} por su versión decorada.
 
 %TODO: explicar que print() es un salto de línea antes
 \pythonfile{codigo/18-funcional/decorador_2.py}
@@ -2838,7 +2906,7 @@ Si el segundo parámetro es negativo, cuenta hacia atrás.
 \pythonfile{codigo/19-itertools/count_3.py}
 \out{codigo/19-itertools/count_3.out}
 
-La función cycle() itera infinitamente a través de un iterable (como una lista o cadena).
+La función\ttt{cycle()} itera infinitamente a través de un iterable (como una lista o cadena).
 
 \pythonfile{codigo/19-itertools/cycle_1.py}
 \out{codigo/19-itertools/cycle_1.out}
@@ -2846,7 +2914,7 @@ La función cycle() itera infinitamente a través de un iterable (como una lista
 \pythonfile{codigo/19-itertools/cycle_2.py}
 \out{codigo/19-itertools/cycle_2.out}
 
-La función repeat() repite un objeto, ya sea infinitamente o un número específico de veces.
+La función \ttt{repeat()} repite un objeto, ya sea infinitamente o un número específico de veces.
 
 \pythonfile{codigo/19-itertools/repeat_1.py}
 \out{codigo/19-itertools/repeat_1.out}
@@ -2863,14 +2931,14 @@ Para repetir infinitamente, se le debe entregar sólo el objeto como parámetro.
 
 \section{Operaciones sobre iterables}
 
-Hay muchas funciones en itertools que operan sobre iterables, de una forma similar a map() o filter().\smallskip
+Hay muchas funciones en itertools que operan sobre iterables, de una forma similar a \ttt{map()} o \ttt{filter()}.\smallskip
 
-La función accumulate() devuelve un total actualizado de los valores dentro de un iterable.
+La función \ttt{accumulate()} devuelve un total actualizado de los valores dentro de un iterable.
 
 \pythonfile{codigo/19-itertools/accumulate.py}
 \out{codigo/19-itertools/accumulate.out}
 
-La función takewhile() toma elementos de un iterable mientras una función predicado permanece verdadera.
+La función \ttt{takewhile()} toma elementos de un iterable mientras una función predicado permanece verdadera.
 
 \pythonfile{codigo/19-itertools/takewhile_1.py}
 \out{codigo/19-itertools/takewhile_1.out}
@@ -2880,21 +2948,21 @@ La diferencia entre \ttt{takewhile()} y \ttt{filter()} es que \ttt{takewhile()} 
 \pythonfile{codigo/19-itertools/takewhile_2.py}
 \out{codigo/19-itertools/takewhile_2.out}
 
-La función chain() combina varios iterables en uno solo más largo.
+La función \ttt{chain()} combina varios iterables en uno solo más largo.
 
 \pythonfile{codigo/19-itertools/chain.py}
 \out{codigo/19-itertools/chain.out}
 
 \section{Funciones de combinatoria}
 
-También hay numerosas funciones combinatorias en itertools, tales como product() y permutations(). Estas son usadas cuando se quiere cumplir tareas con todas las combinaciones posibles de algunos elementos.\smallskip
+También hay numerosas funciones combinatorias en itertools, tales como \ttt{product()} y \ttt{permutations()}. Estas son usadas cuando se quiere cumplir tareas con todas las combinaciones posibles de algunos elementos.\smallskip
 
-La función product() retorna el producto entre 2 iterables.
+La función \ttt{product()} retorna el producto entre 2 iterables.
 
 \pythonfile{codigo/19-itertools/product.py}
 \out{codigo/19-itertools/product.out}
 
-La función permutations() retorna las todas permutaciones posibles entre los elementos de un iterable.
+La función \ttt{permutations()} retorna las todas permutaciones posibles entre los elementos de un iterable.
 
 \pythonfile{codigo/19-itertools/permutations_1.py}
 \out{codigo/19-itertools/permutations_1.out}

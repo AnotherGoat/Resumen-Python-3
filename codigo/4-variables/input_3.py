@@ -1,3 +1,3 @@
-x = int(input("Ingrese un número: "))
+x = float(input("Ingrese un número: "))
 
 print(x + 10)
