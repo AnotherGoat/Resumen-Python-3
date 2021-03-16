@@ -16,6 +16,7 @@
 \usepackage{amsmath}
 
 %\usepackage{inconsolata}
+\usepackage{lmodern}
 \usepackage[scaled]{beramono}
 \usepackage[T1]{fontenc}
 
@@ -66,14 +67,20 @@
   bgcolor=grisclaro,
   frame=single,
   breaklines,
-  samepage=true,
-  breakafter=0  % para un caso específico
+  samepage=true
 }
 \newmintedfile[textfile]{text}{
   bgcolor=white,
   frame=single,
   breaklines,
   samepage=true
+}
+\newmintedfile[outespecial]{text}{
+  bgcolor=grisclaro,
+  frame=single,
+  breaklines,
+  samepage=true,
+  breakanywhere=true
 }
 \newmintedfile[pythonspaces]{python}{
   bgcolor=grisoscuro,
@@ -450,7 +457,7 @@ Las exponenciaciones se pueden encadenar cuantas veces se desee.\smallskip
 Ejemplos equivalentes a ${2 ^ 3} ^ 2 = 512$ y $10 ^ {100}$ (un googol).
 
 \pythonfile{codigo/2-basico/potencia_multiple.py}
-\out{codigo/2-basico/potencia_multiple.out}
+\outespecial{codigo/2-basico/potencia_multiple.out}
 
 Se debe tener cuidado con los paréntesis al encadenar potencias.\smallskip
 
