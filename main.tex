@@ -904,7 +904,7 @@ Estos tipos y muchos más se verán en detalle en los próximos capítulos.
 
 \section{Booleanos}
 
-Otro tipo de dato en Python es el tipo booleano, el cual sólo puede tener 2 valores: \ttt{True} y \ttt{False}. Estos se escriben empezando con mayúscula, al contrario de otros lenguajes de programación.\smallskip
+Otro tipo de dato en Python es el tipo booleano, el cual sólo puede tener 2 valores: \ttt{True} para representar valores verdaderos y \ttt{False} para representar valores falsos. Estos se escriben empezando con mayúscula, al contrario de otros lenguajes de programación.\smallskip
 
 Se pueden crear directamente, aunque esto no tiene mucha utilidad en la mayoría de casos.
 
@@ -916,7 +916,7 @@ Su uso más común es como el resultado obtenido al comparar valores, por ejempl
 \pythonfile{codigo/5-if/booleano_2.py}
 \out{codigo/5-if/booleano_2.out}
 
-Se debe tener cuidado de no confundir el operador de asignación \ttt{=} con el operador de comparación de igualdad \ttt{==}.\smallskip
+Se debe tener cuidado de no confundir el operador de asignación \ttt{=} con el operador de igualdad \ttt{==}.\smallskip
 
 En Python, \ttt{1} y \ttt{True} significan lo mismo. Lo mismo ocurre con \ttt{0} y \ttt{False}.
 
@@ -924,6 +924,30 @@ En Python, \ttt{1} y \ttt{True} significan lo mismo. Lo mismo ocurre con \ttt{0}
 \out{codigo/5-if/booleano_3.out}
 
 Usando otros términos, podría decirse que \ttt{1} es \link{https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false}{\doble{truthy}} y que \ttt{0} es \link{https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false}{\doble{falsy}}.
+
+Esta equivalencia también es válida para floats.
+
+\pythonfile{codigo/5-if/booleano_4.py}
+\out{codigo/5-if/booleano_4.out}
+
+\section{Conversión a boooleanos}
+
+La función \ttt{bool()} se puede usar para convertir un objeto a su valor booleano.\smallskip
+
+Al usarla con valores numéricos, el número \ttt{0} se convierte a \ttt{False} y cualquier otro número se convierte a \ttt{True}.
+
+\pythonfile{codigo/5-if/bool_1.py}
+\out{codigo/5-if/bool_1.out}
+
+Una cadena de texto vacía se convierte en \ttt{False} y cualquier cadena que no sea vacía se convierte en \ttt{True}.
+
+\pythonfile{codigo/5-if/bool_2.py}
+\out{codigo/5-if/bool_2.out}
+
+La misma situación ocurre al convertir tipos de datos más complejos, los cuales no se han visto todavía.
+
+\pythonfile{codigo/5-if/bool_3.py}
+\out{codigo/5-if/bool_3.out}
 
 \section{Operadores de comparación}
 
@@ -1307,6 +1331,11 @@ Para evitar esto, se puede usar el método \ttt{copy()} para hacer una copia de 
 \pythonfile{codigo/6-listas/copy_2.py}
 \out{codigo/6-listas/copy_2.out}
 
+Otra opción válida es usando el constructor \ttt{list()}.
+
+\pythonfile{codigo/6-listas/copy_list.py}
+\out{codigo/6-listas/copy_list.out}
+
 \section{Strings como listas}
 
 Las cadenas pueden verse como listas de caracteres que no se pueden cambiar (inmutables).
@@ -1607,6 +1636,11 @@ El objeto \ttt{None} es devuelto por cualquier función que no devuelve explíci
 
 \pythonfile{codigo/8-funciones/None_2.py}
 \out{codigo/8-funciones/None_2.out}
+
+Un uso común de \ttt{None} es para iniciar una lista con cierta cantidad de elementos.
+
+\pythonfile{codigo/8-funciones/None_3.py}
+\out{codigo/8-funciones/None_3.out}
 
 \section{Sobrecarga de funciones}
 
@@ -1935,7 +1969,43 @@ Las declaraciones \ttt{assert} no pueden ir sin un predicado.
 \pythonfile{codigo/12-excepciones/error_assert.py}
 \out{codigo/12-excepciones/error_assert.out}
 
-%TODO: excepciones personalizadas y validación de entrada
+\section{Validación de entrada}
+
+El ingreso de datos en cualquier programa es algo que se debe validar para que el programa trabaje correctamente.\smallskip
+
+Supongamos que se quiere que el usuario ingrese un número. Esto se haría usando la función \ttt{input()} para tomar entrada y la función \ttt{int()} para convertirla a un número entero.\smallskip
+
+Un problema que puede ocurrir es si el usuario ingresa una letra o símbolo que no puede ser convertido a un número entero.
+
+\pythonfile{codigo/12-excepciones/validacion_1.py}
+\inp{codigo/12-excepciones/validacion_1.inp_1}
+\out{codigo/12-excepciones/validacion_1.out_1}
+\inp{codigo/12-excepciones/validacion_1.inp_2}
+\out{codigo/12-excepciones/validacion_1.out_2}
+
+Para manejar este error, se debería usar un \ttt{try-except} para atrapar la excepción \ttt{ValueError}.
+
+\pythonfile{codigo/12-excepciones/validacion_2.py}
+\inp{codigo/12-excepciones/validacion_2.inp}
+\out{codigo/12-excepciones/validacion_2.out}
+
+Esto soluciona el problema que ocurre por la excepción \ttt{ValueError} no capturada, pero hace falta el uso de un bucle para pedir la entrada nuevamente en caso de que no sea válida.
+
+\pythonfile{codigo/12-excepciones/validacion_3.py}
+\inp{codigo/12-excepciones/validacion_3.inp}
+\out{codigo/12-excepciones/validacion_3.out}
+
+Supongamos que el programa necesita pedir la edad del usuario en vez de un número cualquiera. Eso significa que los valores negativos no son válidos, lo cual puede solucionarse usando una declaración \ttt{if-else}.
+
+\pythonfile{codigo/12-excepciones/validacion_4.py}
+\inp{codigo/12-excepciones/validacion_4.inp}
+\out{codigo/12-excepciones/validacion_4.out}
+
+Esa es la estructura general para cualquier validación de entrada. Primero se atrapan las excepciones y después se evalúan los casos particulares no excepcionales que no se consideran válidos.\smallskip
+
+Lo más importante de la validación de entrada es asumir que el usuario puede hacer cualquier acción en cualquier momento. El programador debe anteponerse a todos los casos posibles y manejarlos para evitar cualquier error que pueda ocurrir durante el tiempo de ejecución.
+
+%TODO: excepciones personalizadas
 
 \clearpage\chapter{Pruebas unitarias}
 
@@ -2493,7 +2563,12 @@ El tamaño de paso también puede ser negativo, lo que permite usarlos para inve
 \pythonfile{codigo/17-iterables/cortes_reverse.py}
 \out{codigo/17-iterables/cortes_reverse.out}
 
-Es importante recordar que si el tamaño de paso es negativo, el primer número debe indicar un índice mayor que el segundo.
+Es importante recordar que si el tamaño de paso es negativo, el primer número debe indicar un índice mayor que el segundo.\smallskip
+
+Se pueden usar cortes para copiar listas, aunque no suele ser la forma más clara de hacerlo.
+
+\pythonfile{codigo/17-iterables/copy_cortes.py}
+\out{codigo/17-iterables/copy_cortes.out}
 
 \section{Cortes de tuplas}
 
