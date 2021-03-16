@@ -1,0 +1,159 @@
+\chapter{Algoritmos de ordenamiento}
+
+%TODO: introducción
+
+\section{Bubble sort}
+
+Pasos a seguir:
+
+\begin{enumerate}
+  \item Se recorre una lista de izquierda a derecha.
+
+  \item Se compara cada par de valores adyacentes.
+  
+  \item Si dicho par está desordenado (el primero es mayor que el segundo), los cambia de lugar.
+  
+  \item Esto garantiza que en $n$ iteraciones habrán $n$ elementos ordenados al final de la lista.
+  
+  \item Se repite hasta obtener la lista ordenada.
+  
+\end{enumerate}
+
+La forma más simple de programar este algoritmo nos deja con un algoritmo de $O(n^2)$.
+
+\pythonfile{codigo/x-ordenamiento/burbuja.py}
+\out{codigo/x-ordenamiento/burbuja.out}
+
+Se puede ver el procedimiento de forma más detallada añadiendo un \ttt{print()} dentro del bucle \ttt{for}.
+
+\pythonfile{codigo/x-ordenamiento/burbuja_detallado.py}
+\out{codigo/x-ordenamiento/burbuja_detallado.out}
+
+Para ordenar al revés sólo basta con invertir la condición dentro de la declaración \ttt{if}.
+
+\pythonfile{codigo/x-ordenamiento/burbuja_inverso.py}
+\out{codigo/x-ordenamiento/burbuja_inverso.out}
+
+\section{Optimizaciones de bubble sort}
+
+Una pequeña optimización puede ser cambiar el \ttt{range} del segundo \ttt{for} por \ttt{range(N - 1 - i)}. Esto ocurre porque en cualquier iteración siempre habrán \ttt{i} elementos ordenados al final, los cuales se pueden omitir.
+
+\pythonfile{codigo/x-ordenamiento/burbuja_opti_1.py}
+
+Hacer eso sigue manteniendo el algoritmo en $O(n^2)$.\smallskip
+
+Otra optimización es añadir un booleano que revise si han habido cambios en cada iteración. Si en una iteración no hay cambios, significa que ya está ordenado y no es necesario seguir.
+
+\pythonfile{codigo/x-ordenamiento/burbuja_opti_2.py}
+
+Esto hará que el algoritmo sea $O(n^2)$ y $\omega(n)$
+
+\section{Insertion sort}
+
+Pasos a seguir:
+
+\begin{enumerate}
+  \item Se recorre una lista de izquierda a derecha.
+  
+  \item Se compara cada elemento con los elementos a su izquierda, y se mueve a una posición adecuada si no está ordenado.
+
+  \item El primer ordenado siempre estará \doble{ordenado}, ya que no tiene elementos a su izquierda.
+  
+  \item Se repite hasta tener el último elemento ordenado.
+  
+\end{enumerate}
+
+La implementación más sencilla de este algoritmo es la siguiente. Tiene una complejidad de $O(n^2)$.
+
+\pythonfile{codigo/x-ordenamiento/insercion.py}
+\out{codigo/x-ordenamiento/insercion.out}
+
+Se puede añadir un método \ttt{print()} para ver en más detalle el procedimiento.
+
+\pythonfile{codigo/x-ordenamiento/insercion_detallado.py}
+\out{codigo/x-ordenamiento/insercion_detallado.out}
+
+Para ordenar al revés, sólo se debe invertir la condición dentro de la declaración \ttt{if}.
+
+\pythonfile{codigo/x-ordenamiento/insercion_inverso.py}
+\out{codigo/x-ordenamiento/insercion_inverso.out}
+
+\section{Selection sort}
+
+Pasos a seguir:
+
+\begin{enumerate}
+  \item Se recorre una lista de izquierda a derecha.
+  
+  \item La lista se \doble{particiona} en 2 listas: uno ordenada (al principio) y otra desordenada (al final).
+
+  \item Se obtiene el elemento más pequeño de la partición desordenada y se mueve a la partición ordenada.
+  
+  \item Se repite hasta que la partición desordenada esté vacía.
+  
+\end{enumerate}
+
+A continuación se muestra una implementación de este algoritmo. Tiene complejidad de $O(n^2)$.
+
+\pythonfile{codigo/x-ordenamiento/seleccion.py}
+\out{codigo/x-ordenamiento/seleccion.out}
+
+Para ver en detalle como funciona, se puede añadir el método \ttt{print()}.
+
+\pythonfile{codigo/x-ordenamiento/seleccion_detallado.py}
+\out{codigo/x-ordenamiento/seleccion_detallado.out}
+
+Al invertir la condición también se invertirá el orden.
+
+\pythonfile{codigo/x-ordenamiento/seleccion_inverso.py}
+\out{codigo/x-ordenamiento/seleccion_inverso.out}
+
+%TODO: describir algoritmos
+
+\section{Merge sort}
+
+Este algoritmo generalmente se implementa de forma recursiva. Se basa en \doble{dividir para vencer}, dividiendo un problema complejo en varios más sencillos.\smallskip
+
+Pasos a seguir:
+
+\begin{enumerate}
+  \item La lista se divide en mitades, hasta quedar con elementos individuales.
+  
+  \item Las listas se agrupan por pares, y se empiezan a unir de vuelta.
+
+  \item Al unir las listas, se comparan los primeros elementos de cada una y se añaden a la lista unida. Después de añadirlos, se eliminan de su lista original.
+  
+  \item Cuando una lista queda vacía, se añaden todos los elementos que queden en su lista pareja a la lista unida.
+
+  \item Se repite hasta llegar a la lista original, la cual quedará ordenada.
+  
+\end{enumerate}
+
+La siguiente implementación es de $O(n \log{n})$.
+
+\pythonfile{codigo/x-ordenamiento/merge.py}
+\out{codigo/x-ordenamiento/merge.out}
+
+Este algoritmo es complicado de entender, ya que usa mucho la recursión. Sin embargo, no es tan complejo como aparenta ser a primera vista.\smallskip
+
+Al igual que los algoritmos anteriores, sólo se necesita invertir una condición para invertir el resultado.
+
+\pythonfile{codigo/x-ordenamiento/merge_inverso.py}
+\out{codigo/x-ordenamiento/merge_inverso.out}
+
+%TODO: añadir videos a todo este capitulo
+
+% Big O Notation: https://www.youtube.com/watch?v=__vX2sjlpXU
+
+% Bubble sort: https://www.youtube.com/watch?v=xli_FI7CuzA
+% Insertion sort: https://www.youtube.com/watch?v=JU767SDMDvA
+% Selection sort: https://www.youtube.com/watch?v=g-PGLbMth_g
+% Merge sort: https://www.youtube.com/watch?v=4VqmGXwpLqc
+% Heap sort: https://www.youtube.com/watch?v=2DmK_H7IdTo
+% Quick sort: https://www.youtube.com/watch?v=Hoixgm4-P4M
+
+\section{Quick sort}
+
+\section{Heap sort}
+
+\clearpage

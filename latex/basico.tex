@@ -1,0 +1,182 @@
+\chapter{Conceptos básicos}
+
+\section{Comentarios}
+
+Los comentarios son anotaciones en el código utilizadas para hacerlo más fácil de entender. No afectan la ejecución del código.\smallskip
+
+En Python, los comentarios comienzan con el símbolo \ttt{\#}. Todo el texto luego de este \ttt{\#} (dentro de la misma línea) es ignorado.
+
+\pythonfile{codigo/2-basico/comentario_1.py}
+
+La mayoría de editores de código marcan los comentarios con su propio color, distinto al del resto de código.
+
+\pythonfile{codigo/2-basico/comentario_2.py}
+\out{codigo/2-basico/comentario_2.out}
+
+Python no tiene comentarios multilínea para fines generales como lo tienen otros lenguajes de programación tales como C. Para comentar varias líneas de código se debe antener un comentario a cada línea.
+
+\pythonfile{codigo/2-basico/comentario_multilinea.py}
+
+Por último, se debe recordar no abusar del uso de comentarios. No es conveniente llenar el código de comentarios o comentar cosas que son demasiado obvias.
+
+\pythonfile{codigo/2-basico/comentario_innecesario.py}
+
+\section{Números enteros}
+
+Los números enteros (integer) son el tipo de dato más básico en muchos lenguajes de programación, y Python no es la excepción.\smallskip
+
+Para mostrar un número en pantalla, sólo basta con usar la función \ttt{print()} y entregarle el número. El número debe escribirse sin usar comillas y Python inferirá su tipo automáticamente.
+
+\pythonfile{codigo/2-basico/numero_1.py}
+\out{codigo/2-basico/numero_1.out}
+
+A diferencia de otros lenguajes de programación, los números en Python 3 son de largo arbitrario, en otras palabras, soportan \link{https://stackoverflow.com/questions/13795758/what-is-sys-maxint-in-python-3}{cualquier cantidad de dígitos}. Esto hace que los cálculos con números grandes sean mucho más convenientes, pero reduce el rendimiento.
+
+\pythonfile{codigo/2-basico/numero_2.py}
+\out{codigo/2-basico/numero_2.out}
+
+\section{Operaciones aritméticas}
+
+Python tiene la capacidad de realizar cálculos. Los operadores \ttt{+}, \ttt{-}, \ttt{*} y \ttt{/} representan suma, resta, multiplicación y división, respectivamente.
+
+\pythonfile{codigo/2-basico/aritmetica_1.py}
+\out{codigo/2-basico/aritmetica_1.out}
+
+Los espacios entre los signos y los números son opcionales, pero hacen que el código sea más fácil de leer.\smallskip
+
+El resultado de una división es un número decimal. Esto lo convierte al tipo de dato float, el cual se verá más tarde en este capítulo.
+
+\pythonfile{codigo/2-basico/division.py}
+\out{codigo/2-basico/division.out}
+
+Todas las operaciones se pueden combinar entre sí como si el intérprete de Python fuera una calculadora.
+
+\pythonfile{codigo/2-basico/calculadora.py}
+\out{codigo/2-basico/calculadora.out}
+
+\section{La regla PEMDAS}
+
+Las operaciones en Python siguen el orden dado por la regla PEMDAS:
+
+\begin{enumerate}
+  \item Paréntesis \ttt{()}
+  
+  \item Exponentes \ttt{**}
+  
+  \item Multiplicación \ttt{*} y división \ttt{/} (de izquierda a derecha)
+  
+  \item Adición \ttt{+} y Sustracción \ttt{-} (de izquierda a derecha)
+  
+\end{enumerate}
+
+A continuación se muestra un ejemplo detallando el orden en el que se procesan las operaciones.
+
+\pythonfile{codigo/2-basico/aritmetica_2.py}
+\out{codigo/2-basico/aritmetica_2.out}
+
+En realidad, la regla PEMDAS es parte de una jerarquía de operadores mucho más grande, que incluye todos los operadores que se pueden usar en Pyhon. Esta jerarquía se verá más tarde.
+
+\section{Paréntesis}
+
+Se pueden usar paréntesis \ttt{()} para agrupar operaciones y hacer que estas se realicen primero, siguiendo la regla PEMDAS.
+
+\pythonfile{codigo/2-basico/aritmetica_3.py}
+\out{codigo/2-basico/aritmetica_3.out}
+
+\section{Floats}
+    
+Para representar números racionales o que no son enteros, se usa el tipo de dato float o punto flotante. Se pueden crear directamente ingresando un número con un punto decimal, o como resultado de una división.
+
+\pythonfile{codigo/2-basico/float_1.py}
+\out{codigo/2-basico/float_1.out}
+
+Se debe tener en cuenta que los computadores \link{http://puntoflotante.org/formats/fp/}{no pueden almacenar perfectamente} el valor de los floats, lo cual a menudo conduce a errores.
+
+\pythonfile{codigo/2-basico/error_float.py}
+\out{codigo/2-basico/error_float.out}
+
+El error mostrado arriba es un error clásico de la aritmética de punto flotante. Es un error tan conocido que incluso tiene su propio \link{https://0.30000000000000004.com}{sitio web}.\smallskip
+
+Al trabajar con floats, no es necesario escribir un 0 a la izquierda del punto decimal.
+
+\pythonfile{codigo/2-basico/float_2.py}
+\out{codigo/2-basico/float_2.out}
+
+Esta notación se asemeja a decir \doble{punto cinco} en vez de \doble{cero punto cinco}.\smallskip
+
+El resultado de cualquier operación entre floats o entre un float y un entero siempre dará como resultado un float. La división entre enteros también da como resultado un float.
+
+\pythonfile{codigo/2-basico/float_3.py}
+\out{codigo/2-basico/float_3.out}
+
+Las operaciones entre floats y enteros son posibles porque Python convierte los enteros en floats silenciosamente al momento de realizarlas.
+
+\section{Exponenciación}
+
+Otra operación soportada es la exponenciación, que es la elevación de un número a la potencia de otro. Esto se realiza usando el operador \ttt{**}.\smallskip
+
+Ejemplo equivalente a $2 ^ 5 = 2\cdot 2\cdot 2\cdot 2\cdot 2 = 32$.
+
+\pythonfile{codigo/2-basico/potencia.py}
+\out{codigo/2-basico/potencia.out}
+
+Las exponenciaciones se pueden encadenar cuantas veces se desee.\smallskip
+
+%TODO: enlace a googol
+Ejemplos equivalentes a ${2 ^ 3} ^ 2 = 512$ y $10 ^ {100}$ (un googol).
+
+\pythonfile{codigo/2-basico/potencia_multiple.py}
+\outespecial{codigo/2-basico/potencia_multiple.out}
+
+Se debe tener cuidado con los paréntesis al encadenar potencias.\smallskip
+
+Ejemplos equivalentes a ${2 ^ 3} ^ 2 = 512$ y $(2 ^ 3) ^ 2 = 64$.
+
+\pythonfile{codigo/2-basico/potencia_cuidado.py}
+\out{codigo/2-basico/potencia_cuidado.out}
+
+La exponenciación también se puede hacer con floats, donde se puede usar para obtener raíces. El resultado será un float.\smallskip
+
+Ejemplos equivalentes a $\sqrt{9} = 3$ y $\sqrt[3]{8} = 2$.
+
+\pythonfile{codigo/2-basico/raiz.py}
+\out{codigo/2-basico/raiz.out}
+
+Se debe tener en cuenta que el resultado será un float.
+
+\section{Cociente y resto}
+
+%TODO: investigar que sucede con números negativos
+
+La división entera se realiza usando el operador \ttt{//}, donde el resultado es la parte entera que queda al realizar la división, también conocida como cociente.\smallskip
+
+La división entera retorna un entero en vez de un float.
+
+\pythonfile{codigo/2-basico/cociente.py}
+\out{codigo/2-basico/cociente.out}
+
+También se puede usar la división entera con floats, lo cual dará como resultado otro float.
+
+\pythonfile{codigo/2-basico/cociente_floats.py}
+\out{codigo/2-basico/cociente_floats.out}
+
+Para obtener el resto al realizar una división entera, se debe usar el operador módulo \ttt{\%}.
+
+\pythonfile{codigo/2-basico/resto.py}
+\out{codigo/2-basico/resto.out}
+
+Esta operación es equivalente a $7 \mod{2}$ en aritmética modular.\smallskip
+
+Este operador viene de la \link{https://es.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic}{aritmética modular}, y uno de sus usos más comunes es para saber si un número es múltiplo de otro. Esto se hace revisando si el módulo al dividirlo por ese otro número es 0.
+
+\pythonfile{codigo/2-basico/uso_del_resto.py}
+\out{codigo/2-basico/uso_del_resto.out}
+
+En el caso mostrado anteriormente, se infiere que 10 es múltiplo de 2, que 15 es múltiplo de 3 y que 16 no es múltiplo de 7. El caso particular módulo 2 también puede usarse para saber si un número es par o no.\smallskip
+
+El operador módulo \ttt{\%} también puede usarse con floats.
+
+\pythonfile{codigo/2-basico/resto_floats.py}
+\out{codigo/2-basico/resto_floats.out}
+
+\clearpage

@@ -1,0 +1,174 @@
+\chapter{Introducción a Python}
+
+\section{¿Qué es Python?}
+
+\link{https://www.python.org}{Python} es un lenguaje de programación de alto nivel, con aplicaciones en numerosas áreas, incluyendo automatización de tareas, programación web, scripting, manejo de grandes cantidades de datos, computación científica, cálculos complejos e inteligencia artificial.\smallskip
+
+Fue diseñado por Gudo van Rossum. Fue lanzado en el año 1991. Se han lanzado diferentes versiones hasta llegar a la versión actual, Python 3.
+
+\section{Componentes principales}
+
+\begin{itemize}
+  \item Funciones: Python tiene funciones predefinidas que son de gran utilidad, por ejemplo las funciones matemáticas. Las funciones son grupos de bloques de código que pueden ejecutarse en cualquier sección del código, según el programador lo necesite.
+  
+  \item Clases: Son los planos para construir objetos, los cuales incluyen todas sus características y comportamientos. En Python, prácticamente todo es un objeto, aunque en muchos casos no parezca obvio.
+  
+  \item Módulos: Agrupan funciones y clases que sirven para objetivos similares. La biblioteca estándar de Python es muy grande comparada con las de otros lenguajes de programación.
+  
+  \item Paquetes: Agrupan módulos usados en aplicaciones grandes, permitiendo su distribución a terceros.
+  
+\end{itemize}
+
+Si estos conceptos no se entienden todavía, no hay problema, pues se verán más a fondo en sus respectivos capítulos.
+
+\section{Características de Python}
+
+\begin{itemize}
+  \item Soporte de múltiples plataformas: Python es \doble{platform independent}. Esto significa que un mismo código puede ejecutarse en cualquier sistema operativo, ya sea Windows, Unix, Linux o Mac, sin necesidad de hacerle cambios.
+  
+  \item Interpretado: El código escrito en Python no necesita ser compilado, como ocurre en lenguajes como C, Java o C++. El intérprete de Python convierte el código en bytes ejecutables línea por línea, lo cual hace su utilización más conveniente para el programador, pero al mismo tiempo más lenta.
+  
+  \item Simple: La sintaxis de Python es simple y fácil de leer, aunque requiere un conocimiento de inglés básico.
+  
+  \item Robusto: Esto significa que el lenguaje es capaz de manejar los posibles errores que podrían ocurrir durante la ejecución de programas escritos en él.
+  
+  \item De alto nivel: Es un lenguaje de nivel usado para scripting. Esto quiere decir que el programador no necesita recordar características de bajo nivel como la arquitectura del sistema o el manejo de memoria. Estas características se abstraen.
+  
+  \item Gran soporte de librerías: Python puede integrarse a otras librerías que tengan funcionalidades específicas. No hay necesidad de tener que escribir el código por tu cuenta, si ya existe y funciona correctamente.
+  
+  \item Integrable: El código fuente escrito en Python puede usarse dentro de otros lenguajes de programación, lo cual permite expandir las funcionalidades de sus programas con las de programas escritos en otros lenguajes.
+  
+  \item De código abierto: Python es de \link{https://opensource.org/about}{código abierto}. Se puede usar sin necesidad de tomar su licencias y se puede descargar fácilmente.
+  
+  \item Gratuito: Ninguna persona u organización necesita pagar para usarlo en sus proyectos.
+  
+  \item Conciso y compacto: El código escrito en Python es conciso y compacto, lo que sirve para que los programadores puedan entenderlo rápidamente.
+  
+  \item Dinámicamente tipeado: El tipo de dato de cada variable se decide durante el tiempo de ejecución, lo que significa que no es necesario declarar su tipo en el código.
+  
+\end{itemize}
+
+\section{Organizaciones que lo usan}
+
+Python es muy popular y es usado por organizaciones y aplicaciones como:
+
+\begin{itemize}
+  \item \link{https://www.microsoft.com/en-us/}{Microsoft}
+
+  \item \link{https://www.google.com}{Google}
+  
+  \item \link{https://www.yahoo.com}{Yahoo}
+  
+  \item \link{https://www.mozilla.org/en-US/}{Mozilla}
+  
+  \item \link{https://www.cisco.com}{Cisco}
+  
+  \item \link{https://www.facebook.com}{Facebook}
+  
+  \item \link{https://www.spotify.com}{Spotify}
+  
+  \item \link{https://www.openstack.org}{OpenStack}
+
+  \item \link{https://www.nasa.gov}{NASA}
+  
+  \item \link{https://www.cia.gov}{CIA}
+  
+  \item \link{https://www.disney.com}{Disney}
+  
+\end{itemize}
+
+\section{Ventajas y desventajas}
+
+Ventajas:
+
+\begin{itemize}
+  \item Es de código abierto y fácil de empezar a usar.
+  
+  \item Es fácil de aprender y explorar.
+  
+  \item Se pueden integrar módulos de terceros con facilidad.
+  
+  \item Es un lenguaje de alto nivel y orientado a objetos.
+  
+  \item Es interactivo y portable.
+  
+  \item Las aplicaciones pueden ejecutarse en cualquier plataforma.
+  
+  \item Es dinámicamente tipeado.
+  
+  \item Tiene una comunidad grande y foros activos.
+  
+  \item Tiene una sintaxis intuitiva.
+  
+  \item Tiene librerías con amplio soporte.
+  
+  \item Es un lenguaje interpretado.
+  
+  \item Se puede conectar con bases de datos.
+  
+  \item Aumenta la productividad debido a su simplicidad.
+  
+\end{itemize}
+
+Desventajas:
+
+\begin{itemize}
+  \item No puede usarse para desarrollo de aplicaciones móviles.
+  
+  \item Su acceso a bases de datos es limitado.
+  
+  \item Consume más memoria por ser dinámicamente tipeado.
+  
+  \item Su ejecución es lenta comparada con lenguajes compilados.
+  
+  \item Las aplicaciones y código requieren mayor mantenimiento, debido a su gran grado de abstracción.
+
+  \item Debido a su abstracción, algunos conceptos de programación importantes podrían ser omitidos durante su aprendizaje.
+
+\end{itemize}
+
+No hay limitaciones en lo que se puede construir usando Python. Esto incluye aplicaciones autónomas, aplicaciones web, juegos, ciencia de datos, modelos de machine learning y mucho más.\smallskip
+
+Dato curioso: Según el creador Guido van Rossum, el nombre de Python viene de la serie de comedia británica \doble{El Circo Volador de Monty Python}.
+
+\section{Instalación}
+
+%TODO: instalación
+
+\section{Hola mundo}
+
+Para mostrar el texto \doble{Hola mundo} en pantalla se puede usar la función \ttt{print()}.
+
+\pythonfile{codigo/1-intro/hola_mundo_1.py}
+\out{codigo/1-intro/hola_mundo_1.out}
+
+Cada declaración de impresión \ttt{print()} genera texto en una nueva línea.
+
+\pythonfile{codigo/1-intro/hola_mundo_2.py}
+\out{codigo/1-intro/hola_mundo_2.out}
+
+Si no se le entrega ningún texto a \ttt{print()}, se imprimirá una línea vacía. El texto puede escribirse entre comillas simples o dobles.
+
+\pythonfile{codigo/1-intro/hola_mundo_3.py}
+\out{codigo/1-intro/hola_mundo_3.out}
+
+\section{El Zen de Python}
+
+El \link{https://www.python.org/dev/peps/pep-0020/}{Zen de Python} es una colección de 20 \doble{principios}, 19 de ellos escritos por Tim Peters. Estos principios han servido como inspiración para muchos programadores de todo el mundo a la hora de crear software.\smallskip
+
+Se mostrará en pantalla como un \doble{huevo de pascua} la primera vez que se ejecute la siguiente linea, para importar el módulo \ttt{this}.
+
+\pythonfile{codigo/1-intro/import_this.py}
+
+Después se mostrará el siguiente texto, en inglés.
+
+\textfile{codigo/1-intro/zen.txt}
+
+Una traducción posible sería la siguiente:
+
+\textfile{codigo/1-intro/zen_spanish.txt}
+
+Nota: Si se observa con claridad, se puede ver que el principio 20 \doble{no existe}.
+%TODO: explicar qué ocurrió
+
+\clearpage

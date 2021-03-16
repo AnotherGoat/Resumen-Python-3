@@ -1,0 +1,58 @@
+\chapter{Pruebas unitarias}
+
+\section{Pruebas unitarias}
+
+%TODO: este capítulo
+
+\section{Precedencia de operadores completa}
+
+En los capítulos anteriores, se mostró parte de la precedencia de operadores (por ejemplo, PEMDAS). En Python, todos los operadores tienen un orden específico en el que funcionan, incluyendo a muchos que no se han visto todavía.\smallskip
+
+El orden definitivo es el siguiente:
+
+\begin{enumerate}
+  \item \ttt{()}: paréntesis para agrupar operaciones
+  
+  \item \ttt{f(argumentos)}: llamadas a funciones
+  
+  \item \ttt{x[indice:indice]}: cortes (slicing)
+  
+  \item \ttt{x[indice]}: subscripción
+  
+  \item \ttt{x.atributo}: referencias a atributos
+  
+  \item \ttt{**}: exponenciación
+  
+  \item \ttt{~x}: NOT en bitwise
+  
+  \item \ttt{+x}, \ttt{-x}: signo positivo y negativo
+  
+  \item \ttt{*}, \ttt{/}, \ttt{//}, \ttt{\%}: multiplicación, división, cociente y resto
+  
+  \item \ttt{+, -}: adición y substracción (diferencia)
+  
+  \item \ttt{<<, >>}: cambios en bitwise
+  
+  \item \ttt{\&}: AND en bitwise (unión)
+  
+  \item \ttt{\^}: XOR en bitwise (diferencia simétrica)
+  
+  \item \ttt{|}: OR en bitwise (intersección)
+  
+  \item \ttt{in}, \ttt{not in}, \ttt{is}, \ttt{is not} , \ttt{<}, \ttt{<=}, \ttt{>}, \ttt{>=}, \ttt{<>}, \ttt{!=}, \ttt{==}: comparaciones, membresía e identidad
+  
+  \item \ttt{not x}: NOT booleano
+  
+  \item \ttt{and}: AND booleano
+  
+  \item \ttt{or}: OR booleano
+  
+  \item \ttt{lambda}: expresiones lambda
+
+\end{enumerate}
+
+Todas las operaciones que estén en un mismo nivel se realizarán de izquierda a derecha.\smallskip
+
+Lo ideal sería utilizar paréntesis para evitar cualquier confusión que pueda causar el uso de muchos operadores, pero también es importante conocer este orden para los casos en los que no se utilizaron.
+
+\clearpage

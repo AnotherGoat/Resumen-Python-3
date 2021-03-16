@@ -1,0 +1,223 @@
+\chapter{Declaraciones if y lógica}
+
+\section{Booleanos}
+
+Otro tipo de dato en Python es el tipo booleano, el cual sólo puede tener 2 valores: \ttt{True} para representar valores verdaderos y \ttt{False} para representar valores falsos. Estos se escriben empezando con mayúscula, al contrario de otros lenguajes de programación.\smallskip
+
+Se pueden crear directamente, aunque esto no tiene mucha utilidad en la mayoría de casos.
+
+\pythonfile{codigo/5-if/booleano_1.py}
+\out{codigo/5-if/booleano_1.out}
+
+Su uso más común es como el resultado obtenido al comparar valores, por ejemplo, usando el operador de igualdad \ttt{==}.
+
+\pythonfile{codigo/5-if/booleano_2.py}
+\out{codigo/5-if/booleano_2.out}
+
+Se debe tener cuidado de no confundir el operador de asignación \ttt{=} con el operador de igualdad \ttt{==}.\smallskip
+
+En Python, \ttt{1} y \ttt{True} significan lo mismo. Lo mismo ocurre con \ttt{0} y \ttt{False}.
+
+\pythonfile{codigo/5-if/booleano_3.py}
+\out{codigo/5-if/booleano_3.out}
+
+Usando otros términos, podría decirse que \ttt{1} es \link{https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false}{\doble{truthy}} y que \ttt{0} es \link{https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false}{\doble{falsy}}.
+
+Esta equivalencia también es válida para floats.
+
+\pythonfile{codigo/5-if/booleano_4.py}
+\out{codigo/5-if/booleano_4.out}
+
+\section{Conversión a boooleanos}
+
+La función \ttt{bool()} se puede usar para convertir un objeto a su valor booleano.\smallskip
+
+Al usarla con valores numéricos, el número \ttt{0} se convierte a \ttt{False} y cualquier otro número se convierte a \ttt{True}.
+
+\pythonfile{codigo/5-if/bool_1.py}
+\out{codigo/5-if/bool_1.out}
+
+Una cadena de texto vacía se convierte en \ttt{False} y cualquier cadena que no sea vacía se convierte en \ttt{True}.
+
+\pythonfile{codigo/5-if/bool_2.py}
+\out{codigo/5-if/bool_2.out}
+
+La misma situación ocurre al convertir tipos de datos más complejos, los cuales no se han visto todavía.
+
+\pythonfile{codigo/5-if/bool_3.py}
+\out{codigo/5-if/bool_3.out}
+
+\section{Operadores de comparación}
+
+Los operadores de comparación usados en Python son los siguientes:
+
+\begin{itemize}
+  \item Igual $=$, escrito como \ttt{==}: Se evalúa como \ttt{True} si ambos elementos son iguales.
+  
+  \item Distinto $\neq$, escrito como \ttt{!=}: Se evalúa como \ttt{True} si ambos elementos son distintos.
+  
+  \item Mayor que $>$, escrito como \ttt{>}: Se evalúa como \ttt{True} si el primer elemento es mayor.
+  
+  \item Menor que $<$, escrito como \ttt{<}: Se evalúa como \ttt{True} si el primer elemento es menor.
+  
+  \item Mayor o igual que $\geq$, escrito como \ttt{>=}: Se evalúa como \ttt{True} si el primer elemento es mayor o igual al segundo.
+  
+  \item Menor o igual que $\leq$, escrito como \ttt{<=}: Se evalúa como \ttt{True} si el primer elemento es menor o igual al segundo.
+  
+\end{itemize}
+
+En los casos contrarios, los operadores retornan \ttt{False}.\smallskip
+
+Ejemplos de uso de operadores de comparación:
+
+\pythonfile{codigo/5-if/comparacion_1.py}
+\out{codigo/5-if/comparacion_1.out}
+
+También se conocen como operadores relacionales.\smallskip
+
+Las comparaciones entre datos de tipo entero y float también son válidas.
+
+\pythonfile{codigo/5-if/comparacion_2.py}
+\out{codigo/5-if/comparacion_2.out}
+
+Las comparaciones entre números y strings son válidas, pero siempre se evalúan como \ttt{False}.
+
+\pythonfile{codigo/5-if/comparacion_3.py}
+\out{codigo/5-if/comparacion_3.out}
+
+\section{Comparación entre strings}
+
+Los operadores \ttt{==} y \ttt{!=} funcionan entre strings como se esperaría.
+
+\pythonfile{codigo/5-if/comparacion_string_1.py}
+\out{codigo/5-if/comparacion_string_1.out}
+
+Los operadores \ttt{>}, \ttt{<}, \ttt{>=} y \ttt{<=} también se pueden usar para comparar cadenas lexicográficamente (por orden alfabético), donde las palabras que están después se consideran \doble{mayores}.
+
+\pythonfile{codigo/5-if/comparacion_string_2.py}
+\out{codigo/5-if/comparacion_string_2.out}
+
+Las letras mayúsculas siempre irán antes (son \doble{menores}) que las minúsculas al ordenarlas alfabéticamente.
+
+\pythonfile{codigo/5-if/comparacion_string_3.py}
+\out{codigo/5-if/comparacion_string_3.out}
+
+Específicamente, Python compara los códigos \link{https://www.ascii-code.com}{ASCII} para ordenar las cadenas de textos.
+
+\section{Declaración if}
+
+Las declaraciones \ttt{if} sirven para ejecutar código si ser cumple una determinada condición. Si la expresión se evalúa como \ttt{True}, se lleva a cabo el bloque de código que le sigue. En caso contrario, no ocurre nada.
+
+\pythonfile{codigo/5-if/if.py}
+\out{codigo/5-if/if.out}
+
+\section{Indentación}
+
+Python usa indentación (espacio en blanco al comienzo de una línea) para delimitar bloques de código. En otros lenguajes, esta operación se realiza delimitando cada bloque de código por llaves \ttt{\{\}}.\smallskip
+
+Para que el intérprete reconozca los bloques de código correctamente, cada instrucción dentro de un mismo bloque de código debe escribirse a un mismo nivel de indentación.\smallskip
+
+A continuación se muestra un ejemplo que no cumple con eso. Para que se entienda el concepto mejor, en cada segmento de código en esta sección se mostrarán los espacios en blanco.
+
+\pythonspaces{codigo/5-if/error_indentacion_1.py}
+\out{codigo/5-if/error_indentacion_1.out}
+
+No se permite mezclar espacios con saltos de tabulador (los que aparecen al pulsar la tecla \ttt{Tab}). Aunque se vean igual, dependiendo de las configuraciones, un salto de tabulador puede cambiar de medida. La medida de un espacio es siempre la misma, así que se recomienda usarlos en vez del tabulador.\smallskip
+
+A continuación se muestra un ejemplo que parece ser válido a simple vista, pero no lo es ya que tiene un salto de tabulador en la linea \ttt{print("mundo")} y 4 espacios en las otras líneas.
+
+\pythonspaces{codigo/5-if/error_indentacion_2.py}
+\out{codigo/5-if/error_indentacion_2.out}
+
+Pára evitar que esto ocurra, muchos IDEs tienen la opción \doble{insertar espacios al presionar la tecla \ttt{Tab}}, para insertar 4 espacios (o la cantidad que se desee) al pulsar dicha tecla.\smallskip
+
+Por último, aunque esto no es un error de por sí (no se lanza ninguna excepción), se recomienda mantener la cantidad de espacios usados para cada indentación consistente, es decir, que no varíe su cantidad.\smallskip
+
+El siguiente ejemplo muestra una práctica que se debe evitar.
+
+\pythonspaces{codigo/5-if/error_indentacion_3.py}
+\out{codigo/5-if/error_indentacion_3.out}
+
+No existe una cantidad \doble{correcta} de espacios para indentar, aunque la mayoría de programadores prefiere que sean 2, 3 o 4 (en Python). Lo más importante es que se escoja una cantidad y se mantenga igual dentro de un mismo proyecto.\smallskip
+
+Los errores de indentación son más fáciles de evitar que de encontrar, así que como dice el dicho, \doble{mejor prevenir que lamentar}.
+
+\section{Anidación de declaraciones if}
+
+Para realizar comprobaciones más complejas, las declaraciones \ttt{if} se pueden anidar, una dentro de la otra.\smallskip
+
+Esto significa que la declaración \ttt{if} interna sólo se evalúa si la declaración \ttt{if} externa es válida.
+
+\pythonfile{codigo/5-if/if_anidado.py}
+\out{codigo/5-if/if_anidado.out}
+
+\section{Declaración if-else}
+
+Las declaraciones \ttt{if-else} son muy similares a las declaraciones \ttt{if}, pero esta vez sí ocurre algo cuando no se cumple la expresión a evaluar.
+
+\pythonfile{codigo/5-if/if_else_1.py}
+\out{codigo/5-if/if_else_1.out}
+
+\pythonfile{codigo/5-if/if_else_2.py}
+\inp{codigo/5-if/if_else_2.inp_1}
+\out{codigo/5-if/if_else_2.out_1}
+\inp{codigo/5-if/if_else_2.inp_1}
+\out{codigo/5-if/if_else_2.out_1}
+
+\section{Declaración elif}
+
+Cada declaración \ttt{if} sólo puede tener una declaración \ttt{else} que la acompañe, lo cual puede resultar muy incómodo.
+
+\pythonfile{codigo/5-if/if_else_anidado.py}
+\out{codigo/5-if/if_else_anidado.out}
+
+El término \ttt{elif} se usa para evitar tener que anidar múltiples declaraciones \ttt{if-else}. Hace que el código sea más corto.
+
+\pythonfile{codigo/5-if/elif.py}
+\inp{codigo/5-if/elif.inp_1}
+\out{codigo/5-if/elif.out_1}
+\inp{codigo/5-if/elif.inp_2}
+\out{codigo/5-if/elif.out_2}
+
+El programa irá evaluando cada expresión una por una hasta que alguna se cumpla. Cuando esto ocurra, ejecutará las instrucciones en su bloque de código y continuará con las expresiones después del bloque de código \ttt{else}.
+
+\section{Operadores lógicos}
+
+Los operadores lógicos se utilizan para crear condiciones complejas agrupando condiciones más simples. Los operadores lógicos que se usan en Python son \ttt{and}, \ttt{or} y \ttt{not}.\smallskip
+
+El operador \ttt{and} se evalúa como \ttt{True} si ambas condiciones se cumplen.
+
+\pythonfile{codigo/5-if/and.py}
+\out{codigo/5-if/and.out}
+
+El operador \ttt{or} se evalúa como \ttt{True} si al menos una de las condiciones se cumple.
+
+\pythonfile{codigo/5-if/or.py}
+\out{codigo/5-if/or.out}
+
+El operador \ttt{not} sólo toma una condición y la invierte.
+
+\pythonfile{codigo/5-if/not.py}
+\out{codigo/5-if/not.out}
+
+\section{Precedencia de operadores lógicos}
+
+Los operadores lógicos siguen un orden similar a PEMDAS, el cual es el siguiente:
+
+\begin{enumerate}
+  \item Paréntesis \ttt{()}
+  
+  \item Operador \ttt{not}
+  
+  \item Operador \ttt{and}
+  
+  \item Operador \ttt{or}
+  
+\end{enumerate}
+
+Sin embargo, este orden es confuso, por lo que se recomienda usar paréntesis para hacerlo más obvio, incluso si es redundante.
+
+\pythonfile{codigo/5-if/logica.py}
+\out{codigo/5-if/logica.out}
+
+\clearpage
