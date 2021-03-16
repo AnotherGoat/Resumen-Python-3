@@ -15,7 +15,8 @@
 
 \usepackage{amsmath}
 
-\usepackage{inconsolata}
+%\usepackage{inconsolata}
+\usepackage[scaled]{beramono}
 \usepackage[T1]{fontenc}
 
 \usepackage{textcomp}
@@ -58,17 +59,21 @@
 % macros nuevas para minted
 \newmintedfile[pythonfile]{python}{
   bgcolor=grisoscuro,
-  breaklines
+  breaklines,
+  samepage=true
 }
 \newmintedfile[outfile]{text}{
   bgcolor=grisclaro,
   frame=single,
-  breaklines
+  breaklines,
+  samepage=true,
+  breakafter=0  % para un caso específico
 }
 \newmintedfile[textfile]{text}{
   bgcolor=white,
   frame=single,
-  breaklines
+  breaklines,
+  samepage=true
 }
 \newmintedfile[pythonspaces]{python}{
   bgcolor=grisoscuro,
@@ -78,7 +83,9 @@
   tabsize=4,
   obeytabs,
   showtabs,
-  tabcolor=white
+  tabcolor=white,
+  tab=\rightarrowfill,
+  samepage=true
 }
 
 % para escribir "Salida:" siempre que se muestre el output
@@ -105,6 +112,9 @@
 % para usar comillas de tipo "programación"
 \newcommand{\q}{\textquotesingle}
 \newcommand{\qq}{\textquotedbl}
+
+% para insertar una linea horizontal, todavía no se usa
+\newcommand{\hr}{\noindent\hrulefill}
 
 \title{Resumen Python 3}
 \author{Víctor Mardones Bravo}
@@ -383,6 +393,8 @@ Las operaciones en Python siguen el orden dado por la regla PEMDAS:
   
 \end{enumerate}
 
+A continuación se muestra un ejemplo detallando el orden en el que se procesan las operaciones.
+
 \pythonfile{codigo/2-basico/aritmetica_2.py}
 \out{codigo/2-basico/aritmetica_2.out}
 
@@ -435,7 +447,7 @@ Ejemplo equivalente a $2 ^ 5 = 2\cdot 2\cdot 2\cdot 2\cdot 2 = 32$.
 Las exponenciaciones se pueden encadenar cuantas veces se desee.\smallskip
 
 %TODO: enlace a googol
-Ejemplos equivalentes a ${2 ^ 3} ^ 2 = 512$ y $10 ^ 100$ (un googol).
+Ejemplos equivalentes a ${2 ^ 3} ^ 2 = 512$ y $10 ^ {100}$ (un googol).
 
 \pythonfile{codigo/2-basico/potencia_multiple.py}
 \out{codigo/2-basico/potencia_multiple.out}
@@ -1873,7 +1885,7 @@ Otras excepciones comunes son:
   
 \end{itemize}
 
-Una lista más detallada de excepciones se puede encontrar en la \href{https://docs.python.org/3/library/exceptions.html}{documentación oficial}.
+Una lista más detallada de excepciones se puede encontrar en la \link{https://docs.python.org/3/library/exceptions.html}{documentación oficial}.
 
 Las bibliotecas creadas por terceros a menudo definen sus propias excepciones.
 
@@ -3132,7 +3144,7 @@ Las instancias de una clase tienen atributos, los cuales son datos asociados a e
 
 \pythonfile{codigo/20-objetos/atributos_1.py}
 
-En el constructor \ttt{\_\_init\_\_()}, se le dan los parámetros self, nombre y edad. El parámetro self se refiere a la instancia, nombre se refiere al nombre que se le quiere dar a la persona y edad se refiere a la edad de la persona.\smallskip
+En el constructor \ttt{\_\_init\_\_()}, se le dan los parámetros self, nombre y edad. El parámetro self se refiere a la instancia, mientras que nombre y edad son los atributos de la persona.\smallskip
 
 El uso de self es para distinguir los atributos que se le entregan al constructor de los que tendrá la instancia. En este caso serán el mismo, pero se les puede dar valores por defecto.
 
@@ -3195,7 +3207,7 @@ Por ejemplo, las clases Perro, Gato, Conejo, etc. tienen algo en común. Aunque 
 Para heredar de una clase desde otra, se coloca el nombre de la superclase entre paréntesis luego del nombre de la clase.
 
 \pythonfile{codigo/20-objetos/herencia_1.py}
-\out{codigo/20-objetos/herencia_1.py}
+\out{codigo/20-objetos/herencia_1.out}
 
 Una clase que hereda de otra clase se llama subclase. Una clase de la cual se hereda se llama superclase. Los métodos y atributos de la superclase son heredados por sus subclases\smallskip
 
