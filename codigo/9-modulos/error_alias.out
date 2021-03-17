@@ -1,1 +1,4 @@
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+    print(sqrt(numero))  # no existe sqrt
 NameError: name 'sqrt' is not defined

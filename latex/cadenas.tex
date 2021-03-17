@@ -46,14 +46,14 @@ Las secuencias de escape también se pueden incluir usando el símbolo \ttt{\tex
 Las secuencias de escape más usadas son:
 
 \begin{itemize}
-  \item Nueva línea (new line): Avanza una línea hacia adelante (salto de línea) y deja el cursor al principio de esta línea (retorno de carro). Representado por \ttt{\textbackslash n}.
+  \item \textbf{Nueva línea} (new line): Avanza una línea hacia adelante (salto de línea) y deja el cursor al principio de esta línea (retorno de carro). Representado por \ttt{\textbackslash n}.
   
   \pythonfile{codigo/3-strings/newline.py}
   \out{codigo/3-strings/newline.out}
   
   Cualquier caracter después de \ttt{\textbackslash n} queda en la línea siguiente.
 
-  \item Tabulador horizontal (horizontal tab): Añade un salto de tabulador horizontal. Representado por \ttt{\textbackslash t}.
+  \item \textbf{Tabulador horizontal} (horizontal tab): Añade un salto de tabulador horizontal. Representado por \ttt{\textbackslash t}.
   
   \pythonfile{codigo/3-strings/tab.py}
   \out{codigo/3-strings/tab.out}
@@ -65,25 +65,25 @@ Las secuencias de escape más usadas son:
 Otras secuencias de escape que no son tan usadas son:
 
 \begin{itemize}
-  \item Retorno de carro (carriage return): Mueve el \doble{carro} (cursor) al principio de la línea actual. Esto permite sobreescribir los caracteres escritos anteriormente. Representado por \ttt{\textbackslash r}.
+  \item \textbf{Retorno de carro} (carriage return): Mueve el \doble{carro} (cursor) al principio de la línea actual. Esto permite sobreescribir los caracteres escritos anteriormente. Representado por \ttt{\textbackslash r}.
   
   \pythonfile{codigo/3-strings/carriage_return.py}
   \out{codigo/3-strings/carriage_return.out}
 
   En algunos intérpretes, borra la línea además de volver al inicio.
 
-  \item Retroceso (backspace): Borra el último carácter y mueve el cursor al carácter anterior. Representado por \ttt{\textbackslash b}.
+  \item \textbf{Retroceso} (backspace): Borra el último carácter y mueve el cursor al carácter anterior. Representado por \ttt{\textbackslash b}.
   
   \pythonfile{codigo/3-strings/backspace.py}
   \out{codigo/3-strings/backspace.out}
 
-  \item Tabulador vertical (vertical tab): Añade un salto de tabulador vertical. Representado por \ttt{\textbackslash v}.
+  \item \textbf{Tabulador vertical} (vertical tab): Añade un salto de tabulador vertical. Representado por \ttt{\textbackslash v}.
   
   \pythonfile{codigo/3-strings/vtab.py}
 
   La tabulación vertical avanza hasta la siguiente línea que sea una \doble{tab stop}.
 
-  \item Salto de página (form feed): Baja a la próxima \doble{página}. Representado por \ttt{\textbackslash f}.
+  \item \textbf{Salto de página} (form feed): Baja a la próxima \doble{página}. Representado por \ttt{\textbackslash f}.
   
   \pythonfile{codigo/3-strings/form_feed.py}
   

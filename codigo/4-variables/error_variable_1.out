@@ -1,1 +1,4 @@
+  File "<stdin>", line 1
+    123 = 44
+    ^
 SyntaxError: cannot assign to literal

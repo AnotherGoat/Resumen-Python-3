@@ -1,1 +1,4 @@
+  File "<stdin>", line 1
+    assert
+          ^
 SyntaxError: invalid syntax

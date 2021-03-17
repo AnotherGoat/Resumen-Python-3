@@ -1,1 +1,4 @@
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+    cadena[1] = "u"
 TypeError: 'str' object does not support item assignment

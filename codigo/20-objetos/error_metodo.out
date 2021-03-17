@@ -1,1 +1,4 @@
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
+    Rectangulo.pintar("azul")
 AttributeError: type object 'Rectangulo' has no attribute 'pintar'

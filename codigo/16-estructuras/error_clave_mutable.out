@@ -1,1 +1,4 @@
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    dic = {[1, 2, 3]: "uno, dos, tres"}
 TypeError: unhashable type: 'list'

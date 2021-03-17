@@ -1,1 +1,4 @@
+  File "<stdin>", line 2
+    print("texto')
+                  ^
 SyntaxError: EOL while scanning string literal

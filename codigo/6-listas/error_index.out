@@ -1,1 +1,4 @@
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+    print(letras.index('m'))
 ValueError: 'm' is not in list

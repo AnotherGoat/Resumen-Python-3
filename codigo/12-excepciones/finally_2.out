@@ -1,5 +1,13 @@
 1
 Este mensaje siempre se mostrará
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+    print(1 / 0)
 ZeroDivisionError: division by zero
+
 During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+    print(variable_desconocida)
 NameError: name 'variable_desconocida' is not defined

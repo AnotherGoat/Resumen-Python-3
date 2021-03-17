@@ -1,3 +1,8 @@
 120
 1
+Traceback (most recent call last):
+  File "<stdin>", line 11, in <module>
+    print(factorial(-10))
+  File "<stdin>", line 3, in factorial
+    raise ValueError
 ValueError

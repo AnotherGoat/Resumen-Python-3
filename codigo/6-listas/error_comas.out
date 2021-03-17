@@ -1,1 +1,4 @@
+  File "<stdin>", line 1
+    letras = ['a', 'b', 'c',,]
+                            ^
 SyntaxError: invalid syntax
