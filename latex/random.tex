@@ -6,7 +6,9 @@ El módulo \ttt{random} pertenece a la biblioteca estándar y contiene funciones
 
 \pythonfile{codigo/11-random/import_random.py}
 
-Los números generados son pseudoaleatorios porque la aleatoriedad \doble{natural} no existe en los computadores. Todas las funciones que generan elementos al azar en realidad emplean algoritmos impredecibles.\smallskip
+Los números generados son pseudoaleatorios porque la aleatoriedad \doble{natural} no existe en los computadores. Todas las funciones que generan elementos al azar en realidad emplean algoritmos muy difíciles de calcular o de predecir en el poco tiempo que tardan en retornar un resultado.\smallskip
+
+La mayoría de ejemplos de código en este capítulo tienen resultados variables, es decir, cada vez que se ejecute el código los resultados serán distintos. La excepción a esta regla es cuando se especifica una semilla.
 
 \section{La función random()}
 
@@ -131,7 +133,7 @@ El método \ttt{shuffle()} desordena una secuencia, y vuelve a armarla ordenánd
 
 % TODO: se le puede entregar una función como segundo parámetro
 
-La función \ttt{choices()} permite seleccionar elementos de una lista al azar \ttt{k} veces (similar a decir \doble{con reposición}). Este número puede ser mayor al número de elementos de la lista.
+La función \ttt{choices()} permite seleccionar elementos de una lista al azar \ttt{k} veces. Esta acción se realiza \doble{con reposición}), o sea, despues de seleccionar un elemento este elemento seguirá en la lista. Este número puede ser mayor al número de elementos de la lista.
 
 \pythonfile{codigo/11-random/choices_1.py}
 \out{codigo/11-random/choices_1.out}

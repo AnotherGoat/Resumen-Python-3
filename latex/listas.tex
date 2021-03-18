@@ -64,6 +64,13 @@ Si se deja más de una coma, se mostrará un \ttt{SyntaxError}.
 \pythonfile{codigo/6-listas/error_comas.py}
 \out{codigo/6-listas/error_comas.out}
 
+\section{Tamaño de lista}
+
+Se puede obtener el tamaño (número de elementos) de una lista utilizando la función \ttt{len()}.
+  
+\pythonfile{codigo/6-listas/len.py}
+\out{codigo/6-listas/len.out}
+
 \section{Operaciones con listas}
 
 El elemento en un índice determinado de una lista se puede reasignar.
@@ -88,112 +95,117 @@ Para comprobar si un elemento no pertenece a una lista, se pueden combinar los o
 \pythonfile{codigo/6-listas/not_in.py}
 \out{codigo/6-listas/not_in.out}
 
-\section{Funciones de listas}
+\section{Añadir elementos a listas}
 
-Existen métodos que sirven para trabajar con listas.
-
-\begin{itemize}
-  \item El método \ttt{append()} se usa para añadir un elemento al final de una lista.
+El método \ttt{append()} se usa para añadir un elemento al final de una lista.
   
-  \pythonfile{codigo/6-listas/append.py}
-  \out{codigo/6-listas/append.out}
+\pythonfile{codigo/6-listas/append.py}
+\out{codigo/6-listas/append.out}
 
-  \item El método \ttt{pop()} elimina el último elemento de una lista.
+El método \ttt{insert()} se usa para insertar un elemento en un índice específico de una lista. Los elementos que están después del elemento insertado se desplazan a la derecha.
+
+\pythonfile{codigo/6-listas/insert.py}
+\out{codigo/6-listas/insert.out}
+
+El método \ttt{extend()} se usa para añadir todos los elementos de una lista al final de otra lista.
   
-  \pythonfile{codigo/6-listas/pop_1.py}
-  \out{codigo/6-listas/pop_1.out}
+\pythonfile{codigo/6-listas/extend.py}
+\out{codigo/6-listas/extend.out}
 
-  Se le puede entregar un argumento numérico para quitar elementos de una lista según su índice. Este número puede ser negativo.
+\section{Quitar elementos de listas}
 
-  \pythonfile{codigo/6-listas/pop_2.py}
-  \out{codigo/6-listas/pop_2.out}
-
-  \item El método \ttt{len()} retorna el tamaño (número de elementos) de una lista.
+El método \ttt{pop()} elimina el último elemento de una lista.
   
-  \pythonfile{codigo/6-listas/len.py}
-  \out{codigo/6-listas/len.out}
+\pythonfile{codigo/6-listas/pop_1.py}
+\out{codigo/6-listas/pop_1.out}
 
-  \item El método \ttt{insert()} se usa para insertar un elemento en un índice específico de una lista. Los elementos que están después del elemento insertado se desplazan a la derecha.
+Se le puede entregar un argumento numérico para quitar elementos de una lista según su índice. Este número puede ser negativo.
 
-  \pythonfile{codigo/6-listas/insert.py}
-  \out{codigo/6-listas/insert.out}
+\pythonfile{codigo/6-listas/pop_2.py}
+\out{codigo/6-listas/pop_2.out}
 
-  \item El método \ttt{extend()} se usa para añadir todos los elementos de una lista al final de otra lista.
+El método \ttt{remove()} elimina la primera ocurrencia de un elemento en una lista.
   
-  \pythonfile{codigo/6-listas/extend.py}
-  \out{codigo/6-listas/extend.out}
+\pythonfile{codigo/6-listas/remove_1.py}
+\out{codigo/6-listas/remove_1.out}
 
-  \item El método \ttt{index()} encuentra la primera aparición de un elemento en una lista y devuelve su índice.
+Si el elemento no existe en la lista, levanta un \ttt{ValueError}.
+
+\pythonfile{codigo/6-listas/error_remove.py}
+\out{codigo/6-listas/error_remove.out}
+
+Una forma más segura de usar \ttt{remove()} es la siguiente:
+
+\pythonfile{codigo/6-listas/remove_2.py}
+\out{codigo/6-listas/remove_2.out}
+
+El método \ttt{clear()} quita todos los elementos de una lista, dejándola vacía.
+
+\pythonfile{codigo/6-listas/clear.py}
+\out{codigo/6-listas/clear.out}
+
+\section{Ordenar listas}
+
+El método \ttt{sort()} ordena alfabéticamente una lista de strings, por defecto se realiza ascendentemente. Para realizar el orden descendentemente, se debe entregar el parámetro \ttt{reverse=True}.
   
-  \pythonfile{codigo/6-listas/index.py}
-  \out{codigo/6-listas/index.out}
-
-  Si el elemento no está en la lista, muestra un \ttt{ValueError}.
-
-  \pythonfile{codigo/6-listas/error_index.py}
-  \out{codigo/6-listas/error_index.out}
-
-  \item El método \ttt{count()} cuenta la cantidad de ocurrencias de un elemento en una lista.
+\pythonfile{codigo/6-listas/sort_letras.py}
+\out{codigo/6-listas/sort_letras.out}
   
-  \pythonfile{codigo/6-listas/count.py}
-  \out{codigo/6-listas/count.out}
+También funciona con listas compuestas de números.
 
-  \item El método \ttt{remove()} elimina la primera ocurrencia de un elemento en una lista.
+\pythonfile{codigo/6-listas/sort_numeros.py}
+\out{codigo/6-listas/sort_numeros.out}
+
+Si se usa en listas mixtas, mostrará un \ttt{TypeError}.
+
+\pythonfile{codigo/6-listas/sort_mixto.py}
+\out{codigo/6-listas/sort_mixto.out}
+
+El método \ttt{reverse()} invierte el orden de los elementos de una lista.
   
-  \pythonfile{codigo/6-listas/remove_1.py}
-  \out{codigo/6-listas/remove_1.out}
+\pythonfile{codigo/6-listas/reverse.py}
+\out{codigo/6-listas/reverse.out}
 
-  Si el elemento no existe en la lista, levanta un \ttt{ValueError}.
+\section{Información sobre listas}
 
-  \pythonfile{codigo/6-listas/error_remove.py}
-  \out{codigo/6-listas/error_remove.out}
+Existen métodos que no modifican listas, pero pueden obtener información sobre ellas.
 
-  Una forma más segura de usar \ttt{remove()} es la siguiente:
-
-  \pythonfile{codigo/6-listas/remove_2.py}
-  \out{codigo/6-listas/remove_2.out}
-
-  \item Los métodos \ttt{max()} y \ttt{min()} devuelven el elemento de una lista con valor máximo o mínimo, respectivamente.
-
-  \pythonfile{codigo/6-listas/max_y_min_1.py}
-  \out{codigo/6-listas/max_y_min_1.out}
-
-  Si son strings, los compara por orden alfabético. Se considera como \doble{mayor} a las palabras que se encuentran al final después de ordenarlas alfabéticamente.
-
-  \pythonfile{codigo/6-listas/max_y_min_2.py}
-  \out{codigo/6-listas/max_y_min_2.out}
-
-  \item El método \ttt{sum()} calcula la suma de los elementos de una lista.
+El método \ttt{index()} encuentra la primera aparición de un elemento en una lista y devuelve su índice.
   
-  \pythonfile{codigo/6-listas/sum.py}
-  \out{codigo/6-listas/sum.out}
+\pythonfile{codigo/6-listas/index.py}
+\out{codigo/6-listas/index.out}
 
-  \item El método \ttt{reverse()} invierte los elementos de una lista.
+Si el elemento no se encuentra en la lista, muestra un \ttt{ValueError}.
+
+\pythonfile{codigo/6-listas/error_index.py}
+\out{codigo/6-listas/error_index.out}
+
+El método \ttt{count()} cuenta la cantidad de ocurrencias de un elemento en una lista.
   
-  \pythonfile{codigo/6-listas/reverse.py}
-  \out{codigo/6-listas/reverse.out}
+\pythonfile{codigo/6-listas/count.py}
+\out{codigo/6-listas/count.out}
 
-  \item El método \ttt{sort()} ordena alfabéticamente una lista de strings, por defecto se realiza ascendentemente. Para realizar el orden descendentemente, se debe entregar el parámetro \ttt{reverse=True}.
+Los métodos \ttt{max()} y \ttt{min()} devuelven el elemento de una lista con valor máximo o mínimo, respectivamente.
+
+\pythonfile{codigo/6-listas/max_y_min_1.py}
+\out{codigo/6-listas/max_y_min_1.out}
+
+Si son strings, los compara por orden alfabético (lexicográficamente). Se considera como \doble{mayor} a las palabras que se encuentran al final después de ordenarlas alfabéticamente.
+
+\pythonfile{codigo/6-listas/max_y_min_2.py}
+\out{codigo/6-listas/max_y_min_2.out}
+
+En realidad, se comparan los símbolos según su valor ASCII.
+
+El método \ttt{sum()} calcula la suma de los elementos de una lista númerica.
   
-  \pythonfile{codigo/6-listas/sort_letras.py}
-  \out{codigo/6-listas/sort_letras.out}
-  
-  También funciona con listas compuestas de números.
+\pythonfile{codigo/6-listas/sum.py}
+\out{codigo/6-listas/sum.out}
 
-  \pythonfile{codigo/6-listas/sort_numeros.py}
-  \out{codigo/6-listas/sort_numeros.out}
+Se pueden combinar las funciones \ttt{avg()} y \ttt{len()} para obtener el promedio de los elementos de una lista númerica.
 
-  Si se usa en listas mixtas, mostrará un \ttt{TypeError}.
-
-  \pythonfile{codigo/6-listas/sort_mixto.py}
-  \out{codigo/6-listas/sort_mixto.out}
-
-  \item El método \ttt{clear()} quita todos los elementos de una lista.
-
-  \pythonfile{codigo/6-listas/clear.py}
-  \out{codigo/6-listas/clear.out}
-
-\end{itemize}
+\pythonfile{codigo/6-listas/avg.py}
+\out{codigo/6-listas/avg.out}
 
 \section{Copiar listas}
 
@@ -218,7 +230,7 @@ Las cadenas pueden verse como listas de caracteres que no se pueden cambiar (inm
 
 \pythonfile{codigo/6-listas/strings_vs_listas.py}
 
-De hecho, tienen muchas similitudes, de las cuales se verán algunas a continuación.
+De hecho, tienen muchas similitudes. Ambas almacenan elementos secuencialmente. La diferencia es que las cadenas son más limitadas (pero también más rápidas) porque sólo pueden almacenar caracteres y son inmutables, lo que significa que sus contenidos no se pueden alterar.
 
 \section{Indexación de strings}
 

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+    print(math.factorial(-1))
+ValueError: factorial() not defined for negative values

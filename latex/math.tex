@@ -2,25 +2,111 @@
 
 \section{El módulo math}
 
+El módulo \ttt{math} contiene funciones y constantes comúnmente usadas en matemáticas generales. 
+
+\pythonfile{codigo/10-math/math.py}
+
+En este capítulo también se verán otras funciones matemáticas que están disponibles en Python por sí solo, sin necesidad de importar este módulo.
+
 \section{Constantes matemáticas}
+
+El módulo \ttt{math} tiene 5 constantes matemáticas muy importantes. Primero, se verán las 3 constantes numéricas que almacenan los valores de números irracionales importantes.\smallskip
+
+La constante \ttt{pi} representa el número \link{https://es.wikipedia.org/wiki/N\%C3\%BAmero\_\%CF\%80}{$\pi$}, el cual es la relación entre el perímetro y diámetro de una circunferencia.\smallskip
+
+$\pi = 3.14159...$
+
+\pythonfile{codigo/10-math/pi.py}
+\out{codigo/10-math/pi.out}
+
+La constante \ttt{tau}, escrita en matemáticas como \link{https://es.wikipedia.org/wiki/Tau\_(2\%CF\%80)}{$\tau$}, es el doble de \ttt{pi}, y también se usa bastante.\smallskip
+
+$\tau = 2\pi$
+
+\pythonfile{codigo/10-math/tau.py}
+\out{codigo/10-math/tau.out}
+
+La constante \ttt{e}  representa el \link{https://es.wikipedia.org/wiki/N\%C3\%BAmero\_e}{número de Euler}, otro de los números irracionales más importantes.\smallskip
+
+$e = 2.71828...$
+
+\pythonfile{codigo/10-math/e.py}
+\out{codigo/10-math/e.out}
 
 \section{Infinito}
 
-Para representar un número infinitamente pequeño o grande, se puede usar el método \ttt{float()} y entregarle el string \ttt{\qq inf \qq} como argumento.
+Para representar un número \link{https://es.wikipedia.org/wiki/Infinito}{infinito}, se puede usar el método \ttt{float()} y entregarle el string \ttt{\qq inf \qq} como argumento.\smallskip
+
+$\infty$
 
 \pythonfile{codigo/10-math/infinito.py}
 \out{codigo/10-math/infinito.out}
+
+Una forma alternativa de hacerlo es usando la constante \ttt{inf} del módulo \ttt{math}.
+
+\pythonfile{codigo/10-math/inf.py}
+\out{codigo/10-math/inf.out}
+
+Ambas formas de hacerlo entregan exactamente el mismo resultado.
+
+\pythonfile{codigo/10-math/igualdad_inf.py}
+\out{codigo/10-math/igualdad_inf.out}
+
+\section{NaN}
+
+La constante \ttt{nan} o \link{https://es.wikipedia.org/wiki/NaN}{NaN}, acrónimo proveniente del inglés Not a Number (no es un número) no proviene directamente de las matemáticas, pero tiene usos bastante útiles en programación. Representa un número \doble{ilegal}.
+
+\pythonfile{codigo/10-math/nan.py}
+\out{codigo/10-math/nan.out}
+
+Generalmente se usa para expresar resultados imposibles de calcular, como raíces negativas o indeterminaciones.\smallskip
+
+Esta constante se almacena como un float.
+
+\pythonfile{codigo/10-math/tipo_nan.py}
+\out{codigo/10-math/tipo_nan.out}
+
+% TODO: ejemplo?
 
 \section{Funciones matemáticas predefinidas}
 
 %TODO: mover sum(), investigar si existe avg() y parecidos
 
-Python viene con algunas funciones matemáticas sencillas, que se pueden usar sin necesidad de importar el módulo \ttt{math}.
+Python viene con algunas funciones matemáticas sencillas, que se pueden usar sin necesidad de importar el módulo \ttt{math}. En algunos casos, el módulio \ttt{math} provee versiones más completas de estas funciones.
 
 Para obtener la distancia entre un número y el \ttt{0} (su valor absulto), puede usarse la función \ttt{abs()}.
 
 \pythonfile{codigo/10-math/abs.py}
 \out{codigo/10-math/abs.out}
+
+\section{Funciones matemáticas}
+
+La función \ttt{fabs()} retorna el valor absoluto de un número, al igual que \ttt{abs()}, pero siempre retorna un float.
+
+\pythonfile{codigo/10-math/fabs.py}
+\out{codigo/10-math/fabs.out}
+
+Como ya se ha visto, la función \ttt{sqrt()}, abreviación del inglés square root, retorna la \link{https://es.wikipedia.org/wiki/Ra\%C3\%ADz\_cuadrada}{raíz cuadrada} de un número positivo o \ttt{0}. El resultado obtenido siempre será la raíz positiva.
+
+\pythonfile{codigo/10-math/sqrt.py}
+\out{codigo/10-math/sqrt.out}
+
+No se puede usar con números negativos.
+
+\pythonfile{codigo/10-math/error_sqrt.py}
+\out{codigo/10-math/error_sqrt.out}
+
+La función \ttt{factorial()} retorna el \link{https://es.wikipedia.org/wiki/Factorial}{factorial} de un número.
+
+\pythonfile{codigo/10-math/funcion_factorial.py}
+\out{codigo/10-math/funcion_factorial.out}
+
+El factorial no está definido para los números negativos.
+
+\pythonfile{codigo/10-math/error_factorial.py}
+\out{codigo/10-math/error_factorial.out}
+
+\section{Funciones de redondeo}
 
 Para redondear un número a un determinado número de decimales, puede usarse la función \ttt{round()}.
 
@@ -29,6 +115,45 @@ Para redondear un número a un determinado número de decimales, puede usarse la
 
 %TODO: este capítulo
 
+\section{Grados y radianes}
+
+Al trabajar con ángulos, es común medirlos usando grados o radianes. El módulo \ttt{math} tiene funciones para convertir valores entre estas unidades.\smallskip
+
+El método \ttt{radians()} convierte de grados a radianes.
+
+\pythonfile{codigo/10-math/radians.py}
+\out{codigo/10-math/radians.out}
+
+El método \ttt{degrees()} convierte de radianes a grados.
+
+\pythonfile{codigo/10-math/degrees.py}
+\out{codigo/10-math/degrees.out}
+
 \section{Funciones trigonométricas}
+
+El módulo \ttt{math} tiene \link{https://es.wikipedia.org/wiki/Trigonometr\%C3\%ADa}{funciones trigonométricas}, similares a las de una calculadora. Estas funciones sólo funcionan con radianes. Para usarlas con grados, primero deben convertirse a radianes con el método \ttt{radians()}.\smallskip
+
+Funciones trigonométricas básicas:
+
+\pythonfile{codigo/10-math/trig_basicas.py}
+\out{codigo/10-math/trig_basicas.out}
+
+Funciones trigonométricas inversas:
+
+\pythonfile{codigo/10-math/trig_inversas.py}
+\out{codigo/10-math/trig_inversas.out}
+
+Funciones trigonométricas hiperbólicas:
+
+\pythonfile{codigo/10-math/trig_hiperbolicas.py}
+\out{codigo/10-math/trig_hiperbolicas.out}
+
+Se debe recordar que los resultados de estas funciones se obtienen por aproximaciones y un computador no puede representar todos los números decimales con precisión perfecta, lo que significa que puede haber pequeños errores de aproximación en los resultados.
+
+\section{Números finitos e infinitos}
+
+
+
+\section{Números complejos}
 
 \clearpage
