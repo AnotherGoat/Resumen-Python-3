@@ -1,0 +1,1 @@
+variableDeNombreLargo = 42

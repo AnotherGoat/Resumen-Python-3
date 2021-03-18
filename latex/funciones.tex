@@ -42,11 +42,6 @@ Una función puede pedir más de un argumento, los cuales deben separarse por co
 
 \pythonfile{codigo/8-funciones/mayor.py}
 
-Los argumentos de funciones pueden ser utilizados como variables dentro de la definición de la función. Sin embargo, no pueden ser referenciados fuera de la definición de la función. Esto también se aplica a las demás variables creadas dentro de una función.
-
-\pythonfile{codigo/8-funciones/argumentos.py}
-\out{codigo/8-funciones/argumentos.out}
-
 \section{Llamado de funciones}
 
 Para llamar una función, debe escribirse su nombre, seguido de un paréntesis que contiene los argumentos (información) que se le quieren entregar.\smallskip
@@ -66,6 +61,31 @@ Ejemplos de uso de las funciones definidas anteriormente:
 \out{codigo/8-funciones/llamar_mayor.out}
 
 Técnicamente, los parámetros son las variables en una definición de función y los argumentos son los valores que se le dan a las variables al momento de llamar funciones.
+
+\section{Variables globales y locales}
+
+Los argumentos de funciones pueden ser utilizados como variables dentro de la definición de la función. Sin embargo, no pueden ser referenciados fuera de dicha definición. Esto también se aplica a las demás variables creadas dentro de una función.
+
+\pythonfile{codigo/8-funciones/argumentos.py}
+\out{codigo/8-funciones/argumentos.out}
+
+En términos más técnicos, una variable que se inicia fuera de una función recibe el nombre de variable global y una que se declara dentro de una función se conoce como variable local.
+
+\pythonfile{codigo/8-funciones/local_y_global.py}
+
+Los parámetros de una función también son variables locales.\smallskip
+
+Existe una excepción a esta regla, la cual permite declarar variables globales dentro del cuerpo de una función. Para hacer esto, se debe usar la palabra clave \ttt{global}.
+
+\pythonfile{codigo/8-funciones/global.py}
+\out{codigo/8-funciones/global.out}
+
+Es importante darse cuenta de que la función \ttt{funcion()} debe ser llamada para inicializar la variable global \ttt{z} y que al usar la palabra clave \ttt{global} se debe separar la declaración de la asignación.\smallskip
+
+Si no se separan, se mostrará un \ttt{SyntaxError}.
+
+\pythonfile{codigo/8-funciones/error_global.py}
+\out{codigo/8-funciones/error_global.out}
 
 \section{Devolución de valores en una función}
 

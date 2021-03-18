@@ -2,9 +2,9 @@
 
 \section{¿Qué es Python?}
 
-\link{https://www.python.org}{Python} es un lenguaje de programación de alto nivel, con aplicaciones en numerosas áreas, incluyendo automatización de tareas, programación web, scripting, manejo de grandes cantidades de datos, computación científica, cálculos complejos e inteligencia artificial.\smallskip
+\link{https://www.python.org}{Python} es un lenguaje de programación popular y de alto nivel, con aplicaciones en numerosas áreas, incluyendo automatización de tareas, programación web, scripting, manejo de grandes cantidades de datos, computación científica, cálculos complejos e inteligencia artificial.\smallskip
 
-Fue diseñado por Gudo van Rossum. Fue lanzado en el año 1991. Se han lanzado diferentes versiones hasta llegar a la versión actual, Python 3.
+Fue creado por Gudo van Rossum y fue lanzado en el año 1991. Se han lanzado diferentes versiones hasta llegar a la versión actual, Python 3.
 
 \section{Componentes principales}
 
@@ -26,14 +26,16 @@ Si estos conceptos no se entienden todavía, no hay problema, pues se verán má
 \begin{itemize}
   \item \textbf{Soporte de múltiples plataformas}: Python es \doble{platform independent}. Esto significa que un mismo código puede ejecutarse en cualquier sistema operativo, ya sea Windows, Unix, Linux o Mac, sin necesidad de hacerle cambios.
   
-  \item \textbf{Interpretado}: El código escrito en Python no necesita ser compilado, como ocurre en lenguajes como C, Java o C++. El intérprete de Python convierte el código en bytes ejecutables línea por línea, lo cual hace su utilización más conveniente para el programador, pero al mismo tiempo más lenta.
+  \item \textbf{Interpretado}: El código escrito en Python no necesita ser compilado, como ocurre en lenguajes como C, Java o C++. El intérprete de Python convierte el código en bytes ejecutables línea por línea, lo cual hace el desarrollo de prototipos más conveniente para el programador, pero al mismo tiempo hace que la ejecución del código sea más lenta.
   
-  \item \textbf{Simple}: La sintaxis de Python es simple y fácil de leer, aunque requiere un conocimiento de inglés básico.
+  \item \textbf{Simple}: La sintaxis de Python es simple y fácil de leer, aunque requiere un conocimiento de inglés básico. Esta simplicidad también permite escribir código más corto, obteniendo el mismo resultado en menos líneas que en otros lenguajes.
   
   \item \textbf{Robusto}: Esto significa que el lenguaje es capaz de manejar los posibles errores que podrían ocurrir durante la ejecución de programas escritos en él.
   
   \item \textbf{De alto nivel}: Es un lenguaje de nivel usado para scripting. Esto quiere decir que el programador no necesita recordar características de bajo nivel como la arquitectura del sistema o el manejo de memoria. Estas características se abstraen.
   
+  \item \textbf{Multiparadigma}: Python soporta programación estructurada, funcional y orientada a objetos.
+
   \item \textbf{Gran soporte de librerías}: Python puede integrarse a otras librerías que tengan funcionalidades específicas. No hay necesidad de tener que escribir el código por tu cuenta, si ya existe y funciona correctamente.
   
   \item \textbf{Integrable}: El código fuente escrito en Python puede usarse dentro de otros lenguajes de programación, lo cual permite expandir las funcionalidades de sus programas con las de programas escritos en otros lenguajes.
@@ -131,9 +133,56 @@ No hay limitaciones en lo que se puede construir usando Python. Esto incluye apl
 
 Dato curioso: Según el creador Guido van Rossum, el nombre de Python viene de la serie de comedia británica \doble{El Circo Volador de Monty Python}.
 
+\section{Sintaxis}
+
+Python fue diseñado para ser fácil de leer y tiene similitudes con el idioma inglés, con influencia de las matemáticas.\smallskip
+
+A diferencia de otros lenguajes de programación, Python termina las líneas con un salto de línea, en vez de un punto y coma \ttt{;}.\smallskip
+
+Para delimitar bloques de código en estructuras de control como \ttt{if}, \ttt{while}, \ttt{for} o funciones, se utiliza indentación con espacios en blanco en vez de usar llaves \ttt{\{\}} como en otros lenguajes.
+
 \section{Instalación}
 
-%TODO: instalación
+Muchos PCs vienen con Python preinstalado. Para revisar la versión que se tiene instalada se puede ingresar el siguiente comando en el terminal.
+
+\textfile{codigo/1-intro/version.txt}
+\out{codigo/1-intro/version.out}
+
+Siempre se puede descargar la última versión gratuitamente desde el \link{https://www.python.org/downloads/}{sitio web oficial}. Después de instalarlo, existen muchas formas de utilizar este lenguaje.\smallskip
+
+Se puede abrir la consola de Python en el terminal ingresando el siguiente comando.
+
+\textfile{codigo/1-intro/interprete_1.txt}
+\out{codigo/1-intro/interprete_1.out}
+
+Si no funciona, existe otro comando que también puede abrir la consola.
+
+\textfile{codigo/1-intro/interprete_2.txt}
+
+Dentro de la consola, se puede ingresar el código línea por línea, y es interpretado después de pulsar \ttt{Intro}. Para salir de la consola, se debe llamar a la función \ttt{exit()}.
+
+\pythonfile{codigo/1-intro/exit.py}
+
+Para ejecutar un archivo de extensión \ttt{.py}, se puede ingresar \ttt{python} seguido de la ruta relativa (desde el directorio de trabajo) o absoluta del archivo.
+
+\textfile{codigo/1-intro/ejecutar.txt}
+
+También existen muchos IDEs (Integrated Development Environment) que permiten programar en Python. Estos contienen muchas herramientas que pueden ser de utilidad.\smallskip
+
+Algunos IDEs y editores de texto recomendados son los siguientes:
+
+\begin{itemize}
+  \item IDLE, que viene preinstalado con Python.
+    
+  \item \link{https://thonny.org}{Thonny}
+  
+  \item \link{https://www.jetbrains.com/pycharm/}{Pycharm}
+
+  \item \link{https://code.visualstudio.com}{Visual Studio Code}, que requiere instalar \link{https://marketplace.visualstudio.com/items?itemName=ms-python.python}{esta extensión}.
+  
+  \item \link{https://www.sublimetext.com}{Sublime Text}
+  
+\end{itemize}
 
 \section{Hola mundo}
 

@@ -29,6 +29,25 @@ Python es sensible a mayúsculas y minúsculas, lo que significa que las variabl
 \pythonfile{codigo/4-variables/mayusculas_y_minusculas.py}
 \out{codigo/4-variables/mayusculas_y_minusculas.out}
 
+\section{Nombres largos de variables}
+
+Los nombres de variables que se componen de más de una palabra pueden ser difíciles de leer. Existen muchas técnicas para escribirlos de forma más legible.
+
+\begin{itemize}
+  \item \textbf{Camel Case}: Todas las palabras empiezan con mayúscula, excepto la primera.
+  
+  \pythonfile{codigo/4-variables/camelCase.py}
+
+  \item \textbf{Pascal Case}: Todas las palabras empiezan con mayúscula.
+  
+  \pythonfile{codigo/4-variables/PascalCase.py}
+
+  \item \textbf{Snake Case}: Todas las palabras se escriben en minúscula, pero van separadas por guiones bajos \ttt{\_}.
+  
+  \pythonfile{codigo/4-variables/snake_case.py}
+
+\end{itemize}
+
 \section{Palabras clave}
 
 Existen palabras específicas que tampoco se pueden usar como nombres de variables. El intérprete de Python reconoce estas palabras como palabras clave o keywords, y tienen usos reservados.\smallskip
@@ -137,6 +156,10 @@ Como el resultado de la función \ttt{input()} es un string, es normal convertir
 \inp{codigo/4-variables/input_3.inp}
 \out{codigo/4-variables/input_3.out}
 
+También se pueden usar estos métodos para forzar variables a ser de un tipo específico al momento de asignarlas, en vez de dejar que Python infiera su tipo. Esto se conoce como \doble{casting}.
+
+\pythonfile{codigo/4-variables/casting.py}
+
 \section{Operadores de asignación}
 
 Los operadores de asignación permiten escribir código como \ttt{x = x + 1} de manera más concisa, como \ttt{x += 1}. Lo mismo es posible con otros operadores como \ttt{-}, \ttt{*}, \ttt{/}, \ttt{//}, \ttt{\%} y \ttt{**}.
@@ -146,6 +169,13 @@ Los operadores de asignación permiten escribir código como \ttt{x = x + 1} de 
 También se pueden usar con los operadores de concatenación y multiplicación de strings.
 
 \pythonfile{codigo/4-variables/asignacion_2.py}
+
+\section{Múltiples variables con el mismo valor}
+
+Para declarar muchas variables en una misma linea y hacer que todas tengan el mismo valor, se puede repetir el operador de asignación \ttt{=}.
+
+\pythonfile{codigo/4-variables/multiple.py}
+\out{codigo/4-variables/multiple.out}
 
 \section{Tipos de datos}
 
