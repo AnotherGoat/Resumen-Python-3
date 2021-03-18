@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+    print(random.sample(alfabeto, -1))
+  File "<stdin>", line 450, in sample       
+    raise ValueError("Sample larger than population or is negative")
+ValueError: Sample larger than population or is negative
