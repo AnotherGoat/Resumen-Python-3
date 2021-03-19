@@ -1,0 +1,6 @@
+7
+7
+Traceback (most recent call last):
+  File "c:\Users\vnico\Desktop\Resumen Python 3\codigo\20-objetos\fuertemente_privado.py", line 11, in <module>
+    print(s.__egg)
+AttributeError: 'Spam' object has no attribute '__egg'

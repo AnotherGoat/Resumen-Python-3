@@ -9,7 +9,7 @@ Una parte clave de la programación funcional son las funciones de orden superio
 \pythonfile{codigo/18-funcional/ejemplo_funcional.py}
 \out{codigo/18-funcional/ejemplo_funcional.out}
 
-La función \ttt{repetir2veces()} mostrada en el ejemplo recibe otra función como su argumento y llama 2 veces dentro de su cuerpo.\smallskip
+La función \ttt{repetir\_2\_veces()} mostrada en el ejemplo recibe otra función como su argumento y la llama 2 veces dentro de su cuerpo.\smallskip
 
 Entender los conceptos de programación funcional requiere un conocimiento básico del concepto algebraico llamado \link{https://www.mathsisfun.com/sets/functions-composition.html}{\doble{composición de funciones}}.
 
@@ -17,7 +17,7 @@ Entender los conceptos de programación funcional requiere un conocimiento bási
 
 La programación funcional busca utilizar funciones puras. Las funciones puras no tienen efectos secundarios y devuelven un valor que depende únicamente de sus argumentos.\smallskip
 
-Así son las funciones en las matemáticas. Por ejemplo, la función cos(x) siempre devolverá un mismo resultado para el mismo valor de x.
+Así son las funciones en las matemáticas. Por ejemplo, la función $\cos{x}$ siempre devolverá el mismo resultado para el mismo valor de $x$.
 
 Ejemplo de función pura:
 
@@ -66,11 +66,12 @@ Desventajas principales:
 
 \section{Lambdas}
 
-Crear una función normalmente (utilizando def) le asigna una variable automáticamente.\smallskip
+Crear una función normalmente (utilizando \ttt{def}) le asigna una variable automáticamente.\smallskip
 
 Esto es distinto a la creación de otros objetos, tales como cadenas y enteros, que pueden ser creados en el camino, sin la necesidad de asignarles una variable.\smallskip
 
-Lo mismo es posible con las funciones, dado que sean creadas utilizando la sintaxis lambda. Funciones creadas de esta forma son conocidas como anónimas.
+Lo mismo es posible con las funciones, dado que sean creadas utilizando la sintaxis \ttt{lambda}. Funciones creadas de esta forma son conocidas como anónimas.\smallskip
+
 Este enfoque es más comúnmente utilizado cuando se pasa una función sencilla como argumento de otra función.\smallskip
 
 La sintaxis que se muestra a continuación consiste de la palabra reservada lambda seguida de una lista de argumentos, dos puntos, y una expresión a evaluar y devolver.
@@ -78,19 +79,19 @@ La sintaxis que se muestra a continuación consiste de la palabra reservada lamb
 \pythonfile{codigo/18-funcional/lambda_1.py}
 \out{codigo/18-funcional/lambda_1.out}
 
-Las funciones lambda reciben su nombre del \link{https://es.wikipedia.org/wiki/C\%C3\%A1lculo_lambda}{cálculo lambda}, el cual es un modelo computacional inventado por Alonzo Church.\smallskip
+Las funciones \ttt{lambda} reciben su nombre del \link{https://es.wikipedia.org/wiki/C\%C3\%A1lculo_lambda}{cálculo lambda}, el cual es un modelo computacional inventado por Alonzo Church.\smallskip
 
 Las funciones lambda no son tan potentes como las funciones con nombre. Sólo pueden hacer cosas que requieren de una sola expresión, normalmente equivalente a una sola línea de código.
 
 \pythonfile{codigo/18-funcional/lambda_2.py}
 \out{codigo/18-funcional/lambda_2.out}
 
-Las funciones lambda pueden ser asignadas a variables y ser utilizadas como funciones regulares.
+Las funciones \ttt{lambda} pueden ser asignadas a variables y ser utilizadas como funciones regulares.
 
 \pythonfile{codigo/18-funcional/lambda_3.py}
 \out{codigo/18-funcional/lambda_3.out}
 
-Sin embargo, rara vez existe una buena razón para hacer esto. Normalmente es mejor definir una función con def.
+Sin embargo, rara vez existe una buena razón para hacer esto. Normalmente es mejor definir una función con \ttt{def}.
 
 \section{Función map()}
 
@@ -101,7 +102,7 @@ Esta función recibe una función y un iterable como argumentos y devuelve un nu
 \pythonfile{codigo/18-funcional/map_1.py}
 \out{codigo/18-funcional/map_1.out}
 
-El mismo resultado se puede obtener con mayor facilidad utilizando la sintaxis lambda.
+El mismo resultado se puede obtener con mayor facilidad utilizando la sintaxis \ttt{lambda}.
 
 \pythonfile{codigo/18-funcional/map_2.py}
 \out{codigo/18-funcional/map_2.out}
@@ -110,7 +111,7 @@ Los objetos del tipo mapa son iterables, por lo que se debe usar \ttt{list()} pa
 
 \section{Función filter()}
 
-La función \ttt{filter()} es otra función de orden supero que se puede usar sobre iterables.\smallskip
+La función \ttt{filter()} es otra función de orden superior que se puede usar sobre iterables.\smallskip
 
 Esta función filtra un iterable eliminando elementos que no coincidan con el predicado (una función que devuelve un booleano).
 
@@ -123,9 +124,9 @@ Al igual que \ttt{map()}, el resultado tiene que ser convertido explícitamente 
 
 Los generadores son un tipo de iterable, como las listas o las tuplas.\smallskip
 
-A diferencia de las listas, no permiten indexar con índices arbitrarios, pero pueden aún ser iterados con bucles for.\smallskip
+A diferencia de las listas, no permiten indexar con índices arbitrarios, pero pueden aún ser iterados con bucles \ttt{for}.\smallskip
 
-Pueden ser creados utilizando funciones y la sentencia yield.
+Pueden ser creados utilizando funciones y la sentencia \ttt{yield}.
 
 \pythonfile{codigo/18-funcional/generador_1.py}
 \out{codigo/18-funcional/generador_1.out}
@@ -134,12 +135,12 @@ Nótese que si en el ejemplo anterior no se hubiera especificado la condición d
 
 La sentencia yield es utilizada para definir un generador, reemplazando el retorno de una función para proveer un resultado a su llamador sin destruir las variables locales.\smallskip
 
-Debido al hecho que yield produce un elemento a la vez, los generadores no tienen las restricciones de memoria de las listas. De hecho, ¡pueden ser infinitos!
+Debido al hecho que \ttt{yield} produce un elemento a la vez, los generadores no tienen las restricciones de memoria de las listas. De hecho, ¡pueden ser infinitos!
 
 \pythonfile{codigo/18-funcional/generador_2.py}
 \out{codigo/18-funcional/generador_2.out}
 
-En resumen, los generadores permiten declarar una función que se comporta como un iterador. En otras palabras, que puede utilizarse en un bucle for.\smallskip
+En resumen, los generadores permiten declarar una función que se comporta como un iterador. En otras palabras, que puede utilizarse en un bucle \ttt{for}.\smallskip
 
 Un ejemplo de uso de generadores es para generar números primos.
 %TODO: más ejemplos
@@ -147,7 +148,7 @@ Un ejemplo de uso de generadores es para generar números primos.
 \pythonfile{codigo/18-funcional/generador_de_primos.py}
 \out{codigo/18-funcional/generador_de_primos.out}
 
-Los generadores finitos pueden ser convertidos en listas al pasarlos como argumentos de la función list().
+Los generadores finitos pueden ser convertidos en listas al pasarlos como argumentos de la función \ttt{list()}.
 
 \pythonfile{codigo/18-funcional/generador_a_lista.py}
 \out{codigo/18-funcional/generador_a_lista.out}
@@ -184,11 +185,14 @@ Una sola función puede tener varios decoradores y cada decorador puede repetirs
 \pythonfile{codigo/18-funcional/decorador_5.py}
 \out{codigo/18-funcional/decorador_5.out}
 
-Los decoradores pueden ser usados para muchos otros propósitos además de \doble{decorar}.
+Los decoradores pueden ser usados para muchos otros propósitos además de \doble{decorar}. El siguiente ejemplo muestra un decorador que añade la petición de entrada a funciones que no la tienen.
 
 \pythonfile{codigo/18-funcional/decorador_entrada.py}
 
+Un ejemplo aún más útil es un decorador para medir el tiempo que tarda en ejecutarse un algoritmo.
+
 \pythonfile{codigo/18-funcional/decorador_tiempo.py}
+\out{codigo/18-funcional/decorador_tiempo.out}
 
 \section{Recursión}
 
@@ -203,9 +207,9 @@ Un ejemplo clásico de una función que es implementada recursiva es la función
 
 El caso base \ttt{n == 0} actúa como condición de salida de la recursión, porque no involucra más llamadas a la función.\smallskip
 
-Las funciones recursivas pueden ser infinitas, al igual que los bucles while. Estas ocurren cuando se olvida implementar algún caso base.\smallskip
+Las funciones recursivas pueden ser infinitas, al igual que los bucles \ttt{while}. Estas ocurren cuando se olvida implementar algún caso base.\smallskip
 
-Abajo se muestra una versión incorrecta de la función factorial. No tiene caso base, así que se ejecuta hasta que al interpretador se le acabe la memoria o se cuelgue.
+Abajo se muestra una versión incorrecta de la función factorial. No tiene caso base, así que se ejecutaría hasta que al interpretador se le acabe la memoria o se cuelgue, pero por suerte, el intérprete de Python es inteligente y levantará un \ttt{RecursionError}.
 
 \pythonfile{codigo/18-funcional/factorial_malo.py}
 \out{codigo/18-funcional/factorial_malo.out}

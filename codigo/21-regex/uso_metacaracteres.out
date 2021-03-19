@@ -1,0 +1,4 @@
+<re.Match object; span=(0, 1), match='$'>
+<re.Match object; span=(0, 1), match='$'>
+<re.Match object; span=(0, 5), match='$.?*+'>
+<re.Match object; span=(0, 5), match='$.?*+'>

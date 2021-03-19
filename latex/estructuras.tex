@@ -52,32 +52,45 @@ Al igual que las listas, las claves de un diccionario pueden ser asignadas a dis
 
 \section{Uso de in y not en diccionarios}
 
-Para determinar si una clave está en un diccionario, se puede usar los operadores in y not in, al igual que en listas.
+Para determinar si una clave está en un diccionario, se puede usar los operadores \ttt{in} y \ttt{not in}, al igual que en listas.
 
 \pythonfile{codigo/16-estructuras/in_not_diccionarios.py}
 \out{codigo/16-estructuras/in_not_diccionarios.out}
 
-Nótese que retorna \ttt{False} al buscar \ttt{"tres"}. Esto ocurre porque \ttt{"tres"} es un valor, no una clave.
+Nótese que retorna \ttt{False} al buscar \ttt{\qq tres \qq}. Esto ocurre porque \ttt{\qq tres \qq} es un valor, no una clave.
 
 \section{Función get()}
 
-Un método útil de diccionarios es \ttt{get()}. Hace lo mismo que indexar, pero si una clave no es encontrada en el diccionario entonces devuelve otro valor especificado (\simple{None} por defecto).
+Un método útil de diccionarios es \ttt{get()}. Hace lo mismo que indexar, pero si una clave no es encontrada en el diccionario entonces devuelve otro valor especificado (\ttt{None} por defecto).
 
 \pythonfile{codigo/16-estructuras/get_1.py}
 \out{codigo/16-estructuras/get_1.out}
 
-En este caso es importante recordar que 1 y True son la misma clave. Entonces, el diccionario \doble{pares} sólo tiene 3 elementos (la clave True tendrá como valor False, su último valor).
+En este caso es importante recordar que \ttt{1} y \ttt{True} significan lo mismo, y por lo tanto son la misma clave. Entonces, el diccionario \ttt{pares} sólo tiene 3 elementos (la clave \ttt{True} tendrá como valor \ttt{False}, el último valor que se le asignó).
 
 \pythonfile{codigo/16-estructuras/get_2.py}
 \out{codigo/16-estructuras/get_2.out}
 
-%TODO: esta sección
+\section{Convertir diccionarios a listas}
 
-\section{Función keys()}
+Usando el método \ttt{list()}, se puede convertir un diccionario a una lista, pero esto sólo obtendrá sus claves.
+
+\pythonfile{codigo/16-estructuras/diccionario_a_lista.py}
+\out{codigo/16-estructuras/diccionario_a_lista.out}
+
+Los métodos \ttt{keys()} y \ttt{values()} permiten obtener las claves y los valores de un diccionario.
+
+\pythonfile{codigo/16-estructuras/keys_values_1.py}
+\out{codigo/16-estructuras/keys_values_1.out}
+
+El resultado de estos métodos puede ser convertido a listas usando el método \ttt{list()} para poder manipularlos con más facilidad.
+
+\pythonfile{codigo/16-estructuras/keys_values_2.py}
+\out{codigo/16-estructuras/keys_values_2.out}
 
 \section{Tuplas}
 
-Las tuplas son estructuras de datos muy parecidas a las listas, excepto que son inmutables (no pueden ser cambiadas). También se crean utilizando paréntesis en vez de corchetes.
+Las tuplas son estructuras de datos muy parecidas a las listas, excepto que son inmutables (no pueden ser cambiadas). Se crean utilizando paréntesis en vez de corchetes.
 
 \pythonfile{codigo/16-estructuras/tupla_1.py}
 
@@ -101,7 +114,8 @@ Tratar de reasignar un valor a una tupla ocasiona un \ttt{TypeError}.
 
 \section{Anidación de tuplas}
 
-Al igual que las listas y diccionarios, las tuplas pueden ser anidadas entre sí.
+Al igual que las listas y diccionarios, las tuplas pueden ser anidadas entre sí.\smallskip
+
 Las tuplas son inmutables, pero el contenido de elementos mutables dentro de ellas puede ser cambiado.
 
 \pythonfile{codigo/16-estructuras/anidacion_tuplas.py}
@@ -109,7 +123,7 @@ Las tuplas son inmutables, pero el contenido de elementos mutables dentro de ell
 
 \section{Tupla vacía}
 
-Una tupla vacía se crea utilizando un par de paréntesis vacíos.
+Una tupla vacía se crea utilizando un par de paréntesis vacíos \ttt{()}.
 
 \pythonfile{codigo/16-estructuras/tupla_vacia.py}
 
@@ -125,14 +139,14 @@ Las tuplas pueden ser creadas sin paréntesis, simplemente separando los valores
 \pythonfile{codigo/16-estructuras/sin_parentesis.py}
 \out{codigo/16-estructuras/sin_parentesis.out}
 
-Se pueden usar tuplas para intercambiar los valores de 2 variables.
+Se pueden usar tuplas para intercambiar los valores de 2 variables, sin necesidad de crear una variable auxiliar.
 
 \pythonfile{codigo/16-estructuras/truco_tuplas.py}
 \out{codigo/16-estructuras/truco_tuplas.out}
 
 \section{Conjuntos}
 
-Los conjuntos son estructuras de datos parecidas a las listas o a los diccionarios. Son creandos utilizando llaves o la función set(). Comparten algunas de las funcionalidades de las listas, como el uso de in para revisar si contienen o no un elemento en particular.
+Los conjuntos son estructuras de datos parecidas a las listas o a los diccionarios. Son creandos utilizando llaves \ttt{\{\}}o la función \ttt{set()}. Comparten algunas de las funcionalidades de las listas, como el uso de \ttt{in} y \ttt{not in} para revisar si contienen o no un elemento en particular.
 
 \pythonfile{codigo/16-estructuras/conjuntos.py}
 \out{codigo/16-estructuras/conjuntos.out}
@@ -166,7 +180,7 @@ En lugar de utilizar \ttt{append()} para agregarle algo al conjunto, se utiliza 
 
 El método \ttt{pop()} elimina un elemento arbitrario. Esto significa que debido a la forma en la Python implementa conjuntos, no hay garantía de que los elementos se retornarán en el mismo orden que en el que se añadieron.\smallskip
 
-Generalmente, elimina el primer elemento, pero esto no se puede garantizar.
+Generalmente, elimina el primer elemento, pero esto no se puede garantizar para todos los casos.
 
 \pythonfile{codigo/16-estructuras/pop_conjuntos.py}
 
@@ -193,6 +207,10 @@ El operador de diferencia simétrica \ttt{\^} obtiene los elementos que están e
 
 \pythonfile{codigo/16-estructuras/diferencia_simetrica.py}
 \out{codigo/16-estructuras/diferencia_simetrica.out}
+
+\section{Frozenset}
+
+%TODO: esta sección
 
 \section{Resumen sobre estructuras de datos}
 
@@ -232,9 +250,10 @@ Como se ha visto en este capítulo, Python tiene soporte de las siguientes estru
 
 En muchas ocasiones, una tupla es utilizada junto con un diccionario. Por ejemplo, una tupla puede representar una clave, porque es inmutable.\smallskip
 
-La siguiente tabla muestra las propiedades de cada estructura de datos.\medskip\medskip
+La siguiente tabla muestra las propiedades de cada estructura de datos vista hasta ahora. También se muestran cadenas ya que tienen propiedades similares.\medskip\medskip
 
 % tabla 2
+%TODO: añadir cadenas y frozenset a esta tabla
 
 \makebox[\textwidth][c]{
   \begin{tabular}{ |c|c|c|c|c| }

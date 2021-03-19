@@ -2,4 +2,124 @@
 
 \section{Expresiones regulares}
 
+Las expresiones regulares son una potente herramiente para varias clases de manipulación de cadenas.\smallskip
+
+Son un lenguaje de dominio específico (DSL, por sus siglas en inglés) que está presente como una biblioteca en la mayoría de los lenguajes de programación, no solo Python.\smallskip
+
+Son útiles para 2 tareas principales:
+
+\begin{itemize}
+    \item Verificar que las cadenas correspondan a un patrón (por ejemplo, que una cadena tenga el formato de un correo electrónico).
+    
+    \item Realizar substituciones en una cadena (como por ejemplo, cambiar la ortografía del inglés estadounidense al inglés británico).
+    
+\end{itemize}
+
+Los lenguajes de dominio específico son mini-lenguajes de programación altamente especializados.\smallskip
+
+Las expresiones regulares son un ejemplo popular y SQL (para la manipulación de datos) es otro.\smallskip
+
+Lenguajes privados específicos del dominio son a menudo usados para propósitos industriales particulares.\smallskip
+
+Para usar expresiones regulares en Python, se debe importar el módulo \ttt{re} que pertenece a la biblioteca estándar.
+
+\pythonfile{codigo/21-regex/import_re.py}
+
+\section{Definición de expresiones regulares}
+
+Para definir una expresión regular, se puede almacenar en una variable y se escribe de forma similar a un string. El tipo más básico de expresión regular es el \doble{raw string}, el cual empieza por la letra \ttt{r} fuera de las comillas.
+
+\pythonfile{codigo/21-regex/regex_1.py}
+\out{codigo/21-regex/regex_1.out}
+
+\section{Cadenas puras}
+
+El tipo \doble{raw string} ignora las secuencias de escape, como \ttt{\textbackslash n} o \ttt{\textbackslash t}.
+
+\pythonfile{codigo/21-regex/raw_string.py}
+\out{codigo/21-regex/raw_string.out}
+
+Es por este motivo que hace más fácil el uso de expresiones regulares.
+
+\section{Comparando patrones con strings}
+
+Para revisar si una cadena encaja con un patrón, se puede usar el método \ttt{match()} para compararla con una expresión regular.
+
+\pythonfile{codigo/21-regex/match_1.py}
+\out{codigo/21-regex/match_1.out}
+
+En en caso de arriba, revisa todas las palabras que empiezan por \ttt{\qq hola \qq}. Si no se parecen al patrón, mostrará \ttt{None}.\smallskip
+
+Puede ser más conveniente convertir el resultado \ttt{match} a un booleano usando \ttt{bool()}.
+
+\pythonfile{codigo/21-regex/match_2.py}
+\out{codigo/21-regex/match_2.out}
+
+Este resultado se parece al que se obtendría usando el método \ttt{startswith()}, pero la gracia de las expresiones regulares es que permiten patrones mucho más complejos, que se verán más tarde.\smallskip
+
+Otra opción es usar la función \ttt{search()}, que busca si un patrón aparece en cualquier parte de la cadena, no solo al principio.
+
+\pythonfile{codigo/21-regex/search.py}
+\out{codigo/21-regex/search.out}
+
+\section{Encontrar coincidencias}
+
+La función \ttt{findall()} devuelve una lista con todas las subcadenas que coinciden con un patrón.
+
+\pythonfile{codigo/21-regex/findall.py}
+\out{codigo/21-regex/findall.out}
+
+Si se combina \ttt{findall()} con \ttt{len()}, se puede ver la cantidad de ocurrencias de un patrón.
+
+\pythonfile{codigo/21-regex/findall_len.py}
+\out{codigo/21-regex/findall_len.out}
+
+También existe la función \ttt{finditer()} que hace lo mismo que \ttt{findall()} pero devuelve un iterador en vez de una lista.
+
+\pythonfile{codigo/21-regex/finditer.py}
+\out{codigo/21-regex/finditer.out}
+
+\section{Detalles sobre los resultados}
+
+La búsqueda regex devuelve un objeto con varios métodos que dan detalles sobre ésta.\smallskip
+
+Estos métodos incluyen \ttt{group()} que devuelve la cadena que coincide, \ttt{start()} que devuelve la posición inicial de esta cadena, \ttt{end()} que devuelve la posición final y \ttt{span()} que devuelve la posición inicial y final como una tupla.
+
+\pythonfile{codigo/21-regex/detalles.py}
+\out{codigo/21-regex/detalles.out}
+
+\section{Buscar y reemplazar}
+
+Uno de los métodos de \ttt{re} más importantes que utiliza expresiones regulares es \ttt{sub()}.\smallskip
+
+Este método reemplaza todas las ocurrencias de un patrón con un string dado. Devuelve una cadena modificada.
+
+\pythonfile{codigo/21-regex/sub_2.py}
+\out{codigo/21-regex/sub_2.out}
+
+Se le puede entregar el argumento \ttt{count}, que especifica la cantidad de reemplazos que se quieren.
+
+\pythonfile{codigo/21-regex/sub_3.py}
+\out{codigo/21-regex/sub_3.out}
+
+El valor predeterminado de \ttt{count} es 0, lo que significa que se reemplazarán todas las coincidencias.
+
+\pythonfile{codigo/21-regex/sub_4.py}
+\out{codigo/21-regex/sub_4.out}
+
+\section{Metacaracteres}
+
+Los metacaracteres son los que hacen a las expresiones regulares más potentes que los métodos de cadena normales. Permiten crear patrones que representan conceptos como \doble{una o más repeticiones de una vocal}.\smallskip
+
+Todos los metacaracteres son los siguientes:
+
+\textfile{codigo/21-regex/metacaracteres.txt}
+
+La existencia de los metacaracteres presenta un problema si se desea crear una expresión regular que corresponda a un metacarácter literal, como por ejemplo \ttt{"\$"}. La solución a estos casos es colocar una barra diagonal invertida \ttt{\textbackslash} antes de dicho caracter.\smallskip
+
+Sin embargo, esto también tendría problemas porque en Python las barras diagonales \ttt{\textbackslash} tienen la función de iniciar secuencias de escape dentro de strings. Por esta razón es que se recomienda usar cadenas puras en las expresiones regulares.
+
+\pythonfile{codigo/21-regex/uso_metacaracteres.py}
+\out{codigo/21-regex/uso_metacaracteres.out}
+
 \clearpage

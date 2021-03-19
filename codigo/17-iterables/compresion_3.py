@@ -1,1 +1,1 @@
-lista_extensa = [2 * i for i in range(10**100)]  # rango de 1 googol
+lista_extensa = [2 * i for i in range(10**100)]  # rango de 1 gúgol

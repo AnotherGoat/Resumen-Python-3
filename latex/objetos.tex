@@ -41,15 +41,15 @@ Para instanciar una clase y construir un objeto, sólo basta con llamar su méto
 
 \pythonfile{codigo/20-objetos/clases_1.py}
 
-El código de arriba define una clase llamada Gato, la cual tiene el atributo color. Luego, la clase es utilizada para crear 2 objetos independientes de esa clase, los cuales son el Gato Félix y el Gato Tigre.\smallskip
+El código de arriba define una clase llamada \ttt{Gato}, la cual tiene el atributo \ttt{color}. Luego, la clase es utilizada para crear 2 objetos independientes de esa clase, los cuales son el \ttt{Gato felix} y el \ttt{Gato tigre}.\smallskip
 
 Las partes de una clase se verán en más detalle a continuación.
 
 \section{Constructor}
 
-El método \_\_init\_\_ es el más importante de una clase, conocido como constructor. Es llamado cuando una instancia de una clase (objeto) es creada, utilizando el nombre de la clase como función.\smallskip
+El método \ttt{\_\_init\_\_()} es el más importante de una clase, conocido como constructor. Es llamado cuando una instancia de una clase (objeto) es creada, utilizando el nombre de la clase como función.\smallskip
 
-Si el método \ttt{\_\_init\_\_()} va vacío, no es necesario escribirlo.
+Si el método \ttt{\_\_init\_\_()} va vacío, es decir, no ocurre nada al construir un objeto, no es necesario escribirlo.
 
 \pythonfile{codigo/20-objetos/sin_constructor.py}
 \out{codigo/20-objetos/sin_constructor.out}
@@ -65,21 +65,21 @@ Veamos un ejemplo más complejo.
 
 Todos los constructores de una clase deben tener \ttt{self} como su primer parámetro. No se necesita entregar \ttt{self} al momento de instanciar.\smallskip
 
-Dentro de la definición de un método, self se refiere a la misma instancia que está llamando al método.
+Dentro de la definición de un método, \ttt{self} se refiere a la misma instancia que está llamando al método.
 
 \section{Atributos y self}
 
-Las instancias de una clase tienen atributos, los cuales son datos asociados a ellas, que definen sus características. En este ejemplo, las instancias de Persona tienen los atributos nombre y edad.
+Las instancias de una clase tienen atributos, los cuales son datos asociados a ellas, que definen sus características. En este ejemplo, las instancias de \ttt{Persona} tienen los atributos \ttt{nombre} y \ttt{edad}.
 
 \pythonfile{codigo/20-objetos/atributos_1.py}
 
-En el constructor \ttt{\_\_init\_\_()}, se le dan los parámetros self, nombre y edad. El parámetro self se refiere a la instancia, mientras que nombre y edad son los atributos de la persona.\smallskip
+En el constructor \ttt{\_\_init\_\_()}, se le dan los parámetros \ttt{self}, \ttt{nombre} y \ttt{edad}. El parámetro \ttt{self} se refiere a la instancia, mientras que \ttt{nombre} y \ttt{edad} son los atributos de \ttt{Persona}.\smallskip
 
-El uso de self es para distinguir los atributos que se le entregan al constructor de los que tendrá la instancia. En este caso serán el mismo, pero se les puede dar valores por defecto.
+El uso de \ttt{self} es para distinguir los atributos que se le entregan al constructor de los que tendrá la instancia. En este caso serán el mismo, pero se les puede dar valores por defecto.
 
 \pythonfile{codigo/20-objetos/atributos_2.py}
 
-Después, un objeto se construye dándole valores a sus atributos. En este ejemplo, tiene sentido pensar que nombre es un string y edad es un número.
+Después, un objeto se construye dándole valores a sus atributos. En este ejemplo, tiene sentido pensar que \ttt{nombre} es un string y \ttt{edad} es un número.
 
 \pythonfile{codigo/20-objetos/atributos_3.py}
 
@@ -98,7 +98,7 @@ En Python, no existen los setters y getters que se ven en otros lenguajes con or
 
 \section{Métodos}
 
-Las clases pueden tener otros métodos definidos para agregarles funcionalidad. Todos los métodos deben tener self como su primer parámetro.\smallskip
+Las clases pueden tener otros métodos definidos para agregarles funcionalidad. Todos los métodos deben tener \ttt{self} como su primer parámetro.\smallskip
 
 Estos métodos son accedidos utilizando la misma sintaxis de punto que los atributos.
 
@@ -131,7 +131,7 @@ Tratar de acceder a un atributo de una instancia que no está definida generará
 
 La herencia brinda una forma de compartir funcionalidades entre clases.\smallskip
 
-Por ejemplo, las clases Perro, Gato, Conejo, etc. tienen algo en común. Aunque presenten algunas diferencias, también tienen muchas características en común. Este parecido puede ser expresado haciendo que todos hereden de una superclase Animal, que contiene las funcionalidades compartidas.\smallskip
+Por ejemplo, las clases \ttt{Perro}, \ttt{Gato}, \ttt{Conejo}, etc. son parecidas. Aunque presenten algunas diferencias, también tienen muchas características en común. Este parecido puede ser expresado haciendo que todos hereden de una superclase \ttt{Animal}, que contiene las funcionalidades compartidas entre ellas.\smallskip
 
 Para heredar de una clase desde otra, se coloca el nombre de la superclase entre paréntesis luego del nombre de la clase.
 
@@ -190,7 +190,7 @@ El método mágico \ttt{\_\_add\_\_()} permite sobrecargar el operador \ttt{+}, 
 
 El método \ttt{\_\_add\_\_()} suma los atributos correspondientes de los objetos y devuelve un nuevo objeto que contiene el resultado. Una vez definido, se pueden sumar dos objetos de una clase entre sí.\smallskip
 
-Otra forma de verlo es que el intérprete de Python siempre interpretará el operador + como el método \ttt{\_\_add\_\_()} de su clase.\smallskip
+Otra forma de verlo es que el intérprete de Python siempre interpretará el operador \ttt{+} como el método \ttt{\_\_add\_\_()} de su clase.\smallskip
 
 Los métodos mágicos para operadores comunes son:
 
@@ -227,7 +227,7 @@ Python también ofrece métodos mágicos para comparaciones.
 
 \textfile{codigo/20-objetos/comparadores.txt}
 
-Si \_\_ne\_\_ no está implementado, devuelve el opuesto de \_\_eq\_\_. No hay ninguna otra relación entre los otros operadores.
+Si \ttt{\_\_ne\_\_()} no está implementado, devuelve el opuesto de \ttt{\_\_eq\_\_()}. No hay ninguna otra relación entre los otros operadores.
 
 \pythonfile{codigo/20-objetos/gt.py}
 \out{codigo/20-objetos/gt.out}
@@ -250,7 +250,7 @@ El ciclo de vida de un objeto está conformado por su creación, manipulación y
 
 La primera etapa del ciclo de vida de un objeto es la definición de la clase a la cual pertenece.\smallskip
 
-La siguiente etapa es la instanciación de un objeto, cuando el método \_\_init\_\_ es llamado. La memoria es asignada para almacenar la instancia. Justo antes de que esto ocurra, el método \_\_new\_\_ de la clase es llamado, para asignar la memoria necesaria. Este es normalmente redefinido sólo en casos especiales.\smallskip
+La siguiente etapa es la instanciación de un objeto, cuando el método \ttt{\_\_init\_\_()} es llamado. La memoria es asignada para almacenar la instancia. Justo antes de que esto ocurra, el método \ttt{\_\_new\_\_()} de la clase es llamado, para asignar la memoria necesaria. Este es normalmente redefinido sólo en casos especiales.\smallskip
 
 Luego de que ocurra lo anterior el objeto estará listo para ser utilizado.\smallskip
 
@@ -260,10 +260,11 @@ Cuando un objeto es destruido, la memoria asignada se libera y puede ser utiliza
 
 La destrucción de un objeto ocurre cuando su contador de referencias llega a cero. La cuenta de referencias es el número de variables y otros elementos que se refieren al objeto.\smallskip
 
-Si nada se está refiriendo al objeto (tiene una cuenta de referencias de 0) nada puede interactuar con este, así que puede ser eliminado con seguridad.
+Si nada se está refiriendo al objeto (tiene una cuenta de referencias de 0) nada puede interactuar con este, así que puede ser eliminado con seguridad.\smallskip
+
 En algunas situaciones, dos (o más) objetos pueden solo referirse entre ellos, y por lo tanto pueden ser eliminados también.\smallskip
 
-La sentencia del reduce la cuenta de referencias de un objeto por 1, y a menudo conlleva a su eliminación. El método mágico de la sentencia del es \_\_del\_\_.\smallskip
+La sentencia del reduce la cuenta de referencias de un objeto por 1, y a menudo conlleva a su eliminación. El método mágico de la sentencia del es \ttt{\_\_del\_\_()}.\smallskip
 
 El proceso de eliminación de objetos cuando ya no son necesarios se denomina recolección de basura (garbage collection).\smallskip
 
@@ -273,21 +274,41 @@ En resumen, el contador de referencias de un objeto se incrementa cuando se le e
 
 Lenguajes de bajo nivel como C no tienen esta clase de manejo de memoria automático. Se debe realizar manualmente en ellos.
 
-\section{Ocultamiento de información}
+\section{Encapsulamiento}
 
 Un componente clave de la programación orientada a objetos es el encapsulamiento, que involucra empaquetar las variables y funciones relacionadas en un único objeto fácil de usar, una instancia de una clase.\smallskip
 
 Un concepto asociado es el de ocultamiento de información, el cual dicta que los detalles de implementación de una clase deben estar ocultos y que sean presentados a aquellos que quieran utilizar la clase en una interfaz estándar limpia. En otros lenguajes de programación, esto se logra normalmente utilizando métodos y atributos privados, los cuales bloquean el acceso externo a ciertos métodos y atributos en una clase.\smallskip
 
-La filosofía de Python es ligeramente diferente. A menudo se dice \doble{todos somos adultos consistentes aquí}, que significa que no deberías poner restricciones arbitrarias al acceso de las partes de una clase. Por ende, no hay formas de imponer que un método o atributo sea estrictamente privado.\smallskip
+La filosofía de Python es ligeramente diferente. A menudo se dice \doble{todos somos adultos responsables aquí}, que significa que no deberías poner restricciones arbitrarias al acceso de las partes de una clase. Por ende, no hay formas de imponer que un método o atributo sea estrictamente privado.\smallskip
 
-Sin embargo, hay maneras de desalentar a la gente de acceder a las partes de una clase, tales como denotar que es un detalle de implementación y debe ser utilizado a su cuenta y riesgo.\smallskip
+Sin embargo, hay maneras de desalentar a la gente de acceder a las partes de una clase, tales como denotar que es un detalle de implementación y debe ser utilizado a su cuenta y riesgo.
+
+\section{Métodos y atributos privados}
 
 Los métodos y atributos débilmente privados tienen un único guión bajo al principio. Esto señala que son privados, y no deberían ser utilizados por código externo.\smallskip
 
+%TODO: ejemplos más sencillos, en todo el capítulo
+
+\pythonfile{codigo/20-objetos/debilmente_privado.py}
+\out{codigo/20-objetos/debilmente_privado.out}
+
 Sin embargo, es en su mayor parte sólo una convención, y no impide que el código externo los acceda. Su único efecto verdadero es que \ttt{from nombre\_de\_modulo import *} no importará a las variables que empiecen por un único guión bajo.
 
+%TODO: el método mágico __repr__() es como el toString()
+
+Los métodos y atributos fuertemente privados tienen doble guón bajo al principio de sus nombres. Esto hace que sus nombres sean decorados, lo cual significa que no pueden ser accedidos desde afuera de la clase.\smallskip
+
+El propósito de esto no es asegurar que se mantengan privados, sino de evitar errores en caso de que existan subclases que tengan métodos o atributos con los mismos nombres.\smallskip
+
+Los métodos con nombres decorados pueden aún ser accedidos externamente pero por un nombre diferente. Por ejemplo, método \ttt{\_\_privado()} de la clase \ttt{Clase} puede ser accedido externamente con \ttt{_Clase__metodoprivado()}.
+
+\pythonfile{codigo/20-objetos/fuertemente_privado.py}
+\out{codigo/20-objetos/fuertemente_privado.out}
+
 \section{Métodos de clase}
+
+
 
 \section{Métodos estáticos}
 
