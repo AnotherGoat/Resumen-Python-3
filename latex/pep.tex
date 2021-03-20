@@ -1,0 +1,55 @@
+\chapter{PEP}
+
+\section{PEP}
+
+%TODO: enlaces en todo el capitulo
+
+PEP proviene del inglés Python Enhancement Proposals, que significa Propuestas de Mejoras de Python. Son sugerencias para mejoras al lenguaje, hechas por desarrolladores experimentados de Python. El Zen de Python visto en el primer capítulo es el PEP 20.
+
+
+
+En este capítulo se verán algunos de los PEP más importantes, y un resumen sobre sus contenidos.
+
+\section{PEP 8}
+
+PEP 8 es una guía de estilo sobre el tema de escritura de código legible. Contiene una serie de directrices en referencia a los nombres de variables, que pueden resumirse de esta forma.
+
+%TODO: ejemplos
+\begin{itemize}
+    \item Los módulos deben tener nombres cortos y en minúsculas.
+    
+    \pythonfile{codigo/22-pep/modulos_legibles.py}
+    
+    \item Los nombres de clases deben estar en estilo \ttt{CamelCase}.
+    
+    \pythonfile{codigo/22-pep/clases_legibles.py}
+
+    \item La mayoría de nombres de variables y funciones deben estar en \ttt{snake\_case}.
+    
+    \pythonfile{codigo/22-pep/variables_legibles.py}
+
+    \pythonfile{codigo/22-pep/funciones_legibles.py}
+
+    \item Las constantes (variables que nunca cambian de valor) deben estar en \ttt{SCREAMING\_SNAKE\_CASE} también conocida como \ttt{CONSTANT\_CASE}.
+    
+    \pythonfile{codigo/22-pep/constantes_legibles.py}
+
+    \item Los nombres que causarían conflicto con las palabras claves de Python (como \ttt{class} o \ttt{if}) deben tener guiones bajos al principio.
+    
+
+
+    \item Se recomienda usar espacios entre operadores y después de escribir comas \ttt{,}.
+    
+    \pythonfile{codigo/22-pep/operaciones_legibles.py}
+
+    \pythonfile{codigo/22-pep/comas_legibles.py}
+
+    \item El espacio en blanco no debe ser abusado. Por ejemplo, se debe evitar poner espacios en blanco después de llaves o corchetes.
+    
+    \pythonfile{codigo/22-pep/evitar_espacios.py}
+    
+\end{itemize}
+
+\section{PEP 20}
+
+\clearpage

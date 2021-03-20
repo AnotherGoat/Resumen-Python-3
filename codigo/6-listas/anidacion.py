@@ -1,8 +1,16 @@
-lista = ["hola", "mundo", [1, 2, 3]]
+anidados = [[0,1], [2,3], [4,5]]
 
-print(lista[0])
-print(lista[1])
-print(lista[2])
-print(lista[2][0])
-print(lista[2][1])
-print(lista[2][2])
+# Elementos de la lista más grande
+print(anidados[0])
+print(anidados[1])
+print(anidados[2])
+
+# Elementos de las listas más pequeñas
+print(anidados[0][0])
+print(anidados[0][1])
+
+print(anidados[1][0])
+print(anidados[1][1])
+
+print(anidados[2][0])
+print(anidados[2][1])

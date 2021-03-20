@@ -122,4 +122,93 @@ Sin embargo, esto también tendría problemas porque en Python las barras diagon
 \pythonfile{codigo/21-regex/uso_metacaracteres.py}
 \out{codigo/21-regex/uso_metacaracteres.out}
 
+\section{Punto}
+
+El metacarácter más sencillo es el punto \ttt{.}, que coincide con cualquier caracter excepto una nueva linea.
+
+\pythonfile{codigo/21-regex/punto_1.py}
+\out{codigo/21-regex/punto_1.out}
+
+\pythonfile{codigo/21-regex/punto_2.py}
+\out{codigo/21-regex/punto_2.out}
+
+Básicamente, el punto \ttt{.} actúa como un \doble{comodín}.\smallskip
+
+Otro uso puede ser para pedir palabras de un largo igual o superior a la cantidad de puntos.
+
+\pythonfile{codigo/21-regex/punto_3.py}
+\out{codigo/21-regex/punto_3.out}
+
+\section{Inicio y final}
+
+Los metacaracteres \ttt{^} y \ttt{\$} coinciden con el inicio y el final de una cadena, respectivamente. \ttt{^} busca palabras que comiencen con el carácter que le sigue y \ttt{\$} busca palabras que terminen con el caracter que le precede.\smallskip
+
+En los ejemplos se usa \ttt{search()} porque \ttt{match()} busca desde el principio del string, lo que sería redundante con \ttt{^}.
+
+\pythonfile{codigo/21-regex/inicio_final_1.py}
+\out{codigo/21-regex/inicio_final_1.out}
+
+\pythonfile{codigo/21-regex/inicio_final_2.py}
+\out{codigo/21-regex/inicio_final_2.out}
+
+\ttt{^} y \ttt{\$} por si solos no son suficiente para buscar palabras que comiencen con un carácter y terminen con otro (al mismo tiempo).
+
+\section{Clases de caracteres}
+
+Los corchetes \ttt{[]} son metacaracteres usados para definir clases de caracteres, que son conjuntos de caracteres aceptados. El patrón solo necesita que aparezca uno de los caracteres dentro del grupo.
+
+\pythonfile{codigo/21-regex/clases_caracteres_1.py}
+\out{codigo/21-regex/clases_caracteres_1.out}
+
+\pythonfile{codigo/21-regex/clases_caracteres_2.py}
+\out{codigo/21-regex/clases_caracteres_2.out}
+
+Si se ingresan en sucesión, el patrón acepta un carácter del primer conjunto en orden seguido de uno del segundo.
+
+\pythonfile{codigo/21-regex/clases_caracteres_3.py}
+\out{codigo/21-regex/clases_caracteres_3.out}
+
+\section{Rangos de caracteres}
+
+Dentro de una clase de caracteres se pueden especificar rangos para evitar tener que escribir muchas letras o números.\smallskip
+
+Las más usadas son las siguientes:
+
+\begin{itemize}
+    \item \ttt{[a-z]}: Para cualquier letra del alfabeto minúscula.
+    
+    \item \ttt{[A-Z]}: Para cualquier letra del alfabeto mayúscula.
+    
+    \item \ttt{[0-9]}: Para cualquier dígito.
+    
+\end{itemize}
+
+\pythonfile{codigo/21-regex/clases_rangos_1.py}
+\out{codigo/21-regex/clases_rangos_1.out}
+
+Los rangos se pueden combinar dentro de una misma clase.
+
+\pythonfile{codigo/21-regex/clases_rangos_2.py}
+\out{codigo/21-regex/clases_rangos_2.out}
+
+Para representar dígitos, también se puede usar \ttt{\textbackslash d}.
+
+\pythonfile{codigo/21-regex/digitos.py}
+\out{codigo/21-regex/digitos.out}
+
+Los rangos se pueden limitar dependiendo de lo que se necesite.
+
+\pythonfile{codigo/21-regex/clases_rangos_3.py}
+\out{codigo/21-regex/clases_rangos_3.out}
+
+\section{Clases invertidas}
+
+Si se ingresa el metacarácter \ttt{^} al principio de una clase de caracteres, invierte todos los contenidos de la clase.
+
+\pythonfile{codigo/21-regex/invertir.py}
+\out{codigo/21-regex/invertir.out}
+
+Esto solo funciona si se coloca al principio, en cualquier otra posición no tiene función.
+
+
 \clearpage

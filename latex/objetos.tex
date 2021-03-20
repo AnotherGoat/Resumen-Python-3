@@ -93,9 +93,6 @@ El valor que tiene un atributo también puede ser cambiado durante la ejecución
 \pythonfile{codigo/20-objetos/atributos_5.py}
 \out{codigo/20-objetos/atributos_5.out}
 
-%TODO: enlace aquí
-En Python, no existen los setters y getters que se ven en otros lenguajes con orientación a objetos.
-
 \section{Métodos}
 
 Las clases pueden tener otros métodos definidos para agregarles funcionalidad. Todos los métodos deben tener \ttt{self} como su primer parámetro.\smallskip
@@ -308,10 +305,49 @@ Los métodos con nombres decorados pueden aún ser accedidos externamente pero p
 
 \section{Métodos de clase}
 
+Hasta ahora, sólo se han visto métodos que son llamados por una instancia de clase, la cual es pasada al parámetro \ttt{self} del método.\smallskip
 
+Los métodos de clase son distintos: son llamados por una clase que es pasada al parámetro \ttt{cls} del método, el cual reemplaza a \ttt{self}.\smallskip
+
+Un uso común de estos son los métodos de fábrica, los cuales instancian un objeto de la clase utilizando diferentes parámetros que aquellos normalmente pasados al constructor de la clase.\smallskip
+
+Los métodos de clase son marcados con el decorador \ttt{classmethod}.
+
+\pythonfile{codigo/20-objetos/metodo_de_clase.py}
+\out{codigo/20-objetos/metodo_de_clase.out}
 
 \section{Métodos estáticos}
 
+Los métodos estáticos son parecidos a los métodos de clase, excepto que no reciben argumentos adicionales como \ttt{self} o \ttt{cls}. Son idénticos a funciones regulares que pertenecen a una clase.\smallskip
+
+Son marcados con el decorador \ttt{staticmethod}.
+
+
+%TODO: traducir el código
+\pythonfile{codigo/20-objetos/metodo_estatico.py}
+
+Los métodos estáticos se comportan como funciones normales, excepto por el hecho de que se pueden llamar desde una instancia de una clase. Esto significa que se pueden sin necesidad de instanciar un objeto de la clase.
+
 \section{Propiedades}
+
+Las propiedades ofrecen una forma de personalizar el acceso a los atributos de instancia.\smallskip
+
+Son creadas al poner el decorador \ttt{property} encima de un método, lo cual significa que cuando el atributo de instancia con el mismo nombre que el método es accedido, el método será llamado en su lugar.\smallskip
+
+Un uso común de una propiedad es hacer que un atributo sea de solo lectura.
+
+\pythonfile{codigo/20-objetos/propiedad_1.py}
+\out{codigo/20-objetos/propiedad_1.out}
+
+\pythonfile{codigo/20-objetos/propiedad_2.py}
+
+Las propiedades también pueden ser fijadas definiendo funciones de tipo getter y setter.\smallskip
+
+Un getter toma el valor de una propiedad, mientras el setter fija el valor.\smallskip
+
+Para definir un getter, se debe usar un decorador con el mismo nombre de la propiedad, seguido por \ttt{.getter}. Lo mismo ocurre para un setter, pero va seguido por \ttt{.setter}.
+
+%TODO: mejorar ejemplos
+\pythonfile{codigo/20-objetos/getter_setter.py}
 
 \clearpage

@@ -2,7 +2,7 @@
 
 \section{Creación de listas}
 
-Las listas son colecciones ordenadas posicionalmente de objetos tipados arbitrariamente y no tienen un tamaño fijo. Se utilizan para almacenar varios elementos y se crean utilizando corchetes y separando los elementos por comas.
+Las listas son la estructura más usada en Python. Son colecciones ordenadas posicionalmente de objetos tipados arbitrariamente y no tienen un tamaño fijo. Se utilizan para almacenar varios elementos y se crean utilizando corchetes y separando los elementos por comas.
 
 \pythonfile{codigo/6-listas/lista_1.py}
 
@@ -10,9 +10,9 @@ En Python, las listas pueden tener elementos de más de un tipo.
 
 \pythonfile{codigo/6-listas/lista_2.py}
 
-\section{Indexación de listas}
+\section{Índices}
 
-Se puede acceder a un determinado elemento de la lista utilizando su índice entre corchetes. El índice del primer elemento es \ttt{0}, en lugar de \ttt{1}, como podría esperarse. Después del \ttt{0} viene el {1}, luego el {2}, y así sucesivamente.
+Se puede acceder a un determinado elemento de la lista escribiendo su índice entre corchetes \ttt{[]}. El índice del primer elemento es \ttt{0}, en lugar de \ttt{1}, como podría esperarse. Después del \ttt{0} viene el {1}, luego el {2}, y así sucesivamente.
 
 \pythonfile{codigo/6-listas/indexar_listas_1.py}
 \out{codigo/6-listas/indexar_listas_1.out}
@@ -48,7 +48,7 @@ Las listas anidadas se pueden utilizar para representar cuadrículas 2D, como po
 
 \pythonfile{codigo/6-listas/identidad.py}
 
-El intérprete ignora los saltos de línea y la indentación dentro de los corchetes \ttt{[]}.\smallskip
+El intérprete ignora los saltos de línea y la indentación dentro de los corchetes \ttt{[]}, lo que permite ordenarla para hacer más fácil su comprensión.\smallskip
 
 Esta estructura tipo matriz es muy conveniente en los casos en los que se necesite almacenar datos en formato tabla (fila-columna).
 
@@ -64,7 +64,7 @@ Si se deja más de una coma, se mostrará un \ttt{SyntaxError}.
 \pythonfile{codigo/6-listas/error_comas.py}
 \out{codigo/6-listas/error_comas.out}
 
-\section{Tamaño de lista}
+\section{Tamaño de una lista}
 
 Se puede obtener el tamaño (número de elementos) de una lista utilizando la función \ttt{len()}.
   
@@ -77,6 +77,11 @@ El elemento en un índice determinado de una lista se puede reasignar.
 
 \pythonfile{codigo/6-listas/operaciones_listas_1.py}
 \out{codigo/6-listas/operaciones_listas_1.out}
+
+Sin embargo, no se puede usar este método para añadir elementos a una lista. Para hacer eso, se deben usar funciones que se verán más adelante.
+
+\pythonfile{codigo/6-listas/error_reasignar.py}
+\out{codigo/6-listas/error_reasignar.out}
 
 Las listas se pueden concatenar y multiplicar de la misma manera que las cadenas.
 
@@ -97,12 +102,12 @@ Para comprobar si un elemento no pertenece a una lista, se pueden combinar los o
 
 \section{Añadir elementos a listas}
 
-El método \ttt{append()} se usa para añadir un elemento al final de una lista.
+El método \ttt{append()} permite añadir un elemento al final de una lista.
   
 \pythonfile{codigo/6-listas/append.py}
 \out{codigo/6-listas/append.out}
 
-El método \ttt{insert()} se usa para insertar un elemento en un índice específico de una lista. Los elementos que están después del elemento insertado se desplazan a la derecha.
+El método \ttt{insert()} se usa para insertar un elemento en un índice específico de una lista. Toma 2 argumentos: un índice y un objeto. Los elementos que están después del elemento insertado se desplazan a la derecha.
 
 \pythonfile{codigo/6-listas/insert.py}
 \out{codigo/6-listas/insert.out}
@@ -111,6 +116,8 @@ El método \ttt{extend()} se usa para añadir todos los elementos de una lista a
   
 \pythonfile{codigo/6-listas/extend.py}
 \out{codigo/6-listas/extend.out}
+
+El resultado obtenido es el mismo que al concatenar las listas, pero la diferencia es que reemplaza la primera lista por la versión extendida.
 
 \section{Quitar elementos de listas}
 
@@ -143,6 +150,18 @@ El método \ttt{clear()} quita todos los elementos de una lista, dejándola vac�
 
 \pythonfile{codigo/6-listas/clear.py}
 \out{codigo/6-listas/clear.out}
+
+\section{La declaración del}
+
+Otra forma de eliminar elementos de una lista es usando la palabra clave \ttt{del}. Esto permite eliminar elementos según su índice, similar a usar \ttt{pop()}.
+
+\pythonfile{codigo/6-listas/eliminacion.py}
+\out{codigo/6-listas/eliminacion.out}
+
+También se puede especificar un rango de eliminación, lo que hace que elimine elementos desde el índice antes de \ttt{:} hasta el antecesor del índice después de \ttt{:}.
+
+\pythonfile{codigo/6-listas/del_rango.py}
+\out{codigo/6-listas/del_rango.out}
 
 \section{Ordenar listas}
 
@@ -179,6 +198,11 @@ Si el elemento no se encuentra en la lista, muestra un \ttt{ValueError}.
 
 \pythonfile{codigo/6-listas/error_index.py}
 \out{codigo/6-listas/error_index.out}
+
+También acepta un segundo argumento, donde se puede especificar el índice desde el cual se empezará a buscar.
+
+\pythonfile{codigo/6-listas/index_start.py}
+\out{codigo/6-listas/index_start.out}
 
 El método \ttt{count()} cuenta la cantidad de ocurrencias de un elemento en una lista.
   

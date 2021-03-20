@@ -1,0 +1,1 @@
+DIAS_DE_LA_SEMANA = 7
