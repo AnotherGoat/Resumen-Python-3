@@ -1,0 +1,4 @@
+None
+<re.Match object; span=(0, 1), match='g'>
+<re.Match object; span=(0, 2), match='gg'>
+<re.Match object; span=(0, 18), match='gggggggggggggggggg'>

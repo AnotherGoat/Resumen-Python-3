@@ -1,0 +1,12 @@
+<re.Match object; span=(0, 0), match=''>
+<re.Match object; span=(0, 1), match='a'>
+<re.Match object; span=(0, 1), match='b'>
+<re.Match object; span=(0, 1), match='c'>
+<re.Match object; span=(0, 2), match='ab'>
+<re.Match object; span=(0, 2), match='ac'>
+<re.Match object; span=(0, 2), match='bc'>
+None
+None
+None
+<re.Match object; span=(0, 3), match='abc'>
+None

@@ -104,6 +104,15 @@ Los códigos Unicode se aceptan sin importar que tengan mayúsculas o minúscula
 
 El \link{https://unicode.org/}{sitio web de Unicode} contiene más información sobre estos caracteres y sobre este estándar. \link{https://unicode-table.com/en/}{Este sitio web} tiene una tabla con los códigos.
 
+\section{Cadenas puras}
+
+Las cadenas puras \doble{raw string} ignoran las secuencias de escape, como \ttt{\textbackslash n} o \ttt{\textbackslash t}. Se escriben igual que una cadena común, pero con la letra \ttt{r} fuera de las comillas.
+
+\pythonfile{codigo/3-strings/raw_string.py}
+\out{codigo/3-strings/raw_string.out}
+
+En ocasiones su uso puede ser conveniente.
+
 \section{Strings multilínea}
 
 Este es un tipo especial de string, que se escribe entre comillas triples \ttt{\q\q\q \q\q\q} o \ttt{\qq\qq\qq \qq\qq\qq}, y que reconoce los saltos de línea sin necesidad de usar la secuencia \ttt{\textbackslash n}.

@@ -2,4 +2,5 @@
 <re.Match object; span=(0, 5), match='12345'>
 <re.Match object; span=(0, 5), match='@!/&?'>
 None
+None
 <re.Match object; span=(0, 5), match='qwert'>

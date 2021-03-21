@@ -1,0 +1,6 @@
+None
+<re.Match object; span=(0, 1), match='9'>
+<re.Match object; span=(0, 10), match='9999999999'>
+None
+<re.Match object; span=(0, 1), match='9'>
+<re.Match object; span=(0, 10), match='9999999999'>

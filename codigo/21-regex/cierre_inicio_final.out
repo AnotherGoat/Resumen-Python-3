@@ -1,0 +1,14 @@
+<re.Match object; span=(0, 6), match='sandía'>
+<re.Match object; span=(0, 7), match='saludar'>
+None
+None
+
+<re.Match object; span=(0, 6), match='sandía'>
+None
+None
+<re.Match object; span=(0, 7), match='campana'>
+
+<re.Match object; span=(0, 6), match='sandía'>
+None
+None
+None

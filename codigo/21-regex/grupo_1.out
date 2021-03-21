@@ -1,0 +1,11 @@
+<re.Match object; span=(0, 0), match=''>
+<re.Match object; span=(0, 4), match='spam'>
+<re.Match object; span=(0, 4), match='eggs'>
+
+<re.Match object; span=(0, 8), match='spameggs'>
+<re.Match object; span=(0, 16), match='spamspameggseggs'>
+<re.Match object; span=(0, 20), match='spamspamspamspameggs'>
+<re.Match object; span=(0, 20), match='spameggseggseggseggs'>
+
+None
+None
