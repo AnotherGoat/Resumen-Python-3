@@ -4,14 +4,18 @@
 
 \section{Cortes de lista}
 
-Los cortes de lista ofrecen una manera más avanzada de obtener valores de una lista. Los cortes de lista básicos involucran indexar una lista con dos enteros separados por dos puntos. Esto devuelve una lista nueva que contiene todos los valores de la lista vieja entre los índices.
+Los cortes de lista ofrecen una manera más avanzada de obtener valores de una lista.
+Los cortes de lista básicos involucran indexar una lista con dos enteros separados por dos puntos.
+Esto devuelve una lista nueva que contiene todos los valores de la lista vieja entre los índices.
 
 \pythonfile{codigo/17-iterables/cortes_1.py}
 \out{codigo/17-iterables/cortes_1.out}
 
-Como los argumentos de \ttt{range()}, el primer índice provisto en un corte es incluido en el resultado, pero el segundo no.\smallskip
+Como los argumentos de \ttt{range()}, el primer índice provisto en un corte es incluido en el resultado, pero el segundo no.
+\medskip
 
-Si el primer número en un corte es omitido, se toma el principio de la lista. Si el segundo número es omitido, se toma el final de la lista.
+Si el primer número en un corte es omitido, se toma el principio de la lista.
+Si el segundo número es omitido, se toma el final de la lista.
 
 \pythonfile{codigo/17-iterables/cortes_2.py}
 \out{codigo/17-iterables/cortes_2.out}
@@ -21,7 +25,8 @@ Los cortes de lista también pueden tener un tercer número, representando el in
 \pythonfile{codigo/17-iterables/cortes_3.py}
 \out{codigo/17-iterables/cortes_3.out}
 
-Los valores negativos pueden ser utilizados en un corte de lista. Cuando los valores negativos son utilizados para el primer y el segundo valor del corte, estos cuentan desde el final de la lista.
+Los valores negativos pueden ser utilizados en un corte de lista.
+Cuando los valores negativos son utilizados para el primer y el segundo valor del corte, estos cuentan desde el final de la lista.
 
 \pythonfile{codigo/17-iterables/cortes_4.py}
 \out{codigo/17-iterables/cortes_4.out}
@@ -31,7 +36,8 @@ El tamaño de paso también puede ser negativo, lo que permite usarlos para inve
 \pythonfile{codigo/17-iterables/cortes_reverse.py}
 \out{codigo/17-iterables/cortes_reverse.out}
 
-Es importante recordar que si el tamaño de paso es negativo, el primer número debe indicar un índice mayor que el segundo.\smallskip
+Es importante recordar que si el tamaño de paso es negativo, el primer número debe indicar un índice mayor que el segundo.
+\medskip
 
 Se pueden usar cortes para copiar listas, aunque no suele ser la forma más clara de hacerlo.
 
@@ -40,21 +46,16 @@ Se pueden usar cortes para copiar listas, aunque no suele ser la forma más clar
 
 \section{Cortes de tuplas}
 
-Los cortes también pueden ser realizados en tuplas. Su funcionamiento es el mismo que con listas.
+Los cortes también pueden ser realizados en tuplas.
+Su funcionamiento es el mismo que con listas.
 
 \pythonfile{codigo/17-iterables/cortes_en_tuplas.py}
 \out{codigo/17-iterables/cortes_en_tuplas.out}
 
-Esto es válido porque si bien las tuplas son inmutables, los cortes no realizan ningún cambio sobre los objetos con los que trabajan. Sólo consultan información de cierta manera.
+Esto es válido porque si bien las tuplas son inmutables, los cortes no realizan ningún cambio sobre los objetos con los que trabajan.
+Sólo consultan información de cierta manera.
 
-\section{Subcadenas}
 
-En Python pueden usarse cortes para obtener trozos de una cadena. Esto es lo que en otros lenguajes de programación se realiza usando el método \ttt{substring()}. Funciona de la misma forma que con listas y tuplas.
-
-\pythonfile{codigo/17-iterables/substring_1.py}
-\out{codigo/17-iterables/substring_1.out}
-
-%TODO: más
 
 \section{Listas por compresión}
 
@@ -63,33 +64,40 @@ Las listas por compresión son una forma útil de crear rápidamente listas cuyo
 \pythonfile{codigo/17-iterables/compresion_1.py}
 \out{codigo/17-iterables/compresion_1.out}
 
-Las listas por compresión son inspiradas por la notación de \link{https://edu.gcfglobal.org/es/los-conjuntos/notacion-de-conjuntos/1/}{constructores de conjuntos} en las matemáticas.\smallskip
+Las listas por compresión son inspiradas por la notación de \link{https://edu.gcfglobal.org/es/los-conjuntos/notacion-de-conjuntos/1/}{constructores de conjuntos} en las matemáticas.
+\medskip
 
 Una lista por compresión también puede contener una sentencia \ttt{if} para aplicar una condición en los valores de la lista.
 
 \pythonfile{codigo/17-iterables/compresion_2.py}
 \out{codigo/17-iterables/compresion_2.out}
 
-Intentar crear una lista de rango demasiado extenso resultará en un \ttt{MemoryError}. Es posible que la operación tarde unos minutos en llegar a esta excepción, o que el PC se quede sin memoria antes de que llegue a aparecer.
+Intentar crear una lista de rango demasiado extenso resultará en un \ttt{MemoryError}.
+Es posible que la operación tarde unos minutos en llegar a esta excepción, o que el PC se quede sin memoria antes de que llegue a aparecer.
 
 \pythonfile{codigo/17-iterables/compresion_3.py}
 
-Se debe recordar que se puede interrumpir la ejecución del programa en cualquier momento enviando un \ttt{KeyboardInterrupt}, al pulsar \ttt{Ctrl+C}.\smallskip
+Se debe recordar que se puede interrumpir la ejecución del programa en cualquier momento enviando un \ttt{KeyboardInterrupt}, al pulsar \ttt{Ctrl+C}.
+\medskip
 
 Este problema de memoria es resuelto con generadores, los cuales se verán más tarde.
 
 \section{Formateo de cadenas}
 
-La forma más básica de combinar cadenas y objetos que no son cadenas es convirtiendo dichos objetos a cadenas y concatenando las cadenas.\smallskip
+La forma más básica de combinar cadenas y objetos que no son cadenas es convirtiendo dichos objetos a cadenas y concatenando las cadenas.
+\medskip
 
-El formateo de cadenas ofrece una manera más potente de incorporar objetos que no son cadenas a las cadenas. El formateo de cadenas utiliza el método \ttt{format()} de una cadena para sustituir los argumentos de esta.\smallskip
+El formateo de cadenas ofrece una manera más potente de incorporar objetos que no son cadenas a las cadenas.
+El formateo de cadenas utiliza el método \ttt{format()} de una cadena para sustituir los argumentos de esta.
+\medskip
 
 Una forma de hacerlo es usando índices.
 
 \pythonfile{codigo/17-iterables/formateo_1.py}
 \out{codigo/17-iterables/formateo_1.out}
 
-Cada argumento de la función de formateo es colocada en la cadena de la posición correspondiente, que es determinada usando llaves \ttt{\{\}}.\smallskip
+Cada argumento de la función de formateo es colocada en la cadena de la posición correspondiente, que es determinada usando llaves \ttt{\{\}}.
+\medskip
 
 Los índices entre llaves \ttt{\{\}} pueden repetirse cuantas veces se quiera.
 
@@ -113,7 +121,8 @@ El formateo de cadenas también puede hacerse con argumentos con nombre.
 
 \section{Funciones de cadenas}
 
-Python contiene muchas funciones integradas y métodos útiles que sirven para cumplir tareas comunes. Algunos métodos que se pueden usar con strings son:
+Python contiene muchas funciones integradas y métodos útiles que sirven para cumplir tareas comunes.
+Algunos métodos que se pueden usar con strings son:
 
 \begin{itemize}
   \item \ttt{join()}: Combina una lista de cadenas con otra cadena como separador.
@@ -138,7 +147,8 @@ Python contiene muchas funciones integradas y métodos útiles que sirven para c
   \pythonfile{codigo/17-iterables/endswith.py}
   \out{codigo/17-iterables/endswith.out}
 
-  \item A diferencia de otros lenguajes de programación, Python no tiene el método \ttt{contains()}, para ver si una subcadena pertenece a un string.\smallskip
+  \item A diferencia de otros lenguajes de programación, Python no tiene el método \ttt{contains()}, para ver si una subcadena pertenece a un string.
+\medskip
   
   Usar el operador \ttt{in} tiene el mismo efecto que tendría dicha función.
 
@@ -169,14 +179,16 @@ Python contiene muchas funciones integradas y métodos útiles que sirven para c
 
 \end{itemize}
 
-Al método \ttt{split()} visto anteriormente también se le puede entregar un string separador. La lista será formada con los elementos entre cada aparición de ese string.
+Al método \ttt{split()} visto anteriormente también se le puede entregar un string separador.
+La lista será formada con los elementos entre cada aparición de ese string.
 
 \pythonfile{codigo/6-listas/split_avanzado.py}
 %TODO: out y rehacer el ejemplo
 
 \section{Funciones all() y any()}
 
-Las funciones \ttt{all()} y \ttt{any()} son utilizados con frecuencia como sentencias condicionales. Estos toman una lista como un argumento y devuelven \ttt{True} si todos o algunos (respectivamente) de sus argumentos son evaluados como \ttt{True} (o, de lo contrario, devuelve \ttt{False}).
+Las funciones \ttt{all()} y \ttt{any()} son utilizados con frecuencia como sentencias condicionales.
+Estos toman una lista como un argumento y devuelven \ttt{True} si todos o algunos (respectivamente) de sus argumentos son evaluados como \ttt{True} (o, de lo contrario, devuelve \ttt{False}).
 
 \pythonfile{codigo/17-iterables/all.py}
 \out{codigo/17-iterables/all.out}

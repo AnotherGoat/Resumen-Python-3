@@ -2,17 +2,23 @@
 
 \section{Reutilización de código}
 
-La reutilización de código es una parte muy importante de la programación en cualquier lenguaje. Incrementar el tamaño del código lo hace más difícil de mantener.\smallskip
+La reutilización de código es una parte muy importante de la programación en cualquier lenguaje.
+Incrementar el tamaño del código lo hace más difícil de mantener.
+\medskip
 
-Para que un proyecto grande de programación sea exitoso, es esencial que se atenga al principio DRY, del inglés Don't Repeat Yourself (no te repitas).\smallskip
+Para que un proyecto grande de programación sea exitoso, es esencial que se atenga al principio DRY, del inglés Don't Repeat Yourself (no te repitas).
+\medskip
 
-Del código malo y repetitivo, se dice que se atiene al principio WET, del inglés Write Everything Twice (escribe todo dos veces) o We Enjoy Typing (disfrutamos escribir).\smallskip
+Del código malo y repetitivo, se dice que se atiene al principio WET, del inglés Write Everything Twice (escribe todo dos veces) o We Enjoy Typing (disfrutamos escribir).
+\medskip
 
-Los bucles vistos en el capítulo anterior son una forma de reutilizar código. Este capítulo trata sobre funciones, que son otra forma de hacer esta práctica.
+Los bucles vistos en el capítulo anterior son una forma de reutilizar código.
+Este capítulo trata sobre funciones, que son otra forma de hacer esta práctica.
 
 \section{Funciones}
 
-Cualquier sentencia que consista de una palabra seguida de información entre paréntesis es llamada una función.\smallskip
+Cualquier sentencia que consista de una palabra seguida de información entre paréntesis es llamada una función.
+\medskip
 
 Ejemplos de funciones que se han visto anteriormente:
 
@@ -22,9 +28,12 @@ Palabras antes del paréntesis son nombres de funciones y los valores separados 
 
 \section{Definición de funciones}
 
-Para definir una función, se debe usar la palabra clave \ttt{def}, seguida del nombre de la función y de un paréntesis que puede o no incluir parámetros. El cuerpo de la función incluye el código y debe tener un grado de indentación mayor que el de la definición.\smallskip
+Para definir una función, se debe usar la palabra clave \ttt{def}, seguida del nombre de la función y de un paréntesis que puede o no incluir parámetros.
+El cuerpo de la función incluye el código y debe tener un grado de indentación mayor que el de la definición.
+\medskip
 
-Generalmente, se recomienda que el nombre de una función sea un verbo, pero no es obligatorio.\smallskip
+Generalmente, se recomienda que el nombre de una función sea un verbo, pero no es obligatorio.
+\medskip
 
 Ejemplo de definición de función:
 
@@ -32,7 +41,8 @@ Ejemplo de definición de función:
 
 \section{Argumentos}
 
-Las funciones más básicas son las que no reciben argumentos, pero esto limita su utilidad en gran cantidad. Para hacerlas más útiles, se les puede entregar argumentos, lo que aumenta su funcionalidad.
+Las funciones más básicas son las que no reciben argumentos, pero esto limita su utilidad en gran cantidad.
+Para hacerlas más útiles, se les puede entregar argumentos, lo que aumenta su funcionalidad.
 
 \pythonfile{codigo/8-funciones/exclamar.py}
 
@@ -44,7 +54,8 @@ Una función puede pedir más de un argumento, los cuales deben separarse por co
 
 \section{Llamado de funciones}
 
-Para llamar una función, debe escribirse su nombre, seguido de un paréntesis que contiene los argumentos (información) que se le quieren entregar.\smallskip
+Para llamar una función, debe escribirse su nombre, seguido de un paréntesis que contiene los argumentos (información) que se le quieren entregar.
+\medskip
 
 Ejemplos de uso de las funciones definidas anteriormente:
 
@@ -64,7 +75,9 @@ Técnicamente, los parámetros son las variables en una definición de función 
 
 \section{Variables globales y locales}
 
-Los argumentos de funciones pueden ser utilizados como variables dentro de la definición de la función. Sin embargo, no pueden ser referenciados fuera de dicha definición. Esto también se aplica a las demás variables creadas dentro de una función.
+Los argumentos de funciones pueden ser utilizados como variables dentro de la definición de la función.
+Sin embargo, no pueden ser referenciados fuera de dicha definición.
+Esto también se aplica a las demás variables creadas dentro de una función.
 
 \pythonfile{codigo/8-funciones/argumentos.py}
 \out{codigo/8-funciones/argumentos.out}
@@ -73,14 +86,17 @@ En términos más técnicos, una variable que se inicia fuera de una función re
 
 \pythonfile{codigo/8-funciones/local_y_global.py}
 
-Los parámetros de una función también son variables locales.\smallskip
+Los parámetros de una función también son variables locales.
+\medskip
 
-Existe una excepción a esta regla, la cual permite declarar variables globales dentro del cuerpo de una función. Para hacer esto, se debe usar la palabra clave \ttt{global}.
+Existe una excepción a esta regla, la cual permite declarar variables globales dentro del cuerpo de una función.
+Para hacer esto, se debe usar la palabra clave \ttt{global}.
 
 \pythonfile{codigo/8-funciones/global.py}
 \out{codigo/8-funciones/global.out}
 
-Es importante darse cuenta de que la función \ttt{funcion()} debe ser llamada para inicializar la variable global \ttt{z} y que al usar la palabra clave \ttt{global} se debe separar la declaración de la asignación.\smallskip
+Es importante darse cuenta de que la función \ttt{funcion()} debe ser llamada para inicializar la variable global \ttt{z} y que al usar la palabra clave \ttt{global} se debe separar la declaración de la asignación.
+\medskip
 
 Si no se separan, se mostrará un \ttt{SyntaxError}.
 
@@ -89,7 +105,8 @@ Si no se separan, se mostrará un \ttt{SyntaxError}.
 
 \section{Devolución de valores en una función}
 
-Ciertas funciones devuelven un valor para ser utilizado más adelante. Para hacer esto en la definición de funciones nuevas, se debe usar la palabra clave \ttt{return}.
+Ciertas funciones devuelven un valor para ser utilizado más adelante.
+Para hacer esto en la definición de funciones nuevas, se debe usar la palabra clave \ttt{return}.
 
 \pythonfile{codigo/8-funciones/return_1.py}
 \out{codigo/8-funciones/return_1.out}
@@ -101,7 +118,8 @@ Cualquier código luego de la sentencia \ttt{return} nunca ocurrirá.
 
 \section{Docstring}
 
-Las docstring (cadenas de documentación) cumplen un propósito similar al de los comentarios, pero son más específicos y tienen una sintaxis distinta.\smallskip
+Las docstring (cadenas de documentación) cumplen un propósito similar al de los comentarios, pero son más específicos y tienen una sintaxis distinta.
+\medskip
 
 Son creados colocando una cadena multilínea que contenga una explicación de la función por debajo de la primera línea de la función y teniendo cuidado de respetar la indentación.
 
@@ -112,7 +130,8 @@ Normalmente se usan docstrings para explicar los parámetros y lo que retorna un
 %TODO: buscar formato aceptado
 \pythonfile{codigo/8-funciones/docstring_2.py}
 
-El intérprete de Python ignora los docstring que se usen en otros lugares. Esto ha hecho que algunas personas los usen como \doble{comentarios multilínea}, pero en la práctica no se recomienda hacer esto porque puede generar confusión.
+El intérprete de Python ignora los docstring que se usen en otros lugares.
+Esto ha hecho que algunas personas los usen como \doble{comentarios multilínea}, pero en la práctica no se recomienda hacer esto porque puede generar confusión.
 
 \pythonfile{codigo/8-funciones/comentario_malo.py}
 
@@ -120,21 +139,25 @@ También podría generar problemas de indentación en algunos casos.
 
 \section{Revisar documentación} %TODO: revisar más info aquí
 
-A diferencia de los comentarios convencionales, los docstring se conservan a lo largo del tiempo de ejecución del programa. Esto le permite al programador examinar estos comentarios durante el tiempo de ejecución.\smallskip
+A diferencia de los comentarios convencionales, los docstring se conservan a lo largo del tiempo de ejecución del programa.
+Esto le permite al programador examinar estos comentarios durante el tiempo de ejecución.
+\medskip
 
 Una forma de accederlo es usando la variable \ttt{\_\_doc\_\_}.
 
 \pythonfile{codigo/8-funciones/print_doc.py}
 \out{codigo/8-funciones/print_doc.out}
 
-Otra forma es usando la función \ttt{help()}. Esto entrega un poco más de información.
+Otra forma es usando la función \ttt{help()}.
+Esto entrega un poco más de información.
 
 \pythonfile{codigo/8-funciones/help.py}
 \out{codigo/8-funciones/help.out}
 
 \section{Funciones como objetos}
 
-Aunque sean creadas de manera diferente que las variables regulares, las funciones son como cualquier otra clase de valor. Pueden ser asignadas y reasignadas a variables, y luego ser referenciadas por esos nombres.
+Aunque sean creadas de manera diferente que las variables regulares, las funciones son como cualquier otra clase de valor.
+Pueden ser asignadas y reasignadas a variables, y luego ser referenciadas por esos nombres.
 
 \pythonfile{codigo/8-funciones/funcion_como_objeto_1.py}
 \out{codigo/8-funciones/funcion_como_objeto_1.out}
@@ -146,13 +169,16 @@ Las funciones también pueden ser usadas como argumentos de otras funciones.
 
 \section{El objeto None}
 
-El objeto \ttt{None} es utilizado para representar la ausencia de un valor. Es similar a \ttt{null} en otros lenguajes de programación.\smallskip
+El objeto \ttt{None} es utilizado para representar la ausencia de un valor.
+Es similar a \ttt{null} en otros lenguajes de programación.
+\medskip
 
 Al igual que otros valores \doble{vacíos}, tales como \ttt{()}, \ttt{[]}, \ttt{\{\}} y la cadena vacía \ttt{\qq \qq} o \ttt{\q \q}, es \ttt{False} cuando es convertido a una variable booleana.
 
 %TODO: ejemplo y mencionar estructuras de datos
 
-Cuando es ingresado a la consola de Python, se visualiza como una cadena vacía. Usando \ttt{print()} se mostrará su verdadero valor.
+Cuando es ingresado a la consola de Python, se visualiza como una cadena vacía.
+Usando \ttt{print()} se mostrará su verdadero valor.
 
 \pythonfile{codigo/8-funciones/None_1.py}
 \out{codigo/8-funciones/None_1.out}
@@ -169,14 +195,18 @@ Un uso común de \ttt{None} es para iniciar una lista con cierta cantidad de ele
 
 \section{Sobrecarga de funciones}
 
-En Python, la sobrecarga de funciones se define como la habilidad de que una función se comporte de distinta manera dependiendo del número de argumentos que reciba. Esto permite reutilizar el mismo código, reducir su complejidad y hacer que sea más fácil de leer.\smallskip
+En Python, la sobrecarga de funciones se define como la habilidad de que una función se comporte de distinta manera dependiendo del número de argumentos que reciba.
+Esto permite reutilizar el mismo código, reducir su complejidad y hacer que sea más fácil de leer.
+\medskip
 
-Para sobrecargar una función, se deben definir los parámetros que sean opcionales con un valor por defecto \ttt{None}. Después, se usan declaraciones \ttt{if-elif-else} para revisar todos los casos posibles.
+Para sobrecargar una función, se deben definir los parámetros que sean opcionales con un valor por defecto \ttt{None}.
+Después, se usan declaraciones \ttt{if-elif-else} para revisar todos los casos posibles.
 
 \pythonfile{codigo/8-funciones/sobrecarga_1.py}
 \out{codigo/8-funciones/sobrecarga_1.out}
 
-El siguiente ejemplo muestra una función que calcula el área de una figura geométrica. Si sólo se le entrega 1 argumento asume que es un cuadrado y si se le entregan 2 asume que es un rectángulo.
+El siguiente ejemplo muestra una función que calcula el área de una figura geométrica.
+Si sólo se le entrega 1 argumento asume que es un cuadrado y si se le entregan 2 asume que es un rectángulo.
 
 \pythonfile{codigo/8-funciones/sobrecarga_2.py}
 \out{codigo/8-funciones/sobrecarga_2.out}
@@ -190,11 +220,14 @@ Una anotación de tipos es, como su nombre lo dice, una notación opcional que e
 \pythonfile{codigo/8-funciones/anotaciones_1.py}
 \out{codigo/8-funciones/anotaciones_1.out}
 
-En el ejemplo de arriba, se muestra que mensaje es un parámetro de tipo string y que la función \ttt{duplicar()} retorna un string.\smallskip
+En el ejemplo de arriba, se muestra que mensaje es un parámetro de tipo string y que la función \ttt{duplicar()} retorna un string.
+\medskip
 
-Esto le permite al programador saber qué tipos de datos se le deben entregar una función y que tipos de datos esperar cuando esta función retorne.\smallskip
+Esto le permite al programador saber qué tipos de datos se le deben entregar una función y que tipos de datos esperar cuando esta función retorne.
+\medskip
 
-Las anotaciones de tipos son ignoradas completamente por el intérprete de Python. No restringen el tipo de los parámetros o del retorno de una función, pero son muy útiles al momento de documentar.
+Las anotaciones de tipos son ignoradas completamente por el intérprete de Python.
+No restringen el tipo de los parámetros o del retorno de una función, pero son muy útiles al momento de documentar.
 
 \pythonfile{codigo/8-funciones/anotaciones_2.py}
 \out{codigo/8-funciones/anotaciones_2.out}

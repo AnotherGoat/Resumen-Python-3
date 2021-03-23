@@ -36,13 +36,16 @@ Para ordenar al revés sólo basta con invertir la condición dentro de la decla
 
 \section{Optimizaciones de bubble sort}
 
-Una pequeña optimización puede ser cambiar el \ttt{range} del segundo \ttt{for} por \ttt{range(N - 1 - i)}. Esto ocurre porque en cualquier iteración siempre habrán \ttt{i} elementos ordenados al final, los cuales se pueden omitir.
+Una pequeña optimización puede ser cambiar el \ttt{range} del segundo \ttt{for} por \ttt{range(N - 1 - i)}.
+Esto ocurre porque en cualquier iteración siempre habrán \ttt{i} elementos ordenados al final, los cuales se pueden omitir.
 
 \pythonfile{codigo/x-ordenamiento/burbuja_opti_1.py}
 
-Hacer eso sigue manteniendo el algoritmo en $O(n^2)$.\smallskip
+Hacer eso sigue manteniendo el algoritmo en $O(n^2)$.
+\medskip
 
-Otra optimización es añadir un booleano que revise si han habido cambios en cada iteración. Si en una iteración no hay cambios, significa que ya está ordenado y no es necesario seguir.
+Otra optimización es añadir un booleano que revise si han habido cambios en cada iteración.
+Si en una iteración no hay cambios, significa que ya está ordenado y no es necesario seguir.
 
 \pythonfile{codigo/x-ordenamiento/burbuja_opti_2.py}
 
@@ -63,7 +66,8 @@ Pasos a seguir:
   
 \end{enumerate}
 
-La implementación más sencilla de este algoritmo es la siguiente. Tiene una complejidad de $O(n^2)$.
+La implementación más sencilla de este algoritmo es la siguiente.
+Tiene una complejidad de $O(n^2)$.
 
 \pythonfile{codigo/x-ordenamiento/insercion.py}
 \out{codigo/x-ordenamiento/insercion.out}
@@ -93,7 +97,8 @@ Pasos a seguir:
   
 \end{enumerate}
 
-A continuación se muestra una implementación de este algoritmo. Tiene complejidad de $O(n^2)$.
+A continuación se muestra una implementación de este algoritmo.
+Tiene complejidad de $O(n^2)$.
 
 \pythonfile{codigo/x-ordenamiento/seleccion.py}
 \out{codigo/x-ordenamiento/seleccion.out}
@@ -112,7 +117,9 @@ Al invertir la condición también se invertirá el orden.
 
 \section{Merge sort}
 
-Este algoritmo generalmente se implementa de forma recursiva. Se basa en \doble{dividir para vencer}, dividiendo un problema complejo en varios más sencillos.\smallskip
+Este algoritmo generalmente se implementa de forma recursiva.
+Se basa en \doble{dividir para vencer}, dividiendo un problema complejo en varios más sencillos.
+\medskip
 
 Pasos a seguir:
 
@@ -121,7 +128,8 @@ Pasos a seguir:
   
   \item Las listas se agrupan por pares, y se empiezan a unir de vuelta.
 
-  \item Al unir las listas, se comparan los primeros elementos de cada una y se añaden a la lista unida. Después de añadirlos, se eliminan de su lista original.
+  \item Al unir las listas, se comparan los primeros elementos de cada una y se añaden a la lista unida.
+Después de añadirlos, se eliminan de su lista original.
   
   \item Cuando una lista queda vacía, se añaden todos los elementos que queden en su lista pareja a la lista unida.
 
@@ -134,7 +142,9 @@ La siguiente implementación es de $O(n \log{n})$.
 \pythonfile{codigo/x-ordenamiento/merge.py}
 \out{codigo/x-ordenamiento/merge.out}
 
-Este algoritmo es complicado de entender, ya que usa mucho la recursión. Sin embargo, no es tan complejo como aparenta ser a primera vista.\smallskip
+Este algoritmo es complicado de entender, ya que usa mucho la recursión.
+Sin embargo, no es tan complejo como aparenta ser a primera vista.
+\medskip
 
 Al igual que los algoritmos anteriores, sólo se necesita invertir una condición para invertir el resultado.
 

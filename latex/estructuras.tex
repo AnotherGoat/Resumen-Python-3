@@ -6,14 +6,18 @@
 
 \section{Diccionarios}
 
-Los diccionarios son estructuras de datos utilizadas para mapear claves arbitrarias a valores. Pueden ser indexados de la misma manera que las listas, utilizando corchetes que contengan claves.
+Los diccionarios son estructuras de datos utilizadas para mapear claves arbitrarias a valores.
+Pueden ser indexados de la misma manera que las listas, utilizando corchetes que contengan claves.
 
 \pythonfile{codigo/16-estructuras/diccionarios_1.py}
 \out{codigo/16-estructuras/diccionarios_1.out}
 
-Cada elemento de un diccionario es representado por un par clave:valor (key:value). Los elementos dentro de diccionarios no están ordenados, lo que significa que no pueden ser indexados por índices, sólo por claves.\smallskip
+Cada elemento de un diccionario es representado por un par clave:valor (key:value).
+Los elementos dentro de diccionarios no están ordenados, lo que significa que no pueden ser indexados por índices, sólo por claves.
+\medskip
 
-Un diccionario puede almacenar como valor cualquier tipo de datos. Se pueden usar saltos de línea para definirlos de forma más ordenada.
+Un diccionario puede almacenar como valor cualquier tipo de datos.
+Se pueden usar saltos de línea para definirlos de forma más ordenada.
 
 \pythonfile{codigo/16-estructuras/diccionarios_2.py}
 \out{codigo/16-estructuras/diccionarios_2.out}
@@ -38,14 +42,18 @@ Tratar de indexar una clave que no es parte de un diccionario retorna un \ttt{Ke
 \pythonfile{codigo/16-estructuras/error_diccionario.py}
 \out{codigo/16-estructuras/error_diccionario.out}
 
-Sólo objetos inmutables pueden ser utilizados como claves de diccionario. Los objetos inmutables son aquellos que no pueden ser cambiados. Algunos objetos mutables son listas, conjuntos y diccionarios. Tratar de utilizar un objeto mutable como clave de diccionario ocasiona un \ttt{TypeError}.
+Sólo objetos inmutables pueden ser utilizados como claves de diccionario.
+Los objetos inmutables son aquellos que no pueden ser cambiados.
+Algunos objetos mutables son listas, conjuntos y diccionarios.
+Tratar de utilizar un objeto mutable como clave de diccionario ocasiona un \ttt{TypeError}.
 
 \pythonfile{codigo/16-estructuras/error_clave_mutable.py}
 \out{codigo/16-estructuras/error_clave_mutable.out}
 
 \section{Indexación de diccionarios}
 
-Al igual que las listas, las claves de un diccionario pueden ser asignadas a distintos valores. Sin embargo, a diferencia de las listas, se le puede asignar un valor a nuevas claves, no sólo a las que ya existen.
+Al igual que las listas, las claves de un diccionario pueden ser asignadas a distintos valores.
+Sin embargo, a diferencia de las listas, se le puede asignar un valor a nuevas claves, no sólo a las que ya existen.
 
 \pythonfile{codigo/16-estructuras/indexacion_diccionarios.py}
 \out{codigo/16-estructuras/indexacion_diccionarios.out}
@@ -57,16 +65,19 @@ Para determinar si una clave está en un diccionario, se puede usar los operador
 \pythonfile{codigo/16-estructuras/in_not_diccionarios.py}
 \out{codigo/16-estructuras/in_not_diccionarios.out}
 
-Nótese que retorna \ttt{False} al buscar \ttt{\qq tres \qq}. Esto ocurre porque \ttt{\qq tres \qq} es un valor, no una clave.
+Nótese que retorna \ttt{False} al buscar \ttt{\qq tres \qq}.
+Esto ocurre porque \ttt{\qq tres \qq} es un valor, no una clave.
 
 \section{Función get()}
 
-Un método útil de diccionarios es \ttt{get()}. Hace lo mismo que indexar, pero si una clave no es encontrada en el diccionario entonces devuelve otro valor especificado (\ttt{None} por defecto).
+Un método útil de diccionarios es \ttt{get()}.
+Hace lo mismo que indexar, pero si una clave no es encontrada en el diccionario entonces devuelve otro valor especificado (\ttt{None} por defecto).
 
 \pythonfile{codigo/16-estructuras/get_1.py}
 \out{codigo/16-estructuras/get_1.out}
 
-En este caso es importante recordar que \ttt{1} y \ttt{True} significan lo mismo, y por lo tanto son la misma clave. Entonces, el diccionario \ttt{pares} sólo tiene 3 elementos (la clave \ttt{True} tendrá como valor \ttt{False}, el último valor que se le asignó).
+En este caso es importante recordar que \ttt{1} y \ttt{True} significan lo mismo, y por lo tanto son la misma clave.
+Entonces, el diccionario \ttt{pares} sólo tiene 3 elementos (la clave \ttt{True} tendrá como valor \ttt{False}, el último valor que se le asignó).
 
 \pythonfile{codigo/16-estructuras/get_2.py}
 \out{codigo/16-estructuras/get_2.out}
@@ -90,7 +101,8 @@ El resultado de estos métodos puede ser convertido a listas usando el método \
 
 \section{Tuplas}
 
-Las tuplas son estructuras de datos muy parecidas a las listas, excepto que son inmutables (no pueden ser cambiadas). Se crean utilizando paréntesis en vez de corchetes.
+Las tuplas son estructuras de datos muy parecidas a las listas, excepto que son inmutables (no pueden ser cambiadas).
+Se crean utilizando paréntesis en vez de corchetes.
 
 \pythonfile{codigo/16-estructuras/tupla_1.py}
 
@@ -98,7 +110,8 @@ Las tuplas son más rápidas que las listas, pero no pueden ser modificadas.
 
 \section{Indexación de Tuplas}
 
-Se puede acceder a los valores de una tupla utilizando su índice. Funciona de la misma forma que con listas.
+Se puede acceder a los valores de una tupla utilizando su índice.
+Funciona de la misma forma que con listas.
 
 \pythonfile{codigo/16-estructuras/tupla_2.py}
 \out{codigo/16-estructuras/tupla_2.out}
@@ -114,7 +127,8 @@ Tratar de reasignar un valor a una tupla ocasiona un \ttt{TypeError}.
 
 \section{Anidación de tuplas}
 
-Al igual que las listas y diccionarios, las tuplas pueden ser anidadas entre sí.\smallskip
+Al igual que las listas y diccionarios, las tuplas pueden ser anidadas entre sí.
+\medskip
 
 Las tuplas son inmutables, pero el contenido de elementos mutables dentro de ellas puede ser cambiado.
 
@@ -146,12 +160,15 @@ Se pueden usar tuplas para intercambiar los valores de 2 variables, sin necesida
 
 \section{Conjuntos}
 
-Los conjuntos son estructuras de datos parecidas a las listas o a los diccionarios. Son creandos utilizando llaves \ttt{\{\}}o la función \ttt{set()}. Comparten algunas de las funcionalidades de las listas, como el uso de \ttt{in} y \ttt{not in} para revisar si contienen o no un elemento en particular.
+Los conjuntos son estructuras de datos parecidas a las listas o a los diccionarios.
+Son creandos utilizando llaves \ttt{\{\}}o la función \ttt{set()}.
+Comparten algunas de las funcionalidades de las listas, como el uso de \ttt{in} y \ttt{not in} para revisar si contienen o no un elemento en particular.
 
 \pythonfile{codigo/16-estructuras/conjuntos.py}
 \out{codigo/16-estructuras/conjuntos.out}
 
-No están ordenados, lo cual significa que no pueden ser indexados. No pueden tener elementos duplicados.
+No están ordenados, lo cual significa que no pueden ser indexados.
+No pueden tener elementos duplicados.
 
 \pythonfile{codigo/16-estructuras/sin_duplicados.py}
 \out{codigo/16-estructuras/sin_duplicados.out}
@@ -171,14 +188,18 @@ Los conjuntos difieren de las listas de varias formas, pero comparten varias ope
 \pythonfile{codigo/16-estructuras/len_conjuntos.py}
 \out{codigo/16-estructuras/len_conjuntos.out}
 
-Debido a la forma en que son almacenados, es más rápido revisar si un elemento es parte de un conjunto que si es parte de una lista.\smallskip
+Debido a la forma en que son almacenados, es más rápido revisar si un elemento es parte de un conjunto que si es parte de una lista.
+\medskip
 
-En lugar de utilizar \ttt{append()} para agregarle algo al conjunto, se utiliza \ttt{add()}. El método \ttt{remove()} elimina un elemento específico de un conjunto.
+En lugar de utilizar \ttt{append()} para agregarle algo al conjunto, se utiliza \ttt{add()}.
+El método \ttt{remove()} elimina un elemento específico de un conjunto.
 
 \pythonfile{codigo/16-estructuras/add_y_remove.py}
 \out{codigo/16-estructuras/add_y_remove.out}
 
-El método \ttt{pop()} elimina un elemento arbitrario. Esto significa que debido a la forma en la Python implementa conjuntos, no hay garantía de que los elementos se retornarán en el mismo orden que en el que se añadieron.\smallskip
+El método \ttt{pop()} elimina un elemento arbitrario.
+Esto significa que debido a la forma en la Python implementa conjuntos, no hay garantía de que los elementos se retornarán en el mismo orden que en el que se añadieron.
+\medskip
 
 Generalmente, elimina el primer elemento, pero esto no se puede garantizar para todos los casos.
 
@@ -186,7 +207,8 @@ Generalmente, elimina el primer elemento, pero esto no se puede garantizar para 
 
 \section{Operaciones con conjuntos}
 
-Los conjuntos pueden ser combinados utilizando operaciones matemáticas.\smallskip
+Los conjuntos pueden ser combinados utilizando operaciones matemáticas.
+\medskip
 
 El operador de unión \ttt{|} combina dos conjuntos para formar uno nuevo que contiene los elementos de cualquiera de los dos.
 
@@ -210,11 +232,32 @@ El operador de diferencia simétrica \ttt{\^} obtiene los elementos que están e
 
 \section{Frozenset}
 
-%TODO: esta sección
+Los frozenset son, como dice su nombre, conjuntos \doble{congelados}.
+Se comportan exactamente igual que un conjunto normal, pero son inmutables.
+Para crearlos, se debe usar la función \ttt{frozenset()}.
+
+\pythonfile{codigo/16-estructuras/frozenset.py}
+\out{codigo/16-estructuras/frozenset.out}
+
+Como son inmutables, intentar cambiarlos causará una excepción.
+De hecho, ni siquiera existen métodos para modificarlos.
+
+\pythonfile{codigo/16-estructuras/error_frozenset_1.py}
+\out{codigo/16-estructuras/error_frozenset_1.out}
+
+\pythonfile{codigo/16-estructuras/error_frozenset_2.py}
+\out{codigo/16-estructuras/error_frozenset_2.out}
+
+\pythonfile{codigo/16-estructuras/error_frozenset_3.py}
+\out{codigo/16-estructuras/error_frozenset_3.out}
+
+\pythonfile{codigo/16-estructuras/error_frozenset_4.py}
+\out{codigo/16-estructuras/error_frozenset_4.out}
 
 \section{Resumen sobre estructuras de datos}
 
-Como se ha visto en este capítulo, Python tiene soporte de las siguientes estructuras de datos: listas, diccionarios, tuplas y conjuntos.\smallskip
+Como se ha visto en este capítulo, Python tiene soporte de las siguientes estructuras de datos: listas, diccionarios, tuplas y conjuntos.
+\medskip
 
 ¿Cúando utilizar diccionarios?
 
@@ -248,30 +291,37 @@ Como se ha visto en este capítulo, Python tiene soporte de las siguientes estru
   \item Cuando se necesita almacenar datos que no pueden ser cambiados.
 \end{itemize}
 
-En muchas ocasiones, una tupla es utilizada junto con un diccionario. Por ejemplo, una tupla puede representar una clave, porque es inmutable.\smallskip
+En muchas ocasiones, una tupla es utilizada junto con un diccionario.
+Por ejemplo, una tupla puede representar una clave, porque es inmutable.
+\medskip
 
-La siguiente tabla muestra las propiedades de cada estructura de datos vista hasta ahora. También se muestran cadenas ya que tienen propiedades similares.\medskip\medskip
+La siguiente tabla muestra las propiedades de cada estructura de datos vista hasta ahora.
+También se muestran cadenas ya que tienen propiedades similares.
+\medskip\medskip
 
 % tabla 2
 %TODO: añadir cadenas y frozenset a esta tabla
 
 \makebox[\textwidth][c]{
-  \begin{tabular}{ |c|c|c|c|c| }
-    \hline
-    & Lista & Diccionario & Tupla & Conjunto \\
-    \hline
-    Mutable & \si & \si & \no & \si \\
-    \hline
-    Indexado & \indices & \claves & \indices & \no \\
-    \hline
-    Secuencial & \si & \no & \si & \no \\
-    \hline
-    Elementos únicos & \no & \no & \no & \si \\
-    \hline
-    Notación & [ ] & \{ \} & ( ) & \{ \} \\
-    \hline
+  \begin{tabular}{ l l l l l l l }
+    \toprule
+    & Cadena & Lista & Diccionario & Tupla & Conjunto & Frozenset \\
+    \midrule
+    Mutable & \no & \si & \si & \no & \si & \no \\
+
+    Indexado & \indices & \indices & \claves & \indices & \no & \no \\
+
+    Secuencial & \si & \si & \no & \si & \no & \no \\
+
+    Elementos únicos & \no & \no & \no & \no & \si & \si \\
+
+    Tipos de datos & \caracteres & \cualquier & \cualquier & \cualquier & \cualquier & \cualquier \\
+
+    Notación & \ttt{\q \q} o \ttt{\qq \qq} & \ttt{[]} & \ttt{\{:\}} & \ttt{()} & \ttt{\{\}} o \ttt{set()} & \ttt{frozenset()} \\
+    \bottomrule
   \end{tabular}
-}\medskip\medskip
+}
+\medskip\medskip
 
 Existen estructuras de datos más complejas, pero no se verán todavía.
 

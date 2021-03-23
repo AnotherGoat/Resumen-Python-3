@@ -2,13 +2,15 @@
 
 \section{Módulos}
 
-Los módulos son pedazos de código que otras personas han escrito para cumplir tareas comunes tales como generar números aleatorios, realizar operaciones matemáticas, etc.\smallskip
+Los módulos son pedazos de código que otras personas han escrito para cumplir tareas comunes tales como generar números aleatorios, realizar operaciones matemáticas, etc.
+\medskip
 
 La manera básica de utilizar un módulo es agregar una declaración \ttt{import} en la parte superior del código, y luego usar su nombre para acceder a las funciones y variables dentro del módulo.
 
 \pythonfile{codigo/9-modulos/ejemplo_modulos.py}
 
-Este ejemplo importa el módulo \ttt{random} y usa su función \ttt{randint()} para generar 5 números aleatorios en el rango del \ttt{1} al \ttt{6}.\smallskip
+Este ejemplo importa el módulo \ttt{random} y usa su función \ttt{randint()} para generar 5 números aleatorios en el rango del \ttt{1} al \ttt{6}.
+\medskip
 
 Hay otra clase de \ttt{import} que puede ser utilizada si sólo se necesitan ciertas funciones de un módulo.
 
@@ -19,7 +21,8 @@ Para importar más de un elemento, se debe hacer una lista separada por comas.
 
 \pythonfile{codigo/9-modulos/import_2.py}
 
-También se pueden importar todos los objetos de un módulo usando un *. Esto generalmente no se recomienda, ya que confunde las variables del código original con las del módulo externo.
+También se pueden importar todos los objetos de un módulo usando un *.
+Esto generalmente no se recomienda, ya que confunde las variables del código original con las del módulo externo.
 
 \pythonfile{codigo/9-modulos/import_todo.py}
 \out{codigo/9-modulos/import_todo.out}
@@ -42,7 +45,8 @@ Importar un módulo que no existe dará un \ttt{ModuleNotFoundError}, o uno que 
 
 \section{Alias}
 
-Se puede importar un módulo u objeto bajo un nombre distinto utilizando la palabra clave \ttt{as} y entregándole un alias. Esto se usa principalmente cuando un módulo u objeto tiene un nombre largo o confuso.
+Se puede importar un módulo u objeto bajo un nombre distinto utilizando la palabra clave \ttt{as} y entregándole un alias.
+Esto se usa principalmente cuando un módulo u objeto tiene un nombre largo o confuso.
 
 \pythonfile{codigo/9-modulos/alias_1.py}
 \out{codigo/9-modulos/alias_1.out}
@@ -69,39 +73,52 @@ Otra opción posible es importar un módulo con un nombre distinto.
 
 \section{La biblioteca estándar}
 
-Hay 3 tipos principales de módulos en Python: aquellos que escribes tú mismo, aquellos que se instalan de fuentes externas y aquellos que vienen preinstalados con Python.\smallskip
+Hay 3 tipos principales de módulos en Python: aquellos que escribes tú mismo, aquellos que se instalan de fuentes externas y aquellos que vienen preinstalados con Python.
+\medskip
 
-El último tipo se denomina la biblioteca estándar, y contiene muchos módulos útiles. Algunos de estos módulos son:
+El último tipo se denomina la biblioteca estándar, y contiene muchos módulos útiles.
+Algunos de estos módulos son:
 
 \textfile{codigo/9-modulos/biblioteca_estandar.txt}
 
-La extensa biblioteca estándar de Python es una de sus principales fortalezas como lenguaje. Se puede encontrar más información sobre los módulos de la biblioteca estándar en \link{https://docs.python.org/3/library/index.html}{la documentación}.\smallskip
+La extensa biblioteca estándar de Python es una de sus principales fortalezas como lenguaje.
+Se puede encontrar más información sobre los módulos de la biblioteca estándar en \link{https://docs.python.org/3/library/index.html}{la documentación}.
+\medskip
 
-Algunos de los módulos en la biblioteca estándar están escritos en Python y otros en C. La mayoría están disponibles en todas las plataformas, pero algunos son específicos de Windows o Unix.\smallskip
+Algunos de los módulos en la biblioteca estándar están escritos en Python y otros en C.
+La mayoría están disponibles en todas las plataformas, pero algunos son específicos de Windows o Unix.
+\medskip
 
 La razón por la que algunos módulos fueron escritos en \link{https://es.wikipedia.org/wiki/C_(lenguaje_de_programaci\%C3\%B3n)}{C} fue porque necesitaban realizar acciones de más bajo nivel que lo posible usando únicamente Python.
 
 \section{Módulos externos y pip}
 
-Muchos módulos de Python creados por terceros son almacenados en el índice de paquetes Python (Python Package Index, PyPI). Se puede ver el repositorio en su \link{https://pypi.org}{sitio web oficial}.\smallskip
+Muchos módulos de Python creados por terceros son almacenados en el índice de paquetes Python (Python Package Index, PyPI).
+Se puede ver el repositorio en su \link{https://pypi.org}{sitio web oficial}.
+\medskip
 
-La mejor manera de instalar estos es utilizando un programa llamado \ttt{pip}. Este viene instalado por defecto con las distribuciones modernas de Python.\smallskip
+La mejor manera de instalar estos es utilizando un programa llamado \ttt{pip}.
+Este viene instalado por defecto con las distribuciones modernas de Python.
+\medskip
 
 Para instalar una biblioteca, se debe buscar su nombre, ir a la línea de comandos y escribir \ttt{pip install nombre}.
 
 \textfile{codigo/9-modulos/pip_1.txt}
 
-Es importante recordar que los comandos de \ttt{pip} se deben introducir en la línea de comandos, no en el interpretador de Python.\smallskip
+Es importante recordar que los comandos de \ttt{pip} se deben introducir en la línea de comandos, no en el interpretador de Python.
+\medskip
 
 Se puede ingresar el comando \ttt{pip help} para ver información sobre otros comandos que se pueden usar con este gestor de paquetes.
 
 \textfile{codigo/9-modulos/pip_2.txt}
 
-Utilizar \ttt{pip} es la forma estándar de instalar bibliotecas en la mayoría de sistemas operativos, pero algunas bibliotecas tienen binarios predefinidos para Windows. Estos son archivos ejecutables regulares que permiten instalar bibliotecas con una interfaz gráfica de la misma manera que se instalan otros programas.
+Utilizar \ttt{pip} es la forma estándar de instalar bibliotecas en la mayoría de sistemas operativos, pero algunas bibliotecas tienen binarios predefinidos para Windows.
+Estos son archivos ejecutables regulares que permiten instalar bibliotecas con una interfaz gráfica de la misma manera que se instalan otros programas.
 
 \section{Obtener ayuda}
 
-Cuando se trabaja con Python, como cualquier otro lenguaje, es muy común olvidar los métodos que se pueden usar con determinados tipos de datos.\smallskip
+Cuando se trabaja con Python, como cualquier otro lenguaje, es muy común olvidar los métodos que se pueden usar con determinados tipos de datos.
+\medskip
 
 La función \ttt{dir()} es una función integrada en Python que permite ver los métodos que puede usar un determinado objeto.
 
@@ -113,7 +130,8 @@ Esto permite saber con facilidad qué métodos se pueden usar con la variable qu
 \pythonfile{codigo/9-modulos/ayuda_2.py}
 \out{codigo/9-modulos/ayuda_2.out}
 
-Los métodos rodeados por \ttt{\_\_} son métodos mágicos, se verán en el capítulo de programación orientada a objetos.\smallskip
+Los métodos rodeados por \ttt{\_\_} son métodos mágicos, se verán en el capítulo de programación orientada a objetos.
+\medskip
 
 El resultado obtenido al usar \ttt{dir()} se puede combinar con el método \ttt{help()} para obtener más detalles sobre un método en específico.
 
@@ -125,7 +143,10 @@ El método \ttt{help()} también se puede usar para obtener ayuda detallada sobr
 \pythonfile{codigo/9-modulos/ayuda_4.py}
 \out{codigo/9-modulos/ayuda_4.out}
 
-Por defecto, el método \ttt{help()} sólo mostrará el texto que alcance en el alto de la ventana del terminal. Al pulsar la tecla \ttt{Intro}, se mostrará la línea que viene después de \ttt{-{}- Más  -{}-}. Como siempre, se puede pulsar \ttt{Ctrl+C} para salir.\smallskip
+Por defecto, el método \ttt{help()} sólo mostrará el texto que alcance en el alto de la ventana del terminal.
+Al pulsar la tecla \ttt{Intro}, se mostrará la línea que viene después de \ttt{-{}- Más  -{}-}.
+Como siempre, se puede pulsar \ttt{Ctrl+C} para salir.
+\medskip
 
 También se puede usar el método \ttt{dir()} en módulos, para ver los métodos dentro de ellos.
 

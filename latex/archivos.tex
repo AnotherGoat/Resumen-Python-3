@@ -2,13 +2,15 @@
 
 \section{Abrir archivos}
 
-Python se puede usar para leer y escribir los contenidos de archivos. Los archivos de texto son los más fáciles de manipular.\smallskip
+Python se puede usar para leer y escribir los contenidos de archivos.
+Los archivos de texto son los más fáciles de manipular.\medskip
 
 Antes de que un archivo pueda ser editado, debe ser abierto con la función \ttt{open()}.
 
 \pythonfile{codigo/14-archivos/open.py}
 
-El argumento de la función \ttt{open()} es la ruta del archivo. Esta ruta puede ser \link{https://www.discoduroderoer.es/rutas-relativas-y-absolutas/}{relativa} (desde el directorio de trabajo) o \link{https://www.discoduroderoer.es/rutas-relativas-y-absolutas/}{absoluta}.\smallskip
+El argumento de la función \ttt{open()} es la ruta del archivo.
+Esta ruta puede ser \link{https://www.discoduroderoer.es/rutas-relativas-y-absolutas/}{relativa} (desde el directorio de trabajo) o \link{https://www.discoduroderoer.es/rutas-relativas-y-absolutas/}{absoluta}.\medskip
 
 Si se necesita, se puede hacer \link{https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python}{un procedimiento un poco más largo} para abrir un archivo relativamente desde el directorio donde se encuentra el archivo \ttt{.py}, sin importar cual sea el directorio de trabajo o sistema operativo.
 
@@ -27,7 +29,8 @@ Los modos de apertura son:
   
   \pythonfile{codigo/14-archivos/modo_r.py}
 
-  \item \ttt{\qq w \qq}: Significa modo de escritura, el cual sirve para reescribir los contenidos de un archivo. Abrir un archivo en este modo inmediatamente borra todos sus contenidos.
+  \item \ttt{\qq w \qq}: Significa modo de escritura, el cual sirve para reescribir los contenidos de un archivo.
+Abrir un archivo en este modo inmediatamente borra todos sus contenidos.
   
   \pythonfile{codigo/14-archivos/modo_w.py}
 
@@ -50,9 +53,11 @@ Los modos de apertura son:
 Además de los modos de apertura, también existen los modos en los que se muestra la información:
 
 \begin{itemize}
-  \item \ttt{\qq t \qq}: significa abrir el archivo en modo texto (predeterminado). No es necesario escribirlo.
+  \item \ttt{\qq t \qq}: significa abrir el archivo en modo texto (predeterminado).
+No es necesario escribirlo.
   
-  \item \ttt{\qq b \qq}: significa abrir el archivo en modo binario, que es utilizado para archivos que no son de texto (tales como archivos de imágenes o sonido). Se debe combinar con alguno de los modos anteriores.
+  \item \ttt{\qq b \qq}: significa abrir el archivo en modo binario, que es utilizado para archivos que no son de texto (tales como archivos de imágenes o sonido).
+Se debe combinar con alguno de los modos anteriores.
 
   \pythonfile{codigo/14-archivos/modo_b.py}
 
@@ -60,39 +65,39 @@ Además de los modos de apertura, también existen los modos en los que se muest
 
 \section{Extensión de modos de apertura}
 
-Se puede añadir el signo \ttt{\qq + \qq} a cualquiera de los modos de arriba para darles acceso adicional a archivos.\smallskip
+Se puede añadir el signo \ttt{\qq + \qq} a cualquiera de los modos de arriba para darles acceso adicional a archivos.\medskip
 
-La siguiente tabla muestra el funcionamiento de cada modo:\medskip\medskip
+La siguiente tabla muestra el funcionamiento de cada modo:
+\medskip\medskip
 
 % tabla 1
 
 \makebox[\textwidth][c]{
-  \begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
-    \hline
+  \begin{tabular}{ l l l l l l l l l }
+    \toprule
     & \ttt{r} & \ttt{r+} & \ttt{w} & \ttt{w+} & \ttt{x} & \ttt{x+} & \ttt{a} & \ttt{a+} \\
-    \hline
+    \midrule
     Lee el archivo & \si & \si & \no & \si & \no & \si & \no & \si \\
-    \hline
     Escribe en el archivo & \no & \si & \si & \si & \si & \si & \si & \si \\
-    \hline
     Crea el archivo si no existe & \no & \no & \si & \si & \si & \si & \si & \si \\
-    \hline
-    Borra todos los contenidos del archivo & \no & \no & \si & \si & \noo & \noo & \no & \no \\
-    \hline
+    Borra los contenidos del archivo & \no & \no & \si & \si & \noo & \noo & \no & \no \\
     Posición del cursor & \inicio & \inicio & \inicio & \inicio & \inicio & \inicio & \final & \final \\
-    \hline
+    \bottomrule
   \end{tabular}
-}\medskip\medskip
+}
+\medskip\medskip
 
 \textcolor{Crimson}{*}: Levanta una excepción \ttt{FileExistsError} si el archivo ya tiene contenido.
 
 \section{Cierre de archivos}
 
-Una vez que un archivo haya sido abierto y utilizado, es un buen hábito cerrarlo. Esto se logra con el método \ttt{close()} de un objeto archivo.
+Una vez que un archivo haya sido abierto y utilizado, es un buen hábito cerrarlo.
+Esto se logra con el método \ttt{close()} de un objeto archivo.
 
 \pythonfile{codigo/14-archivos/close.py}
 
-A nivel de sistemas operativos, cada proceso tiene un límite en la cantidad de archivos que puede abrir simultáneamente. Si un programa se ejecuta por mucho tiempo y podría abrir muchos archivos, se debe tener cuidado.
+A nivel de sistemas operativos, cada proceso tiene un límite en la cantidad de archivos que puede abrir simultáneamente.
+Si un programa se ejecuta por mucho tiempo y podría abrir muchos archivos, se debe tener cuidado.
 
 \section{Lectura de archivos}
 
@@ -102,15 +107,17 @@ Los contenidos de un archivo que ha sido abierto en modo texto pueden ser leído
 \Ainicial{codigo/14-archivos/read_1.txt_i}
 \out{codigo/14-archivos/read_1.out}
 
-Para leer sólo una determinada parte de un archivo, se puede proveer un número como argumento a la función \ttt{read()}. Esto determina el número de bytes que deberían ser leídos.\smallskip
+Para leer sólo una determinada parte de un archivo, se puede proveer un número como argumento a la función \ttt{read()}.
+Esto determina el número de bytes que deberían ser leídos.\medskip
 
-Se pueden hacer más llamadas a \ttt{read()} en el mismo objeto archivo para leer más de él byte por byte. Si no se le pasan argumentos, o si el argumento es negativo, \ttt{read()} devuelve el resto del archivo.
+Se pueden hacer más llamadas a \ttt{read()} en el mismo objeto archivo para leer más de él byte por byte.
+Si no se le pasan argumentos, o si el argumento es negativo, \ttt{read()} devuelve el resto del archivo.
 
 \pythonfile{codigo/14-archivos/read_2.py}
 \Ainicial{codigo/14-archivos/read_2.txt_i}
 \out{codigo/14-archivos/read_2.out}
 
-El ejemplo de arriba primero mostrará los bytes del \ttt{1} al \ttt{16}, después del \ttt{17} al \ttt{24}, del \ttt{25} al \ttt{28}, y del \ttt{29} al último byte.\smallskip
+El ejemplo de arriba primero mostrará los bytes del \ttt{1} al \ttt{16}, después del \ttt{17} al \ttt{24}, del \ttt{25} al \ttt{28}, y del \ttt{29} al último byte.\medskip
 
 Luego de que todos los contenidos de un archivo hayan sido leídos, cualquier intento de leer más de ese archivo devolverá una cadena vacía \ttt{\qq \qq} porque se está intentando leer desde el final del archivo.
 
@@ -183,24 +190,25 @@ Para escribir algo que no sea un string, necesita ser convertido primero usando 
 
 \section{Declaración with}
 
-Es buena práctica evitar gastar recursos asegurándose de que los archivos sean siempre cerrados después de utilizarlos. Una forma de hacer esto es utilizando \ttt{try-finally}.
+Es buena práctica evitar gastar recursos asegurándose de que los archivos sean siempre cerrados después de utilizarlos.
+Una forma de hacer esto es utilizando \ttt{try-finally}.
 
 \pythonfile{codigo/14-archivos/close_seguro.py}
 
 Esto asegura que el archivo sea siempre cerrado incluso si ocurre un error.
-Sin embargo, existe una forma más cómoda de hacer esto usando declaraciones \ttt{with}.\smallskip
+Sin embargo, existe una forma más cómoda de hacer esto usando declaraciones \ttt{with}.\medskip
 
 Al usar declaraciones \ttt{with}, se crea una variable temporal (a menudo llamada \ttt{f}), la cual solo es accesible en el bloque indentado de la declaración \ttt{with}.
 
 \pythonfile{codigo/14-archivos/with_1.py}
 
-El archivo se cierra automáticamente al final de la declaración \ttt{with}, incluso si ocurren excepciones dentro de ella.\smallskip
+El archivo se cierra automáticamente al final de la declaración \ttt{with}, incluso si ocurren excepciones dentro de ella.\medskip
 
 Así, una forma más segura de trabajar con archivos puede tener la siguiente estructura:
 
 \pythonfile{codigo/14-archivos/with_2.py}
 
-Comparado con la forma tradicional de trabajar con archivos (usar \ttt{open()} y después \ttt{close()}), usar \ttt{with} tiene el inconveniente de que los archivos tienen que volverse a abrir cada vez que se quiera trabajar con ellos.\smallskip
+Comparado con la forma tradicional de trabajar con archivos (usar \ttt{open()} y después \ttt{close()}), usar \ttt{with} tiene el inconveniente de que los archivos tienen que volverse a abrir cada vez que se quiera trabajar con ellos.\medskip
 
 Si se necesita mantener un archivo abierto por mucho tiempo, no se recomienda usar \ttt{with}.
 

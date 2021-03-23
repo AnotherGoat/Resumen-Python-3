@@ -2,7 +2,12 @@
 
 \usepackage[utf8]{inputenc}
 
-\usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+\usepackage{lmodern}
+\usepackage[scaled]{beramono}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
 
 \usepackage[outputdir=build]{minted}
 \usepackage{sectsty}
@@ -15,13 +20,11 @@
 
 \usepackage{amsmath}
 
-\usepackage{lmodern}
-\usepackage[scaled]{beramono}
-
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
+\usepackage{booktabs}
 
 \usepackage[spanish]{babel}
+\usepackage{microtype}
+
 \usepackage[colorlinks=true, linkcolor=., urlcolor=ForestGreen]{hyperref}
 
 % estilo de los segmentos de código
@@ -46,6 +49,9 @@
 \setlist[itemize]{leftmargin=*}
 \setlist[enumerate]{leftmargin=*}
 
+% más espacio entre filas de las tablas
+\renewcommand{\arraystretch}{1.2}
+
 % comandos nuevos para comillas simples y dobles
 \newcommand{\simple}[1]{`#1'}
 \newcommand{\doble}[1]{``#1''}
@@ -54,7 +60,7 @@
 \newcommand{\link}[2]{\href{#1}{\underline{#2}}}
 
 % enumerate tendrán números en negrita
-\setlist[enumerate,1]{label=\bfseries\alph*)}
+\setlist[enumerate,1]{label=\bfseries\arabic*)}
 
 % colores que se usarán en los minted
 \definecolor{grisoscuro}{RGB}{32, 32, 32}
@@ -115,6 +121,8 @@
 \newcommand{\final}{\textcolor{RoyalBlue}{Final}}
 \newcommand{\indices}{\textcolor{ForestGreen}{Índices}}
 \newcommand{\claves}{\textcolor{ForestGreen}{Claves}}
+\newcommand{\caracteres}{\textcolor{Crimson}{Caracteres}}
+\newcommand{\cualquier}{\textcolor{ForestGreen}{Todos}}
 
 % atajo para usar \texttt{} más rápido, ya que se usará muy seguido
 \newcommand{\ttt}[1]{\textcolor{Crimson}{\texttt{#1}}}
@@ -128,63 +136,35 @@
 
 % para compilar usando todos los capitulos
 \newcommand{\todos}{
-  \input{latex/introduccion.tex} % 1
-
-  \input{latex/basico.tex} % 2
-
-  \input{latex/cadenas.tex} % 3
-
-  \input{latex/variables.tex} % 4
-
-  \input{latex/if.tex} % 5
-
-  \input{latex/listas.tex} % 6
-
-  \input{latex/bucles.tex} % 7
-
-  \input{latex/funciones.tex} % 8
-
-  \input{latex/modulos.tex} % 9
-
-  \input{latex/math.tex} % 10
-
-  \input{latex/random.tex} % 11
-
-  \input{latex/excepciones.tex} % 12
-
-  \input{latex/unittest.tex} % 13
-
-  \input{latex/archivos.tex} % 14
-
-  \input{latex/time.tex} % 15
-
-  \input{latex/estructuras.tex} % 16
-
-  \input{latex/iterables.tex} % 17
-
-  \input{latex/funcional.tex} % 18
-
-  \input{latex/itertools.tex} % 19
-
-  \input{latex/objetos.tex} % 20
-
-  \input{latex/regex.tex} % 21
-
-  \input{latex/pep.tex}  % 22
-
-  \input{latex/paquetes.tex} % 23
-
-  \input{latex/gui.tex} % 24
-
-  \input{latex/orden.tex} % 25
-
-  \input{latex/busqueda.tex} % 26
-
-  \input{latex/matrices.tex} % 27
-
-  \input{latex/estructuras_2.tex} % 28
-
-  \input{latex/numpy.tex} % 29
+  \input{latex/introduccion.tex}
+  \input{latex/basico.tex}
+  \input{latex/cadenas.tex}
+  \input{latex/variables.tex}
+  \input{latex/if.tex}
+  \input{latex/listas.tex}
+  \input{latex/bucles.tex}
+  \input{latex/funciones.tex}
+  \input{latex/modulos.tex}
+  \input{latex/math.tex}
+  \input{latex/random.tex}
+  \input{latex/excepciones.tex}
+  \input{latex/archivos.tex}
+  \input{latex/time.tex}
+  \input{latex/estructuras.tex}
+  \input{latex/iterables.tex}
+  \input{latex/funcional.tex}
+  \input{latex/itertools.tex}
+  \input{latex/objetos.tex}
+  \input{latex/regex.tex}
+  \input{latex/pep.tex}
+  \input{latex/paquetes.tex}
+  \input{latex/unittest.tex}
+  \input{latex/gui.tex}
+  \input{latex/orden.tex}
+  \input{latex/busqueda.tex}
+  \input{latex/matrices.tex}
+  \input{latex/estructuras_2.tex}
+  \input{latex/numpy.tex}
 }
 
 \title{Resumen Python 3}
@@ -207,6 +187,6 @@
 \pagenumbering{arabic}
 
 % aquí va \todos o los capitulos individuales
-\input{latex/introduccion.tex} % 1
+\todos
 
 \end{document}

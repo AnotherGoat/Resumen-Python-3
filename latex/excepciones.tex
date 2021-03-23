@@ -2,7 +2,10 @@
 
 \section{Excepciones}
 
-Se han mencionado excepciones en los capítulos anteriores. Ocurren cuando algo sale, mal, debido a código incorrecto o entradas incorrectas. Cuando ocurre una excepción, el programa se detiene inmediatamente.\smallskip
+Se han mencionado excepciones en los capítulos anteriores.
+Ocurren cuando algo sale, mal, debido a código incorrecto o entradas incorrectas.
+Cuando ocurre una excepción, el programa se detiene inmediatamente.
+\medskip
 
 Por ejemplo, al intentar dividir por \ttt{0}, se produce un \ttt{ZeroDivisionError}.
 
@@ -32,7 +35,10 @@ Las bibliotecas creadas por terceros a menudo definen sus propias excepciones.
 
 \section{Declaración try-except}
 
-Para manejar excepciones y ejecutar código cuando ocurre una excepción, se puede usar una sentencia \ttt{try-except}. El bloque \ttt{try} contiene código que puede lanzar una excepción. Si ocurre una excepción, el código en el bloque \ttt{try} deja de ser ejecutado y el código en el bloque \ttt{except} se ejecuta. Si no ocurre ningún error, el código en el bloque \ttt{except} no se ejecutará.
+Para manejar excepciones y ejecutar código cuando ocurre una excepción, se puede usar una sentencia \ttt{try-except}.
+El bloque \ttt{try} contiene código que puede lanzar una excepción.
+Si ocurre una excepción, el código en el bloque \ttt{try} deja de ser ejecutado y el código en el bloque \ttt{except} se ejecuta.
+Si no ocurre ningún error, el código en el bloque \ttt{except} no se ejecutará.
 
 \pythonfile{codigo/12-excepciones/try_except_1.py}
 \inp{codigo/12-excepciones/try_except_1.inp_1}
@@ -40,13 +46,15 @@ Para manejar excepciones y ejecutar código cuando ocurre una excepción, se pue
 \inp{codigo/12-excepciones/try_except_1.inp_2}
 \out{codigo/12-excepciones/try_except_1.out_2}
 
-Una sentencia \ttt{try} puede tener varios bloques \ttt{except} para manejar diferentes excepciones. Varias excepciones pueden ser colocadas dentro de un mismo bloque \ttt{except} utilizando paréntesis.
+Una sentencia \ttt{try} puede tener varios bloques \ttt{except} para manejar diferentes excepciones.
+Varias excepciones pueden ser colocadas dentro de un mismo bloque \ttt{except} utilizando paréntesis.
 
 \pythonfile{codigo/12-excepciones/try_except_2.py}
 \inp{codigo/12-excepciones/try_except_2.inp}
 \out{codigo/12-excepciones/try_except_2.out}
 
-Una sentencia \ttt{except} sin ninguna excepción especificada atrapa todos los errores. Estos deben usarse con moderación ya que pueden atrapar errores inesperados y esconder errores de programación.
+Una sentencia \ttt{except} sin ninguna excepción especificada atrapa todos los errores.
+Estos deben usarse con moderación ya que pueden atrapar errores inesperados y esconder errores de programación.
 
 \pythonfile{codigo/12-excepciones/except.py}
 \out{codigo/12-excepciones/except.out}
@@ -57,7 +65,9 @@ Si una sentencia \ttt{except} vacía viene acompañada de otros \ttt{except}, es
 
 \section{Declaración finally}
 
-Para asegurar que algún código se ejecute sin importar cuál error ocurra, se puede usar la palabra clave \ttt{finally}. La sentencia \ttt{finally} se coloca en el fondo de una sentencia \ttt{try-except}. El código dentro de la sentencia \ttt{finally} siempre se ejecuta después del código del bloque \ttt{try} y de cualquier bloque \ttt{except} que se ejecute.
+Para asegurar que algún código se ejecute sin importar cuál error ocurra, se puede usar la palabra clave \ttt{finally}.
+La sentencia \ttt{finally} se coloca en el fondo de una sentencia \ttt{try-except}.
+El código dentro de la sentencia \ttt{finally} siempre se ejecuta después del código del bloque \ttt{try} y de cualquier bloque \ttt{except} que se ejecute.
 
 \pythonfile{codigo/12-excepciones/finally_1.py}
 \out{codigo/12-excepciones/finally_1.out}
@@ -73,7 +83,8 @@ Si ocurre una excepción sin atrapar, la excepción se muestra después de lo qu
 
 \section{Levantar excepciones}
 
-Se puede usar la sentencia \ttt{raise} para levantar excepciones. Se necesita especificar el tipo de la excepción levantada.
+Se puede usar la sentencia \ttt{raise} para levantar excepciones.
+Se necesita especificar el tipo de la excepción levantada.
 
 \pythonfile{codigo/12-excepciones/raise_1.py}
 \out{codigo/12-excepciones/raise_1.out}
@@ -99,23 +110,28 @@ Usar \ttt{raise} fuera de los contextos mencionados anteriormente levantará un 
 
 \section{Aserciones}
 
-Una aserción es una comprobación de validez, la cual prueba una expresión. La expresión es probada, y si el resultado es falso, usa excepción \ttt{AssertionError} es levantada.\smallskip
+Una aserción es una comprobación de validez, la cual prueba una expresión.
+La expresión es probada, y si el resultado es falso, usa excepción \ttt{AssertionError} es levantada.
+\medskip
 
 Las aserciones son llevadas a cabo a través de la declaración \ttt{assert}.
 
 \pythonfile{codigo/12-excepciones/assert_1.py}
 \out{codigo/12-excepciones/assert_1.out}
 
-Los programadores a menudo colocan aserciones al principio de una función para asegurarse de que la entrada sea válida, y luego de llamar una función para revisar la validez de la salida.\smallskip
+Los programadores a menudo colocan aserciones al principio de una función para asegurarse de que la entrada sea válida, y luego de llamar una función para revisar la validez de la salida.
+\medskip
 
 La declaración \ttt{assert} puede recibir un segundo argumento el cual es pasado a la excepción \ttt{AssertionError} levantada si la aserción falla.
 
 \pythonfile{codigo/12-excepciones/assert_2.py}
 \out{codigo/12-excepciones/assert_2.out}
 
-Las excepciones \ttt{AssertionError} pueden ser atrapadas y manejadas como cualquier otra excepción utilizando la sentencia \ttt{try-except}, pero si no son manejadas, terminarán la ejecución el programa, como cualquier otra excepción.\smallskip
+Las excepciones \ttt{AssertionError} pueden ser atrapadas y manejadas como cualquier otra excepción utilizando la sentencia \ttt{try-except}, pero si no son manejadas, terminarán la ejecución el programa, como cualquier otra excepción.
+\medskip
 
-En general, se recomienda usar aserciones para atrapar tus propios errores y excepciones para atrapar los errores que los usuarios u otras personas podrían cometer.\smallskip
+En general, se recomienda usar aserciones para atrapar tus propios errores y excepciones para atrapar los errores que los usuarios u otras personas podrían cometer.
+\medskip
 
 Las declaraciones \ttt{assert} no pueden ir sin un predicado.
 
@@ -124,9 +140,12 @@ Las declaraciones \ttt{assert} no pueden ir sin un predicado.
 
 \section{Validación de entrada}
 
-El ingreso de datos en cualquier programa es algo que se debe validar para que el programa trabaje correctamente.\smallskip
+El ingreso de datos en cualquier programa es algo que se debe validar para que el programa trabaje correctamente.
+\medskip
 
-Supongamos que se quiere que el usuario ingrese un número. Esto se haría usando la función \ttt{input()} para tomar entrada y la función \ttt{int()} para convertirla a un número entero.\smallskip
+Supongamos que se quiere que el usuario ingrese un número.
+Esto se haría usando la función \ttt{input()} para tomar entrada y la función \ttt{int()} para convertirla a un número entero.
+\medskip
 
 Un problema que puede ocurrir es si el usuario ingresa una letra o símbolo que no puede ser convertido a un número entero.
 
@@ -148,15 +167,19 @@ Esto soluciona el problema que ocurre por la excepción \ttt{ValueError} no capt
 \inp{codigo/12-excepciones/validacion_3.inp}
 \out{codigo/12-excepciones/validacion_3.out}
 
-Supongamos que el programa necesita pedir la edad del usuario en vez de un número cualquiera. Eso significa que los valores negativos no son válidos, lo cual puede solucionarse usando una declaración \ttt{if-else}.
+Supongamos que el programa necesita pedir la edad del usuario en vez de un número cualquiera.
+Eso significa que los valores negativos no son válidos, lo cual puede solucionarse usando una declaración \ttt{if-else}.
 
 \pythonfile{codigo/12-excepciones/validacion_4.py}
 \inp{codigo/12-excepciones/validacion_4.inp}
 \out{codigo/12-excepciones/validacion_4.out}
 
-Esa es la estructura general para cualquier validación de entrada. Primero se atrapan las excepciones y después se evalúan los casos particulares no excepcionales que no se consideran válidos.\smallskip
+Esa es la estructura general para cualquier validación de entrada.
+Primero se atrapan las excepciones y después se evalúan los casos particulares no excepcionales que no se consideran válidos.
+\medskip
 
-Lo más importante de la validación de entrada es asumir que el usuario puede hacer cualquier acción en cualquier momento. El programador debe anteponerse a todos los casos posibles y manejarlos para evitar cualquier error que pueda ocurrir durante el tiempo de ejecución.
+Lo más importante de la validación de entrada es asumir que el usuario puede hacer cualquier acción en cualquier momento.
+El programador debe anteponerse a todos los casos posibles y manejarlos para evitar cualquier error que pueda ocurrir durante el tiempo de ejecución.
 
 %TODO: excepciones personalizadas
 

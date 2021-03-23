@@ -8,14 +8,16 @@ El módulo itertools es una biblioteca estándar que contiene varias funciones q
 
 \section{Iteradores infinitos}
 
-Uno de los tipos de función que produce son iteradores infinitos.\smallskip
+Uno de los tipos de función que produce son iteradores infinitos.
+\medskip
 
 La función \ttt{count()} cuenta infinitamente a partir de un valor.
 
 \pythonfile{codigo/19-itertools/count_1.py}
 \out{codigo/19-itertools/count_1.out}
 
-Se le puede entregar un segundo parámetro a \ttt{count()}, el cual representa el tamaño de paso. Si no se le entrega el segundo parámetro, el tamaño de paso por defecto es 1.
+Se le puede entregar un segundo parámetro a \ttt{count()}, el cual representa el tamaño de paso.
+Si no se le entrega el segundo parámetro, el tamaño de paso por defecto es 1.
 
 \pythonfile{codigo/19-itertools/count_2.py}
 \out{codigo/19-itertools/count_2.out}
@@ -50,7 +52,8 @@ Para repetir infinitamente, se le debe entregar sólo el objeto como parámetro.
 
 \section{Operaciones sobre iterables}
 
-Hay muchas funciones en itertools que operan sobre iterables, de una forma similar a \ttt{map()} o \ttt{filter()}.\smallskip
+Hay muchas funciones en itertools que operan sobre iterables, de una forma similar a \ttt{map()} o \ttt{filter()}.
+\medskip
 
 La función \ttt{accumulate()} devuelve un total actualizado de los valores dentro de un iterable.
 
@@ -74,7 +77,9 @@ La función \ttt{chain()} combina varios iterables en uno solo más largo.
 
 \section{Funciones de combinatoria}
 
-También hay numerosas funciones combinatorias en itertools, tales como \ttt{product()} y \ttt{permutations()}. Estas son usadas cuando se quiere cumplir tareas con todas las combinaciones posibles de algunos elementos.\smallskip
+También hay numerosas funciones combinatorias en itertools, tales como \ttt{product()} y \ttt{permutations()}.
+Estas son usadas cuando se quiere cumplir tareas con todas las combinaciones posibles de algunos elementos.
+\medskip
 
 La función \ttt{product()} retorna el producto entre 2 iterables.
 

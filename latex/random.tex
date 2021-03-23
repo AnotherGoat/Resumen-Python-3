@@ -6,9 +6,12 @@ El módulo \ttt{random} pertenece a la biblioteca estándar y contiene funciones
 
 \pythonfile{codigo/11-random/import_random.py}
 
-Los números generados son pseudoaleatorios porque la aleatoriedad \doble{natural} no existe en los computadores. Todas las funciones que generan elementos al azar en realidad emplean algoritmos muy difíciles de calcular o de predecir en el poco tiempo que tardan en retornar un resultado.\smallskip
+Los números generados son pseudoaleatorios porque la aleatoriedad \doble{natural} no existe en los computadores.
+Todas las funciones que generan elementos al azar en realidad emplean algoritmos muy difíciles de calcular o de predecir en el poco tiempo que tardan en retornar un resultado.
+\medskip
 
-La mayoría de ejemplos de código en este capítulo tienen resultados variables, es decir, cada vez que se ejecute el código los resultados serán distintos. La excepción a esta regla es cuando se especifica una semilla.
+La mayoría de ejemplos de código en este capítulo tienen resultados variables, es decir, cada vez que se ejecute el código los resultados serán distintos.
+La excepción a esta regla es cuando se especifica una semilla.
 
 \section{La función random()}
 
@@ -26,7 +29,9 @@ Para mostrar su funcionamiento mejor, se puede usar dentro de un bucle.
 
 \section{Generación de números enteros}
 
-Para generar un número entero aleatorio se puede usar la función \ttt{randint()}. A esta función se le deben entregar el número mínimo y el número máximo como parámetros.\smallskip
+Para generar un número entero aleatorio se puede usar la función \ttt{randint()}.
+A esta función se le deben entregar el número mínimo y el número máximo como parámetros.
+\medskip
 
 Se puede usar para simular el lanzamiento de un dado.
 
@@ -38,14 +43,17 @@ O lanzamientos de múltiples dados.
 \pythonfile{codigo/11-random/randint_2.py}
 \out{codigo/11-random/randint_2.out}
 
-Alternativamente, se puede usar la función \ttt{randrange()}, que entrega el mismo resultado, pero usa los parámetros de un objeto de tipo \ttt{range}. Esto significa que el número máximo será el antecesor del segundo parámetro.
+Alternativamente, se puede usar la función \ttt{randrange()}, que entrega el mismo resultado, pero usa los parámetros de un objeto de tipo \ttt{range}.
+Esto significa que el número máximo será el antecesor del segundo parámetro.
 
 \pythonfile{codigo/11-random/randrange.py}
 \out{codigo/11-random/randrange.out}
 
 \section{Generación de números racionales}
 
-La función \ttt{random()} sirve para generar un float entre \ttt{0} y \ttt{1}. Este resultado se puede modificar con operaciones para obtener resultados dentro de un rango específico.\smallskip
+La función \ttt{random()} sirve para generar un float entre \ttt{0} y \ttt{1}.
+Este resultado se puede modificar con operaciones para obtener resultados dentro de un rango específico.
+\medskip
 
 %TODO: ejemplo de esto
 
@@ -57,14 +65,16 @@ Pero puede resultar más fácil utilizar la función \ttt{uniform()}, que requie
 \section{Semillas}
 
 %TODO: enlace a semilla
-Una semilla es un valor predefinido que se le entrega al algoritmo generador de números aleatorios.\smallskip
+Una semilla es un valor predefinido que se le entrega al algoritmo generador de números aleatorios.
+\medskip
 
 Por defecto, la semilla es la hora actual del sistema en el que se ejecuta el algoritmo, pero se puede cambiar usando el método \ttt{seed()}.
 
 \pythonfile{codigo/11-random/seed_1.py}
 \out{codigo/11-random/seed_1.out}
 
-El resultado obtenido en este caso siempre será el mismo, ya que se le entregó la semilla inicial \ttt{10}.\smallskip
+El resultado obtenido en este caso siempre será el mismo, ya que se le entregó la semilla inicial \ttt{10}.
+\medskip
 
 Sin importar cuantas veces se repita, el primer resultado siempre será igual para una misma semilla.
 
@@ -76,7 +86,8 @@ El resto de resultados también serán iguales, y se repetirán en el mismo orde
 \pythonfile{codigo/11-random/seed_3.py}
 \out{codigo/11-random/seed_3.out}
 
-La misma semilla se usará con todos los métodos del módulo \ttt{random}.\smallskip
+La misma semilla se usará con todos los métodos del módulo \ttt{random}.
+\medskip
 
 Los argumentos que se le entregan a funciones como \ttt{randint()} no influyen en el resultado obtenido con la semilla, sólo lo ajustan al rango.
 
@@ -103,7 +114,8 @@ Otra forma de generar listas de números enteros aleatorios es usando la funció
 
 \section{Elementos al azar de secuencias}
 
-El módulo \ttt{random} también tiene métodos para trabajar aleatoriamente con secuencias (como cadenas de texto y listas).\smallskip
+El módulo \ttt{random} también tiene métodos para trabajar aleatoriamente con secuencias (como cadenas de texto y listas).
+\medskip
 
 El método \ttt{choice()} retorna un elemento aleatorio de una secuencia.
 
@@ -113,7 +125,9 @@ El método \ttt{choice()} retorna un elemento aleatorio de una secuencia.
 \pythonfile{codigo/11-random/choice_2.py}
 \out{codigo/11-random/choice_2.out}
 
-La función \ttt{sample()} obtiene una muestra aleatoria de una secuencia. Se le debe especificar el tamaño de la muestra en el segundo argumento. La secuencia original no cambia.
+La función \ttt{sample()} obtiene una muestra aleatoria de una secuencia.
+Se le debe especificar el tamaño de la muestra en el segundo argumento.
+La secuencia original no cambia.
 
 \pythonfile{codigo/11-random/sample.py}
 \out{codigo/11-random/sample.out}
@@ -126,28 +140,34 @@ No se pueden tomar muestras de tamaño superior al tamaño de la población (sec
 \pythonfile{codigo/11-random/error_sample_2.py}
 \out{codigo/11-random/error_sample_2.out}
 
-El método \ttt{shuffle()} desordena una secuencia, y vuelve a armarla ordenándola al azar. Cambia la lista original, no retorna una nueva.
+El método \ttt{shuffle()} desordena una secuencia, y vuelve a armarla ordenándola al azar.
+Cambia la lista original, no retorna una nueva.
 
 \pythonfile{codigo/11-random/shuffle.py}
 \out{codigo/11-random/shuffle.out}
 
 % TODO: se le puede entregar una función como segundo parámetro
 
-La función \ttt{choices()} permite seleccionar elementos de una lista al azar \ttt{k} veces. Esta acción se realiza \doble{con reposición}), o sea, despues de seleccionar un elemento este elemento seguirá en la lista. Este número puede ser mayor al número de elementos de la lista.
+La función \ttt{choices()} permite seleccionar elementos de una lista al azar \ttt{k} veces.
+Esta acción se realiza \doble{con reposición}), o sea, despues de seleccionar un elemento este elemento seguirá en la lista.
+Este número puede ser mayor al número de elementos de la lista.
 
 \pythonfile{codigo/11-random/choices_1.py}
 \out{codigo/11-random/choices_1.out}
 
-Todos los elementos tendrán la misma probabilidad de ser escogidos.\smallskip
+Todos los elementos tendrán la misma probabilidad de ser escogidos.
+\medskip
 
 Se le puede entregar el argumento \ttt{weights} para hacer que cada elemento tenga su propia probabilidad de ser escogido, por ejemplo un dado trucado.
 
 \pythonfile{codigo/11-random/dado_trucado.py}
 \out{codigo/11-random/dado_trucado.out}
 
-Los números dentro de la lista \ttt{weights} representan el peso de cada elemento de la secuencia, y deben tener la misma medida.\smallskip
+Los números dentro de la lista \ttt{weights} representan el peso de cada elemento de la secuencia, y deben tener la misma medida.
+\medskip
 
-Los números pueden escribirse en cualquier escala, ya que se comparan entre ellos para determinar la razón en la que se encuentran los pesos. Todos los ejemplos que se muestran a continuación son equivalentes.
+Los números pueden escribirse en cualquier escala, ya que se comparan entre ellos para determinar la razón en la que se encuentran los pesos.
+Todos los ejemplos que se muestran a continuación son equivalentes.
 
 \pythonfile{codigo/11-random/choices_2.py}
 \out{codigo/11-random/choices_2.out}
@@ -167,7 +187,8 @@ La función \ttt{uniform()} retorna un float que sigue la \link{https://es.wikip
 
 \pythonfile{codigo/11-random/uniforme.py}
 
-La función \ttt{triangular()} retorna un float que sigue la \link{https://es.wikipedia.org/wiki/Distribuci\%C3\%B3n\_triangular}{distribución triangular}, que se encuentra entre 2 valores y se le puede entregar el parámetro \ttt{mode} (valor más probable). Si no se le entrega este argumento, \ttt{mode} será el punto medio.
+La función \ttt{triangular()} retorna un float que sigue la \link{https://es.wikipedia.org/wiki/Distribuci\%C3\%B3n\_triangular}{distribución triangular}, que se encuentra entre 2 valores y se le puede entregar el parámetro \ttt{mode} (valor más probable).
+Si no se le entrega este argumento, \ttt{mode} será el punto medio.
 
 \pythonfile{codigo/11-random/triangular.py}
 

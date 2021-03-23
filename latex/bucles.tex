@@ -2,12 +2,15 @@
 
 \section{Bucles while}
 
-Un bucle \ttt{while} se usa para repetir un bloque de código varias veces, siempre que se cumpla cierta condición. Generalmente se usan con una variable como contador.
+Un bucle \ttt{while} se usa para repetir un bloque de código varias veces, siempre que se cumpla cierta condición.
+Generalmente se usan con una variable como contador.
 
 \pythonfile{codigo/7-bucles/while_1.py}
 \out{codigo/7-bucles/while_1.out}
 
-El código en el cuerpo de un bucle \ttt{while} se ejecuta repetidamente. Esto se llama iteración.\smallskip
+El código en el cuerpo de un bucle \ttt{while} se ejecuta repetidamente.
+Esto se llama iteración.
+\medskip
 
 Se puede realizar cualquier operación con el contador dentro del bucle.
 
@@ -19,7 +22,8 @@ Se puede realizar cualquier operación con el contador dentro del bucle.
 
 \section{Bucles infinitos}
 
-Si la condición a evaluar es siempre verdadera, el bucle se ejecutará indefinidamente. Esto se llama bucle infinito.
+Si la condición a evaluar es siempre verdadera, el bucle se ejecutará indefinidamente.
+Esto se llama bucle infinito.
 
 \pythonfile{codigo/7-bucles/while_infinito.py}
 \out{codigo/7-bucles/while_infinito.out}
@@ -46,7 +50,9 @@ El uso de la declaración \ttt{break} fuera de un bucle provoca un error.
 
 \section{Declaración continue}
 
-Otra declaración que se puede utilizar dentro de los bucles es \ttt{continue}. A diferencia de \ttt{break}, \ttt{continue} salta de nuevo a la parte superior del bucle, en lugar de detenerlo. Básicamente, la declaración \ttt{continue} detiene la iteración actual y continúa con la siguiente.
+Otra declaración que se puede utilizar dentro de los bucles es \ttt{continue}.
+A diferencia de \ttt{break}, \ttt{continue} salta de nuevo a la parte superior del bucle, en lugar de detenerlo.
+Básicamente, la declaración \ttt{continue} detiene la iteración actual y continúa con la siguiente.
 
 \pythonfile{codigo/7-bucles/continue.py}
 \out{codigo/7-bucles/continue.out}
@@ -58,7 +64,9 @@ Al igual que la declaración \ttt{break}, usar \ttt{continue} fuera de un bucle 
 
 \section{Bucle for con listas}
 
-Otro tipo de bucle es el bucle \ttt{for}. Estos bucles se pueden usar para iterar sobre una lista. Las instrucciones dentro de su bloque de código se ejecutarán para cada elemento de la lista.
+Otro tipo de bucle es el bucle \ttt{for}.
+Estos bucles se pueden usar para iterar sobre una lista.
+Las instrucciones dentro de su bloque de código se ejecutarán para cada elemento de la lista.
 
 \pythonfile{codigo/7-bucles/for_1.py}
 \out{codigo/7-bucles/for_1.out}
@@ -75,7 +83,8 @@ De manera similar a los bucles \ttt{while}, las declaraciones \ttt{break} y \ttt
 
 \section{Rangos}
 
-La función \ttt{range()} devuelve una secuencia de números.\smallskip
+La función \ttt{range()} devuelve una secuencia de números.
+\medskip
 
 Si se llama a \ttt{range()} con un argumento, produce un objeto con valores desde \ttt{0} hasta el antecesor del número especificado.
 
@@ -97,27 +106,32 @@ Si el primer número es \ttt{0}, el resultado es equivalente al de ingresar sól
 \pythonfile{codigo/7-bucles/range_3.py}
 \out{codigo/7-bucles/range_3.out}
 
-El rango puede tener un tercer argumento, que determina el intervalo de la secuencia producida, también llamado como paso. Este número puede ser positivo (incremento) o negativo (decremento).
+El rango puede tener un tercer argumento, que determina el intervalo de la secuencia producida, también llamado como paso.
+Este número puede ser positivo (incremento) o negativo (decremento).
 
 \pythonfile{codigo/7-bucles/range_4.py}
 \out{codigo/7-bucles/range_4.out}
 
 \section{Rangos imposibles}
 
-Intentar almacenar rangos \doble{imposibles} no mostrará ningún error. El rango simplemente no tendrá ningún elemento, lo cual es más fácil de ver al convertirlo en una lista.
+Intentar almacenar rangos \doble{imposibles} no mostrará ningún error.
+El rango simplemente no tendrá ningún elemento, lo cual es más fácil de ver al convertirlo en una lista.
 
 \pythonfile{codigo/7-bucles/rango_imposible.py}
 \out{codigo/7-bucles/rango_imposible.out}
 
 \section{Bucle for en rangos}
 
-Una forma común de usar los bucles \ttt{for} es iterando sobre rangos. Esto permite hacer bucles de muchas formas.
+Una forma común de usar los bucles \ttt{for} es iterando sobre rangos.
+Esto permite hacer bucles de muchas formas.
 
 \pythonfile{codigo/7-bucles/for_rango.py}
 \out{codigo/7-bucles/for_rango.out}
 
-No es necesario llamar \ttt{list()} en el objeto de rango cuando se usa en un bucle \ttt{for}, porque no se está indexando, por lo que no requiere una lista.\smallskip
+No es necesario llamar \ttt{list()} en el objeto de rango cuando se usa en un bucle \ttt{for}, porque no se está indexando, por lo que no requiere una lista.
+\medskip
 
-En general, un bucle \ttt{for} puede recorrer cualquier iterable. Estos se verán más a fondo en su propio capítulo.
+En general, un bucle \ttt{for} puede recorrer cualquier iterable.
+Estos se verán más a fondo en su propio capítulo.
 
 \clearpage
