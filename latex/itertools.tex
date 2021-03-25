@@ -1,15 +1,16 @@
 \chapter{El módulo itertools}
 
+\Needspace{8\baselineskip}
 \section{El módulo itertools}
 
 El módulo itertools es una biblioteca estándar que contiene varias funciones que son útiles en la programación funcional.
 
 \pythonfile{codigo/19-itertools/itertools.py}
 
+\Needspace{8\baselineskip}
 \section{Iteradores infinitos}
 
 Uno de los tipos de función que produce son iteradores infinitos.
-\medskip
 
 La función \ttt{count()} cuenta infinitamente a partir de un valor.
 
@@ -31,7 +32,6 @@ La función\ttt{cycle()} itera infinitamente a través de un iterable (como una 
 
 \pythonfile{codigo/19-itertools/cycle_1.py}
 \out{codigo/19-itertools/cycle_1.out}
-
 \pythonfile{codigo/19-itertools/cycle_2.py}
 \out{codigo/19-itertools/cycle_2.out}
 
@@ -50,10 +50,10 @@ Para repetir infinitamente, se le debe entregar sólo el objeto como parámetro.
 \pythonfile{codigo/19-itertools/repeat_3.py}
 \out{codigo/19-itertools/repeat_3.out}
 
+\Needspace{8\baselineskip}
 \section{Operaciones sobre iterables}
 
 Hay muchas funciones en itertools que operan sobre iterables, de una forma similar a \ttt{map()} o \ttt{filter()}.
-\medskip
 
 La función \ttt{accumulate()} devuelve un total actualizado de los valores dentro de un iterable.
 
@@ -75,11 +75,11 @@ La función \ttt{chain()} combina varios iterables en uno solo más largo.
 \pythonfile{codigo/19-itertools/chain.py}
 \out{codigo/19-itertools/chain.out}
 
+\Needspace{8\baselineskip}
 \section{Funciones de combinatoria}
 
 También hay numerosas funciones combinatorias en itertools, tales como \ttt{product()} y \ttt{permutations()}.
 Estas son usadas cuando se quiere cumplir tareas con todas las combinaciones posibles de algunos elementos.
-\medskip
 
 La función \ttt{product()} retorna el producto entre 2 iterables.
 
@@ -90,7 +90,6 @@ La función \ttt{permutations()} retorna las todas permutaciones posibles entre 
 
 \pythonfile{codigo/19-itertools/permutations_1.py}
 \out{codigo/19-itertools/permutations_1.out}
-
 \pythonfile{codigo/19-itertools/permutations_2.py}
 \out{codigo/19-itertools/permutations_2.out}
 

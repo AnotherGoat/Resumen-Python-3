@@ -1,12 +1,11 @@
 \chapter{Expresiones regulares}
 
+\Needspace{8\baselineskip}
 \section{Expresiones regulares}
 
 Las expresiones regulares son una potente herramiente para varias clases de manipulación de cadenas.
-\medskip
 
 Son un lenguaje de dominio específico (DSL, por sus siglas en inglés) que está presente como una biblioteca en la mayoría de los lenguajes de programación, no solo Python.
-\medskip
 
 Son útiles para 2 tareas principales:
 
@@ -18,18 +17,16 @@ Son útiles para 2 tareas principales:
 \end{itemize}
 
 Los lenguajes de dominio específico son mini-lenguajes de programación altamente especializados.
-\medskip
 
 Las expresiones regulares son un ejemplo popular y SQL (para la manipulación de datos) es otro.
-\medskip
 
 Lenguajes privados específicos del dominio son a menudo usados para propósitos industriales particulares.
-\medskip
 
 Para usar expresiones regulares en Python, se debe importar el módulo \ttt{re} que pertenece a la biblioteca estándar.
 
 \pythonfile{codigo/21-regex/import_re.py}
 
+\Needspace{8\baselineskip}
 \section{Definición de expresiones regulares}
 
 Para definir una expresión regular, se puede almacenar en una variable y el patrón se escribe como un string.
@@ -41,6 +38,7 @@ Se recomienda usar cadenas puras \doble{raw string}, las cuales empiezan por la 
 Las cadenas puras ignoran las secuencias de escape propias de las cadenas de Python, pero no las de expresiones regulares.
 Es por este motivo que hace más fácil el uso de expresiones regulares.
 
+\Needspace{8\baselineskip}
 \section{Coincidencias parciales}
 
 Para revisar si una cadena encaja con un patrón, se puede usar el método \ttt{match()} para compararla con una expresión regular.
@@ -50,7 +48,6 @@ Para revisar si una cadena encaja con un patrón, se puede usar el método \ttt{
 
 En en caso de arriba, revisa todas las palabras que empiezan por \ttt{\qq hola \qq}.
 Si no se parecen al patrón, mostrará \ttt{None}.
-\medskip
 
 Puede ser más conveniente convertir el resultado \ttt{match} a un booleano usando \ttt{bool()}.
 
@@ -58,13 +55,13 @@ Puede ser más conveniente convertir el resultado \ttt{match} a un booleano usan
 \out{codigo/21-regex/match_2.out}
 
 Este resultado se parece al que se obtendría usando el método \ttt{startswith()}, pero la gracia de las expresiones regulares es que permiten patrones mucho más complejos, que se verán más tarde.
-\medskip
 
 Otra opción es usar la función \ttt{search()}, que busca si un patrón aparece en cualquier parte de la cadena, no solo al principio.
 
 \pythonfile{codigo/21-regex/search.py}
 \out{codigo/21-regex/search.out}
 
+\Needspace{8\baselineskip}
 \section{Coincidencias mútliples}
 
 La función \ttt{findall()} devuelve una lista con todas las subcadenas que coinciden con un patrón.
@@ -82,20 +79,20 @@ También existe la función \ttt{finditer()} que hace lo mismo que \ttt{findall(
 \pythonfile{codigo/21-regex/finditer.py}
 \out{codigo/21-regex/finditer.out}
 
+\Needspace{8\baselineskip}
 \section{Detalles sobre los resultados}
 
 La búsqueda regex devuelve un objeto con varios métodos que dan detalles sobre ésta.
-\medskip
 
 Estos métodos incluyen \ttt{group()} que devuelve la cadena que coincide, \ttt{start()} que devuelve la posición inicial de esta cadena, \ttt{end()} que devuelve la posición final y \ttt{span()} que devuelve la posición inicial y final como una tupla.
 
 \pythonfile{codigo/21-regex/detalles.py}
 \out{codigo/21-regex/detalles.out}
 
+\Needspace{8\baselineskip}
 \section{Buscar y reemplazar}
 
 Uno de los métodos de \ttt{re} más importantes que utiliza expresiones regulares es \ttt{sub()}.
-\medskip
 
 Este método reemplaza todas las ocurrencias de un patrón con un string dado.
 Devuelve una cadena modificada.
@@ -113,6 +110,7 @@ El valor predeterminado de \ttt{count} es 0, lo que significa que se reemplazar�
 \pythonfile{codigo/21-regex/sub_4.py}
 \out{codigo/21-regex/sub_4.out}
 
+\Needspace{8\baselineskip}
 \section{Coincidencias exactas}
 
 La función \ttt{fullmatch()} compara de forma más estricta que \ttt{match()}, debido a que toma en cuenta toda la cadena con la que se compara el patrón.
@@ -120,11 +118,11 @@ La función \ttt{fullmatch()} compara de forma más estricta que \ttt{match()}, 
 \pythonfile{codigo/21-regex/fullmatch.py}
 \out{codigo/21-regex/fullmatch.out}
 
+\Needspace{8\baselineskip}
 \section{Metacaracteres}
 
 Los metacaracteres son los que hacen a las expresiones regulares más potentes que los métodos de cadena normales.
 Permiten crear patrones que representan conceptos como \doble{una o más repeticiones de una vocal}.
-\medskip
 
 Todos los metacaracteres son los siguientes:
 
@@ -132,7 +130,6 @@ Todos los metacaracteres son los siguientes:
 
 La existencia de los metacaracteres presenta un problema si se desea crear una expresión regular que corresponda a un metacarácter literal, como por ejemplo \ttt{"\$"}.
 La solución a estos casos es colocar una barra diagonal invertida \ttt{\textbackslash} antes de dicho caracter.
-\medskip
 
 Sin embargo, esto también tendría problemas porque en Python las barras diagonales \ttt{\textbackslash} tienen la función de iniciar secuencias de escape dentro de strings.
 Por esta razón es que se recomienda usar cadenas puras en las expresiones regulares.
@@ -140,40 +137,39 @@ Por esta razón es que se recomienda usar cadenas puras en las expresiones regul
 \pythonfile{codigo/21-regex/uso_metacaracteres.py}
 \out{codigo/21-regex/uso_metacaracteres.out}
 
+\Needspace{8\baselineskip}
 \section{Punto}
 
 El metacarácter más sencillo es el punto \ttt{.}, que coincide con cualquier caracter excepto una nueva linea.
 
 \pythonfile{codigo/21-regex/punto_1.py}
 \out{codigo/21-regex/punto_1.out}
-
 \pythonfile{codigo/21-regex/punto_2.py}
 \out{codigo/21-regex/punto_2.out}
 
 Básicamente, el punto \ttt{.} actúa como un \doble{comodín}.
-\medskip
 
 Otro uso puede ser para pedir palabras de un largo igual a la cantidad de puntos.
 
 \pythonfile{codigo/21-regex/punto_3.py}
 \out{codigo/21-regex/punto_3.out}
 
+\Needspace{8\baselineskip}
 \section{Inicio y final}
 
 Los metacaracteres \ttt{\^} y \ttt{\$} coinciden con el inicio y el final de una cadena, respectivamente.
 \ttt{\^} busca palabras que comiencen con el carácter que le sigue y \ttt{\$} busca palabras que terminen con el caracter que le precede.
-\medskip
 
 En los ejemplos se usa \ttt{search()} porque \ttt{match()} busca desde el principio del string, lo que sería redundante con \ttt{\^}.
 
 \pythonfile{codigo/21-regex/inicio_final_1.py}
 \out{codigo/21-regex/inicio_final_1.out}
-
 \pythonfile{codigo/21-regex/inicio_final_2.py}
 \out{codigo/21-regex/inicio_final_2.out}
 
 \ttt{\^} y \ttt{\$} por si solos no son suficiente para buscar palabras que comiencen con un carácter y terminen con otro (al mismo tiempo).
 
+\Needspace{8\baselineskip}
 \section{Clases de caracteres}
 
 Los corchetes \ttt{[]} son metacaracteres usados para definir clases de caracteres, que son conjuntos de caracteres aceptados.
@@ -181,7 +177,6 @@ El patrón solo necesita que aparezca uno de los caracteres dentro del grupo.
 
 \pythonfile{codigo/21-regex/clases_caracteres_1.py}
 \out{codigo/21-regex/clases_caracteres_1.out}
-
 \pythonfile{codigo/21-regex/clases_caracteres_2.py}
 \out{codigo/21-regex/clases_caracteres_2.out}
 
@@ -190,10 +185,10 @@ Si se ingresan en sucesión, el patrón acepta un carácter del primer conjunto 
 \pythonfile{codigo/21-regex/clases_caracteres_3.py}
 \out{codigo/21-regex/clases_caracteres_3.out}
 
+\Needspace{8\baselineskip}
 \section{Rangos de caracteres}
 
 Dentro de una clase de caracteres se pueden especificar rangos para evitar tener que escribir muchas letras o números.
-\medskip
 
 Las más usadas son las siguientes:
 
@@ -224,6 +219,7 @@ Los rangos se pueden limitar dependiendo de lo que se necesite.
 \pythonfile{codigo/21-regex/clases_rangos_3.py}
 \out{codigo/21-regex/clases_rangos_3.out}
 
+\Needspace{8\baselineskip}
 \section{Clases invertidas}
 
 Si se ingresa el metacarácter \ttt{\^} al principio de una clase de caracteres, invierte todos los contenidos de la clase.
@@ -233,10 +229,10 @@ Si se ingresa el metacarácter \ttt{\^} al principio de una clase de caracteres,
 
 Esto solo funciona si se coloca al principio, en cualquier otra posición no tiene función.
 
+\Needspace{8\baselineskip}
 \section{Repeticiones}
 
 Los metacaracteres \ttt{*}, \ttt{+}, \ttt{?}, \ttt{\{} y \ttt{\}} se usan para especificar repeticiones de caracteres.
-\medskip
 
 %TODO: enlace a conjunto cierre
 
@@ -272,7 +268,6 @@ Las llaves \ttt{\{} y \ttt{\}} son metacaracteres que permiten indicar la cantid
 \out{codigo/21-regex/llaves_1.out}
 
 Se debe recordar no insertar ningún espacio después de la coma.
-\medskip
 
 Decir \ttt{\{0,1\}} quiere decir entre 0 y 1 repeticiones del caracter anterior, lo que es equivalente a \ttt{?}.
 
@@ -283,7 +278,6 @@ Si se omite el segundo caracter, se concidera como \doble{hasta infinito}, lo qu
 
 \pythonfile{codigo/21-regex/llaves_3.py}
 \out{codigo/21-regex/llaves_3.out}
-
 \pythonfile{codigo/21-regex/llaves_4.py}
 \out{codigo/21-regex/llaves_4.out}
 
@@ -293,10 +287,10 @@ Por último, usando el metacarácter \ttt{*} también se pueden verificar palabr
 \pythonfile{codigo/21-regex/cierre_inicio_final.py}
 \out{codigo/21-regex/cierre_inicio_final.out}
 
+\Needspace{8\baselineskip}
 \section{Grupos de caracteres}
 
 Un grupo puede ser creado al colocar los caracteres pertenecientes a él entre paréntesis \ttt{()}.
-\medskip
 
 Esto permite a una secuencia de caracteres ser pasada como un único argumento a metacaracteres como \ttt{*} y \ttt{?}.
 

@@ -1,5 +1,6 @@
 \chapter{Listas}
 
+\Needspace{8\baselineskip}
 \section{Creación de listas}
 
 Las listas son la estructura más usada en Python.
@@ -12,6 +13,7 @@ En Python, las listas pueden tener elementos de más de un tipo.
 
 \pythonfile{codigo/6-listas/lista_2.py}
 
+\Needspace{8\baselineskip}
 \section{Índices}
 
 Se puede acceder a un determinado elemento de la lista escribiendo su índice entre corchetes \ttt{[]}.
@@ -27,6 +29,7 @@ El último elemento de una lista tiene índice \ttt{-1}, el anterior \ttt{-2}, y
 \pythonfile{codigo/6-listas/indexar_listas_2.py}
 \out{codigo/6-listas/indexar_listas_2.out}
 
+\Needspace{8\baselineskip}
 \section{IndexError en listas}
 
 Intentar acceder a un índice no existente producirá un error.
@@ -34,6 +37,7 @@ Intentar acceder a un índice no existente producirá un error.
 \pythonfile{codigo/6-listas/error_indice.py}
 \out{codigo/6-listas/error_indice.out}
 
+\Needspace{8\baselineskip}
 \section{Lista vacía}
 
 A veces es necesario crear una lista vacía y completarla más tarde durante la ejecución del programa.
@@ -41,6 +45,7 @@ Las listas vacías se crean con un par de corchetes vacíos \ttt{[]}.
 
 \pythonfile{codigo/6-listas/lista_vacia.py}
 
+\Needspace{8\baselineskip}
 \section{Anidación de listas}
 
 Las listas se pueden anidar dentro de otras listas, y para acceder a algún elemento se debe usar una cantidad mayor de corchetes, donde los índices indican el elemento desde afuera hacia adentro.
@@ -49,17 +54,16 @@ Las listas se pueden anidar dentro de otras listas, y para acceder a algún elem
 \out{codigo/6-listas/anidacion.out}
 
 En el ejemplo de arriba se muestra como acceder a todos los elementos de la lista creada.
-\medskip
 
 Las listas anidadas se pueden utilizar para representar cuadrículas 2D, como por ejemplo \link{https://es.khanacademy.org/math/algebra-home/alg-matrices}{matrices}.
 
 \pythonfile{codigo/6-listas/identidad.py}
 
 El intérprete ignora los saltos de línea y la indentación dentro de los corchetes \ttt{[]}, lo que permite ordenarla para hacer más fácil su comprensión.
-\medskip
 
 Esta estructura tipo matriz es muy conveniente en los casos en los que se necesite almacenar datos en formato tabla (fila-columna).
 
+\Needspace{8\baselineskip}
 \section{Comas sobrantes}
 
 Se puede dejar a lo más una coma sobrante dentro de los corchetes de una lista.
@@ -73,6 +77,7 @@ Si se deja más de una coma, se mostrará un \ttt{SyntaxError}.
 \pythonfile{codigo/6-listas/error_comas.py}
 \out{codigo/6-listas/error_comas.out}
 
+\Needspace{8\baselineskip}
 \section{Tamaño de una lista}
 
 Se puede obtener el tamaño (número de elementos) de una lista utilizando la función \ttt{len()}.
@@ -80,6 +85,7 @@ Se puede obtener el tamaño (número de elementos) de una lista utilizando la fu
 \pythonfile{codigo/6-listas/len.py}
 \out{codigo/6-listas/len.out}
 
+\Needspace{8\baselineskip}
 \section{Operaciones con listas}
 
 El elemento en un índice determinado de una lista se puede reasignar.
@@ -98,6 +104,7 @@ Las listas se pueden concatenar y multiplicar de la misma manera que las cadenas
 \pythonfile{codigo/6-listas/operaciones_listas_2.py}
 \out{codigo/6-listas/operaciones_listas_2.out}
 
+\Needspace{8\baselineskip}
 \section{Operadores in y not in}
 
 Se puede verificar si un elemento pertenece a una lista usando el operador \ttt{in}.
@@ -112,6 +119,7 @@ Ambas formas mostradas a continuación son válidas.
 \pythonfile{codigo/6-listas/not_in.py}
 \out{codigo/6-listas/not_in.out}
 
+\Needspace{8\baselineskip}
 \section{Añadir elementos a listas}
 
 El método \ttt{append()} permite añadir un elemento al final de una lista.
@@ -133,6 +141,7 @@ El método \ttt{extend()} se usa para añadir todos los elementos de una lista a
 
 El resultado obtenido es el mismo que al concatenar las listas, pero la diferencia es que reemplaza la primera lista por la versión extendida.
 
+\Needspace{8\baselineskip}
 \section{Quitar elementos de listas}
 
 El método \ttt{pop()} elimina el último elemento de una lista.
@@ -166,6 +175,7 @@ El método \ttt{clear()} quita todos los elementos de una lista, dejándola vac�
 \pythonfile{codigo/6-listas/clear.py}
 \out{codigo/6-listas/clear.out}
 
+\Needspace{8\baselineskip}
 \section{La declaración del}
 
 Otra forma de eliminar elementos de una lista es usando la palabra clave \ttt{del}.
@@ -179,6 +189,7 @@ También se puede especificar un rango de eliminación, lo que hace que elimine 
 \pythonfile{codigo/6-listas/del_rango.py}
 \out{codigo/6-listas/del_rango.out}
 
+\Needspace{8\baselineskip}
 \section{Ordenar listas}
 
 El método \ttt{sort()} ordena alfabéticamente una lista de strings, por defecto se realiza ascendentemente.
@@ -202,6 +213,7 @@ El método \ttt{reverse()} invierte el orden de los elementos de una lista.
 \pythonfile{codigo/6-listas/reverse.py}
 \out{codigo/6-listas/reverse.out}
 
+\Needspace{8\baselineskip}
 \section{Información sobre listas}
 
 Existen métodos que no modifican listas, pero pueden obtener información sobre ellas.
@@ -249,6 +261,7 @@ Se pueden combinar las funciones \ttt{avg()} y \ttt{len()} para obtener el prome
 \pythonfile{codigo/6-listas/avg.py}
 \out{codigo/6-listas/avg.out}
 
+\Needspace{8\baselineskip}
 \section{Copiar listas}
 
 Al intentar copiar listas sólo usando su nombre, en realidad se está haciendo una lista que hace referencia a la lista copiada.
@@ -267,6 +280,7 @@ Otra opción válida es usando el constructor \ttt{list()}.
 \pythonfile{codigo/6-listas/copy_list.py}
 \out{codigo/6-listas/copy_list.out}
 
+\Needspace{8\baselineskip}
 \section{Strings como listas}
 
 Las cadenas pueden verse como listas de caracteres que no se pueden cambiar (inmutables).
@@ -277,6 +291,7 @@ De hecho, tienen muchas similitudes.
 Ambas almacenan elementos secuencialmente.
 La diferencia es que las cadenas son más limitadas (pero también más rápidas) porque sólo pueden almacenar caracteres y son inmutables, lo que significa que sus contenidos no se pueden alterar.
 
+\Needspace{8\baselineskip}
 \section{Conversión de strings a listas}
 
 El método \ttt{list()} convierte una cadena de caracteres en una lista de caracteres.
@@ -289,6 +304,7 @@ El método \ttt{split()} convierte una cadena de caracteres en una lista de pala
 \pythonfile{codigo/6-listas/split.py}
 \out{codigo/6-listas/split.out}
 
+\Needspace{8\baselineskip}
 \section{Indexación de cadenas}
 
 Algunos tipos de variables, como las cadenas, se pueden indexar. Esto se realiza de una forma parecida a las listas.
@@ -297,8 +313,8 @@ Algunos tipos de variables, como las cadenas, se pueden indexar. Esto se realiza
 \out{codigo/6-listas/indexacion_cadenas.out}
 
 Se debe recordar que el espacio \ttt{\qq  \qq} también es considerado como símbolo y tiene su propio índice dentro de la cadena.
-\medskip
 
+\Needspace{8\baselineskip}
 \section{Índices negativos}
 
 En las cadenas, se pueden obtener sus caracteres empezando desde el final de la palabra.
@@ -310,6 +326,7 @@ El último caracter tiene índice \ttt{-1}, el anterior \ttt{-2}, y así sucesiv
 
 Esto resulta especialmente útil con cadenas largas.
 
+\Needspace{8\baselineskip}
 \section{Reasignación de strings}
 
 A diferencia de las listas, las cadenas son inmutables, lo que significa que no se pueden reasignar sus caracteres.

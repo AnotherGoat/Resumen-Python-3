@@ -1,5 +1,6 @@
 \chapter{Variables}
 
+\Needspace{8\baselineskip}
 \section{Asignación de variables}
 
 Una variable permite almacenar un valor asignándole un nombre, el cual puede ser usado para referirse al valor más adelante en el programa.
@@ -12,21 +13,19 @@ En Python, no existe la declaración de variables.
 Toda variable que se cree debe tener un valor inicial asignado.
 Se permite que este valor pueda ser \doble{vacío}, como por ejemplo el string vacío \ttt{\qq \qq}.
 
+\Needspace{8\baselineskip}
 \section{Nombre de variables válidos}
 
 Se aplican ciertas restricciones con respecto a los caracteres que se pueden usar en los nombres de variables.
 Los únicos caracteres permitidos son letras, números y guiones bajos \ttt{\_}.
 Además, no se puede comenzar con números o incluir espacios.
-\medskip
 
 No seguir estas reglas hará que ocurran errores que impiden la ejecución del programa.
 
 \pythonfile{codigo/4-variables/error_variable_1.py}
 \out{codigo/4-variables/error_variable_1.out}
-
 \pythonfile{codigo/4-variables/error_variable_2.py}
 \out{codigo/4-variables/error_variable_2.out}
-
 \pythonfile{codigo/4-variables/error_variable_3.py}
 \out{codigo/4-variables/error_variable_3.out}
 
@@ -35,6 +34,7 @@ Python es sensible a mayúsculas y minúsculas, lo que significa que las variabl
 \pythonfile{codigo/4-variables/mayusculas_y_minusculas.py}
 \out{codigo/4-variables/mayusculas_y_minusculas.out}
 
+\Needspace{8\baselineskip}
 \section{Nombres largos de variables}
 
 Los nombres de variables que se componen de más de una palabra pueden ser difíciles de leer.
@@ -55,11 +55,11 @@ Existen muchas técnicas para escribirlos de forma más legible.
 
 \end{itemize}
 
+\Needspace{8\baselineskip}
 \section{Palabras clave}
 
 Existen palabras específicas que tampoco se pueden usar como nombres de variables.
 El intérprete de Python reconoce estas palabras como palabras clave o keywords, y tienen usos reservados.
-\medskip
 
 A continuación, se muestra una lista de todas las palabras clave en Python.
 
@@ -67,6 +67,7 @@ A continuación, se muestra una lista de todas las palabras clave en Python.
 
 Nótese el uso de mayúsculas al principio de \ttt{False}, \ttt{None} y \ttt{True}.
 
+\Needspace{8\baselineskip}
 \section{Operaciones con variables}
 
 Se pueden usar variables dentro de operaciones.
@@ -96,7 +97,6 @@ En Python, las variables no tienen tipos específicos, por lo que se puede asign
 
 Sin embargo, no es una buena práctica.
 Para evitar errores, se debería evitar sobreescribir una variable con distintos tipos de datos.
-\medskip
 
 %TODO: enlaces a numérico y alfanumérico
 Si se asigna el valor numérico (enteros y decimales) o alfanumérico (cadena de texto) de una variable a otra, los cambios hechos a ambas variables son independientes.
@@ -106,6 +106,7 @@ Si se asigna el valor numérico (enteros y decimales) o alfanumérico (cadena de
 
 Esto no ocurre para tipos de datos más complejos, como listas.
 
+\Needspace{8\baselineskip}
 \section{Entrada}
 
 Para obtener información del usuario, se puede usar la función \ttt{input()}, la cual solicita al usuario que la entrada.
@@ -116,7 +117,6 @@ La información obtenida puede ser almacenada como una variable.
 \out{codigo/4-variables/input_1.out}
 
 Toda la información recibida por el método \ttt{input()} se procesa como un string.
-\medskip
 
 También se puede entregar un string como parámetro al método \ttt{input()}, lo cual mostrará texto antes de pedir la entrada.
 Esto sirve para aclarar qué entrada está solicitando el programa.
@@ -124,7 +124,6 @@ Esto sirve para aclarar qué entrada está solicitando el programa.
 \pythonfile{codigo/4-variables/input_2.py}
 
 Al usar la función \ttt{input()}, el flujo del programa se detiene hasta que el usuario ingrese algún valor.
-\medskip
 
 Se puede usar \ttt{input()} varias veces para tomar múltiples entradas del usuario.
 
@@ -134,6 +133,7 @@ Se puede usar \ttt{input()} varias veces para tomar múltiples entradas del usua
 
 Normalmente, se debe añadir un espacio para concatenar variables, para evitar que las variables aparezcan juntas en la salida.
 
+\Needspace{8\baselineskip}
 \section{Conversión de tipos de datos}
 
 Existen funciones para convertir datos de un tipo a otro.
@@ -151,7 +151,7 @@ Entre dichas funciones se encuentran:
   \out{codigo/4-variables/convertir_a_int_2.out}
 
   Al convertir de \ttt{float} a \ttt{int}, sólo se conservará la parte entera del número.
-No ocurrirá ningún tipo de redondeo.
+  No ocurrirá ningún tipo de redondeo.
 
   \pythonfile{codigo/4-variables/float_a_int.py}
   \out{codigo/4-variables/float_a_int.out}
@@ -162,7 +162,7 @@ No ocurrirá ningún tipo de redondeo.
   \out{codigo/4-variables/convertir_a_float.out}
 
   \item \ttt{str()}: Convierte a un string o cadena de caracteres.
-Uno de sus usos principales es para concatenar distintos tipos de datos.
+  Uno de sus usos principales es para concatenar distintos tipos de datos.
 
   \pythonfile{codigo/4-variables/convertir_a_string.py}
   \out{codigo/4-variables/convertir_a_string.out}
@@ -180,6 +180,7 @@ Esto se conoce como \doble{casting}.
 
 \pythonfile{codigo/4-variables/casting.py}
 
+\Needspace{8\baselineskip}
 \section{Operadores de asignación}
 
 Los operadores de asignación permiten escribir código como \ttt{x = x + 1} de manera más concisa, como \ttt{x += 1}.
@@ -191,6 +192,7 @@ También se pueden usar con los operadores de concatenación y multiplicación d
 
 \pythonfile{codigo/4-variables/asignacion_2.py}
 
+\Needspace{8\baselineskip}
 \section{Múltiples variables con el mismo valor}
 
 Para declarar muchas variables en una misma linea y hacer que todas tengan el mismo valor, se puede repetir el operador de asignación \ttt{=}.
@@ -198,11 +200,11 @@ Para declarar muchas variables en una misma linea y hacer que todas tengan el mi
 \pythonfile{codigo/4-variables/multiple.py}
 \out{codigo/4-variables/multiple.out}
 
+\Needspace{8\baselineskip}
 \section{Tipos de datos}
 
 En Python existen muchos tipos de datos que pueden ser usados y almacenados como variables.
 La función \ttt{type()} retorna el tipo de dato del objeto que se le entrega como argumento.
-\medskip
 
 A continuación se mostrarán los tipos de datos más comunes.
 

@@ -1,11 +1,11 @@
 \chapter{Excepciones}
 
+\Needspace{8\baselineskip}
 \section{Excepciones}
 
 Se han mencionado excepciones en los capítulos anteriores.
 Ocurren cuando algo sale, mal, debido a código incorrecto o entradas incorrectas.
 Cuando ocurre una excepción, el programa se detiene inmediatamente.
-\medskip
 
 Por ejemplo, al intentar dividir por \ttt{0}, se produce un \ttt{ZeroDivisionError}.
 
@@ -33,6 +33,7 @@ Una lista más detallada de excepciones se puede encontrar en la \link{https://d
 
 Las bibliotecas creadas por terceros a menudo definen sus propias excepciones.
 
+\Needspace{8\baselineskip}
 \section{Declaración try-except}
 
 Para manejar excepciones y ejecutar código cuando ocurre una excepción, se puede usar una sentencia \ttt{try-except}.
@@ -63,6 +64,7 @@ Si una sentencia \ttt{except} vacía viene acompañada de otros \ttt{except}, es
 
 \pythonfile{codigo/12-excepciones/try_except_3.py}
 
+\Needspace{8\baselineskip}
 \section{Declaración finally}
 
 Para asegurar que algún código se ejecute sin importar cuál error ocurra, se puede usar la palabra clave \ttt{finally}.
@@ -81,6 +83,7 @@ Si ocurre una excepción sin atrapar, la excepción se muestra después de lo qu
 
 %TODO: explicar por qué ocurre
 
+\Needspace{8\baselineskip}
 \section{Levantar excepciones}
 
 Se puede usar la sentencia \ttt{raise} para levantar excepciones.
@@ -93,7 +96,6 @@ Las excepciones pueden ser levantadas con argumentos que den detalles sobre ella
 
 \pythonfile{codigo/12-excepciones/raise_2.py}
 \out{codigo/12-excepciones/raise_2.out}
-
 \pythonfile{codigo/12-excepciones/raise_3.py}
 \inp{codigo/12-excepciones/raise_3.inp}
 \out{codigo/12-excepciones/raise_3.out}
@@ -108,11 +110,11 @@ Usar \ttt{raise} fuera de los contextos mencionados anteriormente levantará un 
 \pythonfile{codigo/12-excepciones/error_raise.py}
 \out{codigo/12-excepciones/error_raise.out}
 
+\Needspace{8\baselineskip}
 \section{Aserciones}
 
 Una aserción es una comprobación de validez, la cual prueba una expresión.
 La expresión es probada, y si el resultado es falso, usa excepción \ttt{AssertionError} es levantada.
-\medskip
 
 Las aserciones son llevadas a cabo a través de la declaración \ttt{assert}.
 
@@ -120,7 +122,6 @@ Las aserciones son llevadas a cabo a través de la declaración \ttt{assert}.
 \out{codigo/12-excepciones/assert_1.out}
 
 Los programadores a menudo colocan aserciones al principio de una función para asegurarse de que la entrada sea válida, y luego de llamar una función para revisar la validez de la salida.
-\medskip
 
 La declaración \ttt{assert} puede recibir un segundo argumento el cual es pasado a la excepción \ttt{AssertionError} levantada si la aserción falla.
 
@@ -128,24 +129,21 @@ La declaración \ttt{assert} puede recibir un segundo argumento el cual es pasad
 \out{codigo/12-excepciones/assert_2.out}
 
 Las excepciones \ttt{AssertionError} pueden ser atrapadas y manejadas como cualquier otra excepción utilizando la sentencia \ttt{try-except}, pero si no son manejadas, terminarán la ejecución el programa, como cualquier otra excepción.
-\medskip
 
 En general, se recomienda usar aserciones para atrapar tus propios errores y excepciones para atrapar los errores que los usuarios u otras personas podrían cometer.
-\medskip
 
 Las declaraciones \ttt{assert} no pueden ir sin un predicado.
 
 \pythonfile{codigo/12-excepciones/error_assert.py}
 \out{codigo/12-excepciones/error_assert.out}
 
+\Needspace{8\baselineskip}
 \section{Validación de entrada}
 
 El ingreso de datos en cualquier programa es algo que se debe validar para que el programa trabaje correctamente.
-\medskip
 
 Supongamos que se quiere que el usuario ingrese un número.
 Esto se haría usando la función \ttt{input()} para tomar entrada y la función \ttt{int()} para convertirla a un número entero.
-\medskip
 
 Un problema que puede ocurrir es si el usuario ingresa una letra o símbolo que no puede ser convertido a un número entero.
 
@@ -176,7 +174,6 @@ Eso significa que los valores negativos no son válidos, lo cual puede soluciona
 
 Esa es la estructura general para cualquier validación de entrada.
 Primero se atrapan las excepciones y después se evalúan los casos particulares no excepcionales que no se consideran válidos.
-\medskip
 
 Lo más importante de la validación de entrada es asumir que el usuario puede hacer cualquier acción en cualquier momento.
 El programador debe anteponerse a todos los casos posibles y manejarlos para evitar cualquier error que pueda ocurrir durante el tiempo de ejecución.

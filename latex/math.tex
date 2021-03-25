@@ -1,22 +1,21 @@
 \chapter{El módulo math}
 
+\Needspace{8\baselineskip}
 \section{El módulo math}
 
 El módulo \ttt{math} contiene funciones y constantes comúnmente usadas en matemáticas generales.
-
 
 \pythonfile{codigo/10-math/math.py}
 
 En este capítulo también se verán otras funciones matemáticas que están disponibles en Python por sí solo, sin necesidad de importar este módulo.
 
+\Needspace{8\baselineskip}
 \section{Constantes matemáticas}
 
 El módulo \ttt{math} tiene 5 constantes matemáticas muy importantes.
 Primero, se verán las 3 constantes numéricas que almacenan los valores de números irracionales importantes.
-\medskip
 
 La constante \ttt{pi} representa el número \link{https://es.wikipedia.org/wiki/N\%C3\%BAmero\_\%CF\%80}{$\pi$}, el cual es la relación entre el perímetro y diámetro de una circunferencia.
-\medskip
 
 $\pi = 3.14159...$
 
@@ -24,7 +23,6 @@ $\pi = 3.14159...$
 \out{codigo/10-math/pi.out}
 
 La constante \ttt{tau}, escrita en matemáticas como \link{https://es.wikipedia.org/wiki/Tau\_(2\%CF\%80)}{$\tau$}, es el doble de \ttt{pi}, y representa la relación entre el perímetro y el radio de una circunferencia.
-\medskip
 
 $\tau = 2\pi$
 
@@ -32,17 +30,16 @@ $\tau = 2\pi$
 \out{codigo/10-math/tau.out}
 
 La constante \ttt{e}  representa el \link{https://es.wikipedia.org/wiki/N\%C3\%BAmero\_e}{número de Euler}, otro de los números irracionales más importantes.
-\medskip
 
 $e = 2.71828...$
 
 \pythonfile{codigo/10-math/e.py}
 \out{codigo/10-math/e.out}
 
+\Needspace{8\baselineskip}
 \section{Infinito}
 
 Para representar un número \link{https://es.wikipedia.org/wiki/Infinito}{infinito}, se puede usar el método \ttt{float()} y entregarle el string \ttt{\qq inf \qq} como argumento.
-\medskip
 
 $\infty$
 
@@ -59,6 +56,7 @@ Ambas formas de hacerlo entregan exactamente el mismo resultado.
 \pythonfile{codigo/10-math/igualdad_inf.py}
 \out{codigo/10-math/igualdad_inf.out}
 
+\Needspace{8\baselineskip}
 \section{NaN}
 
 La constante \ttt{nan} o \link{https://es.wikipedia.org/wiki/NaN}{NaN}, acrónimo proveniente del inglés Not a Number (no es un número) no proviene directamente de las matemáticas, pero tiene usos bastante útiles en programación.
@@ -68,7 +66,6 @@ Representa un número \doble{ilegal}.
 \out{codigo/10-math/nan.out}
 
 Generalmente se usa para expresar resultados imposibles de calcular, como raíces negativas o indeterminaciones.
-\medskip
 
 Esta constante se almacena como un float.
 
@@ -77,6 +74,7 @@ Esta constante se almacena como un float.
 
 % TODO: ejemplo?
 
+\Needspace{8\baselineskip}
 \section{Funciones matemáticas predefinidas}
 
 %TODO: mover sum(), investigar si existe avg() y parecidos
@@ -89,6 +87,7 @@ Para obtener la distancia entre un número y el \ttt{0} (su valor absulto), pued
 \pythonfile{codigo/10-math/abs.py}
 \out{codigo/10-math/abs.out}
 
+\Needspace{8\baselineskip}
 \section{Funciones matemáticas}
 
 La función \ttt{fabs()} retorna el valor absoluto de un número, al igual que \ttt{abs()}, pero siempre retorna un float.
@@ -117,6 +116,7 @@ El factorial no está definido para los números negativos.
 \pythonfile{codigo/10-math/error_factorial.py}
 \out{codigo/10-math/error_factorial.out}
 
+\Needspace{8\baselineskip}
 \section{Funciones de redondeo}
 
 Para redondear un número a un determinado número de decimales, puede usarse la función \ttt{round()}.
@@ -126,11 +126,11 @@ Para redondear un número a un determinado número de decimales, puede usarse la
 
 %TODO: este capítulo
 
+\Needspace{8\baselineskip}
 \section{Grados y radianes}
 
 Al trabajar con ángulos, es común medirlos usando grados o radianes.
 El módulo \ttt{math} tiene funciones para convertir valores entre estas unidades.
-\medskip
 
 El método \ttt{radians()} convierte de grados a radianes.
 
@@ -142,12 +142,12 @@ El método \ttt{degrees()} convierte de radianes a grados.
 \pythonfile{codigo/10-math/degrees.py}
 \out{codigo/10-math/degrees.out}
 
+\Needspace{8\baselineskip}
 \section{Funciones trigonométricas}
 
 El módulo \ttt{math} tiene \link{https://es.wikipedia.org/wiki/Trigonometr\%C3\%ADa}{funciones trigonométricas}, similares a las de una calculadora.
 Estas funciones sólo funcionan con radianes.
 Para usarlas con grados, primero deben convertirse a radianes con el método \ttt{radians()}.
-\medskip
 
 Funciones trigonométricas básicas:
 
@@ -166,10 +166,10 @@ Funciones trigonométricas hiperbólicas:
 
 Se debe recordar que los resultados de estas funciones se obtienen por aproximaciones y un computador no puede representar todos los números decimales con precisión perfecta, lo que significa que puede haber pequeños errores de aproximación en los resultados.
 
+\Needspace{8\baselineskip}
 \section{Números finitos e infinitos}
 
-
-
+\Needspace{8\baselineskip}
 \section{Números complejos}
 
 \clearpage

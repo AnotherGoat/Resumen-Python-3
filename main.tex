@@ -2,7 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 
-\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
 
 \usepackage{lmodern}
 \usepackage[scaled]{beramono}
@@ -21,11 +21,12 @@
 \usepackage{amsmath}
 
 \usepackage{booktabs}
+\usepackage{needspace}
 
 \usepackage[spanish]{babel}
 \usepackage{microtype}
 
-\usepackage[colorlinks=true, linkcolor=., urlcolor=ForestGreen]{hyperref}
+\usepackage[colorlinks=true, linkcolor=., urlcolor=Crimson]{hyperref}
 
 % estilo de los segmentos de código
 \usemintedstyle[python]{material}
@@ -38,8 +39,11 @@
 \renewcommand{\cftchapfont}{\bfseries\color{black}}
 \renewcommand{\cftsecfont}{\color{black}}
 
-% párrafos sin sangría
-\setlength\parindent{0pt}
+% párrafos con poca sangría
+\setlength\parindent{1em}
+\setlength\parskip{0pt}
+% reduce el espacio después de minted
+\setlength\partopsep{-\topsep}
 
 % cambiar espacio entre números y texto en la tabla de contenidos
 \setlength\cftchapnumwidth{2em}
@@ -104,14 +108,13 @@
   samepage=true
 }
 
-% para escribir "Salida:" siempre que se muestre el output
-\newcommand{\out}[1]{Salida:\outfile{#1}}
-% lo mismo pero para entrada
-\newcommand{\inp}[1]{Entrada:\outfile{#1}}
-% para archivo original
-\newcommand{\Ainicial}[1]{Archivo inicial:\textfile{#1}}
-% para archivo resultante
-\newcommand{\Afinal}[1]{Archivo final:\textfile{#1}}
+% para poner texto antes de secciones minted
+\newcommand{\sintaxis}[1]{\indent Sintaxis:\pythonfile{#1}}
+\newcommand{\codigo}[1]{\indent Ejemplo:\pythonfile{#1}}
+\newcommand{\out}[1]{\indent Salida:\outfile{#1}}
+\newcommand{\inp}[1]{\indent Entrada:\outfile{#1}}
+\newcommand{\Ainicial}[1]{\indent Archivo inicial:\textfile{#1}}
+\newcommand{\Afinal}[1]{\indent Archivo final:\textfile{#1}}
 
 % se usan en tablas
 \newcommand{\si}{\textcolor{ForestGreen}{Sí}}
@@ -125,7 +128,7 @@
 \newcommand{\cualquier}{\textcolor{ForestGreen}{Todos}}
 
 % atajo para usar \texttt{} más rápido, ya que se usará muy seguido
-\newcommand{\ttt}[1]{\textcolor{Crimson}{\texttt{#1}}}
+\newcommand{\ttt}[1]{\textcolor{RoyalBlue}{\texttt{#1}}}
 
 % para usar comillas de tipo "programación"
 \newcommand{\q}{\textquotesingle}
@@ -187,6 +190,6 @@
 \pagenumbering{arabic}
 
 % aquí va \todos o los capitulos individuales
-\todos
+\input{latex/basico.tex}
 
 \end{document}

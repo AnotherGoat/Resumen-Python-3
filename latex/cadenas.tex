@@ -1,5 +1,6 @@
 \chapter{Cadenas de caracteres}
 
+\Needspace{8\baselineskip}
 \section{Cadenas de caracteres}
 
 Las cadenas de caracteres, también conocidas en inglés como strings, se crean introduciendo el texto entre comillas simples \ttt{\q \q} o dobles \ttt{\qq \qq}.
@@ -8,16 +9,15 @@ Las cadenas de caracteres, también conocidas en inglés como strings, se crean 
 \out{codigo/3-strings/string.out}
 
 El uso de comillas simples o dobles no afecta en ninguna forma el comportamiento del string, es decir, ambos producen el mismo resultado.
-\medskip
 
 Un string debe empezar y terminar con comillas del mismo tipo, no se permiten comillas mixtas.
 
 \pythonfile{codigo/3-strings/string_no_valido_1.py}
 \out{codigo/3-strings/string_no_valido_1.out}
-
 \pythonfile{codigo/3-strings/string_no_valido_2.py}
 \out{codigo/3-strings/string_no_valido_2.out}
 
+\Needspace{8\baselineskip}
 \section{Cadena vacía}
 
 A veces es necesario inicializa un string, pero sin agregarle información.
@@ -27,6 +27,7 @@ Una cadena vacía es definida como \ttt{\q \q} o \ttt{\qq \qq}.
 
 Estos strings vacíos se inicializan en variables, lo cual se verá en el capítulo siguiente.
 
+\Needspace{8\baselineskip}
 \section{Caracteres especiales}
 
 Algunos caracteres no se pueden incluir directamente en una cadena.
@@ -36,24 +37,23 @@ Para esos casos, se debe incluir la barra diagonal inversa \ttt{\textbackslash} 
 \out{codigo/3-strings/caracteres_especiales.out}
 
 Los caracteres \ttt{\q}, \ttt{\qq} y \ttt{\textbackslash} son especiales, porque normalmente cumplen funciones especiales dentro de strings.
-\medskip
 
 Si el string se define entre comillas dobles, no es necesario poner \ttt{\q} para ingresar comillas simples dentro de él, y viceversa.
 
 \pythonfile{codigo/3-strings/comillas.py}
 \out{codigo/3-strings/comillas.out}
 
+\Needspace{8\baselineskip}
 \section{Secuencias de escape}
 
 Las secuencias de escape también se pueden incluir usando el símbolo \ttt{\textbackslash} dentro de cadenas de texto.
 Su origen viene de las secuencias de escape usadas en las máquinas de escribir.
-\medskip
 
 Las secuencias de escape más usadas son:
 
 \begin{itemize}
   \item \textbf{Nueva línea} (new line): Avanza una línea hacia adelante (salto de línea) y deja el cursor al principio de esta línea (retorno de carro).
-Representado por \ttt{\textbackslash n}.
+  Representado por \ttt{\textbackslash n}.
   
   \pythonfile{codigo/3-strings/newline.py}
   \out{codigo/3-strings/newline.out}
@@ -61,7 +61,7 @@ Representado por \ttt{\textbackslash n}.
   Cualquier caracter después de \ttt{\textbackslash n} queda en la línea siguiente.
 
   \item \textbf{Tabulador horizontal} (horizontal tab): Añade un salto de tabulador horizontal.
-Representado por \ttt{\textbackslash t}.
+  Representado por \ttt{\textbackslash t}.
   
   \pythonfile{codigo/3-strings/tab.py}
   \out{codigo/3-strings/tab.out}
@@ -74,8 +74,8 @@ Otras secuencias de escape que no son tan usadas son:
 
 \begin{itemize}
   \item \textbf{Retorno de carro} (carriage return): Mueve el \doble{carro} (cursor) al principio de la línea actual.
-Esto permite sobreescribir los caracteres escritos anteriormente.
-Representado por \ttt{\textbackslash r}.
+  Esto permite sobreescribir los caracteres escritos anteriormente.
+  Representado por \ttt{\textbackslash r}.
   
   \pythonfile{codigo/3-strings/carriage_return.py}
   \out{codigo/3-strings/carriage_return.out}
@@ -83,20 +83,20 @@ Representado por \ttt{\textbackslash r}.
   En algunos intérpretes, borra la línea además de volver al inicio.
 
   \item \textbf{Retroceso} (backspace): Borra el último carácter y mueve el cursor al carácter anterior.
-Representado por \ttt{\textbackslash b}.
+  Representado por \ttt{\textbackslash b}.
   
   \pythonfile{codigo/3-strings/backspace.py}
   \out{codigo/3-strings/backspace.out}
 
   \item \textbf{Tabulador vertical} (vertical tab): Añade un salto de tabulador vertical.
-Representado por \ttt{\textbackslash v}.
+  Representado por \ttt{\textbackslash v}.
   
   \pythonfile{codigo/3-strings/vtab.py}
 
   La tabulación vertical avanza hasta la siguiente línea que sea una \doble{tab stop}.
 
   \item \textbf{Salto de página} (form feed): Baja a la próxima \doble{página}.
-Representado por \ttt{\textbackslash f}.
+  Representado por \ttt{\textbackslash f}.
   
   \pythonfile{codigo/3-strings/form_feed.py}
   
@@ -106,11 +106,11 @@ Representado por \ttt{\textbackslash f}.
 
 El resultado obtenido de estas últimas puede variar dependiendo del IDE que se utilice.
 
+\Needspace{8\baselineskip}
 \section{Caracteres Unicode}
 
 Las barras diagonales inversas también se pueden usar para escribir caracteres Unicode arbitrarios.
 Se escriben como \ttt{\textbackslash u} seguido del código del carácter Unicode (en hexadecimal).
-\medskip
 
 Los códigos Unicode se aceptan sin importar que tengan mayúsculas o minúsculas.
 
@@ -120,6 +120,7 @@ Los códigos Unicode se aceptan sin importar que tengan mayúsculas o minúscula
 El \link{https://unicode.org/}{sitio web de Unicode} contiene más información sobre estos caracteres y sobre este estándar.
 \link{https://unicode-table.com/en/}{Este sitio web} tiene una tabla con los códigos.
 
+\Needspace{8\baselineskip}
 \section{Cadenas puras}
 
 Las cadenas puras \doble{raw string} ignoran las secuencias de escape, como \ttt{\textbackslash n} o \ttt{\textbackslash t}.
@@ -130,6 +131,7 @@ Se escriben igual que una cadena común, pero con la letra \ttt{r} fuera de las 
 
 En ocasiones su uso puede ser conveniente.
 
+\Needspace{8\baselineskip}
 \section{Strings multilínea}
 
 Este es un tipo especial de string, que se escribe entre comillas triples \ttt{\q\q\q \q\q\q} o \ttt{\qq\qq\qq \qq\qq\qq}, y que reconoce los saltos de línea sin necesidad de usar la secuencia \ttt{\textbackslash n}.
@@ -137,10 +139,10 @@ Este es un tipo especial de string, que se escribe entre comillas triples \ttt{\
 \pythonfile{codigo/3-strings/string_multilinea.py}
 \out{codigo/3-strings/string_multilinea.out}
 
+\Needspace{8\baselineskip}
 \section{Concatenación de strings}
 
 Se pueden realizar operaciones matemáticas no solo con números, sino también con cadenas.
-\medskip
 
 Dos o más cadenas se pueden unir una después de la otra, usando un proceso llamado concatenación.
 Para realizarlo, se usa el operador \ttt{+}.
@@ -153,6 +155,7 @@ La concatenación sólo se puede realizar entre strings, no entre cadenas y núm
 \pythonfile{codigo/3-strings/error_concatenacion.py}
 \out{codigo/3-strings/error_concatenacion.out}
 
+\Needspace{8\baselineskip}
 \section{Multiplicación de strings}
 
 Las cadenas también pueden ser multiplicadas por números enteros.
@@ -175,12 +178,10 @@ Las cadenas no pueden ser multiplicadas entre sí, tampoco pueden ser multiplica
 
 \pythonfile{codigo/3-strings/cadena_x_cadena.py}
 \out{codigo/3-strings/cadena_x_cadena.out}
-
 \pythonfile{codigo/3-strings/cadena_x_float.py}
 \out{codigo/3-strings/cadena_x_float.out}
 
-
-
+\Needspace{8\baselineskip}
 \section{Subcadenas}
 
 En Python pueden usarse cortes (slicing) para obtener trozos de una cadena.
@@ -192,6 +193,7 @@ Funciona de la misma forma que con listas y tuplas.
 
 %TODO: más
 
+\Needspace{8\baselineskip}
 \section{Opciones del método print()}
 
 El método \ttt{print()} puede aceptar más de un string como argumento, lo cual hace que se muestren en una misma línea separados por espacios.
@@ -200,7 +202,6 @@ El método \ttt{print()} puede aceptar más de un string como argumento, lo cual
 \out{codigo/3-strings/print_avanzado_1.out}
 
 El método \ttt{print()} tiene 2 argumentos que pueden definirse para dar más control sobre lo que se imprime en la pantalla.
-\medskip
 
 El argumento \ttt{sep} define el string separador entre cada string \doble{normal} que se le entregue al método \ttt{print()}, excepto después del último.
 Estos separadores pueden incluir secuencias de escape.
@@ -213,7 +214,6 @@ Se puede usar para seguir escribiendo en la misma línea, si no se incluye la se
 
 \pythonfile{codigo/3-strings/print_avanzado_3.py}
 \out{codigo/3-strings/print_avanzado_3.out}
-
 \pythonfile{codigo/3-strings/print_avanzado_4.py}
 \out{codigo/3-strings/print_avanzado_4.out}
 
@@ -222,10 +222,10 @@ Ambos argumentos se pueden combinar.
 \pythonfile{codigo/3-strings/print_avanzado_5.py}
 \out{codigo/3-strings/print_avanzado_5.out}
 
+\Needspace{8\baselineskip}
 \section{Párrafos}
 
 Una secuencia de escape útil para escribir párrafos o cualquier texto largo en general, que no tenga saltos de línea en su interior, es usando la sucuencia de escape \ttt{\textbackslash} seguida de un salto de línea (en el código).
-\medskip
 
 Esto permite escribir strings largos que no pueden verse completamente en pantalla sin tener que moverse hacia la derecha.
 El uso de esta secuencia de escape no altera el resultado.
@@ -233,6 +233,6 @@ El uso de esta secuencia de escape no altera el resultado.
 \pythonfile{codigo/3-strings/lorem_ipsum.py}
 \out{codigo/3-strings/lorem_ipsum.out}
 
-%TODO: referencia y enlace a lorem ipsum
+El texto mostrado arriba es \link{https://es.lipsum.com}{lorem ipsum}, un texto que se usa para rellenar párrafos en textos desde hace muchos siglos.
 
 \clearpage

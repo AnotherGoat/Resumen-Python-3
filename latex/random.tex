@@ -1,5 +1,6 @@
 \chapter{El módulo random}
 
+\Needspace{8\baselineskip}
 \section{El módulo random}
 
 El módulo \ttt{random} pertenece a la biblioteca estándar y contiene funciones para generar números pseudoaleatorios.
@@ -8,11 +9,11 @@ El módulo \ttt{random} pertenece a la biblioteca estándar y contiene funciones
 
 Los números generados son pseudoaleatorios porque la aleatoriedad \doble{natural} no existe en los computadores.
 Todas las funciones que generan elementos al azar en realidad emplean algoritmos muy difíciles de calcular o de predecir en el poco tiempo que tardan en retornar un resultado.
-\medskip
 
 La mayoría de ejemplos de código en este capítulo tienen resultados variables, es decir, cada vez que se ejecute el código los resultados serán distintos.
 La excepción a esta regla es cuando se especifica una semilla.
 
+\Needspace{8\baselineskip}
 \section{La función random()}
 
 La función \ttt{random()} genera un float aleatorio entre \ttt{0} y \ttt{1}.
@@ -27,11 +28,11 @@ Para mostrar su funcionamiento mejor, se puede usar dentro de un bucle.
 
 %TODO: más floats
 
+\Needspace{8\baselineskip}
 \section{Generación de números enteros}
 
 Para generar un número entero aleatorio se puede usar la función \ttt{randint()}.
 A esta función se le deben entregar el número mínimo y el número máximo como parámetros.
-\medskip
 
 Se puede usar para simular el lanzamiento de un dado.
 
@@ -49,11 +50,11 @@ Esto significa que el número máximo será el antecesor del segundo parámetro.
 \pythonfile{codigo/11-random/randrange.py}
 \out{codigo/11-random/randrange.out}
 
+\Needspace{8\baselineskip}
 \section{Generación de números racionales}
 
 La función \ttt{random()} sirve para generar un float entre \ttt{0} y \ttt{1}.
 Este resultado se puede modificar con operaciones para obtener resultados dentro de un rango específico.
-\medskip
 
 %TODO: ejemplo de esto
 
@@ -62,11 +63,11 @@ Pero puede resultar más fácil utilizar la función \ttt{uniform()}, que requie
 \pythonfile{codigo/11-random/uniform.py}
 \out{codigo/11-random/uniform.out}
 
+\Needspace{8\baselineskip}
 \section{Semillas}
 
 %TODO: enlace a semilla
 Una semilla es un valor predefinido que se le entrega al algoritmo generador de números aleatorios.
-\medskip
 
 Por defecto, la semilla es la hora actual del sistema en el que se ejecuta el algoritmo, pero se puede cambiar usando el método \ttt{seed()}.
 
@@ -74,7 +75,6 @@ Por defecto, la semilla es la hora actual del sistema en el que se ejecuta el al
 \out{codigo/11-random/seed_1.out}
 
 El resultado obtenido en este caso siempre será el mismo, ya que se le entregó la semilla inicial \ttt{10}.
-\medskip
 
 Sin importar cuantas veces se repita, el primer resultado siempre será igual para una misma semilla.
 
@@ -87,23 +87,21 @@ El resto de resultados también serán iguales, y se repetirán en el mismo orde
 \out{codigo/11-random/seed_3.out}
 
 La misma semilla se usará con todos los métodos del módulo \ttt{random}.
-\medskip
 
 Los argumentos que se le entregan a funciones como \ttt{randint()} no influyen en el resultado obtenido con la semilla, sólo lo ajustan al rango.
 
 \pythonfile{codigo/11-random/seed_4.py}
 \out{codigo/11-random/seed_4.out}
-
 \pythonfile{codigo/11-random/seed_5.py}
 \out{codigo/11-random/seed_5.out}
 
+\Needspace{8\baselineskip}
 \section{Generación de listas aleatorias}
 
 No existe una función para generar listas con números aleatorios, pero se puede realizar esta acción usando un bucle \ttt{for}.
 
 \pythonfile{codigo/11-random/lista_enteros.py}
 \out{codigo/11-random/lista_enteros.out}
-
 \pythonfile{codigo/11-random/lista_floats.py}
 \out{codigo/11-random/lista_floats.out}
 
@@ -112,16 +110,15 @@ Otra forma de generar listas de números enteros aleatorios es usando la funció
 \pythonfile{codigo/11-random/lista_sample.py}
 \out{codigo/11-random/lista_sample.out}
 
+\Needspace{8\baselineskip}
 \section{Elementos al azar de secuencias}
 
 El módulo \ttt{random} también tiene métodos para trabajar aleatoriamente con secuencias (como cadenas de texto y listas).
-\medskip
 
 El método \ttt{choice()} retorna un elemento aleatorio de una secuencia.
 
 \pythonfile{codigo/11-random/choice_1.py}
 \out{codigo/11-random/choice_1.out}
-
 \pythonfile{codigo/11-random/choice_2.py}
 \out{codigo/11-random/choice_2.out}
 
@@ -136,7 +133,6 @@ No se pueden tomar muestras de tamaño superior al tamaño de la población (sec
 
 \pythonfile{codigo/11-random/error_sample_1.py}
 \out{codigo/11-random/error_sample_1.out}
-
 \pythonfile{codigo/11-random/error_sample_2.py}
 \out{codigo/11-random/error_sample_2.out}
 
@@ -156,7 +152,6 @@ Este número puede ser mayor al número de elementos de la lista.
 \out{codigo/11-random/choices_1.out}
 
 Todos los elementos tendrán la misma probabilidad de ser escogidos.
-\medskip
 
 Se le puede entregar el argumento \ttt{weights} para hacer que cada elemento tenga su propia probabilidad de ser escogido, por ejemplo un dado trucado.
 
@@ -164,7 +159,6 @@ Se le puede entregar el argumento \ttt{weights} para hacer que cada elemento ten
 \out{codigo/11-random/dado_trucado.out}
 
 Los números dentro de la lista \ttt{weights} representan el peso de cada elemento de la secuencia, y deben tener la misma medida.
-\medskip
 
 Los números pueden escribirse en cualquier escala, ya que se comparan entre ellos para determinar la razón en la que se encuentran los pesos.
 Todos los ejemplos que se muestran a continuación son equivalentes.
@@ -177,6 +171,7 @@ Por último, en vez de \ttt{weights} puede usarse \ttt{cum\_weights}, para indic
 \pythonfile{codigo/11-random/choices_3.py}
 \out{codigo/11-random/choices_3.out}
 
+\Needspace{8\baselineskip}
 \section{Distribuciones de probabilidad}
 
 El módulo \ttt{random} también contiene funciones para generar números al azar siguiendo ciertas distribuciones de probabilidad.

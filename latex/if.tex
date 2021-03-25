@@ -1,10 +1,10 @@
 \chapter{Declaraciones if y lógica}
 
+\Needspace{8\baselineskip}
 \section{Booleanos}
 
 Otro tipo de dato en Python es el tipo booleano, el cual sólo puede tener 2 valores: \ttt{True} para representar valores verdaderos y \ttt{False} para representar valores falsos.
 Estos se escriben empezando con mayúscula, al contrario de otros lenguajes de programación.
-\medskip
 
 Se pueden crear directamente, aunque esto no tiene mucha utilidad en la mayoría de casos.
 
@@ -17,7 +17,6 @@ Su uso más común es como el resultado obtenido al comparar valores, por ejempl
 \out{codigo/5-if/booleano_2.out}
 
 Se debe tener cuidado de no confundir el operador de asignación \ttt{=} con el operador de igualdad \ttt{==}.
-\medskip
 
 En Python, \ttt{1} y \ttt{True} significan lo mismo.
 Lo mismo ocurre con \ttt{0} y \ttt{False}.
@@ -29,13 +28,14 @@ Usando otros términos, podría decirse que \ttt{1} es \link{https://stackoverfl
 
 Esta equivalencia también es válida para floats.
 
+%TODO: combinaciones tipo 5 > x > 1
 \pythonfile{codigo/5-if/booleano_4.py}
 \out{codigo/5-if/booleano_4.out}
 
+\Needspace{8\baselineskip}
 \section{Conversión a boooleanos}
 
 La función \ttt{bool()} se puede usar para convertir un objeto a su valor booleano.
-\medskip
 
 Al usarla con valores numéricos, el número \ttt{0} se convierte a \ttt{False} y cualquier otro número se convierte a \ttt{True}.
 
@@ -52,6 +52,7 @@ La misma situación ocurre al convertir tipos de datos más complejos, los cuale
 \pythonfile{codigo/5-if/bool_3.py}
 \out{codigo/5-if/bool_3.out}
 
+\Needspace{8\baselineskip}
 \section{Operadores de comparación}
 
 Los operadores de comparación usados en Python son los siguientes:
@@ -72,7 +73,6 @@ Los operadores de comparación usados en Python son los siguientes:
 \end{itemize}
 
 En los casos contrarios, los operadores retornan \ttt{False}.
-\medskip
 
 Ejemplos de uso de operadores de comparación:
 
@@ -80,7 +80,6 @@ Ejemplos de uso de operadores de comparación:
 \out{codigo/5-if/comparacion_1.out}
 
 También se conocen como operadores relacionales.
-\medskip
 
 Las comparaciones entre datos de tipo entero y float también son válidas.
 
@@ -92,6 +91,7 @@ Las comparaciones entre números y strings son válidas, pero siempre se evalúa
 \pythonfile{codigo/5-if/comparacion_3.py}
 \out{codigo/5-if/comparacion_3.out}
 
+\Needspace{8\baselineskip}
 \section{Comparación entre strings}
 
 Los operadores \ttt{==} y \ttt{!=} funcionan entre strings como se esperaría.
@@ -111,6 +111,7 @@ Las letras mayúsculas siempre irán antes (son \doble{menores}) que las minúsc
 
 Específicamente, Python compara los códigos \link{https://www.ascii-code.com}{ASCII} para ordenar las cadenas de textos.
 
+\Needspace{8\baselineskip}
 \section{Declaración if}
 
 Las declaraciones \ttt{if} sirven para ejecutar código si ser cumple una determinada condición.
@@ -120,14 +121,13 @@ En caso contrario, no ocurre nada.
 \pythonfile{codigo/5-if/if.py}
 \out{codigo/5-if/if.out}
 
+\Needspace{8\baselineskip}
 \section{Indentación}
 
 Python usa indentación (espacio en blanco al comienzo de una línea) para delimitar bloques de código.
 En otros lenguajes, esta operación se realiza delimitando cada bloque de código por llaves \ttt{\{\}}.
-\medskip
 
 Para que el intérprete reconozca los bloques de código correctamente, cada instrucción dentro de un mismo bloque de código debe escribirse a un mismo nivel de indentación.
-\medskip
 
 A continuación se muestra un ejemplo que no cumple con eso.
 Para que se entienda el concepto mejor, en cada segmento de código en esta sección se mostrarán los espacios en blanco.
@@ -138,7 +138,6 @@ Para que se entienda el concepto mejor, en cada segmento de código en esta secc
 No se permite mezclar espacios con saltos de tabulador (los que aparecen al pulsar la tecla \ttt{Tab}).
 Aunque se vean igual, dependiendo de las configuraciones, un salto de tabulador puede cambiar de medida.
 La medida de un espacio es siempre la misma, así que se recomienda usarlos en vez del tabulador.
-\medskip
 
 A continuación se muestra un ejemplo que parece ser válido a simple vista, pero no lo es ya que tiene un salto de tabulador en la linea \ttt{print("mundo")} y 4 espacios en las otras líneas.
 
@@ -146,10 +145,8 @@ A continuación se muestra un ejemplo que parece ser válido a simple vista, per
 \out{codigo/5-if/error_indentacion_2.out}
 
 Pára evitar que esto ocurra, muchos IDEs tienen la opción \doble{insertar espacios al presionar la tecla \ttt{Tab}}, para insertar 4 espacios (o la cantidad que se desee) al pulsar dicha tecla.
-\medskip
 
 Por último, aunque esto no es un error de por sí (no se lanza ninguna excepción), se recomienda mantener la cantidad de espacios usados para cada indentación consistente, es decir, que no varíe su cantidad.
-\medskip
 
 El siguiente ejemplo muestra una práctica que se debe evitar.
 
@@ -158,33 +155,33 @@ El siguiente ejemplo muestra una práctica que se debe evitar.
 
 No existe una cantidad \doble{correcta} de espacios para indentar, aunque la mayoría de programadores prefiere que sean 2, 3 o 4 (en Python).
 Lo más importante es que se escoja una cantidad y se mantenga igual dentro de un mismo proyecto.
-\medskip
 
 Los errores de indentación son más fáciles de evitar que de encontrar, así que como dice el dicho, \doble{mejor prevenir que lamentar}.
 
+\Needspace{8\baselineskip}
 \section{Anidación de declaraciones if}
 
 Para realizar comprobaciones más complejas, las declaraciones \ttt{if} se pueden anidar, una dentro de la otra.
-\medskip
 
 Esto significa que la declaración \ttt{if} interna sólo se evalúa si la declaración \ttt{if} externa es válida.
 
 \pythonfile{codigo/5-if/if_anidado.py}
 \out{codigo/5-if/if_anidado.out}
 
+\Needspace{8\baselineskip}
 \section{Declaración if-else}
 
 Las declaraciones \ttt{if-else} son muy similares a las declaraciones \ttt{if}, pero esta vez sí ocurre algo cuando no se cumple la expresión a evaluar.
 
 \pythonfile{codigo/5-if/if_else_1.py}
 \out{codigo/5-if/if_else_1.out}
-
 \pythonfile{codigo/5-if/if_else_2.py}
 \inp{codigo/5-if/if_else_2.inp_1}
 \out{codigo/5-if/if_else_2.out_1}
 \inp{codigo/5-if/if_else_2.inp_1}
 \out{codigo/5-if/if_else_2.out_1}
 
+\Needspace{8\baselineskip}
 \section{Declaración elif}
 
 Cada declaración \ttt{if} sólo puede tener una declaración \ttt{else} que la acompañe, lo cual puede resultar muy incómodo.
@@ -204,11 +201,11 @@ Hace que el código sea más corto.
 El programa irá evaluando cada expresión una por una hasta que alguna se cumpla.
 Cuando esto ocurra, ejecutará las instrucciones en su bloque de código y continuará con las expresiones después del bloque de código \ttt{else}.
 
+\Needspace{8\baselineskip}
 \section{Operadores lógicos}
 
 Los operadores lógicos se utilizan para crear condiciones complejas agrupando condiciones más simples.
 Los operadores lógicos que se usan en Python son \ttt{and}, \ttt{or} y \ttt{not}.
-\medskip
 
 El operador \ttt{and} se evalúa como \ttt{True} si ambas condiciones se cumplen.
 
@@ -225,6 +222,7 @@ El operador \ttt{not} sólo toma una condición y la invierte.
 \pythonfile{codigo/5-if/not.py}
 \out{codigo/5-if/not.out}
 
+\Needspace{8\baselineskip}
 \section{Precedencia de operadores lógicos}
 
 Los operadores lógicos siguen un orden similar a PEMDAS, el cual es el siguiente:

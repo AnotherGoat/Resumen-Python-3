@@ -2,6 +2,7 @@
 
 %TODO: iterables https://pythonbasics.org/iterable/
 
+\Needspace{8\baselineskip}
 \section{Cortes de lista}
 
 Los cortes de lista ofrecen una manera más avanzada de obtener valores de una lista.
@@ -12,7 +13,6 @@ Esto devuelve una lista nueva que contiene todos los valores de la lista vieja e
 \out{codigo/17-iterables/cortes_1.out}
 
 Como los argumentos de \ttt{range()}, el primer índice provisto en un corte es incluido en el resultado, pero el segundo no.
-\medskip
 
 Si el primer número en un corte es omitido, se toma el principio de la lista.
 Si el segundo número es omitido, se toma el final de la lista.
@@ -37,13 +37,13 @@ El tamaño de paso también puede ser negativo, lo que permite usarlos para inve
 \out{codigo/17-iterables/cortes_reverse.out}
 
 Es importante recordar que si el tamaño de paso es negativo, el primer número debe indicar un índice mayor que el segundo.
-\medskip
 
 Se pueden usar cortes para copiar listas, aunque no suele ser la forma más clara de hacerlo.
 
 \pythonfile{codigo/17-iterables/copy_cortes.py}
 \out{codigo/17-iterables/copy_cortes.out}
 
+\Needspace{8\baselineskip}
 \section{Cortes de tuplas}
 
 Los cortes también pueden ser realizados en tuplas.
@@ -55,8 +55,7 @@ Su funcionamiento es el mismo que con listas.
 Esto es válido porque si bien las tuplas son inmutables, los cortes no realizan ningún cambio sobre los objetos con los que trabajan.
 Sólo consultan información de cierta manera.
 
-
-
+\Needspace{8\baselineskip}
 \section{Listas por compresión}
 
 Las listas por compresión son una forma útil de crear rápidamente listas cuyo contenido obedece una regla sencilla.
@@ -65,7 +64,6 @@ Las listas por compresión son una forma útil de crear rápidamente listas cuyo
 \out{codigo/17-iterables/compresion_1.out}
 
 Las listas por compresión son inspiradas por la notación de \link{https://edu.gcfglobal.org/es/los-conjuntos/notacion-de-conjuntos/1/}{constructores de conjuntos} en las matemáticas.
-\medskip
 
 Una lista por compresión también puede contener una sentencia \ttt{if} para aplicar una condición en los valores de la lista.
 
@@ -78,18 +76,16 @@ Es posible que la operación tarde unos minutos en llegar a esta excepción, o q
 \pythonfile{codigo/17-iterables/compresion_3.py}
 
 Se debe recordar que se puede interrumpir la ejecución del programa en cualquier momento enviando un \ttt{KeyboardInterrupt}, al pulsar \ttt{Ctrl+C}.
-\medskip
 
 Este problema de memoria es resuelto con generadores, los cuales se verán más tarde.
 
+\Needspace{8\baselineskip}
 \section{Formateo de cadenas}
 
 La forma más básica de combinar cadenas y objetos que no son cadenas es convirtiendo dichos objetos a cadenas y concatenando las cadenas.
-\medskip
 
 El formateo de cadenas ofrece una manera más potente de incorporar objetos que no son cadenas a las cadenas.
 El formateo de cadenas utiliza el método \ttt{format()} de una cadena para sustituir los argumentos de esta.
-\medskip
 
 Una forma de hacerlo es usando índices.
 
@@ -97,7 +93,6 @@ Una forma de hacerlo es usando índices.
 \out{codigo/17-iterables/formateo_1.out}
 
 Cada argumento de la función de formateo es colocada en la cadena de la posición correspondiente, que es determinada usando llaves \ttt{\{\}}.
-\medskip
 
 Los índices entre llaves \ttt{\{\}} pueden repetirse cuantas veces se quiera.
 
@@ -119,6 +114,7 @@ El formateo de cadenas también puede hacerse con argumentos con nombre.
 \pythonfile{codigo/17-iterables/formateo_5.py}
 \out{codigo/17-iterables/formateo_5.out}
 
+\Needspace{8\baselineskip}
 \section{Funciones de cadenas}
 
 Python contiene muchas funciones integradas y métodos útiles que sirven para cumplir tareas comunes.
@@ -135,7 +131,7 @@ Algunos métodos que se pueden usar con strings son:
   \pythonfile{codigo/17-iterables/replace.py}
   \out{codigo/17-iterables/replace.out}
 
-    %TODO: separar esta sección
+  %TODO: separar esta sección
 
   \item \ttt{startswith()}: Determina si hay una subcadena al principio de una cadena.
 
@@ -148,7 +144,6 @@ Algunos métodos que se pueden usar con strings son:
   \out{codigo/17-iterables/endswith.out}
 
   \item A diferencia de otros lenguajes de programación, Python no tiene el método \ttt{contains()}, para ver si una subcadena pertenece a un string.
-\medskip
   
   Usar el operador \ttt{in} tiene el mismo efecto que tendría dicha función.
 
@@ -185,6 +180,7 @@ La lista será formada con los elementos entre cada aparición de ese string.
 \pythonfile{codigo/6-listas/split_avanzado.py}
 %TODO: out y rehacer el ejemplo
 
+\Needspace{8\baselineskip}
 \section{Funciones all() y any()}
 
 Las funciones \ttt{all()} y \ttt{any()} son utilizados con frecuencia como sentencias condicionales.
@@ -192,12 +188,12 @@ Estos toman una lista como un argumento y devuelven \ttt{True} si todos o alguno
 
 \pythonfile{codigo/17-iterables/all.py}
 \out{codigo/17-iterables/all.out}
-
 \pythonfile{codigo/17-iterables/any.py}
 \out{codigo/17-iterables/any.out}
 
 %TODO: separar esos 2
 
+\Needspace{8\baselineskip}
 \section{Función enumerate()}
 
 La función \ttt{enumerate()} se usa para iterar a través de los valores e índices de una lista, simultáneamente.

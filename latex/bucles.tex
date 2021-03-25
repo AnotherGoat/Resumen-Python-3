@@ -1,5 +1,6 @@
 \chapter{Bucles}
 
+\Needspace{8\baselineskip}
 \section{Bucles while}
 
 Un bucle \ttt{while} se usa para repetir un bloque de código varias veces, siempre que se cumpla cierta condición.
@@ -10,16 +11,15 @@ Generalmente se usan con una variable como contador.
 
 El código en el cuerpo de un bucle \ttt{while} se ejecuta repetidamente.
 Esto se llama iteración.
-\medskip
 
 Se puede realizar cualquier operación con el contador dentro del bucle.
 
 \pythonfile{codigo/7-bucles/while_2.py}
 \out{codigo/7-bucles/while_2.out}
-
 \pythonfile{codigo/7-bucles/while_3.py}
 \out{codigo/7-bucles/while_3.out}
 
+\Needspace{8\baselineskip}
 \section{Bucles infinitos}
 
 Si la condición a evaluar es siempre verdadera, el bucle se ejecutará indefinidamente.
@@ -28,6 +28,7 @@ Esto se llama bucle infinito.
 \pythonfile{codigo/7-bucles/while_infinito.py}
 \out{codigo/7-bucles/while_infinito.out}
 
+\Needspace{8\baselineskip}
 \section{Interrupción de entrada}
 
 En caso de querer detener la ejecución del programa, por ejemplo, cuando ocurre un bucle infinito, se puede interrumpir su ejecución en cualquier momento enviando un \ttt{KeyboardInterrupt} al pulsar la combinación de teclas \ttt{Ctrl+C}.
@@ -36,6 +37,7 @@ En caso de querer detener la ejecución del programa, por ejemplo, cuando ocurre
 
 En el ejemplo de arriba se muestra lo que ocurre al interrumpir el bucle \ttt{while} infinito de la sección anterior.
 
+\Needspace{8\baselineskip}
 \section{Declaración break}
 
 Para finalizar un bucle \ttt{while} prematuramente, se puede usar la declaración \ttt{break}.
@@ -48,6 +50,7 @@ El uso de la declaración \ttt{break} fuera de un bucle provoca un error.
 \pythonfile{codigo/7-bucles/error_break.py}
 \out{codigo/7-bucles/error_break.out}
 
+\Needspace{8\baselineskip}
 \section{Declaración continue}
 
 Otra declaración que se puede utilizar dentro de los bucles es \ttt{continue}.
@@ -62,6 +65,7 @@ Al igual que la declaración \ttt{break}, usar \ttt{continue} fuera de un bucle 
 \pythonfile{codigo/7-bucles/error_continue.py}
 \out{codigo/7-bucles/error_continue.out}
 
+\Needspace{8\baselineskip}
 \section{Bucle for con listas}
 
 Otro tipo de bucle es el bucle \ttt{for}.
@@ -81,10 +85,10 @@ De manera similar a los bucles \ttt{while}, las declaraciones \ttt{break} y \ttt
 \pythonfile{codigo/7-bucles/for_3.py}
 \out{codigo/7-bucles/for_3.out}
 
+\Needspace{8\baselineskip}
 \section{Rangos}
 
 La función \ttt{range()} devuelve una secuencia de números.
-\medskip
 
 Si se llama a \ttt{range()} con un argumento, produce un objeto con valores desde \ttt{0} hasta el antecesor del número especificado.
 
@@ -112,6 +116,7 @@ Este número puede ser positivo (incremento) o negativo (decremento).
 \pythonfile{codigo/7-bucles/range_4.py}
 \out{codigo/7-bucles/range_4.out}
 
+\Needspace{8\baselineskip}
 \section{Rangos imposibles}
 
 Intentar almacenar rangos \doble{imposibles} no mostrará ningún error.
@@ -120,6 +125,7 @@ El rango simplemente no tendrá ningún elemento, lo cual es más fácil de ver 
 \pythonfile{codigo/7-bucles/rango_imposible.py}
 \out{codigo/7-bucles/rango_imposible.out}
 
+\Needspace{8\baselineskip}
 \section{Bucle for en rangos}
 
 Una forma común de usar los bucles \ttt{for} es iterando sobre rangos.
@@ -129,7 +135,6 @@ Esto permite hacer bucles de muchas formas.
 \out{codigo/7-bucles/for_rango.out}
 
 No es necesario llamar \ttt{list()} en el objeto de rango cuando se usa en un bucle \ttt{for}, porque no se está indexando, por lo que no requiere una lista.
-\medskip
 
 En general, un bucle \ttt{for} puede recorrer cualquier iterable.
 Estos se verán más a fondo en su propio capítulo.

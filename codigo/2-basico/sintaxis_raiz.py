@@ -1,0 +1,1 @@
+radicando ** (1 / indice)
