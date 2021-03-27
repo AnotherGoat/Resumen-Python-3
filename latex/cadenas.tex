@@ -5,7 +5,7 @@
 
 Como se vio en el capítulo sobre conceptos básicos, una cadena de caracteres es una secuencia ordenada e inmutable de caracteres, también conocidos como símbolos.
 
-\pythonfile{codigo/strings/cadena.py}
+\pythonfile{codigo/cadenas/cadena.py}
 
 \Needspace{8\baselineskip}
 \section{Cadena vacía}
@@ -13,7 +13,7 @@ Como se vio en el capítulo sobre conceptos básicos, una cadena de caracteres e
 A veces es necesario inicializa un string, pero sin agregarle información.
 Una cadena vacía es definida como \ttt{\q \q} o \ttt{\qq \qq}.
 
-\pythonfile{codigo/strings/cadena_vacia.py}
+\pythonfile{codigo/cadenas/cadena_vacia.py}
 
 \Needspace{8\baselineskip}
 \section{Caracteres especiales}
@@ -21,15 +21,15 @@ Una cadena vacía es definida como \ttt{\q \q} o \ttt{\qq \qq}.
 Algunos caracteres no se pueden incluir directamente en una cadena.
 Para esos casos, se debe incluir la barra diagonal inversa \ttt{\textbackslash} antes de ellos.
 
-\pythonfile{codigo/strings/caracteres_especiales.py}
-\out{codigo/strings/caracteres_especiales.out}
+\pythonfile{codigo/cadenas/caracteres_especiales.py}
+\out{codigo/cadenas/caracteres_especiales.out}
 
 Los caracteres \ttt{\q}, \ttt{\qq} y \ttt{\textbackslash} son especiales, porque normalmente cumplen funciones especiales dentro de strings.
 
 Si el string se define entre comillas dobles, no es necesario poner \ttt{\q} para ingresar comillas simples dentro de él, y viceversa.
 
-\pythonfile{codigo/strings/comillas.py}
-\out{codigo/strings/comillas.out}
+\pythonfile{codigo/cadenas/comillas.py}
+\out{codigo/cadenas/comillas.out}
 
 \Needspace{8\baselineskip}
 \section{Secuencias de escape}
@@ -43,16 +43,16 @@ Las secuencias de escape más usadas son:
   \item \textbf{Nueva línea} (new line): Avanza una línea hacia adelante (salto de línea) y deja el cursor al principio de esta línea (retorno de carro).
   Representado por \ttt{\textbackslash n}.
   
-  \pythonfile{codigo/strings/newline.py}
-  \out{codigo/strings/newline.out}
+  \pythonfile{codigo/cadenas/newline.py}
+  \out{codigo/cadenas/newline.out}
   
   Cualquier caracter después de \ttt{\textbackslash n} queda en la línea siguiente.
 
   \item \textbf{Tabulador horizontal} (horizontal tab): Añade un salto de tabulador horizontal.
   Representado por \ttt{\textbackslash t}.
   
-  \pythonfile{codigo/strings/tab.py}
-  \out{codigo/strings/tab.out}
+  \pythonfile{codigo/cadenas/tab.py}
+  \out{codigo/cadenas/tab.out}
   
   El salto de tabulador avanza hasta el siguiente \doble{tab stop} de la misma línea.
 
@@ -65,28 +65,28 @@ Otras secuencias de escape que no son tan usadas son:
   Esto permite sobreescribir los caracteres escritos anteriormente.
   Representado por \ttt{\textbackslash r}.
   
-  \pythonfile{codigo/strings/carriage_return.py}
-  \out{codigo/strings/carriage_return.out}
+  \pythonfile{codigo/cadenas/carriage_return.py}
+  \out{codigo/cadenas/carriage_return.out}
 
   En algunos intérpretes, borra la línea además de volver al inicio.
 
   \item \textbf{Retroceso} (backspace): Borra el último carácter y mueve el cursor al carácter anterior.
   Representado por \ttt{\textbackslash b}.
   
-  \pythonfile{codigo/strings/backspace.py}
-  \out{codigo/strings/backspace.out}
+  \pythonfile{codigo/cadenas/backspace.py}
+  \out{codigo/cadenas/backspace.out}
 
   \item \textbf{Tabulador vertical} (vertical tab): Añade un salto de tabulador vertical.
   Representado por \ttt{\textbackslash v}.
   
-  \pythonfile{codigo/strings/vtab.py}
+  \pythonfile{codigo/cadenas/vtab.py}
 
   La tabulación vertical avanza hasta la siguiente línea que sea una \doble{tab stop}.
 
   \item \textbf{Salto de página} (form feed): Baja a la próxima \doble{página}.
   Representado por \ttt{\textbackslash f}.
   
-  \pythonfile{codigo/strings/form_feed.py}
+  \pythonfile{codigo/cadenas/form_feed.py}
   
   Algunos programadores los usaban para separar distintas secciones de código en \doble{páginas}.
 
@@ -102,8 +102,8 @@ Se escriben como \ttt{\textbackslash u} seguido del código del carácter Unicod
 
 Los códigos Unicode se aceptan sin importar que tengan mayúsculas o minúsculas.
 
-\pythonfile{codigo/strings/unicode.py}
-\out{codigo/strings/unicode.out}
+\pythonfile{codigo/cadenas/unicode.py}
+\out{codigo/cadenas/unicode.out}
 
 El \link{https://unicode.org/}{sitio web de Unicode} contiene más información sobre estos caracteres y sobre este estándar.
 \link{https://unicode-table.com/en/}{Este sitio web} tiene una tabla con los códigos.
@@ -114,8 +114,8 @@ El \link{https://unicode.org/}{sitio web de Unicode} contiene más información 
 Las cadenas puras \doble{raw string} ignoran las secuencias de escape, como \ttt{\textbackslash n} o \ttt{\textbackslash t}.
 Se escriben igual que una cadena común, pero con la letra \ttt{r} fuera de las comillas.
 
-\pythonfile{codigo/strings/raw_string.py}
-\out{codigo/strings/raw_string.out}
+\pythonfile{codigo/cadenas/raw_string.py}
+\out{codigo/cadenas/raw_string.out}
 
 En ocasiones su uso puede ser conveniente.
 
@@ -124,8 +124,8 @@ En ocasiones su uso puede ser conveniente.
 
 Este es un tipo especial de string, que se escribe entre comillas triples \ttt{\q\q\q \q\q\q} o \ttt{\qq\qq\qq \qq\qq\qq}, y que reconoce los saltos de línea sin necesidad de usar la secuencia \ttt{\textbackslash n}.
 
-\pythonfile{codigo/strings/string_multilinea.py}
-\out{codigo/strings/string_multilinea.out}
+\pythonfile{codigo/cadenas/string_multilinea.py}
+\out{codigo/cadenas/string_multilinea.out}
 
 \Needspace{8\baselineskip}
 \section{Concatenación de strings}
@@ -135,13 +135,13 @@ Se pueden realizar operaciones matemáticas no solo con números, sino también 
 Dos o más cadenas se pueden unir una después de la otra, usando un proceso llamado concatenación.
 Para realizarlo, se usa el operador \ttt{+}.
 
-\pythonfile{codigo/strings/concatenacion.py}
-\out{codigo/strings/concatenacion.out}
+\pythonfile{codigo/cadenas/concatenacion.py}
+\out{codigo/cadenas/concatenacion.out}
 
 La concatenación sólo se puede realizar entre strings, no entre cadenas y números.
 
-\pythonfile{codigo/strings/error_concatenacion.py}
-\out{codigo/strings/error_concatenacion.out}
+\pythonfile{codigo/cadenas/error_concatenacion.py}
+\out{codigo/cadenas/error_concatenacion.out}
 
 \Needspace{8\baselineskip}
 \section{Multiplicación de strings}
@@ -150,24 +150,24 @@ Las cadenas también pueden ser multiplicadas por números enteros.
 Esto produce una versión repetida de la cadena original.
 El orden de la cadena y el número no importa, pero la cadena suele ir primero, para evitar confusión.
 
-\pythonfile{codigo/strings/multiplicar_cadenas_1.py}
-\out{codigo/strings/multiplicar_cadenas_1.out}
+\pythonfile{codigo/cadenas/multiplicar_cadenas_1.py}
+\out{codigo/cadenas/multiplicar_cadenas_1.out}
 
 También se pueden combinar operaciones de multiplicación y concatenación.
 
-\pythonfile{codigo/strings/concatenacion_y_multiplicacion.py}
+\pythonfile{codigo/cadenas/concatenacion_y_multiplicacion.py}
 
 Multiplicar por \ttt{0} genera un string vacío.
 
-\pythonfile{codigo/strings/multiplicar_cadenas_2.py}
-\out{codigo/strings/multiplicar_cadenas_2.out}
+\pythonfile{codigo/cadenas/multiplicar_cadenas_2.py}
+\out{codigo/cadenas/multiplicar_cadenas_2.out}
 
 Las cadenas no pueden ser multiplicadas entre sí, tampoco pueden ser multiplicadas por floats, incluso si los floats son números enteros.
 
-\pythonfile{codigo/strings/cadena_x_cadena.py}
-\out{codigo/strings/cadena_x_cadena.out}
-\pythonfile{codigo/strings/cadena_x_float.py}
-\out{codigo/strings/cadena_x_float.out}
+\pythonfile{codigo/cadenas/cadena_x_cadena.py}
+\out{codigo/cadenas/cadena_x_cadena.out}
+\pythonfile{codigo/cadenas/cadena_x_float.py}
+\out{codigo/cadenas/cadena_x_float.out}
 
 \Needspace{8\baselineskip}
 \section{Subcadenas}
@@ -176,8 +176,8 @@ En Python pueden usarse cortes (slicing) para obtener trozos de una cadena.
 Esto es lo que en otros lenguajes de programación se realiza usando el método \ttt{substring()}.
 Funciona de la misma forma que con listas y tuplas.
 
-\pythonfile{codigo/strings/substring_1.py}
-\out{codigo/strings/substring_1.out}
+\pythonfile{codigo/cadenas/substring_1.py}
+\out{codigo/cadenas/substring_1.out}
 
 %TODO: más
 
@@ -186,29 +186,29 @@ Funciona de la misma forma que con listas y tuplas.
 
 El método \ttt{print()} puede aceptar más de un string como argumento, lo cual hace que se muestren en una misma línea separados por espacios.
 
-\pythonfile{codigo/strings/print_avanzado_1.py}
-\out{codigo/strings/print_avanzado_1.out}
+\pythonfile{codigo/cadenas/print_avanzado_1.py}
+\out{codigo/cadenas/print_avanzado_1.out}
 
 El método \ttt{print()} tiene 2 argumentos que pueden definirse para dar más control sobre lo que se imprime en la pantalla.
 
 El argumento \ttt{sep} define el string separador entre cada string \doble{normal} que se le entregue al método \ttt{print()}, excepto después del último.
 Estos separadores pueden incluir secuencias de escape.
 
-\pythonfile{codigo/strings/print_avanzado_2.py}
-\out{codigo/strings/print_avanzado_2.out}
+\pythonfile{codigo/cadenas/print_avanzado_2.py}
+\out{codigo/cadenas/print_avanzado_2.out}
 
 El argumento \ttt{end} define el string que irá después del último string \doble{normal}.
 Se puede usar para seguir escribiendo en la misma línea, si no se incluye la secuencia de escape \ttt{\textbackslash n}.
 
-\pythonfile{codigo/strings/print_avanzado_3.py}
-\out{codigo/strings/print_avanzado_3.out}
-\pythonfile{codigo/strings/print_avanzado_4.py}
-\out{codigo/strings/print_avanzado_4.out}
+\pythonfile{codigo/cadenas/print_avanzado_3.py}
+\out{codigo/cadenas/print_avanzado_3.out}
+\pythonfile{codigo/cadenas/print_avanzado_4.py}
+\out{codigo/cadenas/print_avanzado_4.out}
 
 Ambos argumentos se pueden combinar.
 
-\pythonfile{codigo/strings/print_avanzado_5.py}
-\out{codigo/strings/print_avanzado_5.out}
+\pythonfile{codigo/cadenas/print_avanzado_5.py}
+\out{codigo/cadenas/print_avanzado_5.out}
 
 \Needspace{8\baselineskip}
 \section{Párrafos}
@@ -218,9 +218,104 @@ Una secuencia de escape útil para escribir párrafos o cualquier texto largo en
 Esto permite escribir strings largos que no pueden verse completamente en pantalla sin tener que moverse hacia la derecha.
 El uso de esta secuencia de escape no altera el resultado.
 
-\pythonfile{codigo/strings/lorem_ipsum.py}
-\out{codigo/strings/lorem_ipsum.out}
+\pythonfile{codigo/cadenas/lorem_ipsum.py}
+\out{codigo/cadenas/lorem_ipsum.out}
 
 El texto mostrado arriba es \link{https://es.lipsum.com}{lorem ipsum}, un texto que se usa para rellenar párrafos en textos desde hace muchos siglos.
+
+\Needspace{8\baselineskip}
+\section{Formateo de cadenas}
+
+La forma más básica de combinar cadenas y objetos que no son cadenas es convirtiendo dichos objetos a cadenas y concatenando las cadenas.
+
+El formateo de cadenas ofrece una manera más potente de incorporar objetos que no son cadenas a las cadenas.
+El formateo de cadenas utiliza el método \ttt{format()} de una cadena para sustituir los argumentos de esta.
+
+Una forma de hacerlo es usando índices.
+
+\pythonfile{codigo/cadenas/formateo_1.py}
+\out{codigo/cadenas/formateo_1.out}
+
+Cada argumento de la función de formateo es colocada en la cadena de la posición correspondiente, que es determinada usando llaves \ttt{\{\}}.
+
+Los índices entre llaves \ttt{\{\}} pueden repetirse cuantas veces se quiera.
+
+\pythonfile{codigo/cadenas/formateo_2.py}
+\out{codigo/cadenas/formateo_2.out}
+
+Si se omite un índice, habrá algún argumento de \ttt{format()} que no se usará.
+
+\pythonfile{codigo/cadenas/formateo_3.py}
+\out{codigo/cadenas/formateo_3.out}
+
+No es necesario escribir los índices dentro de las llaves \ttt{\{\}}, pero esto no permite que se repitan o que se entreguen como argumentos en otro orden.
+
+\pythonfile{codigo/cadenas/formateo_4.py}
+\out{codigo/cadenas/formateo_4.out}
+
+El formateo de cadenas también puede hacerse con argumentos con nombre.
+
+\pythonfile{codigo/cadenas/formateo_5.py}
+\out{codigo/cadenas/formateo_5.out}
+
+\Needspace{8\baselineskip}
+\section{Funciones de cadenas}
+
+Python contiene muchas funciones integradas y métodos útiles que sirven para cumplir tareas comunes.
+Algunos métodos que se pueden usar con strings son:
+
+\begin{itemize}
+  \item \ttt{join()}: Combina una lista de cadenas con otra cadena como separador.
+  
+  \pythonfile{codigo/cadenas/join.py}
+  \out{codigo/cadenas/join.out}
+
+  \item \ttt{replace()}: Reemplaza una subcadena de una cadena por otra cadena.
+
+  \pythonfile{codigo/cadenas/replace.py}
+  \out{codigo/cadenas/replace.out}
+
+  %TODO: separar esta sección
+
+  \item \ttt{startswith()}: Determina si hay una subcadena al principio de una cadena.
+
+  \pythonfile{codigo/cadenas/startswith.py}
+  \out{codigo/cadenas/startswith.out}
+
+  \item \ttt{endswith()}: Determina si hay una subcadena al final de una cadena.
+  
+  \pythonfile{codigo/cadenas/endswith.py}
+  \out{codigo/cadenas/endswith.out}
+
+  \item A diferencia de otros lenguajes de programación, Python no tiene el método \ttt{contains()}, para ver si una subcadena pertenece a un string.
+  
+  Usar el operador \ttt{in} tiene el mismo efecto que tendría dicha función.
+
+  \pythonfile{codigo/cadenas/contains.py}
+  \out{codigo/cadenas/contains.out}
+
+  %TODO: separar esta sección
+
+  \item \ttt{upper()}: Cambia una cadena a mayúsculas.
+  
+  \pythonfile{codigo/cadenas/upper.py}
+  \out{codigo/cadenas/upper.out}
+
+  \item \ttt{lower()}: Cambia una cadena a minúsculas.
+  
+  \pythonfile{codigo/cadenas/lower.py}
+  \out{codigo/cadenas/lower.out}
+
+  \item \ttt{capitalize()}: Cambia una cadena para que la primera letra sea mayúscula y el resto minúsculas.
+
+  \pythonfile{codigo/cadenas/capitalize.py}
+  \out{codigo/cadenas/capitalize.out}
+  
+  \item \ttt{title()}: Cambia una cadena para que todas las palabras empiecen con mayúscula.
+  
+  \pythonfile{codigo/cadenas/title.py}
+  \out{codigo/cadenas/title.out}
+
+\end{itemize}
 
 \clearpage

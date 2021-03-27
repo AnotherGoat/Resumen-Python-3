@@ -304,6 +304,12 @@ El método \ttt{split()} convierte una cadena de caracteres en una lista de pala
 \pythonfile{codigo/listas/split.py}
 \out{codigo/listas/split.out}
 
+A este método también se le puede entregar un string separador.
+La lista será formada con los elementos entre cada aparición de ese string.
+
+\pythonfile{codigo/listas/split_avanzado.py}
+%TODO: out y rehacer el ejemplo
+
 \Needspace{8\baselineskip}
 \section{Indexación de cadenas}
 
@@ -338,5 +344,96 @@ La única forma de solucionar este problema es creando una nueva cadena con el c
 
 \pythonfile{codigo/listas/solucion_cadenas.py}
 \out{codigo/listas/solucion_cadenas.out}
+
+\Needspace{8\baselineskip}
+\section{Cortes de lista}
+
+Los cortes de lista ofrecen una manera más avanzada de obtener valores de una lista.
+Los cortes de lista básicos involucran indexar una lista con dos enteros separados por dos puntos.
+Esto devuelve una lista nueva que contiene todos los valores de la lista vieja entre los índices.
+
+\pythonfile{codigo/listas/cortes_1.py}
+\out{codigo/listas/cortes_1.out}
+
+Como los argumentos de \ttt{range()}, el primer índice provisto en un corte es incluido en el resultado, pero el segundo no.
+
+Si el primer número en un corte es omitido, se toma el principio de la lista.
+Si el segundo número es omitido, se toma el final de la lista.
+
+\pythonfile{codigo/listas/cortes_2.py}
+\out{codigo/listas/cortes_2.out}
+
+Los cortes de lista también pueden tener un tercer número, representando el incremento, para incluir valores alternativos en el corte.
+
+\pythonfile{codigo/listas/cortes_3.py}
+\out{codigo/listas/cortes_3.out}
+
+Los valores negativos pueden ser utilizados en un corte de lista.
+Cuando los valores negativos son utilizados para el primer y el segundo valor del corte, estos cuentan desde el final de la lista.
+
+\pythonfile{codigo/listas/cortes_4.py}
+\out{codigo/listas/cortes_4.out}
+
+El tamaño de paso también puede ser negativo, lo que permite usarlos para invertir listas sin usar el método \ttt{reverse()}.
+
+\pythonfile{codigo/listas/cortes_reverse.py}
+\out{codigo/listas/cortes_reverse.out}
+
+Es importante recordar que si el tamaño de paso es negativo, el primer número debe indicar un índice mayor que el segundo.
+
+Se pueden usar cortes para copiar listas, aunque no suele ser la forma más clara de hacerlo.
+
+\pythonfile{codigo/listas/copy_cortes.py}
+\out{codigo/listas/copy_cortes.out}
+
+\Needspace{8\baselineskip}
+\section{Funciones all() y any()}
+
+Las funciones \ttt{all()} y \ttt{any()} son utilizados con frecuencia como sentencias condicionales.
+Estos toman una lista como un argumento y devuelven \ttt{True} si todos o algunos (respectivamente) de sus argumentos son evaluados como \ttt{True} (o, de lo contrario, devuelve \ttt{False}).
+
+\pythonfile{codigo/listas/all.py}
+\out{codigo/listas/all.out}
+\pythonfile{codigo/listas/any.py}
+\out{codigo/listas/any.out}
+
+%TODO: separar esos 2
+
+\Needspace{8\baselineskip}
+\section{Función enumerate()}
+
+La función \ttt{enumerate()} se usa para iterar a través de los valores e índices de una lista, simultáneamente.
+
+\pythonfile{codigo/listas/enumerate_1.py}
+\out{codigo/listas/enumerate_1.out}
+
+También se puede especificar el índice desde el que comienza.
+
+\pythonfile{codigo/listas/enumerate_2.py}
+\out{codigo/listas/enumerate_2.out}
+
+\Needspace{8\baselineskip}
+\section{Listas por compresión}
+
+Las listas por compresión son una forma útil de crear rápidamente listas cuyo contenido obedece una regla sencilla.
+
+\pythonfile{codigo/listas/compresion_1.py}
+\out{codigo/listas/compresion_1.out}
+
+Las listas por compresión son inspiradas por la notación de \link{https://edu.gcfglobal.org/es/los-conjuntos/notacion-de-conjuntos/1/}{constructores de conjuntos} en las matemáticas.
+
+Una lista por compresión también puede contener una sentencia \ttt{if} para aplicar una condición en los valores de la lista.
+
+\pythonfile{codigo/listas/compresion_2.py}
+\out{codigo/listas/compresion_2.out}
+
+Intentar crear una lista de rango demasiado extenso resultará en un \ttt{MemoryError}.
+Es posible que la operación tarde unos minutos en llegar a esta excepción, o que el PC se quede sin memoria antes de que llegue a aparecer.
+
+\pythonfile{codigo/listas/compresion_3.py}
+
+Se debe recordar que se puede interrumpir la ejecución del programa en cualquier momento enviando un \ttt{KeyboardInterrupt}, al pulsar \ttt{Ctrl+C}.
+
+Este problema de memoria es resuelto con generadores, los cuales se verán más tarde.
 
 \clearpage
