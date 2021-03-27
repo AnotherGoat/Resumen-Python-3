@@ -22,18 +22,18 @@ Pasos a seguir:
 
 La forma más simple de programar este algoritmo nos deja con un algoritmo de $O(n^2)$.
 
-\pythonfile{codigo/x-ordenamiento/burbuja.py}
-\out{codigo/x-ordenamiento/burbuja.out}
+\pythonfile{codigo/ordenamiento/burbuja.py}
+\out{codigo/ordenamiento/burbuja.out}
 
 Se puede ver el procedimiento de forma más detallada añadiendo un \ttt{print()} dentro del bucle \ttt{for}.
 
-\pythonfile{codigo/x-ordenamiento/burbuja_detallado.py}
-\out{codigo/x-ordenamiento/burbuja_detallado.out}
+\pythonfile{codigo/ordenamiento/burbuja_detallado.py}
+\out{codigo/ordenamiento/burbuja_detallado.out}
 
 Para ordenar al revés sólo basta con invertir la condición dentro de la declaración \ttt{if}.
 
-\pythonfile{codigo/x-ordenamiento/burbuja_inverso.py}
-\out{codigo/x-ordenamiento/burbuja_inverso.out}
+\pythonfile{codigo/ordenamiento/burbuja_inverso.py}
+\out{codigo/ordenamiento/burbuja_inverso.out}
 
 \Needspace{8\baselineskip}
 \section{Optimizaciones de bubble sort}
@@ -41,14 +41,14 @@ Para ordenar al revés sólo basta con invertir la condición dentro de la decla
 Una pequeña optimización puede ser cambiar el \ttt{range} del segundo \ttt{for} por \ttt{range(N - 1 - i)}.
 Esto ocurre porque en cualquier iteración siempre habrán \ttt{i} elementos ordenados al final, los cuales se pueden omitir.
 
-\pythonfile{codigo/x-ordenamiento/burbuja_opti_1.py}
+\pythonfile{codigo/ordenamiento/burbuja_opti_1.py}
 
 Hacer eso sigue manteniendo el algoritmo en $O(n^2)$.
 
 Otra optimización es añadir un booleano que revise si han habido cambios en cada iteración.
 Si en una iteración no hay cambios, significa que ya está ordenado y no es necesario seguir.
 
-\pythonfile{codigo/x-ordenamiento/burbuja_opti_2.py}
+\pythonfile{codigo/ordenamiento/burbuja_opti_2.py}
 
 Esto hará que el algoritmo sea $O(n^2)$ y $\omega(n)$
 
@@ -71,18 +71,18 @@ Pasos a seguir:
 La implementación más sencilla de este algoritmo es la siguiente.
 Tiene una complejidad de $O(n^2)$.
 
-\pythonfile{codigo/x-ordenamiento/insercion.py}
-\out{codigo/x-ordenamiento/insercion.out}
+\pythonfile{codigo/ordenamiento/insercion.py}
+\out{codigo/ordenamiento/insercion.out}
 
 Se puede añadir un método \ttt{print()} para ver en más detalle el procedimiento.
 
-\pythonfile{codigo/x-ordenamiento/insercion_detallado.py}
-\out{codigo/x-ordenamiento/insercion_detallado.out}
+\pythonfile{codigo/ordenamiento/insercion_detallado.py}
+\out{codigo/ordenamiento/insercion_detallado.out}
 
 Para ordenar al revés, sólo se debe invertir la condición dentro de la declaración \ttt{if}.
 
-\pythonfile{codigo/x-ordenamiento/insercion_inverso.py}
-\out{codigo/x-ordenamiento/insercion_inverso.out}
+\pythonfile{codigo/ordenamiento/insercion_inverso.py}
+\out{codigo/ordenamiento/insercion_inverso.out}
 
 \Needspace{8\baselineskip}
 \section{Selection sort}
@@ -103,18 +103,18 @@ Pasos a seguir:
 A continuación se muestra una implementación de este algoritmo.
 Tiene complejidad de $O(n^2)$.
 
-\pythonfile{codigo/x-ordenamiento/seleccion.py}
-\out{codigo/x-ordenamiento/seleccion.out}
+\pythonfile{codigo/ordenamiento/seleccion.py}
+\out{codigo/ordenamiento/seleccion.out}
 
 Para ver en detalle como funciona, se puede añadir el método \ttt{print()}.
 
-\pythonfile{codigo/x-ordenamiento/seleccion_detallado.py}
-\out{codigo/x-ordenamiento/seleccion_detallado.out}
+\pythonfile{codigo/ordenamiento/seleccion_detallado.py}
+\out{codigo/ordenamiento/seleccion_detallado.out}
 
 Al invertir la condición también se invertirá el orden.
 
-\pythonfile{codigo/x-ordenamiento/seleccion_inverso.py}
-\out{codigo/x-ordenamiento/seleccion_inverso.out}
+\pythonfile{codigo/ordenamiento/seleccion_inverso.py}
+\out{codigo/ordenamiento/seleccion_inverso.out}
 
 %TODO: describir algoritmos
 
@@ -142,16 +142,16 @@ Pasos a seguir:
 
 La siguiente implementación es de $O(n \log{n})$.
 
-\pythonfile{codigo/x-ordenamiento/merge.py}
-\out{codigo/x-ordenamiento/merge.out}
+\pythonfile{codigo/ordenamiento/merge.py}
+\out{codigo/ordenamiento/merge.out}
 
 Este algoritmo es complicado de entender, ya que usa mucho la recursión.
 Sin embargo, no es tan complejo como aparenta ser a primera vista.
 
 Al igual que los algoritmos anteriores, sólo se necesita invertir una condición para invertir el resultado.
 
-\pythonfile{codigo/x-ordenamiento/merge_inverso.py}
-\out{codigo/x-ordenamiento/merge_inverso.out}
+\pythonfile{codigo/ordenamiento/merge_inverso.py}
+\out{codigo/ordenamiento/merge_inverso.out}
 
 %TODO: añadir videos a todo este capitulo
 

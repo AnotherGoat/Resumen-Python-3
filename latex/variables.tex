@@ -1,17 +1,13 @@
 \chapter{Variables}
 
 \Needspace{8\baselineskip}
-\section{Asignación de variables}
-
-Una variable permite almacenar un valor asignándole un nombre, el cual puede ser usado para referirse al valor más adelante en el programa.
-Para asignar una variable, se usa el signo de igualdad \ttt{=}.
-
-\pythonfile{codigo/4-variables/variable_1.py}
-\out{codigo/4-variables/variable_1.py}
+\section{Declaración de variables}
 
 En Python, no existe la declaración de variables.
 Toda variable que se cree debe tener un valor inicial asignado.
-Se permite que este valor pueda ser \doble{vacío}, como por ejemplo el string vacío \ttt{\qq \qq}.
+Se permite que este valor sea \doble{vacío}, como por ejemplo el string vacío \ttt{\qq \qq}.
+
+\pythonfile{codigo/variables/variables.py}
 
 \Needspace{8\baselineskip}
 \section{Nombre de variables válidos}
@@ -22,17 +18,17 @@ Además, no se puede comenzar con números o incluir espacios.
 
 No seguir estas reglas hará que ocurran errores que impiden la ejecución del programa.
 
-\pythonfile{codigo/4-variables/error_variable_1.py}
-\out{codigo/4-variables/error_variable_1.out}
-\pythonfile{codigo/4-variables/error_variable_2.py}
-\out{codigo/4-variables/error_variable_2.out}
-\pythonfile{codigo/4-variables/error_variable_3.py}
-\out{codigo/4-variables/error_variable_3.out}
+\pythonfile{codigo/variables/error_variable_1.py}
+\out{codigo/variables/error_variable_1.out}
+\pythonfile{codigo/variables/error_variable_2.py}
+\out{codigo/variables/error_variable_2.out}
+\pythonfile{codigo/variables/error_variable_3.py}
+\out{codigo/variables/error_variable_3.out}
 
 Python es sensible a mayúsculas y minúsculas, lo que significa que las variables \ttt{num}, \ttt{Num}, \ttt{NUM}, etc. son distintas.
 
-\pythonfile{codigo/4-variables/mayusculas_y_minusculas.py}
-\out{codigo/4-variables/mayusculas_y_minusculas.out}
+\pythonfile{codigo/variables/mayusculas_y_minusculas.py}
+\out{codigo/variables/mayusculas_y_minusculas.out}
 
 \Needspace{8\baselineskip}
 \section{Nombres largos de variables}
@@ -43,15 +39,15 @@ Existen muchas técnicas para escribirlos de forma más legible.
 \begin{itemize}
   \item \textbf{Camel Case}: Todas las palabras empiezan con mayúscula, excepto la primera.
   
-  \pythonfile{codigo/4-variables/camelCase.py}
+  \pythonfile{codigo/variables/camelCase.py}
 
   \item \textbf{Pascal Case}: Todas las palabras empiezan con mayúscula.
   
-  \pythonfile{codigo/4-variables/PascalCase.py}
+  \pythonfile{codigo/variables/PascalCase.py}
 
   \item \textbf{Snake Case}: Todas las palabras se escriben en minúscula, pero van separadas por guiones bajos \ttt{\_}.
   
-  \pythonfile{codigo/4-variables/snake_case.py}
+  \pythonfile{codigo/variables/snake_case.py}
 
 \end{itemize}
 
@@ -63,7 +59,7 @@ El intérprete de Python reconoce estas palabras como palabras clave o keywords,
 
 A continuación, se muestra una lista de todas las palabras clave en Python.
 
-\textfile{codigo/4-variables/palabras_clave.txt}
+\textfile{codigo/variables/palabras_clave.txt}
 
 Nótese el uso de mayúsculas al principio de \ttt{False}, \ttt{None} y \ttt{True}.
 
@@ -72,28 +68,28 @@ Nótese el uso de mayúsculas al principio de \ttt{False}, \ttt{None} y \ttt{Tru
 
 Se pueden usar variables dentro de operaciones.
 
-\pythonfile{codigo/4-variables/variable_2.py}
-\out{codigo/4-variables/variable_2.out}
+\pythonfile{codigo/variables/variable_2.py}
+\out{codigo/variables/variable_2.out}
 
 Pero se debe recordar que deben ser asignadas antes de poder usarlas.
 
-\pythonfile{codigo/4-variables/error_operacion.py}
-\out{codigo/4-variables/error_operacion.out}
+\pythonfile{codigo/variables/error_operacion.py}
+\out{codigo/variables/error_operacion.out}
 
 Una variable también puede cambiar de valor a lo largo de la ejecución de un programa, y ser el resultado de operaciones con otras variables.
 
-\pythonfile{codigo/4-variables/variable_3.py}
+\pythonfile{codigo/variables/variable_3.py}
 
 Durante el tiempo de ejecución, siempre mantendrá el último valor que se le asignó.
 
-\pythonfile{codigo/4-variables/conservacion.py}
-\out{codigo/4-variables/conservacion.out}
+\pythonfile{codigo/variables/conservacion.py}
+\out{codigo/variables/conservacion.out}
 
 Las variables se pueden reasignar tantas veces como se desee, para cambiar su valor.
 En Python, las variables no tienen tipos específicos, por lo que se puede asignar una cadena a una variable y luego asignar un número entero a la misma variable.
 
-\pythonfile{codigo/4-variables/variable_4.py}
-\out{codigo/4-variables/variable_4.out}
+\pythonfile{codigo/variables/variable_4.py}
+\out{codigo/variables/variable_4.out}
 
 Sin embargo, no es una buena práctica.
 Para evitar errores, se debería evitar sobreescribir una variable con distintos tipos de datos.
@@ -101,8 +97,8 @@ Para evitar errores, se debería evitar sobreescribir una variable con distintos
 %TODO: enlaces a numérico y alfanumérico
 Si se asigna el valor numérico (enteros y decimales) o alfanumérico (cadena de texto) de una variable a otra, los cambios hechos a ambas variables son independientes.
 
-\pythonfile{codigo/4-variables/variable_5.py}
-\out{codigo/4-variables/variable_5.out}
+\pythonfile{codigo/variables/variable_5.py}
+\out{codigo/variables/variable_5.out}
 
 Esto no ocurre para tipos de datos más complejos, como listas.
 
@@ -112,24 +108,24 @@ Esto no ocurre para tipos de datos más complejos, como listas.
 Para obtener información del usuario, se puede usar la función \ttt{input()}, la cual solicita al usuario que la entrada.
 La información obtenida puede ser almacenada como una variable.
 
-\pythonfile{codigo/4-variables/input_1.py}
-\inp{codigo/4-variables/input_1.inp}
-\out{codigo/4-variables/input_1.out}
+\pythonfile{codigo/variables/input_1.py}
+\inp{codigo/variables/input_1.inp}
+\out{codigo/variables/input_1.out}
 
 Toda la información recibida por el método \ttt{input()} se procesa como un string.
 
 También se puede entregar un string como parámetro al método \ttt{input()}, lo cual mostrará texto antes de pedir la entrada.
 Esto sirve para aclarar qué entrada está solicitando el programa.
 
-\pythonfile{codigo/4-variables/input_2.py}
+\pythonfile{codigo/variables/input_2.py}
 
 Al usar la función \ttt{input()}, el flujo del programa se detiene hasta que el usuario ingrese algún valor.
 
 Se puede usar \ttt{input()} varias veces para tomar múltiples entradas del usuario.
 
-\pythonfile{codigo/4-variables/input_multiple.py}
-\inp{codigo/4-variables/input_multiple.inp}
-\out{codigo/4-variables/input_multiple.out}
+\pythonfile{codigo/variables/input_multiple.py}
+\inp{codigo/variables/input_multiple.inp}
+\out{codigo/variables/input_multiple.out}
 
 Normalmente, se debe añadir un espacio para concatenar variables, para evitar que las variables aparezcan juntas en la salida.
 
@@ -142,43 +138,43 @@ Entre dichas funciones se encuentran:
 \begin{itemize}
   \item \ttt{int()}: Convierte a un número entero.
   
-  \pythonfile{codigo/4-variables/convertir_a_int_1.py}
-  \out{codigo/4-variables/convertir_a_int_1.out}
+  \pythonfile{codigo/variables/convertir_a_int_1.py}
+  \out{codigo/variables/convertir_a_int_1.out}
 
   Aunque ambos se impriman igual, el primero es un string y el segundo un entero (int).
 
-  \pythonfile{codigo/4-variables/convertir_a_int_2.py}
-  \out{codigo/4-variables/convertir_a_int_2.out}
+  \pythonfile{codigo/variables/convertir_a_int_2.py}
+  \out{codigo/variables/convertir_a_int_2.out}
 
   Al convertir de \ttt{float} a \ttt{int}, sólo se conservará la parte entera del número.
   No ocurrirá ningún tipo de redondeo.
 
-  \pythonfile{codigo/4-variables/float_a_int.py}
-  \out{codigo/4-variables/float_a_int.out}
+  \pythonfile{codigo/variables/float_a_int.py}
+  \out{codigo/variables/float_a_int.out}
 
   \item \ttt{float()}: Convierte a un float.
   
-  \pythonfile{codigo/4-variables/convertir_a_float.py}
-  \out{codigo/4-variables/convertir_a_float.out}
+  \pythonfile{codigo/variables/convertir_a_float.py}
+  \out{codigo/variables/convertir_a_float.out}
 
   \item \ttt{str()}: Convierte a un string o cadena de caracteres.
   Uno de sus usos principales es para concatenar distintos tipos de datos.
 
-  \pythonfile{codigo/4-variables/convertir_a_string.py}
-  \out{codigo/4-variables/convertir_a_string.out}
+  \pythonfile{codigo/variables/convertir_a_string.py}
+  \out{codigo/variables/convertir_a_string.out}
 
 \end{itemize}
 
 Como el resultado de la función \ttt{input()} es un string, es normal convertir el resultado de este método para usarlo en operaciones matemáticas.
 
-\pythonfile{codigo/4-variables/input_3.py}
-\inp{codigo/4-variables/input_3.inp}
-\out{codigo/4-variables/input_3.out}
+\pythonfile{codigo/variables/input_3.py}
+\inp{codigo/variables/input_3.inp}
+\out{codigo/variables/input_3.out}
 
 También se pueden usar estos métodos para forzar variables a ser de un tipo específico al momento de asignarlas, en vez de dejar que Python infiera su tipo.
 Esto se conoce como \doble{casting}.
 
-\pythonfile{codigo/4-variables/casting.py}
+\pythonfile{codigo/variables/casting.py}
 
 \Needspace{8\baselineskip}
 \section{Operadores de asignación}
@@ -186,19 +182,19 @@ Esto se conoce como \doble{casting}.
 Los operadores de asignación permiten escribir código como \ttt{x = x + 1} de manera más concisa, como \ttt{x += 1}.
 Lo mismo es posible con otros operadores como \ttt{-}, \ttt{*}, \ttt{/}, \ttt{//}, \ttt{\%} y \ttt{**}.
 
-\pythonfile{codigo/4-variables/asignacion_1.py}
+\pythonfile{codigo/variables/asignacion_1.py}
 
 También se pueden usar con los operadores de concatenación y multiplicación de strings.
 
-\pythonfile{codigo/4-variables/asignacion_2.py}
+\pythonfile{codigo/variables/asignacion_2.py}
 
 \Needspace{8\baselineskip}
 \section{Múltiples variables con el mismo valor}
 
 Para declarar muchas variables en una misma linea y hacer que todas tengan el mismo valor, se puede repetir el operador de asignación \ttt{=}.
 
-\pythonfile{codigo/4-variables/multiple.py}
-\out{codigo/4-variables/multiple.out}
+\pythonfile{codigo/variables/multiple.py}
+\out{codigo/variables/multiple.out}
 
 \Needspace{8\baselineskip}
 \section{Tipos de datos}
@@ -211,63 +207,63 @@ A continuación se mostrarán los tipos de datos más comunes.
 \begin{itemize}
   \item Número entero \ttt{int}
   
-  \pythonfile{codigo/4-variables/tipo_int.py}
-  \out{codigo/4-variables/tipo_int.out}
+  \pythonfile{codigo/variables/tipo_int.py}
+  \out{codigo/variables/tipo_int.out}
 
   \item Número racional \ttt{float}
   
-  \pythonfile{codigo/4-variables/tipo_float.py}
-  \out{codigo/4-variables/tipo_float.out}
+  \pythonfile{codigo/variables/tipo_float.py}
+  \out{codigo/variables/tipo_float.out}
 
   \item Cadena de caracteres \ttt{str}
   
-  \pythonfile{codigo/4-variables/tipo_str.py}
-  \out{codigo/4-variables/tipo_str.out}
+  \pythonfile{codigo/variables/tipo_str.py}
+  \out{codigo/variables/tipo_str.out}
 
   \item Booleano \ttt{bool}
   
-  \pythonfile{codigo/4-variables/tipo_bool.py}
-  \out{codigo/4-variables/tipo_bool.out}
+  \pythonfile{codigo/variables/tipo_bool.py}
+  \out{codigo/variables/tipo_bool.out}
 
   \item Lista \ttt{list}
   
-  \pythonfile{codigo/4-variables/tipo_list.py}
-  \out{codigo/4-variables/tipo_list.out}
+  \pythonfile{codigo/variables/tipo_list.py}
+  \out{codigo/variables/tipo_list.out}
 
   \item Rango \ttt{range}
   
-  \pythonfile{codigo/4-variables/tipo_range.py}
-  \out{codigo/4-variables/tipo_range.out}
+  \pythonfile{codigo/variables/tipo_range.py}
+  \out{codigo/variables/tipo_range.out}
 
   \item Función \ttt{function}
   
-  \pythonfile{codigo/4-variables/tipo_function.py}
-  \out{codigo/4-variables/tipo_function.out}
+  \pythonfile{codigo/variables/tipo_function.py}
+  \out{codigo/variables/tipo_function.out}
 
   \item Número complejo \ttt{complex}
   
-  \pythonfile{codigo/4-variables/tipo_complex.py}
-  \out{codigo/4-variables/tipo_complex.out}
+  \pythonfile{codigo/variables/tipo_complex.py}
+  \out{codigo/variables/tipo_complex.out}
 
   \item Diccionario \ttt{dict}
   
-  \pythonfile{codigo/4-variables/tipo_dict.py}
-  \out{codigo/4-variables/tipo_dict.out}
+  \pythonfile{codigo/variables/tipo_dict.py}
+  \out{codigo/variables/tipo_dict.out}
 
   \item Tupla \ttt{tuple}
   
-  \pythonfile{codigo/4-variables/tipo_tuple.py}
-  \out{codigo/4-variables/tipo_tuple.out}
+  \pythonfile{codigo/variables/tipo_tuple.py}
+  \out{codigo/variables/tipo_tuple.out}
 
   \item Conjunto \ttt{set}
   
-  \pythonfile{codigo/4-variables/tipo_set.py}
-  \out{codigo/4-variables/tipo_set.out}
+  \pythonfile{codigo/variables/tipo_set.py}
+  \out{codigo/variables/tipo_set.out}
 
   \item Frozenset \ttt{frozenset}
   
-  \pythonfile{codigo/4-variables/tipo_frozenset.py}
-  \out{codigo/4-variables/tipo_frozenset.out}
+  \pythonfile{codigo/variables/tipo_frozenset.py}
+  \out{codigo/variables/tipo_frozenset.out}
 
 \end{itemize}
 

@@ -1,0 +1,185 @@
+\chapter{Números}
+
+\Needspace{8\baselineskip}
+\section{Operaciones aritméticas}
+
+Python tiene la capacidad de realizar cálculos.
+Los operadores \ttt{+}, \ttt{-}, \ttt{*} y \ttt{/} representan suma, resta, multiplicación y división, respectivamente.
+
+\sintaxis{codigo/numeros/sintaxis_suma.py}
+\sintaxis{codigo/numeros/sintaxis_resta.py}
+\sintaxis{codigo/numeros/sintaxis_multiplicacion.py}
+\sintaxis{codigo/numeros/sintaxis_division.py}
+\codigo{codigo/numeros/aritmetica_1.py}
+\out{codigo/numeros/aritmetica_1.out}
+
+Los espacios entre los signos y los números son opcionales, pero hacen que el código sea más fácil de leer.
+
+El resultado de una división siempre será un número decimal.
+Esto lo convierte en un dato de tipo float.
+
+\codigo{codigo/numeros/division.py}
+\out{codigo/numeros/division.out}
+
+Todas las operaciones se pueden combinar entre sí como si el intérprete de Python fuera una calculadora.
+
+\codigo{codigo/numeros/calculadora.py}
+\out{codigo/numeros/calculadora.out}
+
+\Needspace{8\baselineskip}
+\section{La regla PEMDAS}
+
+Las operaciones en Python siguen el orden dado por la regla PEMDAS:
+
+\begin{enumerate}
+  \item \textbf{Paréntesis} \ttt{()}
+  
+  \item \textbf{Exponentes} \ttt{**}
+  
+  \item \textbf{Multiplicación} \ttt{*} y \textbf{División} \ttt{/} (de izquierda a derecha)
+  
+  \item \textbf{Adición} \ttt{+} y \textbf{Sustracción} \ttt{-} (de izquierda a derecha)
+  
+\end{enumerate}
+
+A continuación se muestra un ejemplo detallando el orden en el que se procesan las operaciones.
+
+\codigo{codigo/numeros/aritmetica_2.py}
+\out{codigo/numeros/aritmetica_2.out}
+
+En realidad, la regla PEMDAS es parte de una jerarquía de operadores mucho más grande, que incluye todos los operadores que se pueden usar en Pyhon.
+Esta jerarquía se verá más tarde.
+
+\Needspace{8\baselineskip}
+\section{Paréntesis}
+
+Se pueden usar paréntesis \ttt{()} para agrupar operaciones y hacer que estas se realicen primero, siguiendo la regla PEMDAS.
+
+\sintaxis{codigo/numeros/sintaxis_parentesis.py}
+\codigo{codigo/numeros/aritmetica_3.py}
+\out{codigo/numeros/aritmetica_3.out}
+
+\Needspace{8\baselineskip}
+\section{Precisión del punto flotante}
+
+Se debe tener en cuenta que los computadores \link{http://puntoflotante.org/formats/fp/}{no pueden almacenar perfectamente} el valor de los floats, lo cual a menudo conduce a errores.
+
+\codigo{codigo/numeros/error_float.py}
+\out{codigo/numeros/error_float.out}
+
+El error mostrado arriba es un error clásico de la aritmética de punto flotante.
+Es un error tan conocido que incluso tiene su propio \link{https://0.30000000000000004.com}{sitio web}.
+
+\Needspace{8\baselineskip}
+\section{Notación corta}
+
+Al trabajar con floats, no es necesario escribir un 0 a la izquierda del punto decimal.
+
+\codigo{codigo/numeros/notacion_corta.py}
+\out{codigo/numeros/notacion_corta.out}
+
+Esta notación se asemeja a decir \doble{punto cinco} en vez de \doble{cero punto cinco}.
+
+\Needspace{8\baselineskip}
+\section{Operaciones entre enteros y floats}
+
+El resultado de cualquier operación entre floats o entre un float y un entero siempre dará como resultado un float.
+La división entre enteros también da como resultado un float.
+
+\codigo{codigo/numeros/enteros_y_floats.py}
+\out{codigo/numeros/enteros_y_floats.out}
+
+Las operaciones entre floats y enteros son posibles porque Python convierte los enteros en floats silenciosamente al momento de realizarlas.
+
+\Needspace{8\baselineskip}
+\section{Exponenciación}
+
+Otra operación soportada es la exponenciación, que es la elevación de un número a la potencia de otro.
+Esto se realiza usando el operador \ttt{**}.
+
+\sintaxis{codigo/numeros/sintaxis_potencia.py}
+
+Ejemplo equivalente a $2 ^ 5 = 2\cdot 2\cdot 2\cdot 2\cdot 2 = 32$.
+
+\codigo{codigo/numeros/potencia.py}
+\out{codigo/numeros/potencia.out}
+
+Las exponenciaciones se pueden encadenar cuantas veces se desee.
+
+Ejemplos equivalentes a ${2 ^ 3} ^ 2 = 512$ y $10 ^ {100}$ (un \link{https://es.wikipedia.org/wiki/G\%C3\%BAgol}{gúgol}).
+
+\codigo{codigo/numeros/potencia_multiple.py}
+\outespecial{codigo/numeros/potencia_multiple.out}
+
+Se debe tener cuidado con los paréntesis al encadenar potencias.
+
+Ejemplos equivalentes a ${2 ^ 3} ^ 2 = 512$ y $(2 ^ 3) ^ 2 = 64$.
+
+\codigo{codigo/numeros/potencia_cuidado.py}
+\out{codigo/numeros/potencia_cuidado.out}
+
+La exponenciación también se puede hacer con floats, donde se puede usar para obtener raíces.
+El resultado será un float.
+
+\sintaxis{codigo/numeros/sintaxis_raiz.py}
+
+Ejemplos equivalentes a $\sqrt{9} = 3$ y $\sqrt[3]{8} = 2$.
+
+\codigo{codigo/numeros/raiz.py}
+\out{codigo/numeros/raiz.out}
+
+Se debe tener en cuenta que el resultado será un float.
+
+\Needspace{8\baselineskip}
+\section{Cociente y resto}
+
+La división entera se realiza usando el operador \ttt{//}, donde el resultado es la parte entera que queda al realizar la división, también conocida como cociente.
+
+\sintaxis{codigo/numeros/sintaxis_division_entera.py}
+
+La división entera retorna un entero en vez de un float.
+
+\codigo{codigo/numeros/cociente.py}
+\out{codigo/numeros/cociente.out}
+
+También se puede usar la división entera con floats, lo cual dará como resultado otro float.
+
+\codigo{codigo/numeros/cociente_floats.py}
+\out{codigo/numeros/cociente_floats.out}
+
+Para obtener el resto al realizar una división entera de un número positivo, se debe usar el operador módulo \ttt{\%}.
+
+\sintaxis{codigo/numeros/sintaxis_modulo.py}
+\codigo{codigo/numeros/resto.py}
+\out{codigo/numeros/resto.out}
+
+Esta operación es equivalente a $7 \mod{2}$.
+
+Este operador viene de la \link{https://es.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic}{aritmética modular}, y uno de sus usos más comunes es para saber si un número es múltiplo de otro.
+Esto se hace revisando si el módulo al dividirlo por ese otro número es 0.
+
+\codigo{codigo/numeros/uso_del_resto.py}
+\out{codigo/numeros/uso_del_resto.out}
+
+En el caso mostrado anteriormente, se infiere que 10 es múltiplo de 2, que 15 es múltiplo de 3 y que 16 no es múltiplo de 7.
+El caso particular módulo 2 también puede usarse para saber si un número es par o no.
+
+El operador módulo \ttt{\%} también puede usarse con floats.
+
+\codigo{codigo/numeros/resto_floats.py}
+\out{codigo/numeros/resto_floats.out}
+
+\section{Aritmética modular}
+
+Para números negativos, el operador módulo \ttt{\%} funciona como lo haría en \link{https://es.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic}{aritmética modular}.
+Esto significa que cualquier número negativo dará como resultado el módulo, en vez del resto.
+
+El siguiente código muestra que $11 \mod 5 = 6 \mod 5 = 1 \mod 5 = -4 \mod 5 = -9 \mod 5$:
+
+\codigo{codigo/numeros/modulo_negativo.py}
+\out{codigo/numeros/modulo_negativo.out}
+
+El operador de división entera \ttt{//} considera el módulo obtenido como \doble{resto}, y retorna el número por el que tendría que multiplicarse el divisor para llegar al resultado.
+
+\codigo{codigo/numeros/cociente_negativo.py}
+\out{codigo/numeros/cociente_negativo.out}

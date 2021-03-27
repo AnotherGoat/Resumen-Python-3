@@ -11,8 +11,8 @@
 Los diccionarios son estructuras de datos utilizadas para mapear claves arbitrarias a valores.
 Pueden ser indexados de la misma manera que las listas, utilizando corchetes que contengan claves.
 
-\pythonfile{codigo/16-estructuras/diccionarios_1.py}
-\out{codigo/16-estructuras/diccionarios_1.out}
+\pythonfile{codigo/estructuras/diccionarios_1.py}
+\out{codigo/estructuras/diccionarios_1.out}
 
 Cada elemento de un diccionario es representado por un par clave:valor (key:value).
 Los elementos dentro de diccionarios no están ordenados, lo que significa que no pueden ser indexados por índices, sólo por claves.
@@ -20,39 +20,39 @@ Los elementos dentro de diccionarios no están ordenados, lo que significa que n
 Un diccionario puede almacenar como valor cualquier tipo de datos.
 Se pueden usar saltos de línea para definirlos de forma más ordenada.
 
-\pythonfile{codigo/16-estructuras/diccionarios_2.py}
-\out{codigo/16-estructuras/diccionarios_2.out}
+\pythonfile{codigo/estructuras/diccionarios_2.py}
+\out{codigo/estructuras/diccionarios_2.out}
 
 \Needspace{8\baselineskip}
 \section{Listas como diccionarios}
 
 Las listas pueden ser consideradas como diccionarios con claves de números enteros dentro de un cierto rango.
 
-\pythonfile{codigo/16-estructuras/listas_como_diccionarios.py}
-\out{codigo/16-estructuras/listas_como_diccionarios.out}
+\pythonfile{codigo/estructuras/listas_como_diccionarios.py}
+\out{codigo/estructuras/listas_como_diccionarios.out}
 
 \Needspace{8\baselineskip}
 \section{Diccionario vacío}
 
 Un diccionario vacío es definido como \ttt{\{\}}.
 
-\pythonfile{codigo/16-estructuras/diccionario_vacio.py}
+\pythonfile{codigo/estructuras/diccionario_vacio.py}
 
 \Needspace{8\baselineskip}
 \section{Excepciones en diccionarios}
 
 Tratar de indexar una clave que no es parte de un diccionario retorna un \ttt{KeyError}.
 
-\pythonfile{codigo/16-estructuras/error_diccionario.py}
-\out{codigo/16-estructuras/error_diccionario.out}
+\pythonfile{codigo/estructuras/error_diccionario.py}
+\out{codigo/estructuras/error_diccionario.out}
 
 Sólo objetos inmutables pueden ser utilizados como claves de diccionario.
 Los objetos inmutables son aquellos que no pueden ser cambiados.
 Algunos objetos mutables son listas, conjuntos y diccionarios.
 Tratar de utilizar un objeto mutable como clave de diccionario ocasiona un \ttt{TypeError}.
 
-\pythonfile{codigo/16-estructuras/error_clave_mutable.py}
-\out{codigo/16-estructuras/error_clave_mutable.out}
+\pythonfile{codigo/estructuras/error_clave_mutable.py}
+\out{codigo/estructuras/error_clave_mutable.out}
 
 \Needspace{8\baselineskip}
 \section{Indexación de diccionarios}
@@ -60,16 +60,16 @@ Tratar de utilizar un objeto mutable como clave de diccionario ocasiona un \ttt{
 Al igual que las listas, las claves de un diccionario pueden ser asignadas a distintos valores.
 Sin embargo, a diferencia de las listas, se le puede asignar un valor a nuevas claves, no sólo a las que ya existen.
 
-\pythonfile{codigo/16-estructuras/indexacion_diccionarios.py}
-\out{codigo/16-estructuras/indexacion_diccionarios.out}
+\pythonfile{codigo/estructuras/indexacion_diccionarios.py}
+\out{codigo/estructuras/indexacion_diccionarios.out}
 
 \Needspace{8\baselineskip}
 \section{Uso de in y not en diccionarios}
 
 Para determinar si una clave está en un diccionario, se puede usar los operadores \ttt{in} y \ttt{not in}, al igual que en listas.
 
-\pythonfile{codigo/16-estructuras/in_not_diccionarios.py}
-\out{codigo/16-estructuras/in_not_diccionarios.out}
+\pythonfile{codigo/estructuras/in_not_diccionarios.py}
+\out{codigo/estructuras/in_not_diccionarios.out}
 
 Nótese que retorna \ttt{False} al buscar \ttt{\qq tres \qq}.
 Esto ocurre porque \ttt{\qq tres \qq} es un valor, no una clave.
@@ -80,32 +80,32 @@ Esto ocurre porque \ttt{\qq tres \qq} es un valor, no una clave.
 Un método útil de diccionarios es \ttt{get()}.
 Hace lo mismo que indexar, pero si una clave no es encontrada en el diccionario entonces devuelve otro valor especificado (\ttt{None} por defecto).
 
-\pythonfile{codigo/16-estructuras/get_1.py}
-\out{codigo/16-estructuras/get_1.out}
+\pythonfile{codigo/estructuras/get_1.py}
+\out{codigo/estructuras/get_1.out}
 
 En este caso es importante recordar que \ttt{1} y \ttt{True} significan lo mismo, y por lo tanto son la misma clave.
 Entonces, el diccionario \ttt{pares} sólo tiene 3 elementos (la clave \ttt{True} tendrá como valor \ttt{False}, el último valor que se le asignó).
 
-\pythonfile{codigo/16-estructuras/get_2.py}
-\out{codigo/16-estructuras/get_2.out}
+\pythonfile{codigo/estructuras/get_2.py}
+\out{codigo/estructuras/get_2.out}
 
 \Needspace{8\baselineskip}
 \section{Convertir diccionarios a listas}
 
 Usando el método \ttt{list()}, se puede convertir un diccionario a una lista, pero esto sólo obtendrá sus claves.
 
-\pythonfile{codigo/16-estructuras/diccionario_a_lista.py}
-\out{codigo/16-estructuras/diccionario_a_lista.out}
+\pythonfile{codigo/estructuras/diccionario_a_lista.py}
+\out{codigo/estructuras/diccionario_a_lista.out}
 
 Los métodos \ttt{keys()} y \ttt{values()} permiten obtener las claves y los valores de un diccionario.
 
-\pythonfile{codigo/16-estructuras/keys_values_1.py}
-\out{codigo/16-estructuras/keys_values_1.out}
+\pythonfile{codigo/estructuras/keys_values_1.py}
+\out{codigo/estructuras/keys_values_1.out}
 
 El resultado de estos métodos puede ser convertido a listas usando el método \ttt{list()} para poder manipularlos con más facilidad.
 
-\pythonfile{codigo/16-estructuras/keys_values_2.py}
-\out{codigo/16-estructuras/keys_values_2.out}
+\pythonfile{codigo/estructuras/keys_values_2.py}
+\out{codigo/estructuras/keys_values_2.out}
 
 \Needspace{8\baselineskip}
 \section{Tuplas}
@@ -113,7 +113,7 @@ El resultado de estos métodos puede ser convertido a listas usando el método \
 Las tuplas son estructuras de datos muy parecidas a las listas, excepto que son inmutables (no pueden ser cambiadas).
 Se crean utilizando paréntesis en vez de corchetes.
 
-\pythonfile{codigo/16-estructuras/tupla_1.py}
+\pythonfile{codigo/estructuras/tupla_1.py}
 
 Las tuplas son más rápidas que las listas, pero no pueden ser modificadas.
 
@@ -123,8 +123,8 @@ Las tuplas son más rápidas que las listas, pero no pueden ser modificadas.
 Se puede acceder a los valores de una tupla utilizando su índice.
 Funciona de la misma forma que con listas.
 
-\pythonfile{codigo/16-estructuras/tupla_2.py}
-\out{codigo/16-estructuras/tupla_2.out}
+\pythonfile{codigo/estructuras/tupla_2.py}
+\out{codigo/estructuras/tupla_2.out}
 
 Los datos dentro de una tupla están ordenados, empezando desde el índice \ttt{0}.
 
@@ -133,8 +133,8 @@ Los datos dentro de una tupla están ordenados, empezando desde el índice \ttt{
 
 Tratar de reasignar un valor a una tupla ocasiona un \ttt{TypeError}.
 
-\pythonfile{codigo/16-estructuras/error_tupla.py}
-\out{codigo/16-estructuras/error_tupla.out}
+\pythonfile{codigo/estructuras/error_tupla.py}
+\out{codigo/estructuras/error_tupla.out}
 
 \Needspace{8\baselineskip}
 \section{Anidación de tuplas}
@@ -143,33 +143,33 @@ Al igual que las listas y diccionarios, las tuplas pueden ser anidadas entre sí
 
 Las tuplas son inmutables, pero el contenido de elementos mutables dentro de ellas puede ser cambiado.
 
-\pythonfile{codigo/16-estructuras/anidacion_tuplas.py}
-\out{codigo/16-estructuras/anidacion_tuplas.out}
+\pythonfile{codigo/estructuras/anidacion_tuplas.py}
+\out{codigo/estructuras/anidacion_tuplas.out}
 
 \Needspace{8\baselineskip}
 \section{Tupla vacía}
 
 Una tupla vacía se crea utilizando un par de paréntesis vacíos \ttt{()}.
 
-\pythonfile{codigo/16-estructuras/tupla_vacia.py}
+\pythonfile{codigo/estructuras/tupla_vacia.py}
 
 \Needspace{8\baselineskip}
 \section{Manejo de variables con tuplas}
 
 Las tuplas pueden \doble{empaquetarse} o \doble{desempaquetarse}, lo que puede ser útil al momento de crear variables.
 
-\pythonfile{codigo/16-estructuras/tupla_3.py}
-\out{codigo/16-estructuras/tupla_3.out}
+\pythonfile{codigo/estructuras/tupla_3.py}
+\out{codigo/estructuras/tupla_3.out}
 
 Las tuplas pueden ser creadas sin paréntesis, simplemente separando los valores por comas.
 
-\pythonfile{codigo/16-estructuras/sin_parentesis.py}
-\out{codigo/16-estructuras/sin_parentesis.out}
+\pythonfile{codigo/estructuras/sin_parentesis.py}
+\out{codigo/estructuras/sin_parentesis.out}
 
 Se pueden usar tuplas para intercambiar los valores de 2 variables, sin necesidad de crear una variable auxiliar.
 
-\pythonfile{codigo/16-estructuras/truco_tuplas.py}
-\out{codigo/16-estructuras/truco_tuplas.out}
+\pythonfile{codigo/estructuras/truco_tuplas.py}
+\out{codigo/estructuras/truco_tuplas.out}
 
 \Needspace{8\baselineskip}
 \section{Conjuntos}
@@ -178,14 +178,14 @@ Los conjuntos son estructuras de datos parecidas a las listas o a los diccionari
 Son creandos utilizando llaves \ttt{\{\}}o la función \ttt{set()}.
 Comparten algunas de las funcionalidades de las listas, como el uso de \ttt{in} y \ttt{not in} para revisar si contienen o no un elemento en particular.
 
-\pythonfile{codigo/16-estructuras/conjuntos.py}
-\out{codigo/16-estructuras/conjuntos.out}
+\pythonfile{codigo/estructuras/conjuntos.py}
+\out{codigo/estructuras/conjuntos.out}
 
 No están ordenados, lo cual significa que no pueden ser indexados.
 No pueden tener elementos duplicados.
 
-\pythonfile{codigo/16-estructuras/sin_duplicados.py}
-\out{codigo/16-estructuras/sin_duplicados.out}
+\pythonfile{codigo/estructuras/sin_duplicados.py}
+\out{codigo/estructuras/sin_duplicados.out}
 
 Usos básicos de conjuntos incluyen pruebas de membresía y la eliminación de entradas duplicadas.
 
@@ -194,30 +194,30 @@ Usos básicos de conjuntos incluyen pruebas de membresía y la eliminación de e
 
 Para crear un conjunto vacío, se debe utilizar \ttt{set()}, ya que \ttt{\{\}} crea un diccionario vacío.
 
-\pythonfile{codigo/16-estructuras/conjunto_vacio.py}
+\pythonfile{codigo/estructuras/conjunto_vacio.py}
 
 \Needspace{8\baselineskip}
 \section{Métodos de conjuntos}
 
 Los conjuntos difieren de las listas de varias formas, pero comparten varias operaciones de listas como \ttt{len()}.
 
-\pythonfile{codigo/16-estructuras/len_conjuntos.py}
-\out{codigo/16-estructuras/len_conjuntos.out}
+\pythonfile{codigo/estructuras/len_conjuntos.py}
+\out{codigo/estructuras/len_conjuntos.out}
 
 Debido a la forma en que son almacenados, es más rápido revisar si un elemento es parte de un conjunto que si es parte de una lista.
 
 En lugar de utilizar \ttt{append()} para agregarle algo al conjunto, se utiliza \ttt{add()}.
 El método \ttt{remove()} elimina un elemento específico de un conjunto.
 
-\pythonfile{codigo/16-estructuras/add_y_remove.py}
-\out{codigo/16-estructuras/add_y_remove.out}
+\pythonfile{codigo/estructuras/add_y_remove.py}
+\out{codigo/estructuras/add_y_remove.out}
 
 El método \ttt{pop()} elimina un elemento arbitrario.
 Esto significa que debido a la forma en la Python implementa conjuntos, no hay garantía de que los elementos se retornarán en el mismo orden que en el que se añadieron.
 
 Generalmente, elimina el primer elemento, pero esto no se puede garantizar para todos los casos.
 
-\pythonfile{codigo/16-estructuras/pop_conjuntos.py}
+\pythonfile{codigo/estructuras/pop_conjuntos.py}
 
 \Needspace{8\baselineskip}
 \section{Operaciones con conjuntos}
@@ -226,23 +226,23 @@ Los conjuntos pueden ser combinados utilizando operaciones matemáticas.
 
 El operador de unión \ttt{|} combina dos conjuntos para formar uno nuevo que contiene los elementos de cualquiera de los dos.
 
-\pythonfile{codigo/16-estructuras/union.py}
-\out{codigo/16-estructuras/union.out}
+\pythonfile{codigo/estructuras/union.py}
+\out{codigo/estructuras/union.out}
 
 El operador de intersección \ttt{\&} obtiene sólo los elementos que están en ambos.
 
-\pythonfile{codigo/16-estructuras/interseccion.py}
-\out{codigo/16-estructuras/interseccion.out}
+\pythonfile{codigo/estructuras/interseccion.py}
+\out{codigo/estructuras/interseccion.out}
 
 El operador de diferencia \ttt{-} obtiene los elementos que están en el primer conjunto, pero no en el segundo.
 
-\pythonfile{codigo/16-estructuras/diferencia.py}
-\out{codigo/16-estructuras/diferencia.out}
+\pythonfile{codigo/estructuras/diferencia.py}
+\out{codigo/estructuras/diferencia.out}
 
 El operador de diferencia simétrica \ttt{\^} obtiene los elementos que están en cualquiera de los conjuntos, pero no en ambos.
 
-\pythonfile{codigo/16-estructuras/diferencia_simetrica.py}
-\out{codigo/16-estructuras/diferencia_simetrica.out}
+\pythonfile{codigo/estructuras/diferencia_simetrica.py}
+\out{codigo/estructuras/diferencia_simetrica.out}
 
 \Needspace{8\baselineskip}
 \section{Frozenset}
@@ -251,20 +251,20 @@ Los frozenset son, como dice su nombre, conjuntos \doble{congelados}.
 Se comportan exactamente igual que un conjunto normal, pero son inmutables.
 Para crearlos, se debe usar la función \ttt{frozenset()}.
 
-\pythonfile{codigo/16-estructuras/frozenset.py}
-\out{codigo/16-estructuras/frozenset.out}
+\pythonfile{codigo/estructuras/frozenset.py}
+\out{codigo/estructuras/frozenset.out}
 
 Como son inmutables, intentar cambiarlos causará una excepción.
 De hecho, ni siquiera existen métodos para modificarlos.
 
-\pythonfile{codigo/16-estructuras/error_frozenset_1.py}
-\out{codigo/16-estructuras/error_frozenset_1.out}
-\pythonfile{codigo/16-estructuras/error_frozenset_2.py}
-\out{codigo/16-estructuras/error_frozenset_2.out}
-\pythonfile{codigo/16-estructuras/error_frozenset_3.py}
-\out{codigo/16-estructuras/error_frozenset_3.out}
-\pythonfile{codigo/16-estructuras/error_frozenset_4.py}
-\out{codigo/16-estructuras/error_frozenset_4.out}
+\pythonfile{codigo/estructuras/error_frozenset_1.py}
+\out{codigo/estructuras/error_frozenset_1.out}
+\pythonfile{codigo/estructuras/error_frozenset_2.py}
+\out{codigo/estructuras/error_frozenset_2.out}
+\pythonfile{codigo/estructuras/error_frozenset_3.py}
+\out{codigo/estructuras/error_frozenset_3.out}
+\pythonfile{codigo/estructuras/error_frozenset_4.py}
+\out{codigo/estructuras/error_frozenset_4.out}
 
 \Needspace{8\baselineskip}
 \section{Resumen sobre estructuras de datos}

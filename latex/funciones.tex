@@ -20,7 +20,7 @@ Cualquier sentencia que consista de una palabra seguida de información entre pa
 
 Ejemplos de funciones que se han visto anteriormente:
 
-\pythonfile{codigo/8-funciones/funciones.py}
+\pythonfile{codigo/funciones/funciones.py}
 
 Palabras antes del paréntesis son nombres de funciones y los valores separados por comas dentro de los paréntesis son argumentos o parámetros de funciones.
 
@@ -34,7 +34,7 @@ Generalmente, se recomienda que el nombre de una función sea un verbo, pero no 
 
 Ejemplo de definición de función:
 
-\pythonfile{codigo/8-funciones/saludar.py}
+\pythonfile{codigo/funciones/saludar.py}
 
 \Needspace{8\baselineskip}
 \section{Argumentos}
@@ -42,12 +42,12 @@ Ejemplo de definición de función:
 Las funciones más básicas son las que no reciben argumentos, pero esto limita su utilidad en gran cantidad.
 Para hacerlas más útiles, se les puede entregar argumentos, lo que aumenta su funcionalidad.
 
-\pythonfile{codigo/8-funciones/exclamar.py}
+\pythonfile{codigo/funciones/exclamar.py}
 
 Una función puede pedir más de un argumento, los cuales deben separarse por comas.
 
-\pythonfile{codigo/8-funciones/sumar.py}
-\pythonfile{codigo/8-funciones/mayor.py}
+\pythonfile{codigo/funciones/sumar.py}
+\pythonfile{codigo/funciones/mayor.py}
 
 \Needspace{8\baselineskip}
 \section{Llamado de funciones}
@@ -56,14 +56,14 @@ Para llamar una función, debe escribirse su nombre, seguido de un paréntesis q
 
 Ejemplos de uso de las funciones definidas anteriormente:
 
-\pythonfile{codigo/8-funciones/llamar_saludar.py}
-\out{codigo/8-funciones/llamar_saludar.out}
-\pythonfile{codigo/8-funciones/llamar_exclamar.py}
-\out{codigo/8-funciones/llamar_exclamar.out}
-\pythonfile{codigo/8-funciones/llamar_sumar.py}
-\out{codigo/8-funciones/llamar_sumar.out}
-\pythonfile{codigo/8-funciones/llamar_mayor.py}
-\out{codigo/8-funciones/llamar_mayor.out}
+\pythonfile{codigo/funciones/llamar_saludar.py}
+\out{codigo/funciones/llamar_saludar.out}
+\pythonfile{codigo/funciones/llamar_exclamar.py}
+\out{codigo/funciones/llamar_exclamar.out}
+\pythonfile{codigo/funciones/llamar_sumar.py}
+\out{codigo/funciones/llamar_sumar.out}
+\pythonfile{codigo/funciones/llamar_mayor.py}
+\out{codigo/funciones/llamar_mayor.out}
 
 Técnicamente, los parámetros son las variables en una definición de función y los argumentos son los valores que se le dan a las variables al momento de llamar funciones.
 
@@ -74,27 +74,27 @@ Los argumentos de funciones pueden ser utilizados como variables dentro de la de
 Sin embargo, no pueden ser referenciados fuera de dicha definición.
 Esto también se aplica a las demás variables creadas dentro de una función.
 
-\pythonfile{codigo/8-funciones/argumentos.py}
-\out{codigo/8-funciones/argumentos.out}
+\pythonfile{codigo/funciones/argumentos.py}
+\out{codigo/funciones/argumentos.out}
 
 En términos más técnicos, una variable que se inicia fuera de una función recibe el nombre de variable global y una que se declara dentro de una función se conoce como variable local.
 
-\pythonfile{codigo/8-funciones/local_y_global.py}
+\pythonfile{codigo/funciones/local_y_global.py}
 
 Los parámetros de una función también son variables locales.
 
 Existe una excepción a esta regla, la cual permite declarar variables globales dentro del cuerpo de una función.
 Para hacer esto, se debe usar la palabra clave \ttt{global}.
 
-\pythonfile{codigo/8-funciones/global.py}
-\out{codigo/8-funciones/global.out}
+\pythonfile{codigo/funciones/global.py}
+\out{codigo/funciones/global.out}
 
 Es importante darse cuenta de que la función \ttt{funcion()} debe ser llamada para inicializar la variable global \ttt{z} y que al usar la palabra clave \ttt{global} se debe separar la declaración de la asignación.
 
 Si no se separan, se mostrará un \ttt{SyntaxError}.
 
-\pythonfile{codigo/8-funciones/error_global.py}
-\out{codigo/8-funciones/error_global.out}
+\pythonfile{codigo/funciones/error_global.py}
+\out{codigo/funciones/error_global.out}
 
 \Needspace{8\baselineskip}
 \section{Devolución de valores en una función}
@@ -102,13 +102,13 @@ Si no se separan, se mostrará un \ttt{SyntaxError}.
 Ciertas funciones devuelven un valor para ser utilizado más adelante.
 Para hacer esto en la definición de funciones nuevas, se debe usar la palabra clave \ttt{return}.
 
-\pythonfile{codigo/8-funciones/return_1.py}
-\out{codigo/8-funciones/return_1.out}
+\pythonfile{codigo/funciones/return_1.py}
+\out{codigo/funciones/return_1.out}
 
 Cualquier código luego de la sentencia \ttt{return} nunca ocurrirá.
 
-\pythonfile{codigo/8-funciones/return_2.py}
-\out{codigo/8-funciones/return_2.out}
+\pythonfile{codigo/funciones/return_2.py}
+\out{codigo/funciones/return_2.out}
 
 \Needspace{8\baselineskip}
 \section{Docstring}
@@ -117,17 +117,17 @@ Las docstring (cadenas de documentación) cumplen un propósito similar al de lo
 
 Son creados colocando una cadena multilínea que contenga una explicación de la función por debajo de la primera línea de la función y teniendo cuidado de respetar la indentación.
 
-\pythonfile{codigo/8-funciones/docstring_1.py}
+\pythonfile{codigo/funciones/docstring_1.py}
 
 Normalmente se usan docstrings para explicar los parámetros y lo que retorna una función.
 
 %TODO: buscar formato aceptado
-\pythonfile{codigo/8-funciones/docstring_2.py}
+\pythonfile{codigo/funciones/docstring_2.py}
 
 El intérprete de Python ignora los docstring que se usen en otros lugares.
 Esto ha hecho que algunas personas los usen como \doble{comentarios multilínea}, pero en la práctica no se recomienda hacer esto porque puede generar confusión.
 
-\pythonfile{codigo/8-funciones/comentario_malo.py}
+\pythonfile{codigo/funciones/comentario_malo.py}
 
 También podría generar problemas de indentación en algunos casos.
 
@@ -139,14 +139,14 @@ Esto le permite al programador examinar estos comentarios durante el tiempo de e
 
 Una forma de accederlo es usando la variable \ttt{\_\_doc\_\_}.
 
-\pythonfile{codigo/8-funciones/print_doc.py}
-\out{codigo/8-funciones/print_doc.out}
+\pythonfile{codigo/funciones/print_doc.py}
+\out{codigo/funciones/print_doc.out}
 
 Otra forma es usando la función \ttt{help()}.
 Esto entrega un poco más de información.
 
-\pythonfile{codigo/8-funciones/help.py}
-\out{codigo/8-funciones/help.out}
+\pythonfile{codigo/funciones/help.py}
+\out{codigo/funciones/help.out}
 
 \Needspace{8\baselineskip}
 \section{Funciones como objetos}
@@ -154,13 +154,13 @@ Esto entrega un poco más de información.
 Aunque sean creadas de manera diferente que las variables regulares, las funciones son como cualquier otra clase de valor.
 Pueden ser asignadas y reasignadas a variables, y luego ser referenciadas por esos nombres.
 
-\pythonfile{codigo/8-funciones/funcion_como_objeto_1.py}
-\out{codigo/8-funciones/funcion_como_objeto_1.out}
+\pythonfile{codigo/funciones/funcion_como_objeto_1.py}
+\out{codigo/funciones/funcion_como_objeto_1.out}
 
 Las funciones también pueden ser usadas como argumentos de otras funciones.
 
-\pythonfile{codigo/8-funciones/funcion_como_objeto_2.py}
-\out{codigo/8-funciones/funcion_como_objeto_2.out}
+\pythonfile{codigo/funciones/funcion_como_objeto_2.py}
+\out{codigo/funciones/funcion_como_objeto_2.out}
 
 \Needspace{8\baselineskip}
 \section{El objeto None}
@@ -175,18 +175,18 @@ Al igual que otros valores \doble{vacíos}, tales como \ttt{()}, \ttt{[]}, \ttt{
 Cuando es ingresado a la consola de Python, se visualiza como una cadena vacía.
 Usando \ttt{print()} se mostrará su verdadero valor.
 
-\pythonfile{codigo/8-funciones/None_1.py}
-\out{codigo/8-funciones/None_1.out}
+\pythonfile{codigo/funciones/None_1.py}
+\out{codigo/funciones/None_1.out}
 
 El objeto \ttt{None} es devuelto por cualquier función que no devuelve explícitamente algo más.
 
-\pythonfile{codigo/8-funciones/None_2.py}
-\out{codigo/8-funciones/None_2.out}
+\pythonfile{codigo/funciones/None_2.py}
+\out{codigo/funciones/None_2.out}
 
 Un uso común de \ttt{None} es para iniciar una lista con cierta cantidad de elementos.
 
-\pythonfile{codigo/8-funciones/None_3.py}
-\out{codigo/8-funciones/None_3.out}
+\pythonfile{codigo/funciones/None_3.py}
+\out{codigo/funciones/None_3.out}
 
 \Needspace{8\baselineskip}
 \section{Sobrecarga de funciones}
@@ -197,14 +197,14 @@ Esto permite reutilizar el mismo código, reducir su complejidad y hacer que sea
 Para sobrecargar una función, se deben definir los parámetros que sean opcionales con un valor por defecto \ttt{None}.
 Después, se usan declaraciones \ttt{if-elif-else} para revisar todos los casos posibles.
 
-\pythonfile{codigo/8-funciones/sobrecarga_1.py}
-\out{codigo/8-funciones/sobrecarga_1.out}
+\pythonfile{codigo/funciones/sobrecarga_1.py}
+\out{codigo/funciones/sobrecarga_1.out}
 
 El siguiente ejemplo muestra una función que calcula el área de una figura geométrica.
 Si sólo se le entrega 1 argumento asume que es un cuadrado y si se le entregan 2 asume que es un rectángulo.
 
-\pythonfile{codigo/8-funciones/sobrecarga_2.py}
-\out{codigo/8-funciones/sobrecarga_2.out}
+\pythonfile{codigo/funciones/sobrecarga_2.py}
+\out{codigo/funciones/sobrecarga_2.out}
 
 %TODO: mostrar valores por defecto
 
@@ -213,8 +213,8 @@ Si sólo se le entrega 1 argumento asume que es un cuadrado y si se le entregan 
 
 Una anotación de tipos es, como su nombre lo dice, una notación opcional que especifica el tipo de los parámetros de una función y su tipo de retorno.
 
-\pythonfile{codigo/8-funciones/anotaciones_1.py}
-\out{codigo/8-funciones/anotaciones_1.out}
+\pythonfile{codigo/funciones/anotaciones_1.py}
+\out{codigo/funciones/anotaciones_1.out}
 
 En el ejemplo de arriba, se muestra que mensaje es un parámetro de tipo string y que la función \ttt{duplicar()} retorna un string.
 
@@ -223,8 +223,8 @@ Esto le permite al programador saber qué tipos de datos se le deben entregar un
 Las anotaciones de tipos son ignoradas completamente por el intérprete de Python.
 No restringen el tipo de los parámetros o del retorno de una función, pero son muy útiles al momento de documentar.
 
-\pythonfile{codigo/8-funciones/anotaciones_2.py}
-\out{codigo/8-funciones/anotaciones_2.out}
+\pythonfile{codigo/funciones/anotaciones_2.py}
+\out{codigo/funciones/anotaciones_2.out}
 
 Aunque el intérprete de Python los ignore, existen algunos IDEs y programas que pueden analizar código que contiene anotaciones de tipos y alertar sobre problemas potenciales.
 

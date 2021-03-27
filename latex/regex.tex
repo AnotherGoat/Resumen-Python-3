@@ -24,7 +24,7 @@ Lenguajes privados específicos del dominio son a menudo usados para propósitos
 
 Para usar expresiones regulares en Python, se debe importar el módulo \ttt{re} que pertenece a la biblioteca estándar.
 
-\pythonfile{codigo/21-regex/import_re.py}
+\pythonfile{codigo/regex/import_re.py}
 
 \Needspace{8\baselineskip}
 \section{Definición de expresiones regulares}
@@ -32,8 +32,8 @@ Para usar expresiones regulares en Python, se debe importar el módulo \ttt{re} 
 Para definir una expresión regular, se puede almacenar en una variable y el patrón se escribe como un string.
 Se recomienda usar cadenas puras \doble{raw string}, las cuales empiezan por la letra \ttt{r} fuera de las comillas.
 
-\pythonfile{codigo/21-regex/regex.py}
-\out{codigo/21-regex/regex.out}
+\pythonfile{codigo/regex/regex.py}
+\out{codigo/regex/regex.out}
 
 Las cadenas puras ignoran las secuencias de escape propias de las cadenas de Python, pero no las de expresiones regulares.
 Es por este motivo que hace más fácil el uso de expresiones regulares.
@@ -43,41 +43,41 @@ Es por este motivo que hace más fácil el uso de expresiones regulares.
 
 Para revisar si una cadena encaja con un patrón, se puede usar el método \ttt{match()} para compararla con una expresión regular.
 
-\pythonfile{codigo/21-regex/match_1.py}
-\out{codigo/21-regex/match_1.out}
+\pythonfile{codigo/regex/match_1.py}
+\out{codigo/regex/match_1.out}
 
 En en caso de arriba, revisa todas las palabras que empiezan por \ttt{\qq hola \qq}.
 Si no se parecen al patrón, mostrará \ttt{None}.
 
 Puede ser más conveniente convertir el resultado \ttt{match} a un booleano usando \ttt{bool()}.
 
-\pythonfile{codigo/21-regex/match_2.py}
-\out{codigo/21-regex/match_2.out}
+\pythonfile{codigo/regex/match_2.py}
+\out{codigo/regex/match_2.out}
 
 Este resultado se parece al que se obtendría usando el método \ttt{startswith()}, pero la gracia de las expresiones regulares es que permiten patrones mucho más complejos, que se verán más tarde.
 
 Otra opción es usar la función \ttt{search()}, que busca si un patrón aparece en cualquier parte de la cadena, no solo al principio.
 
-\pythonfile{codigo/21-regex/search.py}
-\out{codigo/21-regex/search.out}
+\pythonfile{codigo/regex/search.py}
+\out{codigo/regex/search.out}
 
 \Needspace{8\baselineskip}
 \section{Coincidencias mútliples}
 
 La función \ttt{findall()} devuelve una lista con todas las subcadenas que coinciden con un patrón.
 
-\pythonfile{codigo/21-regex/findall.py}
-\out{codigo/21-regex/findall.out}
+\pythonfile{codigo/regex/findall.py}
+\out{codigo/regex/findall.out}
 
 Si se combina \ttt{findall()} con \ttt{len()}, se puede ver la cantidad de ocurrencias de un patrón.
 
-\pythonfile{codigo/21-regex/findall_len.py}
-\out{codigo/21-regex/findall_len.out}
+\pythonfile{codigo/regex/findall_len.py}
+\out{codigo/regex/findall_len.out}
 
 También existe la función \ttt{finditer()} que hace lo mismo que \ttt{findall()} pero devuelve un iterador en vez de una lista.
 
-\pythonfile{codigo/21-regex/finditer.py}
-\out{codigo/21-regex/finditer.out}
+\pythonfile{codigo/regex/finditer.py}
+\out{codigo/regex/finditer.out}
 
 \Needspace{8\baselineskip}
 \section{Detalles sobre los resultados}
@@ -86,8 +86,8 @@ La búsqueda regex devuelve un objeto con varios métodos que dan detalles sobre
 
 Estos métodos incluyen \ttt{group()} que devuelve la cadena que coincide, \ttt{start()} que devuelve la posición inicial de esta cadena, \ttt{end()} que devuelve la posición final y \ttt{span()} que devuelve la posición inicial y final como una tupla.
 
-\pythonfile{codigo/21-regex/detalles.py}
-\out{codigo/21-regex/detalles.out}
+\pythonfile{codigo/regex/detalles.py}
+\out{codigo/regex/detalles.out}
 
 \Needspace{8\baselineskip}
 \section{Buscar y reemplazar}
@@ -97,26 +97,26 @@ Uno de los métodos de \ttt{re} más importantes que utiliza expresiones regular
 Este método reemplaza todas las ocurrencias de un patrón con un string dado.
 Devuelve una cadena modificada.
 
-\pythonfile{codigo/21-regex/sub_2.py}
-\out{codigo/21-regex/sub_2.out}
+\pythonfile{codigo/regex/sub_2.py}
+\out{codigo/regex/sub_2.out}
 
 Se le puede entregar el argumento \ttt{count}, que especifica la cantidad de reemplazos que se quieren.
 
-\pythonfile{codigo/21-regex/sub_3.py}
-\out{codigo/21-regex/sub_3.out}
+\pythonfile{codigo/regex/sub_3.py}
+\out{codigo/regex/sub_3.out}
 
 El valor predeterminado de \ttt{count} es 0, lo que significa que se reemplazarán todas las coincidencias.
 
-\pythonfile{codigo/21-regex/sub_4.py}
-\out{codigo/21-regex/sub_4.out}
+\pythonfile{codigo/regex/sub_4.py}
+\out{codigo/regex/sub_4.out}
 
 \Needspace{8\baselineskip}
 \section{Coincidencias exactas}
 
 La función \ttt{fullmatch()} compara de forma más estricta que \ttt{match()}, debido a que toma en cuenta toda la cadena con la que se compara el patrón.
 
-\pythonfile{codigo/21-regex/fullmatch.py}
-\out{codigo/21-regex/fullmatch.out}
+\pythonfile{codigo/regex/fullmatch.py}
+\out{codigo/regex/fullmatch.out}
 
 \Needspace{8\baselineskip}
 \section{Metacaracteres}
@@ -126,7 +126,7 @@ Permiten crear patrones que representan conceptos como \doble{una o más repetic
 
 Todos los metacaracteres son los siguientes:
 
-\textfile{codigo/21-regex/metacaracteres.txt}
+\textfile{codigo/regex/metacaracteres.txt}
 
 La existencia de los metacaracteres presenta un problema si se desea crear una expresión regular que corresponda a un metacarácter literal, como por ejemplo \ttt{"\$"}.
 La solución a estos casos es colocar una barra diagonal invertida \ttt{\textbackslash} antes de dicho caracter.
@@ -134,25 +134,25 @@ La solución a estos casos es colocar una barra diagonal invertida \ttt{\textbac
 Sin embargo, esto también tendría problemas porque en Python las barras diagonales \ttt{\textbackslash} tienen la función de iniciar secuencias de escape dentro de strings.
 Por esta razón es que se recomienda usar cadenas puras en las expresiones regulares.
 
-\pythonfile{codigo/21-regex/uso_metacaracteres.py}
-\out{codigo/21-regex/uso_metacaracteres.out}
+\pythonfile{codigo/regex/uso_metacaracteres.py}
+\out{codigo/regex/uso_metacaracteres.out}
 
 \Needspace{8\baselineskip}
 \section{Punto}
 
 El metacarácter más sencillo es el punto \ttt{.}, que coincide con cualquier caracter excepto una nueva linea.
 
-\pythonfile{codigo/21-regex/punto_1.py}
-\out{codigo/21-regex/punto_1.out}
-\pythonfile{codigo/21-regex/punto_2.py}
-\out{codigo/21-regex/punto_2.out}
+\pythonfile{codigo/regex/punto_1.py}
+\out{codigo/regex/punto_1.out}
+\pythonfile{codigo/regex/punto_2.py}
+\out{codigo/regex/punto_2.out}
 
 Básicamente, el punto \ttt{.} actúa como un \doble{comodín}.
 
 Otro uso puede ser para pedir palabras de un largo igual a la cantidad de puntos.
 
-\pythonfile{codigo/21-regex/punto_3.py}
-\out{codigo/21-regex/punto_3.out}
+\pythonfile{codigo/regex/punto_3.py}
+\out{codigo/regex/punto_3.out}
 
 \Needspace{8\baselineskip}
 \section{Inicio y final}
@@ -162,10 +162,10 @@ Los metacaracteres \ttt{\^} y \ttt{\$} coinciden con el inicio y el final de una
 
 En los ejemplos se usa \ttt{search()} porque \ttt{match()} busca desde el principio del string, lo que sería redundante con \ttt{\^}.
 
-\pythonfile{codigo/21-regex/inicio_final_1.py}
-\out{codigo/21-regex/inicio_final_1.out}
-\pythonfile{codigo/21-regex/inicio_final_2.py}
-\out{codigo/21-regex/inicio_final_2.out}
+\pythonfile{codigo/regex/inicio_final_1.py}
+\out{codigo/regex/inicio_final_1.out}
+\pythonfile{codigo/regex/inicio_final_2.py}
+\out{codigo/regex/inicio_final_2.out}
 
 \ttt{\^} y \ttt{\$} por si solos no son suficiente para buscar palabras que comiencen con un carácter y terminen con otro (al mismo tiempo).
 
@@ -175,15 +175,15 @@ En los ejemplos se usa \ttt{search()} porque \ttt{match()} busca desde el princi
 Los corchetes \ttt{[]} son metacaracteres usados para definir clases de caracteres, que son conjuntos de caracteres aceptados.
 El patrón solo necesita que aparezca uno de los caracteres dentro del grupo.
 
-\pythonfile{codigo/21-regex/clases_caracteres_1.py}
-\out{codigo/21-regex/clases_caracteres_1.out}
-\pythonfile{codigo/21-regex/clases_caracteres_2.py}
-\out{codigo/21-regex/clases_caracteres_2.out}
+\pythonfile{codigo/regex/clases_caracteres_1.py}
+\out{codigo/regex/clases_caracteres_1.out}
+\pythonfile{codigo/regex/clases_caracteres_2.py}
+\out{codigo/regex/clases_caracteres_2.out}
 
 Si se ingresan en sucesión, el patrón acepta un carácter del primer conjunto en orden seguido de uno del segundo.
 
-\pythonfile{codigo/21-regex/clases_caracteres_3.py}
-\out{codigo/21-regex/clases_caracteres_3.out}
+\pythonfile{codigo/regex/clases_caracteres_3.py}
+\out{codigo/regex/clases_caracteres_3.out}
 
 \Needspace{8\baselineskip}
 \section{Rangos de caracteres}
@@ -201,31 +201,31 @@ Las más usadas son las siguientes:
     
 \end{itemize}
 
-\pythonfile{codigo/21-regex/clases_rangos_1.py}
-\out{codigo/21-regex/clases_rangos_1.out}
+\pythonfile{codigo/regex/clases_rangos_1.py}
+\out{codigo/regex/clases_rangos_1.out}
 
 Los rangos se pueden combinar dentro de una misma clase.
 
-\pythonfile{codigo/21-regex/clases_rangos_2.py}
-\out{codigo/21-regex/clases_rangos_2.out}
+\pythonfile{codigo/regex/clases_rangos_2.py}
+\out{codigo/regex/clases_rangos_2.out}
 
 Para representar dígitos, también se puede usar \ttt{\textbackslash d}.
 
-\pythonfile{codigo/21-regex/digitos.py}
-\out{codigo/21-regex/digitos.out}
+\pythonfile{codigo/regex/digitos.py}
+\out{codigo/regex/digitos.out}
 
 Los rangos se pueden limitar dependiendo de lo que se necesite.
 
-\pythonfile{codigo/21-regex/clases_rangos_3.py}
-\out{codigo/21-regex/clases_rangos_3.out}
+\pythonfile{codigo/regex/clases_rangos_3.py}
+\out{codigo/regex/clases_rangos_3.out}
 
 \Needspace{8\baselineskip}
 \section{Clases invertidas}
 
 Si se ingresa el metacarácter \ttt{\^} al principio de una clase de caracteres, invierte todos los contenidos de la clase.
 
-\pythonfile{codigo/21-regex/invertir.py}
-\out{codigo/21-regex/invertir.out}
+\pythonfile{codigo/regex/invertir.py}
+\out{codigo/regex/invertir.out}
 
 Esto solo funciona si se coloca al principio, en cualquier otra posición no tiene función.
 
@@ -239,53 +239,53 @@ Los metacaracteres \ttt{*}, \ttt{+}, \ttt{?}, \ttt{\{} y \ttt{\}} se usan para e
 El metacarácter \ttt{*} significa \doble{0 o más repeticiones de lo anterior}.
 También se conoce como el identificador del conjunto cierre en ciencias de computación.
 
-\pythonfile{codigo/21-regex/cierre_1.py}
-\out{codigo/21-regex/cierre_1.out}
+\pythonfile{codigo/regex/cierre_1.py}
+\out{codigo/regex/cierre_1.out}
 
 %TODO: cambiar todos los ejemplos a fullmatch()
 
 Se puede usar \ttt{*} (y cualquier otro metacarácter de repetición) después de clases de caracteres.
 
-\pythonfile{codigo/21-regex/cierre_2.py}
-\out{codigo/21-regex/cierre_2.out}
+\pythonfile{codigo/regex/cierre_2.py}
+\out{codigo/regex/cierre_2.out}
 
 El metacarácter \ttt{+} es muy similar a \ttt{*} excepto que significa \doble{1 o más repeticiones de lo anterior}, es decir, no permite que no aparezca el carácter anterior.
 También se conoce como cierre positivo.
 
 %TODO: enlace a cierre positivo
 
-\pythonfile{codigo/21-regex/cierre_positivo.py}
-\out{codigo/21-regex/cierre_positivo.out}
+\pythonfile{codigo/regex/cierre_positivo.py}
+\out{codigo/regex/cierre_positivo.out}
 
 El metacarácter \ttt{?} indica que el carácter anterior es opcional, lo que significa que puede aparecer 0 o 1 vez.
 
-\pythonfile{codigo/21-regex/opcional.py}
-\out{codigo/21-regex/opcional.out}
+\pythonfile{codigo/regex/opcional.py}
+\out{codigo/regex/opcional.out}
 
 Las llaves \ttt{\{} y \ttt{\}} son metacaracteres que permiten indicar la cantidad de repeticiones de algo.
 
-\pythonfile{codigo/21-regex/llaves_1.py}
-\out{codigo/21-regex/llaves_1.out}
+\pythonfile{codigo/regex/llaves_1.py}
+\out{codigo/regex/llaves_1.out}
 
 Se debe recordar no insertar ningún espacio después de la coma.
 
 Decir \ttt{\{0,1\}} quiere decir entre 0 y 1 repeticiones del caracter anterior, lo que es equivalente a \ttt{?}.
 
-\pythonfile{codigo/21-regex/llaves_2.py}
-\out{codigo/21-regex/llaves_2.out}
+\pythonfile{codigo/regex/llaves_2.py}
+\out{codigo/regex/llaves_2.out}
 
 Si se omite el segundo caracter, se concidera como \doble{hasta infinito}, lo que significa que \ttt{\{0,\}} es equivalente a \ttt{*} y \ttt{\{1,\}} es equivalente a \ttt{+}.
 
-\pythonfile{codigo/21-regex/llaves_3.py}
-\out{codigo/21-regex/llaves_3.out}
-\pythonfile{codigo/21-regex/llaves_4.py}
-\out{codigo/21-regex/llaves_4.out}
+\pythonfile{codigo/regex/llaves_3.py}
+\out{codigo/regex/llaves_3.out}
+\pythonfile{codigo/regex/llaves_4.py}
+\out{codigo/regex/llaves_4.out}
 
 Por último, usando el metacarácter \ttt{*} también se pueden verificar palabras que empiezan con un carácter y terminan con otro, al mismo tiempo.
 
 %TODO: usar el siguiente código como ejemplo del formato para este capítulo
-\pythonfile{codigo/21-regex/cierre_inicio_final.py}
-\out{codigo/21-regex/cierre_inicio_final.out}
+\pythonfile{codigo/regex/cierre_inicio_final.py}
+\out{codigo/regex/cierre_inicio_final.out}
 
 \Needspace{8\baselineskip}
 \section{Grupos de caracteres}
@@ -294,7 +294,7 @@ Un grupo puede ser creado al colocar los caracteres pertenecientes a él entre p
 
 Esto permite a una secuencia de caracteres ser pasada como un único argumento a metacaracteres como \ttt{*} y \ttt{?}.
 
-\pythonfile{codigo/21-regex/grupo_1.py}
-\out{codigo/21-regex/grupo_1.out}
+\pythonfile{codigo/regex/grupo_1.py}
+\out{codigo/regex/grupo_1.out}
 
 \clearpage

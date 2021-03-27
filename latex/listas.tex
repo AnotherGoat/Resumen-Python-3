@@ -7,11 +7,11 @@ Las listas son la estructura más usada en Python.
 Son colecciones ordenadas posicionalmente de objetos tipados arbitrariamente y no tienen un tamaño fijo.
 Se utilizan para almacenar varios elementos y se crean utilizando corchetes y separando los elementos por comas.
 
-\pythonfile{codigo/6-listas/lista_1.py}
+\pythonfile{codigo/listas/lista_1.py}
 
 En Python, las listas pueden tener elementos de más de un tipo.
 
-\pythonfile{codigo/6-listas/lista_2.py}
+\pythonfile{codigo/listas/lista_2.py}
 
 \Needspace{8\baselineskip}
 \section{Índices}
@@ -20,22 +20,22 @@ Se puede acceder a un determinado elemento de la lista escribiendo su índice en
 El índice del primer elemento es \ttt{0}, en lugar de \ttt{1}, como podría esperarse.
 Después del \ttt{0} viene el {1}, luego el {2}, y así sucesivamente.
 
-\pythonfile{codigo/6-listas/indexar_listas_1.py}
-\out{codigo/6-listas/indexar_listas_1.out}
+\pythonfile{codigo/listas/indexar_listas_1.py}
+\out{codigo/listas/indexar_listas_1.out}
 
 Alternativamente, se pueden usar índices reversos.
 El último elemento de una lista tiene índice \ttt{-1}, el anterior \ttt{-2}, y así sucesivamente hasta llegar al primero.
 
-\pythonfile{codigo/6-listas/indexar_listas_2.py}
-\out{codigo/6-listas/indexar_listas_2.out}
+\pythonfile{codigo/listas/indexar_listas_2.py}
+\out{codigo/listas/indexar_listas_2.out}
 
 \Needspace{8\baselineskip}
 \section{IndexError en listas}
 
 Intentar acceder a un índice no existente producirá un error.
 
-\pythonfile{codigo/6-listas/error_indice.py}
-\out{codigo/6-listas/error_indice.out}
+\pythonfile{codigo/listas/error_indice.py}
+\out{codigo/listas/error_indice.out}
 
 \Needspace{8\baselineskip}
 \section{Lista vacía}
@@ -43,21 +43,21 @@ Intentar acceder a un índice no existente producirá un error.
 A veces es necesario crear una lista vacía y completarla más tarde durante la ejecución del programa.
 Las listas vacías se crean con un par de corchetes vacíos \ttt{[]}.
 
-\pythonfile{codigo/6-listas/lista_vacia.py}
+\pythonfile{codigo/listas/lista_vacia.py}
 
 \Needspace{8\baselineskip}
 \section{Anidación de listas}
 
 Las listas se pueden anidar dentro de otras listas, y para acceder a algún elemento se debe usar una cantidad mayor de corchetes, donde los índices indican el elemento desde afuera hacia adentro.
 
-\pythonfile{codigo/6-listas/anidacion.py}
-\out{codigo/6-listas/anidacion.out}
+\pythonfile{codigo/listas/anidacion.py}
+\out{codigo/listas/anidacion.out}
 
 En el ejemplo de arriba se muestra como acceder a todos los elementos de la lista creada.
 
 Las listas anidadas se pueden utilizar para representar cuadrículas 2D, como por ejemplo \link{https://es.khanacademy.org/math/algebra-home/alg-matrices}{matrices}.
 
-\pythonfile{codigo/6-listas/identidad.py}
+\pythonfile{codigo/listas/identidad.py}
 
 El intérprete ignora los saltos de línea y la indentación dentro de los corchetes \ttt{[]}, lo que permite ordenarla para hacer más fácil su comprensión.
 
@@ -69,40 +69,40 @@ Esta estructura tipo matriz es muy conveniente en los casos en los que se necesi
 Se puede dejar a lo más una coma sobrante dentro de los corchetes de una lista.
 Este último elemento no será añadido a la lista.
 
-\pythonfile{codigo/6-listas/comas.py}
-\out{codigo/6-listas/comas.out}
+\pythonfile{codigo/listas/comas.py}
+\out{codigo/listas/comas.out}
 
 Si se deja más de una coma, se mostrará un \ttt{SyntaxError}.
 
-\pythonfile{codigo/6-listas/error_comas.py}
-\out{codigo/6-listas/error_comas.out}
+\pythonfile{codigo/listas/error_comas.py}
+\out{codigo/listas/error_comas.out}
 
 \Needspace{8\baselineskip}
 \section{Tamaño de una lista}
 
 Se puede obtener el tamaño (número de elementos) de una lista utilizando la función \ttt{len()}.
   
-\pythonfile{codigo/6-listas/len.py}
-\out{codigo/6-listas/len.out}
+\pythonfile{codigo/listas/len.py}
+\out{codigo/listas/len.out}
 
 \Needspace{8\baselineskip}
 \section{Operaciones con listas}
 
 El elemento en un índice determinado de una lista se puede reasignar.
 
-\pythonfile{codigo/6-listas/operaciones_listas_1.py}
-\out{codigo/6-listas/operaciones_listas_1.out}
+\pythonfile{codigo/listas/operaciones_listas_1.py}
+\out{codigo/listas/operaciones_listas_1.out}
 
 Sin embargo, no se puede usar este método para añadir elementos a una lista.
 Para hacer eso, se deben usar funciones que se verán más adelante.
 
-\pythonfile{codigo/6-listas/error_reasignar.py}
-\out{codigo/6-listas/error_reasignar.out}
+\pythonfile{codigo/listas/error_reasignar.py}
+\out{codigo/listas/error_reasignar.out}
 
 Las listas se pueden concatenar y multiplicar de la misma manera que las cadenas.
 
-\pythonfile{codigo/6-listas/operaciones_listas_2.py}
-\out{codigo/6-listas/operaciones_listas_2.out}
+\pythonfile{codigo/listas/operaciones_listas_2.py}
+\out{codigo/listas/operaciones_listas_2.out}
 
 \Needspace{8\baselineskip}
 \section{Operadores in y not in}
@@ -110,34 +110,34 @@ Las listas se pueden concatenar y multiplicar de la misma manera que las cadenas
 Se puede verificar si un elemento pertenece a una lista usando el operador \ttt{in}.
 Este devuelve \ttt{True} si dicho elemento aparece una o más veces en la lista y \ttt{False} si no es así.
 
-\pythonfile{codigo/6-listas/in.py}
-\out{codigo/6-listas/in.out}
+\pythonfile{codigo/listas/in.py}
+\out{codigo/listas/in.out}
 
 Para comprobar si un elemento no pertenece a una lista, se pueden combinar los operadores \ttt{in} y \ttt{not}.
 Ambas formas mostradas a continuación son válidas.
 
-\pythonfile{codigo/6-listas/not_in.py}
-\out{codigo/6-listas/not_in.out}
+\pythonfile{codigo/listas/not_in.py}
+\out{codigo/listas/not_in.out}
 
 \Needspace{8\baselineskip}
 \section{Añadir elementos a listas}
 
 El método \ttt{append()} permite añadir un elemento al final de una lista.
   
-\pythonfile{codigo/6-listas/append.py}
-\out{codigo/6-listas/append.out}
+\pythonfile{codigo/listas/append.py}
+\out{codigo/listas/append.out}
 
 El método \ttt{insert()} se usa para insertar un elemento en un índice específico de una lista.
 Toma 2 argumentos: un índice y un objeto.
 Los elementos que están después del elemento insertado se desplazan a la derecha.
 
-\pythonfile{codigo/6-listas/insert.py}
-\out{codigo/6-listas/insert.out}
+\pythonfile{codigo/listas/insert.py}
+\out{codigo/listas/insert.out}
 
 El método \ttt{extend()} se usa para añadir todos los elementos de una lista al final de otra lista.
   
-\pythonfile{codigo/6-listas/extend.py}
-\out{codigo/6-listas/extend.out}
+\pythonfile{codigo/listas/extend.py}
+\out{codigo/listas/extend.out}
 
 El resultado obtenido es el mismo que al concatenar las listas, pero la diferencia es que reemplaza la primera lista por la versión extendida.
 
@@ -146,34 +146,34 @@ El resultado obtenido es el mismo que al concatenar las listas, pero la diferenc
 
 El método \ttt{pop()} elimina el último elemento de una lista.
   
-\pythonfile{codigo/6-listas/pop_1.py}
-\out{codigo/6-listas/pop_1.out}
+\pythonfile{codigo/listas/pop_1.py}
+\out{codigo/listas/pop_1.out}
 
 Se le puede entregar un argumento numérico para quitar elementos de una lista según su índice.
 Este número puede ser negativo.
 
-\pythonfile{codigo/6-listas/pop_2.py}
-\out{codigo/6-listas/pop_2.out}
+\pythonfile{codigo/listas/pop_2.py}
+\out{codigo/listas/pop_2.out}
 
 El método \ttt{remove()} elimina la primera ocurrencia de un elemento en una lista.
   
-\pythonfile{codigo/6-listas/remove_1.py}
-\out{codigo/6-listas/remove_1.out}
+\pythonfile{codigo/listas/remove_1.py}
+\out{codigo/listas/remove_1.out}
 
 Si el elemento no existe en la lista, levanta un \ttt{ValueError}.
 
-\pythonfile{codigo/6-listas/error_remove.py}
-\out{codigo/6-listas/error_remove.out}
+\pythonfile{codigo/listas/error_remove.py}
+\out{codigo/listas/error_remove.out}
 
 Una forma más segura de usar \ttt{remove()} es la siguiente:
 
-\pythonfile{codigo/6-listas/remove_2.py}
-\out{codigo/6-listas/remove_2.out}
+\pythonfile{codigo/listas/remove_2.py}
+\out{codigo/listas/remove_2.out}
 
 El método \ttt{clear()} quita todos los elementos de una lista, dejándola vacía.
 
-\pythonfile{codigo/6-listas/clear.py}
-\out{codigo/6-listas/clear.out}
+\pythonfile{codigo/listas/clear.py}
+\out{codigo/listas/clear.out}
 
 \Needspace{8\baselineskip}
 \section{La declaración del}
@@ -181,13 +181,13 @@ El método \ttt{clear()} quita todos los elementos de una lista, dejándola vac�
 Otra forma de eliminar elementos de una lista es usando la palabra clave \ttt{del}.
 Esto permite eliminar elementos según su índice, similar a usar \ttt{pop()}.
 
-\pythonfile{codigo/6-listas/eliminacion.py}
-\out{codigo/6-listas/eliminacion.out}
+\pythonfile{codigo/listas/eliminacion.py}
+\out{codigo/listas/eliminacion.out}
 
 También se puede especificar un rango de eliminación, lo que hace que elimine elementos desde el índice antes de \ttt{:} hasta el antecesor del índice después de \ttt{:}.
 
-\pythonfile{codigo/6-listas/del_rango.py}
-\out{codigo/6-listas/del_rango.out}
+\pythonfile{codigo/listas/del_rango.py}
+\out{codigo/listas/del_rango.out}
 
 \Needspace{8\baselineskip}
 \section{Ordenar listas}
@@ -195,23 +195,23 @@ También se puede especificar un rango de eliminación, lo que hace que elimine 
 El método \ttt{sort()} ordena alfabéticamente una lista de strings, por defecto se realiza ascendentemente.
 Para realizar el orden descendentemente, se debe entregar el parámetro \ttt{reverse=True}.
   
-\pythonfile{codigo/6-listas/sort_letras.py}
-\out{codigo/6-listas/sort_letras.out}
+\pythonfile{codigo/listas/sort_letras.py}
+\out{codigo/listas/sort_letras.out}
   
 También funciona con listas compuestas de números.
 
-\pythonfile{codigo/6-listas/sort_numeros.py}
-\out{codigo/6-listas/sort_numeros.out}
+\pythonfile{codigo/listas/sort_numeros.py}
+\out{codigo/listas/sort_numeros.out}
 
 Si se usa en listas mixtas, mostrará un \ttt{TypeError}.
 
-\pythonfile{codigo/6-listas/sort_mixto.py}
-\out{codigo/6-listas/sort_mixto.out}
+\pythonfile{codigo/listas/sort_mixto.py}
+\out{codigo/listas/sort_mixto.out}
 
 El método \ttt{reverse()} invierte el orden de los elementos de una lista.
   
-\pythonfile{codigo/6-listas/reverse.py}
-\out{codigo/6-listas/reverse.out}
+\pythonfile{codigo/listas/reverse.py}
+\out{codigo/listas/reverse.out}
 
 \Needspace{8\baselineskip}
 \section{Información sobre listas}
@@ -220,46 +220,46 @@ Existen métodos que no modifican listas, pero pueden obtener información sobre
 
 El método \ttt{index()} encuentra la primera aparición de un elemento en una lista y devuelve su índice.
   
-\pythonfile{codigo/6-listas/index.py}
-\out{codigo/6-listas/index.out}
+\pythonfile{codigo/listas/index.py}
+\out{codigo/listas/index.out}
 
 Si el elemento no se encuentra en la lista, muestra un \ttt{ValueError}.
 
-\pythonfile{codigo/6-listas/error_index.py}
-\out{codigo/6-listas/error_index.out}
+\pythonfile{codigo/listas/error_index.py}
+\out{codigo/listas/error_index.out}
 
 También acepta un segundo argumento, donde se puede especificar el índice desde el cual se empezará a buscar.
 
-\pythonfile{codigo/6-listas/index_start.py}
-\out{codigo/6-listas/index_start.out}
+\pythonfile{codigo/listas/index_start.py}
+\out{codigo/listas/index_start.out}
 
 El método \ttt{count()} cuenta la cantidad de ocurrencias de un elemento en una lista.
   
-\pythonfile{codigo/6-listas/count.py}
-\out{codigo/6-listas/count.out}
+\pythonfile{codigo/listas/count.py}
+\out{codigo/listas/count.out}
 
 Los métodos \ttt{max()} y \ttt{min()} devuelven el elemento de una lista con valor máximo o mínimo, respectivamente.
 
-\pythonfile{codigo/6-listas/max_y_min_1.py}
-\out{codigo/6-listas/max_y_min_1.out}
+\pythonfile{codigo/listas/max_y_min_1.py}
+\out{codigo/listas/max_y_min_1.out}
 
 Si son strings, los compara por orden alfabético (lexicográficamente).
 Se considera como \doble{mayor} a las palabras que se encuentran al final después de ordenarlas alfabéticamente.
 
-\pythonfile{codigo/6-listas/max_y_min_2.py}
-\out{codigo/6-listas/max_y_min_2.out}
+\pythonfile{codigo/listas/max_y_min_2.py}
+\out{codigo/listas/max_y_min_2.out}
 
 En realidad, se comparan los símbolos según su valor ASCII.
 
 El método \ttt{sum()} calcula la suma de los elementos de una lista númerica.
   
-\pythonfile{codigo/6-listas/sum.py}
-\out{codigo/6-listas/sum.out}
+\pythonfile{codigo/listas/sum.py}
+\out{codigo/listas/sum.out}
 
 Se pueden combinar las funciones \ttt{avg()} y \ttt{len()} para obtener el promedio de los elementos de una lista númerica.
 
-\pythonfile{codigo/6-listas/avg.py}
-\out{codigo/6-listas/avg.out}
+\pythonfile{codigo/listas/avg.py}
+\out{codigo/listas/avg.out}
 
 \Needspace{8\baselineskip}
 \section{Copiar listas}
@@ -267,25 +267,25 @@ Se pueden combinar las funciones \ttt{avg()} y \ttt{len()} para obtener el prome
 Al intentar copiar listas sólo usando su nombre, en realidad se está haciendo una lista que hace referencia a la lista copiada.
 Esto significa que los cambios que reciba una lista también los recibirá la otra.
 
-\pythonfile{codigo/6-listas/copy_1.py}
-\out{codigo/6-listas/copy_1.out}
+\pythonfile{codigo/listas/copy_1.py}
+\out{codigo/listas/copy_1.out}
 
 Para evitar esto, se puede usar el método \ttt{copy()} para hacer una copia de una lista en una nueva instancia.
 
-\pythonfile{codigo/6-listas/copy_2.py}
-\out{codigo/6-listas/copy_2.out}
+\pythonfile{codigo/listas/copy_2.py}
+\out{codigo/listas/copy_2.out}
 
 Otra opción válida es usando el constructor \ttt{list()}.
 
-\pythonfile{codigo/6-listas/copy_list.py}
-\out{codigo/6-listas/copy_list.out}
+\pythonfile{codigo/listas/copy_list.py}
+\out{codigo/listas/copy_list.out}
 
 \Needspace{8\baselineskip}
 \section{Strings como listas}
 
 Las cadenas pueden verse como listas de caracteres que no se pueden cambiar (inmutables).
 
-\pythonfile{codigo/6-listas/strings_vs_listas.py}
+\pythonfile{codigo/listas/strings_vs_listas.py}
 
 De hecho, tienen muchas similitudes.
 Ambas almacenan elementos secuencialmente.
@@ -296,21 +296,21 @@ La diferencia es que las cadenas son más limitadas (pero también más rápidas
 
 El método \ttt{list()} convierte una cadena de caracteres en una lista de caracteres.
 
-\pythonfile{codigo/6-listas/list.py}
-\out{codigo/6-listas/list.out}
+\pythonfile{codigo/listas/list.py}
+\out{codigo/listas/list.out}
 
 El método \ttt{split()} convierte una cadena de caracteres en una lista de palabras, separadas por espacios \ttt{\qq  \qq}.
 
-\pythonfile{codigo/6-listas/split.py}
-\out{codigo/6-listas/split.out}
+\pythonfile{codigo/listas/split.py}
+\out{codigo/listas/split.out}
 
 \Needspace{8\baselineskip}
 \section{Indexación de cadenas}
 
 Algunos tipos de variables, como las cadenas, se pueden indexar. Esto se realiza de una forma parecida a las listas.
 
-\pythonfile{codigo/6-listas/indexacion_cadenas.py}
-\out{codigo/6-listas/indexacion_cadenas.out}
+\pythonfile{codigo/listas/indexacion_cadenas.py}
+\out{codigo/listas/indexacion_cadenas.out}
 
 Se debe recordar que el espacio \ttt{\qq  \qq} también es considerado como símbolo y tiene su propio índice dentro de la cadena.
 
@@ -321,8 +321,8 @@ En las cadenas, se pueden obtener sus caracteres empezando desde el final de la 
 Para hacer esto, se debe hacer la indexación normal, pero usando índices negativos.
 El último caracter tiene índice \ttt{-1}, el anterior \ttt{-2}, y así sucesivamente.
 
-\pythonfile{codigo/6-listas/indices_negativos.py}
-\out{codigo/6-listas/indices_negativos.out}
+\pythonfile{codigo/listas/indices_negativos.py}
+\out{codigo/listas/indices_negativos.out}
 
 Esto resulta especialmente útil con cadenas largas.
 
@@ -331,12 +331,12 @@ Esto resulta especialmente útil con cadenas largas.
 
 A diferencia de las listas, las cadenas son inmutables, lo que significa que no se pueden reasignar sus caracteres.
 
-\pythonfile{codigo/6-listas/error_cadenas.py}
-\out{codigo/6-listas/error_cadenas.out}
+\pythonfile{codigo/listas/error_cadenas.py}
+\out{codigo/listas/error_cadenas.out}
 
 La única forma de solucionar este problema es creando una nueva cadena con el cambio que se quería.
 
-\pythonfile{codigo/6-listas/solucion_cadenas.py}
-\out{codigo/6-listas/solucion_cadenas.out}
+\pythonfile{codigo/listas/solucion_cadenas.py}
+\out{codigo/listas/solucion_cadenas.out}
 
 \clearpage

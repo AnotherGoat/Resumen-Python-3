@@ -1,0 +1,1 @@
+nombre_de_variable = valor

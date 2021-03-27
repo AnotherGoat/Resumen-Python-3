@@ -5,7 +5,7 @@
 
 El módulo itertools es una biblioteca estándar que contiene varias funciones que son útiles en la programación funcional.
 
-\pythonfile{codigo/19-itertools/itertools.py}
+\pythonfile{codigo/itertools/itertools.py}
 
 \Needspace{8\baselineskip}
 \section{Iteradores infinitos}
@@ -14,41 +14,41 @@ Uno de los tipos de función que produce son iteradores infinitos.
 
 La función \ttt{count()} cuenta infinitamente a partir de un valor.
 
-\pythonfile{codigo/19-itertools/count_1.py}
-\out{codigo/19-itertools/count_1.out}
+\pythonfile{codigo/itertools/count_1.py}
+\out{codigo/itertools/count_1.out}
 
 Se le puede entregar un segundo parámetro a \ttt{count()}, el cual representa el tamaño de paso.
 Si no se le entrega el segundo parámetro, el tamaño de paso por defecto es 1.
 
-\pythonfile{codigo/19-itertools/count_2.py}
-\out{codigo/19-itertools/count_2.out}
+\pythonfile{codigo/itertools/count_2.py}
+\out{codigo/itertools/count_2.out}
 
 Si el segundo parámetro es negativo, cuenta hacia atrás.
 
-\pythonfile{codigo/19-itertools/count_3.py}
-\out{codigo/19-itertools/count_3.out}
+\pythonfile{codigo/itertools/count_3.py}
+\out{codigo/itertools/count_3.out}
 
 La función\ttt{cycle()} itera infinitamente a través de un iterable (como una lista o cadena).
 
-\pythonfile{codigo/19-itertools/cycle_1.py}
-\out{codigo/19-itertools/cycle_1.out}
-\pythonfile{codigo/19-itertools/cycle_2.py}
-\out{codigo/19-itertools/cycle_2.out}
+\pythonfile{codigo/itertools/cycle_1.py}
+\out{codigo/itertools/cycle_1.out}
+\pythonfile{codigo/itertools/cycle_2.py}
+\out{codigo/itertools/cycle_2.out}
 
 La función \ttt{repeat()} repite un objeto, ya sea infinitamente o un número específico de veces.
 
-\pythonfile{codigo/19-itertools/repeat_1.py}
-\out{codigo/19-itertools/repeat_1.out}
+\pythonfile{codigo/itertools/repeat_1.py}
+\out{codigo/itertools/repeat_1.out}
 
 Puede usarse para crear listas que tengan un objeto repetido.
 
-\pythonfile{codigo/19-itertools/repeat_2.py}
-\out{codigo/19-itertools/repeat_2.out}
+\pythonfile{codigo/itertools/repeat_2.py}
+\out{codigo/itertools/repeat_2.out}
 
 Para repetir infinitamente, se le debe entregar sólo el objeto como parámetro.
 
-\pythonfile{codigo/19-itertools/repeat_3.py}
-\out{codigo/19-itertools/repeat_3.out}
+\pythonfile{codigo/itertools/repeat_3.py}
+\out{codigo/itertools/repeat_3.out}
 
 \Needspace{8\baselineskip}
 \section{Operaciones sobre iterables}
@@ -57,23 +57,23 @@ Hay muchas funciones en itertools que operan sobre iterables, de una forma simil
 
 La función \ttt{accumulate()} devuelve un total actualizado de los valores dentro de un iterable.
 
-\pythonfile{codigo/19-itertools/accumulate.py}
-\out{codigo/19-itertools/accumulate.out}
+\pythonfile{codigo/itertools/accumulate.py}
+\out{codigo/itertools/accumulate.out}
 
 La función \ttt{takewhile()} toma elementos de un iterable mientras una función predicado permanece verdadera.
 
-\pythonfile{codigo/19-itertools/takewhile_1.py}
-\out{codigo/19-itertools/takewhile_1.out}
+\pythonfile{codigo/itertools/takewhile_1.py}
+\out{codigo/itertools/takewhile_1.out}
 
 La diferencia entre \ttt{takewhile()} y \ttt{filter()} es que \ttt{takewhile()} deja de tomar elementos cuando llega al primer elemento que no cumple la condición de la función.
 
-\pythonfile{codigo/19-itertools/takewhile_2.py}
-\out{codigo/19-itertools/takewhile_2.out}
+\pythonfile{codigo/itertools/takewhile_2.py}
+\out{codigo/itertools/takewhile_2.out}
 
 La función \ttt{chain()} combina varios iterables en uno solo más largo.
 
-\pythonfile{codigo/19-itertools/chain.py}
-\out{codigo/19-itertools/chain.out}
+\pythonfile{codigo/itertools/chain.py}
+\out{codigo/itertools/chain.out}
 
 \Needspace{8\baselineskip}
 \section{Funciones de combinatoria}
@@ -83,25 +83,25 @@ Estas son usadas cuando se quiere cumplir tareas con todas las combinaciones pos
 
 La función \ttt{product()} retorna el producto entre 2 iterables.
 
-\pythonfile{codigo/19-itertools/product.py}
-\out{codigo/19-itertools/product.out}
+\pythonfile{codigo/itertools/product.py}
+\out{codigo/itertools/product.out}
 
 La función \ttt{permutations()} retorna las todas permutaciones posibles entre los elementos de un iterable.
 
-\pythonfile{codigo/19-itertools/permutations_1.py}
-\out{codigo/19-itertools/permutations_1.out}
-\pythonfile{codigo/19-itertools/permutations_2.py}
-\out{codigo/19-itertools/permutations_2.out}
+\pythonfile{codigo/itertools/permutations_1.py}
+\out{codigo/itertools/permutations_1.out}
+\pythonfile{codigo/itertools/permutations_2.py}
+\out{codigo/itertools/permutations_2.out}
 
 Se le puede entregar un segundo argumento, el cual representa el número de elementos que cada permutación debe tener.
 
-\pythonfile{codigo/19-itertools/permutations_3.py}
-\out{codigo/19-itertools/permutations_3.out}
+\pythonfile{codigo/itertools/permutations_3.py}
+\out{codigo/itertools/permutations_3.out}
 
 El método \ttt{combinations()} funciona de forma similar a \ttt{permutations()}, pero muestra las combinaciones en vez de permutaciones.
 
-\pythonfile{codigo/19-itertools/combinations.py}
-\out{codigo/19-itertools/combinations.out}
+\pythonfile{codigo/itertools/combinations.py}
+\out{codigo/itertools/combinations.out}
 
 La diferencia es que en las combinaciones no importa el orden y se unen todos los resultados que tienen los mismos elementos pero en orden distinto.
 
