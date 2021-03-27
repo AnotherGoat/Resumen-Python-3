@@ -1,0 +1,105 @@
+\chapter{Diccionarios}
+
+\Needspace{8\baselineskip}
+\section{Diccionarios}
+
+Los diccionarios son estructuras de datos utilizadas para mapear claves arbitrarias a valores.
+Pueden ser indexados de la misma manera que las listas, utilizando corchetes que contengan claves.
+
+\pythonfile{codigo/diccionarios/diccionarios_1.py}
+\out{codigo/diccionarios/diccionarios_1.out}
+
+Cada elemento de un diccionario es representado por un par clave:valor (key:value).
+Los elementos dentro de diccionarios no están ordenados, lo que significa que no pueden ser indexados por índices, sólo por claves.
+
+Un diccionario puede almacenar como valor cualquier tipo de datos.
+Se pueden usar saltos de línea para definirlos de forma más ordenada.
+
+\pythonfile{codigo/diccionarios/diccionarios_2.py}
+\out{codigo/diccionarios/diccionarios_2.out}
+
+\Needspace{8\baselineskip}
+\section{Listas como diccionarios}
+
+Las listas pueden ser consideradas como diccionarios con claves de números enteros dentro de un cierto rango.
+
+\pythonfile{codigo/diccionarios/listas_como_diccionarios.py}
+\out{codigo/diccionarios/listas_como_diccionarios.out}
+
+\Needspace{8\baselineskip}
+\section{Diccionario vacío}
+
+Un diccionario vacío es definido como \ttt{\{\}}.
+
+\pythonfile{codigo/diccionarios/diccionario_vacio.py}
+
+\Needspace{8\baselineskip}
+\section{Excepciones en diccionarios}
+
+Tratar de indexar una clave que no es parte de un diccionario retorna un \ttt{KeyError}.
+
+\pythonfile{codigo/diccionarios/error_diccionario.py}
+\out{codigo/diccionarios/error_diccionario.out}
+
+Sólo objetos inmutables pueden ser utilizados como claves de diccionario.
+Los objetos inmutables son aquellos que no pueden ser cambiados.
+Algunos objetos mutables son listas, conjuntos y diccionarios.
+Tratar de utilizar un objeto mutable como clave de diccionario ocasiona un \ttt{TypeError}.
+
+\pythonfile{codigo/diccionarios/error_clave_mutable.py}
+\out{codigo/diccionarios/error_clave_mutable.out}
+
+\Needspace{8\baselineskip}
+\section{Indexación de diccionarios}
+
+Al igual que las listas, las claves de un diccionario pueden ser asignadas a distintos valores.
+Sin embargo, a diferencia de las listas, se le puede asignar un valor a nuevas claves, no sólo a las que ya existen.
+
+\pythonfile{codigo/diccionarios/indexacion_diccionarios.py}
+\out{codigo/diccionarios/indexacion_diccionarios.out}
+
+\Needspace{8\baselineskip}
+\section{Uso de in y not en diccionarios}
+
+Para determinar si una clave está en un diccionario, se puede usar los operadores \ttt{in} y \ttt{not in}, al igual que en listas.
+
+\pythonfile{codigo/diccionarios/in_not_diccionarios.py}
+\out{codigo/diccionarios/in_not_diccionarios.out}
+
+Nótese que retorna \ttt{False} al buscar \ttt{\qq tres \qq}.
+Esto ocurre porque \ttt{\qq tres \qq} es un valor, no una clave.
+
+\Needspace{8\baselineskip}
+\section{Función get()}
+
+Un método útil de diccionarios es \ttt{get()}.
+Hace lo mismo que indexar, pero si una clave no es encontrada en el diccionario entonces devuelve otro valor especificado (\ttt{None} por defecto).
+
+\pythonfile{codigo/diccionarios/get_1.py}
+\out{codigo/diccionarios/get_1.out}
+
+En este caso es importante recordar que \ttt{1} y \ttt{True} significan lo mismo, y por lo tanto son la misma clave.
+Entonces, el diccionario \ttt{pares} sólo tiene 3 elementos (la clave \ttt{True} tendrá como valor \ttt{False}, el último valor que se le asignó).
+
+\pythonfile{codigo/diccionarios/get_2.py}
+\out{codigo/diccionarios/get_2.out}
+
+\Needspace{8\baselineskip}
+\section{Convertir diccionarios a listas}
+
+Usando el método \ttt{list()}, se puede convertir un diccionario a una lista, pero esto sólo obtendrá sus claves.
+
+\pythonfile{codigo/diccionarios/diccionario_a_lista.py}
+\out{codigo/diccionarios/diccionario_a_lista.out}
+
+Los métodos \ttt{keys()} y \ttt{values()} permiten obtener las claves y los valores de un diccionario.
+
+\pythonfile{codigo/diccionarios/keys_values_1.py}
+\out{codigo/diccionarios/keys_values_1.out}
+
+El resultado de estos métodos puede ser convertido a listas usando el método \ttt{list()} para poder manipularlos con más facilidad.
+
+\pythonfile{codigo/diccionarios/keys_values_2.py}
+\out{codigo/diccionarios/keys_values_2.out}
+
+\clearpage

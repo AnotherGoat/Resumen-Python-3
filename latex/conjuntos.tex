@@ -1,0 +1,167 @@
+\chapter{Conjuntos}
+
+\Needspace{8\baselineskip}
+\section{Conjuntos}
+
+Los conjuntos son estructuras de datos parecidas a las listas o a los diccionarios.
+Son creandos utilizando llaves \ttt{\{\}}o la función \ttt{set()}.
+Comparten algunas de las funcionalidades de las listas, como el uso de \ttt{in} y \ttt{not in} para revisar si contienen o no un elemento en particular.
+
+\pythonfile{codigo/conjuntos/conjuntos.py}
+\out{codigo/conjuntos/conjuntos.out}
+
+No están ordenados, lo cual significa que no pueden ser indexados.
+No pueden tener elementos duplicados.
+
+\pythonfile{codigo/conjuntos/sin_duplicados.py}
+\out{codigo/conjuntos/sin_duplicados.out}
+
+Usos básicos de conjuntos incluyen pruebas de membresía y la eliminación de entradas duplicadas.
+
+\Needspace{8\baselineskip}
+\section{Conjunto vacío}
+
+Para crear un conjunto vacío, se debe utilizar \ttt{set()}, ya que \ttt{\{\}} crea un diccionario vacío.
+
+\pythonfile{codigo/conjuntos/conjunto_vacio.py}
+
+\Needspace{8\baselineskip}
+\section{Métodos de conjuntos}
+
+Los conjuntos difieren de las listas de varias formas, pero comparten varias operaciones de listas como \ttt{len()}.
+
+\pythonfile{codigo/conjuntos/len_conjuntos.py}
+\out{codigo/conjuntos/len_conjuntos.out}
+
+Debido a la forma en que son almacenados, es más rápido revisar si un elemento es parte de un conjunto que si es parte de una lista.
+
+En lugar de utilizar \ttt{append()} para agregarle algo al conjunto, se utiliza \ttt{add()}.
+El método \ttt{remove()} elimina un elemento específico de un conjunto.
+
+\pythonfile{codigo/conjuntos/add_y_remove.py}
+\out{codigo/conjuntos/add_y_remove.out}
+
+El método \ttt{pop()} elimina un elemento arbitrario.
+Esto significa que debido a la forma en la Python implementa conjuntos, no hay garantía de que los elementos se retornarán en el mismo orden que en el que se añadieron.
+
+Generalmente, elimina el primer elemento, pero esto no se puede garantizar para todos los casos.
+
+\pythonfile{codigo/conjuntos/pop_conjuntos.py}
+
+\Needspace{8\baselineskip}
+\section{Operaciones con conjuntos}
+
+Los conjuntos pueden ser combinados utilizando operaciones matemáticas.
+
+El operador de unión \ttt{|} combina dos conjuntos para formar uno nuevo que contiene los elementos de cualquiera de los dos.
+
+\pythonfile{codigo/conjuntos/union.py}
+\out{codigo/conjuntos/union.out}
+
+El operador de intersección \ttt{\&} obtiene sólo los elementos que están en ambos.
+
+\pythonfile{codigo/conjuntos/interseccion.py}
+\out{codigo/conjuntos/interseccion.out}
+
+El operador de diferencia \ttt{-} obtiene los elementos que están en el primer conjunto, pero no en el segundo.
+
+\pythonfile{codigo/conjuntos/diferencia.py}
+\out{codigo/conjuntos/diferencia.out}
+
+El operador de diferencia simétrica \ttt{\^} obtiene los elementos que están en cualquiera de los conjuntos, pero no en ambos.
+
+\pythonfile{codigo/conjuntos/diferencia_simetrica.py}
+\out{codigo/conjuntos/diferencia_simetrica.out}
+
+\Needspace{8\baselineskip}
+\section{Frozenset}
+
+Los frozenset son, como dice su nombre, conjuntos \doble{congelados}.
+Se comportan exactamente igual que un conjunto normal, pero son inmutables.
+Para crearlos, se debe usar la función \ttt{frozenset()}.
+
+\pythonfile{codigo/conjuntos/frozenset.py}
+\out{codigo/conjuntos/frozenset.out}
+
+Como son inmutables, intentar cambiarlos causará una excepción.
+De hecho, ni siquiera existen métodos para modificarlos.
+
+\pythonfile{codigo/conjuntos/error_frozenset_1.py}
+\out{codigo/conjuntos/error_frozenset_1.out}
+\pythonfile{codigo/conjuntos/error_frozenset_2.py}
+\out{codigo/conjuntos/error_frozenset_2.out}
+\pythonfile{codigo/conjuntos/error_frozenset_3.py}
+\out{codigo/conjuntos/error_frozenset_3.out}
+\pythonfile{codigo/conjuntos/error_frozenset_4.py}
+\out{codigo/conjuntos/error_frozenset_4.out}
+
+\Needspace{8\baselineskip}
+\section{Resumen sobre estructuras de datos}
+
+Como se ha visto en los capítulos anteriores, Python tiene soporte de las siguientes estructuras de datos: listas, diccionarios, tuplas y conjuntos.
+
+¿Cúando utilizar diccionarios?
+
+\begin{itemize}
+  \item Cuando se necesita utilizar asociaciones lógicas entre pares clave:valor.
+  
+  \item Cuando se necesita buscar datos rápidamente, en base a claves personalizadas.
+  
+  \item Cuando los datos son constantemente modificados.
+  
+\end{itemize}
+
+¿Cúando utilizar listas?
+
+\begin{itemize}
+  \item Cuando se tiene un grupo de datos que no necesita acceso aleatorio (deben estar ordenados).
+  
+  \item Cuando se necesita una recolección simple e iterable que es modificada frecuentemente.
+  
+\end{itemize}
+
+¿Cúando utilizar conjuntos?
+
+\begin{itemize}
+  \item Cuando se necesita que los elementos sean únicos.
+\end{itemize}
+
+¿Cúando utilizar tuplas?
+
+\begin{itemize}
+  \item Cuando se necesita almacenar datos que no pueden ser cambiados.
+\end{itemize}
+
+En muchas ocasiones, una tupla es utilizada junto con un diccionario.
+Por ejemplo, una tupla puede representar una clave, porque es inmutable.
+
+La siguiente tabla muestra las propiedades de cada estructura de datos vista hasta ahora.
+También se muestran cadenas ya que tienen propiedades similares.
+\medskip\medskip
+
+% tabla 2
+
+\makebox[\textwidth][c]{
+  \begin{tabular}{ l l l l l l l }
+    \toprule
+    & Cadena & Lista & Diccionario & Tupla & Conjunto & Frozenset \\
+    \midrule
+    Mutable & \no & \si & \si & \no & \si & \no \\
+
+    Indexado & \indices & \indices & \claves & \indices & \no & \no \\
+
+    Secuencial & \si & \si & \no & \si & \no & \no \\
+
+    Elementos únicos & \no & \no & \no & \no & \si & \si \\
+
+    Tipos de datos & \caracteres & \cualquier & \cualquier & \cualquier & \cualquier & \cualquier \\
+
+    Notación & \ttt{\q \q} o \ttt{\qq \qq} & \ttt{[]} & \ttt{\{:\}} & \ttt{()} & \ttt{\{\}} o \ttt{set()} & \ttt{frozenset()} \\
+    \bottomrule
+  \end{tabular}
+}
+\medskip\medskip
+
+Existen estructuras de datos más complejas, pero no se verán todavía.
+
+\clearpage

@@ -1,0 +1,67 @@
+\chapter{Tuplas}
+
+\Needspace{8\baselineskip}
+\section{Tuplas}
+
+Las tuplas son estructuras de datos muy parecidas a las listas, excepto que son inmutables (no pueden ser cambiadas).
+Se crean utilizando paréntesis en vez de corchetes.
+
+\pythonfile{codigo/tuplas/tupla_1.py}
+
+Las tuplas son más rápidas que las listas, pero no pueden ser modificadas.
+
+\Needspace{8\baselineskip}
+\section{Indexación de Tuplas}
+
+Se puede acceder a los valores de una tupla utilizando su índice.
+Funciona de la misma forma que con listas.
+
+\pythonfile{codigo/tuplas/tupla_2.py}
+\out{codigo/tuplas/tupla_2.out}
+
+Los datos dentro de una tupla están ordenados, empezando desde el índice \ttt{0}.
+
+\Needspace{8\baselineskip}
+\section{Excepciones en tuplas}
+
+Tratar de reasignar un valor a una tupla ocasiona un \ttt{TypeError}.
+
+\pythonfile{codigo/tuplas/error_tupla.py}
+\out{codigo/tuplas/error_tupla.out}
+
+\Needspace{8\baselineskip}
+\section{Anidación de tuplas}
+
+Al igual que las listas y diccionarios, las tuplas pueden ser anidadas entre sí.
+
+Las tuplas son inmutables, pero el contenido de elementos mutables dentro de ellas puede ser cambiado.
+
+\pythonfile{codigo/tuplas/anidacion_tuplas.py}
+\out{codigo/tuplas/anidacion_tuplas.out}
+
+\Needspace{8\baselineskip}
+\section{Tupla vacía}
+
+Una tupla vacía se crea utilizando un par de paréntesis vacíos \ttt{()}.
+
+\pythonfile{codigo/tuplas/tupla_vacia.py}
+
+\Needspace{8\baselineskip}
+\section{Manejo de variables con tuplas}
+
+Las tuplas pueden \doble{empaquetarse} o \doble{desempaquetarse}, lo que puede ser útil al momento de crear variables.
+
+\pythonfile{codigo/tuplas/tupla_3.py}
+\out{codigo/tuplas/tupla_3.out}
+
+Las tuplas pueden ser creadas sin paréntesis, simplemente separando los valores por comas.
+
+\pythonfile{codigo/tuplas/sin_parentesis.py}
+\out{codigo/tuplas/sin_parentesis.out}
+
+Se pueden usar tuplas para intercambiar los valores de 2 variables, sin necesidad de crear una variable auxiliar.
+
+\pythonfile{codigo/tuplas/truco_tuplas.py}
+\out{codigo/tuplas/truco_tuplas.out}
+
+\clearpage
