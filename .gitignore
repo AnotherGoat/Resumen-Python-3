@@ -288,8 +288,4 @@ TSWLatexianTemp*
 #*Notes.bib
 
 !build/main.pdf
-
-Capitulos.txt
-Fuentes.txt
-jetbrains.txt
-Nuevo modelo.txt
+docs

@@ -53,6 +53,6 @@
   \begin{picture}(1,0.29023453)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{logo\\python-logo-inkscape.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{logo/python-logo-inkscape.pdf}}%
   \end{picture}%
 \endgroup%
