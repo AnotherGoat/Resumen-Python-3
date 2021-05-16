@@ -22,15 +22,27 @@ jobs:
         run: |
           latexmk -pdf --shell-escape main.tex
           
-      - name: Borrar la última versión
-        uses: jagger27/delete-release@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #- name: Borrar último lanzamiento
+      #  uses: jagger27/delete-release@master
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #  with:
+      #    tag_name: latest
+
+      - name: Añadir etiqueta a la última versión
+        run: |
+          pushd Resumen-Python-3
+          git checkout ci
+          git tag latest -f
+          git push --tags -f "https://VictorMardones:$GITHUB_TOKEN@https://github.com/VictorMardones/Resumen-Python-3.git"
+          popd
           
       - name: Crear nuevo lanzamiento
         uses: actions/create-release@v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: latest
         
       - name: Subir el último PDF
         uses: actions/upload-release-asset@v1.0.1
