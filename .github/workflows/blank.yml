@@ -59,4 +59,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: "./Resumen-Python-3/build/main.pdf"
           asset_name: "Resumen Python 3.pdf"
-          asset_content_type: application/octet-stream
+          asset_content_type: application/pdf
