@@ -22,12 +22,12 @@ jobs:
         run: |
           latexmk -pdf --shell-escape main.tex
           
-      #- name: Borrar último lanzamiento
-      #  uses: jagger27/delete-release@master
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #  with:
-      #    tag_name: latest
+      - name: Borrar último lanzamiento
+        uses: jagger27/delete-release@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: latest
 
       - name: Añadir etiqueta a la última versión
         run: |
