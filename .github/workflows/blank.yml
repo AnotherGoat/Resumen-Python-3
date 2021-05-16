@@ -33,7 +33,7 @@ jobs:
         run: |
           git checkout ci
           git tag latest -f
-          git push --tags -f "https://VictorMardones:$GITHUB_TOKEN@https://github.com/VictorMardones/Resumen-Python-3.git"
+          git push origin ci --tags -f
           
       - name: Crear nuevo lanzamiento
         uses: actions/create-release@v1.1.4
