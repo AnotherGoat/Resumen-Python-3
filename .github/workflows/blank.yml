@@ -36,6 +36,7 @@ jobs:
           git push origin ci --tags -f
           
       - name: Crear nuevo lanzamiento
+        id: create_release
         uses: actions/create-release@v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
