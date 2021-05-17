@@ -15,7 +15,7 @@ jobs:
       - name: Instalar dependencias
         run: |
           sudo apt-get update
-          sudo apt-get install texlive
+          sudo apt-get install texlive-latex-extra
           sudo apt-get install python3-pygments
           
       - name: Compilar PDF
