@@ -15,9 +15,11 @@ jobs:
       - name: Instalar dependencias
         run: |
           sudo apt-get update
+          sudo apt-get upgrade
           sudo apt-get install -y texlive-full
-          sudo apt-get install -y python3-pygments
-          
+          pip3 install --upgrade Pygments 
+        # Para usar Pygments >= 2.8, que tiene el estilo "material"
+
       - name: Compilar PDF
         run: |
           latexmk -pdf --shell-escape main.tex
