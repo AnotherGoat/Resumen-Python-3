@@ -15,41 +15,40 @@ jobs:
       - name: Instalar dependencias
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-extra
-          sudo apt-get install -y latexmk
+          sudo apt-get install -y texlive-full
           sudo apt-get install -y python3-pygments
+          pygmentize -L styles
           
-      - name: Compilar PDF
-        run: |
-          latexmk -pdf --shell-escape main.tex
-          
-      - name: Borrar último lanzamiento
-        uses: jagger27/delete-release@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: latest
-
-      - name: Añadir etiqueta a la última versión
-        run: |
-          git checkout ci
-          git tag latest -f
-          git push origin ci --tags -f
-          
-      - name: Crear nuevo lanzamiento
-        id: create_release
-        uses: actions/create-release@v1.1.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: latest
-        
-      - name: Subir el último PDF
-        uses: actions/upload-release-asset@v1.0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/main.pdf"
-          asset_name: "Resumen Python 3.pdf"
-          asset_content_type: application/pdf
+#      - name: Compilar PDF
+#        run: |
+#          latexmk -pdf --shell-escape main.tex
+#          
+#      - name: Borrar último lanzamiento
+#        uses: jagger27/delete-release@master
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: latest
+#
+#      - name: Añadir etiqueta a la última versión
+#        run: |
+#          git tag latest -f
+#          git push origin ci --tags -f
+#          
+#      - name: Crear nuevo lanzamiento
+#        id: create_release
+#        uses: actions/create-release@v1.1.4
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: latest
+#        
+#      - name: Subir el último PDF
+#        uses: actions/upload-release-asset@v1.0.1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          upload_url: ${{ steps.create_release.outputs.upload_url }}
+#          asset_path: "./main.pdf"
+#          asset_name: "Resumen_Python_3.pdf"
+#          asset_content_type: application/pdf
